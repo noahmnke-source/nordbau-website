@@ -23,7 +23,7 @@ facts:
   bauweise: "Holztafelbau, werkseitig vorgefertigt"
   energiestandard: "Effizienzhaus 40"
   preisAb: "385.000 €"
-seoTitle: "Einfamilienhaus bauen – Satteldachhaus | AEDIS Haus"
+seoTitle: "Einfamilienhaus bauen – Satteldachhaus | Hochpuls"
 seoDescription: "Einfamilienhaus mit Satteldach bauen: ab 120 m², Effizienzhaus 40, ab 385.000 €, schlüsselfertig übergeben nach 8–10 Wochen Bauzeit. Jetzt Beratung vereinbaren."
 faq:
   - q: "Was kostet ein Einfamilienhaus mit Satteldach 2026?"

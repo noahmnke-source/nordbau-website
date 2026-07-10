@@ -1,0 +1,145 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import Button from '@/components/Button.astro';
+import Figure from '@/components/Figure.astro';
+import SectionIntro from '@/components/SectionIntro.astro';
+
+const typen = (await getCollection('haustypen')).sort((a, b) => a.data.order - b.data.order);
+
+/**
+ * Alternierende Editorial-Zeilen im 12er-Raster: Bild und Text wechseln
+ * die Seite, Spannweiten und Formate variieren je Zeile –
+ * bewusst kein uniformes Kartenraster.
+ */
+const layout = [
+  {
+    img: 'lg:col-span-7',
+    text: 'lg:col-span-4 lg:col-start-9',
+    ratio: 'aspect-[3/2]',
+    sizes: '(min-width: 1024px) 54vw, 100vw',
+  },
+  {
+    img: 'lg:col-span-7 lg:col-start-6',
+    text: 'lg:col-span-4 lg:col-start-1 lg:row-start-1',
+    ratio: 'aspect-[4/3]',
+    sizes: '(min-width: 1024px) 54vw, 100vw',
+  },
+  {
+    img: 'lg:col-span-5 lg:col-start-2',
+    text: 'lg:col-span-4 lg:col-start-8',
+    ratio: 'aspect-[4/5]',
+    sizes: '(min-width: 1024px) 38vw, 100vw',
+  },
+  {
+    img: 'lg:col-span-7 lg:col-start-6',
+    text: 'lg:col-span-4 lg:col-start-1 lg:row-start-1',
+    ratio: 'aspect-[3/2]',
+    sizes: '(min-width: 1024px) 54vw, 100vw',
+  },
+  {
+    img: 'lg:col-span-6',
+    text: 'lg:col-span-4 lg:col-start-8',
+    ratio: 'aspect-[4/3]',
+    sizes: '(min-width: 1024px) 46vw, 100vw',
+  },
+  {
+    img: 'lg:col-span-5 lg:col-start-7',
+    text: 'lg:col-span-5 lg:col-start-1 lg:row-start-1',
+    ratio: 'aspect-[4/5]',
+    sizes: '(min-width: 1024px) 38vw, 100vw',
+  },
+];
+---
+
+<BaseLayout
+  title="Haustypen: Fertighäuser individuell geplant"
+  description="Sechs Haustypen als Fertighaus: Stadtvilla bis Mehrgenerationenhaus, individuell geplant, Effizienzhaus 40, ab 355.000 €. Jetzt Beratungstermin vereinbaren."
+  breadcrumbs={[{ name: 'Haustypen', href: '/haustypen/' }]}
+>
+  <!-- Seitenkopf -->
+  <section class="container-site pt-12 lg:pt-16">
+    <Breadcrumbs items={[{ name: 'Haustypen', href: '/haustypen/' }]} class="mb-10" />
+
+    <div class="grid gap-x-8 gap-y-10 lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <h1 class="font-display text-hero font-medium">
+          Haustypen: sechs Wege, Ihr Fertighaus individuell zu planen
+        </h1>
+        <p class="prose-measure mt-6 text-body text-muted">
+          Ein Haustyp ist bei uns kein Katalogmodell, sondern ein erprobtes Grundgerüst:
+          Statik, Proportion und Energiekonzept stehen – Grundriss, Fassade und Details
+          entwerfen unsere Architekten für Ihr Grundstück neu. So entsteht das
+          Architektenhaus als Fertighaus: individuell geplant, werkseitig vorgefertigt,
+          ab Werk im Effizienzhaus-40-Standard.
+        </p>
+      </div>
+      <p class="prose-measure self-end text-small text-muted lg:col-span-4 lg:col-start-9">
+        Alle sechs Typen bauen wir schlüsselfertig – 2026 ab 355.000 €, mit
+        12 Monaten Festpreisgarantie ab Vertragsabschluss und fünf Jahren
+        Gewährleistung nach BGB.
+      </p>
+    </div>
+  </section>
+
+  <!-- Editorial-Zeilen: alternierend, asymmetrisch, wechselnde Formate -->
+  <section class="container-site pt-16 pb-(--spacing-section) lg:pt-24">
+    <div class="grid gap-y-(--spacing-section-sm)">
+      {typen.map((typ, i) => {
+        const l = layout[i % layout.length]!;
+        return (
+          <a
+            href={`/haustypen/${typ.id}/`}
+            class="group grid gap-x-8 gap-y-6 lg:grid-cols-12 lg:items-end"
+          >
+            <Figure
+              src={typ.data.hero.src}
+              alt={typ.data.hero.alt}
+              ratio={l.ratio}
+              sizes={l.sizes}
+              zoom
+              class={l.img}
+            />
+            <div class:list={['reveal', l.text]}>
+              <h2 class="font-display text-display font-medium">
+                <span class="link-line">{typ.data.name}</span>
+              </h2>
+              <p class="mt-3 text-body text-muted">{typ.data.tagline}</p>
+              <dl class="mt-8 divide-y divide-line border-y border-line text-small">
+                <div class="flex items-baseline justify-between gap-6 py-3">
+                  <dt class="text-muted">Wohnfläche</dt>
+                  <dd class="tnum font-display text-title font-medium">
+                    {typ.data.facts.wohnflaeche}
+                  </dd>
+                </div>
+                <div class="flex items-baseline justify-between gap-6 py-3">
+                  <dt class="text-muted">Preis ab</dt>
+                  <dd class="tnum font-display text-title font-medium">
+                    {typ.data.facts.preisAb}
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- Abschluss-CTA -->
+  <section class="bg-stone py-(--spacing-section)">
+    <div class="container-site">
+      <SectionIntro
+        title="Welcher Typ passt auf Ihr Grundstück?"
+        lead="Der Bebauungsplan entscheidet mit – im Erstgespräch prüfen wir Festsetzungen, Budget und Zeitplan. Unverbindlich, mit ehrlichen Zahlen."
+      />
+      <div class="reveal mt-12 flex flex-wrap items-center gap-6">
+        <Button href="/kontakt/" variant="primary">Beratung vereinbaren</Button>
+        <a href="/referenzen/" class="link-line text-small font-medium">
+          Gebaute Häuser ansehen
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

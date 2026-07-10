@@ -23,7 +23,7 @@ facts:
   bauweise: "Holztafelbau, werkseitig vorgefertigt"
   energiestandard: "Effizienzhaus 40"
   preisAb: "495.000 €"
-seoTitle: "Stadtvilla bauen – Fertighaus ab 495.000 € | AEDIS Haus"
+seoTitle: "Stadtvilla bauen – Fertighaus ab 495.000 € | Hochpuls"
 seoDescription: "Stadtvilla als Fertighaus: 145 m², zwei Vollgeschosse, Effizienzhaus 40, ab 495.000 € – mit 12 Monaten Festpreisgarantie. Jetzt Beratungstermin vereinbaren."
 faq:
   - q: "Was kostet eine Stadtvilla als Fertighaus 2026?"

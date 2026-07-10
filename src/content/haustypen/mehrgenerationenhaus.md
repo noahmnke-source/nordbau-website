@@ -23,7 +23,7 @@ facts:
   bauweise: "Holztafelbau, werkseitig vorgefertigt"
   energiestandard: "Effizienzhaus 40"
   preisAb: "640.000 €"
-seoTitle: "Haus mit Einliegerwohnung bauen – Fertighaus | AEDIS Haus"
+seoTitle: "Haus mit Einliegerwohnung bauen – Fertighaus | Hochpuls"
 seoDescription: "Haus mit Einliegerwohnung bauen: ab 200 m², zwei Wohneinheiten, Effizienzhaus 40, ab 640.000 € – KfW-Förderung doppelt nutzen. Jetzt Beratung vereinbaren."
 faq:
   - q: "Was kostet ein Haus mit Einliegerwohnung 2026?"

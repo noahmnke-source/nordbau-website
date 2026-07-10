@@ -1,0 +1,130 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import Button from '@/components/Button.astro';
+import Figure from '@/components/Figure.astro';
+import { IMG } from '@/data/assets';
+import { SITE } from '@/config/site';
+
+const regionen = (await getCollection('standorte')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const bundeslaender = regionen.filter((r) => r.data.typ === 'bundesland');
+const metropolregionen = regionen.filter((r) => r.data.typ === 'metropolregion');
+
+/** Erste Aussage des Intros als einzeiliger regionaler Aufhänger. */
+function aufhaenger(intro: string): string {
+  const punkt = intro.indexOf('. ');
+  return punkt === -1 ? intro : intro.slice(0, punkt + 1);
+}
+
+const breadcrumbs = [{ name: 'Fertighaus-Regionen', href: '/fertighaus/' }];
+
+const gruppen = [
+  { titel: 'Bundesländer', eintraege: bundeslaender },
+  { titel: 'Metropolregionen', eintraege: metropolregionen },
+];
+---
+
+<BaseLayout
+  title="Fertighaus bauen in Ihrer Region – bundesweit"
+  description="Fertighaus bauen in zehn Regionen: Grunderwerbsteuer, Bauland und Landesbauordnung je Region erklärt – mit einem festen Ansprechpartner. Beratung vereinbaren."
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Seitenkopf -->
+  <section class="container-site pt-12 lg:pt-16">
+    <Breadcrumbs items={breadcrumbs} class="mb-10" />
+
+    <div class="grid gap-x-8 gap-y-6 lg:grid-cols-12">
+      <h1 class="font-display text-hero font-medium lg:col-span-7">
+        Fertighaus in Ihrer Region: bundesweit gebaut, regional betreut
+      </h1>
+      <p class="prose-measure self-end text-body text-muted lg:col-span-4 lg:col-start-9">
+        Jedes {SITE.name} entsteht im selben Werk und wird von festen Montage-Teams
+        gestellt – gleich, ob der Bauplatz im Alpenvorland oder an der Elbe liegt.
+        Vor Ort führt Sie ein Ansprechpartner je Region durch Grundstückscheck,
+        Planung und Bau.
+      </p>
+    </div>
+  </section>
+
+  <!-- Regionen als typografische Linkliste -->
+  <section class="container-site pt-16 pb-(--spacing-section) lg:pt-24">
+    {gruppen.map((gruppe, gi) => (
+      <div class:list={[gi > 0 && 'mt-(--spacing-section-sm)']}>
+        <h2 class="reveal font-display text-display font-medium">{gruppe.titel}</h2>
+        <ul class="mt-10 divide-y divide-line border-y border-line">
+          {gruppe.eintraege.map((region) => (
+            <li>
+              <a
+                href={`/fertighaus/${region.id}/`}
+                class="group grid gap-x-8 gap-y-2 py-6 lg:grid-cols-12 lg:items-baseline"
+              >
+                <h3 class="font-display text-title font-medium lg:col-span-4">
+                  <span class="link-line">{region.data.name}</span>
+                </h3>
+                <p class="text-small text-muted lg:col-span-5">
+                  {aufhaenger(region.data.intro)}
+                </p>
+                <p class="tnum text-small text-muted lg:col-span-3 lg:text-right">
+                  {region.data.cities.slice(0, 3).join(' · ')}
+                </p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </section>
+
+  <!-- Querverweis: gebaute Referenzen aus den Regionen -->
+  <section class="bg-stone py-(--spacing-section)">
+    <div class="container-site grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-center">
+      <div class="lg:col-span-5">
+        <h2 class="reveal font-display text-display font-medium">
+          Gebaut in Brandenburg, Baden-Württemberg, Niedersachsen – und dazwischen
+        </h2>
+        <p class="reveal prose-measure mt-6 text-body text-muted">
+          Dokumentierte Referenzprojekte von der Lüneburger Heide bis nach
+          Esslingen: mit Ort, Wohnfläche, Bauzeit und den Stimmen der Familien,
+          die darin wohnen.
+        </p>
+        <p class="reveal mt-8">
+          <a href="/referenzen/" class="link-line text-small font-medium">
+            Alle Referenzen ansehen
+          </a>
+        </p>
+      </div>
+      <Figure
+        src={IMG.fassadeRot.src}
+        alt={IMG.fassadeRot.alt}
+        ratio="aspect-[3/2]"
+        sizes="(min-width: 1024px) 50vw, 100vw"
+        class="lg:col-span-6 lg:col-start-7"
+      />
+    </div>
+  </section>
+
+  <!-- Abschluss-CTA -->
+  <section class="bg-graphite py-(--spacing-section) text-paper">
+    <div class="container-site grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-end">
+      <div class="lg:col-span-7">
+        <h2 class="reveal font-display text-display font-medium">
+          Ihre Region ist dabei – der nächste Schritt ist ein Gespräch.
+        </h2>
+        <p class="reveal prose-measure mt-6 text-body leading-relaxed text-paper-muted">
+          30 Minuten am Telefon oder online: Wir klären Grundstück, Budget und
+          Zeitplan für Ihre Gemeinde – unverbindlich, mit den Zahlen, die 2026
+          in Ihrer Region gelten.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-6 lg:col-span-4 lg:col-start-9 lg:justify-end">
+        <Button href="/kontakt/" variant="primary">Beratung vereinbaren</Button>
+        <a href="/ablauf/" class="link-line text-small font-medium text-paper">
+          Den Ablauf ansehen
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

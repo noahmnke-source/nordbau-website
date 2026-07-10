@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.aedis-haus.de/sitemap-index.xml
+Sitemap: https://www.hochpuls.de/sitemap-index.xml

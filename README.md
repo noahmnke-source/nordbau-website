@@ -1,4 +1,4 @@
-# Fertighaus-Website (AEDIS Haus — Platzhalter-Marke)
+# Fertighaus-Website — Hochpuls GmbH
 
 Premium-Marketing-Website für einen Fertighaus-Anbieter: Astro 5 + Tailwind 4 +
 TypeScript, statisch gebaut, SEO-/GEO-optimiert für bundesweiten Vertrieb.

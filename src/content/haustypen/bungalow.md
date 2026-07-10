@@ -20,7 +20,7 @@ facts:
   bauweise: "Holztafelbau, werkseitig vorgefertigt"
   energiestandard: "Effizienzhaus 40"
   preisAb: "355.000 €"
-seoTitle: "Bungalow Fertighaus – ebenerdig ab 355.000 € | AEDIS Haus"
+seoTitle: "Bungalow Fertighaus – ebenerdig ab 355.000 € | Hochpuls"
 seoDescription: "Bungalow als Fertighaus: ebenerdig ab 95 m², barrierefrei geplant, Effizienzhaus 40, ab 355.000 €. Individuell geplant – jetzt Beratungstermin vereinbaren."
 faq:
   - q: "Was kostet ein Bungalow als Fertighaus 2026?"

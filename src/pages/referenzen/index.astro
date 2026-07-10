@@ -25,7 +25,7 @@ const layout = [
 
 <BaseLayout
   title="Fertighaus-Erfahrungen – gebaute Referenzhäuser"
-  description="Fünf gebaute Fertighäuser mit Ort, Bauzeit und Wohnfläche: 121 bis 178 m², vom Bungalow bis zur Aufstockung. Lesen Sie die Erfahrungen echter Baufamilien."
+  description="Gebaute Fertighäuser mit Ort, Bauzeit und Wohnfläche – und ein laufendes Projekt im Bautagebuch. So bauen wir: dokumentiert statt inszeniert. Jetzt ansehen."
   breadcrumbs={[{ name: 'Referenzen', href: '/referenzen/' }]}
 >
   <!-- Seitenkopf -->
@@ -63,7 +63,9 @@ const layout = [
                 <span class="link-line">{projekt.data.title}</span>
               </h2>
               <p class="tnum text-small text-muted">
-                {projekt.data.ort} · {projekt.data.jahr} · {projekt.data.facts.wohnflaeche}
+                {[projekt.data.ort, projekt.data.jahr, projekt.data.facts.wohnflaeche]
+                  .filter(Boolean)
+                  .join(' · ')}
               </p>
             </div>
           </a>

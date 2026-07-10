@@ -20,6 +20,10 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 const { title, ort, jahr, kategorie, hero, gallery, facts, zitat } = entry.data;
 
+/** Metazeile ohne leere Felder (laufende Projekte haben z. B. keinen Ort) */
+const metaLine = (e: CollectionEntry<'referenzen'>) =>
+  [e.data.ort, e.data.jahr, e.data.kategorie].filter(Boolean).join(' · ');
+
 // „Nächstes Projekt“ entlang der redaktionellen Reihenfolge (order), zyklisch
 const alle = (await getCollection('referenzen')).sort((a, b) => a.data.order - b.data.order);
 const index = alle.findIndex((e) => e.id === entry.id);
@@ -34,7 +38,7 @@ const factRows = [
   { label: 'Wohnfläche', value: facts.wohnflaeche },
   { label: 'Bauzeit', value: facts.bauzeit },
   { label: 'Energiestandard', value: facts.energiestandard },
-];
+].filter((row): row is { label: string; value: string } => Boolean(row.value));
 
 /** Galerie: wechselnde Spannen und Formate statt uniformem Raster */
 const galleryLayout = [
@@ -56,7 +60,7 @@ const galleryLayout = [
     <div class="grid gap-x-8 lg:grid-cols-12">
       <div class="lg:col-span-8">
         <h1 class="font-display text-hero font-medium">{title}</h1>
-        <p class="tnum mt-5 text-small text-muted">{ort} · {jahr} · {kategorie}</p>
+        <p class="tnum mt-5 text-small text-muted">{metaLine(entry)}</p>
       </div>
     </div>
   </section>
@@ -83,20 +87,22 @@ const galleryLayout = [
         </Prose>
       </div>
 
-      <aside class="lg:col-span-4 lg:col-start-9">
-        <h2 class="text-caption font-medium text-muted">Das Projekt in Zahlen</h2>
-        <dl class="mt-4 divide-y divide-line border-y border-line">
-          {factRows.map((row) => (
-            <div class="py-5">
-              <dt class="text-caption text-muted">{row.label}</dt>
-              <dd class="tnum mt-1 font-display text-title font-medium">{row.value}</dd>
-            </div>
-          ))}
-        </dl>
-        <p class="mt-5 text-caption text-muted">
-          Alle Angaben stammen aus der Baudokumentation dieses Projekts.
-        </p>
-      </aside>
+      {factRows.length > 0 && (
+        <aside class="lg:col-span-4 lg:col-start-9">
+          <h2 class="text-caption font-medium text-muted">Das Projekt in Zahlen</h2>
+          <dl class="mt-4 divide-y divide-line border-y border-line">
+            {factRows.map((row) => (
+              <div class="py-5">
+                <dt class="text-caption text-muted">{row.label}</dt>
+                <dd class="tnum mt-1 font-display text-title font-medium">{row.value}</dd>
+              </div>
+            ))}
+          </dl>
+          <p class="mt-5 text-caption text-muted">
+            Alle Angaben stammen aus der Baudokumentation dieses Projekts.
+          </p>
+        </aside>
+      )}
     </div>
   </section>
 
@@ -140,9 +146,7 @@ const galleryLayout = [
         <p class="mt-3 font-display text-display font-medium">
           <span class="link-line">{next.data.title}</span>
         </p>
-        <p class="tnum mt-3 text-small text-muted">
-          {next.data.ort} · {next.data.jahr} · {next.data.kategorie}
-        </p>
+        <p class="tnum mt-3 text-small text-muted">{metaLine(next)}</p>
       </a>
     </section>
   )}

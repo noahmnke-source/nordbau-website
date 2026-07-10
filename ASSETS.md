@@ -19,29 +19,33 @@ Optional eigenes Poster: Standbild als JPG exportieren, unter
 `public/videos/hero-poster.jpg` ablegen und in `src/pages/index.astro` die
 `poster`-Prop auf `{ src: '/videos/hero-poster.jpg', alt: '…' }` ändern.
 
-## 2. Ihre drei Baustellenfotos (Referenzen)
+## 2. Ihre drei Baustellenfotos (ein Projekt!)
 
-Die beiden echten Projekte sind bereits als Case Studies angelegt und mit
-`standIn: true` markiert:
+Alle drei Fotos zeigen dasselbe Haus. Sie sind als EIN Bautagebuch-Projekt
+angelegt — ohne Ortsangabe — in `src/content/referenzen/bautagebuch-einfamilienhaus.md`,
+alle drei Slots mit `standIn: true` markiert:
 
-| Ihr Foto | Ziel-Datei (Vorschlag) | Verwendet in |
+| Ihr Foto | Ziel-Datei (Vorschlag) | Slot |
 |---|---|---|
-| Neubau, Winter, Gerüst + frisch gedecktes Dach | `src/assets/projekte/birkenallee-rohbau.jpg` | `src/content/referenzen/haus-birkenallee.md` (hero) |
-| Drohne: Aufstockung, offener Dachstuhl (Weitwinkel) | `src/assets/projekte/donauufer-drohne-1.jpg` | `src/content/referenzen/aufstockung-donauufer.md` (hero) |
-| Drohne: Aufstockung, Holzfassade frontal | `src/assets/projekte/donauufer-drohne-2.jpg` | `aufstockung-donauufer.md` (gallery) |
+| Winter: Gerüst, frisch gedecktes Dach | `public/projekte/bautagebuch-01.jpg` | `hero` |
+| Drohne: offener Dachstuhl (Weitwinkel) | `public/projekte/bautagebuch-02.jpg` | `gallery[0]` |
+| Drohne: Holzfassade frontal | `public/projekte/bautagebuch-03.jpg` | `gallery[1]` |
 
 **So tauschen Sie:**
 
-1. Ordner anlegen: `src/assets/projekte/` und die JPGs dort ablegen
-   (Originalauflösung; Astro optimiert beim Build).
-2. In der jeweiligen Referenz-Datei den `hero`/`gallery`-Eintrag ändern, z. B.:
+1. Fotos fürs Web exportieren (JPG, ~2.500 px Breite reicht — die Originale
+   mit > 100 MB bitte nicht direkt einbinden) und unter `public/projekte/` ablegen.
+2. In `bautagebuch-einfamilienhaus.md` die drei Einträge ändern, z. B.:
 
    ```yaml
    hero:
-     src: "~/assets/projekte/birkenallee-rohbau.jpg"   # statt Unsplash-URL
+     src: "/projekte/bautagebuch-01.jpg"   # statt Unsplash-URL
      alt: "Rohbau im Winter: frisch gedecktes Dach unter blauem Himmel, Gerüst an der Putzfassade"
      standIn: false
    ```
+
+3. Im selben Zug die `TODO`-Kommentare in der Datei prüfen: echte Eckdaten
+   (Wohnfläche, Bauzeit, ggf. Ort) ergänzen, sobald Sie sie nennen möchten.
 
    > Hinweis: Für lokale Bilder rendert `Figure.astro` das Bild direkt
    > (`src` beginnt nicht mit `https://images.unsplash.com/`, daher kein
@@ -60,7 +64,7 @@ verdienen (Baustelle/Handwerk).
 
 ## 4. Platzhalter, die vor Launch getauscht werden MÜSSEN
 
-- `src/config/site.ts` — Firmenname „AEDIS Haus", Kontaktdaten, Formular-Endpoint
+- `src/config/site.ts` — Domain, Kontaktdaten, Formular-Endpoint
 - `astro.config.mjs` — `site` (Domain) + `public/robots.txt` Sitemap-URL
 - `src/pages/impressum.astro` + `src/pages/datenschutz.astro` — Rechtstexte
 - Zahlen auf Startseite/Über uns (mit `TODO` kommentiert)

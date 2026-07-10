@@ -41,17 +41,20 @@ const referenzen = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/referenzen' }),
   schema: z.object({
     title: z.string(),
-    ort: z.string(),
+    /** Optional: laufende Projekte ohne Ortsangabe lassen das Feld weg */
+    ort: z.string().optional(),
     jahr: z.number(),
     kategorie: z.enum(['Neubau', 'Stadtvilla', 'Bungalow', 'Aufstockung', 'Bauhaus', 'Doppelhaus']),
     order: z.number(),
     hero: imageRef,
     gallery: z.array(imageRef).default([]),
-    facts: z.object({
-      wohnflaeche: z.string(),
-      bauzeit: z.string(),
-      energiestandard: z.string(),
-    }),
+    facts: z
+      .object({
+        wohnflaeche: z.string().optional(),
+        bauzeit: z.string().optional(),
+        energiestandard: z.string().optional(),
+      })
+      .default({}),
     /** Ein Zitat der Baufamilie für die Case Study */
     zitat: z.object({ text: z.string(), von: z.string() }).optional(),
     seoTitle: z.string(),

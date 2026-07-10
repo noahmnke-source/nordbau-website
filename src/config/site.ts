@@ -1,29 +1,29 @@
 /**
  * Zentrale Firmen- und Site-Konfiguration.
  *
- * ── PLATZHALTER ──────────────────────────────────────────────
- * "AEDIS Haus" ist ein Platzhalter-Markenname. Vor Launch hier
- * (und in astro.config.mjs → `site`) durch die echte Firma ersetzen.
- * Alle Templates, Meta-Daten und JSON-LD lesen aus dieser Datei.
+ * ── VOR LAUNCH PRÜFEN ────────────────────────────────────────
+ * Domain, Kontaktdaten, Formular-Endpoint und Social-Profile sind
+ * Platzhalter. Alle Templates, Meta-Daten und JSON-LD lesen aus
+ * dieser Datei; Domain zusätzlich in astro.config.mjs + robots.txt.
  * ─────────────────────────────────────────────────────────────
  */
 
 export const SITE = {
   /** Markenname, erscheint in Logo, Titeln, Copy */
-  name: 'AEDIS Haus',
+  name: 'Hochpuls',
   /** Juristischer Name für JSON-LD / Impressum */
-  legalName: 'AEDIS Haus GmbH',
+  legalName: 'Hochpuls GmbH',
   /** Produktions-Domain — muss mit astro.config.mjs `site` übereinstimmen */
-  url: 'https://www.aedis-haus.de',
+  url: 'https://www.hochpuls.de',
   /** Claim, erscheint u. a. im Footer und als OG-Fallback */
   claim: 'Architektur in Serie. Gebaut für Sie.',
   /** Meta-Title-Suffix */
-  titleSuffix: 'AEDIS Haus – Fertighäuser schlüsselfertig & individuell',
+  titleSuffix: 'Hochpuls – Fertighäuser schlüsselfertig & individuell',
 
   contact: {
     phone: '+49 800 0000000',
     phoneDisplay: '0800 000 00 00',
-    email: 'beratung@aedis-haus.de',
+    email: 'beratung@hochpuls.de',
     street: 'Musterallee 12',
     zip: '60311',
     city: 'Frankfurt am Main',
@@ -36,9 +36,9 @@ export const SITE = {
   formEndpoint: 'https://formspree.io/f/PLATZHALTER',
 
   social: {
-    instagram: 'https://www.instagram.com/aedishaus',
-    youtube: 'https://www.youtube.com/@aedishaus',
-    pinterest: 'https://www.pinterest.de/aedishaus',
+    instagram: 'https://www.instagram.com/hochpuls',
+    youtube: 'https://www.youtube.com/@hochpuls',
+    pinterest: 'https://www.pinterest.de/hochpuls',
   },
 
   /** Gründungsjahr für "seit"-Angaben und JSON-LD */

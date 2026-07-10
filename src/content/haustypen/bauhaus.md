@@ -20,7 +20,7 @@ facts:
   bauweise: "Holztafelbau, werkseitig vorgefertigt"
   energiestandard: "Effizienzhaus 40"
   preisAb: "475.000 €"
-seoTitle: "Bauhaus-Stil Haus – Flachdach-Fertighaus | AEDIS Haus"
+seoTitle: "Bauhaus-Stil Haus – Flachdach-Fertighaus | Hochpuls"
 seoDescription: "Haus im Bauhaus-Stil: Flachdach-Fertighaus ab 130 m², Effizienzhaus 40, ab 475.000 € – klare Linien, individuell geplant. Jetzt Beratungstermin vereinbaren."
 faq:
   - q: "Was kostet ein Haus im Bauhaus-Stil 2026?"

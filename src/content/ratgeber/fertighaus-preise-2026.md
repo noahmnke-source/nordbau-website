@@ -6,7 +6,7 @@ hero:
   src: "https://images.unsplash.com/photo-1608303588026-884930af2559?auto=format&fit=crop&w=1600&q=80"
   alt: "Planungsgespräch über Grundrissen: Hände mit Dreikantmaßstab und Bleistift am Bauplan"
   standIn: false
-seoTitle: "Fertighaus-Preise 2026: Kosten pro m² | AEDIS Haus"
+seoTitle: "Fertighaus-Preise 2026: Kosten pro m² | Hochpuls"
 seoDescription: "Fertighaus-Preise 2026: Median 2.800 €/m², Spanne 2.400–3.300 €/m². Mit Beispielrechnung für 150 m², Baunebenkosten und Steuertabelle. Jetzt informieren."
 ---
 
@@ -43,7 +43,7 @@ Die folgende Beispielrechnung zeigt, wie sich ein realistisches Gesamtbudget zus
 
 Wichtig für den Angebotsvergleich: Prüfen Sie immer, welche Ausbaustufe gemeint ist. „Schlüsselfertig“ ist kein gesetzlich definierter Begriff – was enthalten ist, regelt allein die Bau- und Leistungsbeschreibung des Anbieters. Vergleichen Sie deshalb nur Angebote mit identischem Leistungsumfang.
 
-Zwischen einer Gemeinde im Umland und einer Großstadtlage kann sich der Grundstückspreis vervielfachen – das Haus selbst kostet dagegen bundesweit ähnlich viel. Wo wir bauen, zeigt die Übersicht der [Regionen, in denen AEDIS Haus baut](/fertighaus/).
+Zwischen einer Gemeinde im Umland und einer Großstadtlage kann sich der Grundstückspreis vervielfachen – das Haus selbst kostet dagegen bundesweit ähnlich viel. Wo wir bauen, zeigt die Übersicht der [Regionen, in denen Hochpuls baut](/fertighaus/).
 
 ## Wie hoch sind die Baunebenkosten beim Hausbau?
 
@@ -56,7 +56,7 @@ Kalkulieren Sie 15 bis 20 Prozent der Gesamtkosten zusätzlich für Baunebenkost
 - **Hausanschlüsse:** Strom, Wasser, Abwasser, Telekommunikation
 - **Versicherungen:** Bauherrenhaftpflicht und Bauleistungsversicherung
 
-Ein seriöser Anbieter weist diese Positionen transparent aus, bevor Sie unterschreiben. Bei AEDIS Haus gehört der Budgetcheck inklusive Nebenkosten fest zum [Ablauf von Erstgespräch bis Übergabe](/ablauf/) – vor dem Entwurf, nicht danach.
+Ein seriöser Anbieter weist diese Positionen transparent aus, bevor Sie unterschreiben. Bei Hochpuls gehört der Budgetcheck inklusive Nebenkosten fest zum [Ablauf von Erstgespräch bis Übergabe](/ablauf/) – vor dem Entwurf, nicht danach.
 
 ## Wie viel Grunderwerbsteuer zahlen Sie in Ihrem Bundesland?
 

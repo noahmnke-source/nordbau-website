@@ -20,7 +20,7 @@ facts:
   bauweise: "Holztafelbau, werkseitig vorgefertigt"
   energiestandard: "Effizienzhaus 40"
   preisAb: "745.000 €"
-seoTitle: "Doppelhaus bauen – Fertighaus für zwei Parteien | AEDIS Haus"
+seoTitle: "Doppelhaus bauen – Fertighaus für zwei Parteien | Hochpuls"
 seoDescription: "Doppelhaus bauen als Fertighaus: zwei Wohneinheiten ab 240 m², Effizienzhaus 40, ab 745.000 € – KfW-Förderung je Einheit. Jetzt Beratungstermin vereinbaren."
 faq:
   - q: "Was kostet ein Doppelhaus als Fertighaus 2026?"
