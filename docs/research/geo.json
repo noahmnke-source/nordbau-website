@@ -1,0 +1,239 @@
+{
+  "url_structure": "Sprechende, flache Verzeichnisstruktur unter einem Regional-Hub: domain.de/fertighaus/ (Hub-Seite \"Fertighaus in Ihrer Region\" mit Deutschlandkarte) -> domain.de/fertighaus/{region}/ für Bundesländer UND Metropolregionen auf derselben Ebene (z.B. /fertighaus/bayern/, /fertighaus/muenchen/, /fertighaus/rhein-main/) -> spätere Ausbaustufe: domain.de/fertighaus/{region}/{stadt}/ (z.B. /fertighaus/bayern/regensburg/), aber Städteseiten erst anlegen, wenn genug eigenständiger Inhalt existiert. Regeln: Keyword \"fertighaus\" + Regionsname im Pfad, maximal 3 Ebenen, Bindestrich-Slugs in Kleinschreibung ohne Umlaute (ue/oe/ae statt ü/ö/ä), keine Parameter oder IDs, keine .html-Endungen. Metropolregionen bewusst NICHT unter Bundesländern verschachteln, da sie Ländergrenzen überschreiten (Rhein-Main, Berlin-Brandenburg, Hamburg-Umland). Breadcrumb-Navigation + BreadcrumbList-Schema folgen exakt der URL-Hierarchie; jede Regionsseite erhält Service-/areaServed-Schema (kein LocalBusiness ohne echte Adresse). Vorbild: fertighaus.de kombiniert Ratgeber-URL (/hausbau-in-bayern/) mit Städte-Pfaden (/bayern/muenchen/); Town & Country nutzt /fertighaus-bayern — die empfohlene Struktur vereint beide Muster skalierbar in einem Verzeichnis.",
+  "regions": [
+    {
+      "slug": "bayern",
+      "name": "Fertighaus in Bayern",
+      "type": "bundesland",
+      "intro_angle": "Bayern lockt mit der bundesweit niedrigsten Grunderwerbsteuer von 3,5 % und einer starken Holzbautradition — zugleich reichen die Baulandpreise von rund 125 €/m² in Oberfranken bis weit über 6.900 €/m² in München. Die Seite erklärt die gelockerten Abstandsflächen der BayBO (0,4 H), das Bayerische Wohnungsbauprogramm der BayernLabo und worauf es bei Schneelastzonen im Alpenvorland ankommt.",
+      "local_keywords": [
+        "fertighaus bayern",
+        "haus bauen bayern",
+        "fertighaus schlüsselfertig bayern",
+        "grundstückspreise bayern",
+        "holzhaus bayern"
+      ],
+      "cities": [
+        "München",
+        "Nürnberg",
+        "Augsburg",
+        "Regensburg",
+        "Ingolstadt",
+        "Würzburg"
+      ]
+    },
+    {
+      "slug": "baden-wuerttemberg",
+      "name": "Fertighaus in Baden-Württemberg",
+      "type": "bundesland",
+      "intro_angle": "In Baden-Württemberg gilt die landesweite Photovoltaik-Pflicht für neue Wohngebäude — ein Planungs- und Kostenthema, das kaum ein Wettbewerber regional aufbereitet. Dazu kommen die vielen Hanggrundstücke in Schwarzwald, Schwäbischer Alb und Neckartal, die besondere Keller- und Gründungslösungen erfordern, sowie die dichte Musterhaus-Landschaft rund um Fellbach.",
+      "local_keywords": [
+        "fertighaus baden-württemberg",
+        "haus bauen baden-württemberg",
+        "fertighaus hanglage",
+        "photovoltaik pflicht neubau baden-württemberg",
+        "grundstückspreise baden-württemberg"
+      ],
+      "cities": [
+        "Stuttgart",
+        "Karlsruhe",
+        "Freiburg",
+        "Heidelberg",
+        "Ulm",
+        "Heilbronn"
+      ]
+    },
+    {
+      "slug": "nordrhein-westfalen",
+      "name": "Fertighaus in Nordrhein-Westfalen",
+      "type": "bundesland",
+      "intro_angle": "Mit 6,5 % zahlen Bauherren in NRW die höchste Grunderwerbsteuer Deutschlands — umso wichtiger ist eine ehrliche Nebenkostenrechnung, die die Seite liefert. Im Ruhrgebiet kommen Bergsenkungsgebiete aus dem Altbergbau hinzu, die ein Baugrundgutachten und angepasste Gründungen erfordern; mit Wuppertal und Köln-Frechen liegen zwei FertighausWelt-Ausstellungen direkt in der Region.",
+      "local_keywords": [
+        "fertighaus nrw",
+        "haus bauen nrw",
+        "fertighaus köln",
+        "grundstückspreise nrw",
+        "fertighaus ruhrgebiet"
+      ],
+      "cities": [
+        "Köln",
+        "Düsseldorf",
+        "Dortmund",
+        "Essen",
+        "Münster",
+        "Bonn",
+        "Bielefeld"
+      ]
+    },
+    {
+      "slug": "hessen",
+      "name": "Fertighaus in Hessen",
+      "type": "bundesland",
+      "intro_angle": "Hessen erstattet Erstkäufern selbstgenutzten Wohneigentums mit dem 'Hessengeld' einen Teil der 6 % Grunderwerbsteuer zurück — ein starkes, aktuelles Beratungsthema mit echtem Suchvolumen. Zudem klafft die Preisschere zwischen den Rhein-Main-Hotspots und bezahlbarem Bauland in Nord- und Mittelhessen weit auseinander; in Bad Vilbel steht mit rund 70 Häusern Deutschlands größte Musterhausausstellung.",
+      "local_keywords": [
+        "fertighaus hessen",
+        "haus bauen hessen",
+        "hessengeld grunderwerbsteuer",
+        "grundstückspreise hessen",
+        "musterhaus bad vilbel"
+      ],
+      "cities": [
+        "Frankfurt am Main",
+        "Wiesbaden",
+        "Darmstadt",
+        "Kassel",
+        "Gießen",
+        "Fulda"
+      ]
+    },
+    {
+      "slug": "niedersachsen",
+      "name": "Fertighaus in Niedersachsen",
+      "type": "bundesland",
+      "intro_angle": "Niedersachsen bietet im Bundesvergleich noch bezahlbares Bauland und großzügige Grundstücke, verlangt aber lagebezogenes Spezialwissen: Windlastzonen an der Nordseeküste sowie Marsch- und Moorböden erfordern angepasste Statik und Gründung. Die FertighausWelt Hannover in Langenhagen dient als zentraler regionaler Anlaufpunkt für Musterhausbesuche.",
+      "local_keywords": [
+        "fertighaus niedersachsen",
+        "haus bauen niedersachsen",
+        "fertighaus hannover",
+        "grundstückspreise niedersachsen"
+      ],
+      "cities": [
+        "Hannover",
+        "Braunschweig",
+        "Osnabrück",
+        "Oldenburg",
+        "Lüneburg",
+        "Göttingen"
+      ]
+    },
+    {
+      "slug": "berlin-brandenburg",
+      "name": "Fertighaus in Berlin & Brandenburg",
+      "type": "metropolregion",
+      "intro_angle": "In Berlin selbst ist Bauland für Einfamilienhäuser extrem rar — gebaut wird im Speckgürtel, und genau dort führt die Seite durch zwei verschiedene Bauordnungen (BauO Bln vs. BbgBO) und Grunderwerbsteuersätze (6 % Berlin vs. 6,5 % Brandenburg). Die sandigen brandenburgischen Böden sind meist gut tragfähig; entscheidend sind Erschließungskosten und B-Plan-Lage in den wachsenden Umlandgemeinden.",
+      "local_keywords": [
+        "fertighaus berlin brandenburg",
+        "haus bauen berliner umland",
+        "fertighaus potsdam",
+        "grundstück speckgürtel berlin",
+        "hausbau brandenburg"
+      ],
+      "cities": [
+        "Berlin",
+        "Potsdam",
+        "Falkensee",
+        "Bernau bei Berlin",
+        "Oranienburg",
+        "Königs Wusterhausen"
+      ]
+    },
+    {
+      "slug": "hamburg",
+      "name": "Fertighaus in Hamburg & Umland",
+      "type": "metropolregion",
+      "intro_angle": "Hamburger Grundstücke sind klein und teuer — gefragt sind kompakte Stadtvillen mit voller Geschossausnutzung nach HBauO, während viele Bauherren ins Umland nach Schleswig-Holstein oder Niedersachsen ausweichen, wo andere Steuersätze und Bauordnungen gelten. Norddeutsche Windlastzone und Hamburgs Gründachstrategie sind konkrete Planungsthemen, die die Seite fachlich besetzt.",
+      "local_keywords": [
+        "fertighaus hamburg",
+        "haus bauen hamburg",
+        "stadtvilla hamburg",
+        "fertighaus hamburg umland",
+        "grundstückspreise hamburg"
+      ],
+      "cities": [
+        "Hamburg",
+        "Norderstedt",
+        "Pinneberg",
+        "Ahrensburg",
+        "Buchholz in der Nordheide",
+        "Stade"
+      ]
+    },
+    {
+      "slug": "rhein-main",
+      "name": "Fertighaus im Rhein-Main-Gebiet",
+      "type": "metropolregion",
+      "intro_angle": "Die Metropolregion Rhein-Main überspannt drei Bundesländer (Hessen, Rheinland-Pfalz, bayerischer Untermain) — die Seite macht Bauordnungen, Grunderwerbsteuer und Förderungen für die typischen Pendler-Gemeinden erstmals vergleichbar. Bauland ist knapp und hart umkämpft, dafür liegt mit Bad Vilbel Deutschlands größte Hausausstellung mitten in der Region.",
+      "local_keywords": [
+        "fertighaus rhein-main",
+        "haus bauen frankfurt",
+        "fertighaus wiesbaden",
+        "grundstückspreise rhein-main",
+        "fertighaus taunus"
+      ],
+      "cities": [
+        "Frankfurt am Main",
+        "Wiesbaden",
+        "Mainz",
+        "Darmstadt",
+        "Offenbach",
+        "Hanau",
+        "Bad Vilbel"
+      ]
+    },
+    {
+      "slug": "muenchen",
+      "name": "Fertighaus in München & Umland",
+      "type": "metropolregion",
+      "intro_angle": "München ist Deutschlands teuerster Baulandmarkt (je nach Lage 6.900 bis über 12.000 €/m² für baureifes Land) — gebaut wird deshalb auf kleinen Parzellen im Umland, und die Seite besetzt Themen wie effiziente Grundrisse, Einheimischenmodelle und Erbbaurecht. Mit rund 60 Musterhäusern in Poing liegt Bayerns größte Hausausstellung direkt vor den Toren der Stadt.",
+      "local_keywords": [
+        "fertighaus münchen",
+        "haus bauen münchen umland",
+        "grundstückspreise münchen",
+        "musterhauspark poing",
+        "stadtvilla münchen"
+      ],
+      "cities": [
+        "München",
+        "Poing",
+        "Dachau",
+        "Freising",
+        "Erding",
+        "Starnberg",
+        "Fürstenfeldbruck"
+      ]
+    },
+    {
+      "slug": "stuttgart",
+      "name": "Fertighaus in Stuttgart & Region",
+      "type": "metropolregion",
+      "intro_angle": "Die Stuttgarter Kessellage macht Hanggrundstücke zum Normalfall — Hangbebauung, Keller als vollwertiger Wohnraum und Nachverdichtung im Bestand sind die zentralen Beratungsthemen, mit denen sich die Seite von generischen Anbietern abhebt. In Fellbach steht mit rund 55 Häusern Deutschlands älteste Musterhausausstellung als regionaler Ankerpunkt.",
+      "local_keywords": [
+        "fertighaus stuttgart",
+        "haus bauen stuttgart",
+        "fertighaus hanglage stuttgart",
+        "musterhausausstellung fellbach",
+        "grundstück region stuttgart"
+      ],
+      "cities": [
+        "Stuttgart",
+        "Fellbach",
+        "Ludwigsburg",
+        "Esslingen",
+        "Böblingen",
+        "Waiblingen"
+      ]
+    }
+  ],
+  "internal_linking": [
+    "Hub-and-Spoke-Modell: Die Hub-Seite /fertighaus/ (mit klickbarer Deutschlandkarte) verlinkt auf alle 10 Regionsseiten; jede Regionsseite verlinkt per Breadcrumb zurück (Start > Fertighaus-Regionen > Bayern). Kein Vollvernetzen aller Regionen untereinander im Fließtext.",
+    "Hierarchische Eltern-Kind-Links: Bundesland-Seiten verlinken prominent auf ihre Metropolregions-Seiten und umgekehrt (Bayern <-> München, Baden-Württemberg <-> Stuttgart, Hessen <-> Rhein-Main) — mit klar unterschiedlicher Keyword-Zuordnung, um Kannibalisierung zu vermeiden.",
+    "Geografische Nachbarschafts-Links: Am Seitenende maximal 3-4 Links zu angrenzenden Regionen ('Sie bauen weiter nördlich? Fertighaus in Niedersachsen'), nicht alle 10 Regionen als Linkliste.",
+    "Kontextuelle Links aus Ratgeber-/Magazin-Inhalten: Jeder Fachartikel (Grunderwerbsteuer, Baunebenkosten, PV-Pflicht, Hanggrundstück) verlinkt mit beschreibendem Ankertext auf die thematisch betroffenen Regionsseiten — das sind die stärksten internen Signale.",
+    "Referenz-Kreisläufe: Jede Regionsseite zeigt 2-3 real gebaute Kundenhäuser aus der Region mit Link zur Projekt-Detailseite; jede Projektseite verlinkt zurück auf ihre Regionsseite ('Gebaut in Regensburg — mehr zu Fertighäusern in Bayern').",
+    "Musterhaus-Verknüpfung: Regionsseiten verlinken auf die zugehörigen Musterhaus-/Bemusterungsstandorte des Anbieters und auf Terminbuchung; Musterhaus-Seiten verlinken zurück auf ihre Region.",
+    "Ankertext-Regeln: Variierte, natürliche Anker mit Region + Leistung ('schlüsselfertig bauen in NRW', 'Fertighaus-Anbieter für München'), niemals sitewide identische Money-Anchors; im Footer nur die 10 Regions-Hauptseiten, keine langen Städtelisten.",
+    "Städte zunächst als Sprungmarken-Abschnitte (#muenchen, #nuernberg) auf der Regionsseite führen; eigene Städte-URLs erst freischalten, wenn eine Stadt genug eigenständigen Inhalt (lokale Referenzen, Grundstücksdaten, Ansprechpartner) trägt — dann 301-sauber aus dem Abschnitt heraus verlinken."
+  ],
+  "pitfalls": [
+    "Doorway-Pages durch Template-Klonen: 10+ Seiten, bei denen nur der Ortsname getauscht wird, gelten seit Googles Core-/Helpful-Content-Updates als 'doorway abuse' und werden abgestraft. Faustregel: mindestens 50-60 % der Inhalte jeder Regionsseite müssen einzigartig sein (echte Preisdaten, Landesbauordnung, regionale Referenzen).",
+    "Zu schnelles Skalieren auf hunderte Städteseiten ohne Substanz und ohne nachgewiesene Suchnachfrage — erst 10 Regionen mit Tiefe aufbauen, Performance messen, dann datengetrieben erweitern.",
+    "Fake-Lokalität: keine virtuellen Adressen oder erfundenen 'Standorte' für Google-Business-Profile anlegen; ohne echte physische Präsenz (Musterhaus, Vertriebsbüro) gibt es kein GBP — stattdessen areaServed-Schema auf der Website nutzen.",
+    "Keyword-Kannibalisierung zwischen Bundesland- und Metro-Seiten (z.B. 'fertighaus bayern' vs. 'fertighaus münchen'): pro Seite ein dokumentiertes Fokus-Keyword-Set, Title/H1 klar getrennt, Eltern-Kind-Verlinkung statt Konkurrenz.",
+    "Veraltete Regionaldaten: Grundstückspreise, Grunderwerbsteuersätze und Förderprogramme (Hessengeld, BayernLabo, KfW) ändern sich — jede Zahl mit 'Stand: MM/JJJJ' kennzeichnen und einen jährlichen Review-Prozess je Region einplanen.",
+    "Stockfotos statt echter Regionalbilder: Referenzhäuser ohne Ortsangabe und generische Skyline-Fotos zerstören die lokale Glaubwürdigkeit (E-E-A-T); echte Kundenprojekte mit Ort, Baujahr und O-Ton verwenden.",
+    "Rechtsaussagen zu absolut formulieren: Genehmigungsfreistellung, Abstandsflächen und PV-Pflicht sind einzelfall- und kommunenabhängig — als Orientierung kennzeichnen und auf persönliche Beratung verweisen, sonst drohen Haftungs- und Vertrauensprobleme.",
+    "Standortseiten als reine SEO-Texte ohne Conversion-Pfad: Jede Seite braucht regionalen Ansprechpartner mit Foto, Musterhaus-Besuchstermin und Beratungs-CTA above the fold — sonst rankt sie vielleicht, konvertiert aber kaufkräftige Interessenten nicht.",
+    "Verlinkung nur über Footer oder Sitemap: Regionsseiten ohne kontextuelle Links aus Ratgebern und Referenzen wirken wie eine Linkfarm und bekommen kaum interne Autorität ('orphan pages').",
+    "Fehlendes oder falsches Schema-Markup: BreadcrumbList und Service/areaServed pro Regionsseite ergänzen, FAQ-Abschnitte mit FAQPage-Schema auszeichnen — aber kein LocalBusiness-Schema mit erfundener Adresse hinterlegen."
+  ]
+}

@@ -1,0 +1,117 @@
+---
+/**
+ * Typografie-Rahmen für gerenderte Markdown-Inhalte (<Content />).
+ * Hält Zeilenlänge, Rhythmus und Token-Farben ohne externes Plugin.
+ */
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<div class:list={['prose-article', className]}>
+  <slot />
+</div>
+
+<style>
+  .prose-article {
+    max-width: 68ch;
+    text-wrap: pretty;
+  }
+
+  .prose-article :global(h2) {
+    font-family: var(--font-display);
+    font-size: var(--text-title);
+    line-height: 1.25;
+    font-weight: 500;
+    margin-top: 2.75em;
+    margin-bottom: 0.75em;
+  }
+
+  .prose-article :global(h3) {
+    font-size: 1.125rem;
+    font-weight: 550;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+  }
+
+  .prose-article :global(p) {
+    margin-bottom: 1.25em;
+    color: var(--color-ink);
+  }
+
+  .prose-article :global(a) {
+    text-decoration: underline;
+    text-decoration-color: var(--color-oxide);
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+  }
+
+  .prose-article :global(a:hover) {
+    color: var(--color-oxide);
+  }
+
+  .prose-article :global(ul),
+  .prose-article :global(ol) {
+    margin-bottom: 1.25em;
+    padding-left: 1.5em;
+  }
+
+  .prose-article :global(ul) {
+    list-style: disc;
+  }
+
+  .prose-article :global(ol) {
+    list-style: decimal;
+  }
+
+  .prose-article :global(li) {
+    margin-bottom: 0.5em;
+  }
+
+  .prose-article :global(li::marker) {
+    color: var(--color-oxide);
+  }
+
+  .prose-article :global(strong) {
+    font-weight: 550;
+  }
+
+  .prose-article :global(blockquote) {
+    border-top: 1px solid var(--color-line);
+    border-bottom: 1px solid var(--color-line);
+    padding: 1.5em 0;
+    margin: 2em 0;
+    font-family: var(--font-display);
+    font-size: var(--text-title);
+    line-height: 1.35;
+  }
+
+  .prose-article :global(table) {
+    width: 100%;
+    margin: 2em 0;
+    border-collapse: collapse;
+    font-size: var(--text-small);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .prose-article :global(th) {
+    text-align: left;
+    font-weight: 550;
+    padding: 0.75em 1em 0.75em 0;
+    border-bottom: 1px solid var(--color-ink);
+  }
+
+  .prose-article :global(td) {
+    padding: 0.75em 1em 0.75em 0;
+    border-bottom: 1px solid var(--color-line);
+    color: var(--color-muted);
+  }
+
+  .prose-article :global(hr) {
+    border: 0;
+    border-top: 1px solid var(--color-line);
+    margin: 2.5em 0;
+  }
+</style>

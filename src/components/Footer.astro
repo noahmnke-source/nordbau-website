@@ -1,0 +1,97 @@
+---
+import { getCollection } from 'astro:content';
+import Button from '@/components/Button.astro';
+import { SITE } from '@/config/site';
+
+const haustypen = (await getCollection('haustypen')).sort((a, b) => a.data.order - b.data.order);
+const standorte = (await getCollection('standorte')).sort((a, b) => a.data.order - b.data.order);
+
+const year = new Date().getFullYear();
+
+const nav = [
+  { label: 'Haustypen', href: '/haustypen/' },
+  { label: 'Referenzen', href: '/referenzen/' },
+  { label: 'Ablauf', href: '/ablauf/' },
+  { label: 'Über uns', href: '/ueber-uns/' },
+  { label: 'Ratgeber', href: '/ratgeber/' },
+  { label: 'Kontakt', href: '/kontakt/' },
+];
+---
+
+<footer class="bg-graphite text-paper">
+  <!-- Abschluss-CTA -->
+  <div class="container-site border-b border-paper/10 py-(--spacing-section-sm)">
+    <div class="grid gap-10 lg:grid-cols-12 lg:items-end">
+      <div class="lg:col-span-8">
+        <p class="font-display text-display leading-[1.13] font-medium">
+          Sprechen wir über Ihr Grundstück, Ihr Budget und den Weg zu Ihrem Haus.
+        </p>
+      </div>
+      <div class="flex flex-col items-start gap-4 lg:col-span-4 lg:items-end">
+        <Button href="/kontakt/" variant="primary">Beratung vereinbaren</Button>
+        <a href={`tel:${SITE.contact.phone}`} class="link-line text-small text-paper-muted">
+          oder direkt anrufen: {SITE.contact.phoneDisplay}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Linkspalten -->
+  <div class="container-site grid gap-x-8 gap-y-12 py-16 sm:grid-cols-2 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <a href="/" class="font-display text-[1.45rem] font-medium">{SITE.name}</a>
+      <p class="prose-measure mt-4 max-w-xs text-small leading-relaxed text-paper-muted">
+        {SITE.claim} Schlüsselfertige und individuell geplante Fertighäuser –
+        werkseitig präzise vorgefertigt, bundesweit gebaut.
+      </p>
+    </div>
+
+    <nav aria-label="Footer Navigation" class="lg:col-span-2">
+      <h2 class="mb-4 text-caption font-medium text-paper-muted">Navigation</h2>
+      <ul class="space-y-2.5">
+        {nav.map((item) => (
+          <li><a href={item.href} class="link-line text-small">{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <nav aria-label="Haustypen" class="lg:col-span-2">
+      <h2 class="mb-4 text-caption font-medium text-paper-muted">Haustypen</h2>
+      <ul class="space-y-2.5">
+        {haustypen.map((h) => (
+          <li><a href={`/haustypen/${h.id}/`} class="link-line text-small">{h.data.name}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <nav aria-label="Standorte" class="lg:col-span-2">
+      <h2 class="mb-4 text-caption font-medium text-paper-muted">Bauen in …</h2>
+      <ul class="space-y-2.5">
+        {standorte.map((s) => (
+          <li><a href={`/fertighaus/${s.id}/`} class="link-line text-small">{s.data.kurzname}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="lg:col-span-2">
+      <h2 class="mb-4 text-caption font-medium text-paper-muted">Kontakt</h2>
+      <address class="space-y-2.5 text-small not-italic">
+        <p>{SITE.legalName}<br />{SITE.contact.street}<br />{SITE.contact.zip} {SITE.contact.city}</p>
+        <p><a href={`tel:${SITE.contact.phone}`} class="link-line">{SITE.contact.phoneDisplay}</a></p>
+        <p><a href={`mailto:${SITE.contact.email}`} class="link-line">{SITE.contact.email}</a></p>
+      </address>
+    </div>
+  </div>
+
+  <!-- Rechtliches -->
+  <div class="border-t border-paper/10">
+    <div class="container-site flex flex-wrap items-center justify-between gap-4 py-6 text-caption text-paper-muted">
+      <p>© {year} {SITE.legalName}. Alle Rechte vorbehalten.</p>
+      <ul class="flex flex-wrap gap-6">
+        <li><a href="/impressum/" class="link-line">Impressum</a></li>
+        <li><a href="/datenschutz/" class="link-line">Datenschutz</a></li>
+        <li><a href="/fertighaus/" class="link-line">Alle Regionen</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

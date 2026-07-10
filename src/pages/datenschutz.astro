@@ -1,0 +1,31 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE } from '@/config/site';
+---
+
+<BaseLayout
+  title="Datenschutzerklärung"
+  description={`Datenschutzerklärung der ${SITE.legalName}.`}
+  noIndex
+  breadcrumbs={[{ name: 'Datenschutz', href: '/datenschutz/' }]}
+>
+  <section class="container-site pt-16 pb-(--spacing-section)">
+    <h1 class="font-display text-display font-medium">Datenschutzerklärung</h1>
+
+    <div class="prose-measure mt-10 space-y-6 text-body">
+      <!-- TODO vor Launch: vollständige DSGVO-konforme Erklärung einsetzen
+           (Verantwortlicher, Hosting, Kontaktformular-Verarbeitung, Betroffenenrechte).
+           Empfehlung: von Datenschutzbeauftragtem oder Generator (z. B. eRecht24) erstellen lassen. -->
+      <p>
+        Verantwortlicher im Sinne der DSGVO: {SITE.legalName}, {SITE.contact.street},
+        {SITE.contact.zip} {SITE.contact.city} – {SITE.contact.email}
+      </p>
+      <p class="text-muted">
+        [PLATZHALTER: Diese Seite muss vor Launch mit einer vollständigen, rechtlich geprüften
+        Datenschutzerklärung befüllt werden. Sie umfasst mindestens: Hosting und Server-Logfiles,
+        Verarbeitung von Formulardaten (Art. 6 Abs. 1 lit. b DSGVO), Speicherdauer, Empfänger,
+        Betroffenenrechte, Beschwerderecht bei der Aufsichtsbehörde.]
+      </p>
+    </div>
+  </section>
+</BaseLayout>

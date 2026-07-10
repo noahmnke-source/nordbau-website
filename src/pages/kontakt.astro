@@ -1,0 +1,229 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import { SITE } from '@/config/site';
+
+const schritte = [
+  {
+    nr: '01',
+    titel: 'Erstgespräch',
+    text: '30 Minuten, telefonisch oder im Musterhaus. Wir hören zu: Grundstück, Budget, Zeitplan, Vorstellungen.',
+  },
+  {
+    nr: '02',
+    titel: 'Grundstücks- und Budgetcheck',
+    text: 'Wir prüfen Bebauungsplan und Erschließung und rechnen Ihr Budget realistisch durch – inklusive Nebenkosten.',
+  },
+  {
+    nr: '03',
+    titel: 'Entwurf und Festpreisangebot',
+    text: 'Sie erhalten einen ersten Entwurf und ein verbindliches Festpreisangebot. Erst dann entscheiden Sie.',
+  },
+];
+---
+
+<BaseLayout
+  title="Kontakt & Beratung – Jetzt Termin vereinbaren"
+  description={`Vereinbaren Sie ein unverbindliches Beratungsgespräch mit ${SITE.name}: telefonisch, online oder im Musterhaus. Wir melden uns innerhalb eines Werktags.`}
+  breadcrumbs={[{ name: 'Kontakt', href: '/kontakt/' }]}
+>
+  <section class="container-site pt-12 pb-(--spacing-section) lg:pt-16">
+    <Breadcrumbs items={[{ name: 'Kontakt', href: '/kontakt/' }]} class="mb-10" />
+
+    <div class="grid gap-x-16 gap-y-16 lg:grid-cols-12">
+      <!-- Kopf + Formular -->
+      <div class="lg:col-span-7">
+        <h1 class="font-display text-hero font-medium">Sprechen wir über Ihr Haus.</h1>
+        <p class="prose-measure mt-6 text-body text-muted">
+          Erzählen Sie uns, wo Sie stehen – wir melden uns innerhalb eines Werktags.
+          Unverbindlich, ohne Verkaufsdruck, mit ehrlichen Zahlen.
+        </p>
+
+        <form
+          id="kontakt-form"
+          method="POST"
+          action={SITE.formEndpoint}
+          class="mt-12 grid gap-6 sm:grid-cols-2"
+          novalidate
+        >
+          <div class="flex flex-col gap-2">
+            <label for="name" class="text-small font-medium">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              autocomplete="name"
+              class="h-12 border border-ink/25 bg-bg px-4 text-body transition-colors hover:border-ink/50"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="email" class="text-small font-medium">E-Mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              class="h-12 border border-ink/25 bg-bg px-4 text-body transition-colors hover:border-ink/50"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="telefon" class="text-small font-medium">Telefon <span class="font-normal text-muted">(optional)</span></label>
+            <input
+              type="tel"
+              id="telefon"
+              name="telefon"
+              autocomplete="tel"
+              class="h-12 border border-ink/25 bg-bg px-4 text-body transition-colors hover:border-ink/50"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="region" class="text-small font-medium">PLZ oder Region des Bauvorhabens</label>
+            <input
+              type="text"
+              id="region"
+              name="region"
+              required
+              autocomplete="postal-code"
+              class="h-12 border border-ink/25 bg-bg px-4 text-body transition-colors hover:border-ink/50"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2 sm:col-span-2">
+            <label for="stand" class="text-small font-medium">Wo stehen Sie gerade?</label>
+            <select
+              id="stand"
+              name="stand"
+              required
+              class="h-12 appearance-none border border-ink/25 bg-bg px-4 text-body transition-colors hover:border-ink/50"
+            >
+              <option value="">Bitte wählen …</option>
+              <option>Grundstück ist vorhanden</option>
+              <option>Grundstückssuche läuft</option>
+              <option>Wir informieren uns zuerst</option>
+            </select>
+          </div>
+
+          <div class="flex flex-col gap-2 sm:col-span-2">
+            <label for="nachricht" class="text-small font-medium">Ihre Nachricht <span class="font-normal text-muted">(optional)</span></label>
+            <textarea
+              id="nachricht"
+              name="nachricht"
+              rows="5"
+              class="border border-ink/25 bg-bg px-4 py-3 text-body transition-colors hover:border-ink/50"
+            ></textarea>
+          </div>
+
+          <!-- Honeypot gegen Spam -->
+          <div class="hidden" aria-hidden="true">
+            <label for="firma">Firma</label>
+            <input type="text" id="firma" name="firma" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="sm:col-span-2">
+            <label class="flex cursor-pointer items-start gap-3 text-small text-muted">
+              <input type="checkbox" name="datenschutz" required class="mt-1 h-4 w-4 accent-[var(--color-oxide)]" />
+              <span>
+                Ich habe die <a href="/datenschutz/" class="link-line text-ink">Datenschutzerklärung</a> gelesen
+                und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden.
+              </span>
+            </label>
+          </div>
+
+          <p id="form-error" class="hidden text-small text-oxide sm:col-span-2" role="alert">
+            Das hat leider nicht geklappt. Bitte prüfen Sie die markierten Felder oder rufen Sie uns an:
+            <a href={`tel:${SITE.contact.phone}`} class="link-line">{SITE.contact.phoneDisplay}</a>
+          </p>
+
+          <div class="sm:col-span-2">
+            <button
+              type="submit"
+              class="group/btn inline-flex h-12 items-center gap-3 bg-oxide px-6 text-small font-medium text-white transition-colors duration-300 hover:bg-oxide-deep"
+            >
+              Beratungstermin anfragen
+              <svg class="h-4 w-4 transition-transform duration-300 ease-[var(--ease-out-quart)] group-hover/btn:translate-x-1" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M1 8h13M9 3l5 5-5 5" />
+              </svg>
+            </button>
+          </div>
+        </form>
+
+        <!-- Erfolgszustand -->
+        <div id="form-success" class="mt-12 hidden border border-line bg-stone p-8" role="status">
+          <p class="font-display text-title font-medium">Danke – Ihre Anfrage ist da.</p>
+          <p class="prose-measure mt-3 text-body text-muted">
+            Wir melden uns innerhalb eines Werktags bei Ihnen. Wenn es schneller gehen soll:
+            <a href={`tel:${SITE.contact.phone}`} class="link-line text-ink">{SITE.contact.phoneDisplay}</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Kontakt + Ablauf -->
+      <aside class="lg:col-span-4 lg:col-start-9">
+        <div class="border-y border-line py-8">
+          <h2 class="text-caption font-medium text-muted">Direkter Draht</h2>
+          <p class="mt-4 text-title font-medium">
+            <a href={`tel:${SITE.contact.phone}`} class="link-line">{SITE.contact.phoneDisplay}</a>
+          </p>
+          <p class="mt-1 text-small text-muted">Mo–Fr 8–18 Uhr, Sa 10–14 Uhr</p>
+          <p class="mt-4 text-small">
+            <a href={`mailto:${SITE.contact.email}`} class="link-line">{SITE.contact.email}</a>
+          </p>
+        </div>
+
+        <div class="mt-12">
+          <h2 class="font-display text-title font-medium">So geht es weiter</h2>
+          <ol class="mt-6 space-y-8">
+            {schritte.map((s) => (
+              <li class="grid grid-cols-[auto_1fr] gap-x-5">
+                <span class="tnum pt-0.5 font-display text-title text-oxide" aria-hidden="true">{s.nr}</span>
+                <div>
+                  <h3 class="text-body font-medium">{s.titel}</h3>
+                  <p class="mt-1.5 text-small text-muted">{s.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <script>
+    // Progressive Enhancement: ohne JS klassischer POST an den Endpoint.
+    const form = document.getElementById('kontakt-form') as HTMLFormElement | null;
+    const success = document.getElementById('form-success');
+    const errorBox = document.getElementById('form-error');
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorBox?.classList.add('hidden');
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // Honeypot: still verwerfen
+      if ((form.elements.namedItem('firma') as HTMLInputElement)?.value) return;
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        if (!res.ok) throw new Error(String(res.status));
+        form.hidden = true;
+        success?.classList.remove('hidden');
+        success?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } catch {
+        errorBox?.classList.remove('hidden');
+      }
+    });
+  </script>
+</BaseLayout>

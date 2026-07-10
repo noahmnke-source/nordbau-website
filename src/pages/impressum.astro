@@ -1,0 +1,36 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE } from '@/config/site';
+---
+
+<BaseLayout
+  title="Impressum"
+  description={`Impressum der ${SITE.legalName}.`}
+  noIndex
+  breadcrumbs={[{ name: 'Impressum', href: '/impressum/' }]}
+>
+  <section class="container-site pt-16 pb-(--spacing-section)">
+    <h1 class="font-display text-display font-medium">Impressum</h1>
+
+    <div class="prose-measure mt-10 space-y-6 text-body">
+      <!-- TODO vor Launch: echte Firmendaten eintragen (Pflichtangaben nach § 5 DDG) -->
+      <p>
+        {SITE.legalName}<br />
+        {SITE.contact.street}<br />
+        {SITE.contact.zip} {SITE.contact.city}
+      </p>
+      <p>
+        Telefon: {SITE.contact.phoneDisplay}<br />
+        E-Mail: {SITE.contact.email}
+      </p>
+      <p class="text-muted">
+        Vertretungsberechtigte Geschäftsführung: [NAME EINTRAGEN]<br />
+        Handelsregister: [AMTSGERICHT + HRB EINTRAGEN]<br />
+        Umsatzsteuer-ID: [USt-IdNr. EINTRAGEN]
+      </p>
+      <p class="text-muted">
+        Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: [NAME, ANSCHRIFT EINTRAGEN]
+      </p>
+    </div>
+  </section>
+</BaseLayout>

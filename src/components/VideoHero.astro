@@ -1,0 +1,71 @@
+---
+/**
+ * Vollbild-Hero mit Video-Slot.
+ *
+ * Das Video liegt unter public/videos/hero.mp4 (liefert der Kunde nach,
+ * siehe ASSETS.md: H.264, 1920×1080, ≤ 8 MB, ohne Ton). Solange die Datei
+ * fehlt, rendert die Komponente das Poster als LCP-optimiertes <img>.
+ * Mit Video bleibt das Poster als poster-Attribut und First Paint erhalten.
+ */
+import fs from 'node:fs';
+import { unsplashWidth, unsplashSrcset } from '@/lib/img';
+
+interface Props {
+  poster: { src: string; alt: string };
+}
+
+const { poster } = Astro.props;
+const hasVideo = fs.existsSync(new URL('../../public/videos/hero.mp4', import.meta.url));
+const isUnsplash = poster.src.startsWith('https://images.unsplash.com/');
+---
+
+<section class="relative flex min-h-svh flex-col justify-end bg-graphite text-paper">
+  <div class="absolute inset-0 overflow-hidden">
+    {hasVideo ? (
+      <video
+        class="h-full w-full object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster={isUnsplash ? unsplashWidth(poster.src, 1920) : poster.src}
+        aria-hidden="true"
+        tabindex="-1"
+      >
+        <source src="/videos/hero.mp4" type="video/mp4" />
+      </video>
+    ) : (
+      <img
+        src={isUnsplash ? unsplashWidth(poster.src, 1920) : poster.src}
+        srcset={isUnsplash ? unsplashSrcset(poster.src, [768, 1080, 1600, 1920, 2400]) : undefined}
+        sizes="100vw"
+        alt={poster.alt}
+        class="h-full w-full object-cover"
+        loading="eager"
+        decoding="sync"
+        fetchpriority="high"
+      />
+    )}
+    <!-- Scrim: Lesbarkeit der Headline, unten dichter -->
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-graphite/85 via-graphite/25 to-graphite/20"
+      aria-hidden="true"
+    >
+    </div>
+  </div>
+
+  <div class="container-site relative pt-40 pb-16 lg:pb-24">
+    <slot />
+  </div>
+</section>
+
+<script>
+  // Autoplay respektiert reduzierte Bewegung
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll<HTMLVideoElement>('section video[autoplay]').forEach((v) => {
+      v.removeAttribute('autoplay');
+      v.pause();
+    });
+  }
+</script>

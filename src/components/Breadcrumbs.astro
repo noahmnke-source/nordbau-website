@@ -1,0 +1,25 @@
+---
+/** Sichtbare Brotkrumen für Unterseiten; JSON-LD kommt aus BaseLayout. */
+interface Props {
+  items: { name: string; href: string }[];
+  class?: string;
+}
+
+const { items, class: className = '' } = Astro.props;
+---
+
+<nav aria-label="Brotkrumen" class:list={['text-caption text-muted', className]}>
+  <ol class="flex flex-wrap items-center gap-2">
+    <li><a href="/" class="link-line">Startseite</a></li>
+    {items.map((item, i) => (
+      <li class="flex items-center gap-2">
+        <span aria-hidden="true">/</span>
+        {i === items.length - 1 ? (
+          <span aria-current="page" class="text-ink">{item.name}</span>
+        ) : (
+          <a href={item.href} class="link-line">{item.name}</a>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

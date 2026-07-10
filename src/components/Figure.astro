@@ -1,0 +1,51 @@
+---
+import { unsplashSrcset, unsplashWidth } from '@/lib/img';
+
+interface Props {
+  src: string;
+  alt: string;
+  /** sizes-Attribut, z. B. "(min-width: 1024px) 60vw, 100vw" */
+  sizes?: string;
+  /** Seitenverhältnis als Tailwind-Klasse, z. B. "aspect-[3/2]" */
+  ratio?: string;
+  eager?: boolean;
+  /** Scroll-Reveal (Clip von unten) */
+  reveal?: boolean;
+  /** Ruhiger Zoom bei Hover (Elternteil braucht .group) */
+  zoom?: boolean;
+  class?: string;
+  caption?: string;
+}
+
+const {
+  src,
+  alt,
+  sizes = '100vw',
+  ratio = 'aspect-[3/2]',
+  eager = false,
+  reveal = true,
+  zoom = false,
+  class: className = '',
+  caption,
+} = Astro.props;
+
+const isUnsplash = src.startsWith('https://images.unsplash.com/');
+---
+
+<figure class:list={[className]}>
+  <div class:list={['overflow-hidden bg-stone', ratio, reveal && 'reveal-media']}>
+    <img
+      src={isUnsplash ? unsplashWidth(src, 1600) : src}
+      srcset={isUnsplash ? unsplashSrcset(src) : undefined}
+      sizes={isUnsplash ? sizes : undefined}
+      alt={alt}
+      loading={eager ? 'eager' : 'lazy'}
+      decoding={eager ? 'sync' : 'async'}
+      fetchpriority={eager ? 'high' : undefined}
+      class:list={['h-full w-full object-cover', zoom && 'img-zoom']}
+    />
+  </div>
+  {caption && (
+    <figcaption class="mt-3 text-caption text-muted">{caption}</figcaption>
+  )}
+</figure>

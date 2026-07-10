@@ -1,0 +1,203 @@
+---
+import '@/styles/global.css';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { SITE } from '@/config/site';
+
+interface Breadcrumb {
+  name: string;
+  href: string;
+}
+
+interface Props {
+  /** Seitentitel ohne Suffix; Suffix wird automatisch angehängt */
+  title: string;
+  description: string;
+  /** Voller Titel ohne Suffix (z. B. Startseite) */
+  fullTitle?: boolean;
+  ogImage?: string;
+  /** Header startet transparent über einem dunklen Hero */
+  heroOverlay?: boolean;
+  breadcrumbs?: Breadcrumb[];
+  /** Zusätzliche JSON-LD-Objekte (z. B. FAQPage) */
+  jsonLd?: Record<string, unknown>[];
+  noIndex?: boolean;
+}
+
+const {
+  title,
+  description,
+  fullTitle = false,
+  ogImage = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+  heroOverlay = false,
+  breadcrumbs,
+  jsonLd = [],
+  noIndex = false,
+} = Astro.props;
+
+const pageTitle = fullTitle ? title : `${title} | ${SITE.name}`;
+const canonical = new URL(Astro.url.pathname, SITE.url).href;
+
+// Organisation als @graph mit WebSite-Knoten; Typwahl und Felder nach
+// Google-Doku-Recherche (docs/research/jsonld.json). Kein aggregateRating
+// (self-serving) und kein LocalBusiness ohne echte Standortadresse.
+const organizationLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['HomeAndConstructionBusiness', 'GeneralContractor'],
+      '@id': `${SITE.url}/#organization`,
+      name: SITE.name,
+      legalName: SITE.legalName,
+      alternateName: SITE.name,
+      url: `${SITE.url}/`,
+      logo: {
+        '@type': 'ImageObject',
+        '@id': `${SITE.url}/#logo`,
+        url: `${SITE.url}/favicon.svg`,
+        caption: SITE.legalName,
+      },
+      description:
+        'Plant und baut schlüsselfertige und individuell geplante Fertighäuser in Holztafelbauweise – bundesweit, im Effizienzhaus-40-Standard und mit Festpreisgarantie.',
+      slogan: SITE.claim,
+      foundingDate: String(SITE.foundingYear),
+      telephone: SITE.contact.phone,
+      email: SITE.contact.email,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: SITE.contact.street,
+        postalCode: SITE.contact.zip,
+        addressLocality: SITE.contact.city,
+        addressCountry: 'DE',
+      },
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          contactType: 'sales',
+          telephone: SITE.contact.phone,
+          email: SITE.contact.email,
+          availableLanguage: ['de'],
+          areaServed: 'DE',
+        },
+      ],
+      areaServed: {
+        '@type': 'Country',
+        name: 'Deutschland',
+        sameAs: 'https://www.wikidata.org/wiki/Q183',
+      },
+      priceRange: '€€€',
+      knowsAbout: [
+        'Fertighaus',
+        'Schlüsselfertiges Bauen',
+        'Holztafelbau',
+        'Effizienzhaus 40',
+        'Individuelle Architektenhäuser',
+        'KfW-Förderung',
+      ],
+      sameAs: Object.values(SITE.social),
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE.url}/#website`,
+      url: `${SITE.url}/`,
+      name: SITE.name,
+      inLanguage: 'de-DE',
+      publisher: { '@id': `${SITE.url}/#organization` },
+    },
+  ],
+};
+
+const breadcrumbLd = breadcrumbs?.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Startseite', item: `${SITE.url}/` },
+        ...breadcrumbs.map((crumb, i) => ({
+          '@type': 'ListItem',
+          position: i + 2,
+          name: crumb.name,
+          item: new URL(crumb.href, SITE.url).href,
+        })),
+      ],
+    }
+  : null;
+
+const allJsonLd = [organizationLd, breadcrumbLd, ...jsonLd].filter(Boolean);
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noIndex && <meta name="robots" content="noindex, follow" />}
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#26221f" />
+
+    <link rel="preload" href="/fonts/Boska-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Switzer-Variable.woff2" as="font" type="font/woff2" crossorigin />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    {allJsonLd.map((ld) => (
+      <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+    ))}
+
+    <!-- Früh, damit Reveal-Startzustände nur mit JS greifen (kein FOUC, kein leerer Inhalt ohne JS) -->
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
+  </head>
+  <body>
+    <a
+      href="#inhalt"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[var(--z-toast)] focus:bg-oxide focus:px-5 focus:py-3 focus:text-small focus:font-medium focus:text-white"
+    >
+      Zum Inhalt springen
+    </a>
+
+    <Header overlay={heroOverlay} />
+
+    <main id="inhalt">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <script>
+      // Scroll-Reveals: sichtbarer Default, JS veredelt nur.
+      const revealTargets = document.querySelectorAll('.reveal, .reveal-media');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (reduceMotion) {
+        revealTargets.forEach((el) => el.classList.add('is-visible'));
+      } else if (revealTargets.length) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            }
+          },
+          { rootMargin: '0px 0px -10% 0px', threshold: 0.1 }
+        );
+        revealTargets.forEach((el) => observer.observe(el));
+      }
+    </script>
+  </body>
+</html>

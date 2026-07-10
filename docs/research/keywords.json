@@ -1,0 +1,225 @@
+{
+  "money_keywords": [
+    {
+      "keyword": "fertighaus schlüsselfertig",
+      "intent": "transaktional – sucht Komplettanbieter mit bezugsfertiger Übergabe",
+      "target_page": "startseite"
+    },
+    {
+      "keyword": "fertighaus bauen",
+      "intent": "transaktional/kommerziell – generischer Einstieg in die Anbieterwahl, hohes Volumen",
+      "target_page": "startseite"
+    },
+    {
+      "keyword": "fertighaus anbieter",
+      "intent": "kommerziell – Anbieter-Shortlist, Vertrauenssignale entscheidend",
+      "target_page": "startseite"
+    },
+    {
+      "keyword": "fertighaus preise",
+      "intent": "kommerziell – Preisorientierung vor Anfrage, sucht €/m²-Angaben und Beispielrechnungen",
+      "target_page": "ratgeber"
+    },
+    {
+      "keyword": "fertighaus schlüsselfertig preise",
+      "intent": "kommerziell – konkrete Kostenerwartung für die schlüsselfertige Ausbaustufe",
+      "target_page": "ratgeber"
+    },
+    {
+      "keyword": "hausbau anbieter vergleich",
+      "intent": "kommerziell – Vergleichsphase, sucht Entscheidungskriterien (Festpreis, Gewährleistung, Referenzen)",
+      "target_page": "ratgeber"
+    },
+    {
+      "keyword": "stadtvilla bauen",
+      "intent": "transaktional – konkreter Haustyp-Wunsch, kaufkräftige Zielgruppe",
+      "target_page": "haustyp-detail"
+    },
+    {
+      "keyword": "bungalow fertighaus",
+      "intent": "transaktional – ebenerdiges/barrierefreies Bauen, oft Best Ager mit hohem Budget",
+      "target_page": "haustyp-detail"
+    },
+    {
+      "keyword": "einfamilienhaus bauen",
+      "intent": "transaktional – Kernzielgruppe Familien, hohes Suchvolumen",
+      "target_page": "haustyp-detail"
+    },
+    {
+      "keyword": "fertighaus stadtvilla preise",
+      "intent": "kommerziell – Preisabfrage zu konkretem Haustyp, kurz vor Anfrage",
+      "target_page": "haustyp-detail"
+    },
+    {
+      "keyword": "doppelhaus bauen fertighaus",
+      "intent": "transaktional – Mehrgenerationen- oder Investitionsmotiv",
+      "target_page": "haustyp-detail"
+    },
+    {
+      "keyword": "haus mit einliegerwohnung bauen",
+      "intent": "transaktional – kaufkräftige Bauherren mit Vermietungs-/Mehrgenerationenabsicht",
+      "target_page": "haustyp-detail"
+    },
+    {
+      "keyword": "architektenhaus fertighaus",
+      "intent": "transaktional – Premium-Segment, individuelle Planung statt Katalog",
+      "target_page": "haustypen"
+    },
+    {
+      "keyword": "fertighaus individuell planen",
+      "intent": "transaktional – Differenzierung vom Typenhaus, Premium-Anspruch",
+      "target_page": "haustypen"
+    },
+    {
+      "keyword": "luxus fertighaus",
+      "intent": "kommerziell – gehobenes Segment ab ca. 4.000 €/m², kleine aber kaufkräftige Nische",
+      "target_page": "haustypen"
+    },
+    {
+      "keyword": "effizienzhaus 40 bauen",
+      "intent": "kommerziell – förderorientierte Bauinteressenten (KfW 297/298)",
+      "target_page": "haustypen"
+    },
+    {
+      "keyword": "musterhaus besichtigen",
+      "intent": "transaktional/lokal – hohe Abschlussnähe, sucht Ausstellungsstandort in der Nähe",
+      "target_page": "standorte"
+    },
+    {
+      "keyword": "fertighaus erfahrungen",
+      "intent": "kommerziell – Validierungsphase, sucht echte Bauherrenstimmen und gebaute Projekte",
+      "target_page": "referenzen"
+    },
+    {
+      "keyword": "hausbau ablauf schlüsselfertig",
+      "intent": "kommerziell/informational – will Prozesssicherheit vor der Anfrage (Planung, Bauantrag, Montage)",
+      "target_page": "ablauf"
+    },
+    {
+      "keyword": "hausbau beratung termin",
+      "intent": "transaktional – unmittelbare Kontaktabsicht",
+      "target_page": "kontakt"
+    }
+  ],
+  "informational_keywords": [
+    "fertighaus oder massivhaus",
+    "was kostet ein fertighaus",
+    "fertighaus preise pro qm 2026",
+    "hausbau kosten 2026",
+    "fertighaus nachteile",
+    "wie lange hält ein fertighaus",
+    "fertighaus bauzeit",
+    "kfw förderung neubau 2026",
+    "kfw 297 klimafreundlicher neubau",
+    "kfw 300 wohneigentum für familien einkommensgrenze",
+    "effizienzhaus 40 anforderungen",
+    "baunebenkosten hausbau",
+    "grunderwerbsteuer bundesländer",
+    "eigenleistung hausbau sparen",
+    "muskelhypothek eigenkapital",
+    "ausbauhaus oder schlüsselfertig",
+    "festpreisgarantie hausbau",
+    "gewährleistung neubau 5 jahre",
+    "holztafelbauweise vorteile",
+    "grundstück finden tipps",
+    "bebauungsplan was ist erlaubt",
+    "hausbau finanzierung eigenkapital wie viel",
+    "bemusterung fertighaus ablauf",
+    "wärmepumpe neubau pflicht",
+    "fertighaus mit keller oder bodenplatte"
+  ],
+  "faq": [
+    {
+      "question": "Was kostet ein Fertighaus pro Quadratmeter im Jahr 2026?",
+      "answer": "Ein schlüsselfertiges Fertighaus kostet 2026 im Median rund 2.800 Euro pro Quadratmeter Wohnfläche; die mittlere Spanne liegt bei etwa 2.400 bis 3.300 Euro. Im gehobenen Segment sind 3.000 bis 4.000 Euro pro Quadratmeter üblich, im Premiumbereich auch bis rund 4.500 Euro. Hinzu kommen Grundstück und Baunebenkosten, die nicht im Hauspreis enthalten sind."
+    },
+    {
+      "question": "Was kostet ein schlüsselfertiges Fertighaus mit 150 m² Wohnfläche?",
+      "answer": "Bei 2.400 bis 3.300 Euro pro Quadratmeter ergeben sich für 150 m² rund 360.000 bis 500.000 Euro reine Hausbaukosten; im Durchschnitt liegt ein solches Haus 2026 bei etwa 420.000 bis 450.000 Euro. Grundstück, Erschließung und Baunebenkosten kommen hinzu. Ausstattung, Keller, Haustechnik und Region beeinflussen den Preis deutlich."
+    },
+    {
+      "question": "Wie lange dauert der Bau eines Fertighauses?",
+      "answer": "Die vorgefertigten Wand- und Deckenelemente werden auf der Baustelle in nur ein bis zwei Tagen wetterfest montiert. Die reine Bauzeit inklusive Innenausbau beträgt etwa acht bis zehn Wochen; vom Vertragsabschluss bis zum Einzug vergehen inklusive Planung, Bauantrag und Werksfertigung in der Regel sechs bis acht Monate. Die witterungsunabhängige Vorfertigung im Werk minimiert Verzögerungsrisiken."
+    },
+    {
+      "question": "Fertighaus oder Massivhaus – was ist besser?",
+      "answer": "Preislich haben sich beide Bauweisen weitgehend angeglichen: Schlüsselfertige Fertighäuser liegen 2026 bei etwa 2.400 bis 3.300 Euro pro Quadratmeter, Massivhäuser bei 2.500 bis 3.600 Euro. Das Fertighaus punktet mit kurzer Bauzeit, hoher Fertigungsqualität aus dem Werk und einer besseren CO₂-Bilanz durch den Holzbau. Entscheidend ist, welche Bauweise Ihre individuellen Wünsche am wirtschaftlichsten umsetzt."
+    },
+    {
+      "question": "Welche KfW-Förderung gibt es 2026 für den Hausbau?",
+      "answer": "Über das Programm „Klimafreundlicher Neubau\" (KfW 297/298) gibt es zinsverbilligte Kredite bis 150.000 Euro pro Wohneinheit; Voraussetzung ist mindestens der Effizienzhaus-40-Standard. Anfang 2026 lag der Zinssatz für EH 40 bei rund 0,6 Prozent (10 Jahre Zinsbindung); das befristet geförderte EH-55-Niveau (ca. 1,0 Prozent) läuft zum 31.12.2026 aus. Familien können alternativ das Programm KfW 300 nutzen – beide Programme sind für dieselbe Wohneinheit nicht kombinierbar."
+    },
+    {
+      "question": "Wer bekommt die Familienförderung KfW 300 „Wohneigentum für Familien\"?",
+      "answer": "Gefördert werden Haushalte mit mindestens einem Kind unter 18 Jahren und einem zu versteuernden Haushaltseinkommen von maximal 90.000 Euro pro Jahr bei einem Kind, plus 10.000 Euro je weiterem Kind. Der zinsgünstige Kredit beträgt bis zu 170.000 Euro, mit QNG-Nachhaltigkeitssiegel bis 220.000 Euro, jeweils plus 5.000 Euro je Kind (Deckel: 270.000 Euro). Voraussetzung ist ein klimafreundlicher Neubau mindestens im Effizienzhaus-40-Standard."
+    },
+    {
+      "question": "Welchen Energiestandard erfüllt ein modernes Fertighaus?",
+      "answer": "Moderne Fertighäuser in Holztafelbauweise erreichen dank hochgedämmter Gebäudehülle standardmäßig sehr gute Effizienzwerte und werden meist als Effizienzhaus 40 angeboten – die Voraussetzung für die KfW-Neubauförderung. Wärmepumpe, kontrollierte Wohnraumlüftung und Photovoltaik-Vorbereitung gehören bei Premium-Anbietern in der Regel zum Standard. Das senkt die Betriebskosten dauerhaft und sichert die Werthaltigkeit."
+    },
+    {
+      "question": "Was bedeutet „schlüsselfertig\" genau?",
+      "answer": "„Schlüsselfertig\" ist kein gesetzlich definierter Begriff – jeder Anbieter legt den Leistungsumfang in seiner Bau- und Leistungsbeschreibung selbst fest. Üblicherweise ist das Haus bezugsfertig; Malerarbeiten, Bodenbeläge oder Außenanlagen sind je nach Vertrag aber ausgenommen. Prüfen Sie die Leistungsbeschreibung daher im Detail und vergleichen Sie Angebote nur bei identischem Leistungsumfang."
+    },
+    {
+      "question": "Wie lange habe ich Gewährleistung auf mein Fertighaus?",
+      "answer": "Beim Bauvertrag nach BGB gilt eine Gewährleistungsfrist von fünf Jahren, beginnend mit der Bauabnahme. In dieser Zeit muss das Bauunternehmen auftretende Mängel auf eigene Kosten beseitigen. Seriöse Anbieter bieten darüber hinaus oft erweiterte Garantien auf die Baukonstruktion – ein wichtiges Qualitätssignal beim Anbietervergleich."
+    },
+    {
+      "question": "Was ist eine Festpreisgarantie und wie lange gilt sie?",
+      "answer": "Mit der Festpreisgarantie sichert der Anbieter zu, dass der vereinbarte Hauspreis auch bei steigenden Material- oder Lohnkosten unverändert bleibt. Sie ist fast immer befristet – üblich sind 12 Monate ab Vertragsabschluss, manche Anbieter bieten auch längere Fristen. Wichtig: Der Festpreis gilt nur für den vertraglich fixierten Leistungsumfang; spätere Sonderwünsche werden separat berechnet."
+    },
+    {
+      "question": "Wie viel Geld kann ich durch Eigenleistung sparen?",
+      "answer": "Mit Eigenleistungen wie Malern, Bodenlegen oder Außenanlagen lassen sich laut Bauherrenschutzbund realistisch etwa 10.000 bis 25.000 Euro sparen. Banken erkennen die „Muskelhypothek\" mit bis zu 15 Prozent der Darlehenssumme, meist gedeckelt bei rund 25.000 bis 30.000 Euro, als Eigenkapitalersatz an. Wer mehr selbst übernehmen will, wählt ein Ausbauhaus – kalkulieren Sie den Zeitaufwand aber realistisch (mehrere hundert Arbeitsstunden)."
+    },
+    {
+      "question": "Wie hoch sind die Baunebenkosten beim Hausbau?",
+      "answer": "Planen Sie zusätzlich zum Haus- und Grundstückspreis etwa 15 bis 20 Prozent der Gesamtkosten für Baunebenkosten ein. Dazu zählen die Grunderwerbsteuer (3,5 bis 6,5 Prozent je nach Bundesland), Notar und Grundbuch (ca. 1,5 bis 2 Prozent), Baugenehmigung, Bodengutachten, Versicherungen und gegebenenfalls Erschließungskosten von 10.000 bis 30.000 Euro. Ein seriöser Anbieter weist diese Positionen transparent in der Gesamtkalkulation aus."
+    },
+    {
+      "question": "Brauche ich schon ein Grundstück, bevor ich ein Fertighaus plane?",
+      "answer": "Ein Grundstück ist die Grundlage der konkreten Planung, denn der Bebauungsplan bestimmt, welche Haustypen, Dachformen und Geschosszahlen zulässig sind. Viele Fertighaus-Anbieter unterstützen ihre Kunden aktiv bei der Grundstückssuche über regionale Netzwerke. Eine erste Beratung und Budgetplanung ist aber auch ohne Grundstück sinnvoll."
+    },
+    {
+      "question": "Wie lange hält ein Fertighaus?",
+      "answer": "Moderne Fertighäuser erreichen bei hochwertiger Ausführung und regelmäßiger Wartung eine Lebensdauer von 70 bis 100 Jahren – vergleichbar mit Massivhäusern. Technisch getrocknetes Konstruktionsvollholz und die präzise Vorfertigung in trockenen Werkshallen verhindern die Feuchte- und Schadstoffprobleme älterer Baujahre. Der Wiederverkaufswert hängt heute primär von Lage, Zustand und Energieeffizienz ab, nicht von der Bauweise."
+    },
+    {
+      "question": "Kann ich ein Fertighaus komplett individuell planen?",
+      "answer": "Ja – neben Typenhäusern bieten Premium-Hersteller frei geplante Architektenhäuser in Holztafelbauweise an, bei denen Grundriss, Fassade, Dachform und Ausstattung individuell entworfen werden. Die Vorfertigung im Werk schränkt die Gestaltungsfreiheit kaum noch ein. Individuelle Planung kostet mehr als ein Kataloghaus, bietet dafür aber ein Unikat mit passgenauem Grundriss."
+    },
+    {
+      "question": "Muss ich beim Hausbau in Vorleistung gehen?",
+      "answer": "Nein, seriöse Anbieter arbeiten mit Zahlungsplänen nach Baufortschritt: Raten werden erst fällig, wenn die jeweilige Bauleistung erbracht und geprüft ist. Der Bauvertrag nach BGB begrenzt Abschlagszahlungen auf den Wert der erbrachten Leistung, zusätzlich sichern Vertragserfüllungs- und Gewährleistungsbürgschaften die Bauherren ab. Lassen Sie den Zahlungsplan vor Unterschrift von einem unabhängigen Experten prüfen."
+    }
+  ],
+  "local_modifiers": [
+    "fertighaus bauen bayern",
+    "fertighaus baden-württemberg",
+    "fertighaus nrw / nordrhein-westfalen",
+    "fertighaus hessen",
+    "fertighaus niedersachsen",
+    "haus bauen münchen umland",
+    "haus bauen stuttgart",
+    "haus bauen hamburg umland",
+    "haus bauen berlin brandenburg",
+    "haus bauen rhein-main / frankfurt",
+    "musterhaus besichtigen [stadt/region]",
+    "fertighaus anbieter in der nähe"
+  ],
+  "copy_guidelines": [
+    "Tonalität: durchgehend Sie-Form, ruhig und souverän statt marktschreierisch – Premium zeigt sich durch Präzision, Materialsprache (Architektur, Holztafelbau, Detailqualität) und Verzicht auf Ausrufezeichen und Superlativ-Inflation.",
+    "H1: exakt eine H1 pro Seite mit dem primären Keyword in natürlicher Wortstellung plus konkretem Nutzenversprechen (z. B. \"Fertighaus schlüsselfertig bauen – individuell geplant, zum Festpreis\"); H2/H3 tragen Sekundär-Keywords und echte W-Fragen im People-also-ask-Wortlaut.",
+    "Meta-Title 50–60 Zeichen mit dem Fokus-Keyword möglichst vorn und der Marke am Ende; Meta-Description 150–160 Zeichen mit konkretem Mehrwert, Zahl oder USP und klarem Call-to-Action.",
+    "Textlänge nach Seitentyp: Money-Pages (Haustypen, Startseite) 600–1.000 Wörter mit klarer Conversion-Führung, Ratgeber- und Preisseiten 1.200–2.000 Wörter mit echter Informationstiefe – keine Füllabsätze, jede Passage muss eine Nutzerfrage beantworten.",
+    "Konkrete Zahlen statt Adjektive: Preise pro m² mit Jahresbezug (\"2026\"), Bauzeit in Wochen, KfW-Konditionen mit Programmnummer, Gewährleistungsfristen – Zahlen schaffen im Premium-Segment mehr Vertrauen als jedes \"hochwertig\".",
+    "Floskel-Blacklist konsequent anwenden: \"Ihr Traum vom Eigenheim\", \"Wohnträume verwirklichen\", \"alles aus einer Hand\", \"Qualität, die überzeugt\" streichen – stattdessen belegbare Aussagen (5 Jahre Gewährleistung, 12 Monate Festpreisgarantie, Effizienzhaus 40 ab Werk, dokumentierte Referenzprojekte).",
+    "Keywords natürlich einsetzen: Fokus-Keyword in H1, erster Absatz, einer H2 und Meta-Daten; danach semantische Varianten (Effizienzhaus, Holztafelbauweise, Architektenhaus, bezugsfertig) statt Wiederholung – kein Keyword-Stuffing, Lesbarkeit schlägt Dichte.",
+    "E-E-A-T sichtbar machen: Autoren- bzw. Expertenangaben bei Ratgebertexten, Quellen zu KfW/GEG verlinken, Aktualisierungsdatum ausweisen, echte Projektfotos und Bauherren-Zitate statt Stockmaterial – Google und kaufkräftige Leser honorieren nachprüfbare Expertise.",
+    "FAQ-Abschnitte mit FAQPage-Schema (strukturierte Daten) auszeichnen und die Fragen im echten Suchwortlaut formulieren (\"Was kostet ein Fertighaus pro qm?\") – Antworten in 2–4 Sätzen, die auch als Featured Snippet funktionieren.",
+    "Scanbarkeit: Absätze mit maximal 3–4 Sätzen, aussagekräftige Zwischenüberschriften alle 150–250 Wörter, Preistabellen und Checklisten als strukturierte Elemente – gerade Premium-Kunden lesen selektiv und erwarten schnelle Orientierung.",
+    "CTA-Sprache dem Kaufprozess anpassen: bei einem 400.000-Euro-Produkt konvertieren beratende CTAs (\"Persönliches Beratungsgespräch vereinbaren\", \"Musterhaus besuchen\", \"Grundstücks-Check anfragen\") besser als Druck-CTAs (\"Jetzt sichern\") – pro Seite ein primärer CTA, konsistent wiederholt.",
+    "Interne Verlinkung als Themencluster: Ratgeberartikel (Preise, Förderung, Bauzeit) verlinken mit beschreibenden Ankertexten auf die passenden Money-Pages (Haustyp, Ablauf, Kontakt) und umgekehrt – so vererbt informationaler Traffic Relevanz an die Conversion-Seiten."
+  ]
+}

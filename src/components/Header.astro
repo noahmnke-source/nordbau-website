@@ -1,0 +1,196 @@
+---
+import Button from '@/components/Button.astro';
+import { SITE } from '@/config/site';
+
+interface Props {
+  /** true: startet transparent über dunklem Hero, wird beim Scrollen fest */
+  overlay?: boolean;
+}
+
+const { overlay = false } = Astro.props;
+const path = Astro.url.pathname;
+
+const nav = [
+  { label: 'Haustypen', href: '/haustypen/' },
+  { label: 'Referenzen', href: '/referenzen/' },
+  { label: 'Ablauf', href: '/ablauf/' },
+  { label: 'Über uns', href: '/ueber-uns/' },
+  { label: 'Ratgeber', href: '/ratgeber/' },
+];
+
+const isActive = (href: string) => path === href || (href !== '/' && path.startsWith(href));
+---
+
+<header
+  id="site-header"
+  data-overlay={overlay ? 'true' : undefined}
+  class:list={[
+    'top-0 right-0 left-0 z-[var(--z-sticky)] transition-colors duration-300',
+    overlay ? 'fixed text-paper' : 'sticky border-b border-line bg-bg text-ink',
+  ]}
+>
+  <div class="container-site flex h-20 items-center justify-between gap-8">
+    <a href="/" class="font-display text-[1.45rem] font-medium tracking-tight" aria-label={`${SITE.name} – Startseite`}>
+      {SITE.name}
+    </a>
+
+    <nav aria-label="Hauptnavigation" class="hidden lg:block">
+      <ul class="flex items-center gap-8">
+        {nav.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+              class:list={[
+                'link-line text-small font-medium',
+                isActive(item.href) && 'bg-[length:100%_1px]',
+              ]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="hidden lg:block">
+      <Button href="/kontakt/" variant={overlay ? 'inverted' : 'primary'} arrow={false} class="header-cta h-11 px-5">
+        Beratung vereinbaren
+      </Button>
+    </div>
+
+    <button
+      id="menu-toggle"
+      type="button"
+      class="-mr-2 flex h-12 w-12 items-center justify-center lg:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Menü öffnen"
+    >
+      <span class="menu-icon relative block h-3 w-6">
+        <span class="absolute top-0 left-0 h-px w-full bg-current transition-transform duration-300"></span>
+        <span class="absolute bottom-0 left-0 h-px w-full bg-current transition-transform duration-300"></span>
+      </span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile-Menü: Vollbild in Graphite -->
+<div
+  id="mobile-menu"
+  class="pointer-events-none fixed inset-0 z-[var(--z-overlay)] bg-graphite text-paper opacity-0 transition-opacity duration-300 lg:hidden"
+  hidden
+>
+  <div class="container-site flex h-full flex-col pt-28 pb-10">
+    <nav aria-label="Mobile Navigation">
+      <ul class="space-y-2">
+        {nav.map((item, i) => (
+          <li
+            class="mobile-nav-item translate-y-4 opacity-0 transition-all duration-500 ease-[var(--ease-out-expo)]"
+            style={`transition-delay: ${80 + i * 50}ms`}
+          >
+            <a
+              href={item.href}
+              class="font-display text-[2.25rem] leading-tight font-medium"
+              aria-current={isActive(item.href) ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="mt-auto space-y-6">
+      <Button href="/kontakt/" variant="primary" class="w-full justify-center">
+        Beratung vereinbaren
+      </Button>
+      <div class="flex flex-col gap-1 text-small text-paper-muted">
+        <a href={`tel:${SITE.contact.phone}`} class="link-line self-start">{SITE.contact.phoneDisplay}</a>
+        <a href={`mailto:${SITE.contact.email}`} class="link-line self-start">{SITE.contact.email}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Overlay-Header wird nach dem ersten Scroll fest und hell */
+  #site-header[data-overlay].is-scrolled {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  /* Menü offen: Icon wird zum X */
+  #menu-toggle[aria-expanded='true'] .menu-icon span:first-child {
+    transform: translateY(5.5px) rotate(45deg);
+  }
+  #menu-toggle[aria-expanded='true'] .menu-icon span:last-child {
+    transform: translateY(-5.5px) rotate(-45deg);
+  }
+
+  #mobile-menu.is-open {
+    pointer-events: auto;
+    opacity: 1;
+  }
+  #mobile-menu.is-open .mobile-nav-item {
+    transform: none;
+    opacity: 1;
+  }
+
+  :global(html.menu-open) {
+    overflow: hidden;
+  }
+  /* Menü-Button bleibt über dem Overlay bedienbar */
+  :global(html.menu-open) #site-header {
+    z-index: var(--z-modal);
+    background: transparent;
+    color: var(--color-paper);
+    border-color: transparent;
+  }
+</style>
+
+<script>
+  const header = document.getElementById('site-header');
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+
+  // Overlay-Header: fest + hell nach 24px Scroll
+  if (header?.dataset.overlay) {
+    const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  // Mobile-Menü
+  if (toggle && menu) {
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      document.documentElement.classList.toggle('menu-open', open);
+      if (open) {
+        menu.hidden = false;
+        requestAnimationFrame(() => menu.classList.add('is-open'));
+        menu.querySelector<HTMLElement>('a')?.focus({ preventScroll: true });
+      } else {
+        menu.classList.remove('is-open');
+        window.setTimeout(() => {
+          menu.hidden = true;
+        }, 300);
+        toggle.focus({ preventScroll: true });
+      }
+    };
+
+    toggle.addEventListener('click', () => {
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') setOpen(false);
+    });
+
+    menu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setOpen(false));
+    });
+  }
+</script>

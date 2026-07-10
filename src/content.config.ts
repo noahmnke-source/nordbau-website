@@ -1,0 +1,93 @@
+import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
+
+/** Bildreferenz: Unsplash-Stand-in oder lokales Projektfoto (siehe ASSETS.md) */
+const imageRef = z.object({
+  src: z.string(),
+  alt: z.string(),
+  /** true = Stand-in, das später durch ein echtes Projektfoto ersetzt wird */
+  standIn: z.boolean().default(false),
+});
+
+const faqItem = z.object({
+  q: z.string(),
+  a: z.string(),
+});
+
+const haustypen = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/haustypen' }),
+  schema: z.object({
+    name: z.string(),
+    /** Kurzer Untertitel, z. B. "Zwei Vollgeschosse. Klare Kante." */
+    tagline: z.string(),
+    order: z.number(),
+    hero: imageRef,
+    gallery: z.array(imageRef).default([]),
+    facts: z.object({
+      wohnflaeche: z.string(),
+      geschosse: z.string(),
+      dachform: z.string(),
+      bauweise: z.string().default('Holztafelbau, werkseitig vorgefertigt'),
+      energiestandard: z.string(),
+      preisAb: z.string(),
+    }),
+    seoTitle: z.string(),
+    seoDescription: z.string(),
+    faq: z.array(faqItem).default([]),
+  }),
+});
+
+const referenzen = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/referenzen' }),
+  schema: z.object({
+    title: z.string(),
+    ort: z.string(),
+    jahr: z.number(),
+    kategorie: z.enum(['Neubau', 'Stadtvilla', 'Bungalow', 'Aufstockung', 'Bauhaus', 'Doppelhaus']),
+    order: z.number(),
+    hero: imageRef,
+    gallery: z.array(imageRef).default([]),
+    facts: z.object({
+      wohnflaeche: z.string(),
+      bauzeit: z.string(),
+      energiestandard: z.string(),
+    }),
+    /** Ein Zitat der Baufamilie für die Case Study */
+    zitat: z.object({ text: z.string(), von: z.string() }).optional(),
+    seoTitle: z.string(),
+    seoDescription: z.string(),
+  }),
+});
+
+const standorte = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/standorte' }),
+  schema: z.object({
+    name: z.string(),
+    /** Kurzform für Footer/Links, z. B. "Bayern", "München & Umland" */
+    kurzname: z.string(),
+    typ: z.enum(['bundesland', 'metropolregion']),
+    order: z.number(),
+    hero: imageRef,
+    /** Regionaler Aufhänger mit echtem lokalem Mehrwert */
+    intro: z.string(),
+    localKeywords: z.array(z.string()),
+    cities: z.array(z.string()),
+    seoTitle: z.string(),
+    seoDescription: z.string(),
+    faq: z.array(faqItem).default([]),
+  }),
+});
+
+const ratgeber = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/ratgeber' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z.coerce.date(),
+    hero: imageRef,
+    seoTitle: z.string(),
+    seoDescription: z.string(),
+  }),
+});
+
+export const collections = { haustypen, referenzen, standorte, ratgeber };

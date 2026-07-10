@@ -1,0 +1,187 @@
+{
+  "competitors": [
+    {
+      "company": "WeberHaus",
+      "tagline": "Wir bauen Ihr Haus, als wäre es unser eigenes.",
+      "positioning": "Ökologischer Holz-Fertighausbau: 'Individuell, nachhaltig & schlüsselfertig'. Spagat zwischen vorgeplanten Baureihen und frei geplanten Architektenhäusern; Nachhaltigkeit mit konkretem Fakt untermauert ('1 m³ Holz bindet 1 t CO₂').",
+      "notable_patterns": [
+        "H1 rein kategorial-deskriptiv: 'Ökologische Fertighäuser aus Holz' (SEO-orientiert, wenig emotional)",
+        "Erlebniswelt als eigener Nav-Punkt ('World of Living') — Marke als Ausflugsziel",
+        "Emotionaler Trust über Sponsoring (SC Freiburg Exklusivpartner) statt nur Siegel",
+        "CTA-Mix aus Katalog ('Jetzt kostenlos bestellen'), Tool ('Zum Hausfinder') und Besuch ('Jetzt Besuch planen')"
+      ]
+    },
+    {
+      "company": "Bien-Zenker",
+      "tagline": "Träume bauen, Zukunft leben",
+      "positioning": "Volumenanbieter mit Autoritäts-Framing: '115 Jahre Erfahrung', 'Made in Germany', 'über 80.000 gebaute Häuser'. Sicherheit über harte Garantien: '30 Jahre Gewährleistung', '18 Monate Festpreisgarantie', '100 % Termintreue'.",
+      "notable_patterns": [
+        "Erfahrungs-Claim direkt im Meta-Title: 'Fertighaus bauen mit Bien-Zenker – 115 Jahre Erfahrung mit Fertighäusern'",
+        "H1 als Caps-Lock-Imperativ: 'DAMIT AUS WÜNSCHEN WIRKLICHKEIT WIRD: JETZT FERTIGHAUS BAUEN!' — laut, Volumensegment-Ästhetik",
+        "Massive Siegel-Batterie (ProvenExpert, MIB, FAZ, DGNB Gold/Platin, QNG, Kundenchampions) — Siegel-Friedhof-Effekt",
+        "Überladene Navigation mit 12 Punkten inkl. beliebiger Labels ('Let's do it!', 'Was macht Sie glücklich?')",
+        "Eigenes KI-Tool als CTA ('CASAI ausprobieren') und PLZ-basierte Hausberater-Suche"
+      ]
+    },
+    {
+      "company": "FingerHaus",
+      "tagline": "Der sicherste Weg zu Ihrem Zuhause",
+      "positioning": "Sicherheits- und Risiko-Umkehr-Positionierung: 'FingerHaus setzt das Unerwartete beim Hausbau vor die Tür' — adressiert explizit versteckte Baukosten, Bauverzögerungen, Handwerkermangel. Architektenplanung plus Inklusivleistungen, '95 % Weiterempfehlungsquote'.",
+      "notable_patterns": [
+        "Stärkstes Angst-Adressierungs-Muster der Branche: Prozessrisiken werden benannt und einzeln entkräftet",
+        "Testsieger-Siegel mit Quelle: 'Testsieger Fertighausanbieter Service 2024 (DISQ/ntv)', Focus Money, CrefoZert, RAL, QDF",
+        "Kunden-Homestories mit echten Namen und Fotos ('Sarah und Sebastian Scholz') statt anonymer Zitate",
+        "Selbstbewusstes Nav-Label 'Darum FingerHaus' statt generischem 'Vorteile'",
+        "Getrennte Service-Navigation für Bauherren vs. Hausbesitzer (Lifecycle-Denken)"
+      ]
+    },
+    {
+      "company": "Huf Haus",
+      "tagline": "Das Original. Seit 1912.",
+      "positioning": "Echtes Premium-/Luxussegment: 'europäischer Marktführer für moderne Fachwerkarchitektur', 'architektonische Statements aus Holz und Glas', 'Das Fertighaus der Extraklasse', 'Jedes Haus ist ein Unikat'. Herkunft und Originalität als USP.",
+      "notable_patterns": [
+        "H1 als Herkunfts-/Autoritätsclaim ohne Keyword-Stuffing: 'HUF HAUS – Das Original. Seit 1912.'",
+        "Nur ~5 kuratierte, wertige CTAs ('Kostenfreie Beratung vereinbaren', 'Broschüre anfordern') statt CTA-Flut",
+        "Schlanke Navigation (7 Punkte) mit 'Planung & Preise' als transparentem Premium-Signal",
+        "Stilbruch: SEO-Sonderzeichen 'ᐅ' im Meta-Title ('Fertighaus bauen ᐅ Premium-Häuser von HUF HAUS') passt nicht zur Premium-Anmutung",
+        "Trust über Generationen-Kontinuität ('vierte Generation') und 'Betreuung über die Gewährleistung hinaus'"
+      ]
+    },
+    {
+      "company": "SchwörerHaus",
+      "tagline": "Hier bin ich daheim",
+      "positioning": "Vollsortimenter mit 'Alles aus einer Hand' (Planung, Fertigung, Montage, Service), 'Über 48.000 zufriedene Bauherren' seit 1950, CO₂-neutrale Produktion. Breiteste Produktpalette (Einfamilienhaus bis Tiny House 'FlyingSpaces' und Objektbau).",
+      "notable_patterns": [
+        "Langzeit-Kundenstimmen als Qualitätsbeweis: 'Vor 22 Jahren bauten Sie unser SchwörerHaus. Es sieht noch immer top aus!'",
+        "Dichteste Siegel-Sammlung: Fairster Fertighausanbieter 2025, Deutscher Nachhaltigkeitspreis, CrefoZert, Sentinel, QDF/BDF ('35 Jahre Mitgliedschaft')",
+        "Rabatt-Aktion prominent auf der Startseite ('PV-Aktion 2026: 5.000 Euro Bonus') — Volumensegment-Signal, bricht Wertigkeit",
+        "Sehr breite Navigation (12 Punkte) — Vollsortiment erschwert Fokus",
+        "Achtsprachige Sprachauswahl als internationales Signal"
+      ]
+    },
+    {
+      "company": "Baufritz",
+      "tagline": "Die Manufaktur für individuell geplante Holzhäuser",
+      "positioning": "Premium-Öko-Nische mit Gesundheits-USP: 'Ihre Gesundheit ist unser wichtigster Baustoff', 'Ein gesundes Zuhause ist kein Zufall. Es ist eine Entscheidung.' Manufaktur-Framing, 130 Jahre, baubiologische Zertifikate (natureplus, VDB).",
+      "notable_patterns": [
+        "H1 definiert eine eigene Kategorie ('Die Manufaktur für…') statt Keyword-H1 — bestes Premium-H1-Muster im Feld",
+        "Award-Haltung mit Meta-Kommentar: 'Nicht gekauft. Sondern ehrlich verdient.' — Siegel werden erzählt, nicht gestapelt",
+        "15+ ausführliche Homestories mit Familiennamen und Langzeitbezug ('leben seit zehn Jahren in unserem Baufritz-Haus')",
+        "Eigenes Nav-Wort 'Baubiologie' als Kompetenz-Claim in der Hauptnavigation",
+        "Kuratiertes Tool 'STYLEFINDER' statt Preis-Konfigurator — vermeidet Preisvergleichslogik"
+      ]
+    },
+    {
+      "company": "OKAL",
+      "tagline": "Ankommen beginnt hier.",
+      "positioning": "Emotionales Storytelling-Rebranding eines Traditionsanbieters (seit 1928, 'Über 90.000 Häuser in knapp 100 Jahren', 'Die Nr. 1 aus guten Gründen') mit durchgängiger Du-Ansprache und Leitmotiv 'Ankommen'.",
+      "notable_patterns": [
+        "Konsequente Du-Ansprache ('Gemeinsam zu deinem Zuhause') — bewusste Verjüngung, für kaufkräftige Premium-Klientel untypisch",
+        "Durchgängiges sprachliches Leitmotiv ('Ankommen beginnt hier', 'Geschichten vom Ankommen') statt Feature-Listen",
+        "Radikal reduzierte, verbale Navigation: 'Finden | Bauen | Leben | OKAL'",
+        "Live-Bewertungs-Widget als Trust: '4,7/5 Sterne, 273 Bewertungen auf ProvenExpert.com'",
+        "Schwäche: viele generische 'Mehr erfahren'-Buttons trotz starker Markensprache"
+      ]
+    },
+    {
+      "company": "Hanse Haus",
+      "tagline": "Heimkommen. Erleben. Wohlfühlen.",
+      "positioning": "Testsieger- und Fairness-Positionierung: Meta-Title 'Ihr Haus bauen mit dem Testsieger', '13. Mal in Folge: fairster Fertighausanbieter', 'effizient, förderbar und schlüsselfertig zum Festpreis', 'Ausgezeichnetes Preis-Leistungs-Verhältnis'.",
+      "notable_patterns": [
+        "Auszeichnung als komplette Meta-Title-Strategie — Fremdvalidierung vor Eigenclaim",
+        "Serien-Testsieg als Trust-Verstärker ('13. Mal in Folge') — Wiederholung schlägt Einzelsiegel",
+        "Emotionale Formel 'Zuhause ist kein Ort, sondern ein Gefühl' kombiniert mit hartem Festpreis-Versprechen",
+        "Direkter Konfigurator-CTA auf der Startseite ('Jetzt Haus konfigurieren')",
+        "Kompakte einzeilige Navigation mit 6 Punkten"
+      ]
+    },
+    {
+      "company": "Fertighaus WEISS",
+      "tagline": "Aus Haus wird Zuhause",
+      "positioning": "Familienunternehmen-Positionierung: 'individuelle Architektenhäuser aus einer Hand', 'seit 1881', 'Familienunternehmen in 4. und 5. Generation', ca. 220 Architektenhäuser pro Jahr — bewusst begrenzte Stückzahl als Qualitätssignal.",
+      "notable_patterns": [
+        "H1 in Ich-/Besitzperspektive: 'MEIN FERTIGHAUS VON WEISS: AUS HAUS WIRD ZUHAUSE'",
+        "Design-Awards statt nur Bau-Siegel: Red Dot, German Design Award, Hausbau Design Award, Musterhauspreis",
+        "'Familienunternehmen' als eigener Hauptnavigationspunkt — Herkunft als Produktmerkmal",
+        "Schwächste CTAs im Feld: 'Mehr Informationen', 'weiterlesen', 'Jetzt informieren' — verschenktes Conversion-Potenzial",
+        "Jahresproduktionszahl (220 Häuser/Jahr) als implizites Exklusivitätssignal"
+      ]
+    },
+    {
+      "company": "LUXHAUS",
+      "tagline": "Design. Innovation. Nachhaltigkeit.",
+      "positioning": "Design-Premium-Anspruch: 'Individuelle Architektenhäuser mit Wohlfühlklima', 'Jedes Haus ist ein Unikat – frei geplant, maßgeschneidert', seit 1924 familiengeführt in vierter Generation. Klima/Behaglichkeit als technischer USP im Title.",
+      "notable_patterns": [
+        "Meta-Title führt mit Kategorie + Differenzierungsattribut statt 'Fertighaus bauen': 'Individuelle Architektenhäuser mit Wohlfühlklima | LUXHAUS'",
+        "Minimalistischster CTA-Satz des Feldes: nur 'Infos anfordern' und 'Termin anfordern' — ruhig, aber wenig Führung",
+        "Unkonventionelle, knappe Nav-Labels: 'Gute Gründe', 'Hautnah' — eigenständig, aber teils erklärungsbedürftig",
+        "Dreiwort-Claim-Rhythmus ('Design. Innovation. Nachhaltigkeit.') als Premium-Sprachmuster",
+        "Denglisch-Sektion 'Get Inspired' wirkt im sonst deutschen Premium-Kontext beliebig"
+      ]
+    }
+  ],
+  "meta_title_patterns": [
+    "Dominantes Muster 'Fertighaus bauen mit [Marke]' + Differenzierungszusatz: 'Fertighaus bauen mit Bien-Zenker – 115 Jahre Erfahrung', 'Fertighaus bauen mit Baufritz - Ökologische Holzhäuser'",
+    "Keyword vorn + Nutzen-Adjektiv-Trias: 'WeberHaus Fertighäuser: Individuell, nachhaltig & schlüsselfertig'",
+    "Trust-Claim direkt im Title: '115 Jahre Erfahrung' (Bien-Zenker), 'mit dem Testsieger' (Hanse Haus)",
+    "Premium-Variante ohne 'Fertighaus'-Fokus: 'Individuelle Architektenhäuser mit Wohlfühlklima | LUXHAUS' — Kategorie-Upgrade von 'Fertighaus' zu 'Architektenhaus'",
+    "SEO-Klickköder-Sonderzeichen bei Huf Haus ('Fertighaus bauen ᐅ Premium-Häuser…') — verbreiteter Lead-Gen-Trick, der Premium-Anmutung beschädigt",
+    "Länge durchgängig ca. 50–65 Zeichen, Marke entweder am Anfang (WeberHaus, Fertighaus WEISS) oder als Suffix nach Pipe (LUXHAUS, Baufritz)",
+    "Das Wort 'schlüsselfertig' taucht in Titles/Claims von WeberHaus, SchwörerHaus und Hanse Haus auf — relevantes Kaufkriterium mit Suchvolumen"
+  ],
+  "h1_patterns": [
+    "Typ 1 — kategorial/SEO-deskriptiv (Volumenanbieter): 'Ökologische Fertighäuser aus Holz' (WeberHaus), 'Fertighäuser von FingerHaus', 'Schwörer-Häuser im Überblick'",
+    "Typ 2 — emotional/identitätsstiftend: '_Ankommen_ beginnt hier.' (OKAL), 'MEIN FERTIGHAUS VON WEISS: AUS HAUS WIRD ZUHAUSE', 'Heimkommen. Erleben. Wohlfühlen.' (Hanse Haus)",
+    "Typ 3 — Herkunfts-/Kategorie-Claim (Premium): 'HUF HAUS – Das Original. Seit 1912.', 'Die Manufaktur für individuell geplante Holzhäuser' (Baufritz), 'Individuelle Architektenplanung' (LUXHAUS)",
+    "Typ 4 — Caps-Lock-Imperativ mit Handlungsaufforderung: 'DAMIT AUS WÜNSCHEN WIRKLICHKEIT WIRD: JETZT FERTIGHAUS BAUEN!' (Bien-Zenker) — lautestes, am wenigsten premium wirkendes Muster",
+    "Klares Segment-Signal: Je höher die Preisklasse (Huf, Baufritz, LUXHAUS), desto weniger Keyword in der H1 und desto mehr Haltung/Kategoriedefinition",
+    "Wiederkehrende H2-Muster darunter: 'Warum mit X bauen?' / 'Gute Argumente für X' / 'Darum X' (Vorteils-Sektion) und 'Finden Sie Ihr Traumhaus' (Hausfinder-Sektion)"
+  ],
+  "cta_patterns": [
+    "Katalog/Infopaket ist der universelle Lead-Magnet (alle 10 Anbieter): 'Katalog bestellen', 'Hauskatalog anfordern', 'Infopaket bestellen', 'Broschüre anfordern', 'Infomaterial bestellen'",
+    "Beratungs-/Termin-CTA als High-Intent-Pfad: 'Kostenfreie Beratung vereinbaren' (Huf), 'PERSÖNLICHE BERATUNG VEREINBAREN' (Bien-Zenker), 'Jetzt beraten lassen' (FingerHaus), 'Termin anfordern' (LUXHAUS)",
+    "Interaktive Tool-CTAs als dritter Pfad: 'Zum Hausfinder' / 'Hausfinder starten', 'Jetzt Haus konfigurieren' (Hanse), 'Traumhaus konfigurieren' + 'STYLEFINDER STARTEN' (Baufritz), 'CASAI ausprobieren' (Bien-Zenker)",
+    "Erlebnis-/Besuchs-CTAs: 'Jetzt Besuch planen' (WeberHaus), 'Musterhäuser in Ihrer Nähe finden' (Huf), 'Bauinfotag erleben' (FingerHaus), 'Jetzt OKAL live erleben'",
+    "'Jetzt'-Präfix als allgegenwärtiger Dringlichkeitsmarker ('Jetzt sichern', 'Jetzt entdecken', 'Jetzt freischalten') — im Volumensegment inflationär",
+    "'Entdecken' als weiches Einladungsverb ('Häuser entdecken', 'Vorteile entdecken', 'Sorgenfreien Hausbau entdecken')",
+    "Anti-Pattern: generische Buttons 'Mehr erfahren' / 'Mehr Informationen' / 'weiterlesen' (Fertighaus WEISS, OKAL, SchwörerHaus) — kein Nutzenversprechen, kein Zielbild",
+    "Menge korreliert invers mit Preissegment: Premium-Anbieter zeigen 4–5 kuratierte CTAs (Huf, LUXHAUS), Volumenanbieter 12+ (FingerHaus, Bien-Zenker)"
+  ],
+  "trust_elements": [
+    "Gründungsjahr/Erfahrungsdauer bei allen 10: 'Seit 1912/1881/1924/1928/1929/1950/1960', '115/130/114/75 Jahre Erfahrung' — Pflicht-Element der Branche",
+    "Gebaute-Häuser-/Bauherren-Zähler: 'über 80.000 gebaute Häuser' (Bien-Zenker), 'Über 90.000 Häuser' (OKAL), 'Über 48.000 zufriedene Bauherren' (Schwörer), '> 39.000 Bauherren' (Hanse), '7.000 Kunden' (WEISS)",
+    "Garantie-Pakete als härteste Kaufargumente: '30 Jahre Gewährleistung auf die Grundkonstruktion', '18 Monate Festpreisgarantie', '100 % Termintreue' (Bien-Zenker); 'Festpreisgarantie' (Huf, Schwörer, Hanse)",
+    "Testsiege mit Quelle und Serialität: 'Testsieger Fertighausanbieter Service 2024 (DISQ/ntv)', '13. Mal in Folge: fairster Fertighausanbieter' (Hanse), 'Fairster Fertighausanbieter 2025' (Schwörer), Focus Money",
+    "Branchen-/Qualitätssiegel: QDF, BDF, RAL Gütezeichen Holzbau, DGNB Gold/Platin, QNG, CrefoZert, natureplus, VDB, Sentinel (Wohngesundheit)",
+    "Live-Bewertungen: ProvenExpert '4,7/5 Sterne, 273 Bewertungen' (OKAL), '95 % Weiterempfehlungsquote' (FingerHaus)",
+    "Familienunternehmen in 4./5. Generation als Kontinuitätsbeweis (Huf, Baufritz, WEISS, LUXHAUS) — typisches Premium-Signal",
+    "Homestories mit echten Namen, Fotos und Langzeitbezug: 'Vor 22 Jahren bauten Sie unser SchwörerHaus…', 'seit zehn Jahren in unserem Baufritz-Haus' — glaubwürdigste Form der Kundenstimme",
+    "Award-Haltung statt Award-Stapel: Baufritz kommentiert seine Preise mit 'Nicht gekauft. Sondern ehrlich verdient.'",
+    "Mitarbeiterzahlen als Stabilitätssignal: 'über 900' (Bien-Zenker), 'mehr als 1.000' (Hanse), '420' (WEISS)"
+  ],
+  "navigation_patterns": [
+    "Universeller Kern: Häuser | Bauweise/Technik | Erleben (Musterhäuser/Events) | Service | Unternehmen | Kontakt — 'Häuser' ist bei allen der erste Punkt",
+    "Haustypologie als Untermenü-Standard: Einfamilienhaus, Bungalow, Stadtvilla, Doppelhaus, Mehrfamilienhaus, frei geplante Häuser",
+    "Zwei Lager: schlank mit 5–7 Punkten (Huf, Baufritz, LUXHAUS, WEISS, Hanse) vs. überladen mit 10–12 Punkten (Bien-Zenker, SchwörerHaus, FingerHaus) — Premium korreliert mit Reduktion",
+    "Markeneigene Nav-Labels statt Generika: 'Darum FingerHaus', 'Gute Gründe' & 'Hautnah' (LUXHAUS), 'World of Living' (WeberHaus), 'Baubiologie' (Baufritz), 'Finden | Bauen | Leben' (OKAL)",
+    "Erlebnis-Ebene als eigener Punkt fast überall: Musterhäuser, virtuelle 360°-Rundgänge, Bauinfotage, Werksbesichtigung",
+    "Karriere in der Hauptnavigation bei den meisten Volumenanbietern (Fachkräftemangel) — verwässert die Kunden-Journey",
+    "Persistente Kontakt-/Berater-Einstiege: PLZ-Suche 'Hausberater finden' (Bien-Zenker), 'Berater Finden' (Schwörer) als Sticky-Element",
+    "Lifecycle-Trennung als Differenzierung: FingerHaus unterscheidet 'Services für Bauherren' und 'Services für Hausbesitzer'; Schwörer hat einen 'Kundenbereich'"
+  ],
+  "takeaways": [
+    "ÜBERNEHMEN — Trust-Zahlen-Trias sichtbar im ersten Viewport: Gründungsjahr + gebaute Häuser + Festpreis-/Gewährleistungsversprechen. Alle 10 Wettbewerber führen damit; ohne diese Elemente wirkt ein Anbieter im Vergleich riskant.",
+    "ÜBERNEHMEN — Drei-Pfade-Conversion-Architektur: (1) Erstgespräch/Beratung für High-Intent, (2) Katalog/Infopaket für Early-Stage-Leads, (3) Musterhaus-/Werksbesuch als Erlebnispfad. Jede Sektion endet in genau einem dieser Pfade, nicht in 'Mehr erfahren'.",
+    "ÜBERNEHMEN — Homestories nach Baufritz/FingerHaus-Vorbild: echte Familiennamen, Fotos, Langzeitbezug ('wohnen seit 10 Jahren…') und konkrete Details statt anonymer Sterne-Testimonials — das stärkste Trust-Muster im Feld.",
+    "ÜBERNEHMEN — Risiko-Umkehr-Sektion (FingerHaus-Muster): versteckte Kosten, Bauverzögerung, Handwerkermangel explizit benennen und mit Festpreis, Termintreue und Inklusivleistungen entkräften. Kaufkräftige Bauherren haben primär Prozess-, nicht Preisangst.",
+    "ÜBERNEHMEN — Meta-Title mit 'Fertighaus'-Keyword plus echter Differenzierung (z. B. '[Marke] – Individuell geplante Architektenhäuser, schlüsselfertig zum Festpreis'); LUXHAUS zeigt das Kategorie-Upgrade von 'Fertighaus' zu 'Architektenhaus' als Premium-Framing.",
+    "ANDERS MACHEN — H1 als Kategorie-/Haltungs-Claim statt Keyword- oder Imperativ-H1: Vorbild 'Die Manufaktur für individuell geplante Holzhäuser' (Baufritz) und 'Das Original. Seit 1912.' (Huf); Anti-Vorbild 'JETZT FERTIGHAUS BAUEN!' in Caps (Bien-Zenker).",
+    "ANDERS MACHEN — kein Siegel-Friedhof: statt 8+ Logos in einer Leiste 3–4 kuratierte Auszeichnungen mit je einem Satz Kontext und Haltung ('Nicht gekauft. Sondern ehrlich verdient.', Baufritz). Serialität betonen, wenn vorhanden ('13. Mal in Folge', Hanse).",
+    "ANDERS MACHEN — CTA-Disziplin statt 'Jetzt'-Spam: wenige, präzise, wertige Button-Texte ('Erstgespräch vereinbaren', 'Werkbesichtigung planen', 'Referenzhäuser ansehen') nach Huf/LUXHAUS-Vorbild; generische 'Mehr erfahren'-Buttons komplett vermeiden.",
+    "ANDERS MACHEN — keine Rabatt-/Aktionsbanner im Heldenbereich (Anti-Vorbild Schwörer 'PV-Aktion 5.000 € Bonus'): bricht Premium-Anmutung und zieht Preiskäufer an; Aktionen höchstens tief in der Journey.",
+    "ANDERS MACHEN — Sie-Ansprache beibehalten: OKALs Du passt zum Volumensegment; alle Premium-Player (Huf, Baufritz, LUXHAUS) siezen. Ton: ruhig, präzise, wenig Ausrufezeichen, keine Denglisch-Sektionen ('Get Inspired', 'Let's do it!' wirken beliebig).",
+    "ANDERS MACHEN — Navigation radikal auf max. 6 Punkte reduzieren (Vorbild Huf/Baufritz/LUXHAUS), Karriere/News ins Sekundärmenü; ein bis zwei markeneigene Labels mit Substanz ('Manufaktur', 'Ihr Weg zum Haus', 'Referenzen') statt Generika oder verrätselter Begriffe.",
+    "ANDERS MACHEN — statt Preis-Konfigurator einen kuratierten Stil-/Architekturfinder anbieten (Baufritz 'Stylefinder'-Muster): hält die Marke aus der Preisvergleichslogik heraus und passt zur individuellen Planung; 'Planung & Preise' als transparente Info-Seite (Huf) schafft trotzdem Preisvertrauen.",
+    "KEIN TEMPLATE-LOOK — die Volumenanbieter texten dicht, stapeln Sektionen und Siegel; die Premium-Anbieter zeigen große Architekturfotografie mit wenig Text. Differenzierung entsteht durch weniger Sektionen, ein durchgängiges sprachliches Leitmotiv (OKAL-'Ankommen'-Muster, aber auf Sie-Ebene) und redaktionelle Bild-Text-Dramaturgie statt Card-Grids."
+  ]
+}

@@ -1,0 +1,23 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Button from '@/components/Button.astro';
+---
+
+<BaseLayout
+  title="Seite nicht gefunden"
+  description="Diese Seite existiert nicht oder wurde verschoben."
+  noIndex
+>
+  <section class="container-site flex min-h-[60vh] flex-col items-start justify-center py-(--spacing-section)">
+    <p class="tnum font-display text-hero font-medium text-oxide">404</p>
+    <h1 class="mt-4 font-display text-display font-medium">Diese Seite ist noch nicht gebaut.</h1>
+    <p class="prose-measure mt-4 text-body text-muted">
+      Die angeforderte Adresse existiert nicht oder wurde verschoben.
+      Vielleicht finden Sie auf einer dieser Seiten, wonach Sie suchen:
+    </p>
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/" variant="primary">Zur Startseite</Button>
+      <Button href="/haustypen/" variant="secondary">Haustypen ansehen</Button>
+    </div>
+  </section>
+</BaseLayout>

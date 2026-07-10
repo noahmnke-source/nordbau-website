@@ -1,0 +1,336 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import VideoHero from '@/components/VideoHero.astro';
+import Button from '@/components/Button.astro';
+import Figure from '@/components/Figure.astro';
+import SectionIntro from '@/components/SectionIntro.astro';
+import FaqAccordion from '@/components/FaqAccordion.astro';
+import { IMG } from '@/data/assets';
+import { SITE } from '@/config/site';
+import { buildFaqJsonLd } from '@/lib/seo';
+
+const haustypTeaser = [
+  {
+    name: 'Stadtvilla',
+    href: '/haustypen/stadtvilla/',
+    fakt: 'ab 145 m² · zwei Vollgeschosse',
+    img: IMG.stadtvilla,
+  },
+  {
+    name: 'Bungalow',
+    href: '/haustypen/bungalow/',
+    fakt: 'ab 95 m² · eine Ebene',
+    img: IMG.bungalowGold,
+  },
+  {
+    name: 'Bauhaus',
+    href: '/haustypen/bauhaus/',
+    fakt: 'ab 130 m² · Flachdach',
+    img: IMG.bauhausWinter,
+  },
+];
+
+const ablauf = [
+  {
+    nr: '01',
+    titel: 'Erstgespräch',
+    text: 'Grundstück, Budget, Zeitplan – wir hören zu und sagen ehrlich, was geht.',
+  },
+  {
+    nr: '02',
+    titel: 'Entwurf & Festpreis',
+    text: 'Ihr Architektenentwurf mit verbindlichem Festpreisangebot, 12 Monate garantiert.',
+  },
+  {
+    nr: '03',
+    titel: 'Bemusterung',
+    text: 'Ein Tag im Bemusterungszentrum: Fassade, Böden, Bäder – Sie entscheiden am Material.',
+  },
+  {
+    nr: '04',
+    titel: 'Fertigung im Werk',
+    text: 'Wand- und Deckenelemente entstehen witterungsgeschützt, millimetergenau, geprüft.',
+  },
+  {
+    nr: '05',
+    titel: 'Montage & Übergabe',
+    text: 'In zwei Tagen wetterfest, nach acht bis zehn Wochen schlüsselfertig übergeben.',
+  },
+];
+
+// TODO vor Launch: Zahlen durch echte Firmendaten ersetzen
+const zahlen = [
+  { wert: `seit ${SITE.foundingYear}`, label: 'Fertighäuser in Holztafelbauweise, geplant und gebaut in Deutschland' },
+  { wert: '1.250+', label: 'übergebene Häuser – jedes mit dokumentierter Qualitätsprüfung im Werk' },
+  { wert: '12 Monate', label: 'Festpreisgarantie ab Vertragsabschluss, unabhängig von Materialpreisen' },
+  { wert: 'EH 40', label: 'Effizienzhaus-Standard ab Werk – Voraussetzung für die KfW-Förderung 297/298' },
+];
+
+const faq = [
+  {
+    q: 'Was kostet ein Fertighaus pro Quadratmeter im Jahr 2026?',
+    a: 'Ein schlüsselfertiges Fertighaus kostet 2026 im Median rund 2.800 Euro pro Quadratmeter Wohnfläche; die mittlere Spanne liegt bei etwa 2.400 bis 3.300 Euro. Im gehobenen Segment sind 3.000 bis 4.000 Euro pro Quadratmeter üblich. Grundstück und Baunebenkosten kommen hinzu.',
+  },
+  {
+    q: 'Wie lange dauert der Bau eines Fertighauses?',
+    a: 'Die vorgefertigten Elemente werden in ein bis zwei Tagen wetterfest montiert; inklusive Innenausbau beträgt die Bauzeit etwa acht bis zehn Wochen. Vom Vertrag bis zum Einzug vergehen mit Planung, Bauantrag und Werksfertigung in der Regel sechs bis acht Monate.',
+  },
+  {
+    q: 'Was bedeutet „schlüsselfertig“ genau?',
+    a: '„Schlüsselfertig“ ist kein gesetzlich definierter Begriff – den Leistungsumfang legt die Bau- und Leistungsbeschreibung fest. Bei uns heißt es: bezugsfertig inklusive Bädern, Böden und Innentüren. Vergleichen Sie Angebote grundsätzlich nur bei identischem Leistungsumfang.',
+  },
+  {
+    q: 'Kann ich ein Fertighaus komplett individuell planen?',
+    a: 'Ja. Neben unseren Haustypen planen wir frei entworfene Architektenhäuser in Holztafelbauweise – Grundriss, Fassade, Dachform und Ausstattung entstehen individuell. Die Vorfertigung im Werk schränkt die Gestaltung kaum ein.',
+  },
+  {
+    q: 'Welche KfW-Förderung gibt es 2026 für den Hausbau?',
+    a: 'Über „Klimafreundlicher Neubau“ (KfW 297/298) gibt es zinsverbilligte Kredite bis 150.000 Euro pro Wohneinheit ab Effizienzhaus-40-Standard. Familien mit Kind und maximal 90.000 Euro zu versteuerndem Einkommen können alternativ KfW 300 mit bis zu 270.000 Euro nutzen.',
+  },
+];
+---
+
+<BaseLayout
+  title={`Fertighaus schlüsselfertig bauen – individuell geplant | ${SITE.name}`}
+  fullTitle
+  description="Individuell geplante Fertighäuser in Holztafelbauweise: schlüsselfertig, Effizienzhaus 40, 12 Monate Festpreisgarantie. Bundesweit. Jetzt Beratung vereinbaren."
+  heroOverlay
+  jsonLd={[buildFaqJsonLd(faq)]}
+>
+  <!-- Hero -->
+  <VideoHero poster={IMG.heroHome}>
+    <div class="max-w-3xl">
+      <h1 class="hero-line font-display text-hero font-medium">
+        Ihr Fertighaus. Individuell geplant, schlüsselfertig zum Festpreis.
+      </h1>
+      <p class="hero-line prose-measure mt-6 text-body text-paper/85" style="--line-delay: 180ms">
+        {SITE.name} plant und baut Architektenhäuser in Holztafelbauweise –
+        bundesweit, im Effizienzhaus-40-Standard, mit fünf Jahren Gewährleistung.
+      </p>
+      <div class="hero-line mt-10 flex flex-wrap items-center gap-6" style="--line-delay: 320ms">
+        <Button href="/kontakt/" variant="primary">Beratung vereinbaren</Button>
+        <a href="/referenzen/" class="link-line text-small font-medium text-paper">
+          Gebaute Häuser ansehen
+        </a>
+      </div>
+    </div>
+  </VideoHero>
+
+  <!-- USP: Statement + Belege -->
+  <section class="container-site py-(--spacing-section)">
+    <div class="grid gap-x-8 gap-y-12 lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <h2 class="reveal font-display text-display font-medium">
+          Ein Haus ist kein Produkt von der Stange. Unsere Bauweise schon&nbsp;– im besten Sinn.
+        </h2>
+        <p class="reveal prose-measure mt-8 text-body text-muted">
+          Jedes {SITE.name} entsteht zweimal: zuerst millimetergenau im Werk, dann in
+          wenigen Tagen auf Ihrem Grundstück. Die Präzision der seriellen Fertigung
+          trifft auf einen Grundriss, den es genau einmal gibt – Ihren. Das Ergebnis
+          ist planbar in Preis und Termin, ohne dass Architektur zur Verhandlungsmasse wird.
+        </p>
+        <dl class="reveal mt-12 divide-y divide-line border-y border-line">
+          <div class="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
+            <dt class="tnum font-display text-title font-medium text-oxide">12 Monate</dt>
+            <dd class="self-center text-small text-muted">Festpreisgarantie ab Vertragsabschluss – Ihr Budget bleibt Ihr Budget.</dd>
+          </div>
+          <div class="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
+            <dt class="tnum font-display text-title font-medium text-oxide">EH 40</dt>
+            <dd class="self-center text-small text-muted">Effizienzhaus 40 ab Werk: Wärmepumpe, Lüftungsanlage, PV-Vorbereitung inklusive.</dd>
+          </div>
+          <div class="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
+            <dt class="tnum font-display text-title font-medium text-oxide">8–10 Wochen</dt>
+            <dd class="self-center text-small text-muted">von der Montage bis zur schlüsselfertigen Übergabe – dokumentiert in jeder Referenz.</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="lg:col-span-4 lg:col-start-9">
+        <Figure
+          src={IMG.handwerk.src}
+          alt={IMG.handwerk.alt}
+          ratio="aspect-[4/5]"
+          sizes="(min-width: 1024px) 30vw, 100vw"
+          caption="Präzision entsteht im Werk – nicht auf der Baustelle."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Haustypen-Teaser -->
+  <section class="bg-stone py-(--spacing-section)">
+    <div class="container-site">
+      <SectionIntro
+        title="Vier Haustypen. Unendlich viele Grundrisse."
+        lead="Jeder Typ ist ein erprobtes Grundgerüst – Räume, Fassade und Details planen wir mit Ihnen neu."
+      />
+
+      <div class="mt-16 grid gap-8 lg:grid-cols-12">
+        <!-- Featured: Satteldachhaus -->
+        <a href="/haustypen/satteldachhaus/" class="group block lg:col-span-7">
+          <Figure
+            src={IMG.satteldach.src}
+            alt={IMG.satteldach.alt}
+            ratio="aspect-[4/3]"
+            sizes="(min-width: 1024px) 58vw, 100vw"
+            zoom
+          />
+          <div class="mt-5 flex items-baseline justify-between gap-4">
+            <h3 class="font-display text-title font-medium">
+              <span class="link-line">Satteldachhaus</span>
+            </h3>
+            <p class="tnum text-small text-muted">ab 120 m² · klassische Proportion</p>
+          </div>
+        </a>
+
+        <!-- Drei kompakte Typen -->
+        <div class="grid content-start gap-10 sm:grid-cols-3 lg:col-span-5 lg:grid-cols-1 lg:gap-8 lg:pl-8">
+          {haustypTeaser.map((typ) => (
+            <a href={typ.href} class="group grid grid-cols-[7rem_1fr] items-center gap-5">
+              <Figure
+                src={typ.img.src}
+                alt={typ.img.alt}
+                ratio="aspect-square"
+                sizes="7rem"
+                zoom
+                reveal={false}
+              />
+              <div>
+                <h3 class="font-display text-title font-medium">
+                  <span class="link-line">{typ.name}</span>
+                </h3>
+                <p class="tnum mt-1 text-small text-muted">{typ.fakt}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="mt-14">
+        <Button href="/haustypen/" variant="secondary">Alle Haustypen entdecken</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Referenz-Preview: ein entschiedenes Bild -->
+  <section class="py-(--spacing-section)">
+    <div class="container-site">
+      <SectionIntro
+        title="Gebaut, bezogen, bewohnt."
+        lead="Keine Renderings: Diese Häuser stehen. Mit Ort, Wohnfläche und dokumentierter Bauzeit."
+      />
+    </div>
+    <a href="/referenzen/" class="group mt-16 block">
+      <Figure
+        src={IMG.kuecheEiche.src}
+        alt={IMG.kuecheEiche.alt}
+        ratio="aspect-[3/2] sm:aspect-[21/9]"
+        sizes="100vw"
+        class="w-full"
+        zoom
+      />
+    </a>
+    <div class="container-site mt-6 flex flex-wrap items-baseline justify-between gap-4">
+      <p class="text-small text-muted">
+        Offene Wohnküche, Projekt „Haus am Hang“ – 178 m², bezogen nach sieben Monaten.
+      </p>
+      <a href="/referenzen/" class="link-line text-small font-medium">Alle Referenzen ansehen</a>
+    </div>
+  </section>
+
+  <!-- Ablauf -->
+  <section class="container-site py-(--spacing-section) pt-0">
+    <div class="grid gap-x-8 gap-y-12 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <h2 class="reveal font-display text-display font-medium">In fünf Schritten ins eigene Haus</h2>
+        <p class="reveal prose-measure mt-6 text-body text-muted">
+          Hausbau ist Vertrauenssache. Deshalb ist unser Ablauf kein Kleingedrucktes,
+          sondern Teil des Angebots – jeder Schritt mit klarem Ergebnis.
+        </p>
+        <div class="reveal mt-8">
+          <Button href="/ablauf/" variant="secondary">Den Ablauf im Detail</Button>
+        </div>
+      </div>
+      <ol class="lg:col-span-7 lg:col-start-6">
+        {ablauf.map((schritt, i) => (
+          <li
+            class:list={[
+              'reveal grid grid-cols-[4rem_1fr] gap-x-6 border-line py-7',
+              i > 0 && 'border-t',
+            ]}
+          >
+            <span class="tnum font-display text-title text-oxide" aria-hidden="true">{schritt.nr}</span>
+            <div>
+              <h3 class="text-title font-medium">{schritt.titel}</h3>
+              <p class="prose-measure mt-2 text-small text-muted">{schritt.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Zahlen / Trust: Anthrazit-Drench, Register statt Stat-Karten -->
+  <section class="bg-graphite py-(--spacing-section) text-paper">
+    <div class="container-site">
+      <h2 class="reveal font-display text-display font-medium">
+        Verlässlichkeit können Sie nachrechnen.
+      </h2>
+      <dl class="mt-14 divide-y divide-paper/10 border-y border-paper/10">
+        {zahlen.map((z) => (
+          <div class="reveal grid gap-2 py-7 sm:grid-cols-[minmax(10rem,14rem)_1fr] sm:gap-8">
+            <dt class="tnum font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-tight font-medium">{z.wert}</dt>
+            <dd class="prose-measure self-center text-body leading-relaxed text-paper-muted">{z.label}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="mt-10 max-w-2xl text-small text-paper-muted">
+        Wir arbeiten nach Bauvertrag gemäß BGB: fünf Jahre Gewährleistung ab Abnahme,
+        Abschlagszahlungen nur nach erbrachter Leistung, Bürgschaften inklusive.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="container-site py-(--spacing-section)">
+    <SectionIntro
+      title="Die Fragen, die jetzt anstehen"
+      lead="Ehrliche Antworten mit Zahlen von 2026 – ausführlicher im Ratgeber."
+    />
+    <div class="mt-14 grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-8">
+        <FaqAccordion items={faq} />
+      </div>
+      <div class="self-end lg:col-span-3 lg:col-start-10">
+        <p class="text-small text-muted">Ihre Frage ist nicht dabei?</p>
+        <div class="mt-4">
+          <Button href="/kontakt/" variant="primary">Beratung vereinbaren</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero-Ladechoreografie: Zeilen steigen versetzt auf */
+  .hero-line {
+    animation: hero-rise 0.8s var(--ease-out-expo) both;
+    animation-delay: var(--line-delay, 0ms);
+  }
+
+  @keyframes hero-rise {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-line {
+      animation: none;
+    }
+  }
+</style>
