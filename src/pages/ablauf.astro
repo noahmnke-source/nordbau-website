@@ -1,0 +1,288 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import Button from '@/components/Button.astro';
+import Figure from '@/components/Figure.astro';
+import SectionIntro from '@/components/SectionIntro.astro';
+import FaqAccordion from '@/components/FaqAccordion.astro';
+import { IMG } from '@/data/assets';
+import { buildFaqJsonLd } from '@/lib/seo';
+
+/** Die häufigsten Sorgen vor dem Hausbau – benannt und mit Fakten entkräftet. */
+const sorgen = [
+  {
+    frage: '„Was ist, wenn es am Ende teurer wird als geplant?“',
+    fakt: 'Der Festpreis gilt 12 Monate ab Vertragsabschluss – steigende Material- oder Lohnkosten sind unser Risiko. Sonderwünsche kalkulieren wir vorab schriftlich in der Bemusterung, nicht nachträglich auf der Baustelle.',
+  },
+  {
+    frage: '„Was ist, wenn sich der Bau monatelang verzögert?“',
+    fakt: 'Ihre Wände entstehen witterungsunabhängig im Werk. Die Montage dauert ein bis zwei Tage, bis zur Übergabe vergehen acht bis zehn Wochen – der Montagetermin steht verbindlich fest, sobald die Fertigung beginnt.',
+  },
+  {
+    frage: '„Was ist, wenn ich in Vorleistung gehen muss?“',
+    fakt: 'Müssen Sie nicht: Raten werden erst nach erbrachter, geprüfter Bauleistung fällig. Vertragserfüllungs- und Gewährleistungsbürgschaft sichern Sie zusätzlich ab – geregelt im Bauvertrag nach BGB.',
+  },
+];
+
+const zeiten = [
+  { label: 'Montage bis wetterfest', wert: '1–2 Tage' },
+  { label: 'Montage bis Übergabe', wert: '8–10 Wochen' },
+  { label: 'Vertrag bis Einzug', wert: '6–8 Monate' },
+];
+
+/** Echte Prozess-Sequenz – nummerierte Marker sind hier bewusst erlaubt. */
+const schritte = [
+  {
+    nr: '01',
+    titel: 'Erstgespräch',
+    absaetze: [
+      'Am Anfang steht kein Vertrag, sondern ein Gespräch: 30 Minuten Zuhören, telefonisch, online oder im Musterhaus. Wir sprechen über Ihr Grundstück – oder über die Suche danach –, über Budget, Zeitplan und darüber, wie Sie in zehn Jahren wohnen wollen. Das Gespräch ist unverbindlich und kostenfrei; Sie entscheiden danach, ob wir weitergehen.',
+      'Anschließend prüfen wir Bebauungsplan und Erschließung und rechnen Ihr Budget vollständig durch: Hauspreis, Baunebenkosten von 15 bis 20 Prozent der Gesamtkosten, Erschließung, Außenanlagen. Wir sagen Ihnen ehrlich, was mit Ihrem Budget realistisch ist – auch dann, wenn die Antwort unbequem ausfällt. Denn eine Planung, die auf geschönten Zahlen steht, holt Sie auf der Baustelle wieder ein.',
+    ],
+    ergebnis: 'Gesprächsprotokoll mit Budgetrahmen, Grundstückseinschätzung und realistischem Terminplan',
+    dauer: '30 Minuten Gespräch, danach 1–2 Wochen Prüfung',
+    img: IMG.beratung,
+    ratio: 'aspect-[4/3]',
+    textCols: 'lg:col-span-5',
+    imgCols: 'lg:col-span-6 lg:col-start-7',
+    sizes: '(min-width: 1024px) 50vw, 100vw',
+  },
+  {
+    nr: '02',
+    titel: 'Entwurf & Festpreis',
+    absaetze: [
+      'Auf Basis des Erstgesprächs entwerfen unsere Architekten Ihren Grundriss – keine Katalogseite, sondern eine Planung für Ihr Grundstück, seine Himmelsrichtungen und Ihre Art zu leben. In zwei bis drei Entwurfsrunden schärfen wir Raumfolge, Fassade und Details, bis der Plan trägt.',
+      'Parallel entsteht die Bau- und Leistungsbeschreibung. Sie legt Position für Position fest, was „schlüsselfertig“ bei uns umfasst – inklusive Bädern, Bodenbelägen und Innentüren. Auf dieser Grundlage erhalten Sie ein Festpreisangebot mit 12 Monaten Gültigkeit: Steigen Material- oder Lohnkosten, ist das unser Risiko, nicht Ihres. Erst wenn Entwurf, Leistungsumfang und Preis für Sie stimmen, unterschreiben Sie den Bauvertrag nach BGB – mit fünf Jahren Gewährleistung ab Abnahme und Zahlungsplan nach Baufortschritt. Bis dahin binden Sie sich an nichts.',
+    ],
+    ergebnis: 'Architektenentwurf, Bau- und Leistungsbeschreibung, verbindliches Festpreisangebot',
+    dauer: '4–8 Wochen',
+    img: IMG.planung,
+    ratio: 'aspect-[3/2]',
+    textCols: 'lg:col-span-5 lg:col-start-8',
+    imgCols: 'lg:col-span-6 lg:col-start-1 lg:row-start-1',
+    sizes: '(min-width: 1024px) 50vw, 100vw',
+  },
+  {
+    nr: '03',
+    titel: 'Bemusterung',
+    absaetze: [
+      'Ein Tag, an dem Ihr Haus konkret wird: Im Bemusterungszentrum entscheiden Sie am echten Material – Fassade, Dacheindeckung, Böden, Treppe, Innentüren, Fliesen, Sanitärobjekte, Elektroausstattung. Sie stehen vor den Mustern, nicht vor einem Konfigurator, und Ihre Beraterin führt Sie in sinnvoller Reihenfolge durch alle Gewerke.',
+      'Jede Entscheidung wird sofort kalkuliert: Wählen Sie über den vereinbarten Standard hinaus, sehen Sie den Aufpreis schwarz auf weiß, bevor Sie sich festlegen – nicht Wochen später auf einer Rechnung. Wenn Sie Bedenkzeit brauchen, halten wir Alternativen im Protokoll fest; entschieden wird nichts unter Druck. Am Ende ist Ihr Haus bis zur Türklinke definiert, das Bemusterungsprotokoll wird Teil des Vertrags – ab jetzt ändert sich am Preis nichts mehr, weil nichts mehr offen ist.',
+    ],
+    ergebnis: 'Bemusterungsprotokoll mit finaler Ausstattung und bestätigtem Festpreis',
+    dauer: '1 Tag im Bemusterungszentrum',
+    img: IMG.handwerk,
+    ratio: 'aspect-[4/5]',
+    textCols: 'lg:col-span-5',
+    imgCols: 'lg:col-span-5 lg:col-start-8',
+    sizes: '(min-width: 1024px) 40vw, 100vw',
+  },
+  {
+    nr: '04',
+    titel: 'Fertigung im Werk',
+    absaetze: [
+      'Während auf Ihrem Grundstück Bodenplatte oder Keller entstehen, wird Ihr Haus im Werk gebaut: Wand-, Decken- und Dachelemente in Holztafelbauweise, gefertigt aus technisch getrocknetem Konstruktionsvollholz – in beheizten Hallen, unabhängig von Regen, Frost und Baustellenlogistik. Dämmung, Fenster und Installationsebenen sind bereits ab Werk integriert, millimetergenau nach den freigegebenen Plänen.',
+      'Jedes Element durchläuft eine dokumentierte Qualitätsprüfung, bevor es die Halle verlässt: Maßhaltigkeit, Luftdichtheit der Anschlüsse, Holzfeuchte. Das ist der Kern des Fertighaus-Prinzips – die kritischen Arbeitsschritte finden dort statt, wo die Bedingungen kontrollierbar sind. Deshalb nennen wir Ihnen den Montagetermin verbindlich, sobald die Fertigung beginnt. Und auf Wunsch besichtigen Sie das Werk: Wer sehen will, wie sein Haus entsteht, ist willkommen.',
+    ],
+    ergebnis: 'Prüfprotokolle der Elemente und Ihren verbindlichen Montagetermin',
+    dauer: '6–8 Wochen, parallel zur Baustellenvorbereitung',
+    img: IMG.dachstuhl,
+    ratio: 'aspect-[3/2]',
+    textCols: 'lg:col-span-5 lg:col-start-8',
+    imgCols: 'lg:col-span-6 lg:col-start-1 lg:row-start-1',
+    sizes: '(min-width: 1024px) 50vw, 100vw',
+  },
+  {
+    nr: '05',
+    titel: 'Montage & Übergabe',
+    absaetze: [
+      'Dann geht es sichtbar schnell: Die vorgefertigten Elemente werden mit dem Kran gestellt, nach ein bis zwei Tagen steht Ihr Haus wetterfest – mit Dach, Fenstern und verschließbarer Haustür. Es folgt der Innenausbau durch unsere festen Montageteams: Haustechnik, Estrich, Bäder, Böden, Treppe, Innentüren.',
+      'Acht bis zehn Wochen nach der Montage nehmen wir Ihr Haus gemeinsam ab – Raum für Raum, mit Protokoll. Die Schlussrate wird erst nach mängelfreier Abnahme fällig; mit ihr beginnt die fünfjährige Gewährleistungsfrist nach BGB. Zur Übergabe erhalten Sie die vollständige Hausakte mit allen Plänen, Nachweisen und Wartungshinweisen, dazu die Einweisung in Wärmepumpe und Lüftungsanlage – und einen festen Ansprechpartner, der auch nach dem Einzug erreichbar bleibt.',
+    ],
+    ergebnis: 'Abnahmeprotokoll, Hausakte, Einweisung in die Haustechnik – und Ihre Schlüssel',
+    dauer: '1–2 Tage Montage, 8–10 Wochen bis zur Übergabe',
+    img: IMG.schluessel,
+    ratio: 'aspect-[4/3]',
+    textCols: 'lg:col-span-5',
+    imgCols: 'lg:col-span-6 lg:col-start-7',
+    sizes: '(min-width: 1024px) 50vw, 100vw',
+  },
+];
+
+const versprechen = [
+  {
+    wert: '12 Monate',
+    label: 'Festpreisgarantie ab Vertragsabschluss – Steigerungen bei Material und Löhnen gehen nicht zu Ihren Lasten.',
+  },
+  {
+    wert: '0 € Vorkasse',
+    label: 'Zahlung nach Baufortschritt: Raten werden erst fällig, wenn die jeweilige Bauleistung erbracht und geprüft ist.',
+  },
+  {
+    wert: '5 Jahre',
+    label: 'Gewährleistung nach BGB ab Abnahme – Mängel beseitigen wir auf unsere Kosten, dokumentiert im Protokoll.',
+  },
+  {
+    wert: '2 Bürgschaften',
+    label: 'Vertragserfüllungs- und Gewährleistungsbürgschaft sichern Ihre Zahlungen über die gesamte Bauzeit hinaus ab.',
+  },
+];
+
+const faq = [
+  {
+    q: 'Wie lange dauert der Hausbau von der Unterschrift bis zum Einzug?',
+    a: 'Vom Vertragsabschluss bis zum Einzug vergehen mit Planung, Bauantrag und Werksfertigung in der Regel sechs bis acht Monate. Die Montage der vorgefertigten Elemente dauert ein bis zwei Tage, der Innenausbau bis zur Übergabe acht bis zehn Wochen. Die witterungsunabhängige Fertigung im Werk minimiert Verzögerungsrisiken.',
+  },
+  {
+    q: 'Muss ich beim Hausbau in Vorleistung gehen?',
+    a: 'Nein. Wir arbeiten mit einem Zahlungsplan nach Baufortschritt: Raten werden erst fällig, wenn die jeweilige Bauleistung erbracht und geprüft ist. Der Bauvertrag nach BGB begrenzt Abschlagszahlungen auf den Wert der erbrachten Leistung; Vertragserfüllungs- und Gewährleistungsbürgschaft sichern Sie zusätzlich ab.',
+  },
+  {
+    q: 'Kann ich Eigenleistungen einbringen und wie viel spare ich damit?',
+    a: 'Ja. Mit Eigenleistungen wie Malern, Bodenlegen oder Außenanlagen lassen sich realistisch etwa 10.000 bis 25.000 Euro sparen. Banken erkennen diese „Muskelhypothek“ mit bis zu 15 Prozent der Darlehenssumme als Eigenkapitalersatz an, meist gedeckelt bei 25.000 bis 30.000 Euro. Welche Gewerke Sie übernehmen, legen wir vor Vertragsabschluss exakt fest.',
+  },
+  {
+    q: 'Was ist eine Festpreisgarantie und wie lange gilt sie?',
+    a: 'Mit der Festpreisgarantie bleibt der vereinbarte Hauspreis auch bei steigenden Material- oder Lohnkosten unverändert – bei uns 12 Monate ab Vertragsabschluss. Der Festpreis gilt für den vertraglich fixierten Leistungsumfang; spätere Sonderwünsche kalkulieren wir vorab schriftlich, nie nachträglich.',
+  },
+];
+---
+
+<BaseLayout
+  title="Hausbau-Ablauf: schlüsselfertig in 5 Schritten"
+  description="Der Hausbau-Ablauf schlüsselfertig erklärt: 5 Schritte vom Erstgespräch zur Übergabe, 12 Monate Festpreis, Zahlung nach Baufortschritt. Beratung vereinbaren."
+  breadcrumbs={[{ name: 'Ablauf', href: '/ablauf/' }]}
+  jsonLd={[buildFaqJsonLd(faq)]}
+>
+  <!-- Kopf: h1 + Risiko-Adressierung -->
+  <section class="container-site pt-12 pb-(--spacing-section) lg:pt-16">
+    <Breadcrumbs items={[{ name: 'Ablauf', href: '/ablauf/' }]} class="mb-10" />
+
+    <div class="grid gap-x-8 gap-y-12 lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <h1 class="font-display text-hero font-medium">
+          Der Ablauf: vom Erstgespräch zum schlüsselfertigen Haus
+        </h1>
+        <p class="prose-measure mt-6 text-body text-muted">
+          Wer baut, kauft kein fertiges Produkt, sondern einen Prozess über Monate –
+          und trägt die Sorgen gleich mit: versteckte Kosten, Verzögerungen, Vorkasse.
+          Wir beantworten sie nicht mit Versprechen, sondern mit Verträgen. Und mit
+          einem Ablauf in fünf Schritten, von denen jeder ein klares Ergebnis hat.
+        </p>
+
+        <dl class="reveal mt-12 divide-y divide-line border-y border-line">
+          {sorgen.map((s) => (
+            <div class="py-6">
+              <dt class="font-display text-title font-medium">{s.frage}</dt>
+              <dd class="prose-measure mt-3 text-small text-muted">{s.fakt}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+
+      <div class="reveal self-end lg:col-span-4 lg:col-start-9">
+        <dl class="divide-y divide-line border-y border-line">
+          {zeiten.map((z) => (
+            <div class="flex items-baseline justify-between gap-6 py-4">
+              <dt class="text-small text-muted">{z.label}</dt>
+              <dd class="tnum font-display text-title font-medium">{z.wert}</dd>
+            </div>
+          ))}
+        </dl>
+        <p class="mt-4 text-caption text-muted">
+          Richtwerte aus unseren Referenzprojekten – Ihren Terminplan erhalten Sie im Erstgespräch.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Die fünf Schritte: echte Sequenz, Text und Bild alternierend -->
+  <section class="container-site pb-(--spacing-section)">
+    <ol class="grid gap-y-(--spacing-section-sm)">
+      {schritte.map((s) => (
+        <li class="grid gap-x-8 gap-y-8 lg:grid-cols-12 lg:items-center">
+          <div class:list={['reveal', s.textCols]}>
+            <div class="flex items-baseline gap-4">
+              <span class="tnum font-display text-title text-oxide" aria-hidden="true">{s.nr}</span>
+              <h2 class="font-display text-display font-medium">{s.titel}</h2>
+            </div>
+            {s.absaetze.map((absatz) => (
+              <p class="prose-measure mt-5 text-body text-muted">{absatz}</p>
+            ))}
+            <dl class="mt-8 space-y-3 border-t border-line pt-6 text-small">
+              <div class="grid gap-1 sm:grid-cols-[8rem_1fr] sm:gap-5">
+                <dt class="font-medium">Sie erhalten</dt>
+                <dd class="text-muted">{s.ergebnis}</dd>
+              </div>
+              <div class="grid gap-1 sm:grid-cols-[8rem_1fr] sm:gap-5">
+                <dt class="font-medium">Dauer</dt>
+                <dd class="tnum text-muted">{s.dauer}</dd>
+              </div>
+            </dl>
+          </div>
+          <Figure
+            src={s.img.src}
+            alt={s.img.alt}
+            ratio={s.ratio}
+            sizes={s.sizes}
+            class={s.imgCols}
+          />
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <!-- Versprechen: Anthrazit-Drench, Hairline-Register -->
+  <section class="bg-graphite py-(--spacing-section) text-paper">
+    <div class="container-site">
+      <h2 class="reveal font-display text-display font-medium">
+        Was wir versprechen – und woran Sie uns messen
+      </h2>
+      <dl class="mt-14 divide-y divide-paper/10 border-y border-paper/10">
+        {versprechen.map((v) => (
+          <div class="reveal grid gap-2 py-7 sm:grid-cols-[minmax(10rem,15rem)_1fr] sm:gap-8">
+            <dt class="tnum font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-tight font-medium">{v.wert}</dt>
+            <dd class="prose-measure self-center text-body leading-relaxed text-paper-muted">{v.label}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="mt-10 max-w-2xl text-small text-paper-muted">
+        Alle Zusagen stehen im Bauvertrag, nicht im Prospekt. Bringen Sie zum Vergleich
+        gern die Verträge anderer Anbieter mit – wir gehen sie mit Ihnen durch.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="container-site py-(--spacing-section)">
+    <SectionIntro
+      title="Häufige Fragen zum Ablauf"
+      lead="Antworten mit den Zahlen, die 2026 gelten – ausführlicher im persönlichen Gespräch."
+    />
+    <div class="mt-14 grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-8">
+        <FaqAccordion items={faq} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Abschluss-CTA -->
+  <section class="bg-stone py-(--spacing-section)">
+    <div class="container-site grid gap-x-8 gap-y-10 lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <h2 class="reveal font-display text-display font-medium">
+          Der nächste Schritt ist ein Gespräch – kein Vertrag.
+        </h2>
+        <p class="reveal prose-measure mt-6 text-body text-muted">
+          30 Minuten am Telefon, online oder im Musterhaus: Wir klären Grundstück,
+          Budget und einen realistischen Zeitplan. Sie erhalten unser Protokoll –
+          und entscheiden dann in Ruhe.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-6 self-end lg:col-span-4 lg:col-start-9">
+        <Button href="/kontakt/" variant="primary">Beratung vereinbaren</Button>
+        <a href="/referenzen/" class="link-line text-small font-medium">Gebaute Häuser ansehen</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,230 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import Button from '@/components/Button.astro';
+import Figure from '@/components/Figure.astro';
+import SectionIntro from '@/components/SectionIntro.astro';
+import { IMG } from '@/data/assets';
+import { SITE } from '@/config/site';
+
+// TODO vor Launch: Zahlen durch echte Firmendaten ersetzen –
+// konsistent zur Startseite pflegen (seit-Jahr und Häuserzahl müssen übereinstimmen).
+const zahlen = [
+  {
+    wert: `seit ${SITE.foundingYear}`,
+    label: 'Fertighäuser in Holztafelbauweise aus einem Werk – geplant, gefertigt und montiert in Deutschland.',
+  },
+  {
+    wert: '1.250+',
+    label: 'übergebene Häuser – jedes mit dokumentierter Qualitätsprüfung im Werk und Abnahmeprotokoll.',
+  },
+  {
+    wert: '≈ 120',
+    label: 'Mitarbeitende in Planung, Fertigung und Montage – feste Teams statt wechselnder Subunternehmer.',
+  },
+  {
+    wert: '94 %',
+    label: 'unserer Baufamilien würden uns weiterempfehlen – erhoben in der Befragung ein Jahr nach Übergabe.',
+  },
+];
+
+const grundsaetze = [
+  {
+    titel: 'Gebaut wird, was gezeichnet ist.',
+    text: 'Ein Plan ist bei uns kein Vorschlag, sondern ein Versprechen. Was in Entwurf, Bau- und Leistungsbeschreibung und Bemusterungsprotokoll steht, wird so gebaut – zum vereinbarten Preis, zum vereinbarten Termin. Überraschungen auf der Baustelle sind kein Schicksal, sondern das Ergebnis unpräziser Planung. Deshalb investieren wir die Sorgfalt vorn, wo sie günstig ist, statt hinten, wo sie teuer wird.',
+    cols: 'lg:col-span-6 lg:col-start-1',
+  },
+  {
+    titel: 'Präzision ist eine Frage des Ortes.',
+    text: 'Millimeterarbeit gelingt dort, wo die Bedingungen kontrollierbar sind – nicht bei Regen auf dem Gerüst. Darum verlagern wir so viele Arbeitsschritte wie möglich ins Werk und lassen auf der Baustelle nur montieren, was dort montiert werden muss. Dass der Bau dadurch schneller wird, ist ein angenehmer Nebeneffekt. Der Grund ist ein anderer: Qualität, die man prüfen und dokumentieren kann.',
+    cols: 'lg:col-span-6 lg:col-start-5',
+  },
+  {
+    titel: 'Ein Haus ist erst fertig, wenn es sich bewährt hat.',
+    text: 'Fünf Jahre Gewährleistung nach BGB sind für uns keine Frist, die man aussitzt, sondern ein Zeitraum, in dem wir erreichbar bleiben: mit festem Ansprechpartner, Wartungshinweisen und der Hausakte, die jede Entscheidung nachvollziehbar macht. Wer ein Haus für Jahrzehnte baut, darf nach der Übergabe nicht verschwinden.',
+    cols: 'lg:col-span-6 lg:col-start-3',
+  },
+];
+---
+
+<BaseLayout
+  title={`Über uns – Fertighaus-Hersteller seit ${SITE.foundingYear}`}
+  description={`Fertighaus-Hersteller mit eigenem Werk: Holztafelbauweise, 1.250+ übergebene Häuser seit ${SITE.foundingYear}, Effizienzhaus 40. Lernen Sie ${SITE.name} kennen – im Gespräch.`}
+  breadcrumbs={[{ name: 'Über uns', href: '/ueber-uns/' }]}
+>
+  <!-- Kopf: Positionierung -->
+  <section class="container-site pt-12 lg:pt-16">
+    <Breadcrumbs items={[{ name: 'Über uns', href: '/ueber-uns/' }]} class="mb-10" />
+
+    <div class="grid gap-x-8 gap-y-10 lg:grid-cols-12">
+      <div class="lg:col-span-8">
+        <h1 class="font-display text-hero font-medium">
+          Über {SITE.name}: Ein Werk, ein Versprechen
+        </h1>
+      </div>
+      <p class="prose-measure self-end text-body text-muted lg:col-span-4 lg:col-start-9">
+        Wir nennen uns weder Baufirma noch Manufaktur, obwohl beides stimmt:
+        {SITE.name} ist ein Werk, in dem Architektenhäuser in Serie entstehen –
+        jedes nach einem eigenen Plan, alle mit derselben Präzision.
+      </p>
+    </div>
+  </section>
+
+  <!-- Auftaktbild: Material statt Stockfoto-Team -->
+  <div class="mt-14 lg:mt-20">
+    <Figure
+      src={IMG.holzMaterial.src}
+      alt={IMG.holzMaterial.alt}
+      ratio="aspect-[3/2] sm:aspect-[21/9]"
+      sizes="100vw"
+      eager
+      reveal={false}
+      class="w-full"
+    />
+    <div class="container-site mt-4">
+      <p class="text-caption text-muted">
+        Holz ist unser Werkstoff – innen als Konstruktion, außen als Fassade.
+      </p>
+    </div>
+  </div>
+
+  <!-- Haltung: großes Statement -->
+  <section class="container-site py-(--spacing-section)">
+    <div class="grid gap-x-8 gap-y-12 lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <h2 class="reveal font-display text-display font-medium">
+          Serie heißt bei uns nicht: tausendmal dasselbe Haus. Sondern: tausendmal dieselbe Sorgfalt.
+        </h2>
+        <p class="reveal prose-measure mt-8 text-body text-muted">
+          Manufaktur und Serie gelten als Gegensätze. Wir halten das für einen Irrtum.
+          Handwerkliche Sorgfalt wird besser, nicht schlechter, wenn man sie wiederholbar
+          macht: gleiche Handgriffe, gleiche Prüfungen, gleiche Toleranzen – bei jedem
+          Haus, auch bei Ihrem. Individuell ist bei uns der Entwurf. Seriell ist die
+          Präzision, mit der er gebaut wird.
+        </p>
+        <p class="reveal prose-measure mt-5 text-body text-muted">
+          Seit {SITE.foundingYear} arbeiten wir nach diesem Prinzip. Über
+          1.250&nbsp;Familien haben uns seither ihr Haus anvertraut – die meisten,
+          nachdem sie unser Werk gesehen haben.
+        </p>
+      </div>
+      <div class="lg:col-span-4 lg:col-start-9">
+        <Figure
+          src={IMG.handwerk.src}
+          alt={IMG.handwerk.alt}
+          ratio="aspect-[4/5]"
+          sizes="(min-width: 1024px) 30vw, 100vw"
+          caption="Handarbeit bleibt Handarbeit – sie wechselt nur den Ort: von der Baustelle in die Halle."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Das Werk -->
+  <section class="bg-stone py-(--spacing-section)">
+    <div class="container-site">
+      <SectionIntro
+        title="Das Werk: wo Ihr Haus zum ersten Mal gebaut wird"
+        lead="Bevor auf Ihrem Grundstück etwas passiert, entsteht Ihr Haus in unserer Fertigungshalle – Element für Element."
+      />
+
+      <div class="mt-16 grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-center">
+        <div class="reveal lg:col-span-5">
+          <p class="prose-measure text-body text-muted">
+            In der Halle herrschen Bedingungen, die keine Baustelle bieten kann:
+            konstante Temperatur, trockene Luft, exakte Auflager. Hier fertigen wir
+            Wand-, Decken- und Dachelemente in Holztafelbauweise – aus technisch
+            getrocknetem Konstruktionsvollholz mit definierter Holzfeuchte, das nicht
+            arbeitet, nicht schwindet und nicht überrascht.
+          </p>
+          <p class="prose-measure mt-5 text-body text-muted">
+            Jedes Element wird vor dem Verladen geprüft und dokumentiert: Maßhaltigkeit,
+            Anschlüsse, Dämmung, Luftdichtheit. Die Prüfprotokolle gehören zur Hausakte,
+            die Sie bei der Übergabe erhalten. Was auf der Baustelle in Tagen montiert
+            wird, ist im Werk über Wochen entstanden – kontrolliert, wiederholbar,
+            nachweisbar. Und ausgelegt auf den Effizienzhaus-40-Standard, den jedes
+            unserer Häuser ab Werk erfüllt.
+          </p>
+        </div>
+        <Figure
+          src={IMG.richtarbeiten.src}
+          alt={IMG.richtarbeiten.alt}
+          ratio="aspect-[4/3]"
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          class="lg:col-span-6 lg:col-start-7"
+        />
+      </div>
+
+      <div class="mt-16 grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-center">
+        <Figure
+          src={IMG.innenausbau.src}
+          alt={IMG.innenausbau.alt}
+          ratio="aspect-[4/5]"
+          sizes="(min-width: 1024px) 33vw, 100vw"
+          class="lg:col-span-4 lg:col-start-2"
+        />
+        <p class="reveal prose-measure text-body text-muted lg:col-span-5 lg:col-start-7">
+          Auf der Baustelle setzen unsere eigenen Montageteams die Arbeit fort – dieselben
+          Kolonnen, eingespielt über Jahre, vom Richttag bis zur letzten Innentür. So bleibt
+          die Verantwortung dort, wo sie hingehört: bei uns, vom ersten Strich bis zur
+          Schlüsselübergabe.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zahlen: Anthrazit-Drench, Register statt Stat-Karten -->
+  <section class="bg-graphite py-(--spacing-section) text-paper">
+    <div class="container-site">
+      <h2 class="reveal font-display text-display font-medium">
+        Was hinter dem Namen steht
+      </h2>
+      <dl class="mt-14 divide-y divide-paper/10 border-y border-paper/10">
+        {zahlen.map((z) => (
+          <div class="reveal grid gap-2 py-7 sm:grid-cols-[minmax(10rem,14rem)_1fr] sm:gap-8">
+            <dt class="tnum font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-tight font-medium">{z.wert}</dt>
+            <dd class="prose-measure self-center text-body leading-relaxed text-paper-muted">{z.label}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="mt-10 max-w-2xl text-small text-paper-muted">
+        Mittelständisch geführt, ein Standort, kurze Wege: Wer bei uns baut, kennt die
+        Menschen, die planen, fertigen und montieren.
+      </p>
+    </div>
+  </section>
+
+  <!-- Woran wir glauben: Fließtext-Absätze, versetzt gesetzt -->
+  <section class="container-site py-(--spacing-section)">
+    <SectionIntro title="Woran wir glauben" />
+    <div class="mt-16 grid gap-x-8 gap-y-14 lg:grid-cols-12">
+      {grundsaetze.map((g) => (
+        <div class:list={['reveal', g.cols]}>
+          <h3 class="font-display text-title font-medium">{g.titel}</h3>
+          <p class="prose-measure mt-4 text-body text-muted">{g.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Besuch + CTA -->
+  <section class="bg-stone py-(--spacing-section)">
+    <div class="container-site grid gap-x-8 gap-y-10 lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <h2 class="reveal font-display text-display font-medium">
+          Sehen Sie es sich an, bevor Sie uns glauben.
+        </h2>
+        <p class="reveal prose-measure mt-6 text-body text-muted">
+          Ein Text kann Präzision behaupten – ein Haus muss sie zeigen. Besuchen Sie
+          unser Musterhaus, öffnen Sie Fenster, Türen und Schränke, und stellen Sie
+          die Fragen, die Prospekte nicht beantworten. Oder beginnen Sie mit einem
+          Erstgespräch: 30&nbsp;Minuten, unverbindlich, mit ehrlichen Zahlen.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-6 self-end lg:col-span-4 lg:col-start-9">
+        <Button href="/kontakt/" variant="primary">Beratung vereinbaren</Button>
+        <a href="/ablauf/" class="link-line text-small font-medium">Den Ablauf im Detail</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
