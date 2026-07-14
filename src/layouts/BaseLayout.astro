@@ -54,7 +54,7 @@ const organizationLd = {
       logo: {
         '@type': 'ImageObject',
         '@id': `${SITE.url}/#logo`,
-        url: `${SITE.url}/favicon.svg`,
+        url: `${SITE.url}/logo-on-light.png`,
         caption: SITE.legalName,
       },
       description:
@@ -137,7 +137,8 @@ const allJsonLd = [organizationLd, breadcrumbLd, ...jsonLd].filter(Boolean);
     <link rel="canonical" href={canonical} />
     {noIndex && <meta name="robots" content="noindex, follow" />}
 
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="theme-color" content="#26221f" />
 

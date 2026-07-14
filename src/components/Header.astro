@@ -1,6 +1,5 @@
 ---
 import Button from '@/components/Button.astro';
-import Logo from '@/components/Logo.astro';
 import { SITE } from '@/config/site';
 
 interface Props {
@@ -31,8 +30,22 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
   ]}
 >
   <div class="container-site flex h-20 items-center justify-between gap-8">
-    <a href="/" aria-label={`${SITE.legalName} – Startseite`}>
-      <Logo variant="header" />
+    <a href="/" class="site-logo block shrink-0" aria-label={`${SITE.legalName} – Startseite`}>
+      <img
+        src="/logo-on-light.png"
+        width="417"
+        height="300"
+        alt={SITE.legalName}
+        class="logo-light h-14 w-auto"
+      />
+      <img
+        src="/logo-on-dark.png"
+        width="417"
+        height="300"
+        alt=""
+        aria-hidden="true"
+        class="logo-dark h-14 w-auto"
+      />
     </a>
 
     <nav aria-label="Hauptnavigation" class="hidden lg:block">
@@ -122,6 +135,26 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
     background: var(--color-bg);
     color: var(--color-ink);
     border-bottom: 1px solid var(--color-line);
+  }
+
+  /* Logo-Umschaltung: dunkles Logo auf hellem Grund, helles Logo auf dunklem.
+     Standard (weißer Header) zeigt die dunkle Variante. */
+  .site-logo .logo-dark {
+    display: none;
+  }
+  /* Über dem Hero (transparent, noch nicht gescrollt): helle Variante */
+  #site-header[data-overlay]:not(.is-scrolled) .site-logo .logo-light {
+    display: none;
+  }
+  #site-header[data-overlay]:not(.is-scrolled) .site-logo .logo-dark {
+    display: block;
+  }
+  /* Bei geöffnetem Mobile-Menü ist der Grund dunkel: helle Variante */
+  :global(html.menu-open) #site-header .site-logo .logo-light {
+    display: none;
+  }
+  :global(html.menu-open) #site-header .site-logo .logo-dark {
+    display: block;
   }
 
   /* Menü offen: Icon wird zum X */
