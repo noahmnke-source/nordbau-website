@@ -3,6 +3,13 @@ import { getCollection } from 'astro:content';
 import Button from '@/components/Button.astro';
 import { SITE } from '@/config/site';
 
+interface Props {
+  /** Abschluss-CTA im Footer zeigen (aus, wenn die Seite bereits einen eigenen hat) */
+  showCta?: boolean;
+}
+
+const { showCta = true } = Astro.props;
+
 const haustypen = (await getCollection('haustypen')).sort((a, b) => a.data.order - b.data.order);
 
 const year = new Date().getFullYear();
@@ -18,22 +25,24 @@ const nav = [
 ---
 
 <footer class="bg-graphite text-paper">
-  <!-- Abschluss-CTA -->
-  <div class="container-site border-b border-paper/10 py-(--spacing-section-sm)">
-    <div class="grid gap-10 lg:grid-cols-12 lg:items-end">
-      <div class="lg:col-span-8">
-        <p class="font-display text-display leading-[1.13] font-medium">
-          Sprechen wir über Ihr Grundstück, Ihr Budget und den Weg zu Ihrem Haus.
-        </p>
-      </div>
-      <div class="flex flex-col items-start gap-4 lg:col-span-4 lg:items-end">
-        <Button href="/kontakt/" variant="primary">Beratung vereinbaren</Button>
-        <a href={`tel:${SITE.contact.phone}`} class="link-line text-small text-paper-muted">
-          oder direkt anrufen: {SITE.contact.phoneDisplay}
-        </a>
+  {showCta && (
+    <!-- Abschluss-CTA (auf Seiten mit eigenem CTA über showCta={false} ausgeblendet) -->
+    <div class="container-site border-b border-paper/10 py-(--spacing-section-sm)">
+      <div class="grid gap-10 lg:grid-cols-12 lg:items-end">
+        <div class="lg:col-span-8">
+          <p class="font-display text-display leading-[1.13] font-medium">
+            Sprechen wir über Ihr Grundstück, Ihr Budget und den Weg zu Ihrem Haus.
+          </p>
+        </div>
+        <div class="flex flex-col items-start gap-4 lg:col-span-4 lg:items-end">
+          <Button href="/kontakt/" variant="primary">Beratung vereinbaren</Button>
+          <a href={`tel:${SITE.contact.phone}`} class="link-line text-small text-paper-muted">
+            oder direkt anrufen: {SITE.contact.phoneDisplay}
+          </a>
+        </div>
       </div>
     </div>
-  </div>
+  )}
 
   <!-- Linkspalten -->
   <div class="container-site grid gap-x-8 gap-y-12 py-16 sm:grid-cols-2 lg:grid-cols-12">

@@ -22,6 +22,8 @@ interface Props {
   /** Zusätzliche JSON-LD-Objekte (z. B. FAQPage) */
   jsonLd?: Record<string, unknown>[];
   noIndex?: boolean;
+  /** Footer-Abschluss-CTA ausblenden (wenn die Seite bereits einen eigenen hat) */
+  hideFooterCta?: boolean;
 }
 
 const {
@@ -33,6 +35,7 @@ const {
   breadcrumbs,
   jsonLd = [],
   noIndex = false,
+  hideFooterCta = false,
 } = Astro.props;
 
 const pageTitle = fullTitle ? title : `${title} | ${SITE.name}`;
@@ -181,7 +184,7 @@ const allJsonLd = [organizationLd, breadcrumbLd, ...jsonLd].filter(Boolean);
       <slot />
     </main>
 
-    <Footer />
+    <Footer showCta={!hideFooterCta} />
 
     <script>
       // Scroll-Reveals: sichtbarer Default, JS veredelt nur.
