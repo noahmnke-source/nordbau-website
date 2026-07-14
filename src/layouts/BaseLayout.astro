@@ -61,6 +61,8 @@ const organizationLd = {
         'Plant und baut schlüsselfertige und individuell geplante Fertighäuser in Holztafelbauweise – bundesweit, im Effizienzhaus-40-Standard und mit Festpreisgarantie.',
       slogan: SITE.claim,
       foundingDate: String(SITE.foundingYear),
+      vatID: SITE.legal.vatId,
+      taxID: SITE.legal.taxNumber,
       telephone: SITE.contact.phone,
       email: SITE.contact.email,
       address: {
@@ -85,7 +87,6 @@ const organizationLd = {
         name: 'Deutschland',
         sameAs: 'https://www.wikidata.org/wiki/Q183',
       },
-      priceRange: '€€€',
       knowsAbout: [
         'Fertighaus',
         'Schlüsselfertiges Bauen',

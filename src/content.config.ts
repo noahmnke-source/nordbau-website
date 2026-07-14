@@ -31,7 +31,8 @@ const haustypen = defineCollection({
       dachform: z.string(),
       bauweise: z.string().default('Holztafelbau, werkseitig vorgefertigt'),
       energiestandard: z.string(),
-      preisAb: z.string(),
+      /** Preise werden auf der Website bewusst nicht ausgewiesen (auf Anfrage) */
+      preisAb: z.string().optional(),
     }),
     seoTitle: z.string(),
     seoDescription: z.string(),

@@ -17,12 +17,11 @@ facts:
   dachform: Flach- oder Satteldach
   bauweise: Holztafelbau, werkseitig vorgefertigt
   energiestandard: Effizienzhaus 40 je Wohneinheit
-  preisAb: 890.000 €
-seoTitle: "Mehrfamilienhaus als Fertighaus bauen – ab 890.000 € | Hochpuls"
-seoDescription: "Mehrfamilienhaus in Holztafelbauweise: ab 320 m², mehrere Wohneinheiten, Effizienzhaus 40, ab 890.000 €. Für Kapitalanleger und Bauherren. Jetzt Beratung vereinbaren."
+seoTitle: "Mehrfamilienhaus als Fertighaus bauen | Nordbau"
+seoDescription: "Mehrfamilienhaus in Holztafelbauweise: ab 320 m², mehrere Wohneinheiten, Effizienzhaus 40. Für Kapitalanleger und Bauherren. Jetzt Beratung vereinbaren."
 faq:
-  - q: Was kostet ein Mehrfamilienhaus als Fertighaus 2026?
-    a: Unser Mehrfamilienhaus beginnt bei rund 320 m² Gesamtwohnfläche und etwa 890.000 Euro schlüsselfertig – mit 12 Monaten Festpreisgarantie ab Vertragsabschluss. Der Quadratmeterpreis liegt durch die Skalierung meist unter dem eines Einfamilienhauses. Ein konkretes Angebot erstellen wir nach Grundstück, Wohnungsschlüssel und Ausstattung.
+  - q: Was kostet ein Mehrfamilienhaus als Fertighaus?
+    a: Der Preis richtet sich nach Gesamtwohnfläche, Wohnungsschlüssel und Ausstattung. Der Quadratmeterpreis liegt durch die Skalierung meist unter dem eines Einfamilienhauses. Ein konkretes Festpreisangebot erstellen wir nach Grundstück und Planung.
   - q: Kann ich die KfW-Förderung mehrfach nutzen?
     a: Ja. Die zinsverbilligten KfW-Kredite aus dem Programm „Klimafreundlicher Neubau“ (297/298) gelten je Wohneinheit – bis zu 150.000 Euro pro Einheit ab Effizienzhaus-40-Standard. Bei einem Mehrfamilienhaus mit mehreren Wohnungen vervielfacht sich der förderfähige Rahmen entsprechend. Die genaue Konstellation prüfen wir gemeinsam mit Ihrer Bank.
   - q: Eignet sich Holztafelbau für ein Mehrfamilienhaus?

@@ -1,5 +1,6 @@
 ---
 import Button from '@/components/Button.astro';
+import Logo from '@/components/Logo.astro';
 import { SITE } from '@/config/site';
 
 interface Props {
@@ -30,8 +31,8 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
   ]}
 >
   <div class="container-site flex h-20 items-center justify-between gap-8">
-    <a href="/" class="font-display text-[1.45rem] font-medium tracking-tight" aria-label={`${SITE.name} – Startseite`}>
-      {SITE.name}
+    <a href="/" aria-label={`${SITE.legalName} – Startseite`}>
+      <Logo variant="header" />
     </a>
 
     <nav aria-label="Hauptnavigation" class="hidden lg:block">
@@ -54,7 +55,9 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
     </nav>
 
     <div class="hidden lg:block">
-      <Button href="/kontakt/" variant={overlay ? 'inverted' : 'primary'} arrow={false} class="header-cta h-11 px-5">
+      <!-- Immer der gefüllte Akzent-Button: bleibt sichtbar, egal ob der
+           Header transparent über dem Hero oder weiß nach dem Scrollen ist. -->
+      <Button href="/kontakt/" variant="primary" arrow={false} class="header-cta h-11 px-5">
         Beratung vereinbaren
       </Button>
     </div>

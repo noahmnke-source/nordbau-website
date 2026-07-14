@@ -17,12 +17,11 @@ facts:
   dachform: Flachdach, begrünbar
   bauweise: Holztafelbau, werkseitig vorgefertigt
   energiestandard: Effizienzhaus 40
-  preisAb: 445.000 €
-seoTitle: "Flachdachhaus als Fertighaus bauen – ab 445.000 € | Hochpuls"
-seoDescription: "Flachdachhaus im Bauhaus-Stil als Fertighaus: 130 m², zwei Vollgeschosse, Effizienzhaus 40, ab 445.000 €. Kubisch, klar, modern. Jetzt Beratung vereinbaren."
+seoTitle: "Flachdachhaus als Fertighaus bauen – Bauhaus-Stil | Nordbau"
+seoDescription: "Flachdachhaus im Bauhaus-Stil als Fertighaus: ab 130 m², zwei Vollgeschosse, Effizienzhaus 40. Kubisch, klar, modern. Jetzt Beratung vereinbaren."
 faq:
-  - q: Was kostet ein Flachdachhaus als Fertighaus 2026?
-    a: Unser Flachdachhaus beginnt bei 130 m² und rund 445.000 Euro schlüsselfertig – mit 12 Monaten Festpreisgarantie ab Vertragsabschluss. Die kubische Form mit zwei Vollgeschossen ist wirtschaftlich, weil sie viel Wohnfläche auf kompakter Grundfläche unterbringt. Grundstück und Baunebenkosten kommen hinzu.
+  - q: Was kostet ein Flachdachhaus als Fertighaus?
+    a: Der Preis hängt von Wohnfläche, Ausstattung und Grundstück ab. Die kubische Form mit zwei Vollgeschossen ist wirtschaftlich, weil sie viel Wohnfläche auf kompakter Grundfläche unterbringt. Ihr individuelles Festpreisangebot mit 12 Monaten Preisgarantie erstellen wir nach dem Erstgespräch; Grundstück und Baunebenkosten kommen hinzu.
   - q: Ist ein Flachdach dicht und wartungsarm?
     a: Ja. Moderne Flachdächer werden mehrlagig abgedichtet, mit Gefälle ausgeführt und kontrolliert entwässert – bei fachgerechter Ausführung sind sie ebenso langlebig wie ein geneigtes Dach. Wir führen sie standardmäßig als Warmdach aus und bereiten sie für Begrünung oder Photovoltaik vor.
   - q: Darf ich überall ein Flachdachhaus bauen?

@@ -17,12 +17,11 @@ facts:
   dachform: Flachdach
   bauweise: Raummodule, werkseitig komplett vorgefertigt
   energiestandard: Effizienzhaus 40
-  preisAb: 265.000 €
-seoTitle: "Modulhaus als Fertighaus bauen – ab 265.000 € | Hochpuls"
-seoDescription: "Modulhaus in Modulbauweise: ab 75 m², erweiterbar, Effizienzhaus 40, ab 265.000 €. Werkseitig komplett vorgefertigt, in Tagen aufgestellt. Jetzt Beratung vereinbaren."
+seoTitle: "Modulhaus als Fertighaus bauen – modular & erweiterbar | Nordbau"
+seoDescription: "Modulhaus in Modulbauweise: ab 75 m², erweiterbar, Effizienzhaus 40. Werkseitig komplett vorgefertigt, in Tagen aufgestellt. Jetzt Beratung vereinbaren."
 faq:
-  - q: Was kostet ein Modulhaus 2026?
-    a: "Unser Modulhaus beginnt bei 75 m² und rund 265.000 Euro schlüsselfertig – mit 12 Monaten Festpreisgarantie ab Vertragsabschluss. Der Preis hängt von der Zahl der Module ab: Sie zahlen die Fläche, die Sie brauchen, und können später gezielt erweitern. Grundstück und Baunebenkosten kommen hinzu."
+  - q: Was kostet ein Modulhaus?
+    a: "Der Preis hängt vor allem von der Zahl der Module ab: Sie zahlen die Fläche, die Sie brauchen, und können später gezielt erweitern. Ihr individuelles Festpreisangebot mit 12 Monaten Preisgarantie erstellen wir nach dem Erstgespräch; Grundstück und Baunebenkosten kommen hinzu."
   - q: Worin unterscheidet sich das Modulhaus vom übrigen Programm?
     a: Beim Modulhaus werden ganze Raummodule inklusive Böden, Bädern und Technik im Werk fertiggestellt und als komplette Einheiten auf die Baustelle geliefert. Das verkürzt die Montage auf wenige Tage und verlagert noch mehr Arbeitsschritte in die kontrollierte Halle. Unsere übrigen Haustypen entstehen aus flachen Wand- und Deckenelementen, die vor Ort montiert werden.
   - q: Lässt sich ein Modulhaus später erweitern?

@@ -24,7 +24,7 @@ const filter = [
 
 <BaseLayout
   title="Haustypen: Fertighäuser individuell geplant"
-  description="Sechs Haustypen als Fertighaus: Bungalow, Flachdachhaus, Satteldachhaus, Modulhaus, Tiny House, Mehrfamilienhaus. Effizienzhaus 40, ab 89.000 €. Jetzt beraten lassen."
+  description="Sechs Haustypen als Fertighaus: Bungalow, Flachdachhaus, Satteldachhaus, Modulhaus, Tiny House, Mehrfamilienhaus. Individuell geplant, Effizienzhaus 40. Jetzt beraten lassen."
   breadcrumbs={[{ name: 'Haustypen', href: '/haustypen/' }]}
 >
   <!-- Seitenkopf -->
@@ -46,8 +46,8 @@ const filter = [
       </div>
       <p class="prose-measure self-end text-small text-muted lg:col-span-4 lg:col-start-9">
         Vom Tiny House bis zum Mehrfamilienhaus – alle Typen bauen wir schlüsselfertig,
-        2026 ab 89.000 €, mit 12 Monaten Festpreisgarantie und fünf Jahren
-        Gewährleistung nach BGB.
+        mit 12 Monaten Festpreisgarantie ab Vertragsabschluss und fünf Jahren
+        Gewährleistung nach BGB. Ihr Preis entsteht individuell nach Planung.
       </p>
     </div>
   </section>
@@ -104,8 +104,8 @@ const filter = [
               <dd class="tnum font-medium">{typ.data.facts.wohnflaeche}</dd>
             </div>
             <div>
-              <dt class="text-caption text-muted">Preis ab</dt>
-              <dd class="tnum font-medium">{typ.data.facts.preisAb}</dd>
+              <dt class="text-caption text-muted">Dachform</dt>
+              <dd class="font-medium">{typ.data.facts.dachform}</dd>
             </div>
           </dl>
         </a>

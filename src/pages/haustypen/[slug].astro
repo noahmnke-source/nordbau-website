@@ -36,14 +36,14 @@ const breadcrumbs = [
   { name, href: `/haustypen/${entry.id}/` },
 ];
 
+// Preis wird auf der Website bewusst nicht ausgewiesen (auf Anfrage).
 const factRows = [
   { label: 'Wohnfläche', value: facts.wohnflaeche },
   { label: 'Geschosse', value: facts.geschosse },
   { label: 'Dachform', value: facts.dachform },
   { label: 'Bauweise', value: facts.bauweise },
   { label: 'Energiestandard', value: facts.energiestandard },
-  { label: 'Preis ab', value: facts.preisAb },
-];
+].filter((r): r is { label: string; value: string } => Boolean(r.value));
 
 /** Galerie: wechselnde Spannen und Formate statt uniformem Raster */
 const galleryLayout = [
@@ -174,7 +174,7 @@ const galleryLayout = [
                 <span class="link-line">{typ.data.name}</span>
               </p>
               <p class="tnum mt-1 text-small text-muted">
-                {typ.data.facts.wohnflaeche} · {typ.data.facts.preisAb}
+                {typ.data.facts.wohnflaeche} · {typ.data.facts.dachform}
               </p>
             </div>
           </a>

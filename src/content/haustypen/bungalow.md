@@ -17,12 +17,11 @@ facts:
   dachform: Flach- oder Walmdach
   bauweise: Holztafelbau, werkseitig vorgefertigt
   energiestandard: Effizienzhaus 40
-  preisAb: 355.000 €
-seoTitle: "Bungalow als Fertighaus bauen – ebenerdig ab 355.000 € | Hochpuls"
-seoDescription: "Bungalow als Fertighaus: ebenerdig ab 95 m², barrierearm, Effizienzhaus 40, ab 355.000 €. Alles auf einer Ebene, ohne Treppen. Jetzt Beratung vereinbaren."
+seoTitle: "Bungalow als Fertighaus bauen – ebenerdig & barrierearm | Nordbau"
+seoDescription: "Bungalow als Fertighaus: ebenerdig ab 95 m², barrierearm, Effizienzhaus 40. Alles auf einer Ebene, ohne Treppen. Jetzt Beratung vereinbaren."
 faq:
-  - q: Was kostet ein Bungalow als Fertighaus 2026?
-    a: Unser Bungalow beginnt bei 95 m² und rund 355.000 Euro schlüsselfertig – mit 12 Monaten Festpreisgarantie ab Vertragsabschluss. Ebenerdige Häuser haben durch die größere Grundfläche und die vollständige Dachfläche einen etwas höheren Quadratmeterpreis als mehrgeschossige Bauten; Grundstück und Baunebenkosten von 15 bis 20 Prozent kommen hinzu.
+  - q: Was kostet ein Bungalow als Fertighaus?
+    a: Der Preis eines Bungalows hängt von Wohnfläche, Ausstattung und Grundstück ab – ebenerdige Häuser haben durch die größere Grund- und Dachfläche tendenziell einen etwas höheren Quadratmeterpreis als mehrgeschossige Bauten. Ihr verbindliches Festpreisangebot mit 12 Monaten Preisgarantie erhalten Sie nach einem unverbindlichen Erstgespräch; Grundstück und Baunebenkosten von 15 bis 20 Prozent kommen hinzu.
   - q: Ist ein Bungalow barrierefrei?
     a: "Ebenerdig ist die Grundvoraussetzung – auf Wunsch planen wir konsequent barrierefrei nach DIN 18040: schwellenlose Übergänge, bodengleiche Dusche, ausreichende Bewegungsflächen und Türbreiten. So bleibt das Haus in jeder Lebensphase nutzbar, ohne dass man es dem Entwurf ansieht."
   - q: Braucht ein Bungalow ein größeres Grundstück?

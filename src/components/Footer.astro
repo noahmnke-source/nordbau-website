@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Button from '@/components/Button.astro';
+import Logo from '@/components/Logo.astro';
 import { SITE } from '@/config/site';
 
 const haustypen = (await getCollection('haustypen')).sort((a, b) => a.data.order - b.data.order);
@@ -38,8 +39,10 @@ const nav = [
   <!-- Linkspalten -->
   <div class="container-site grid gap-x-8 gap-y-12 py-16 sm:grid-cols-2 lg:grid-cols-12">
     <div class="lg:col-span-4">
-      <a href="/" class="font-display text-[1.45rem] font-medium">{SITE.name}</a>
-      <p class="prose-measure mt-4 max-w-xs text-small leading-relaxed text-paper-muted">
+      <a href="/" aria-label={`${SITE.legalName} – Startseite`} class="inline-block">
+        <Logo variant="footer" />
+      </a>
+      <p class="prose-measure mt-6 max-w-xs text-small leading-relaxed text-paper-muted">
         {SITE.claim} Schlüsselfertige und individuell geplante Fertighäuser –
         werkseitig präzise vorgefertigt, bundesweit gebaut.
       </p>

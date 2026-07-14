@@ -13,23 +13,35 @@ import { SITE } from '@/config/site';
     <h1 class="font-display text-display font-medium">Impressum</h1>
 
     <div class="prose-measure mt-10 space-y-6 text-body">
-      <!-- TODO vor Launch: echte Firmendaten eintragen (Pflichtangaben nach § 5 DDG) -->
+      <h2 class="font-display text-title font-medium">Angaben gemäß § 5 DDG</h2>
       <p>
         {SITE.legalName}<br />
         {SITE.contact.street}<br />
         {SITE.contact.zip} {SITE.contact.city}
       </p>
       <p>
-        Telefon: {SITE.contact.phoneDisplay}<br />
-        E-Mail: {SITE.contact.email}
+        Telefon: <a href={`tel:${SITE.contact.phone}`} class="link-line">{SITE.contact.phoneDisplay}</a><br />
+        E-Mail: <a href={`mailto:${SITE.contact.email}`} class="link-line">{SITE.contact.email}</a>
+      </p>
+      <p>
+        Handelsregister: {SITE.legal.register}<br />
+        Registergericht: {SITE.legal.court}
+      </p>
+      <p>
+        Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: {SITE.legal.vatId}<br />
+        Steuernummer: {SITE.legal.taxNumber}
       </p>
       <p class="text-muted">
-        Vertretungsberechtigte Geschäftsführung: [NAME EINTRAGEN]<br />
-        Handelsregister: [AMTSGERICHT + HRB EINTRAGEN]<br />
-        Umsatzsteuer-ID: [USt-IdNr. EINTRAGEN]
+        <!-- TODO vor Launch: Namen der Geschäftsführung ergänzen (Pflichtangabe) -->
+        Vertretungsberechtigte Geschäftsführung: [NAME DER GESCHÄFTSFÜHRUNG EINTRAGEN]<br />
+        Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: [NAME], {SITE.contact.street},
+        {SITE.contact.zip} {SITE.contact.city}
       </p>
-      <p class="text-muted">
-        Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: [NAME, ANSCHRIFT EINTRAGEN]
+      <p class="text-small text-muted">
+        Plattform der EU-Kommission zur Online-Streitbeilegung:
+        <a href="https://ec.europa.eu/consumers/odr/" class="link-line">https://ec.europa.eu/consumers/odr/</a>.
+        Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor
+        einer Verbraucherschlichtungsstelle teilzunehmen.
       </p>
     </div>
   </section>

@@ -17,12 +17,11 @@ facts:
   dachform: Satteldach, 35–45°
   bauweise: Holztafelbau, werkseitig vorgefertigt
   energiestandard: Effizienzhaus 40
-  preisAb: 385.000 €
-seoTitle: "Satteldachhaus als Fertighaus bauen – ab 385.000 € | Hochpuls"
-seoDescription: "Einfamilienhaus mit Satteldach als Fertighaus: ab 120 m², Effizienzhaus 40, ab 385.000 €, schlüsselfertig nach 8–10 Wochen Bauzeit. Jetzt Beratung vereinbaren."
+seoTitle: "Satteldachhaus als Fertighaus bauen – Einfamilienhaus | Nordbau"
+seoDescription: "Einfamilienhaus mit Satteldach als Fertighaus: ab 120 m², Effizienzhaus 40, schlüsselfertig nach 8–10 Wochen Bauzeit. Jetzt Beratung vereinbaren."
 faq:
-  - q: Was kostet ein Satteldachhaus als Fertighaus 2026?
-    a: "Unser Satteldachhaus beginnt bei 120 m² und rund 385.000 Euro schlüsselfertig – mit 12 Monaten Festpreisgarantie ab Vertragsabschluss. Das Satteldach ist die wirtschaftlichste Dachform: bewährt, regensicher und mit ausbaubarem Dachgeschoss, das günstige Wohnfläche schafft. Grundstück und Baunebenkosten kommen hinzu."
+  - q: Was kostet ein Satteldachhaus als Fertighaus?
+    a: "Der Preis hängt von Wohnfläche, Ausstattung und Grundstück ab. Das Satteldach ist die wirtschaftlichste Dachform: bewährt, regensicher und mit ausbaubarem Dachgeschoss, das günstige Wohnfläche schafft. Ihr verbindliches Festpreisangebot mit 12 Monaten Preisgarantie erhalten Sie nach dem Erstgespräch; Grundstück und Baunebenkosten kommen hinzu."
   - q: Wie viel Wohnfläche bringt das Dachgeschoss?
     a: Bei einer Dachneigung von 35 bis 45 Grad ist das Dachgeschoss vollwertig nutzbar. Über eine Kniewand von etwa 1,20 bis 1,50 Metern gewinnen Sie zusätzliche Stellfläche an den Traufseiten; Gauben oder ein Zwerchgiebel schaffen weitere Stehhöhe und Licht. Wir planen den Ausbau so, dass keine Fläche an die Schräge verloren geht.
   - q: Passt ein Satteldachhaus in jedes Baugebiet?

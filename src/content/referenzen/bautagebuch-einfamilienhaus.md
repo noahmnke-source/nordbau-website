@@ -17,8 +17,8 @@ gallery:
     alt: "Giebelseite mit neuer vertikaler Holzfassade, eingerüstet, aus der Luft fotografiert"
     standIn: true
 facts: {}
-seoTitle: "Bautagebuch: Einfamilienhaus im Bau | Hochpuls"
-seoDescription: "Ein Hausbau in drei Momenten: Rohbau im Winter, offener Dachstuhl, neue Holzfassade. Das Bautagebuch eines laufenden Hochpuls-Projekts – ehrlich dokumentiert."
+seoTitle: "Bautagebuch: Einfamilienhaus im Bau | Nordbau"
+seoDescription: "Ein Hausbau in drei Momenten: Rohbau im Winter, offener Dachstuhl, neue Holzfassade. Das Bautagebuch eines laufenden Nordbau-Projekts – ehrlich dokumentiert."
 ---
 
 <!-- ECHTE PROJEKTFOTOS einsetzen: siehe ASSETS.md, Abschnitt 2.

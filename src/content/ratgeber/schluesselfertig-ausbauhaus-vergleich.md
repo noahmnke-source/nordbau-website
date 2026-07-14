@@ -6,7 +6,7 @@ hero:
   src: "https://images.unsplash.com/photo-1700581316314-9e6a809bd656?auto=format&fit=crop&w=1600&q=80"
   alt: "Innenausbau im Holzrahmenbau: Ständerwerk mit ökologischer Dämmung und Beplankung"
   standIn: true
-seoTitle: "Schlüsselfertig oder Ausbauhaus? Kosten 2026 | Hochpuls"
+seoTitle: "Schlüsselfertig oder Ausbauhaus? Kosten 2026 | Nordbau"
 seoDescription: "Schlüsselfertig oder Ausbauhaus: alle Ausbaustufen im Vergleich, 10.000–25.000 € realistisches Sparpotenzial, Banken-Anerkennung bis 15 %. Mit Checkliste."
 ---
 
@@ -18,7 +18,7 @@ seoDescription: "Schlüsselfertig oder Ausbauhaus: alle Ausbaustufen im Vergleic
 
 „Schlüsselfertig“ ist kein geschützter oder gesetzlich definierter Begriff. Jeder Anbieter legt in seiner Bau- und Leistungsbeschreibung selbst fest, was er darunter versteht – und die Unterschiede sind erheblich. Bei manchen Anbietern fehlen im „schlüsselfertigen“ Haus die Malerarbeiten, bei anderen die Bodenbeläge oder sämtliche Außenanlagen. Wer zwei Angebote nur am Endpreis vergleicht, vergleicht deshalb häufig zwei verschiedene Häuser.
 
-Die Konsequenz für Ihren Anbietervergleich: Lesen Sie die Leistungsbeschreibung Position für Position und vergleichen Sie Angebote ausschließlich bei identischem Leistungsumfang. Bei Hochpuls bedeutet schlüsselfertig bezugsfertig – inklusive Bädern, Bodenbelägen und Innentüren, verbindlich dokumentiert in der Leistungsbeschreibung, die Teil des Festpreisangebots ist.
+Die Konsequenz für Ihren Anbietervergleich: Lesen Sie die Leistungsbeschreibung Position für Position und vergleichen Sie Angebote ausschließlich bei identischem Leistungsumfang. Bei Nordbau bedeutet schlüsselfertig bezugsfertig – inklusive Bädern, Bodenbelägen und Innentüren, verbindlich dokumentiert in der Leistungsbeschreibung, die Teil des Festpreisangebots ist.
 
 ## Welche Ausbaustufen gibt es beim Fertighaus?
 

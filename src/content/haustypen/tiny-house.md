@@ -17,12 +17,11 @@ facts:
   dachform: Flach- oder Satteldach
   bauweise: Holztafelbau, werkseitig vorgefertigt
   energiestandard: Effizienzhaus 40
-  preisAb: 89.000 €
-seoTitle: "Tiny House kaufen & bauen – Fertighaus ab 89.000 € | Hochpuls"
-seoDescription: "Tiny House als Fertighaus: ab 35 m², vollwertig gedämmt, Effizienzhaus 40, ab 89.000 €. Kompaktes Wohnen ohne Kompromisse. Jetzt Beratung vereinbaren."
+seoTitle: "Tiny House kaufen & bauen als Fertighaus | Nordbau"
+seoDescription: "Tiny House als Fertighaus: ab 35 m², vollwertig gedämmt, Effizienzhaus 40. Kompaktes Wohnen ohne Kompromisse. Jetzt Beratung vereinbaren."
 faq:
-  - q: Was kostet ein Tiny House 2026?
-    a: Unser Tiny House beginnt bei 35 m² und rund 89.000 Euro schlüsselfertig – mit 12 Monaten Festpreisgarantie ab Vertragsabschluss. Anders als ein Baumarkt-Gartenhaus ist es vollwertig gedämmt, beheizt und dauerhaft bewohnbar. Erschließung, Fundament und gegebenenfalls Grundstück kommen hinzu.
+  - q: Was kostet ein Tiny House?
+    a: Der Preis hängt von Größe, Ausstattung und Erschließung ab. Anders als ein Baumarkt-Gartenhaus ist unser Tiny House vollwertig gedämmt, beheizt und dauerhaft bewohnbar – das schlägt sich in Qualität und Preis nieder. Ihr Festpreisangebot erhalten Sie nach dem Erstgespräch; Erschließung, Fundament und gegebenenfalls Grundstück kommen hinzu.
   - q: Braucht ein Tiny House eine Baugenehmigung?
     a: In der Regel ja. Sobald ein Tiny House dauerhaft aufgestellt und bewohnt wird, gilt es als Gebäude und benötigt – wie jedes Haus – eine Baugenehmigung und ein Baugrundstück mit Baurecht. Ein reines Freizeit- oder Wochenendhaus unterliegt anderen Regeln. Wir klären die Genehmigungsfähigkeit für Ihren konkreten Fall im Erstgespräch.
   - q: Ist ein Tiny House vollwertig wärmegedämmt?
@@ -37,7 +36,7 @@ Kleine Häuser verzeihen keine schwachen Grundrisse. Deshalb planen wir jeden Qu
 
 ## Vollwertig, nicht provisorisch
 
-Ein Tiny House von Hochpuls ist kein Bauwagen und kein Gartenhaus. Es entsteht in derselben Holztafelbauweise, mit derselben Dämmung, Haustechnik und Qualitätsprüfung wie unsere großen Häuser – und erreicht den Effizienzhaus-40-Standard. Als Erstwohnsitz für Minimalisten, als Einliegerhaus im Garten oder als hochwertiges Büro auf dem Grundstück: Es ist klein in der Fläche, aber ganz in der Qualität.
+Ein Tiny House von Nordbau ist kein Bauwagen und kein Gartenhaus. Es entsteht in derselben Holztafelbauweise, mit derselben Dämmung, Haustechnik und Qualitätsprüfung wie unsere großen Häuser – und erreicht den Effizienzhaus-40-Standard. Als Erstwohnsitz für Minimalisten, als Einliegerhaus im Garten oder als hochwertiges Büro auf dem Grundstück: Es ist klein in der Fläche, aber ganz in der Qualität.
 
 ## Für wen das Tiny House gebaut ist
 

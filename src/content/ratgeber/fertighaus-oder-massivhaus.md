@@ -6,7 +6,7 @@ hero:
   src: "https://images.unsplash.com/photo-1676802037786-3697d60497ae?auto=format&fit=crop&w=1600&q=80"
   alt: "Dachstuhl im Holzrahmenbau: präzise gefügte Sparren und Binder vor blauem Himmel"
   standIn: true
-seoTitle: "Fertighaus oder Massivhaus? Der Vergleich 2026 | Hochpuls"
+seoTitle: "Fertighaus oder Massivhaus? Der Vergleich 2026 | Nordbau"
 seoDescription: "Fertighaus oder Massivhaus 2026: Preise ab 2.400 €/m², Bauzeit 8–10 Wochen statt 8–12 Monate, bessere CO₂-Bilanz. Der ehrliche Vergleich mit allen Zahlen."
 ---
 
@@ -23,7 +23,7 @@ Der jahrzehntelange Preisvorteil des Fertighauses ist weitgehend Geschichte – 
 | Preis pro m² Wohnfläche, schlüsselfertig (2026) | 2.400–3.300 € | 2.500–3.600 € |
 | Beispiel: 150 m² Wohnfläche | 360.000–495.000 € | 375.000–540.000 € |
 
-Der relevantere Unterschied liegt in der Preissicherheit. Beim Fertighaus kommt der Preis von einem Vertragspartner mit Festpreisbindung – bei Hochpuls zwölf Monate ab Vertragsabschluss. Beim massiv errichteten Architektenhaus mit Einzelvergabe addieren sich dagegen die Angebote vieler Gewerke, und jede Schnittstelle ist ein potenzieller Nachtrag. Wie sich ein vollständiges Budget inklusive Grundstück und Nebenkosten zusammensetzt, zeigt der Ratgeber [Fertighaus-Preise 2026](/ratgeber/fertighaus-preise-2026/).
+Der relevantere Unterschied liegt in der Preissicherheit. Beim Fertighaus kommt der Preis von einem Vertragspartner mit Festpreisbindung – bei Nordbau zwölf Monate ab Vertragsabschluss. Beim massiv errichteten Architektenhaus mit Einzelvergabe addieren sich dagegen die Angebote vieler Gewerke, und jede Schnittstelle ist ein potenzieller Nachtrag. Wie sich ein vollständiges Budget inklusive Grundstück und Nebenkosten zusammensetzt, zeigt der Ratgeber [Fertighaus-Preise 2026](/ratgeber/fertighaus-preise-2026/).
 
 ## Wie groß ist der Unterschied bei der Bauzeit?
 
@@ -84,4 +84,4 @@ Ehrlich ist aber auch die Kehrseite: Beim Fertighaus fallen Entscheidungen früh
 
 Beim Preis entscheidet 2026 nicht mehr die Bauweise, sondern Ausstattung und Planung – die Spannen überlappen sich fast vollständig. Das Fertighaus gewinnt bei Bauzeit (8–10 Wochen statt 8–12 Monate), Termin- und Preissicherheit sowie CO₂-Bilanz; das Massivhaus punktet beim konstruktiv einfacheren Schallschutz und bei maximaler Flexibilität für spätere Umbauten. Lebensdauer und Wiederverkaufswert sind bei beiden eine Frage von Qualität, Lage und Energieeffizienz – nicht des Wandaufbaus. Alle Zahlen in diesem Artikel: Stand 07/2026.
 
-Ob unsere Bauweise zu Ihrem Projekt passt, klären Sie am besten am konkreten Entwurf: Die [Haustypen von Hochpuls](/haustypen/) zeigen, was im Holztafelbau architektonisch möglich ist. Und in einem unverbindlichen [Beratungsgespräch](/kontakt/) vergleichen wir beide Bauweisen offen anhand Ihrer Anforderungen – mit Zahlen, nicht mit Meinungen.
+Ob unsere Bauweise zu Ihrem Projekt passt, klären Sie am besten am konkreten Entwurf: Die [Haustypen von Nordbau](/haustypen/) zeigen, was im Holztafelbau architektonisch möglich ist. Und in einem unverbindlichen [Beratungsgespräch](/kontakt/) vergleichen wir beide Bauweisen offen anhand Ihrer Anforderungen – mit Zahlen, nicht mit Meinungen.
