@@ -13,6 +13,8 @@ interface Props {
   reveal?: boolean;
   /** Ruhiger Zoom bei Hover (Elternteil braucht .group) */
   zoom?: boolean;
+  /** Sanfter Scroll-Parallax: Geschwindigkeit (z. B. 0.06) oder false */
+  parallax?: number | false;
   class?: string;
   caption?: string;
 }
@@ -25,6 +27,7 @@ const {
   eager = false,
   reveal = true,
   zoom = false,
+  parallax = false,
   class: className = '',
   caption,
 } = Astro.props;
@@ -32,7 +35,10 @@ const {
 const isUnsplash = src.startsWith('https://images.unsplash.com/');
 ---
 
-<figure class:list={[className]}>
+<figure
+  class:list={[className, parallax !== false && 'parallax']}
+  data-parallax={parallax !== false ? String(parallax) : undefined}
+>
   <div class:list={['overflow-hidden bg-stone', ratio, reveal && 'reveal-media']}>
     <img
       src={isUnsplash ? unsplashWidth(src, 1600) : src}

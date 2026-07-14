@@ -4,7 +4,6 @@ import Button from '@/components/Button.astro';
 import { SITE } from '@/config/site';
 
 const haustypen = (await getCollection('haustypen')).sort((a, b) => a.data.order - b.data.order);
-const standorte = (await getCollection('standorte')).sort((a, b) => a.data.order - b.data.order);
 
 const year = new Date().getFullYear();
 
@@ -55,7 +54,7 @@ const nav = [
       </ul>
     </nav>
 
-    <nav aria-label="Haustypen" class="lg:col-span-2">
+    <nav aria-label="Haustypen" class="lg:col-span-3">
       <h2 class="mb-4 text-caption font-medium text-paper-muted">Haustypen</h2>
       <ul class="space-y-2.5">
         {haustypen.map((h) => (
@@ -64,16 +63,7 @@ const nav = [
       </ul>
     </nav>
 
-    <nav aria-label="Standorte" class="lg:col-span-2">
-      <h2 class="mb-4 text-caption font-medium text-paper-muted">Bauen in …</h2>
-      <ul class="space-y-2.5">
-        {standorte.map((s) => (
-          <li><a href={`/fertighaus/${s.id}/`} class="link-line text-small">{s.data.kurzname}</a></li>
-        ))}
-      </ul>
-    </nav>
-
-    <div class="lg:col-span-2">
+    <div class="lg:col-span-3">
       <h2 class="mb-4 text-caption font-medium text-paper-muted">Kontakt</h2>
       <address class="space-y-2.5 text-small not-italic">
         <p>{SITE.legalName}<br />{SITE.contact.street}<br />{SITE.contact.zip} {SITE.contact.city}</p>
@@ -90,7 +80,7 @@ const nav = [
       <ul class="flex flex-wrap gap-6">
         <li><a href="/impressum/" class="link-line">Impressum</a></li>
         <li><a href="/datenschutz/" class="link-line">Datenschutz</a></li>
-        <li><a href="/fertighaus/" class="link-line">Alle Regionen</a></li>
+        <li><a href="/haustypen/" class="link-line">Haustypen</a></li>
       </ul>
     </div>
   </div>

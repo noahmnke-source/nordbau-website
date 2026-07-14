@@ -27,7 +27,7 @@ Vier Zimmer zur Miete in Berlin, zwei Kinder und die Gewissheit, dass ein eigene
 
 ## Warum zwei Vollgeschosse ohne Dachschrägen?
 
-Das Grundstück ist kompakt, der Bebauungsplan ließ zwei Vollgeschosse zu – der klassische Fall für eine [Stadtvilla](/haustypen/stadtvilla/). Der nahezu quadratische Grundriss legt 158 m² auf zwei Ebenen: unten Wohnküche, Essbereich und Arbeitszimmer, oben vier Zimmer und das Familienbad. Kein Quadratmeter geht an Schrägen verloren, jedes Zimmer im Obergeschoss hat volle Stehhöhe.
+Das Grundstück ist kompakt, der Bebauungsplan ließ zwei Vollgeschosse zu – der klassische Fall für ein modernes Stadthaus aus unserem [Haustypen-Programm](/haustypen/). Der nahezu quadratische Grundriss legt 158 m² auf zwei Ebenen: unten Wohnküche, Essbereich und Arbeitszimmer, oben vier Zimmer und das Familienbad. Kein Quadratmeter geht an Schrägen verloren, jedes Zimmer im Obergeschoss hat volle Stehhöhe.
 
 ## Entschieden wird am Material, nicht am Katalog
 

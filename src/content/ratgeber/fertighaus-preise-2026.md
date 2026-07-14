@@ -43,7 +43,7 @@ Die folgende Beispielrechnung zeigt, wie sich ein realistisches Gesamtbudget zus
 
 Wichtig für den Angebotsvergleich: Prüfen Sie immer, welche Ausbaustufe gemeint ist. „Schlüsselfertig“ ist kein gesetzlich definierter Begriff – was enthalten ist, regelt allein die Bau- und Leistungsbeschreibung des Anbieters. Vergleichen Sie deshalb nur Angebote mit identischem Leistungsumfang.
 
-Zwischen einer Gemeinde im Umland und einer Großstadtlage kann sich der Grundstückspreis vervielfachen – das Haus selbst kostet dagegen bundesweit ähnlich viel. Wo wir bauen, zeigt die Übersicht der [Regionen, in denen Hochpuls baut](/fertighaus/).
+Zwischen einer Gemeinde im Umland und einer Großstadtlage kann sich der Grundstückspreis vervielfachen – das Haus selbst kostet dagegen bundesweit ähnlich viel. Welcher Haustyp zu Ihrem Budget passt, zeigt die Übersicht unserer [Haustypen](/haustypen/).
 
 ## Wie hoch sind die Baunebenkosten beim Hausbau?
 

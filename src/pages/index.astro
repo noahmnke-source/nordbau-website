@@ -11,22 +11,22 @@ import { buildFaqJsonLd } from '@/lib/seo';
 
 const haustypTeaser = [
   {
-    name: 'Stadtvilla',
-    href: '/haustypen/stadtvilla/',
-    fakt: 'ab 145 m² · zwei Vollgeschosse',
-    img: IMG.stadtvilla,
-  },
-  {
     name: 'Bungalow',
     href: '/haustypen/bungalow/',
     fakt: 'ab 95 m² · eine Ebene',
     img: IMG.bungalowGold,
   },
   {
-    name: 'Bauhaus',
-    href: '/haustypen/bauhaus/',
+    name: 'Flachdachhaus',
+    href: '/haustypen/flachdachhaus/',
     fakt: 'ab 130 m² · Flachdach',
     img: IMG.bauhausWinter,
+  },
+  {
+    name: 'Tiny House',
+    href: '/haustypen/tiny-house/',
+    fakt: 'ab 35 m² · kompakt',
+    img: IMG.fassadeRot,
   },
 ];
 
@@ -150,6 +150,7 @@ const faq = [
           alt={IMG.handwerk.alt}
           ratio="aspect-[4/5]"
           sizes="(min-width: 1024px) 30vw, 100vw"
+          parallax={0.06}
           caption="Präzision entsteht im Werk – nicht auf der Baustelle."
         />
       </div>
@@ -160,8 +161,8 @@ const faq = [
   <section class="bg-stone py-(--spacing-section)">
     <div class="container-site">
       <SectionIntro
-        title="Vier Haustypen. Unendlich viele Grundrisse."
-        lead="Jeder Typ ist ein erprobtes Grundgerüst – Räume, Fassade und Details planen wir mit Ihnen neu."
+        title="Sechs Haustypen. Unendlich viele Grundrisse."
+        lead="Vom Tiny House bis zum Mehrfamilienhaus: Jeder Typ ist ein erprobtes Grundgerüst – Räume, Fassade und Details planen wir mit Ihnen neu."
       />
 
       <div class="mt-16 grid gap-8 lg:grid-cols-12">
@@ -226,6 +227,7 @@ const faq = [
         ratio="aspect-[3/2] sm:aspect-[21/9]"
         sizes="100vw"
         class="w-full"
+        parallax={0.05}
         zoom
       />
     </a>

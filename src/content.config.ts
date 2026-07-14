@@ -20,6 +20,8 @@ const haustypen = defineCollection({
     name: z.string(),
     /** Kurzer Untertitel, z. B. "Zwei Vollgeschosse. Klare Kante." */
     tagline: z.string(),
+    /** Filtergruppe für den Katalog-Filter der Übersicht */
+    kategorie: z.enum(['Eine Ebene', 'Mit Dach', 'Modern & Modular', 'Mehrfamilien']),
     order: z.number(),
     hero: imageRef,
     gallery: z.array(imageRef).default([]),
@@ -62,25 +64,6 @@ const referenzen = defineCollection({
   }),
 });
 
-const standorte = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/standorte' }),
-  schema: z.object({
-    name: z.string(),
-    /** Kurzform für Footer/Links, z. B. "Bayern", "München & Umland" */
-    kurzname: z.string(),
-    typ: z.enum(['bundesland', 'metropolregion']),
-    order: z.number(),
-    hero: imageRef,
-    /** Regionaler Aufhänger mit echtem lokalem Mehrwert */
-    intro: z.string(),
-    localKeywords: z.array(z.string()),
-    cities: z.array(z.string()),
-    seoTitle: z.string(),
-    seoDescription: z.string(),
-    faq: z.array(faqItem).default([]),
-  }),
-});
-
 const ratgeber = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/ratgeber' }),
   schema: z.object({
@@ -93,4 +76,4 @@ const ratgeber = defineCollection({
   }),
 });
 
-export const collections = { haustypen, referenzen, standorte, ratgeber };
+export const collections = { haustypen, referenzen, ratgeber };

@@ -8,54 +8,23 @@ import SectionIntro from '@/components/SectionIntro.astro';
 
 const typen = (await getCollection('haustypen')).sort((a, b) => a.data.order - b.data.order);
 
-/**
- * Alternierende Editorial-Zeilen im 12er-Raster: Bild und Text wechseln
- * die Seite, Spannweiten und Formate variieren je Zeile –
- * bewusst kein uniformes Kartenraster.
- */
-const layout = [
-  {
-    img: 'lg:col-span-7',
-    text: 'lg:col-span-4 lg:col-start-9',
-    ratio: 'aspect-[3/2]',
-    sizes: '(min-width: 1024px) 54vw, 100vw',
-  },
-  {
-    img: 'lg:col-span-7 lg:col-start-6',
-    text: 'lg:col-span-4 lg:col-start-1 lg:row-start-1',
-    ratio: 'aspect-[4/3]',
-    sizes: '(min-width: 1024px) 54vw, 100vw',
-  },
-  {
-    img: 'lg:col-span-5 lg:col-start-2',
-    text: 'lg:col-span-4 lg:col-start-8',
-    ratio: 'aspect-[4/5]',
-    sizes: '(min-width: 1024px) 38vw, 100vw',
-  },
-  {
-    img: 'lg:col-span-7 lg:col-start-6',
-    text: 'lg:col-span-4 lg:col-start-1 lg:row-start-1',
-    ratio: 'aspect-[3/2]',
-    sizes: '(min-width: 1024px) 54vw, 100vw',
-  },
-  {
-    img: 'lg:col-span-6',
-    text: 'lg:col-span-4 lg:col-start-8',
-    ratio: 'aspect-[4/3]',
-    sizes: '(min-width: 1024px) 46vw, 100vw',
-  },
-  {
-    img: 'lg:col-span-5 lg:col-start-7',
-    text: 'lg:col-span-5 lg:col-start-1 lg:row-start-1',
-    ratio: 'aspect-[4/5]',
-    sizes: '(min-width: 1024px) 38vw, 100vw',
-  },
+// Filtergruppen in fester Reihenfolge, nur die tatsächlich belegten anzeigen.
+const gruppen = ['Eine Ebene', 'Mit Dach', 'Modern & Modular', 'Mehrfamilien'] as const;
+const filter = [
+  { label: 'Alle', value: 'alle', count: typen.length },
+  ...gruppen
+    .map((g) => ({
+      label: g,
+      value: g,
+      count: typen.filter((t) => t.data.kategorie === g).length,
+    }))
+    .filter((f) => f.count > 0),
 ];
 ---
 
 <BaseLayout
   title="Haustypen: Fertighäuser individuell geplant"
-  description="Sechs Haustypen als Fertighaus: Stadtvilla bis Mehrgenerationenhaus, individuell geplant, Effizienzhaus 40, ab 355.000 €. Jetzt Beratungstermin vereinbaren."
+  description="Sechs Haustypen als Fertighaus: Bungalow, Flachdachhaus, Satteldachhaus, Modulhaus, Tiny House, Mehrfamilienhaus. Effizienzhaus 40, ab 89.000 €. Jetzt beraten lassen."
   breadcrumbs={[{ name: 'Haustypen', href: '/haustypen/' }]}
 >
   <!-- Seitenkopf -->
@@ -76,55 +45,76 @@ const layout = [
         </p>
       </div>
       <p class="prose-measure self-end text-small text-muted lg:col-span-4 lg:col-start-9">
-        Alle sechs Typen bauen wir schlüsselfertig – 2026 ab 355.000 €, mit
-        12 Monaten Festpreisgarantie ab Vertragsabschluss und fünf Jahren
+        Vom Tiny House bis zum Mehrfamilienhaus – alle Typen bauen wir schlüsselfertig,
+        2026 ab 89.000 €, mit 12 Monaten Festpreisgarantie und fünf Jahren
         Gewährleistung nach BGB.
       </p>
     </div>
   </section>
 
-  <!-- Editorial-Zeilen: alternierend, asymmetrisch, wechselnde Formate -->
-  <section class="container-site pt-16 pb-(--spacing-section) lg:pt-24">
-    <div class="grid gap-y-(--spacing-section-sm)">
-      {typen.map((typ, i) => {
-        const l = layout[i % layout.length]!;
-        return (
-          <a
-            href={`/haustypen/${typ.id}/`}
-            class="group grid gap-x-8 gap-y-6 lg:grid-cols-12 lg:items-end"
-          >
+  <!-- Katalog: Filterleiste + Grid -->
+  <section class="container-site pt-14 pb-(--spacing-section) lg:pt-20">
+    <!-- Filterleiste (Enhancement; ohne JS bleiben alle Typen sichtbar) -->
+    <div
+      id="typ-filter"
+      role="group"
+      aria-label="Haustypen filtern"
+      class="flex flex-wrap items-baseline gap-x-7 gap-y-3 border-b border-line pb-6"
+    >
+      {filter.map((f, i) => (
+        <button
+          type="button"
+          class="filter-chip"
+          data-filter={f.value}
+          aria-pressed={i === 0 ? 'true' : 'false'}
+        >
+          {f.label}
+          <span class="tnum ml-1 text-caption text-muted">{f.count}</span>
+        </button>
+      ))}
+    </div>
+
+    <!-- Grid -->
+    <div id="typ-grid" class="mt-14 grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+      {typen.map((typ, i) => (
+        <a
+          href={`/haustypen/${typ.id}/`}
+          class="catalog-item group flex flex-col"
+          data-kategorie={typ.data.kategorie}
+        >
+          <div class="card-lift">
             <Figure
               src={typ.data.hero.src}
               alt={typ.data.hero.alt}
-              ratio={l.ratio}
-              sizes={l.sizes}
+              ratio="aspect-[4/3]"
+              sizes="(min-width: 1024px) 30vw, (min-width: 640px) 46vw, 100vw"
+              eager={i < 3}
               zoom
-              class={l.img}
+              reveal={false}
             />
-            <div class:list={['reveal', l.text]}>
-              <h2 class="font-display text-display font-medium">
-                <span class="link-line">{typ.data.name}</span>
-              </h2>
-              <p class="mt-3 text-body text-muted">{typ.data.tagline}</p>
-              <dl class="mt-8 divide-y divide-line border-y border-line text-small">
-                <div class="flex items-baseline justify-between gap-6 py-3">
-                  <dt class="text-muted">Wohnfläche</dt>
-                  <dd class="tnum font-display text-title font-medium">
-                    {typ.data.facts.wohnflaeche}
-                  </dd>
-                </div>
-                <div class="flex items-baseline justify-between gap-6 py-3">
-                  <dt class="text-muted">Preis ab</dt>
-                  <dd class="tnum font-display text-title font-medium">
-                    {typ.data.facts.preisAb}
-                  </dd>
-                </div>
-              </dl>
+          </div>
+          <p class="mt-5 text-caption text-muted">{typ.data.kategorie}</p>
+          <h2 class="mt-1 font-display text-title font-medium">
+            <span class="link-line">{typ.data.name}</span>
+          </h2>
+          <p class="mt-2 text-small text-muted">{typ.data.tagline}</p>
+          <dl class="mt-5 flex flex-wrap gap-x-8 gap-y-1 border-t border-line pt-4 text-small">
+            <div>
+              <dt class="text-caption text-muted">Wohnfläche</dt>
+              <dd class="tnum font-medium">{typ.data.facts.wohnflaeche}</dd>
             </div>
-          </a>
-        );
-      })}
+            <div>
+              <dt class="text-caption text-muted">Preis ab</dt>
+              <dd class="tnum font-medium">{typ.data.facts.preisAb}</dd>
+            </div>
+          </dl>
+        </a>
+      ))}
     </div>
+
+    <p id="typ-empty" hidden class="mt-10 text-body text-muted">
+      In dieser Gruppe ist aktuell kein Haustyp hinterlegt.
+    </p>
   </section>
 
   <!-- Abschluss-CTA -->
@@ -142,4 +132,50 @@ const layout = [
       </div>
     </div>
   </section>
+
+  <script>
+    // Filterbarer Katalog – adaptiert von der Isotope-Filterung auf
+    // treehouse-ks.eu, hier als leichtgewichtiges Fade/Reflow ohne Bibliothek.
+    const bar = document.getElementById('typ-filter');
+    const items = Array.from(
+      document.querySelectorAll<HTMLElement>('#typ-grid .catalog-item')
+    );
+    const empty = document.getElementById('typ-empty');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    bar?.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('.filter-chip');
+      if (!btn) return;
+      const value = btn.dataset.filter!;
+
+      bar.querySelectorAll<HTMLButtonElement>('.filter-chip').forEach((b) =>
+        b.setAttribute('aria-pressed', String(b === btn))
+      );
+
+      let visible = 0;
+      items.forEach((item) => {
+        const match = value === 'alle' || item.dataset.kategorie === value;
+        if (match) visible++;
+
+        if (reduce) {
+          item.hidden = !match;
+          return;
+        }
+        if (match) {
+          item.hidden = false;
+          item.classList.add('is-filtering');
+          requestAnimationFrame(() =>
+            requestAnimationFrame(() => item.classList.remove('is-filtering'))
+          );
+        } else {
+          item.classList.add('is-filtering');
+          window.setTimeout(() => {
+            if (item.classList.contains('is-filtering')) item.hidden = true;
+          }, 400);
+        }
+      });
+
+      if (empty) empty.hidden = visible > 0;
+    });
+  </script>
 </BaseLayout>

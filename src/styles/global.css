@@ -201,3 +201,80 @@
     }
   }
 }
+
+/* ── Katalog: Hover-Lift + Filter ───────────────────────────
+   Adaptiert von treehouse-ks.eu (Elementor „grow"-Hover + Isotope-Filter),
+   zurückhaltend in unsere Formsprache übersetzt. */
+
+/* Sanftes Anheben der Katalogkachel bei Hover (statt reines Vergrößern) */
+@utility card-lift {
+  transition:
+    transform 0.5s var(--ease-out-quart),
+    box-shadow 0.5s var(--ease-out-quart);
+
+  @media (hover: hover) {
+    .group:hover & {
+      transform: translateY(-6px);
+    }
+  }
+}
+
+@layer components {
+  /* Filter-Chip der Katalog-Leiste */
+  .filter-chip {
+    position: relative;
+    padding: 0.5rem 0.25rem;
+    font-size: var(--text-small);
+    font-weight: 500;
+    color: var(--color-muted);
+    background-image: linear-gradient(var(--color-oxide), var(--color-oxide));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% 2px;
+    transition:
+      color 0.3s var(--ease-out-quart),
+      background-size 0.3s var(--ease-out-quart);
+  }
+  .filter-chip:hover {
+    color: var(--color-ink);
+  }
+  .filter-chip[aria-pressed='true'] {
+    color: var(--color-ink);
+    background-size: 100% 2px;
+  }
+
+  /* Katalog-Kachel: Ein-/Ausblenden beim Filtern */
+  .catalog-item {
+    transition:
+      opacity 0.4s var(--ease-out-quart),
+      transform 0.4s var(--ease-out-quart);
+  }
+  .catalog-item.is-filtering {
+    opacity: 0;
+    transform: scale(0.98) translateY(8px);
+  }
+  .catalog-item[hidden] {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .catalog-item {
+      transition: none;
+    }
+    .catalog-item.is-filtering {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* Parallax-Basis: sanfte Tiefe beim Scrollen (JS setzt --parallax-y).
+   Adaptiert von den Elementor-Motion-Effekten auf treehouse-ks.eu. */
+@utility parallax {
+  will-change: transform;
+  transform: translate3d(0, var(--parallax-y, 0), 0);
+
+  @media (prefers-reduced-motion: reduce) {
+    transform: none;
+  }
+}

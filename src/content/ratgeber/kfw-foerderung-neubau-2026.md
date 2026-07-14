@@ -24,7 +24,7 @@ Für private Bauherren sind 2026 zwei Programme relevant: „Klimafreundlicher N
 | KfW 298 „Klimafreundlicher Neubau“ | Vermieter, Investoren, Unternehmen | 150.000 € je Wohneinheit | mindestens Effizienzhaus 40 |
 | KfW 300 „Wohneigentum für Familien“ | Familien mit Kind unter 18, Einkommensgrenze | bis 270.000 € (mit QNG-Siegel und mehreren Kindern) | Effizienzhaus 40, Selbstnutzung |
 
-Ein Detail mit großer Hebelwirkung steckt in der Formulierung „je Wohneinheit“: Ein Haus mit Einliegerwohnung zählt als zwei Wohneinheiten – der maximale Kreditrahmen bei KfW 297 verdoppelt sich damit auf 300.000 €. Wer ohnehin über eine vermietbare Einheit oder das Wohnen mit den Eltern nachdenkt, findet die passende Hausform beim [Haus mit Einliegerwohnung](/haustypen/mehrgenerationenhaus/).
+Ein Detail mit großer Hebelwirkung steckt in der Formulierung „je Wohneinheit“: Ein Haus mit Einliegerwohnung zählt als zwei Wohneinheiten – der maximale Kreditrahmen bei KfW 297 verdoppelt sich damit auf 300.000 €. Wer ohnehin über eine vermietbare Einheit oder das Wohnen mit den Eltern nachdenkt, findet die passende Hausform beim [Mehrfamilienhaus](/haustypen/mehrfamilienhaus/).
 
 ## Wie funktioniert „Klimafreundlicher Neubau“ (KfW 297/298)?
 
