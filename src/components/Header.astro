@@ -97,8 +97,11 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
   class="pointer-events-none fixed inset-0 z-[var(--z-overlay)] bg-graphite text-paper opacity-0 transition-opacity duration-300 lg:hidden"
   hidden
 >
-  <div class="container-site flex h-full flex-col pt-28 pb-10">
-    <nav aria-label="Mobile Navigation">
+  <!-- h-full + overflow-y-auto: passt der Inhalt nicht (kleine Displays),
+       wird gescrollt statt gestaucht. shrink-0 verhindert, dass Flexbox das
+       Nav zusammendrückt und der CTA-Block sich über die Links legt. -->
+  <div class="container-site flex h-full flex-col overflow-y-auto overscroll-contain pt-28 pb-10">
+    <nav aria-label="Mobile Navigation" class="shrink-0">
       <ul class="space-y-2">
         {nav.map((item, i) => (
           <li
@@ -117,7 +120,7 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
       </ul>
     </nav>
 
-    <div class="mt-auto space-y-6">
+    <div class="mt-auto shrink-0 space-y-6 pt-12">
       <Button href="/kontakt/" variant="primary" class="w-full justify-center">
         Beratung vereinbaren
       </Button>
