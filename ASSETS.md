@@ -19,7 +19,46 @@ Optional eigenes Poster: Standbild als JPG exportieren, unter
 `public/videos/hero-poster.jpg` ablegen und in `src/pages/index.astro` die
 `poster`-Prop auf `{ src: '/videos/hero-poster.jpg', alt: '…' }` ändern.
 
-## 2. Ihre drei Baustellenfotos (ein Projekt!)
+## 2a. Neue Referenz hinzufügen (aktueller Stand)
+
+Die Referenzen-Seite zeigt pro Projekt alle Fotos und darunter „Ort: Titel".
+Format und Layout bleiben automatisch erhalten — du brauchst nur zwei Dinge:
+
+**1) Bilder ablegen** unter `public/projekte/` in drei Breiten (für srcset):
+`<name>-640.webp`, `<name>-1024.webp`, `<name>-1600.webp`
+
+Erzeugen (im Projektordner, Bild vorher irgendwo ablegen):
+
+```bash
+node -e "const s=require('sharp');for(const w of [640,1024,1600])s('DEIN-BILD.jpg').resize({width:w}).webp({quality:72}).toFile('public/projekte/NAME-'+w+'.webp')"
+```
+
+**2) Referenz anlegen**: neue Datei `src/content/referenzen/<slug>.md`, z. B.:
+
+```yaml
+---
+title: Einfamilienhaus im Bau
+ort: München            # optional – ohne ort entfällt der "Ort: "-Teil
+jahr: 2026
+kategorie: Neubau       # Neubau | Stadtvilla | Bungalow | Aufstockung | Bauhaus | Doppelhaus
+order: 2                # Reihenfolge auf der Seite
+hero:
+  src: "/projekte/NAME-1600.webp"   # immer die 1600er referenzieren
+  alt: "Aussagekräftiger Alt-Text"
+gallery:
+  - src: "/projekte/NAME2-1600.webp"
+    alt: "..."
+facts: {}               # optional: wohnflaeche / bauzeit / energiestandard
+seoTitle: "..."
+seoDescription: "..."
+---
+
+Fließtext (optional).
+```
+
+Aktuelles Projekt: `src/content/referenzen/muenchen-einfamilienhaus.md`.
+
+## 2b. Frühere Notiz zu den ersten Baustellenfotos
 
 Alle drei Fotos zeigen dasselbe Haus. Sie sind als EIN Bautagebuch-Projekt
 angelegt — ohne Ortsangabe — in `src/content/referenzen/bautagebuch-einfamilienhaus.md`,

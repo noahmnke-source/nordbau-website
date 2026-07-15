@@ -1,5 +1,5 @@
 ---
-import { unsplashSrcset, unsplashWidth } from '@/lib/img';
+import { unsplashSrcset, unsplashWidth, isProjektBild, projektSrcset } from '@/lib/img';
 
 interface Props {
   src: string;
@@ -33,6 +33,11 @@ const {
 } = Astro.props;
 
 const isUnsplash = src.startsWith('https://images.unsplash.com/');
+const isProjekt = isProjektBild(src);
+
+// Unsplash-Stand-ins und eigene Projektfotos liefern beide ein srcset;
+// lokale Einzelbilder ohne Varianten fallen auf den nackten src zurück.
+const srcset = isUnsplash ? unsplashSrcset(src) : isProjekt ? projektSrcset(src) : undefined;
 ---
 
 <figure
@@ -42,8 +47,8 @@ const isUnsplash = src.startsWith('https://images.unsplash.com/');
   <div class:list={['overflow-hidden bg-stone', ratio, reveal && 'reveal-media']}>
     <img
       src={isUnsplash ? unsplashWidth(src, 1600) : src}
-      srcset={isUnsplash ? unsplashSrcset(src) : undefined}
-      sizes={isUnsplash ? sizes : undefined}
+      srcset={srcset}
+      sizes={srcset ? sizes : undefined}
       alt={alt}
       loading={eager ? 'eager' : 'lazy'}
       decoding={eager ? 'sync' : 'async'}

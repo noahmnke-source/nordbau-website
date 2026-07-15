@@ -5,28 +5,26 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import Button from '@/components/Button.astro';
 import Figure from '@/components/Figure.astro';
 
-const projekte = (await getCollection('referenzen')).sort(
-  (a, b) => a.data.order - b.data.order
-);
+const projekte = (await getCollection('referenzen')).sort((a, b) => a.data.order - b.data.order);
 
 /**
- * Asymmetrisches Galerie-Raster: Spannweite, Versatz und Format
- * wechseln je Position – kein uniformes Karten-Grid.
- * Position 0 ist das Featured-Projekt (order 1).
+ * Bildformate wechseln pro Foto – so entsteht auch bei weiteren Projekten
+ * kein uniformes Raster. Neue Referenz = neue .md-Datei in
+ * src/content/referenzen/ (Bilder siehe ASSETS.md).
  */
-const layout = [
-  { wrap: 'lg:col-span-8', ratio: 'aspect-[4/3]', sizes: '(min-width: 1024px) 62vw, 100vw' },
-  { wrap: 'lg:col-span-4 lg:self-end', ratio: 'aspect-[4/5]', sizes: '(min-width: 1024px) 30vw, 100vw' },
-  { wrap: 'lg:col-span-5 lg:col-start-2 lg:mt-8', ratio: 'aspect-[4/5]', sizes: '(min-width: 1024px) 38vw, 100vw' },
-  { wrap: 'lg:col-span-6 lg:col-start-7 lg:mt-28', ratio: 'aspect-[3/2]', sizes: '(min-width: 1024px) 46vw, 100vw' },
-  { wrap: 'lg:col-span-8 lg:col-start-3 lg:mt-8', ratio: 'aspect-[21/9]', sizes: '(min-width: 1024px) 62vw, 100vw' },
+const bildLayout = [
+  { wrap: 'lg:col-span-7', ratio: 'aspect-[16/9]', sizes: '(min-width: 1024px) 56vw, 100vw' },
+  { wrap: 'lg:col-span-5 lg:mt-20', ratio: 'aspect-[4/3]', sizes: '(min-width: 1024px) 40vw, 100vw' },
+  { wrap: 'lg:col-span-8 lg:col-start-3', ratio: 'aspect-[3/2]', sizes: '(min-width: 1024px) 62vw, 100vw' },
+  { wrap: 'lg:col-span-6 lg:col-start-6 lg:mt-12', ratio: 'aspect-[4/5]', sizes: '(min-width: 1024px) 46vw, 100vw' },
 ];
 ---
 
 <BaseLayout
-  title="Fertighaus-Erfahrungen – gebaute Referenzhäuser"
-  description="Gebaute Fertighäuser mit Ort, Bauzeit und Wohnfläche – und ein laufendes Projekt im Bautagebuch. So bauen wir: dokumentiert statt inszeniert. Jetzt ansehen."
+  title="Referenzen – Projekte von Nordbau"
+  description="Projekte von Nordbau, dokumentiert auch mitten im Bau: Einfamilienhaus in München mit neuer Dachkonstruktion und Holzfassade. Echte Baustellen statt Renderings."
   breadcrumbs={[{ name: 'Referenzen', href: '/referenzen/' }]}
+  hideFooterCta
 >
   <!-- Seitenkopf -->
   <section class="container-site pt-12 lg:pt-16">
@@ -34,47 +32,58 @@ const layout = [
 
     <div class="grid gap-x-8 gap-y-6 lg:grid-cols-12">
       <h1 class="font-display text-hero font-medium lg:col-span-7">
-        Fertighaus-Erfahrungen: gebaute Häuser statt Renderings
+        Unsere Projekte – auch mitten im Bau
       </h1>
       <p class="prose-measure self-end text-body text-muted lg:col-span-4 lg:col-start-9">
-        Jedes Projekt auf dieser Seite ist gebaut, übergeben und bewohnt. Wir dokumentieren
-        Ort, Wohnfläche und Bauzeit – und die Familien erzählen mit ihrem Namen,
-        wie der Bau gelaufen ist.
+        Keine Renderings: Wir zeigen unsere Häuser so, wie sie entstehen.
+        Wer sehen kann, wie gearbeitet wird, muss weniger glauben.
       </p>
     </div>
   </section>
 
-  <!-- Galerie -->
+  <!-- Projekte: Fotos je Projekt, darunter Ort und Bezeichnung -->
   <section class="container-site pt-16 pb-(--spacing-section) lg:pt-24">
-    <div class="grid gap-x-8 gap-y-16 lg:grid-cols-12">
-      {projekte.map((projekt, i) => {
-        const l = layout[i % layout.length]!;
-        return (
-          <a href={`/referenzen/${projekt.id}/`} class:list={['group block', l.wrap]}>
-            <Figure
-              src={projekt.data.hero.src}
-              alt={projekt.data.hero.alt}
-              ratio={l.ratio}
-              sizes={l.sizes}
-              zoom
-            />
-            <div class="mt-5 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-              <h2 class="font-display text-title font-medium">
-                <span class="link-line">{projekt.data.title}</span>
-              </h2>
-              <p class="tnum text-small text-muted">
-                {[projekt.data.ort, projekt.data.jahr, projekt.data.facts.wohnflaeche]
-                  .filter(Boolean)
-                  .join(' · ')}
+    {projekte.length === 0 ? (
+      <p class="text-body text-muted">In Kürze zeigen wir hier unsere Projekte.</p>
+    ) : (
+      <div class="grid gap-y-(--spacing-section-sm)">
+        {projekte.map((projekt) => {
+          const bilder = [projekt.data.hero, ...projekt.data.gallery];
+          const href = `/referenzen/${projekt.id}/`;
+          return (
+            <article>
+              <div class="grid gap-x-8 gap-y-8 lg:grid-cols-12">
+                {bilder.map((bild, i) => {
+                  const l = bildLayout[i % bildLayout.length]!;
+                  return (
+                    <a href={href} class:list={['group block', l.wrap]}>
+                      <Figure
+                        src={bild.src}
+                        alt={bild.alt}
+                        ratio={l.ratio}
+                        sizes={l.sizes}
+                        eager={i === 0}
+                        reveal={i !== 0}
+                        zoom
+                      />
+                    </a>
+                  );
+                })}
+              </div>
+
+              <p class="mt-7 font-display text-title font-medium">
+                <a href={href} class="link-line">
+                  {projekt.data.ort ? `${projekt.data.ort}: ` : ''}{projekt.data.title}
+                </a>
               </p>
-            </div>
-          </a>
-        );
-      })}
-    </div>
+            </article>
+          );
+        })}
+      </div>
+    )}
   </section>
 
-  <!-- Abschluss-CTA -->
+  <!-- Abschluss-CTA (der Footer-CTA ist auf dieser Seite ausgeblendet) -->
   <section class="bg-graphite py-(--spacing-section) text-paper">
     <div class="container-site grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-end">
       <div class="lg:col-span-7">
@@ -82,8 +91,8 @@ const layout = [
           Ihr Projekt könnte das nächste auf dieser Seite sein.
         </h2>
         <p class="reveal prose-measure mt-6 text-body leading-relaxed text-paper-muted">
-          Im Erstgespräch klären wir Grundstück, Budget und Zeitplan –
-          unverbindlich, mit ehrlichen Zahlen und ohne Verkaufsdruck.
+          Im Erstgespräch klären wir Grundstück, Budget und Zeitplan – unverbindlich,
+          mit ehrlichen Zahlen und ohne Verkaufsdruck.
         </p>
       </div>
       <div class="flex flex-wrap items-center gap-6 lg:col-span-4 lg:col-start-9 lg:justify-end">
