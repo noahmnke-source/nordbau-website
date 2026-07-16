@@ -97,6 +97,7 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
 <div
   id="mobile-menu"
   class="pointer-events-none fixed inset-0 z-[var(--z-overlay)] bg-graphite text-paper opacity-0 transition-opacity duration-300 lg:hidden"
+  tabindex="-1"
   hidden
 >
   <!-- h-full + overflow-y-auto: passt der Inhalt nicht (kleine Displays),
@@ -205,6 +206,14 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
     opacity: 1;
   }
 
+  /* Das Menü selbst bekommt beim Öffnen den Fokus (für Screenreader/Tastatur).
+     Es ist per tabindex="-1" nicht antippbar, daher hier bewusst kein
+     Fokusring – sonst läge ein roter Rahmen um den Container. */
+  #mobile-menu:focus,
+  #mobile-menu:focus-visible {
+    outline: none;
+  }
+
   :global(html.menu-open) {
     overflow: hidden;
   }
@@ -238,7 +247,10 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
       if (open) {
         menu.hidden = false;
         requestAnimationFrame(() => menu.classList.add('is-open'));
-        menu.querySelector<HTMLElement>('a')?.focus({ preventScroll: true });
+        // Fokus auf den Menü-Container statt auf den ersten Link: Screenreader
+        // und Tastatur landen weiterhin im Menü, aber kein Link bekommt einen
+        // sichtbaren Fokusring (der sonst als rotes Rechteck erschien).
+        menu.focus({ preventScroll: true });
       } else {
         menu.classList.remove('is-open');
         window.setTimeout(() => {
