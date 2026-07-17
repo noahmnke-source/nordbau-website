@@ -18,7 +18,7 @@ facts:
   bauweise: Holztafelbau, werkseitig vorgefertigt
   energiestandard: Effizienzhaus 40
 seoTitle: "Satteldachhaus als Fertighaus bauen – Einfamilienhaus | Nordbau"
-seoDescription: "Einfamilienhaus mit Satteldach als Fertighaus: ab 120 m², Effizienzhaus 40, schlüsselfertig nach 8–10 Wochen Bauzeit. Jetzt Beratung vereinbaren."
+seoDescription: "Einfamilienhaus mit Satteldach als Fertighaus: ab 120 m², Effizienzhaus 40, schlüsselfertig rund zwei Wochen ab Erstkontakt. Jetzt Beratung vereinbaren."
 faq:
   - q: Was kostet ein Satteldachhaus als Fertighaus?
     a: "Der Preis hängt von Wohnfläche, Ausstattung und Grundstück ab. Das Satteldach ist die wirtschaftlichste Dachform: bewährt, regensicher und mit ausbaubarem Dachgeschoss, das günstige Wohnfläche schafft. Ihr verbindliches Festpreisangebot mit 12 Monaten Preisgarantie erhalten Sie nach dem Erstgespräch; Grundstück und Baunebenkosten kommen hinzu."
