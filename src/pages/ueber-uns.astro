@@ -173,6 +173,59 @@ const grundsaetze = [
     </div>
   </section>
 
+  <!-- Wandaufbau: Schicht für Schicht (adaptiert von treehouse „Wall Details") -->
+  <section class="container-site py-(--spacing-section)">
+    <div class="grid gap-x-8 gap-y-12 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <h2 class="reveal font-display text-display font-medium">Was in unseren Wänden steckt</h2>
+        <p class="reveal prose-measure mt-6 text-body text-muted">
+          Eine Nordbau-Wand ist kein massiver Klotz, sondern ein durchdachter Aufbau aus
+          mehreren Schichten. Zusammen ergeben sie eine hochgedämmte, luftdichte
+          Gebäudehülle im Effizienzhaus-40-Standard – geprüft auf ökologische und
+          thermische Leistung.
+        </p>
+      </div>
+
+      <ol class="reveal lg:col-span-7 lg:col-start-6">
+        {[
+          {
+            n: '01',
+            t: 'Innenseite',
+            d: 'Gipsfaserplatte auf einer Installationsebene: Hier laufen Leitungen, ohne die luftdichte Ebene zu durchdringen. Fertige Oberfläche zum Streichen oder Tapezieren.',
+          },
+          {
+            n: '02',
+            t: 'Luftdichte Beplankung',
+            d: 'Eine OSB-Platte bildet die luftdichte Ebene der Wand – im Werk verklebt und geprüft. Sie entscheidet über den Energieverbrauch des ganzen Hauses.',
+          },
+          {
+            n: '03',
+            t: 'Tragwerk & Dämmung',
+            d: 'Das Ständerwerk aus technisch getrocknetem Konstruktionsvollholz nimmt die Lasten auf; die Gefache sind vollflächig mit ökologischer Dämmung gefüllt.',
+          },
+          {
+            n: '04',
+            t: 'Außenseite & Fassade',
+            d: 'Eine weitere Holzwerkstoffplatte schließt die Wand nach außen, darauf folgt die Fassade – als Putz oder als hinterlüftete Holzschalung, ganz nach Entwurf.',
+          },
+        ].map((l, i) => (
+          <li
+            class:list={[
+              'grid grid-cols-[3rem_1fr] gap-x-5 border-line py-6',
+              i > 0 && 'border-t',
+            ]}
+          >
+            <span class="tnum font-display text-title text-oxide" aria-hidden="true">{l.n}</span>
+            <div>
+              <h3 class="text-title font-medium">{l.t}</h3>
+              <p class="prose-measure mt-2 text-small text-muted">{l.d}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
   <!-- Zahlen: Anthrazit-Drench, Register statt Stat-Karten -->
   <section class="bg-graphite py-(--spacing-section) text-paper">
     <div class="container-site">

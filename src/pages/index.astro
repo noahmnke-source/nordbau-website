@@ -157,6 +157,41 @@ const faq = [
     </div>
   </section>
 
+  <!-- Warum Holz: Materialvorteile (Fakten des Baustoffs, kein Icon-Raster) -->
+  <section class="py-(--spacing-section) pt-0">
+    <div class="container-site">
+      <SectionIntro
+        title="Warum wir in Holz bauen"
+        lead="Holztafelbau ist nicht nur schnell und präzise. Der Baustoff selbst bringt Eigenschaften mit, die kein anderer hat."
+      />
+      <dl class="mt-16 grid gap-x-16 gap-y-12 sm:grid-cols-2">
+        {[
+          {
+            t: 'Gesundes Raumklima',
+            d: 'Holz ist ein natürlicher, hypoallergener Baustoff: elektrostatisch neutral, es zieht keinen Staub an. Das Ergebnis ist eine spürbar reine Raumluft.',
+          },
+          {
+            t: 'Feuchte, natürlich reguliert',
+            d: 'Holzwände nehmen Feuchtigkeit auf, wenn die Luft feucht ist, und geben sie ab, wenn sie trocken ist – ein ausgeglichenes Raumklima ganz ohne zusätzliche Technik.',
+          },
+          {
+            t: 'Leicht und formstabil',
+            d: 'Mit rund 500 kg/m³ ist Holz deutlich leichter als Beton und zugleich elastisch: Die Konstruktion bleibt auch bei Erschütterungen stabil.',
+          },
+          {
+            t: 'Nachwachsend und CO₂-arm',
+            d: 'Jeder Kubikmeter verbautes Holz bindet rund eine Tonne CO₂ – ein Baustoff, der nachwächst, statt Ressourcen zu verbrauchen.',
+          },
+        ].map((b) => (
+          <div class="reveal border-t border-line pt-6">
+            <dt class="font-display text-title font-medium">{b.t}</dt>
+            <dd class="prose-measure mt-3 text-body text-muted">{b.d}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
   <!-- Haustypen-Teaser -->
   <section class="bg-stone py-(--spacing-section)">
     <div class="container-site">
