@@ -5,6 +5,7 @@ import Button from '@/components/Button.astro';
 import Figure from '@/components/Figure.astro';
 import SectionIntro from '@/components/SectionIntro.astro';
 import FaqAccordion from '@/components/FaqAccordion.astro';
+import MaterialSlider from '@/components/MaterialSlider.astro';
 import { IMG } from '@/data/assets';
 import { SITE } from '@/config/site';
 import { buildFaqJsonLd } from '@/lib/seo';
@@ -246,6 +247,9 @@ const faq = [
       </div>
     </div>
   </section>
+
+  <!-- Aufbau & Materialien: Wandschnitt-Slider -->
+  <MaterialSlider />
 
   <!-- Referenz-Preview: ein entschiedenes Bild -->
   <section class="py-(--spacing-section)">
