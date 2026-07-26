@@ -10,23 +10,25 @@ const projekte = (await getCollection('referenzen')).sort((a, b) => a.data.order
 /**
  * Realisierte Projekte aus dem Nordbau-Verbund (Holzbau-Portfolio + übernommene
  * Kompetenzen der Eco Bau GmbH → Hannover Nordbau GmbH). Ort-genau, ohne
- * Straßenangabe. Fotos folgen; bis dahin als sachliches Register.
+ * Straßenangabe. Fotos aus den Projektunterlagen unter public/referenzen/.
  */
 const wohnhaeuser = [
-  { ort: 'Freising', typ: 'Einfamilienhaus', fakt: '180 m² · Satteldach, Garage, kontrollierte Wohnraumlüftung' },
-  { ort: 'Northeim', typ: 'Einfamilienhaus', fakt: '160 m² · zwei Geschosse, Holz- und HPL-Fassade' },
-  { ort: 'Uslar', typ: 'Einfamilienhaus', fakt: '220 m² · zwei Geschosse, drei Schlafzimmer, Garage' },
-  { ort: 'Nieder-Winkling', typ: 'Einfamilienhaus', fakt: '160 m² · Satteldach, energieeffizient in Holzbauweise' },
-  { ort: 'Regensburg', typ: 'Modulhaus', fakt: '45 m² · Brettsperrholz (CLT), werkseitig vorgefertigt' },
-  { ort: 'Göteborg (SE)', typ: 'Einfamilienhaus', fakt: '91 m² · gedämmt für kaltes Klima, Holzbauweise' },
-  { ort: 'Zürich (CH)', typ: 'Hotel', fakt: '650 m² · drei Ebenen, 16 Zimmer, Holz- und HPL-Fassade' },
+  { ort: 'Freising', typ: 'Einfamilienhaus', fakt: '180 m² · Satteldach, Garage, kontrollierte Wohnraumlüftung', img: '/referenzen/freising-efh.webp' },
+  { ort: 'Northeim', typ: 'Einfamilienhaus', fakt: '160 m² · zwei Geschosse, Holz- und HPL-Fassade', img: '/referenzen/northeim-efh.webp' },
+  { ort: 'Uslar', typ: 'Einfamilienhaus', fakt: '220 m² · zwei Geschosse, drei Schlafzimmer, Garage', img: '/referenzen/uslar-efh.webp' },
+  { ort: 'Nieder-Winkling', typ: 'Einfamilienhaus', fakt: '160 m² · Satteldach, energieeffizient in Holzbauweise', img: '/referenzen/niederwinkling-efh.webp' },
+  { ort: 'Regensburg', typ: 'Modulhaus', fakt: '45 m² · Brettsperrholz (CLT), werkseitig vorgefertigt', img: '/referenzen/regensburg-modulhaus.webp' },
+  { ort: 'Göteborg (SE)', typ: 'Einfamilienhaus', fakt: '91 m² · gedämmt für kaltes Klima, Holzbauweise', img: '/referenzen/goeteborg-efh.webp' },
+  { ort: 'Zürich (CH)', typ: 'Hotel', fakt: '650 m² · drei Ebenen, 16 Zimmer, Holz- und HPL-Fassade', img: '/referenzen/zuerich-hotel.webp' },
 ];
 
 const bauten = [
-  { ort: 'Ronnenberg', typ: 'Kindertagesstätte', fakt: 'Holzrahmenbau, fünf Gruppen · 2022–2023' },
-  { ort: 'Sulzbach-Rosenberg', typ: 'Kindergarten', fakt: '1.200 m² · Neubau in Holzbauweise' },
-  { ort: 'Hannover', typ: 'Büro- und Verwaltungsgebäude', fakt: 'City Gate Nord · 10.500 m² BGF · 2023–2025' },
-  { ort: 'Isernhagen', typ: 'Logistik- & Verwaltungsneubau', fakt: '~6.000 m² BGF · 2019–2020' },
+  { ort: 'Ronnenberg', typ: 'Kindertagesstätte', fakt: 'Holzrahmenbau, fünf Gruppen · 2022–2023', img: '/referenzen/ronnenberg-kita.webp' },
+  { ort: 'Sulzbach-Rosenberg', typ: 'Kindergarten', fakt: '1.200 m² · Neubau in Holzbauweise', img: '/referenzen/sulzbach-kindergarten.webp' },
+  { ort: 'Hannover', typ: 'Büro- und Verwaltungsgebäude', fakt: 'City Gate Nord · 10.500 m² BGF · 2023–2025', img: '/referenzen/hannover-citygate.webp' },
+  { ort: 'Stuttgart', typ: 'Wohn- und Geschäftshaus', fakt: '70 Wohneinheiten · 7 OG + 3 UG Tiefgarage · 2019–2023', img: '/referenzen/stuttgart-maybach.webp' },
+  { ort: 'Braunschweig', typ: 'Städtisches Klinikum', fakt: 'Innenausbau EG–5. OG, medizinischer Hochbau · 2021–2023', img: '/referenzen/braunschweig-klinikum.webp' },
+  { ort: 'Isernhagen', typ: 'Logistik- & Verwaltungsneubau', fakt: '~6.000 m² BGF · 2019–2020', img: '/referenzen/isernhagen-pvu.webp' },
 ];
 
 /**
@@ -105,7 +107,7 @@ const bildLayout = [
     )}
   </section>
 
-  <!-- Realisierte Projekte: sachliches Register (Fotos folgen) -->
+  <!-- Realisierte Projekte: Foto + Text, aus den Projektunterlagen -->
   <section class="bg-stone py-(--spacing-section)">
     <div class="container-site">
       <div class="grid gap-x-8 gap-y-6 lg:grid-cols-12">
@@ -114,43 +116,52 @@ const bildLayout = [
         </h2>
         <p class="reveal prose-measure self-end text-body text-muted lg:col-span-4 lg:col-start-9">
           Vom Einfamilienhaus bis zum öffentlichen Gebäude – eine Auswahl gebauter
-          Projekte aus dem Nordbau-Verbund. Fotostrecken ergänzen wir laufend.
+          Projekte aus dem Nordbau-Verbund, dokumentiert auch mitten im Bau.
         </p>
       </div>
 
-      <div class="mt-16 grid gap-x-8 gap-y-14 lg:grid-cols-12">
-        <div class="reveal lg:col-span-6">
-          <h3 class="text-caption tracking-wide text-muted uppercase">Wohnhäuser in Holzbauweise</h3>
-          <dl class="mt-6 divide-y divide-line border-y border-line">
-            {wohnhaeuser.map((p) => (
-              <div class="grid gap-1 py-5 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-6">
-                <dt class="font-display text-title font-medium">
-                  {p.ort} <span class="text-muted">· {p.typ}</span>
-                </dt>
-                <dd class="text-small text-muted sm:text-right">{p.fakt}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-
-        <div class="reveal lg:col-span-6">
-          <h3 class="text-caption tracking-wide text-muted uppercase">Öffentliche &amp; gewerbliche Bauten</h3>
-          <dl class="mt-6 divide-y divide-line border-y border-line">
-            {bauten.map((p) => (
-              <div class="grid gap-1 py-5 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-6">
-                <dt class="font-display text-title font-medium">
-                  {p.ort} <span class="text-muted">· {p.typ}</span>
-                </dt>
-                <dd class="text-small text-muted sm:text-right">{p.fakt}</dd>
-              </div>
-            ))}
-          </dl>
-          <p class="mt-6 text-caption text-muted">
-            Bauten aus dem übernommenen Leistungsspektrum der Eco&nbsp;Bau&nbsp;GmbH,
-            deren Kompetenzen in die Hannover&nbsp;Nordbau&nbsp;GmbH übergegangen sind.
-          </p>
-        </div>
+      <h3 class="reveal mt-16 text-caption tracking-wide text-muted uppercase">Wohnhäuser in Holzbauweise</h3>
+      <div class="mt-8 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+        {wohnhaeuser.map((p) => (
+          <article class="reveal">
+            <Figure
+              src={p.img}
+              alt={`${p.typ} in ${p.ort} – ${p.fakt}`}
+              ratio="aspect-[4/3]"
+              sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
+              zoom
+            />
+            <p class="mt-5 font-display text-title font-medium">
+              {p.ort} <span class="text-muted">· {p.typ}</span>
+            </p>
+            <p class="mt-1 text-small text-muted">{p.fakt}</p>
+          </article>
+        ))}
       </div>
+
+      <h3 class="reveal mt-20 text-caption tracking-wide text-muted uppercase">Öffentliche &amp; gewerbliche Bauten</h3>
+      <div class="mt-8 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+        {bauten.map((p) => (
+          <article class="reveal">
+            <Figure
+              src={p.img}
+              alt={`${p.typ} in ${p.ort} – ${p.fakt}`}
+              ratio="aspect-[4/3]"
+              sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
+              zoom
+            />
+            <p class="mt-5 font-display text-title font-medium">
+              {p.ort} <span class="text-muted">· {p.typ}</span>
+            </p>
+            <p class="mt-1 text-small text-muted">{p.fakt}</p>
+          </article>
+        ))}
+      </div>
+      <p class="mt-8 max-w-3xl text-caption text-muted">
+        Bauten aus dem übernommenen Leistungsspektrum der Eco&nbsp;Bau&nbsp;GmbH,
+        deren Kompetenzen in die Hannover&nbsp;Nordbau&nbsp;GmbH übergegangen sind.
+        Projektfotos aus den jeweiligen Referenzunterlagen.
+      </p>
     </div>
   </section>
 
