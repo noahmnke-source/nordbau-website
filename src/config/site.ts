@@ -39,10 +39,13 @@ export const SITE = {
   },
 
   /**
-   * Formular-Endpoint (Platzhalter). Vor Launch durch echten Endpoint
-   * ersetzen, z. B. Formspree, Netlify Forms oder eigene API-Route.
+   * Kontaktformular läuft über Netlify Forms (Formularname „beratung“, siehe
+   * kontakt.astro). Anfragen werden in Netlify erfasst; die E-Mail-Weiterleitung
+   * an die Adresse unten wird EINMALIG im Netlify-Dashboard eingerichtet:
+   * Site → Forms → Form notifications → „Email notification“.
+   * ASCII-/Punycode-Fallback der Umlaut-Domain: info@xn--nordbau-huser-jfb.de
    */
-  formEndpoint: 'https://formspree.io/f/PLATZHALTER',
+  formRecipient: 'info@nordbau-häuser.de',
 
   social: {
     instagram: 'https://www.instagram.com/nordbau',
