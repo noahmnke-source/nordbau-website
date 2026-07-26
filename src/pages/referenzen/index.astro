@@ -13,22 +13,74 @@ const projekte = (await getCollection('referenzen')).sort((a, b) => a.data.order
  * Straßenangabe. Fotos aus den Projektunterlagen unter public/referenzen/.
  */
 const wohnhaeuser = [
-  { ort: 'Freising', typ: 'Einfamilienhaus', fakt: '180 m² · Satteldach, Garage, kontrollierte Wohnraumlüftung', img: '/referenzen/freising-efh.webp' },
-  { ort: 'Northeim', typ: 'Einfamilienhaus', fakt: '160 m² · zwei Geschosse, Holz- und HPL-Fassade', img: '/referenzen/northeim-efh.webp' },
-  { ort: 'Uslar', typ: 'Einfamilienhaus', fakt: '220 m² · zwei Geschosse, drei Schlafzimmer, Garage', img: '/referenzen/uslar-efh.webp' },
-  { ort: 'Nieder-Winkling', typ: 'Einfamilienhaus', fakt: '160 m² · Satteldach, energieeffizient in Holzbauweise', img: '/referenzen/niederwinkling-efh.webp' },
-  { ort: 'Regensburg', typ: 'Modulhaus', fakt: '45 m² · Brettsperrholz (CLT), werkseitig vorgefertigt', img: '/referenzen/regensburg-modulhaus.webp' },
-  { ort: 'Göteborg (SE)', typ: 'Einfamilienhaus', fakt: '91 m² · gedämmt für kaltes Klima, Holzbauweise', img: '/referenzen/goeteborg-efh.webp' },
-  { ort: 'Zürich (CH)', typ: 'Hotel', fakt: '650 m² · drei Ebenen, 16 Zimmer, Holz- und HPL-Fassade', img: '/referenzen/zuerich-hotel.webp' },
+  {
+    ort: 'Freising', typ: 'Einfamilienhaus', img: '/referenzen/freising-efh.webp',
+    fakt: '180 m² · Satteldach, Garage, kontrollierte Wohnraumlüftung',
+    beschreibung: 'Zweigeschossiges Einfamilienhaus mit 180 m² Wohnfläche: ein traditionelles Satteldach in moderner Ausführung, mit hellem Wohnraum, funktionaler Küche samt Essbereich, Hauswirtschaftsraum, Arbeitsplatz, drei Schlafzimmern und Garage. Eine Lüftungsanlage sorgt für frische Luft und hohe Energieeffizienz.',
+  },
+  {
+    ort: 'Northeim', typ: 'Einfamilienhaus', img: '/referenzen/northeim-efh.webp',
+    fakt: '160 m² · zwei Geschosse, Holz- und HPL-Fassade',
+    beschreibung: 'Modernes Einfamilienhaus über zwei Ebenen, 160 m². Im Erdgeschoss Wohnen, Küche, Büro, Bad und Technik; im Obergeschoss zwei Terrassen, Eltern- und ein weiteres Schlafzimmer sowie ein Bad. Die Fassade aus HPL und Holz ergibt eine elegante, langlebige Hülle.',
+  },
+  {
+    ort: 'Uslar', typ: 'Einfamilienhaus', img: '/referenzen/uslar-efh.webp',
+    fakt: '220 m² · zwei Geschosse, drei Schlafzimmer, Garage',
+    beschreibung: 'Einfamilienhaus mit 220 m² Nutzfläche auf zwei Ebenen. Das Erdgeschoss vereint Wohn- und Esszimmer, Küche, Hauswirtschaftsraum, Büro und Garage; im Obergeschoss liegen drei Schlafzimmer inklusive Elternzimmer, ein Bad und eine Terrasse. Materialien und Farben fügen sich harmonisch in die Umgebung ein.',
+  },
+  {
+    ort: 'Nieder-Winkling', typ: 'Einfamilienhaus', img: '/referenzen/niederwinkling-efh.webp',
+    fakt: '160 m² · Satteldach, energieeffizient in Holzbauweise',
+    beschreibung: 'Zweigeschossiges Einfamilienhaus mit 160 m², traditionellem Satteldach und moderner Anmutung. Effiziente Materialien für den Holzbau und eine natürliche Dämmung sorgen für stabile Innentemperaturen über das ganze Jahr und einen niedrigen Energieverbrauch.',
+  },
+  {
+    ort: 'Regensburg', typ: 'Modulhaus', img: '/referenzen/regensburg-modulhaus.webp',
+    fakt: '45 m² · Brettsperrholz (CLT), werkseitig vorgefertigt',
+    beschreibung: 'Kompaktes Modulhaus mit 45 m² für Wohnraum, Essbereich, Küche, Bad und ein Schlafzimmer. Gebaut in Brettsperrholz (CLT): hohe Langlebigkeit, schnelle Montage und Energieeffizienz. Alle Bauteile entstehen werkseitig – für kontrollierte Qualität und minimale Bauzeit vor Ort.',
+  },
+  {
+    ort: 'Göteborg (SE)', typ: 'Einfamilienhaus', img: '/referenzen/goeteborg-efh.webp',
+    fakt: '91 m² · gedämmt für kaltes Klima, Holzbauweise',
+    beschreibung: 'Funktionales Einfamilienhaus mit 91 m², ausgelegt auch für kaltes Klima wie in Schweden. Heller Wohnraum mit großen Fenstern, offen verbunden mit Ess- und Küchenbereich, dazu zwei Schlafzimmer und ein praktisches Bad. Sehr gute Dämmung und nachhaltiger Holzbau für Komfort und Langlebigkeit.',
+  },
+  {
+    ort: 'Zürich (CH)', typ: 'Hotel', img: '/referenzen/zuerich-hotel.webp',
+    fakt: '650 m² · drei Ebenen, 16 Zimmer, Holz- und HPL-Fassade',
+    beschreibung: 'Luxushotel über drei Ebenen mit 16 Zimmern und 650 m² Gesamtfläche. Großzügige Terrassen und weite Ausblicke in die Natur; die Fassade aus HPL (Fundermax) und Holz gibt dem Gebäude ein elegantes, natürliches Erscheinungsbild und hohe Witterungsbeständigkeit.',
+  },
 ];
 
 const bauten = [
-  { ort: 'Ronnenberg', typ: 'Kindertagesstätte', fakt: 'Holzrahmenbau, fünf Gruppen · 2022–2023', img: '/referenzen/ronnenberg-kita.webp' },
-  { ort: 'Sulzbach-Rosenberg', typ: 'Kindergarten', fakt: '1.200 m² · Neubau in Holzbauweise', img: '/referenzen/sulzbach-kindergarten.webp' },
-  { ort: 'Hannover', typ: 'Büro- und Verwaltungsgebäude', fakt: 'City Gate Nord · 10.500 m² BGF · 2023–2025', img: '/referenzen/hannover-citygate.webp' },
-  { ort: 'Stuttgart', typ: 'Wohn- und Geschäftshaus', fakt: '70 Wohneinheiten · 7 OG + 3 UG Tiefgarage · 2019–2023', img: '/referenzen/stuttgart-maybach.webp' },
-  { ort: 'Braunschweig', typ: 'Städtisches Klinikum', fakt: 'Innenausbau EG–5. OG, medizinischer Hochbau · 2021–2023', img: '/referenzen/braunschweig-klinikum.webp' },
-  { ort: 'Isernhagen', typ: 'Logistik- & Verwaltungsneubau', fakt: '~6.000 m² BGF · 2019–2020', img: '/referenzen/isernhagen-pvu.webp' },
+  {
+    ort: 'Ronnenberg', typ: 'Kindertagesstätte', img: '/referenzen/ronnenberg-kita.webp',
+    fakt: 'Holzrahmenbau, fünf Gruppen · 2022–2023',
+    beschreibung: 'Neubau einer Kindertagesstätte in Holzrahmenbauweise in Empelde für die Stadt Ronnenberg. Eingeschossig, mit fünf Gruppenbereichen, Ruheräumen, Kinderbädern und großzügigen Spielfluren; eine nachhaltige, energieeffiziente Gebäudehülle sorgt für angenehmes Raumklima. Rohbau und Innenausbau, 2022–2023.',
+  },
+  {
+    ort: 'Sulzbach-Rosenberg', typ: 'Kindergarten', img: '/referenzen/sulzbach-kindergarten.webp',
+    fakt: '1.200 m² · Neubau in Holzbauweise',
+    beschreibung: 'Moderner Kindergarten mit rund 1.200 m² Fläche in Holzbauweise. Sichere, flexible Räume für Lernen und Spiel fördern die soziale, kognitive und motorische Entwicklung der Kinder; natürliche Materialien und offene Bereiche stärken das Wohlbefinden.',
+  },
+  {
+    ort: 'Hannover', typ: 'Büro- und Verwaltungsgebäude', img: '/referenzen/hannover-citygate.webp',
+    fakt: 'City Gate Nord · 10.500 m² BGF · 2023–2025',
+    beschreibung: 'Zweiter Bauabschnitt des Büro- und Verwaltungskomplexes City Gate Nord in Vahrenwald – rund 10.500 m² BGF über sechs Geschosse. Ein energieeffizienter, flexibel nutzbarer Verwaltungsbau nach DGNB-Standards; Tiefbau, Rohbau und Innenausbau bei laufendem Betrieb des ersten Bauabschnitts. 2023–2025.',
+  },
+  {
+    ort: 'Stuttgart', typ: 'Wohn- und Geschäftshaus', img: '/referenzen/stuttgart-maybach.webp',
+    fakt: '70 Wohneinheiten · 7 OG + 3 UG Tiefgarage · 2019–2023',
+    beschreibung: 'Wohn- und Geschäftshaus mit dreigeschossiger Tiefgarage und sieben Obergeschossen. 70 Wohneinheiten inklusive Penthäusern, darunter Gewerbe- und Büroflächen; hohe Anforderungen an Schall- und Brandschutz. Rohbau und Innenausbau in innerstädtischer Lage, 2019–2023.',
+  },
+  {
+    ort: 'Braunschweig', typ: 'Städtisches Klinikum', img: '/referenzen/braunschweig-klinikum.webp',
+    fakt: 'Innenausbau EG–5. OG, medizinischer Hochbau · 2021–2023',
+    beschreibung: 'Innenausbau eines medizinischen Großprojekts am Städtischen Klinikum Braunschweig – vom Erdgeschoss bis zum fünften Obergeschoss samt Technikbereichen. Trockenbau, Installationswände, hygienische Oberflächen und Brandschutz unter strengen medizinischen Auflagen, eng getaktet mit Medizintechnik, HKLS und Elektro. 2021–2023.',
+  },
+  {
+    ort: 'Isernhagen', typ: 'Logistik- & Verwaltungsneubau', img: '/referenzen/isernhagen-pvu.webp',
+    fakt: '~6.000 m² BGF · 2019–2020',
+    beschreibung: 'Neubau eines Logistik- und Verwaltungsstandorts für die PVU-Group: eine großflächige Warm- und Kalthalle plus dreigeschossiges Verwaltungsgebäude, rund 6.000 m² BGF. Stützenfreie Hallenbereiche ermöglichen flexible Nutzung; Tiefbau, Rohbau und Innenausbau. 2019–2020.',
+  },
 ];
 
 /**
@@ -121,43 +173,53 @@ const bildLayout = [
       </div>
 
       <h3 class="reveal mt-16 text-caption tracking-wide text-muted uppercase">Wohnhäuser in Holzbauweise</h3>
-      <div class="mt-8 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-10 grid gap-y-(--spacing-section-sm)">
         {wohnhaeuser.map((p) => (
-          <article class="reveal">
+          <article class="grid gap-x-8 gap-y-6 lg:grid-cols-12 lg:items-center">
             <Figure
               src={p.img}
-              alt={`${p.typ} in ${p.ort} – ${p.fakt}`}
+              alt={`${p.typ} in ${p.ort}`}
               ratio="aspect-[4/3]"
-              sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
+              sizes="(min-width: 1024px) 56vw, 100vw"
+              reveal
               zoom
+              class="lg:col-span-7"
             />
-            <p class="mt-5 font-display text-title font-medium">
-              {p.ort} <span class="text-muted">· {p.typ}</span>
-            </p>
-            <p class="mt-1 text-small text-muted">{p.fakt}</p>
+            <div class="reveal lg:col-span-4 lg:col-start-9">
+              <p class="font-display text-title font-medium">
+                {p.ort} <span class="text-muted">· {p.typ}</span>
+              </p>
+              <p class="prose-measure mt-4 text-body text-muted">{p.beschreibung}</p>
+              <p class="mt-4 text-small text-muted">{p.fakt}</p>
+            </div>
           </article>
         ))}
       </div>
 
-      <h3 class="reveal mt-20 text-caption tracking-wide text-muted uppercase">Öffentliche &amp; gewerbliche Bauten</h3>
-      <div class="mt-8 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      <h3 class="reveal mt-24 text-caption tracking-wide text-muted uppercase">Öffentliche &amp; gewerbliche Bauten</h3>
+      <div class="mt-10 grid gap-y-(--spacing-section-sm)">
         {bauten.map((p) => (
-          <article class="reveal">
+          <article class="grid gap-x-8 gap-y-6 lg:grid-cols-12 lg:items-center">
             <Figure
               src={p.img}
-              alt={`${p.typ} in ${p.ort} – ${p.fakt}`}
+              alt={`${p.typ} in ${p.ort}`}
               ratio="aspect-[4/3]"
-              sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
+              sizes="(min-width: 1024px) 56vw, 100vw"
+              reveal
               zoom
+              class="lg:col-span-7"
             />
-            <p class="mt-5 font-display text-title font-medium">
-              {p.ort} <span class="text-muted">· {p.typ}</span>
-            </p>
-            <p class="mt-1 text-small text-muted">{p.fakt}</p>
+            <div class="reveal lg:col-span-4 lg:col-start-9">
+              <p class="font-display text-title font-medium">
+                {p.ort} <span class="text-muted">· {p.typ}</span>
+              </p>
+              <p class="prose-measure mt-4 text-body text-muted">{p.beschreibung}</p>
+              <p class="mt-4 text-small text-muted">{p.fakt}</p>
+            </div>
           </article>
         ))}
       </div>
-      <p class="mt-8 max-w-3xl text-caption text-muted">
+      <p class="mt-14 max-w-3xl text-caption text-muted">
         Bauten aus dem übernommenen Leistungsspektrum der Eco&nbsp;Bau&nbsp;GmbH,
         deren Kompetenzen in die Hannover&nbsp;Nordbau&nbsp;GmbH übergegangen sind.
         Projektfotos aus den jeweiligen Referenzunterlagen.
