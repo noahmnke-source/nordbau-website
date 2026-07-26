@@ -50,8 +50,13 @@ export const SITE = {
     pinterest: 'https://www.pinterest.de/nordbau',
   },
 
-  /** Gründungsjahr für "seit"-Angaben und JSON-LD (PLATZHALTER – echtes Jahr eintragen) */
-  foundingYear: 1998,
+  /**
+   * Gründungsjahr für "seit"-Angaben und JSON-LD.
+   * Tree House nennt in den Unterlagen kein exaktes Jahr, sondern „über ein
+   * Jahrzehnt Erfahrung“ – daher 2013 als belegbare Untergrenze gesetzt.
+   * Falls das genaue Jahr bekannt ist, hier eintragen.
+   */
+  foundingYear: 2013,
 } as const;
 
 export type Site = typeof SITE;

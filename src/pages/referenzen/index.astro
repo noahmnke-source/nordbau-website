@@ -8,6 +8,28 @@ import Figure from '@/components/Figure.astro';
 const projekte = (await getCollection('referenzen')).sort((a, b) => a.data.order - b.data.order);
 
 /**
+ * Realisierte Projekte aus dem Nordbau-Verbund (Holzbau-Portfolio + übernommene
+ * Kompetenzen der Eco Bau GmbH → Hannover Nordbau GmbH). Ort-genau, ohne
+ * Straßenangabe. Fotos folgen; bis dahin als sachliches Register.
+ */
+const wohnhaeuser = [
+  { ort: 'Freising', typ: 'Einfamilienhaus', fakt: '180 m² · Satteldach, Garage, kontrollierte Wohnraumlüftung' },
+  { ort: 'Northeim', typ: 'Einfamilienhaus', fakt: '160 m² · zwei Geschosse, Holz- und HPL-Fassade' },
+  { ort: 'Uslar', typ: 'Einfamilienhaus', fakt: '220 m² · zwei Geschosse, drei Schlafzimmer, Garage' },
+  { ort: 'Nieder-Winkling', typ: 'Einfamilienhaus', fakt: '160 m² · Satteldach, energieeffizient in Holzbauweise' },
+  { ort: 'Regensburg', typ: 'Modulhaus', fakt: '45 m² · Brettsperrholz (CLT), werkseitig vorgefertigt' },
+  { ort: 'Göteborg (SE)', typ: 'Einfamilienhaus', fakt: '91 m² · gedämmt für kaltes Klima, Holzbauweise' },
+  { ort: 'Zürich (CH)', typ: 'Hotel', fakt: '650 m² · drei Ebenen, 16 Zimmer, Holz- und HPL-Fassade' },
+];
+
+const bauten = [
+  { ort: 'Ronnenberg', typ: 'Kindertagesstätte', fakt: 'Holzrahmenbau, fünf Gruppen · 2022–2023' },
+  { ort: 'Sulzbach-Rosenberg', typ: 'Kindergarten', fakt: '1.200 m² · Neubau in Holzbauweise' },
+  { ort: 'Hannover', typ: 'Büro- und Verwaltungsgebäude', fakt: 'City Gate Nord · 10.500 m² BGF · 2023–2025' },
+  { ort: 'Isernhagen', typ: 'Logistik- & Verwaltungsneubau', fakt: '~6.000 m² BGF · 2019–2020' },
+];
+
+/**
  * Bildformate wechseln pro Foto – so entsteht auch bei weiteren Projekten
  * kein uniformes Raster. Neue Referenz = neue .md-Datei in
  * src/content/referenzen/ (Bilder siehe ASSETS.md).
@@ -22,7 +44,7 @@ const bildLayout = [
 
 <BaseLayout
   title="Referenzen – Projekte von Nordbau"
-  description="Projekte von Nordbau, dokumentiert auch mitten im Bau: Einfamilienhaus in München mit neuer Dachkonstruktion und Holzfassade. Echte Baustellen statt Renderings."
+  description="Projekte von Nordbau: Einfamilienhaus in München mitten im Bau, dazu realisierte Wohnhäuser, Kitas und Gewerbebauten in Holzbauweise aus über einem Jahrzehnt Erfahrung."
   breadcrumbs={[{ name: 'Referenzen', href: '/referenzen/' }]}
   hideFooterCta
 >
@@ -81,6 +103,55 @@ const bildLayout = [
         })}
       </div>
     )}
+  </section>
+
+  <!-- Realisierte Projekte: sachliches Register (Fotos folgen) -->
+  <section class="bg-stone py-(--spacing-section)">
+    <div class="container-site">
+      <div class="grid gap-x-8 gap-y-6 lg:grid-cols-12">
+        <h2 class="reveal font-display text-display font-medium lg:col-span-7">
+          Realisierte Projekte aus über einem Jahrzehnt Holzbau
+        </h2>
+        <p class="reveal prose-measure self-end text-body text-muted lg:col-span-4 lg:col-start-9">
+          Vom Einfamilienhaus bis zum öffentlichen Gebäude – eine Auswahl gebauter
+          Projekte aus dem Nordbau-Verbund. Fotostrecken ergänzen wir laufend.
+        </p>
+      </div>
+
+      <div class="mt-16 grid gap-x-8 gap-y-14 lg:grid-cols-12">
+        <div class="reveal lg:col-span-6">
+          <h3 class="text-caption tracking-wide text-muted uppercase">Wohnhäuser in Holzbauweise</h3>
+          <dl class="mt-6 divide-y divide-line border-y border-line">
+            {wohnhaeuser.map((p) => (
+              <div class="grid gap-1 py-5 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-6">
+                <dt class="font-display text-title font-medium">
+                  {p.ort} <span class="text-muted">· {p.typ}</span>
+                </dt>
+                <dd class="text-small text-muted sm:text-right">{p.fakt}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+        <div class="reveal lg:col-span-6">
+          <h3 class="text-caption tracking-wide text-muted uppercase">Öffentliche &amp; gewerbliche Bauten</h3>
+          <dl class="mt-6 divide-y divide-line border-y border-line">
+            {bauten.map((p) => (
+              <div class="grid gap-1 py-5 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-6">
+                <dt class="font-display text-title font-medium">
+                  {p.ort} <span class="text-muted">· {p.typ}</span>
+                </dt>
+                <dd class="text-small text-muted sm:text-right">{p.fakt}</dd>
+              </div>
+            ))}
+          </dl>
+          <p class="mt-6 text-caption text-muted">
+            Bauten aus dem übernommenen Leistungsspektrum der Eco&nbsp;Bau&nbsp;GmbH,
+            deren Kompetenzen in die Hannover&nbsp;Nordbau&nbsp;GmbH übergegangen sind.
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Abschluss-CTA (der Footer-CTA ist auf dieser Seite ausgeblendet) -->

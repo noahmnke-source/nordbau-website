@@ -7,7 +7,7 @@ hero:
   alt: "Dachstuhl im Holzrahmenbau: präzise gefügte Sparren und Binder vor blauem Himmel"
   standIn: true
 seoTitle: "Fertighaus oder Massivhaus? Der Vergleich 2026 | Nordbau"
-seoDescription: "Fertighaus oder Massivhaus 2026: schlüsselfertig in rund 2 Wochen statt 8–12 Monaten, bessere CO₂-Bilanz, gleiche Lebensdauer. Der ehrliche Vergleich."
+seoDescription: "Fertighaus oder Massivhaus 2026: Rohbau in rund 20 Tagen im Werk statt Monaten auf der Baustelle, bessere CO₂-Bilanz, gleiche Lebensdauer. Der ehrliche Vergleich."
 ---
 
 Preislich trennt beide Bauweisen 2026 kaum noch etwas: Schlüsselfertige Fertighäuser liegen bei 2.400 bis 3.300 € pro Quadratmeter, Massivhäuser bei 2.500 bis 3.600 €. Die Entscheidung fällt deshalb heute über andere Kriterien – Bauzeit, Termin- und Preissicherheit, CO₂-Bilanz und die Frage, wie viel Planungsfreiheit Sie brauchen. Dieser Vergleich stellt beide Bauweisen mit konkreten Zahlen gegenüber und ordnet auch die oft zitierten Fertighaus-Nachteile sachlich ein – ohne die Schwächen der eigenen Bauweise zu verschweigen.
@@ -27,14 +27,14 @@ Der relevantere Unterschied liegt in der Preissicherheit. Beim Fertighaus kommt 
 
 ## Wie groß ist der Unterschied bei der Bauzeit?
 
-Hier liegt der deutlichste messbare Vorteil des Fertighauses. Die Wand-, Decken- und Dachelemente entstehen witterungsunabhängig im Werk, während auf dem Grundstück parallel die Bodenplatte vorbereitet wird. Bei uns dauert die Montage zwei Tage – dann steht das Haus. Kommen individuelle Arbeiten wie besondere Bodenbeläge dazu, ist es rund ein halber Tag mehr. Vom Erstkontakt bis zur schlüsselfertigen Übergabe vergehen bei Nordbau rund zwei Wochen.
+Hier liegt der deutlichste messbare Vorteil des Fertighauses. Die Wand-, Decken- und Dachelemente entstehen witterungsunabhängig im Werk – der Rohbau eines Einfamilienhauses in rund 20 Tagen –, während auf dem Grundstück parallel die Bodenplatte vorbereitet wird. Die Montage vor Ort dauert dann etwa drei Tage – und Ihr Haus steht wetterfest, mit Dach, Fenstern und verschließbarer Tür. Wie lange es bis zum Einzug dauert, hängt von Größe und Ausbaustufe ab, liegt aber deutlich unter der Bauzeit eines Massivhauses.
 
 Beim Massivhaus wird jede Wand vor Ort gemauert oder betoniert. Vom Baubeginn bis zur Bezugsfertigkeit vergehen üblicherweise acht bis zwölf Monate: Der Rohbau selbst braucht Monate, dazu kommen Trocknungszeiten für Mauerwerk, Putz und Estrich, die sich nicht seriös abkürzen lassen – und jede Schlechtwetterphase verschiebt den Plan nach hinten.
 
 | Bauzeit im Vergleich | Fertighaus (Nordbau) | Massivhaus |
 | --- | --- | --- |
-| Haus steht | nach 2 Tagen Montage | nach mehreren Monaten Rohbauzeit |
-| Schlüsselfertig ab Erstkontakt | rund 2 Wochen | 8–12 Monate (Rohbau plus Trocknung) |
+| Rohbau-Produktion | rund 20 Tage witterungsunabhängig im Werk | mehrere Monate auf der Baustelle |
+| Haus steht wetterfest | nach rund 3 Tagen Montage | nach mehreren Monaten Rohbauzeit |
 | Witterungsrisiko | minimal (Fertigung im Werk) | erheblich (Bau vor Ort) |
 
 Diese Differenz ist bares Geld: Wer während des Baus zur Miete wohnt und parallel die Finanzierung bedient, zahlt beim Massivhaus viele Monate länger doppelt. Und weil die Fertigung im Werk planbar ist, steht der Montagetermin beim Fertighaus verbindlich fest – wie das konkret organisiert ist, zeigt der [Ablauf vom Erstgespräch bis zur Übergabe](/ablauf/).
@@ -56,7 +56,7 @@ Auch beim Wiederverkauf ist die Bauweise heute kein Preisfaktor mehr. Was den We
 | Kriterium | Fertighaus (Holztafelbau) | Massivhaus |
 | --- | --- | --- |
 | Preis pro m² (2026, schlüsselfertig) | 2.400–3.300 € | 2.500–3.600 € |
-| Bauzeit bis bezugsfertig | rund 2 Wochen ab Erstkontakt | 8–12 Monate (Rohbau plus Trocknung) |
+| Bauzeit bis bezugsfertig | Rohbau in rund 20 Tagen im Werk, in 3 Tagen montiert; Ausbau je nach Stufe | 8–12 Monate (Rohbau plus Trocknung) |
 | Termin- und Preissicherheit | Festpreis und verbindlicher Montagetermin üblich | abhängig von Gewerken und Witterung |
 | CO₂-Bilanz der Baustoffe | Holz bindet rund 1 t CO₂ je m³ | energieintensive Herstellung von Ziegel und Beton |
 | Lebensdauer | 70–100 Jahre | vergleichbar, primär wartungsabhängig |
@@ -82,6 +82,6 @@ Ehrlich ist aber auch die Kehrseite: Beim Fertighaus fallen Entscheidungen früh
 
 ## Fazit: Welche Bauweise passt zu Ihnen?
 
-Beim Preis entscheidet 2026 nicht mehr die Bauweise, sondern Ausstattung und Planung – die Spannen überlappen sich fast vollständig. Das Fertighaus gewinnt bei der Bauzeit deutlich – bei uns rund zwei Wochen vom Erstkontakt bis zur Übergabe statt 8–12 Monate –, dazu bei Termin- und Preissicherheit sowie CO₂-Bilanz; das Massivhaus punktet beim konstruktiv einfacheren Schallschutz und bei maximaler Flexibilität für spätere Umbauten. Lebensdauer und Wiederverkaufswert sind bei beiden eine Frage von Qualität, Lage und Energieeffizienz – nicht des Wandaufbaus. Alle Zahlen in diesem Artikel: Stand 07/2026.
+Beim Preis entscheidet 2026 nicht mehr die Bauweise, sondern Ausstattung und Planung – die Spannen überlappen sich fast vollständig. Das Fertighaus gewinnt bei der Bauzeit deutlich – der Rohbau entsteht in rund 20 Tagen im Werk und wird in etwa drei Tagen montiert, statt monatelang auf der Baustelle zu wachsen –, dazu bei Termin- und Preissicherheit sowie CO₂-Bilanz; das Massivhaus punktet beim konstruktiv einfacheren Schallschutz und bei maximaler Flexibilität für spätere Umbauten. Lebensdauer und Wiederverkaufswert sind bei beiden eine Frage von Qualität, Lage und Energieeffizienz – nicht des Wandaufbaus. Alle Zahlen in diesem Artikel: Stand 07/2026.
 
 Ob unsere Bauweise zu Ihrem Projekt passt, klären Sie am besten am konkreten Entwurf: Die [Haustypen von Nordbau](/haustypen/) zeigen, was im Holztafelbau architektonisch möglich ist. Und in einem unverbindlichen [Beratungsgespräch](/kontakt/) vergleichen wir beide Bauweisen offen anhand Ihrer Anforderungen – mit Zahlen, nicht mit Meinungen.

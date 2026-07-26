@@ -8,24 +8,22 @@ import MaterialSlider from '@/components/MaterialSlider.astro';
 import { IMG } from '@/data/assets';
 import { SITE } from '@/config/site';
 
-// TODO vor Launch: Zahlen durch echte Firmendaten ersetzen –
-// konsistent zur Startseite pflegen (seit-Jahr und Häuserzahl müssen übereinstimmen).
 const zahlen = [
   {
     wert: `seit ${SITE.foundingYear}`,
-    label: 'Fertighäuser in Holztafelbauweise aus einem Werk – geplant, gefertigt und montiert in Deutschland.',
+    label: 'Über ein Jahrzehnt Erfahrung im Holzbau – vom individuell geplanten Einfamilienhaus bis zum öffentlichen Gebäude in Holzrahmenbauweise.',
   },
   {
-    wert: '1.250+',
-    label: 'übergebene Häuser – jedes mit dokumentierter Qualitätsprüfung im Werk und Abnahmeprotokoll.',
+    wert: '30 Jahre',
+    label: 'Garantie auf die Baukonstruktion, dazu 5 Jahre Gewährleistung nach BGB auf alle übrigen Leistungen – und alle wesentlichen Materialien mit Qualitätszertifikat.',
   },
   {
-    wert: '≈ 120',
-    label: 'Mitarbeitende in Planung, Fertigung und Montage – feste Teams statt wechselnder Subunternehmer.',
+    wert: 'KfW 40',
+    label: 'Wandaufbauten im Effizienzhaus-40-Standard, zertifiziert für Ökologie und Wärmeschutz – hochgedämmt und luftdicht ab Werk.',
   },
   {
-    wert: '94 %',
-    label: 'unserer Baufamilien würden uns weiterempfehlen – erhoben in der Befragung ein Jahr nach Übergabe.',
+    wert: 'Holz + CLT',
+    label: 'Holzrahmen und Brettsperrholz (Cross-Laminated Timber): Die tragende Struktur kommt millimetergenau und maßhaltig aus dem Werk.',
   },
 ];
 
@@ -42,7 +40,7 @@ const grundsaetze = [
   },
   {
     titel: 'Ein Haus ist erst fertig, wenn es sich bewährt hat.',
-    text: 'Fünf Jahre Gewährleistung nach BGB sind für uns keine Frist, die man aussitzt, sondern ein Zeitraum, in dem wir erreichbar bleiben: mit festem Ansprechpartner, Wartungshinweisen und der Hausakte, die jede Entscheidung nachvollziehbar macht. Wer ein Haus für Jahrzehnte baut, darf nach der Übergabe nicht verschwinden.',
+    text: '30 Jahre Garantie auf die Baukonstruktion und fünf Jahre Gewährleistung nach BGB sind für uns keine Fristen, die man aussitzt, sondern ein Zeitraum, in dem wir erreichbar bleiben: mit festem Ansprechpartner, Wartungshinweisen und der Hausakte, die jede Entscheidung nachvollziehbar macht. Wer ein Haus für Jahrzehnte baut, darf nach der Übergabe nicht verschwinden.',
     cols: 'lg:col-span-6 lg:col-start-3',
   },
 ];
@@ -50,7 +48,7 @@ const grundsaetze = [
 
 <BaseLayout
   title={`Über uns – Fertighaus-Hersteller seit ${SITE.foundingYear}`}
-  description={`Fertighaus-Hersteller mit eigenem Werk: Holztafelbauweise, 1.250+ übergebene Häuser seit ${SITE.foundingYear}, Effizienzhaus 40. Lernen Sie ${SITE.name} kennen – im Gespräch.`}
+  description={`Fertighaus-Hersteller mit eigenem Werk: Holztafelbau und Brettsperrholz (CLT), Effizienzhaus 40, 30 Jahre Garantie auf die Baukonstruktion. Über ein Jahrzehnt Erfahrung. Lernen Sie ${SITE.name} kennen.`}
   breadcrumbs={[{ name: 'Über uns', href: '/ueber-uns/' }]}
 >
   <!-- Kopf: Positionierung -->
@@ -104,9 +102,9 @@ const grundsaetze = [
           Präzision, mit der er gebaut wird.
         </p>
         <p class="reveal prose-measure mt-5 text-body text-muted">
-          Seit {SITE.foundingYear} arbeiten wir nach diesem Prinzip. Über
-          1.250&nbsp;Familien haben uns seither ihr Haus anvertraut – die meisten,
-          nachdem sie unser Werk gesehen haben.
+          Seit über einem Jahrzehnt arbeiten wir nach diesem Prinzip – vom individuell
+          geplanten Einfamilienhaus bis zum öffentlichen Gebäude in Holzrahmenbauweise.
+          Die meisten Bauherren entscheiden sich, nachdem sie unser Werk gesehen haben.
         </p>
       </div>
       <div class="lg:col-span-4 lg:col-start-9">
@@ -134,9 +132,10 @@ const grundsaetze = [
           <p class="prose-measure text-body text-muted">
             In der Halle herrschen Bedingungen, die keine Baustelle bieten kann:
             konstante Temperatur, trockene Luft, exakte Auflager. Hier fertigen wir
-            Wand-, Decken- und Dachelemente in Holztafelbauweise – aus technisch
-            getrocknetem Konstruktionsvollholz mit definierter Holzfeuchte, das nicht
-            arbeitet, nicht schwindet und nicht überrascht.
+            Wand-, Decken- und Dachelemente in Holztafelbauweise – tragende Bauteile aus
+            technisch getrocknetem Konstruktionsvollholz und Brettsperrholz (Cross-Laminated
+            Timber, CLT) mit definierter Holzfeuchte, das nicht arbeitet, nicht schwindet
+            und nicht überrascht. Alle wesentlichen Materialien kommen mit Qualitätszertifikat.
           </p>
           <p class="prose-measure mt-5 text-body text-muted">
             Jedes Element wird vor dem Verladen geprüft und dokumentiert: Maßhaltigkeit,

@@ -73,13 +73,13 @@ Egal für welche Ausbaustufe Sie sich entscheiden – diese Punkte sollten Sie i
 - **Baustelleneinrichtung:** Gerüst, Baustrom, Bauwasser, Kran – wer zahlt?
 - **Hausanschlüsse:** Strom, Wasser, Abwasser, Telekommunikation einkalkuliert?
 - **Festpreisbindung:** Wie lange gilt der Preis, und worauf genau bezieht er sich?
-- **Gewährleistung und Sicherheiten:** fünf Jahre nach BGB, Vertragserfüllungs- und Gewährleistungsbürgschaft?
+- **Gewährleistung und Sicherheiten:** fünf Jahre nach BGB (auf die Baukonstruktion darüber hinaus?), Vertragserfüllungs- und Gewährleistungsbürgschaft?
 - **Zahlungsplan:** Raten nach Baufortschritt statt Vorkasse?
 
 Ein seriöser Anbieter beantwortet jeden dieser Punkte, bevor Sie unterschreiben. Wie Leistungsbeschreibung, Festpreis und Zahlungsplan bei uns ineinandergreifen, zeigt der [Ablauf vom Erstgespräch bis zur Übergabe](/ablauf/) – inklusive der Bemusterung, in der jeder Sonderwunsch vorab kalkuliert wird.
 
 ## Fazit: Schlüsselfertig oder Ausbauhaus?
 
-Das Ausbauhaus lohnt sich für Bauherren mit handwerklicher Erfahrung, viel verfügbarer Zeit und Geduld für rund 10.000 bis 25.000 € realistischer Ersparnis. Für alle anderen ist die schlüsselfertige Übergabe die ehrlichere Rechnung: ein verbindlicher Festpreis für einen vollständig definierten Leistungsumfang, ein Einzugstermin, der hält, und fünf Jahre Gewährleistung auf das gesamte Haus. Entscheidend ist in beiden Fällen dasselbe Dokument – die Bau- und Leistungsbeschreibung. Alle Angaben in diesem Artikel: Stand 07/2026.
+Das Ausbauhaus lohnt sich für Bauherren mit handwerklicher Erfahrung, viel verfügbarer Zeit und Geduld für rund 10.000 bis 25.000 € realistischer Ersparnis. Für alle anderen ist die schlüsselfertige Übergabe die ehrlichere Rechnung: ein verbindlicher Festpreis für einen vollständig definierten Leistungsumfang, ein Einzugstermin, der hält, 30 Jahre Garantie auf die Baukonstruktion und fünf Jahre Gewährleistung nach BGB auf alle übrigen Leistungen. Entscheidend ist in beiden Fällen dasselbe Dokument – die Bau- und Leistungsbeschreibung. Alle Angaben in diesem Artikel: Stand 07/2026.
 
 Übrigens schließen sich beide Wege nicht aus: Einzelne Eigenleistungen wie Malern oder Außenanlagen lassen sich auch beim schlüsselfertigen Bauen vereinbaren – festgelegt vor Vertragsabschluss, damit der Festpreis eindeutig bleibt. Welche Kombination für Ihr Projekt sinnvoll ist, klären wir in einem unverbindlichen [Beratungsgespräch](/kontakt/) – gern zusammen mit einem Blick auf unsere [Haustypen](/haustypen/) und den [Ablauf in fünf Schritten](/ablauf/).
