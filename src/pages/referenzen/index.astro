@@ -1,11 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import Button from '@/components/Button.astro';
 import Figure from '@/components/Figure.astro';
-
-const projekte = (await getCollection('referenzen')).sort((a, b) => a.data.order - b.data.order);
 
 /**
  * Realisierte Projekte aus dem Nordbau-Verbund (Holzbau-Portfolio + übernommene
@@ -78,27 +75,16 @@ const bauten = [
   },
 ];
 
-/**
- * Bildformate wechseln pro Foto – so entsteht auch bei weiteren Projekten
- * kein uniformes Raster. Neue Referenz = neue .md-Datei in
- * src/content/referenzen/ (Bilder siehe ASSETS.md).
- */
-const bildLayout = [
-  { wrap: 'lg:col-span-7', ratio: 'aspect-[16/9]', sizes: '(min-width: 1024px) 56vw, 100vw' },
-  { wrap: 'lg:col-span-5 lg:mt-20', ratio: 'aspect-[4/3]', sizes: '(min-width: 1024px) 40vw, 100vw' },
-  { wrap: 'lg:col-span-8 lg:col-start-3', ratio: 'aspect-[3/2]', sizes: '(min-width: 1024px) 62vw, 100vw' },
-  { wrap: 'lg:col-span-6 lg:col-start-6 lg:mt-12', ratio: 'aspect-[4/5]', sizes: '(min-width: 1024px) 46vw, 100vw' },
-];
 ---
 
 <BaseLayout
   title="Referenzen – Projekte von Nordbau"
-  description="Projekte von Nordbau: Einfamilienhaus in München mitten im Bau, dazu realisierte Wohnhäuser, Kitas und Gewerbebauten in Holzbauweise aus über einem Jahrzehnt Erfahrung."
+  description="Projekte von Nordbau: realisierte Wohnhäuser, Kitas und Gewerbebauten in Holzbauweise aus über einem Jahrzehnt Erfahrung – dokumentiert auch mitten im Bau."
   breadcrumbs={[{ name: 'Referenzen', href: '/referenzen/' }]}
   hideFooterCta
 >
   <!-- Seitenkopf -->
-  <section class="container-site pt-12 lg:pt-16">
+  <section class="container-site pt-12 pb-4 lg:pt-16">
     <Breadcrumbs items={[{ name: 'Referenzen', href: '/referenzen/' }]} class="mb-10" />
 
     <div class="grid gap-x-8 gap-y-6 lg:grid-cols-12">
@@ -106,48 +92,6 @@ const bildLayout = [
         Unsere Projekte – auch mitten im Bau
       </h1>
     </div>
-  </section>
-
-  <!-- Projekte: Fotos je Projekt, darunter Ort und Bezeichnung -->
-  <section class="container-site pt-16 pb-(--spacing-section) lg:pt-24">
-    {projekte.length === 0 ? (
-      <p class="text-body text-muted">In Kürze zeigen wir hier unsere Projekte.</p>
-    ) : (
-      <div class="grid gap-y-(--spacing-section-sm)">
-        {projekte.map((projekt) => {
-          const bilder = [projekt.data.hero, ...projekt.data.gallery];
-          const href = `/referenzen/${projekt.id}/`;
-          return (
-            <article>
-              <div class="grid gap-x-8 gap-y-8 lg:grid-cols-12">
-                {bilder.map((bild, i) => {
-                  const l = bildLayout[i % bildLayout.length]!;
-                  return (
-                    <a href={href} class:list={['group block', l.wrap]}>
-                      <Figure
-                        src={bild.src}
-                        alt={bild.alt}
-                        ratio={l.ratio}
-                        sizes={l.sizes}
-                        eager={i === 0}
-                        reveal={i !== 0}
-                        zoom
-                      />
-                    </a>
-                  );
-                })}
-              </div>
-
-              <p class="mt-7 font-display text-title font-medium">
-                <a href={href} class="link-line">
-                  {projekt.data.ort ? `${projekt.data.ort}: ` : ''}{projekt.data.title}
-                </a>
-              </p>
-            </article>
-          );
-        })}
-      </div>
-    )}
   </section>
 
   <!-- Realisierte Projekte: Foto + Text, aus den Projektunterlagen -->

@@ -1,11 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import Button from '@/components/Button.astro';
 import Figure from '@/components/Figure.astro';
-
-const projekte = (await getCollection('referenzen')).sort((a, b) => a.data.order - b.data.order);
 
 /**
  * Completed projects from the Nordbau group (timber-construction portfolio +
@@ -78,27 +75,16 @@ const bauten = [
   },
 ];
 
-/**
- * Image formats change per photo – so that even with further projects
- * no uniform grid emerges. New reference = new .md file in
- * src/content/referenzen/ (images see ASSETS.md).
- */
-const bildLayout = [
-  { wrap: 'lg:col-span-7', ratio: 'aspect-[16/9]', sizes: '(min-width: 1024px) 56vw, 100vw' },
-  { wrap: 'lg:col-span-5 lg:mt-20', ratio: 'aspect-[4/3]', sizes: '(min-width: 1024px) 40vw, 100vw' },
-  { wrap: 'lg:col-span-8 lg:col-start-3', ratio: 'aspect-[3/2]', sizes: '(min-width: 1024px) 62vw, 100vw' },
-  { wrap: 'lg:col-span-6 lg:col-start-6 lg:mt-12', ratio: 'aspect-[4/5]', sizes: '(min-width: 1024px) 46vw, 100vw' },
-];
 ---
 
 <BaseLayout
   title="References – Projects by Nordbau"
-  description="Projects by Nordbau: a single-family house in Munich mid-construction, plus completed residential buildings, day-care centres and commercial buildings in timber construction from over a decade of experience."
+  description="Projects by Nordbau: completed residential buildings, day-care centres and commercial buildings in timber construction from over a decade of experience – documented even mid-construction."
   breadcrumbs={[{ name: 'References', href: '/en/referenzen/' }]}
   hideFooterCta
 >
   <!-- Page header -->
-  <section class="container-site pt-12 lg:pt-16">
+  <section class="container-site pt-12 pb-4 lg:pt-16">
     <Breadcrumbs items={[{ name: 'References', href: '/en/referenzen/' }]} class="mb-10" />
 
     <div class="grid gap-x-8 gap-y-6 lg:grid-cols-12">
@@ -106,48 +92,6 @@ const bildLayout = [
         Our projects – even mid-construction
       </h1>
     </div>
-  </section>
-
-  <!-- Projects: photos per project, with location and title below -->
-  <section class="container-site pt-16 pb-(--spacing-section) lg:pt-24">
-    {projekte.length === 0 ? (
-      <p class="text-body text-muted">We will showcase our projects here soon.</p>
-    ) : (
-      <div class="grid gap-y-(--spacing-section-sm)">
-        {projekte.map((projekt) => {
-          const bilder = [projekt.data.hero, ...projekt.data.gallery];
-          const href = `/referenzen/${projekt.id}/`;
-          return (
-            <article>
-              <div class="grid gap-x-8 gap-y-8 lg:grid-cols-12">
-                {bilder.map((bild, i) => {
-                  const l = bildLayout[i % bildLayout.length]!;
-                  return (
-                    <a href={href} class:list={['group block', l.wrap]}>
-                      <Figure
-                        src={bild.src}
-                        alt={bild.alt}
-                        ratio={l.ratio}
-                        sizes={l.sizes}
-                        eager={i === 0}
-                        reveal={i !== 0}
-                        zoom
-                      />
-                    </a>
-                  );
-                })}
-              </div>
-
-              <p class="mt-7 font-display text-title font-medium">
-                <a href={href} class="link-line">
-                  {projekt.data.ort ? `${projekt.data.ort}: ` : ''}{projekt.data.title}
-                </a>
-              </p>
-            </article>
-          );
-        })}
-      </div>
-    )}
   </section>
 
   <!-- Completed projects: photo + text, from the project documents -->
