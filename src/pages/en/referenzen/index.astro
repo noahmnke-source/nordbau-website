@@ -84,7 +84,7 @@ const bauten = [
   hideFooterCta
 >
   <!-- Page header -->
-  <section class="container-site pt-12 pb-4 lg:pt-16">
+  <section class="container-site pt-12 lg:pt-16">
     <Breadcrumbs items={[{ name: 'References', href: '/en/referenzen/' }]} class="mb-10" />
 
     <div class="grid gap-x-8 gap-y-6 lg:grid-cols-12">
@@ -92,6 +92,35 @@ const bauten = [
         Our projects – even mid-construction
       </h1>
     </div>
+  </section>
+
+  <!-- Munich project: photos + label, deliberately without a link/detail page -->
+  <section class="container-site pt-16 pb-(--spacing-section) lg:pt-24">
+    <article>
+      <div class="grid gap-x-8 gap-y-8 lg:grid-cols-12">
+        <div class="lg:col-span-7">
+          <Figure
+            src="/projekte/muenchen-einfamilienhaus-1-1600.webp"
+            alt="Single-family house under construction: gable end with new timber façade, open roof truss and scaffolding, crane on the street side"
+            ratio="aspect-[16/9]"
+            sizes="(min-width: 1024px) 56vw, 100vw"
+            eager
+            reveal={false}
+            zoom
+          />
+        </div>
+        <div class="lg:col-span-5 lg:mt-20">
+          <Figure
+            src="/projekte/muenchen-einfamilienhaus-2-1600.webp"
+            alt="Aerial view of the construction site: new roof structure with battens, timber façade on the extension, scaffolding all around"
+            ratio="aspect-[4/3]"
+            sizes="(min-width: 1024px) 40vw, 100vw"
+            zoom
+          />
+        </div>
+      </div>
+      <p class="mt-7 font-display text-title font-medium">Munich: Single-family house under construction</p>
+    </article>
   </section>
 
   <!-- Completed projects: photo + text, from the project documents -->
