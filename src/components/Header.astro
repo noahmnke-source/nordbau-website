@@ -217,8 +217,13 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
   :global(html.menu-open) {
     overflow: hidden;
   }
-  /* Menü-Button bleibt über dem Overlay bedienbar */
-  :global(html.menu-open) #site-header {
+  /* Menü offen: Header wird transparent, damit der dunkle Menü-Grund
+     durchscheint und das helle Logo sichtbar bleibt. Der zweite Selektor
+     hat höhere Spezifität als `#site-header[data-overlay].is-scrolled` und
+     überschreibt so den weißen Scroll-Hintergrund (sonst weißes Logo auf
+     Weiß). Der Menü-Button bleibt über dem Overlay bedienbar. */
+  :global(html.menu-open) #site-header,
+  :global(html.menu-open) #site-header[data-overlay].is-scrolled {
     z-index: var(--z-modal);
     background: transparent;
     color: var(--color-paper);
