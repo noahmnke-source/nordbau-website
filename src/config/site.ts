@@ -14,8 +14,8 @@ export const SITE = {
   name: 'Nordbau',
   /** Juristischer Name für JSON-LD / Impressum */
   legalName: 'Nordbau GmbH',
-  /** Produktions-Domain — PLATZHALTER: muss mit astro.config.mjs `site` + robots.txt übereinstimmen */
-  url: 'https://www.nord-bau.de',
+  /** Produktions-Domain (Apex ist primär; www leitet per 301 hierher um). Muss mit astro.config.mjs `site` + robots.txt übereinstimmen. */
+  url: 'https://nordbau-haeuser.de',
   /** Claim, erscheint u. a. im Footer und als OG-Fallback */
   claim: 'Architektur in Serie. Gebaut für Sie.',
   /** Meta-Title-Suffix */
@@ -24,7 +24,7 @@ export const SITE = {
   contact: {
     phone: '+49 155 63046447',
     phoneDisplay: '0155 63046447',
-    email: 'info.nord-bau@gmx.de',
+    email: 'info@nordbau-haeuser.de',
     street: 'Noldestr. 40',
     zip: '30827',
     city: 'Berenbostel',
@@ -43,9 +43,8 @@ export const SITE = {
    * kontakt.astro). Anfragen werden in Netlify erfasst; die E-Mail-Weiterleitung
    * an die Adresse unten wird EINMALIG im Netlify-Dashboard eingerichtet:
    * Site → Forms → Form notifications → „Email notification“.
-   * ASCII-/Punycode-Fallback der Umlaut-Domain: info@xn--nordbau-huser-jfb.de
    */
-  formRecipient: 'info@nordbau-häuser.de',
+  formRecipient: 'info@nordbau-haeuser.de',
 
   social: {
     instagram: 'https://www.instagram.com/nordbau',

@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // WICHTIG: `site` vor Launch auf die echte Domain ändern (siehe src/config/site.ts).
 export default defineConfig({
-  site: 'https://www.nord-bau.de',
+  site: 'https://nordbau-haeuser.de',
   trailingSlash: 'always',
   integrations: [sitemap()],
   image: {
