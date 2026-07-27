@@ -1,0 +1,381 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import VideoHero from '@/components/VideoHero.astro';
+import Button from '@/components/Button.astro';
+import Figure from '@/components/Figure.astro';
+import SectionIntro from '@/components/SectionIntro.astro';
+import FaqAccordion from '@/components/FaqAccordion.astro';
+import MaterialSlider from '@/components/MaterialSlider.astro';
+import { IMG } from '@/data/assets';
+import { SITE } from '@/config/site';
+import { buildFaqJsonLd } from '@/lib/seo';
+
+const haustypTeaser = [
+  {
+    name: 'Bungalow',
+    href: '/en/haustypen/bungalow/',
+    fakt: 'from 95 m² · single storey',
+    img: IMG.bungalowGold,
+  },
+  {
+    name: 'Flat-roof house',
+    href: '/en/haustypen/flachdachhaus/',
+    fakt: 'from 130 m² · flat roof',
+    img: IMG.bauhausWinter,
+  },
+  {
+    name: 'Tiny House',
+    href: '/en/haustypen/tiny-house/',
+    fakt: 'from 35 m² · compact',
+    img: IMG.fassadeRot,
+  },
+];
+
+const ablauf = [
+  {
+    nr: '01',
+    titel: 'Initial consultation',
+    text: 'Plot, budget, timeline – we listen and tell you honestly what is possible.',
+  },
+  {
+    nr: '02',
+    titel: 'Design & fixed price',
+    text: 'Your architect-designed plan with a binding fixed-price offer, guaranteed for 12 months.',
+  },
+  {
+    nr: '03',
+    titel: 'Fixture & finish selection',
+    text: 'One day at the selection centre: facade, floors, bathrooms – you decide at the material.',
+  },
+  {
+    nr: '04',
+    titel: 'Manufacturing in the factory',
+    text: 'Wall and ceiling elements are made weather-protected, to the millimetre, and inspected.',
+  },
+  {
+    nr: '05',
+    titel: 'On-site assembly & handover',
+    text: 'In around three days your house is up – the structural shell is built weather-protected in the factory beforehand.',
+  },
+];
+
+const zahlen = [
+  { wert: `since ${SITE.foundingYear}`, label: 'Over a decade of experience in timber construction – from the single-family home to the public building' },
+  { wert: '30 years', label: 'Guarantee on the building structure, plus 5 years of statutory warranty under German law (BGB) on all other work' },
+  { wert: '12 months', label: 'Fixed-price guarantee from contract signing, independent of material prices' },
+  { wert: 'EH 40', label: 'Efficiency House standard ex works – a requirement for KfW funding 297/298' },
+];
+
+const faq = [
+  {
+    q: 'What does a prefab home from Nordbau cost?',
+    a: 'That depends on the house type, living space, specification and plot. Instead of a catalogue figure, you receive an individual fixed-price offer from us after a no-obligation initial consultation – transparently calculated, with a 12-month price guarantee from contract signing. The plot and ancillary building costs are added to the house price.',
+  },
+  {
+    q: 'How long does it take to build a prefab home?',
+    a: 'The structural shell of a single-family home is built in around 20 days, weather-independent, in the factory; the on-site assembly then takes about three days – and your house is up. The total time until move-in ready depends on size, finishing level and plot. The pace is made possible by prefabrication in the factory: on the building site, elements are assembled, not built.',
+  },
+  {
+    q: 'What exactly does “turnkey” mean?',
+    a: '“Turnkey” is not a legally defined term – the scope of work is set out in the construction & specification document. For us it means: move-in ready including bathrooms, floors and interior doors. As a rule, only compare offers with an identical scope of work.',
+  },
+  {
+    q: 'Can I plan a prefab home entirely individually?',
+    a: 'Yes. Alongside our house types, we plan freely designed architect homes in timber-frame construction – floor plan, facade, roof shape and specification are created individually. Prefabrication in the factory hardly limits the design.',
+  },
+  {
+    q: 'What KfW funding is available in 2026 for building a house?',
+    a: 'Through “Climate-Friendly New Construction” (KfW 297/298) there are interest-reduced loans of up to 150,000 euros per residential unit from Efficiency House 40 standard. Families with a child and a maximum taxable income of 90,000 euros can alternatively use KfW 300 with up to 270,000 euros.',
+  },
+];
+---
+
+<BaseLayout
+  title={`Build a turnkey prefab home – individually planned | ${SITE.name}`}
+  fullTitle
+  description="Individually planned prefab homes in timber-frame construction: turnkey, Efficiency House 40, 12-month fixed-price guarantee. Nationwide. Book a consultation now."
+  heroOverlay
+  jsonLd={[buildFaqJsonLd(faq)]}
+>
+  <!-- Hero -->
+  <VideoHero poster={IMG.heroHome}>
+    <div class="max-w-3xl">
+      <h1 class="hero-line font-display text-hero font-medium">
+        Your prefab home. Individually planned, turnkey at a fixed price.
+      </h1>
+      <p class="hero-line prose-measure mt-6 text-body text-paper/85" style="--line-delay: 180ms">
+        {SITE.name} plans and builds architect homes in timber-frame construction –
+        nationwide, to Efficiency House 40 standard, with a 30-year guarantee on the building structure.
+      </p>
+      <div class="hero-line mt-10 flex flex-wrap items-center gap-6" style="--line-delay: 320ms">
+        <Button href="/en/kontakt/" variant="primary">Book a consultation</Button>
+        <a href="/en/referenzen/" class="link-line text-small font-medium text-paper">
+          See houses we have built
+        </a>
+      </div>
+    </div>
+  </VideoHero>
+
+  <!-- USP: Statement + Belege -->
+  <section class="container-site py-(--spacing-section)">
+    <div class="grid gap-x-8 gap-y-12 lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <h2 class="reveal font-display text-display font-medium">
+          A house is not an off-the-shelf product. Our construction method is&nbsp;– in the best sense.
+        </h2>
+        <p class="reveal prose-measure mt-8 text-body text-muted">
+          Every {SITE.name} is built twice: first to the millimetre in the factory, then in
+          a few days on your plot. The precision of serial manufacturing
+          meets a floor plan that exists exactly once – yours. The result
+          is predictable in price and schedule, without architecture becoming a bargaining chip.
+        </p>
+        <dl class="reveal mt-12 divide-y divide-line border-y border-line">
+          <div class="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
+            <dt class="tnum font-display text-title font-medium text-oxide">12 months</dt>
+            <dd class="self-center text-small text-muted">Fixed-price guarantee from contract signing – your budget stays your budget.</dd>
+          </div>
+          <div class="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
+            <dt class="tnum font-display text-title font-medium text-oxide">30 years</dt>
+            <dd class="self-center text-small text-muted">Guarantee on the building structure, plus 5 years of statutory warranty under German law (BGB) on all other work.</dd>
+          </div>
+          <div class="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
+            <dt class="tnum font-display text-title font-medium text-oxide">EH 40</dt>
+            <dd class="self-center text-small text-muted">Efficiency House 40 ex works: heat pump, ventilation system, PV preparation included.</dd>
+          </div>
+          <div class="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
+            <dt class="tnum font-display text-title font-medium text-oxide">3 days</dt>
+            <dd class="self-center text-small text-muted">On-site assembly – the structural shell is built beforehand in around 20 days, weather-protected in the factory.</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="lg:col-span-4 lg:col-start-9">
+        <Figure
+          src={IMG.handwerk.src}
+          alt={IMG.handwerk.alt}
+          ratio="aspect-[4/5]"
+          sizes="(min-width: 1024px) 30vw, 100vw"
+          parallax={0.06}
+          caption="Precision is created in the factory – not on the building site."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Warum Holz: Materialvorteile (Fakten des Baustoffs, kein Icon-Raster) -->
+  <section class="py-(--spacing-section) pt-0">
+    <div class="container-site">
+      <SectionIntro
+        title="Why we build with timber"
+        lead="Timber-frame construction is not only fast and precise. The material itself brings qualities that no other has."
+      />
+      <dl class="mt-16 grid gap-x-16 gap-y-12 sm:grid-cols-2">
+        {[
+          {
+            t: 'A healthy indoor climate',
+            d: 'Timber is a natural, hypoallergenic material: electrostatically neutral, it does not attract dust. The result is noticeably pure indoor air.',
+          },
+          {
+            t: 'Moisture, naturally regulated',
+            d: 'Timber walls absorb moisture when the air is humid and release it when it is dry – a balanced indoor climate entirely without additional technology.',
+          },
+          {
+            t: 'Light and dimensionally stable',
+            d: 'At around 500 kg/m³, timber is significantly lighter than concrete and at the same time elastic: the structure stays stable even under vibrations.',
+          },
+          {
+            t: 'Renewable and low in CO₂',
+            d: 'Every cubic metre of installed timber stores around one tonne of CO₂ – a material that regrows instead of consuming resources.',
+          },
+        ].map((b) => (
+          <div class="reveal border-t border-line pt-6">
+            <dt class="font-display text-title font-medium">{b.t}</dt>
+            <dd class="prose-measure mt-3 text-body text-muted">{b.d}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- Haustypen-Teaser -->
+  <section class="bg-stone py-(--spacing-section)">
+    <div class="container-site">
+      <SectionIntro
+        title="Six house types. Countless floor plans."
+        lead="From the tiny house to the multi-family house: each type is a proven basic framework – rooms, facade and details we plan anew with you."
+      />
+
+      <div class="mt-16 grid gap-8 lg:grid-cols-12">
+        <!-- Featured: Satteldachhaus -->
+        <a href="/en/haustypen/satteldachhaus/" class="group block lg:col-span-7">
+          <Figure
+            src={IMG.satteldach.src}
+            alt={IMG.satteldach.alt}
+            ratio="aspect-[4/3]"
+            sizes="(min-width: 1024px) 58vw, 100vw"
+            zoom
+          />
+          <div class="mt-5 flex items-baseline justify-between gap-4">
+            <h3 class="font-display text-title font-medium">
+              <span class="link-line">Gable-roof house</span>
+            </h3>
+            <p class="tnum text-small text-muted">from 120 m² · classic proportions</p>
+          </div>
+        </a>
+
+        <!-- Drei kompakte Typen -->
+        <div class="grid content-start gap-10 sm:grid-cols-3 lg:col-span-5 lg:grid-cols-1 lg:gap-8 lg:pl-8">
+          {haustypTeaser.map((typ) => (
+            <a href={typ.href} class="group grid grid-cols-[7rem_1fr] items-center gap-5">
+              <Figure
+                src={typ.img.src}
+                alt={typ.img.alt}
+                ratio="aspect-square"
+                sizes="7rem"
+                zoom
+                reveal={false}
+              />
+              <div>
+                <h3 class="font-display text-title font-medium">
+                  <span class="link-line">{typ.name}</span>
+                </h3>
+                <p class="tnum mt-1 text-small text-muted">{typ.fakt}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="mt-14">
+        <Button href="/en/haustypen/" variant="secondary">Discover all house types</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aufbau & Materialien: Wandschnitt-Slider -->
+  <MaterialSlider />
+
+  <!-- Referenz-Preview: ein entschiedenes Bild -->
+  <section class="py-(--spacing-section)">
+    <div class="container-site">
+      <SectionIntro
+        title="Built, moved into, lived in."
+        lead="No renderings: these houses stand. With location, living space and documented build time."
+      />
+    </div>
+    <a href="/en/referenzen/" class="group mt-16 block">
+      <Figure
+        src={IMG.kuecheEiche.src}
+        alt={IMG.kuecheEiche.alt}
+        ratio="aspect-[3/2] sm:aspect-[21/9]"
+        sizes="100vw"
+        class="w-full"
+        parallax={0.05}
+        zoom
+      />
+    </a>
+    <div class="container-site mt-6 flex flex-wrap items-baseline justify-between gap-4">
+      <p class="text-small text-muted">
+        Open-plan kitchen, “Haus am Hang” project – 178 m², moved into after seven months.
+      </p>
+      <a href="/en/referenzen/" class="link-line text-small font-medium">See all references</a>
+    </div>
+  </section>
+
+  <!-- Ablauf -->
+  <section class="container-site py-(--spacing-section) pt-0">
+    <div class="grid gap-x-8 gap-y-12 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <h2 class="reveal font-display text-display font-medium">Into your own home in five steps</h2>
+        <p class="reveal prose-measure mt-6 text-body text-muted">
+          Building a house is a matter of trust. That is why our process is not fine print
+          but part of the offer – each step with a clear outcome.
+        </p>
+        <div class="reveal mt-8">
+          <Button href="/en/ablauf/" variant="secondary">The process in detail</Button>
+        </div>
+      </div>
+      <ol class="lg:col-span-7 lg:col-start-6">
+        {ablauf.map((schritt, i) => (
+          <li
+            class:list={[
+              'reveal grid grid-cols-[4rem_1fr] gap-x-6 border-line py-7',
+              i > 0 && 'border-t',
+            ]}
+          >
+            <span class="tnum font-display text-title text-oxide" aria-hidden="true">{schritt.nr}</span>
+            <div>
+              <h3 class="text-title font-medium">{schritt.titel}</h3>
+              <p class="prose-measure mt-2 text-small text-muted">{schritt.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Zahlen / Trust: Anthrazit-Drench, Register statt Stat-Karten -->
+  <section class="bg-graphite py-(--spacing-section) text-paper">
+    <div class="container-site">
+      <h2 class="reveal font-display text-display font-medium">
+        Reliability you can check for yourself.
+      </h2>
+      <dl class="mt-14 divide-y divide-paper/10 border-y border-paper/10">
+        {zahlen.map((z) => (
+          <div class="reveal grid gap-2 py-7 sm:grid-cols-[minmax(10rem,14rem)_1fr] sm:gap-8">
+            <dt class="tnum font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-tight font-medium">{z.wert}</dt>
+            <dd class="prose-measure self-center text-body leading-relaxed text-paper-muted">{z.label}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="mt-10 max-w-2xl text-small text-paper-muted">
+        We work under a construction contract in accordance with German law (BGB): a 30-year guarantee on the building structure,
+        five years of statutory warranty from acceptance on all other work, instalment payments
+        only for work performed, bonds included.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="container-site py-(--spacing-section)">
+    <SectionIntro
+      title="The questions that come up now"
+      lead="Honest answers with 2026 figures – in more detail in the guide."
+    />
+    <div class="mt-14 grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-8">
+        <FaqAccordion items={faq} />
+      </div>
+      <div class="self-end lg:col-span-3 lg:col-start-10">
+        <p class="text-small text-muted">Your question is not here?</p>
+        <div class="mt-4">
+          <Button href="/en/kontakt/" variant="primary">Book a consultation</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero-Ladechoreografie: Zeilen steigen versetzt auf */
+  .hero-line {
+    animation: hero-rise 0.8s var(--ease-out-expo) both;
+    animation-delay: var(--line-delay, 0ms);
+  }
+
+  @keyframes hero-rise {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-line {
+      animation: none;
+    }
+  }
+</style>

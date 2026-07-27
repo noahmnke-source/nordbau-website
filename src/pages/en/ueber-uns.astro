@@ -1,0 +1,233 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import Button from '@/components/Button.astro';
+import Figure from '@/components/Figure.astro';
+import SectionIntro from '@/components/SectionIntro.astro';
+import MaterialSlider from '@/components/MaterialSlider.astro';
+import { IMG } from '@/data/assets';
+import { SITE } from '@/config/site';
+
+const zahlen = [
+  {
+    wert: `since ${SITE.foundingYear}`,
+    label: 'More than a decade of experience in timber construction – from the individually planned single-family home to the public building in timber-frame construction.',
+  },
+  {
+    wert: '30 years',
+    label: 'Guarantee on the building structure, plus a 5-year statutory warranty under German law (BGB) on all other work – and every essential material comes with a quality certificate.',
+  },
+  {
+    wert: 'KfW 40',
+    label: 'Wall assemblies to the Efficiency House 40 (EH 40) standard, certified for ecology and thermal protection – highly insulated and airtight from the factory.',
+  },
+  {
+    wert: 'Timber + CLT',
+    label: 'Timber frame and cross-laminated timber (CLT): the load-bearing structure comes from the factory precise to the millimetre and dimensionally accurate.',
+  },
+];
+
+const grundsaetze = [
+  {
+    titel: 'What is drawn is what gets built.',
+    text: 'For us, a plan is not a suggestion but a promise. Whatever is set out in the design, the construction and performance specification and the selection record is built exactly that way – at the agreed price, on the agreed date. Surprises on the building site are not fate; they are the result of imprecise planning. That is why we invest our care up front, where it is inexpensive, rather than at the end, where it becomes costly.',
+    cols: 'lg:col-span-6 lg:col-start-1',
+  },
+  {
+    titel: 'Precision is a question of place.',
+    text: 'Millimetre work succeeds where conditions can be controlled – not in the rain on the scaffolding. That is why we move as many work steps as possible into the factory and leave for the building site only what must be assembled there. That construction becomes faster as a result is a welcome side effect. The reason is a different one: quality that can be inspected and documented.',
+    cols: 'lg:col-span-6 lg:col-start-5',
+  },
+  {
+    titel: 'A house is only finished once it has proven itself.',
+    text: 'A 30-year guarantee on the building structure and a five-year statutory warranty under German law (BGB) are not, for us, deadlines to sit out but a period during which we remain reachable: with a dedicated contact, maintenance guidance and the building documentation file that keeps every decision traceable. Anyone who builds a house to last for decades must not disappear after handover.',
+    cols: 'lg:col-span-6 lg:col-start-3',
+  },
+];
+---
+
+<BaseLayout
+  title={`About us – Prefab home manufacturer since ${SITE.foundingYear}`}
+  description={`Prefab home manufacturer with its own factory: timber-frame construction and cross-laminated timber (CLT), Efficiency House 40, a 30-year guarantee on the building structure. More than a decade of experience. Get to know ${SITE.name}.`}
+  breadcrumbs={[{ name: 'About us', href: '/en/ueber-uns/' }]}
+  hideFooterCta
+>
+  <!-- Kopf: Positionierung -->
+  <section class="container-site pt-12 lg:pt-16">
+    <Breadcrumbs items={[{ name: 'About us', href: '/en/ueber-uns/' }]} class="mb-10" />
+
+    <div class="grid gap-x-8 gap-y-10 lg:grid-cols-12">
+      <div class="lg:col-span-8">
+        <h1 class="font-display text-hero font-medium">
+          About {SITE.name}: One factory, one promise
+        </h1>
+      </div>
+      <p class="prose-measure self-end text-body text-muted lg:col-span-4 lg:col-start-9">
+        We call ourselves neither a construction company nor a workshop, although both are true:
+        {SITE.name} is a factory where architect-designed homes are made in series –
+        each to its own plan, all with the same precision.
+      </p>
+    </div>
+  </section>
+
+  <!-- Auftaktbild: Material statt Stockfoto-Team -->
+  <div class="mt-14 lg:mt-20">
+    <Figure
+      src={IMG.holzMaterial.src}
+      alt={IMG.holzMaterial.alt}
+      ratio="aspect-[3/2] sm:aspect-[21/9]"
+      sizes="100vw"
+      eager
+      reveal={false}
+      class="w-full"
+    />
+    <div class="container-site mt-4">
+      <p class="text-caption text-muted">
+        Timber is our material – inside as structure, outside as façade.
+      </p>
+    </div>
+  </div>
+
+  <!-- Haltung: großes Statement -->
+  <section class="container-site py-(--spacing-section)">
+    <div class="grid gap-x-8 gap-y-12 lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <h2 class="reveal font-display text-display font-medium">
+          For us, series does not mean the same house a thousand times over. It means the same care a thousand times over.
+        </h2>
+        <p class="reveal prose-measure mt-8 text-body text-muted">
+          Workshop craft and series production are seen as opposites. We consider that a mistake.
+          Craftsmanship becomes better, not worse, when you make it repeatable: the same steps,
+          the same inspections, the same tolerances – on every house, yours included. With us,
+          the design is individual. What is serial is the precision with which it is built.
+        </p>
+        <p class="reveal prose-measure mt-5 text-body text-muted">
+          We have worked to this principle for more than a decade – from the individually
+          planned single-family home to the public building in timber-frame construction.
+          Most clients decide once they have seen our factory.
+        </p>
+      </div>
+      <div class="lg:col-span-4 lg:col-start-9">
+        <Figure
+          src={IMG.handwerk.src}
+          alt={IMG.handwerk.alt}
+          ratio="aspect-[4/5]"
+          sizes="(min-width: 1024px) 30vw, 100vw"
+          caption="Handwork remains handwork – it only changes place: from the building site to the hall."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Das Werk -->
+  <section class="bg-stone py-(--spacing-section)">
+    <div class="container-site">
+      <SectionIntro
+        title="The factory: where your house is built for the first time"
+        lead="Before anything happens on your plot, your house takes shape in our production hall – element by element."
+      />
+
+      <div class="mt-16 grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-center">
+        <div class="reveal lg:col-span-5">
+          <p class="prose-measure text-body text-muted">
+            The hall offers conditions no building site can: constant temperature, dry air,
+            exact supports. Here we manufacture wall, floor and roof elements in timber-frame
+            construction – load-bearing components made of technically dried structural solid
+            timber and cross-laminated timber (CLT) with a defined timber moisture that does not
+            move, does not shrink and does not surprise. Every essential material comes with a
+            quality certificate.
+          </p>
+          <p class="prose-measure mt-5 text-body text-muted">
+            Every element is inspected and documented before loading: dimensional accuracy,
+            connections, insulation, airtightness. The inspection records belong to the building
+            documentation file you receive at handover. What is assembled on site in days took
+            shape in the factory over weeks – controlled, repeatable, verifiable. And designed to
+            the Efficiency House 40 (EH 40) standard that every one of our houses meets from the
+            factory.
+          </p>
+        </div>
+        <Figure
+          src={IMG.richtarbeiten.src}
+          alt={IMG.richtarbeiten.alt}
+          ratio="aspect-[4/3]"
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          class="lg:col-span-6 lg:col-start-7"
+        />
+      </div>
+
+      <div class="mt-16 grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-center">
+        <Figure
+          src={IMG.innenausbau.src}
+          alt={IMG.innenausbau.alt}
+          ratio="aspect-[4/5]"
+          sizes="(min-width: 1024px) 33vw, 100vw"
+          class="lg:col-span-4 lg:col-start-2"
+        />
+        <p class="reveal prose-measure text-body text-muted lg:col-span-5 lg:col-start-7">
+          On site, our own assembly teams carry the work forward – the same crews, working
+          together over years, from the raising day to the last interior door. That keeps
+          responsibility where it belongs: with us, from the first line to the handover of the
+          keys.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aufbau & Materialien: Wandschnitt-Slider -->
+  <MaterialSlider />
+
+  <!-- Zahlen: Anthrazit-Drench, Register statt Stat-Karten -->
+  <section class="bg-graphite py-(--spacing-section) text-paper">
+    <div class="container-site">
+      <h2 class="reveal font-display text-display font-medium">
+        What stands behind the name
+      </h2>
+      <dl class="mt-14 divide-y divide-paper/10 border-y border-paper/10">
+        {zahlen.map((z) => (
+          <div class="reveal grid gap-2 py-7 sm:grid-cols-[minmax(10rem,14rem)_1fr] sm:gap-8">
+            <dt class="tnum font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-tight font-medium">{z.wert}</dt>
+            <dd class="prose-measure self-center text-body leading-relaxed text-paper-muted">{z.label}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="mt-10 max-w-2xl text-small text-paper-muted">
+        Run as a mid-sized business, one location, short distances: anyone who builds with us
+        knows the people who plan, manufacture and assemble.
+      </p>
+    </div>
+  </section>
+
+  <!-- Woran wir glauben: Fließtext-Absätze, versetzt gesetzt -->
+  <section class="container-site py-(--spacing-section)">
+    <SectionIntro title="What we believe" />
+    <div class="mt-16 grid gap-x-8 gap-y-14 lg:grid-cols-12">
+      {grundsaetze.map((g) => (
+        <div class:list={['reveal', g.cols]}>
+          <h3 class="font-display text-title font-medium">{g.titel}</h3>
+          <p class="prose-measure mt-4 text-body text-muted">{g.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Besuch + CTA -->
+  <section class="bg-stone py-(--spacing-section)">
+    <div class="container-site grid gap-x-8 gap-y-10 lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <h2 class="reveal font-display text-display font-medium">
+          See it for yourself before you believe us.
+        </h2>
+        <p class="reveal prose-measure mt-6 text-body text-muted">
+          A text can claim precision – a house has to show it. Visit our show home, open the
+          windows, doors and cupboards, and ask the questions that brochures do not answer.
+          Or begin with an initial conversation: 30&nbsp;minutes, no obligation, with honest
+          figures.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-6 self-end lg:col-span-4 lg:col-start-9">
+        <Button href="/en/kontakt/" variant="primary">Book a consultation</Button>
+        <a href="/en/ablauf/" class="link-line text-small font-medium">The process in detail</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

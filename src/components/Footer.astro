@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Button from '@/components/Button.astro';
 import { SITE } from '@/config/site';
+import { getLang, localize, useT } from '@/i18n';
 
 interface Props {
   /** Abschluss-CTA im Footer zeigen (aus, wenn die Seite bereits einen eigenen hat) */
@@ -9,19 +10,24 @@ interface Props {
 }
 
 const { showCta = true } = Astro.props;
+const lang = getLang(Astro.url.pathname);
+const t = useT(lang);
 
-const haustypen = (await getCollection('haustypen')).sort((a, b) => a.data.order - b.data.order);
+const haustypen = (
+  lang === 'en' ? await getCollection('haustypenEn') : await getCollection('haustypen')
+).sort((a, b) => a.data.order - b.data.order);
 
 const year = new Date().getFullYear();
 
-const nav = [
-  { label: 'Haustypen', href: '/haustypen/' },
-  { label: 'Referenzen', href: '/referenzen/' },
-  { label: 'Ablauf', href: '/ablauf/' },
-  { label: 'Über uns', href: '/ueber-uns/' },
-  { label: 'Ratgeber', href: '/ratgeber/' },
-  { label: 'Kontakt', href: '/kontakt/' },
+const navDefs: { key: Parameters<typeof t>[0]; path: string }[] = [
+  { key: 'nav.haustypen', path: '/haustypen/' },
+  { key: 'nav.referenzen', path: '/referenzen/' },
+  { key: 'nav.ablauf', path: '/ablauf/' },
+  { key: 'nav.ueberuns', path: '/ueber-uns/' },
+  ...(lang === 'de' ? [{ key: 'nav.ratgeber' as const, path: '/ratgeber/' }] : []),
+  { key: 'nav.kontakt', path: '/kontakt/' },
 ];
+const nav = navDefs.map((n) => ({ label: t(n.key), href: localize(n.path, lang) }));
 ---
 
 <footer class="bg-graphite text-paper">
@@ -31,13 +37,13 @@ const nav = [
       <div class="grid gap-10 lg:grid-cols-12 lg:items-end">
         <div class="lg:col-span-8">
           <p class="font-display text-display leading-[1.13] font-medium">
-            Sprechen wir über Ihr Grundstück, Ihr Budget und den Weg zu Ihrem Haus.
+            {t('footer.ctaHeadline')}
           </p>
         </div>
         <div class="flex flex-col items-start gap-4 lg:col-span-4 lg:items-end">
-          <Button href="/kontakt/" variant="primary">Beratung vereinbaren</Button>
+          <Button href={localize('/kontakt/', lang)} variant="primary">{t('cta')}</Button>
           <a href={`tel:${SITE.contact.phone}`} class="link-line text-small text-paper-muted">
-            oder direkt anrufen: {SITE.contact.phoneDisplay}
+            {t('footer.callDirect')} {SITE.contact.phoneDisplay}
           </a>
         </div>
       </div>
@@ -47,17 +53,16 @@ const nav = [
   <!-- Linkspalten -->
   <div class="container-site grid gap-x-8 gap-y-12 py-16 sm:grid-cols-2 lg:grid-cols-12">
     <div class="lg:col-span-4">
-      <a href="/" aria-label={`${SITE.legalName} – Startseite`} class="inline-block">
+      <a href={localize('/', lang)} aria-label={`${SITE.legalName} – ${t('logo.aria')}`} class="inline-block">
         <img src="/logo-on-dark.png" width="417" height="300" alt={SITE.legalName} class="h-16 w-auto" />
       </a>
       <p class="prose-measure mt-6 max-w-xs text-small leading-relaxed text-paper-muted">
-        {SITE.claim} Schlüsselfertige und individuell geplante Fertighäuser –
-        werkseitig präzise vorgefertigt, bundesweit gebaut.
+        {SITE.claim} {t('footer.claim')}
       </p>
     </div>
 
-    <nav aria-label="Footer Navigation" class="lg:col-span-2">
-      <h2 class="mb-4 text-caption font-medium text-paper-muted">Navigation</h2>
+    <nav aria-label={t('nav.footer')} class="lg:col-span-2">
+      <h2 class="mb-4 text-caption font-medium text-paper-muted">{t('footer.nav')}</h2>
       <ul class="space-y-2.5">
         {nav.map((item) => (
           <li><a href={item.href} class="link-line text-small">{item.label}</a></li>
@@ -65,17 +70,17 @@ const nav = [
       </ul>
     </nav>
 
-    <nav aria-label="Haustypen" class="lg:col-span-3">
-      <h2 class="mb-4 text-caption font-medium text-paper-muted">Haustypen</h2>
+    <nav aria-label={t('nav.haustypen')} class="lg:col-span-3">
+      <h2 class="mb-4 text-caption font-medium text-paper-muted">{t('nav.haustypen')}</h2>
       <ul class="space-y-2.5">
         {haustypen.map((h) => (
-          <li><a href={`/haustypen/${h.id}/`} class="link-line text-small">{h.data.name}</a></li>
+          <li><a href={localize(`/haustypen/${h.id}/`, lang)} class="link-line text-small">{h.data.name}</a></li>
         ))}
       </ul>
     </nav>
 
     <div class="lg:col-span-3">
-      <h2 class="mb-4 text-caption font-medium text-paper-muted">Kontakt</h2>
+      <h2 class="mb-4 text-caption font-medium text-paper-muted">{t('footer.contact')}</h2>
       <address class="space-y-2.5 text-small not-italic">
         <p>{SITE.legalName}<br />{SITE.contact.street}<br />{SITE.contact.zip} {SITE.contact.city}</p>
         <p><a href={`tel:${SITE.contact.phone}`} class="link-line">{SITE.contact.phoneDisplay}</a></p>
@@ -84,14 +89,14 @@ const nav = [
     </div>
   </div>
 
-  <!-- Rechtliches -->
+  <!-- Rechtliches (Impressum/Datenschutz bleiben rechtlich auf Deutsch) -->
   <div class="border-t border-paper/10">
     <div class="container-site flex flex-wrap items-center justify-between gap-4 py-6 text-caption text-paper-muted">
-      <p>© {year} {SITE.legalName}. Alle Rechte vorbehalten.</p>
+      <p>© {year} {SITE.legalName}. {t('footer.rights')}</p>
       <ul class="flex flex-wrap gap-6">
-        <li><a href="/impressum/" class="link-line">Impressum</a></li>
-        <li><a href="/datenschutz/" class="link-line">Datenschutz</a></li>
-        <li><a href="/haustypen/" class="link-line">Haustypen</a></li>
+        <li><a href="/impressum/" class="link-line">{t('footer.imprint')}</a></li>
+        <li><a href="/datenschutz/" class="link-line">{t('footer.privacy')}</a></li>
+        <li><a href={localize('/haustypen/', lang)} class="link-line">{t('nav.haustypen')}</a></li>
       </ul>
     </div>
   </div>

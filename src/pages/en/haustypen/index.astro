@@ -1,0 +1,191 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import Button from '@/components/Button.astro';
+import Figure from '@/components/Figure.astro';
+import SectionIntro from '@/components/SectionIntro.astro';
+
+const typen = (await getCollection('haustypenEn')).sort((a, b) => a.data.order - b.data.order);
+
+// Kategorie-Keys bleiben deutsch (Schema-Enum, Filter-Matching); Labels englisch.
+const katLabel: Record<string, string> = {
+  'Eine Ebene': 'Single storey',
+  'Mit Dach': 'With roof',
+  'Modern & Modular': 'Modern & modular',
+  Mehrfamilien: 'Multi-family',
+};
+
+const gruppen = ['Eine Ebene', 'Mit Dach', 'Modern & Modular', 'Mehrfamilien'] as const;
+const filter = [
+  { label: 'All', value: 'alle', count: typen.length },
+  ...gruppen
+    .map((g) => ({
+      label: katLabel[g],
+      value: g,
+      count: typen.filter((t) => t.data.kategorie === g).length,
+    }))
+    .filter((f) => f.count > 0),
+];
+---
+
+<BaseLayout
+  title="House types: prefab homes, individually planned"
+  description="Six prefab house types: bungalow, flat-roof house, gable-roof house, modular house, tiny house, multi-family house. Individually planned, Efficiency House 40. Book a consultation."
+  breadcrumbs={[{ name: 'House types', href: '/en/haustypen/' }]}
+>
+  <!-- Seitenkopf -->
+  <section class="container-site pt-12 lg:pt-16">
+    <Breadcrumbs items={[{ name: 'House types', href: '/en/haustypen/' }]} class="mb-10" />
+
+    <div class="grid gap-x-8 gap-y-10 lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <h1 class="font-display text-hero font-medium">
+          House types: six ways to plan your prefab home individually
+        </h1>
+        <p class="prose-measure mt-6 text-body text-muted">
+          A house type is not a catalogue model for us, but a proven framework:
+          structure, proportion and energy concept are set – the floor plan, façade
+          and details are drawn anew by our architects for your plot. You can build to
+          your own plans or develop a fully individual project with us; the only limits
+          are structural engineering standards and local building regulations. That is
+          how the architect-designed home becomes a prefab home: individually planned,
+          factory-prefabricated, and built to Efficiency House 40 standard from the works.
+        </p>
+      </div>
+      <p class="prose-measure self-end text-small text-muted lg:col-span-4 lg:col-start-9">
+        From the tiny house to the multi-family house – we build every type turnkey,
+        with a 12-month fixed-price guarantee from signing, a 30-year guarantee on the
+        building structure and a five-year statutory warranty under German law (BGB).
+        Your price is determined individually after planning.
+      </p>
+    </div>
+  </section>
+
+  <!-- Katalog: Filterleiste + Grid -->
+  <section class="container-site pt-14 pb-(--spacing-section) lg:pt-20">
+    <!-- Filterleiste (Enhancement; ohne JS bleiben alle Typen sichtbar) -->
+    <div
+      id="typ-filter"
+      role="group"
+      aria-label="Filter house types"
+      class="flex flex-wrap items-baseline gap-x-7 gap-y-3 border-b border-line pb-6"
+    >
+      {filter.map((f, i) => (
+        <button
+          type="button"
+          class="filter-chip"
+          data-filter={f.value}
+          aria-pressed={i === 0 ? 'true' : 'false'}
+        >
+          {f.label}
+          <span class="tnum ml-1 text-caption text-muted">{f.count}</span>
+        </button>
+      ))}
+    </div>
+
+    <!-- Grid -->
+    <div id="typ-grid" class="mt-14 grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+      {typen.map((typ, i) => (
+        <a
+          href={`/en/haustypen/${typ.id}/`}
+          class="catalog-item group flex flex-col"
+          data-kategorie={typ.data.kategorie}
+        >
+          <div class="card-lift">
+            <Figure
+              src={typ.data.hero.src}
+              alt={typ.data.hero.alt}
+              ratio="aspect-[4/3]"
+              sizes="(min-width: 1024px) 30vw, (min-width: 640px) 46vw, 100vw"
+              eager={i < 3}
+              zoom
+              reveal={false}
+            />
+          </div>
+          <p class="mt-5 text-caption text-muted">{katLabel[typ.data.kategorie]}</p>
+          <h2 class="mt-1 font-display text-title font-medium">
+            <span class="link-line">{typ.data.name}</span>
+          </h2>
+          <p class="mt-2 text-small text-muted">{typ.data.tagline}</p>
+          <dl class="mt-5 flex flex-wrap gap-x-8 gap-y-1 border-t border-line pt-4 text-small">
+            <div>
+              <dt class="text-caption text-muted">Living space</dt>
+              <dd class="tnum font-medium">{typ.data.facts.wohnflaeche}</dd>
+            </div>
+            <div>
+              <dt class="text-caption text-muted">Roof type</dt>
+              <dd class="font-medium">{typ.data.facts.dachform}</dd>
+            </div>
+          </dl>
+        </a>
+      ))}
+    </div>
+
+    <p id="typ-empty" hidden class="mt-10 text-body text-muted">
+      There is currently no house type in this group.
+    </p>
+  </section>
+
+  <!-- Abschluss-CTA -->
+  <section class="bg-stone py-(--spacing-section)">
+    <div class="container-site">
+      <SectionIntro
+        title="Which type suits your plot?"
+        lead="The local development plan has a say – in the initial consultation we check the requirements, budget and schedule. No obligation, with honest figures."
+      />
+      <div class="reveal mt-12 flex flex-wrap items-center gap-6">
+        <Button href="/en/kontakt/" variant="primary">Book a consultation</Button>
+        <a href="/en/referenzen/" class="link-line text-small font-medium">
+          View completed homes
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Filterbarer Katalog – adaptiert von der Isotope-Filterung auf
+    // treehouse-ks.eu, hier als leichtgewichtiges Fade/Reflow ohne Bibliothek.
+    const bar = document.getElementById('typ-filter');
+    const items = Array.from(
+      document.querySelectorAll<HTMLElement>('#typ-grid .catalog-item')
+    );
+    const empty = document.getElementById('typ-empty');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    bar?.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('.filter-chip');
+      if (!btn) return;
+      const value = btn.dataset.filter!;
+
+      bar.querySelectorAll<HTMLButtonElement>('.filter-chip').forEach((b) =>
+        b.setAttribute('aria-pressed', String(b === btn))
+      );
+
+      let visible = 0;
+      items.forEach((item) => {
+        const match = value === 'alle' || item.dataset.kategorie === value;
+        if (match) visible++;
+
+        if (reduce) {
+          item.hidden = !match;
+          return;
+        }
+        if (match) {
+          item.hidden = false;
+          item.classList.add('is-filtering');
+          requestAnimationFrame(() =>
+            requestAnimationFrame(() => item.classList.remove('is-filtering'))
+          );
+        } else {
+          item.classList.add('is-filtering');
+          window.setTimeout(() => {
+            if (item.classList.contains('is-filtering')) item.hidden = true;
+          }, 400);
+        }
+      });
+
+      if (empty) empty.hidden = visible > 0;
+    });
+  </script>
+</BaseLayout>

@@ -1,6 +1,7 @@
 ---
 import Button from '@/components/Button.astro';
 import { SITE } from '@/config/site';
+import { getLang, localize, altPath, isBilingual, useT } from '@/i18n';
 
 interface Props {
   /** true: startet transparent über dunklem Hero, wird beim Scrollen fest */
@@ -9,18 +10,30 @@ interface Props {
 
 const { overlay = false } = Astro.props;
 const path = Astro.url.pathname;
+const lang = getLang(path);
+const t = useT(lang);
 
-const nav = [
-  { label: 'Startseite', href: '/' },
-  { label: 'Haustypen', href: '/haustypen/' },
-  { label: 'Referenzen', href: '/referenzen/' },
-  { label: 'Ablauf', href: '/ablauf/' },
-  { label: 'Über uns', href: '/ueber-uns/' },
-  { label: 'Ratgeber', href: '/ratgeber/' },
+const home = localize('/', lang);
+
+// Navigation je Sprache (EN ohne Ratgeber – der bleibt deutsch).
+const navDefs: { key: Parameters<typeof t>[0]; path: string }[] = [
+  { key: 'nav.home', path: '/' },
+  { key: 'nav.haustypen', path: '/haustypen/' },
+  { key: 'nav.referenzen', path: '/referenzen/' },
+  { key: 'nav.ablauf', path: '/ablauf/' },
+  { key: 'nav.ueberuns', path: '/ueber-uns/' },
+  ...(lang === 'de' ? [{ key: 'nav.ratgeber' as const, path: '/ratgeber/' }] : []),
 ];
+const nav = navDefs.map((n) => ({ label: t(n.key), href: localize(n.path, lang) }));
 
-// "/" darf nur exakt matchen, sonst wäre die Startseite überall aktiv.
-const isActive = (href: string) => path === href || (href !== '/' && path.startsWith(href));
+// "/" (bzw. "/en/") darf nur exakt matchen, sonst wäre die Startseite überall aktiv.
+const isActive = (href: string) => path === href || (href !== home && path.startsWith(href));
+
+// Sprachumschalter nur auf zweisprachigen Seiten.
+const showLangSwitch = isBilingual(path);
+const otherLang = lang === 'de' ? 'en' : 'de';
+const switchHref = altPath(path, otherLang);
+const kontaktHref = localize('/kontakt/', lang);
 ---
 
 <header
@@ -32,7 +45,7 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
   ]}
 >
   <div class="container-site flex h-20 items-center justify-between gap-8">
-    <a href="/" class="site-logo block shrink-0" aria-label={`${SITE.legalName} – Startseite`}>
+    <a href={home} class="site-logo block shrink-0" aria-label={`${SITE.legalName} – ${t('logo.aria')}`}>
       <img
         src="/logo-on-light.png"
         width="417"
@@ -50,7 +63,7 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
       />
     </a>
 
-    <nav aria-label="Hauptnavigation" class="hidden lg:block">
+    <nav aria-label={t('nav.main')} class="hidden lg:block">
       <ul class="flex items-center gap-6 xl:gap-8">
         {nav.map((item) => (
           <li>
@@ -69,11 +82,20 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
       </ul>
     </nav>
 
-    <div class="hidden lg:block">
+    <div class="hidden items-center gap-6 lg:flex">
+      {showLangSwitch && (
+        <a
+          href={switchHref}
+          class="lang-switch link-line text-small font-medium tracking-wide uppercase"
+          aria-label={t('lang.switchAria')}
+        >
+          {otherLang}
+        </a>
+      )}
       <!-- Immer der gefüllte Akzent-Button: bleibt sichtbar, egal ob der
            Header transparent über dem Hero oder weiß nach dem Scrollen ist. -->
-      <Button href="/kontakt/" variant="primary" arrow={false} class="header-cta h-11 px-5">
-        Beratung vereinbaren
+      <Button href={kontaktHref} variant="primary" arrow={false} class="header-cta h-11 px-5">
+        {t('cta')}
       </Button>
     </div>
 
@@ -83,7 +105,9 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
       class="-mr-2 flex h-12 w-12 items-center justify-center lg:hidden"
       aria-expanded="false"
       aria-controls="mobile-menu"
-      aria-label="Menü öffnen"
+      aria-label={t('menu.open')}
+      data-label-open={t('menu.open')}
+      data-label-close={t('menu.close')}
     >
       <span class="menu-icon relative block h-3 w-6">
         <span class="absolute top-0 left-0 h-px w-full bg-current transition-transform duration-300"></span>
@@ -104,7 +128,7 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
        wird gescrollt statt gestaucht. shrink-0 verhindert, dass Flexbox das
        Nav zusammendrückt und der CTA-Block sich über die Links legt. -->
   <div class="container-site flex h-full flex-col overflow-y-auto overscroll-contain pt-28 pb-10">
-    <nav aria-label="Mobile Navigation" class="shrink-0">
+    <nav aria-label={t('nav.mobile')} class="shrink-0">
       <ul class="space-y-2">
         {nav.map((item, i) => (
           <li
@@ -127,12 +151,17 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
     </nav>
 
     <div class="mt-auto shrink-0 space-y-6 pt-12">
-      <Button href="/kontakt/" variant="primary" class="w-full justify-center">
-        Beratung vereinbaren
+      <Button href={kontaktHref} variant="primary" class="w-full justify-center">
+        {t('cta')}
       </Button>
       <div class="flex flex-col gap-1 text-small text-paper-muted">
         <a href={`tel:${SITE.contact.phone}`} class="link-line self-start">{SITE.contact.phoneDisplay}</a>
         <a href={`mailto:${SITE.contact.email}`} class="link-line self-start">{SITE.contact.email}</a>
+        {showLangSwitch && (
+          <a href={switchHref} class="link-line mt-3 self-start uppercase" aria-label={t('lang.switchAria')}>
+            {otherLang === 'en' ? 'English' : 'Deutsch'}
+          </a>
+        )}
       </div>
     </div>
   </div>
@@ -245,9 +274,11 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
 
   // Mobile-Menü
   if (toggle && menu) {
+    const labelOpen = toggle.dataset.labelOpen || 'Menü öffnen';
+    const labelClose = toggle.dataset.labelClose || 'Menü schließen';
     const setOpen = (open: boolean) => {
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      toggle.setAttribute('aria-label', open ? labelClose : labelOpen);
       document.documentElement.classList.toggle('menu-open', open);
       if (open) {
         menu.hidden = false;

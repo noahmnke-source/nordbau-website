@@ -1,0 +1,294 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import Button from '@/components/Button.astro';
+import Figure from '@/components/Figure.astro';
+import SectionIntro from '@/components/SectionIntro.astro';
+import FaqAccordion from '@/components/FaqAccordion.astro';
+import { IMG } from '@/data/assets';
+import { buildFaqJsonLd } from '@/lib/seo';
+
+/** Die häufigsten Sorgen vor dem Hausbau – benannt und mit Fakten entkräftet. */
+const sorgen = [
+  {
+    frage: '“What if it ends up costing more than planned?”',
+    fakt: 'The fixed price applies for 12 months from contract signing – rising material or labour costs are our risk. Special requests are priced in writing beforehand during the fixture & finish selection, not added later on the construction site.',
+  },
+  {
+    frage: '“What if construction is delayed for months?”',
+    fakt: 'The time-critical part is short: the structural shell is built in around 20 days in the factory, independent of the weather, and on-site assembly takes about three days. Because your walls are not built on scaffolding in the rain, the assembly date is fixed and binding as soon as production begins.',
+  },
+  {
+    frage: '“What if I have to pay in advance?”',
+    fakt: 'You do not have to: instalments only fall due after the building work has been completed and inspected. A performance bond and a warranty bond provide additional security – set out in the construction contract under German law (BGB).',
+  },
+];
+
+const zeiten = [
+  { label: 'Structural shell production in the factory', wert: 'around 20 days' },
+  { label: 'On-site assembly', wert: 'around 3 days' },
+  { label: 'Total duration', wert: 'depending on finish level' },
+];
+
+/** Echte Prozess-Sequenz – nummerierte Marker sind hier bewusst erlaubt. */
+const schritte = [
+  {
+    nr: '01',
+    titel: 'Initial consultation',
+    absaetze: [
+      'At the start there is no contract, just a conversation: 30 minutes of listening, by phone, online or in the show home. We talk about your plot – or about the search for one –, about budget, schedule and how you want to live in ten years. The conversation is non-binding and free of charge; afterwards you decide whether we go further.',
+      'We then check the local development plan and site servicing and work through your budget in full: house price, ancillary building costs of 15 to 20 percent of the total, site servicing, outdoor works. We tell you honestly what is realistic with your budget – even when the answer is uncomfortable. Because a plan built on flattering figures will catch up with you on the construction site.',
+    ],
+    ergebnis: 'Meeting record with budget framework, plot assessment and a binding schedule',
+    dauer: '30 minutes, non-binding',
+    img: IMG.beratung,
+    ratio: 'aspect-[4/3]',
+    textCols: 'lg:col-span-5',
+    imgCols: 'lg:col-span-6 lg:col-start-7',
+    sizes: '(min-width: 1024px) 50vw, 100vw',
+  },
+  {
+    nr: '02',
+    titel: 'Design & fixed price',
+    absaetze: [
+      'Based on the initial consultation, our architects design your floor plan – not a catalogue page, but a plan for your plot, its orientation and your way of living. In short rounds of coordination we refine the sequence of rooms, the façade and the details until the plan holds.',
+      'In parallel, the construction & specification document is drawn up. Line by line it defines what “turnkey” means with us – including bathrooms, floor coverings and interior doors. On this basis you receive a fixed-price offer valid for 12 months: if material or labour costs rise, that is our risk, not yours. Only once the design, the scope of work and the price are right for you do you sign the construction contract under German law (BGB) – with a 30-year guarantee on the building structure, five years of statutory warranty from handover acceptance and a payment plan tied to construction progress. Until then you commit to nothing.',
+    ],
+    ergebnis: 'Architect design, construction & specification document, binding fixed-price offer',
+    dauer: 'Design and offer – a few weeks',
+    img: IMG.planung,
+    ratio: 'aspect-[3/2]',
+    textCols: 'lg:col-span-5 lg:col-start-8',
+    imgCols: 'lg:col-span-6 lg:col-start-1 lg:row-start-1',
+    sizes: '(min-width: 1024px) 50vw, 100vw',
+  },
+  {
+    nr: '03',
+    titel: 'Fixture & finish selection',
+    absaetze: [
+      'A day on which your house becomes tangible: at the selection centre you decide on the real materials – façade, roof covering, floors, staircase, interior doors, tiles, sanitary fittings, electrical equipment. You stand in front of the samples, not a configurator, and your adviser guides you through all the trades in a sensible order.',
+      'Every decision is priced on the spot: if you choose beyond the agreed standard, you see the surcharge in black and white before you commit – not weeks later on an invoice. If you need time to think, we note the alternatives in the record; nothing is decided under pressure. In the end your house is defined down to the door handle, and the selection record becomes part of the contract – from now on the price does not change, because nothing is left open.',
+    ],
+    ergebnis: 'Selection record with the final specification and confirmed fixed price',
+    dauer: 'one day at the selection centre',
+    img: IMG.handwerk,
+    ratio: 'aspect-[4/5]',
+    textCols: 'lg:col-span-5',
+    imgCols: 'lg:col-span-5 lg:col-start-8',
+    sizes: '(min-width: 1024px) 40vw, 100vw',
+  },
+  {
+    nr: '04',
+    titel: 'Production in the factory',
+    absaetze: [
+      'While your plot is being prepared, your house is built in the factory: wall, ceiling and roof elements in timber-frame construction – load-bearing components made of technically dried structural solid timber and cross-laminated timber (CLT), produced in heated halls, independent of rain, frost and site logistics. Insulation, windows and service layers are already integrated at the factory, accurate to the millimetre according to the approved plans.',
+      'Every element passes a documented quality inspection before it leaves the hall: dimensional accuracy, airtightness of the joints, timber moisture. We supply all essential materials with the corresponding quality certificates. This is the core of the prefab-home principle – the critical steps happen where the conditions can be controlled. That is why we give you a binding assembly date as soon as production begins. And if you wish, you can visit the factory: anyone who wants to see how their house is built is welcome.',
+    ],
+    ergebnis: 'Inspection records for the elements and your binding assembly date',
+    dauer: 'around 20 days in the factory, in parallel with site preparation',
+    img: IMG.dachstuhl,
+    ratio: 'aspect-[3/2]',
+    textCols: 'lg:col-span-5 lg:col-start-8',
+    imgCols: 'lg:col-span-6 lg:col-start-1 lg:row-start-1',
+    sizes: '(min-width: 1024px) 50vw, 100vw',
+  },
+  {
+    nr: '05',
+    titel: 'Assembly & handover',
+    absaetze: [
+      'Then things move visibly fast: the prefabricated elements are set in place with a crane – after around three days your house stands, with a roof, windows and a lockable front door. This is possible because the site is for assembly, not construction: building services, bathrooms, floors and interior doors are prepared at the factory.',
+      'Straight afterwards we carry out the handover acceptance together – room by room, with a record. The final instalment only falls due after acceptance free of defects; acceptance starts the time limits: a 30-year guarantee on the building structure and five years of statutory warranty under German law (BGB) on all other work. At handover you receive the complete building documentation file with all plans, certificates and maintenance notes, plus an introduction to the heat pump and ventilation system – and a dedicated contact who remains reachable even after you move in.',
+    ],
+    ergebnis: 'Handover acceptance record, building documentation file, introduction to the building services – and your keys',
+    dauer: 'around 3 days of on-site assembly',
+    img: IMG.schluessel,
+    ratio: 'aspect-[4/3]',
+    textCols: 'lg:col-span-5',
+    imgCols: 'lg:col-span-6 lg:col-start-7',
+    sizes: '(min-width: 1024px) 50vw, 100vw',
+  },
+];
+
+const versprechen = [
+  {
+    wert: '12 months',
+    label: 'Fixed-price guarantee from contract signing – increases in material and labour costs are not passed on to you.',
+  },
+  {
+    wert: 'No upfront payment',
+    label: 'Payment by construction progress: instalments only fall due once the respective building work has been completed and inspected.',
+  },
+  {
+    wert: '30 years',
+    label: 'Guarantee on the building structure, plus 5 years of statutory warranty under German law (BGB) on all other work – we remedy defects at our own expense.',
+  },
+  {
+    wert: '2 guarantee bonds',
+    label: 'A performance bond and a warranty bond secure your payments beyond the entire construction period.',
+  },
+];
+
+const faq = [
+  {
+    q: 'How long does it take from first contact to moving in?',
+    a: 'The initial consultation is followed by the design, the fixed-price offer and the fixture & finish selection; after that the structural shell is built in around 20 days in the factory, independent of the weather. On-site assembly takes about three days – then your house stands. The total time until you move in depends on size, finish level and plot; factory production minimises the risk of delays.',
+  },
+  {
+    q: 'Do I have to pay in advance when building a house?',
+    a: 'No. We work with a payment plan tied to construction progress: instalments only fall due once the respective building work has been completed and inspected. The construction contract under German law (BGB) limits interim payments to the value of the work completed; a performance bond and a warranty bond provide additional security.',
+  },
+  {
+    q: 'Can I contribute my own work, and how much does it save?',
+    a: 'Yes. With DIY/own work such as painting, laying floors or outdoor works you can realistically save around 10,000 to 25,000 euros. Banks recognise this “sweat equity” as a substitute for equity of up to 15 percent of the loan amount, usually capped at 25,000 to 30,000 euros. Which trades you take on is defined precisely before contract signing.',
+  },
+  {
+    q: 'What is a fixed-price guarantee and how long does it apply?',
+    a: 'With the fixed-price guarantee, the agreed house price stays unchanged even if material or labour costs rise – with us for 12 months from contract signing. The fixed price applies to the scope of work fixed in the contract; later special requests are priced in writing beforehand, never after the fact.',
+  },
+  {
+    q: 'What guarantee do you give on the house?',
+    a: 'On the building structure – the load-bearing timber frame – we give a 30-year guarantee in accordance with the terms of the construction contract. On all other work and components, the five-year statutory warranty under German law (BGB) applies from handover acceptance. In addition, we supply all essential materials with the corresponding quality certificates.',
+  },
+];
+---
+
+<BaseLayout
+  title="Home building process: turnkey in 5 steps"
+  description="The turnkey home building process explained: 5 steps from initial consultation to handover, 12-month fixed price, payment by construction progress. Book a consultation."
+  breadcrumbs={[{ name: 'Process', href: '/en/ablauf/' }]}
+  jsonLd={[buildFaqJsonLd(faq)]}
+  hideFooterCta
+>
+  <!-- Kopf: h1 + Risiko-Adressierung -->
+  <section class="container-site pt-12 pb-(--spacing-section) lg:pt-16">
+    <Breadcrumbs items={[{ name: 'Process', href: '/en/ablauf/' }]} class="mb-10" />
+
+    <div class="grid gap-x-8 gap-y-12 lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <h1 class="font-display text-hero font-medium">
+          The process: from the initial consultation to your turnkey home
+        </h1>
+        <p class="prose-measure mt-6 text-body text-muted">
+          Anyone who builds is not buying a finished product but a process – and carries
+          the worries along with it: hidden costs, delays, upfront payment. We
+          answer them not with promises but with contracts. And with a
+          process in five steps – each with a clear result. The structural shell
+          is built in around 20 days in the factory, and on-site assembly takes about three days.
+        </p>
+
+        <dl class="reveal mt-12 divide-y divide-line border-y border-line">
+          {sorgen.map((s) => (
+            <div class="py-6">
+              <dt class="font-display text-title font-medium">{s.frage}</dt>
+              <dd class="prose-measure mt-3 text-small text-muted">{s.fakt}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+
+      <div class="reveal self-end lg:col-span-4 lg:col-start-9">
+        <dl class="divide-y divide-line border-y border-line">
+          {zeiten.map((z) => (
+            <div class="flex items-baseline justify-between gap-6 py-4">
+              <dt class="text-small text-muted">{z.label}</dt>
+              <dd class="tnum font-display text-title font-medium">{z.wert}</dd>
+            </div>
+          ))}
+        </dl>
+        <p class="mt-4 text-caption text-muted">
+          Guide values from our reference projects – you receive your own schedule in the initial consultation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Die fünf Schritte: echte Sequenz, Text und Bild alternierend -->
+  <section class="container-site pb-(--spacing-section)">
+    <ol class="grid gap-y-(--spacing-section-sm)">
+      {schritte.map((s) => (
+        <li class="grid gap-x-8 gap-y-8 lg:grid-cols-12 lg:items-center">
+          <div class:list={['reveal', s.textCols]}>
+            <div class="flex items-baseline gap-4">
+              <span class="tnum font-display text-title text-oxide" aria-hidden="true">{s.nr}</span>
+              <h2 class="font-display text-display font-medium">{s.titel}</h2>
+            </div>
+            {s.absaetze.map((absatz) => (
+              <p class="prose-measure mt-5 text-body text-muted">{absatz}</p>
+            ))}
+            <dl class="mt-8 space-y-3 border-t border-line pt-6 text-small">
+              <div class="grid gap-1 sm:grid-cols-[8rem_1fr] sm:gap-5">
+                <dt class="font-medium">You receive</dt>
+                <dd class="text-muted">{s.ergebnis}</dd>
+              </div>
+              <div class="grid gap-1 sm:grid-cols-[8rem_1fr] sm:gap-5">
+                <dt class="font-medium">Duration</dt>
+                <dd class="tnum text-muted">{s.dauer}</dd>
+              </div>
+            </dl>
+          </div>
+          <Figure
+            src={s.img.src}
+            alt={s.img.alt}
+            ratio={s.ratio}
+            sizes={s.sizes}
+            class={s.imgCols}
+          />
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <!-- Versprechen: Anthrazit-Drench, Hairline-Register -->
+  <section class="bg-graphite py-(--spacing-section) text-paper">
+    <div class="container-site">
+      <h2 class="reveal font-display text-display font-medium">
+        What we promise – and how you can hold us to it
+      </h2>
+      <dl class="mt-14 divide-y divide-paper/10 border-y border-paper/10">
+        {versprechen.map((v) => (
+          <div class="reveal grid gap-2 py-7 sm:grid-cols-[minmax(10rem,15rem)_1fr] sm:gap-8">
+            <dt class="tnum font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-tight font-medium">{v.wert}</dt>
+            <dd class="prose-measure self-center text-body leading-relaxed text-paper-muted">{v.label}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="mt-10 max-w-2xl text-small text-paper-muted">
+        All commitments are in the construction contract, not the brochure. Feel free to bring
+        other providers' contracts for comparison – we go through them with you.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="container-site py-(--spacing-section)">
+    <SectionIntro
+      title="Frequently asked questions about the process"
+      lead="Answers with the figures that apply in 2026 – in more detail in a personal conversation."
+    />
+    <div class="mt-14 grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-8">
+        <FaqAccordion items={faq} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Abschluss-CTA -->
+  <section class="bg-stone py-(--spacing-section)">
+    <div class="container-site grid gap-x-8 gap-y-10 lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <h2 class="reveal font-display text-display font-medium">
+          The next step is a conversation – not a contract.
+        </h2>
+        <p class="reveal prose-measure mt-6 text-body text-muted">
+          30 minutes by phone, online or in the show home: we clarify the plot,
+          the budget and a realistic schedule. You receive our record –
+          and then decide at your own pace.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-6 self-end lg:col-span-4 lg:col-start-9">
+        <Button href="/en/kontakt/" variant="primary">Book a consultation</Button>
+        <a href="/en/referenzen/" class="link-line text-small font-medium">See houses we have built</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

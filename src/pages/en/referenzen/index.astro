@@ -1,0 +1,236 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import Button from '@/components/Button.astro';
+import Figure from '@/components/Figure.astro';
+
+const projekte = (await getCollection('referenzen')).sort((a, b) => a.data.order - b.data.order);
+
+/**
+ * Completed projects from the Nordbau group (timber-construction portfolio +
+ * transferred expertise of Eco Bau GmbH → Hannover Nordbau GmbH). Location-precise,
+ * without street address. Photos from the project documents under public/referenzen/.
+ */
+const wohnhaeuser = [
+  {
+    ort: 'Freising', typ: 'Single-family house', img: '/referenzen/freising-efh.webp',
+    fakt: '180 m² · gable roof, garage, controlled residential ventilation',
+    beschreibung: 'Two-storey single-family house with 180 m² of living space: a traditional gable roof in a modern execution, with a bright living area, a functional kitchen including a dining area, a utility room, a workspace, three bedrooms and a garage. A ventilation system ensures fresh air and high energy efficiency.',
+  },
+  {
+    ort: 'Northeim', typ: 'Single-family house', img: '/referenzen/northeim-efh.webp',
+    fakt: '160 m² · two storeys, timber and HPL façade',
+    beschreibung: 'Modern single-family house across two levels, 160 m². On the ground floor: living area, kitchen, office, bathroom and utilities; on the upper floor two terraces, a master bedroom and a further bedroom as well as a bathroom. The façade of HPL and timber creates an elegant, durable envelope.',
+  },
+  {
+    ort: 'Uslar', typ: 'Single-family house', img: '/referenzen/uslar-efh.webp',
+    fakt: '220 m² · two storeys, three bedrooms, garage',
+    beschreibung: 'Single-family house with 220 m² of usable floor space across two levels. The ground floor combines living and dining room, kitchen, utility room, office and garage; the upper floor holds three bedrooms including a master bedroom, a bathroom and a terrace. Materials and colours blend harmoniously into their surroundings.',
+  },
+  {
+    ort: 'Nieder-Winkling', typ: 'Single-family house', img: '/referenzen/niederwinkling-efh.webp',
+    fakt: '160 m² · gable roof, energy-efficient in timber construction',
+    beschreibung: 'Two-storey single-family house with 160 m², a traditional gable roof and a modern feel. Efficient materials for timber construction and natural insulation ensure stable indoor temperatures throughout the year and low energy consumption.',
+  },
+  {
+    ort: 'Regensburg', typ: 'Modular house', img: '/referenzen/regensburg-modulhaus.webp',
+    fakt: '45 m² · cross-laminated timber (CLT), factory-prefabricated',
+    beschreibung: 'Compact modular house with 45 m² for living area, dining area, kitchen, bathroom and one bedroom. Built in cross-laminated timber (CLT): high durability, fast assembly and energy efficiency. All components are produced in the factory – for controlled quality and minimal construction time on site.',
+  },
+  {
+    ort: 'Göteborg (SE)', typ: 'Single-family house', img: '/referenzen/goeteborg-efh.webp',
+    fakt: '91 m² · insulated for cold climates, timber construction',
+    beschreibung: 'Functional single-family house with 91 m², designed also for cold climates such as in Sweden. A bright living area with large windows, openly connected to the dining and kitchen area, plus two bedrooms and a practical bathroom. Very good insulation and sustainable timber construction for comfort and longevity.',
+  },
+  {
+    ort: 'Zürich (CH)', typ: 'Hotel', img: '/referenzen/zuerich-hotel.webp',
+    fakt: '650 m² · three levels, 16 rooms, timber and HPL façade',
+    beschreibung: 'Luxury hotel across three levels with 16 rooms and 650 m² of total floor area. Generous terraces and wide views into nature; the façade of HPL (Fundermax) and timber gives the building an elegant, natural appearance and high weather resistance.',
+  },
+];
+
+const bauten = [
+  {
+    ort: 'Ronnenberg', typ: 'Day-care centre', img: '/referenzen/ronnenberg-kita.webp',
+    fakt: 'timber-frame construction, five groups · 2022–2023',
+    beschreibung: 'New day-care centre in timber-frame construction in Empelde for the town of Ronnenberg. Single-storey, with five group areas, quiet rooms, children’s bathrooms and generous play corridors; a sustainable, energy-efficient building envelope ensures a pleasant indoor climate. Structural shell and interior fit-out, 2022–2023.',
+  },
+  {
+    ort: 'Sulzbach-Rosenberg', typ: 'Kindergarten', img: '/referenzen/sulzbach-kindergarten.webp',
+    fakt: '1.200 m² · new build in timber construction',
+    beschreibung: 'Modern kindergarten with around 1.200 m² of floor area in timber construction. Safe, flexible rooms for learning and play foster the children’s social, cognitive and motor development; natural materials and open areas strengthen well-being.',
+  },
+  {
+    ort: 'Hannover', typ: 'Office & administration building', img: '/referenzen/hannover-citygate.webp',
+    fakt: 'City Gate Nord · 10.500 m² BGF · 2023–2025',
+    beschreibung: 'Second construction phase of the City Gate Nord office and administration complex in Vahrenwald – around 10.500 m² BGF across six storeys. An energy-efficient, flexibly usable administration building to DGNB standards; civil engineering works, structural shell and interior fit-out during ongoing operation of the first construction phase. 2023–2025.',
+  },
+  {
+    ort: 'Stuttgart', typ: 'Residential & commercial building', img: '/referenzen/stuttgart-maybach.webp',
+    fakt: '70 residential units · 7 upper floors + 3-level underground car park · 2019–2023',
+    beschreibung: 'Residential and commercial building with a three-level underground car park and seven upper floors. 70 residential units including penthouses, along with commercial and office space; high demands on sound and fire protection. Structural shell and interior fit-out in an inner-city location, 2019–2023.',
+  },
+  {
+    ort: 'Braunschweig', typ: 'Municipal hospital', img: '/referenzen/braunschweig-klinikum.webp',
+    fakt: 'Interior fit-out ground floor–5th floor, medical building construction · 2021–2023',
+    beschreibung: 'Interior fit-out of a major medical project at Braunschweig Municipal Hospital – from the ground floor to the fifth upper floor including technical areas. Drywall construction, service walls, hygienic surfaces and fire protection under strict medical requirements, tightly coordinated with medical technology, HVAC/sanitary and electrical trades. 2021–2023.',
+  },
+];
+
+/**
+ * Image formats change per photo – so that even with further projects
+ * no uniform grid emerges. New reference = new .md file in
+ * src/content/referenzen/ (images see ASSETS.md).
+ */
+const bildLayout = [
+  { wrap: 'lg:col-span-7', ratio: 'aspect-[16/9]', sizes: '(min-width: 1024px) 56vw, 100vw' },
+  { wrap: 'lg:col-span-5 lg:mt-20', ratio: 'aspect-[4/3]', sizes: '(min-width: 1024px) 40vw, 100vw' },
+  { wrap: 'lg:col-span-8 lg:col-start-3', ratio: 'aspect-[3/2]', sizes: '(min-width: 1024px) 62vw, 100vw' },
+  { wrap: 'lg:col-span-6 lg:col-start-6 lg:mt-12', ratio: 'aspect-[4/5]', sizes: '(min-width: 1024px) 46vw, 100vw' },
+];
+---
+
+<BaseLayout
+  title="References – Projects by Nordbau"
+  description="Projects by Nordbau: a single-family house in Munich mid-construction, plus completed residential buildings, day-care centres and commercial buildings in timber construction from over a decade of experience."
+  breadcrumbs={[{ name: 'References', href: '/en/referenzen/' }]}
+  hideFooterCta
+>
+  <!-- Page header -->
+  <section class="container-site pt-12 lg:pt-16">
+    <Breadcrumbs items={[{ name: 'References', href: '/en/referenzen/' }]} class="mb-10" />
+
+    <div class="grid gap-x-8 gap-y-6 lg:grid-cols-12">
+      <h1 class="font-display text-hero font-medium lg:col-span-7">
+        Our projects – even mid-construction
+      </h1>
+    </div>
+  </section>
+
+  <!-- Projects: photos per project, with location and title below -->
+  <section class="container-site pt-16 pb-(--spacing-section) lg:pt-24">
+    {projekte.length === 0 ? (
+      <p class="text-body text-muted">We will showcase our projects here soon.</p>
+    ) : (
+      <div class="grid gap-y-(--spacing-section-sm)">
+        {projekte.map((projekt) => {
+          const bilder = [projekt.data.hero, ...projekt.data.gallery];
+          const href = `/referenzen/${projekt.id}/`;
+          return (
+            <article>
+              <div class="grid gap-x-8 gap-y-8 lg:grid-cols-12">
+                {bilder.map((bild, i) => {
+                  const l = bildLayout[i % bildLayout.length]!;
+                  return (
+                    <a href={href} class:list={['group block', l.wrap]}>
+                      <Figure
+                        src={bild.src}
+                        alt={bild.alt}
+                        ratio={l.ratio}
+                        sizes={l.sizes}
+                        eager={i === 0}
+                        reveal={i !== 0}
+                        zoom
+                      />
+                    </a>
+                  );
+                })}
+              </div>
+
+              <p class="mt-7 font-display text-title font-medium">
+                <a href={href} class="link-line">
+                  {projekt.data.ort ? `${projekt.data.ort}: ` : ''}{projekt.data.title}
+                </a>
+              </p>
+            </article>
+          );
+        })}
+      </div>
+    )}
+  </section>
+
+  <!-- Completed projects: photo + text, from the project documents -->
+  <section class="bg-stone py-(--spacing-section)">
+    <div class="container-site">
+      <div class="grid gap-x-8 gap-y-6 lg:grid-cols-12">
+        <h2 class="reveal font-display text-display font-medium lg:col-span-7">
+          Completed projects from over a decade of timber construction
+        </h2>
+        <p class="reveal prose-measure self-end text-body text-muted lg:col-span-4 lg:col-start-9">
+          From the single-family house to the public building – a selection of completed
+          projects from the Nordbau group, documented even mid-construction.
+        </p>
+      </div>
+
+      <h3 class="reveal mt-16 text-caption tracking-wide text-muted uppercase">Residential buildings in timber construction</h3>
+      <div class="mt-10 grid gap-y-(--spacing-section-sm)">
+        {wohnhaeuser.map((p) => (
+          <article class="grid gap-x-8 gap-y-6 lg:grid-cols-12 lg:items-center">
+            <Figure
+              src={p.img}
+              alt={`${p.typ} in ${p.ort}`}
+              ratio="aspect-[4/3]"
+              sizes="(min-width: 1024px) 56vw, 100vw"
+              reveal
+              zoom
+              class="lg:col-span-7"
+            />
+            <div class="reveal lg:col-span-4 lg:col-start-9">
+              <p class="font-display text-title font-medium">
+                {p.ort} <span class="text-muted">· {p.typ}</span>
+              </p>
+              <p class="prose-measure mt-4 text-body text-muted">{p.beschreibung}</p>
+              <p class="mt-4 text-small text-muted">{p.fakt}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <h3 class="reveal mt-24 text-caption tracking-wide text-muted uppercase">Public &amp; commercial buildings</h3>
+      <div class="mt-10 grid gap-y-(--spacing-section-sm)">
+        {bauten.map((p) => (
+          <article class="grid gap-x-8 gap-y-6 lg:grid-cols-12 lg:items-center">
+            <Figure
+              src={p.img}
+              alt={`${p.typ} in ${p.ort}`}
+              ratio="aspect-[4/3]"
+              sizes="(min-width: 1024px) 56vw, 100vw"
+              reveal
+              zoom
+              class="lg:col-span-7"
+            />
+            <div class="reveal lg:col-span-4 lg:col-start-9">
+              <p class="font-display text-title font-medium">
+                {p.ort} <span class="text-muted">· {p.typ}</span>
+              </p>
+              <p class="prose-measure mt-4 text-body text-muted">{p.beschreibung}</p>
+              <p class="mt-4 text-small text-muted">{p.fakt}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA (the footer CTA is hidden on this page) -->
+  <section class="bg-graphite py-(--spacing-section) text-paper">
+    <div class="container-site grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-end">
+      <div class="lg:col-span-7">
+        <h2 class="reveal font-display text-display font-medium">
+          Your project could be the next one on this page.
+        </h2>
+        <p class="reveal prose-measure mt-6 text-body leading-relaxed text-paper-muted">
+          In the first conversation we clarify plot, budget and schedule – with no
+          obligation, honest figures and no sales pressure.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-6 lg:col-span-4 lg:col-start-9 lg:justify-end">
+        <Button href="/en/kontakt/" variant="primary">Book a consultation</Button>
+        <a href="/en/haustypen/" class="link-line text-small font-medium text-paper">
+          View house types
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

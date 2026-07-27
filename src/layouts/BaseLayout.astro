@@ -3,6 +3,7 @@ import '@/styles/global.css';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import { SITE } from '@/config/site';
+import { getLang, altPath, isBilingual, localize, useT } from '@/i18n';
 
 interface Breadcrumb {
   name: string;
@@ -38,6 +39,9 @@ const {
   hideFooterCta = false,
 } = Astro.props;
 
+const lang = getLang(Astro.url.pathname);
+const t = useT(lang);
+
 const pageTitle = fullTitle ? title : `${title} | ${SITE.name}`;
 const canonical = new URL(Astro.url.pathname, SITE.url).href;
 
@@ -61,7 +65,9 @@ const organizationLd = {
         caption: SITE.legalName,
       },
       description:
-        'Plant und baut schlüsselfertige und individuell geplante Fertighäuser in Holztafelbauweise – bundesweit, im Effizienzhaus-40-Standard und mit Festpreisgarantie.',
+        lang === 'en'
+          ? 'Designs and builds turnkey, individually planned timber-frame prefab homes across Germany – to Efficiency House 40 standard and with a fixed-price guarantee.'
+          : 'Plant und baut schlüsselfertige und individuell geplante Fertighäuser in Holztafelbauweise – bundesweit, im Effizienzhaus-40-Standard und mit Festpreisgarantie.',
       slogan: SITE.claim,
       foundingDate: String(SITE.foundingYear),
       vatID: SITE.legal.vatId,
@@ -81,7 +87,7 @@ const organizationLd = {
           contactType: 'sales',
           telephone: SITE.contact.phone,
           email: SITE.contact.email,
-          availableLanguage: ['de'],
+          availableLanguage: ['de', 'en'],
           areaServed: 'DE',
         },
       ],
@@ -105,7 +111,7 @@ const organizationLd = {
       '@id': `${SITE.url}/#website`,
       url: `${SITE.url}/`,
       name: SITE.name,
-      inLanguage: 'de-DE',
+      inLanguage: lang === 'en' ? 'en' : 'de-DE',
       publisher: { '@id': `${SITE.url}/#organization` },
     },
   ],
@@ -116,7 +122,7 @@ const breadcrumbLd = breadcrumbs?.length
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Startseite', item: `${SITE.url}/` },
+        { '@type': 'ListItem', position: 1, name: t('nav.home'), item: `${SITE.url}${localize('/', lang)}` },
         ...breadcrumbs.map((crumb, i) => ({
           '@type': 'ListItem',
           position: i + 2,
@@ -128,16 +134,26 @@ const breadcrumbLd = breadcrumbs?.length
   : null;
 
 const allJsonLd = [organizationLd, breadcrumbLd, ...jsonLd].filter(Boolean);
+
+// hreflang nur auf zweisprachigen Seiten (Impressum/Datenschutz/Ratgeber bleiben einsprachig).
+const alternates = isBilingual(Astro.url.pathname)
+  ? [
+      { hreflang: 'de', href: new URL(altPath(Astro.url.pathname, 'de'), SITE.url).href },
+      { hreflang: 'en', href: new URL(altPath(Astro.url.pathname, 'en'), SITE.url).href },
+      { hreflang: 'x-default', href: new URL(altPath(Astro.url.pathname, 'de'), SITE.url).href },
+    ]
+  : [];
 ---
 
 <!doctype html>
-<html lang="de">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
     {noIndex && <meta name="robots" content="noindex, follow" />}
 
     <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64" />
@@ -154,7 +170,7 @@ const allJsonLd = [organizationLd, breadcrumbLd, ...jsonLd].filter(Boolean);
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE.name} />
-    <meta property="og:locale" content="de_DE" />
+    <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'de_DE'} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
@@ -175,7 +191,7 @@ const allJsonLd = [organizationLd, breadcrumbLd, ...jsonLd].filter(Boolean);
       href="#inhalt"
       class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[var(--z-toast)] focus:bg-oxide focus:px-5 focus:py-3 focus:text-small focus:font-medium focus:text-white"
     >
-      Zum Inhalt springen
+      {t('skip')}
     </a>
 
     <Header overlay={heroOverlay} />

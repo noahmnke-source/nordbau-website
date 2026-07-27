@@ -1,0 +1,238 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import { SITE } from '@/config/site';
+
+const schritte = [
+  {
+    nr: '01',
+    titel: 'Initial consultation',
+    text: '30 minutes, by phone or at the show home. We listen: plot, budget, timeline, your ideas.',
+  },
+  {
+    nr: '02',
+    titel: 'Plot & budget check',
+    text: 'We review the local development plan and site servicing and work through your budget realistically – including ancillary costs.',
+  },
+  {
+    nr: '03',
+    titel: 'Design and fixed-price quote',
+    text: 'You receive a first design and a binding fixed-price quote. Only then do you decide.',
+  },
+];
+---
+
+<BaseLayout
+  title="Contact & Consultation – Book an Appointment Now"
+  description={`Arrange a no-obligation consultation with ${SITE.name}: by phone, online or at the show home. We will get back to you within one business day.`}
+  breadcrumbs={[{ name: 'Contact', href: '/en/kontakt/' }]}
+>
+  <section class="container-site pt-12 pb-(--spacing-section) lg:pt-16">
+    <Breadcrumbs items={[{ name: 'Contact', href: '/en/kontakt/' }]} class="mb-10" />
+
+    <div class="grid gap-x-16 gap-y-16 lg:grid-cols-12">
+      <!-- Kopf + Formular -->
+      <div class="lg:col-span-7">
+        <h1 class="font-display text-hero font-medium">Let's talk about your home.</h1>
+        <p class="prose-measure mt-6 text-body text-muted">
+          Tell us where you stand – we will get back to you within one business day.
+          No obligation, no sales pressure, with honest numbers.
+        </p>
+
+        <form
+          id="kontakt-form"
+          name="beratung"
+          method="POST"
+          action="/en/kontakt/"
+          data-netlify="true"
+          netlify-honeypot="firma"
+          class="mt-12 grid gap-6 sm:grid-cols-2"
+          novalidate
+        >
+          <!-- Netlify Forms: Formularname + Betreff der Benachrichtigungs-Mail -->
+          <input type="hidden" name="form-name" value="beratung" />
+          <input type="hidden" name="subject" value="New consultation request via the website" />
+
+          <div class="flex flex-col gap-2">
+            <label for="name" class="text-small font-medium">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              autocomplete="name"
+              class="h-12 border border-ink/25 bg-bg px-4 text-body transition-colors hover:border-ink/50"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="email" class="text-small font-medium">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              class="h-12 border border-ink/25 bg-bg px-4 text-body transition-colors hover:border-ink/50"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="telefon" class="text-small font-medium">Phone <span class="font-normal text-muted">(optional)</span></label>
+            <input
+              type="tel"
+              id="telefon"
+              name="telefon"
+              autocomplete="tel"
+              class="h-12 border border-ink/25 bg-bg px-4 text-body transition-colors hover:border-ink/50"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="region" class="text-small font-medium">Postcode or region of the building project</label>
+            <input
+              type="text"
+              id="region"
+              name="region"
+              required
+              autocomplete="postal-code"
+              class="h-12 border border-ink/25 bg-bg px-4 text-body transition-colors hover:border-ink/50"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2 sm:col-span-2">
+            <label for="stand" class="text-small font-medium">Where are you right now?</label>
+            <select
+              id="stand"
+              name="stand"
+              required
+              class="h-12 appearance-none border border-ink/25 bg-bg px-4 text-body transition-colors hover:border-ink/50"
+            >
+              <option value="">Please select …</option>
+              <option>I already have a plot</option>
+              <option>Looking for a plot</option>
+              <option>Just gathering information</option>
+            </select>
+          </div>
+
+          <div class="flex flex-col gap-2 sm:col-span-2">
+            <label for="nachricht" class="text-small font-medium">Your message <span class="font-normal text-muted">(optional)</span></label>
+            <textarea
+              id="nachricht"
+              name="nachricht"
+              rows="5"
+              class="border border-ink/25 bg-bg px-4 py-3 text-body transition-colors hover:border-ink/50"
+            ></textarea>
+          </div>
+
+          <!-- Honeypot gegen Spam -->
+          <div class="hidden" aria-hidden="true">
+            <label for="firma">Company</label>
+            <input type="text" id="firma" name="firma" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="sm:col-span-2">
+            <label class="flex cursor-pointer items-start gap-3 text-small text-muted">
+              <input type="checkbox" name="datenschutz" required class="mt-1 h-4 w-4 accent-[var(--color-oxide)]" />
+              <span>
+                I have read the <a href="/datenschutz/" class="link-line text-ink">privacy policy</a> and
+                consent to my details being processed in order to handle my request.
+              </span>
+            </label>
+          </div>
+
+          <p id="form-error" class="hidden text-small text-oxide sm:col-span-2" role="alert">
+            Unfortunately that did not work. Please check the highlighted fields or give us a call:
+            <a href={`tel:${SITE.contact.phone}`} class="link-line">{SITE.contact.phoneDisplay}</a>
+          </p>
+
+          <div class="sm:col-span-2">
+            <button
+              type="submit"
+              class="group/btn inline-flex h-12 items-center gap-3 bg-oxide px-6 text-small font-medium text-white transition-colors duration-300 hover:bg-oxide-deep"
+            >
+              Request a consultation
+              <svg class="h-4 w-4 transition-transform duration-300 ease-[var(--ease-out-quart)] group-hover/btn:translate-x-1" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M1 8h13M9 3l5 5-5 5" />
+              </svg>
+            </button>
+          </div>
+        </form>
+
+        <!-- Erfolgszustand -->
+        <div id="form-success" class="mt-12 hidden border border-line bg-stone p-8" role="status">
+          <p class="font-display text-title font-medium">Thank you – we have received your request.</p>
+          <p class="prose-measure mt-3 text-body text-muted">
+            We will get back to you within one business day. If you would like it faster:
+            <a href={`tel:${SITE.contact.phone}`} class="link-line text-ink">{SITE.contact.phoneDisplay}</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Kontakt + Ablauf -->
+      <aside class="lg:col-span-4 lg:col-start-9">
+        <div class="border-y border-line py-8">
+          <h2 class="text-caption font-medium text-muted">Direct line</h2>
+          <p class="mt-4 text-title font-medium">
+            <a href={`tel:${SITE.contact.phone}`} class="link-line">{SITE.contact.phoneDisplay}</a>
+          </p>
+          <p class="mt-1 text-small text-muted">Mon–Fri 8am–6pm, Sat 10am–2pm</p>
+          <p class="mt-4 text-small">
+            <a href={`mailto:${SITE.contact.email}`} class="link-line">{SITE.contact.email}</a>
+          </p>
+        </div>
+
+        <div class="mt-12">
+          <h2 class="font-display text-title font-medium">What happens next</h2>
+          <ol class="mt-6 space-y-8">
+            {schritte.map((s) => (
+              <li class="grid grid-cols-[auto_1fr] gap-x-5">
+                <span class="tnum pt-0.5 font-display text-title text-oxide" aria-hidden="true">{s.nr}</span>
+                <div>
+                  <h3 class="text-body font-medium">{s.titel}</h3>
+                  <p class="mt-1.5 text-small text-muted">{s.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <script>
+    // Progressive Enhancement: ohne JS klassischer POST an den Endpoint.
+    const form = document.getElementById('kontakt-form') as HTMLFormElement | null;
+    const success = document.getElementById('form-success');
+    const errorBox = document.getElementById('form-error');
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorBox?.classList.add('hidden');
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // Honeypot: still verwerfen
+      if ((form.elements.namedItem('firma') as HTMLInputElement)?.value) return;
+
+      try {
+        // Netlify Forms erwartet eine URL-codierte POST-Anfrage inkl. form-name.
+        const body = new URLSearchParams(new FormData(form) as unknown as Record<string, string>).toString();
+        const res = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body,
+        });
+        if (!res.ok) throw new Error(String(res.status));
+        form.hidden = true;
+        success?.classList.remove('hidden');
+        success?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } catch {
+        errorBox?.classList.remove('hidden');
+      }
+    });
+  </script>
+</BaseLayout>
