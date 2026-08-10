@@ -25,9 +25,9 @@ export const SITE = {
     phone: '+49 155 63046447',
     phoneDisplay: '0155 63046447',
     email: 'info@nordbau-haeuser.de',
-    street: 'Noldestr. 40',
+    street: 'Noldestraße 40',
     zip: '30827',
-    city: 'Berenbostel',
+    city: 'Garbsen',
   },
 
   /** Rechtliche Pflichtangaben (Impressum, JSON-LD) */
@@ -36,6 +36,8 @@ export const SITE = {
     vatId: 'DE454914037',
     register: 'HRB 228155',
     court: 'Amtsgericht Hannover',
+    /** Vertretungsberechtigte Geschäftsführung (Impressum-Pflichtangabe) */
+    managingDirector: 'Armin Hot',
   },
 
   /**

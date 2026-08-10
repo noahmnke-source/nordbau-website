@@ -17,7 +17,8 @@ import { SITE } from '@/config/site';
       <p>
         {SITE.legalName}<br />
         {SITE.contact.street}<br />
-        {SITE.contact.zip} {SITE.contact.city}
+        {SITE.contact.zip} {SITE.contact.city}<br />
+        Deutschland
       </p>
       <p>
         Telefon: <a href={`tel:${SITE.contact.phone}`} class="link-line">{SITE.contact.phoneDisplay}</a><br />
@@ -31,17 +32,13 @@ import { SITE } from '@/config/site';
         Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: {SITE.legal.vatId}<br />
         Steuernummer: {SITE.legal.taxNumber}
       </p>
-      <p class="text-muted">
-        <!-- TODO vor Launch: Namen der Geschäftsführung ergänzen (Pflichtangabe) -->
-        Vertretungsberechtigte Geschäftsführung: [NAME DER GESCHÄFTSFÜHRUNG EINTRAGEN]<br />
-        Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: [NAME], {SITE.contact.street},
-        {SITE.contact.zip} {SITE.contact.city}
+      <p>
+        Vertretungsberechtigter Geschäftsführer: {SITE.legal.managingDirector}<br />
+        Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: {SITE.legal.managingDirector}, {SITE.contact.street}, {SITE.contact.zip} {SITE.contact.city}
       </p>
       <p class="text-small text-muted">
-        Plattform der EU-Kommission zur Online-Streitbeilegung:
-        <a href="https://ec.europa.eu/consumers/odr/" class="link-line">https://ec.europa.eu/consumers/odr/</a>.
-        Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor
-        einer Verbraucherschlichtungsstelle teilzunehmen.
+        Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer
+        Verbraucherschlichtungsstelle weder verpflichtet noch bereit.
       </p>
     </div>
   </section>
