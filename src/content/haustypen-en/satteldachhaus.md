@@ -17,7 +17,7 @@ facts:
   dachform: gable roof, 35–45°
   bauweise: timber-frame construction, factory-prefabricated
   energiestandard: Efficiency House 40
-seoTitle: "Build a gable-roof house as a prefab home – single-family home | Nordbau"
+seoTitle: "Build a gable-roof house as a prefab home – single-family home | Eco Bau"
 seoDescription: "Single-family home with a gable roof as a prefab home: from 120 m², Efficiency House 40, turnkey, 30-year guarantee on the building structure. Arrange your consultation now."
 faq:
   - q: What does a gable-roof house cost as a prefab home?

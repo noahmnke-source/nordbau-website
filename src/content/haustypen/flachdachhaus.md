@@ -17,7 +17,7 @@ facts:
   dachform: Flachdach, begrünbar
   bauweise: Holztafelbau, werkseitig vorgefertigt
   energiestandard: Effizienzhaus 40
-seoTitle: "Flachdachhaus als Fertighaus bauen – Bauhaus-Stil | Nordbau"
+seoTitle: "Flachdachhaus als Fertighaus bauen – Bauhaus-Stil | Eco Bau"
 seoDescription: "Flachdachhaus im Bauhaus-Stil als Fertighaus: ab 130 m², zwei Vollgeschosse, Effizienzhaus 40. Kubisch, klar, modern. Jetzt Beratung vereinbaren."
 faq:
   - q: Was kostet ein Flachdachhaus als Fertighaus?

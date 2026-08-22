@@ -17,7 +17,7 @@ facts:
   dachform: Flat or gable roof
   bauweise: timber-frame construction, factory-prefabricated
   energiestandard: Efficiency House 40 per residential unit
-seoTitle: "Build a multi-family house as a prefab home | Nordbau"
+seoTitle: "Build a multi-family house as a prefab home | Eco Bau"
 seoDescription: "Multi-family house in timber-frame construction: from 320 m², several residential units, Efficiency House 40. For investors and owner-builders. Arrange your consultation now."
 faq:
   - q: What does a multi-family house cost as a prefab home?

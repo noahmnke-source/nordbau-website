@@ -17,7 +17,7 @@ facts:
   dachform: Flach- oder Walmdach
   bauweise: Holztafelbau, werkseitig vorgefertigt
   energiestandard: Effizienzhaus 40
-seoTitle: "Bungalow als Fertighaus bauen – ebenerdig & barrierearm | Nordbau"
+seoTitle: "Bungalow als Fertighaus bauen – ebenerdig & barrierearm | Eco Bau"
 seoDescription: "Bungalow als Fertighaus: ebenerdig ab 95 m², barrierearm, Effizienzhaus 40. Alles auf einer Ebene, ohne Treppen. Jetzt Beratung vereinbaren."
 faq:
   - q: Was kostet ein Bungalow als Fertighaus?

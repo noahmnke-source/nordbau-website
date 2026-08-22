@@ -10,7 +10,7 @@ So nutzt du dieses Dokument in Lovable:
 3. Meta-Title/-Description je Seite in den <title>/<meta description>-Tag
    (react-helmet) übernehmen. FAQ-Blöcke ins Akkordeon + FAQPage-JSON-LD.
 
-Marke: Hochpuls GmbH. Ton: Sie-Form, ruhig, präzise, konkrete Zahlen,
+Marke: Eco Bau GmbH. Ton: Sie-Form, ruhig, präzise, konkrete Zahlen,
 keine Ausrufezeichen, keine Floskeln. Alle Zahlen Stand 2026 / 07-2026.
 
 
@@ -18,17 +18,17 @@ keine Ausrufezeichen, keine Floskeln. Alle Zahlen Stand 2026 / 07-2026.
 ║  STARTSEITE  (/)                                             ║
 ╚══════════════════════════════════════════════════════════════╝
 
-Meta-Title: Fertighaus schlüsselfertig bauen – individuell geplant | Hochpuls
+Meta-Title: Fertighaus schlüsselfertig bauen – individuell geplant | Eco Bau
 Meta-Description: Individuell geplante Fertighäuser in Holztafelbauweise: schlüsselfertig, Effizienzhaus 40, 12 Monate Festpreisgarantie. Bundesweit. Jetzt Beratung vereinbaren.
 
 ── HERO ──
 H1: Ihr Fertighaus. Individuell geplant, schlüsselfertig zum Festpreis.
-Untertext: Hochpuls plant und baut Architektenhäuser in Holztafelbauweise – bundesweit, im Effizienzhaus-40-Standard, mit fünf Jahren Gewährleistung.
+Untertext: Eco Bau plant und baut Architektenhäuser in Holztafelbauweise – bundesweit, im Effizienzhaus-40-Standard, mit fünf Jahren Gewährleistung.
 Primär-CTA: Beratung vereinbaren  ·  Sekundär-Link: Gebaute Häuser ansehen
 
 ── USP-STATEMENT ──
 H2: Ein Haus ist kein Produkt von der Stange. Unsere Bauweise schon – im besten Sinn.
-Absatz: Jedes Hochpuls entsteht zweimal: zuerst millimetergenau im Werk, dann in wenigen Tagen auf Ihrem Grundstück. Die Präzision der seriellen Fertigung trifft auf einen Grundriss, den es genau einmal gibt – Ihren. Das Ergebnis ist planbar in Preis und Termin, ohne dass Architektur zur Verhandlungsmasse wird.
+Absatz: Jedes Eco Bau entsteht zweimal: zuerst millimetergenau im Werk, dann in wenigen Tagen auf Ihrem Grundstück. Die Präzision der seriellen Fertigung trifft auf einen Grundriss, den es genau einmal gibt – Ihren. Das Ergebnis ist planbar in Preis und Termin, ohne dass Architektur zur Verhandlungsmasse wird.
 Beleg-Register:
   12 Monate — Festpreisgarantie ab Vertragsabschluss – Ihr Budget bleibt Ihr Budget.
   EH 40 — Effizienzhaus 40 ab Werk: Wärmepumpe, Lüftungsanlage, PV-Vorbereitung inklusive.
@@ -158,10 +158,10 @@ Absatz: 30 Minuten am Telefon, online oder im Musterhaus: Wir klären Grundstüc
 ╚══════════════════════════════════════════════════════════════╝
 
 Meta-Title: Über uns – Fertighaus-Hersteller seit 1998
-Meta-Description: Fertighaus-Hersteller mit eigenem Werk: Holztafelbauweise, 1.250+ übergebene Häuser seit 1998, Effizienzhaus 40. Lernen Sie Hochpuls kennen – im Gespräch.
+Meta-Description: Fertighaus-Hersteller mit eigenem Werk: Holztafelbauweise, 1.250+ übergebene Häuser seit 1998, Effizienzhaus 40. Lernen Sie Eco Bau kennen – im Gespräch.
 
-H1: Über Hochpuls: Ein Werk, ein Versprechen
-Lead: Wir nennen uns weder Baufirma noch Manufaktur, obwohl beides stimmt: Hochpuls ist ein Werk, in dem Architektenhäuser in Serie entstehen – jedes nach einem eigenen Plan, alle mit derselben Präzision.
+H1: Über Eco Bau: Ein Werk, ein Versprechen
+Lead: Wir nennen uns weder Baufirma noch Manufaktur, obwohl beides stimmt: Eco Bau ist ein Werk, in dem Architektenhäuser in Serie entstehen – jedes nach einem eigenen Plan, alle mit derselben Präzision.
 Bildunterschrift (Auftakt): Holz ist unser Werkstoff – innen als Konstruktion, außen als Fassade.
 
 Haltung:
@@ -200,7 +200,7 @@ Absatz: Ein Text kann Präzision behaupten – ein Haus muss sie zeigen. Besuche
 ╚══════════════════════════════════════════════════════════════╝
 
 Meta-Title: Kontakt & Beratung – Jetzt Termin vereinbaren
-Meta-Description: Vereinbaren Sie ein unverbindliches Beratungsgespräch mit Hochpuls: telefonisch, online oder im Musterhaus. Wir melden uns innerhalb eines Werktags.
+Meta-Description: Vereinbaren Sie ein unverbindliches Beratungsgespräch mit Eco Bau: telefonisch, online oder im Musterhaus. Wir melden uns innerhalb eines Werktags.
 
 H1: Sprechen wir über Ihr Haus.
 Einleitung: Erzählen Sie uns, wo Sie stehen – wir melden uns innerhalb eines Werktags. Unverbindlich, ohne Verkaufsdruck, mit ehrlichen Zahlen.
@@ -226,7 +226,7 @@ Footer-Abschluss-CTA (global): Sprechen wir über Ihr Grundstück, Ihr Budget un
 ────────  /haustypen/stadtvilla/  ────────
 Name: Stadtvilla
 Tagline: Zwei Vollgeschosse. Klare Kante.
-Meta-Title: Stadtvilla bauen – Fertighaus ab 495.000 € | Hochpuls
+Meta-Title: Stadtvilla bauen – Fertighaus ab 495.000 € | Eco Bau
 Meta-Description: Stadtvilla als Fertighaus: 145 m², zwei Vollgeschosse, Effizienzhaus 40, ab 495.000 € – mit 12 Monaten Festpreisgarantie. Jetzt Beratungstermin vereinbaren.
 Fakten-Register:
   Wohnfläche: ab 145 m²
@@ -270,7 +270,7 @@ A: Ja. Wir bauen die Stadtvilla standardmäßig als Effizienzhaus 40 – die Vor
 ────────  /haustypen/satteldachhaus/  ────────
 Name: Satteldachhaus
 Tagline: Die klassische Form, präzise neu gezeichnet.
-Meta-Title: Einfamilienhaus bauen – Satteldachhaus | Hochpuls
+Meta-Title: Einfamilienhaus bauen – Satteldachhaus | Eco Bau
 Meta-Description: Einfamilienhaus mit Satteldach bauen: ab 120 m², Effizienzhaus 40, ab 385.000 €, schlüsselfertig übergeben nach 8–10 Wochen Bauzeit. Jetzt Beratung vereinbaren.
 Fakten-Register:
   Wohnfläche: ab 120 m²
@@ -314,7 +314,7 @@ A: In der Regel ja. Die kompakte Kubatur und die einfache Dachkonstruktion mache
 ────────  /haustypen/bungalow/  ────────
 Name: Bungalow
 Tagline: Eine Ebene. Kein Kompromiss.
-Meta-Title: Bungalow Fertighaus – ebenerdig ab 355.000 € | Hochpuls
+Meta-Title: Bungalow Fertighaus – ebenerdig ab 355.000 € | Eco Bau
 Meta-Description: Bungalow als Fertighaus: ebenerdig ab 95 m², barrierefrei geplant, Effizienzhaus 40, ab 355.000 €. Individuell geplant – jetzt Beratungstermin vereinbaren.
 Fakten-Register:
   Wohnfläche: ab 95 m²
@@ -358,7 +358,7 @@ A: Am häufigsten sind Walmdach und Flachdach. Das Flachdach unterstreicht die m
 ────────  /haustypen/bauhaus/  ────────
 Name: Bauhaus
 Tagline: Flachdach, Glas und die Ruhe der geraden Linie.
-Meta-Title: Bauhaus-Stil Haus – Flachdach-Fertighaus | Hochpuls
+Meta-Title: Bauhaus-Stil Haus – Flachdach-Fertighaus | Eco Bau
 Meta-Description: Haus im Bauhaus-Stil: Flachdach-Fertighaus ab 130 m², Effizienzhaus 40, ab 475.000 € – klare Linien, individuell geplant. Jetzt Beratungstermin vereinbaren.
 Fakten-Register:
   Wohnfläche: ab 130 m²
@@ -402,7 +402,7 @@ A: Der Bebauungsplan legt die zulässigen Dachformen fest – in vielen jüngere
 ────────  /haustypen/doppelhaus/  ────────
 Name: Doppelhaus
 Tagline: Ein Baukörper. Zwei Adressen.
-Meta-Title: Doppelhaus bauen – Fertighaus für zwei Parteien | Hochpuls
+Meta-Title: Doppelhaus bauen – Fertighaus für zwei Parteien | Eco Bau
 Meta-Description: Doppelhaus bauen als Fertighaus: zwei Wohneinheiten ab 240 m², Effizienzhaus 40, ab 745.000 € – KfW-Förderung je Einheit. Jetzt Beratungstermin vereinbaren.
 Fakten-Register:
   Wohnfläche: ab 240 m² (2 Einheiten)
@@ -446,7 +446,7 @@ A: Nein. Der Baukörper teilt Statik, Dach und Haustrennwand; die Grundrisse dah
 ────────  /haustypen/mehrgenerationenhaus/  ────────
 Name: Mehrgenerationenhaus
 Tagline: Nähe mit eigener Tür.
-Meta-Title: Haus mit Einliegerwohnung bauen – Fertighaus | Hochpuls
+Meta-Title: Haus mit Einliegerwohnung bauen – Fertighaus | Eco Bau
 Meta-Description: Haus mit Einliegerwohnung bauen: ab 200 m², zwei Wohneinheiten, Effizienzhaus 40, ab 640.000 € – KfW-Förderung doppelt nutzen. Jetzt Beratung vereinbaren.
 Fakten-Register:
   Wohnfläche: ab 200 m² inkl. Einliegerwohnung
@@ -495,8 +495,8 @@ A: Ja. In der Holztafelbauweise sind die inneren Trennwände in der Regel nicht 
 ────────  /referenzen/bautagebuch-einfamilienhaus/  ────────
 Titel: Bautagebuch: Einfamilienhaus im Bau
 Jahr: 2026 · Kategorie: Neubau
-Meta-Title: Bautagebuch: Einfamilienhaus im Bau | Hochpuls
-Meta-Description: Ein Hausbau in drei Momenten: Rohbau im Winter, offener Dachstuhl, neue Holzfassade. Das Bautagebuch eines laufenden Hochpuls-Projekts – ehrlich dokumentiert.
+Meta-Title: Bautagebuch: Einfamilienhaus im Bau | Eco Bau
+Meta-Description: Ein Hausbau in drei Momenten: Rohbau im Winter, offener Dachstuhl, neue Holzfassade. Das Bautagebuch eines laufenden Eco Bau-Projekts – ehrlich dokumentiert.
 
 Fließtext:
 Die meisten Referenzseiten zeigen fertige Häuser bei goldenem Abendlicht. Diese Seite zeigt den Weg dorthin: ein Einfamilienhaus, das gerade entsteht – dokumentiert in drei Momenten, so wie die Baustelle wirklich aussieht.
@@ -965,7 +965,7 @@ A: In den Kernlagen von Stuttgart, Esslingen und Ludwigsburg sind vierstellige Q
 ────────  /ratgeber/fertighaus-preise-2026/  ────────
 Titel: Fertighaus-Preise 2026: Kosten pro m², Beispiele, Nebenkosten
 Datum: 6. Juli 2026
-Meta-Title: Fertighaus-Preise 2026: Kosten pro m² | Hochpuls
+Meta-Title: Fertighaus-Preise 2026: Kosten pro m² | Eco Bau
 Meta-Description: Fertighaus-Preise 2026: Median 2.800 €/m², Spanne 2.400–3.300 €/m². Mit Beispielrechnung für 150 m², Baunebenkosten und Steuertabelle. Jetzt informieren.
 Kurzbeschreibung: Medianpreise pro Quadratmeter, eine Beispielrechnung für 150 m² und die Grunderwerbsteuer aller 16 Bundesländer – das kostet ein Fertighaus 2026 wirklich.
 
@@ -1003,7 +1003,7 @@ Die folgende Beispielrechnung zeigt, wie sich ein realistisches Gesamtbudget zus
 
 Wichtig für den Angebotsvergleich: Prüfen Sie immer, welche Ausbaustufe gemeint ist. „Schlüsselfertig“ ist kein gesetzlich definierter Begriff – was enthalten ist, regelt allein die Bau- und Leistungsbeschreibung des Anbieters. Vergleichen Sie deshalb nur Angebote mit identischem Leistungsumfang.
 
-Zwischen einer Gemeinde im Umland und einer Großstadtlage kann sich der Grundstückspreis vervielfachen – das Haus selbst kostet dagegen bundesweit ähnlich viel. Wo wir bauen, zeigt die Übersicht der [Regionen, in denen Hochpuls baut](/fertighaus/).
+Zwischen einer Gemeinde im Umland und einer Großstadtlage kann sich der Grundstückspreis vervielfachen – das Haus selbst kostet dagegen bundesweit ähnlich viel. Wo wir bauen, zeigt die Übersicht der [Regionen, in denen Eco Bau baut](/fertighaus/).
 
 ## Wie hoch sind die Baunebenkosten beim Hausbau?
 
@@ -1016,7 +1016,7 @@ Kalkulieren Sie 15 bis 20 Prozent der Gesamtkosten zusätzlich für Baunebenkost
 - **Hausanschlüsse:** Strom, Wasser, Abwasser, Telekommunikation
 - **Versicherungen:** Bauherrenhaftpflicht und Bauleistungsversicherung
 
-Ein seriöser Anbieter weist diese Positionen transparent aus, bevor Sie unterschreiben. Bei Hochpuls gehört der Budgetcheck inklusive Nebenkosten fest zum [Ablauf von Erstgespräch bis Übergabe](/ablauf/) – vor dem Entwurf, nicht danach.
+Ein seriöser Anbieter weist diese Positionen transparent aus, bevor Sie unterschreiben. Bei Eco Bau gehört der Budgetcheck inklusive Nebenkosten fest zum [Ablauf von Erstgespräch bis Übergabe](/ablauf/) – vor dem Entwurf, nicht danach.
 
 ## Wie viel Grunderwerbsteuer zahlen Sie in Ihrem Bundesland?
 
@@ -1066,7 +1066,7 @@ Was bedeuten diese Zahlen für Ihr Grundstück und Ihren Grundriss? In einem unv
 ────────  /ratgeber/kfw-foerderung-neubau-2026/  ────────
 Titel: KfW-Förderung für den Neubau 2026: Programme 297/298 und 300 erklärt
 Datum: 24. Juni 2026
-Meta-Title: KfW-Förderung Neubau 2026: 297, 298 & 300 | Hochpuls
+Meta-Title: KfW-Förderung Neubau 2026: 297, 298 & 300 | Eco Bau
 Meta-Description: KfW-Förderung Neubau 2026: Kredit bis 150.000 € je Wohneinheit (297/298), bis 270.000 € für Familien (KfW 300), rund 0,6 % Zins. Konditionen und Antragsweg.
 Kurzbeschreibung: Kredite bis 150.000 € je Wohneinheit, rund 0,6 % Zins für das Effizienzhaus 40 und bis zu 270.000 € für Familien – so nutzen Sie die KfW-Neubauförderung 2026 richtig.
 
@@ -1093,7 +1093,7 @@ Das Programm fördert Neubauten, die mindestens den Effizienzhaus-40-Standard er
 
 Die Konditionen Anfang 2026: bis 150.000 € Kredit je Wohneinheit, rund 0,6 Prozent Zins bei zehn Jahren Zinsbindung. Frei finanzierte Baudarlehen lagen zeitgleich deutlich darüber – über die Laufzeit summiert sich der Zinsvorteil bei voller Kreditsumme auf einen fünfstelligen Betrag. Der KfW-Kredit ersetzt dabei nicht die Baufinanzierung, er ist ihr günstigster Baustein: Den Rest strukturiert Ihre Hausbank als klassisches Darlehen.
 
-Übergangsweise fördert die KfW 2026 auch Neubauten auf Effizienzhaus-55-Niveau, zu rund 1,0 Prozent Zins. Diese Stufe läuft zum 31.12.2026 aus – wer sie nutzen will, braucht die Kreditzusage vor diesem Stichtag. Für neu geplante Häuser ist das Auslaufen allerdings kaum ein Verlust: Der EH-40-Standard wird besser gefördert, senkt die Betriebskosten dauerhaft und ist bei allen [Hochpuls-Haustypen](/haustypen/) ab Werk enthalten – ohne Aufpreis und ohne nachträgliche Umplanung.
+Übergangsweise fördert die KfW 2026 auch Neubauten auf Effizienzhaus-55-Niveau, zu rund 1,0 Prozent Zins. Diese Stufe läuft zum 31.12.2026 aus – wer sie nutzen will, braucht die Kreditzusage vor diesem Stichtag. Für neu geplante Häuser ist das Auslaufen allerdings kaum ein Verlust: Der EH-40-Standard wird besser gefördert, senkt die Betriebskosten dauerhaft und ist bei allen [Eco Bau-Haustypen](/haustypen/) ab Werk enthalten – ohne Aufpreis und ohne nachträgliche Umplanung.
 
 ## Wer bekommt die Familienförderung KfW 300?
 
@@ -1137,7 +1137,7 @@ Der Ablauf in vier Schritten:
 3. **Antrag stellen und Zusage abwarten:** Die Bank reicht den Antrag bei der KfW ein. Erst mit der Zusage steht die Förderung fest.
 4. **Bauvertrag unterschreiben:** Jetzt – und erst jetzt – binden Sie sich an Ihren Hausanbieter.
 
-Im [Ablauf von Hochpuls](/ablauf/) liegt vor der Unterschrift ein Festpreisangebot mit vollständiger Bau- und Leistungsbeschreibung vor – exakt die Unterlagen, die Bank und Energieberater für den Antrag brauchen. Da das Angebot zwölf Monate gilt, entsteht kein Zeitdruck: Die Förderzusage kann in Ruhe eingeholt werden, ohne dass sich der Hauspreis bewegt.
+Im [Ablauf von Eco Bau](/ablauf/) liegt vor der Unterschrift ein Festpreisangebot mit vollständiger Bau- und Leistungsbeschreibung vor – exakt die Unterlagen, die Bank und Energieberater für den Antrag brauchen. Da das Angebot zwölf Monate gilt, entsteht kein Zeitdruck: Die Förderzusage kann in Ruhe eingeholt werden, ohne dass sich der Hauspreis bewegt.
 
 ## Fazit: Erst Förderzusage, dann Unterschrift
 
@@ -1148,7 +1148,7 @@ Welche Förderung passt zu Ihrem Projekt – 297 oder 300, mit oder ohne QNG? In
 ────────  /ratgeber/schluesselfertig-ausbauhaus-vergleich/  ────────
 Titel: Schlüsselfertig oder Ausbauhaus? Leistungsumfang, Kosten, Eigenleistung
 Datum: 16. Juni 2026
-Meta-Title: Schlüsselfertig oder Ausbauhaus? Kosten 2026 | Hochpuls
+Meta-Title: Schlüsselfertig oder Ausbauhaus? Kosten 2026 | Eco Bau
 Meta-Description: Schlüsselfertig oder Ausbauhaus: alle Ausbaustufen im Vergleich, 10.000–25.000 € realistisches Sparpotenzial, Banken-Anerkennung bis 15 %. Mit Checkliste.
 Kurzbeschreibung: Was „schlüsselfertig“ wirklich umfasst, welche Ausbaustufen es gibt und was die Muskelhypothek realistisch spart – mit Checkliste für die Leistungsbeschreibung.
 
@@ -1161,7 +1161,7 @@ Fließtext:
 
 „Schlüsselfertig“ ist kein geschützter oder gesetzlich definierter Begriff. Jeder Anbieter legt in seiner Bau- und Leistungsbeschreibung selbst fest, was er darunter versteht – und die Unterschiede sind erheblich. Bei manchen Anbietern fehlen im „schlüsselfertigen“ Haus die Malerarbeiten, bei anderen die Bodenbeläge oder sämtliche Außenanlagen. Wer zwei Angebote nur am Endpreis vergleicht, vergleicht deshalb häufig zwei verschiedene Häuser.
 
-Die Konsequenz für Ihren Anbietervergleich: Lesen Sie die Leistungsbeschreibung Position für Position und vergleichen Sie Angebote ausschließlich bei identischem Leistungsumfang. Bei Hochpuls bedeutet schlüsselfertig bezugsfertig – inklusive Bädern, Bodenbelägen und Innentüren, verbindlich dokumentiert in der Leistungsbeschreibung, die Teil des Festpreisangebots ist.
+Die Konsequenz für Ihren Anbietervergleich: Lesen Sie die Leistungsbeschreibung Position für Position und vergleichen Sie Angebote ausschließlich bei identischem Leistungsumfang. Bei Eco Bau bedeutet schlüsselfertig bezugsfertig – inklusive Bädern, Bodenbelägen und Innentüren, verbindlich dokumentiert in der Leistungsbeschreibung, die Teil des Festpreisangebots ist.
 
 ## Welche Ausbaustufen gibt es beim Fertighaus?
 
@@ -1225,12 +1225,12 @@ Ein seriöser Anbieter beantwortet jeden dieser Punkte, bevor Sie unterschreiben
 
 Das Ausbauhaus lohnt sich für Bauherren mit handwerklicher Erfahrung, viel verfügbarer Zeit und Geduld für rund 10.000 bis 25.000 € realistischer Ersparnis. Für alle anderen ist die schlüsselfertige Übergabe die ehrlichere Rechnung: ein verbindlicher Festpreis für einen vollständig definierten Leistungsumfang, ein Einzugstermin, der hält, und fünf Jahre Gewährleistung auf das gesamte Haus. Entscheidend ist in beiden Fällen dasselbe Dokument – die Bau- und Leistungsbeschreibung. Alle Angaben in diesem Artikel: Stand 07/2026.
 
-Übrigens schließen sich beide Wege nicht aus: Einzelne Eigenleistungen wie Malern oder Außenanlagen lassen sich auch beim schlüsselfertigen Bauen vereinbaren – festgelegt vor Vertragsabschluss, damit der Festpreis eindeutig bleibt. Welche Kombination für Ihr Projekt sinnvoll ist, klären wir in einem unverbindlichen [Beratungsgespräch](/kontakt/) – gern zusammen mit einem Blick auf die [Haustypen](/haustypen/) und die [Regionen, in denen Hochpuls baut](/fertighaus/).
+Übrigens schließen sich beide Wege nicht aus: Einzelne Eigenleistungen wie Malern oder Außenanlagen lassen sich auch beim schlüsselfertigen Bauen vereinbaren – festgelegt vor Vertragsabschluss, damit der Festpreis eindeutig bleibt. Welche Kombination für Ihr Projekt sinnvoll ist, klären wir in einem unverbindlichen [Beratungsgespräch](/kontakt/) – gern zusammen mit einem Blick auf die [Haustypen](/haustypen/) und die [Regionen, in denen Eco Bau baut](/fertighaus/).
 
 ────────  /ratgeber/fertighaus-oder-massivhaus/  ────────
 Titel: Fertighaus oder Massivhaus: Der ehrliche Vergleich 2026
 Datum: 9. Juni 2026
-Meta-Title: Fertighaus oder Massivhaus? Der Vergleich 2026 | Hochpuls
+Meta-Title: Fertighaus oder Massivhaus? Der Vergleich 2026 | Eco Bau
 Meta-Description: Fertighaus oder Massivhaus 2026: Preise ab 2.400 €/m², Bauzeit 8–10 Wochen statt 8–12 Monate, bessere CO₂-Bilanz. Der ehrliche Vergleich mit allen Zahlen.
 Kurzbeschreibung: Preis pro m², Bauzeit, CO₂-Bilanz, Lebensdauer und Wiederverkauf im direkten Vergleich – und eine sachliche Einordnung der oft zitierten Fertighaus-Nachteile.
 
@@ -1248,7 +1248,7 @@ Der jahrzehntelange Preisvorteil des Fertighauses ist weitgehend Geschichte – 
 | Preis pro m² Wohnfläche, schlüsselfertig (2026) | 2.400–3.300 € | 2.500–3.600 € |
 | Beispiel: 150 m² Wohnfläche | 360.000–495.000 € | 375.000–540.000 € |
 
-Der relevantere Unterschied liegt in der Preissicherheit. Beim Fertighaus kommt der Preis von einem Vertragspartner mit Festpreisbindung – bei Hochpuls zwölf Monate ab Vertragsabschluss. Beim massiv errichteten Architektenhaus mit Einzelvergabe addieren sich dagegen die Angebote vieler Gewerke, und jede Schnittstelle ist ein potenzieller Nachtrag. Wie sich ein vollständiges Budget inklusive Grundstück und Nebenkosten zusammensetzt, zeigt der Ratgeber [Fertighaus-Preise 2026](/ratgeber/fertighaus-preise-2026/).
+Der relevantere Unterschied liegt in der Preissicherheit. Beim Fertighaus kommt der Preis von einem Vertragspartner mit Festpreisbindung – bei Eco Bau zwölf Monate ab Vertragsabschluss. Beim massiv errichteten Architektenhaus mit Einzelvergabe addieren sich dagegen die Angebote vieler Gewerke, und jede Schnittstelle ist ein potenzieller Nachtrag. Wie sich ein vollständiges Budget inklusive Grundstück und Nebenkosten zusammensetzt, zeigt der Ratgeber [Fertighaus-Preise 2026](/ratgeber/fertighaus-preise-2026/).
 
 ## Wie groß ist der Unterschied bei der Bauzeit?
 
@@ -1309,4 +1309,4 @@ Ehrlich ist aber auch die Kehrseite: Beim Fertighaus fallen Entscheidungen früh
 
 Beim Preis entscheidet 2026 nicht mehr die Bauweise, sondern Ausstattung und Planung – die Spannen überlappen sich fast vollständig. Das Fertighaus gewinnt bei Bauzeit (8–10 Wochen statt 8–12 Monate), Termin- und Preissicherheit sowie CO₂-Bilanz; das Massivhaus punktet beim konstruktiv einfacheren Schallschutz und bei maximaler Flexibilität für spätere Umbauten. Lebensdauer und Wiederverkaufswert sind bei beiden eine Frage von Qualität, Lage und Energieeffizienz – nicht des Wandaufbaus. Alle Zahlen in diesem Artikel: Stand 07/2026.
 
-Ob unsere Bauweise zu Ihrem Projekt passt, klären Sie am besten am konkreten Entwurf: Die [Haustypen von Hochpuls](/haustypen/) zeigen, was im Holztafelbau architektonisch möglich ist. Und in einem unverbindlichen [Beratungsgespräch](/kontakt/) vergleichen wir beide Bauweisen offen anhand Ihrer Anforderungen – mit Zahlen, nicht mit Meinungen.
+Ob unsere Bauweise zu Ihrem Projekt passt, klären Sie am besten am konkreten Entwurf: Die [Haustypen von Eco Bau](/haustypen/) zeigen, was im Holztafelbau architektonisch möglich ist. Und in einem unverbindlichen [Beratungsgespräch](/kontakt/) vergleichen wir beide Bauweisen offen anhand Ihrer Anforderungen – mit Zahlen, nicht mit Meinungen.

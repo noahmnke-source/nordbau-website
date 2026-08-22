@@ -6,20 +6,25 @@
  * (Platzhalter, unten `url` + astro.config.mjs + robots.txt), der
  * Formular-Endpoint, die Social-Profile und die Kennzahlen in
  * PRODUCT.md-nahen Seiten (Über uns / Startseite).
+ *
+ * ACHTUNG nach der Umfirmierung auf Eco Bau GmbH: `url`, `contact.email`,
+ * `formRecipient` und `social` tragen noch die alte Domain bzw. die alten
+ * Handles (nordbau…). Sie werden zusammen mit der neuen Domain umgestellt —
+ * dann auch astro.config.mjs `site` und public/robots.txt anpassen.
  * ─────────────────────────────────────────────────────────────
  */
 
 export const SITE = {
   /** Markenname, erscheint in Logo, Titeln, Copy */
-  name: 'Nordbau',
+  name: 'Eco Bau',
   /** Juristischer Name für JSON-LD / Impressum */
-  legalName: 'Nordbau GmbH',
+  legalName: 'Eco Bau GmbH',
   /** Produktions-Domain (Apex ist primär; www leitet per 301 hierher um). Muss mit astro.config.mjs `site` + robots.txt übereinstimmen. */
   url: 'https://nordbau-haeuser.de',
   /** Claim, erscheint u. a. im Footer und als OG-Fallback */
   claim: 'Architektur in Serie. Gebaut für Sie.',
   /** Meta-Title-Suffix */
-  titleSuffix: 'Nordbau GmbH – Fertighäuser schlüsselfertig & individuell',
+  titleSuffix: 'Eco Bau GmbH – Fertighäuser schlüsselfertig & individuell',
 
   contact: {
     phone: '+49 155 63046447',
@@ -56,7 +61,7 @@ export const SITE = {
 
   /**
    * Gründungsjahr für "seit"-Angaben und JSON-LD.
-   * Tree House nennt in den Unterlagen kein exaktes Jahr, sondern „über ein
+   * Eco Bau nennt in den Unterlagen kein exaktes Jahr, sondern „über ein
    * Jahrzehnt Erfahrung“ – daher 2013 als belegbare Untergrenze gesetzt.
    * Falls das genaue Jahr bekannt ist, hier eintragen.
    */

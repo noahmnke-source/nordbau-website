@@ -17,7 +17,7 @@ facts:
   dachform: Flach- oder Satteldach
   bauweise: Holztafelbau, werkseitig vorgefertigt
   energiestandard: Effizienzhaus 40
-seoTitle: "Tiny House kaufen & bauen als Fertighaus | Nordbau"
+seoTitle: "Tiny House kaufen & bauen als Fertighaus | Eco Bau"
 seoDescription: "Tiny House als Fertighaus: ab 35 m², vollwertig gedämmt, Effizienzhaus 40. Kompaktes Wohnen ohne Kompromisse. Jetzt Beratung vereinbaren."
 faq:
   - q: Was kostet ein Tiny House?
@@ -36,7 +36,7 @@ Kleine Häuser verzeihen keine schwachen Grundrisse. Deshalb planen wir jeden Qu
 
 ## Vollwertig, nicht provisorisch
 
-Ein Tiny House von Nordbau ist kein Bauwagen und kein Gartenhaus. Es entsteht in derselben Holztafelbauweise, mit derselben Dämmung, Haustechnik und Qualitätsprüfung wie unsere großen Häuser – und erreicht den Effizienzhaus-40-Standard. Als Erstwohnsitz für Minimalisten, als Einliegerhaus im Garten oder als hochwertiges Büro auf dem Grundstück: Es ist klein in der Fläche, aber ganz in der Qualität.
+Ein Tiny House von Eco Bau ist kein Bauwagen und kein Gartenhaus. Es entsteht in derselben Holztafelbauweise, mit derselben Dämmung, Haustechnik und Qualitätsprüfung wie unsere großen Häuser – und erreicht den Effizienzhaus-40-Standard. Als Erstwohnsitz für Minimalisten, als Einliegerhaus im Garten oder als hochwertiges Büro auf dem Grundstück: Es ist klein in der Fläche, aber ganz in der Qualität.
 
 ## Für wen das Tiny House gebaut ist
 

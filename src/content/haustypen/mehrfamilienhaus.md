@@ -17,7 +17,7 @@ facts:
   dachform: Flach- oder Satteldach
   bauweise: Holztafelbau, werkseitig vorgefertigt
   energiestandard: Effizienzhaus 40 je Wohneinheit
-seoTitle: "Mehrfamilienhaus als Fertighaus bauen | Nordbau"
+seoTitle: "Mehrfamilienhaus als Fertighaus bauen | Eco Bau"
 seoDescription: "Mehrfamilienhaus in Holztafelbauweise: ab 320 m², mehrere Wohneinheiten, Effizienzhaus 40. Für Kapitalanleger und Bauherren. Jetzt Beratung vereinbaren."
 faq:
   - q: Was kostet ein Mehrfamilienhaus als Fertighaus?

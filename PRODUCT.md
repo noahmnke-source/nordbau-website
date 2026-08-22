@@ -14,7 +14,7 @@ Kaufkräftige Bauinteressenten in Deutschland (30–55, Haushaltseinkommen deutl
 
 ## Product Purpose
 
-Marketing-Website für die Hochpuls GmbH (Konfiguration zentral in `src/config/site.ts`), einen Anbieter schlüsselfertiger und individuell geplanter Fertighäuser mit bundesweitem Vertrieb. Erfolg = qualifizierte Beratungsanfragen. Sekundär: bundesweite organische Sichtbarkeit über Money-Pages (Haustypen) und skalierbare Standortseiten.
+Marketing-Website für die Eco Bau GmbH (Konfiguration zentral in `src/config/site.ts`), einen Anbieter schlüsselfertiger und individuell geplanter Fertighäuser mit bundesweitem Vertrieb. Erfolg = qualifizierte Beratungsanfragen. Sekundär: bundesweite organische Sichtbarkeit über Money-Pages (Haustypen) und skalierbare Standortseiten.
 
 ## Brand Personality
 

@@ -17,7 +17,7 @@ facts:
   dachform: Flat roof, greenable
   bauweise: timber-frame construction, factory-prefabricated
   energiestandard: Efficiency House 40
-seoTitle: "Build a flat-roof house as a prefab home – Bauhaus style | Nordbau"
+seoTitle: "Build a flat-roof house as a prefab home – Bauhaus style | Eco Bau"
 seoDescription: "Flat-roof house in Bauhaus style as a prefab home: from 130 m², two full storeys, Efficiency House 40. Cubic, clear, modern. Arrange your consultation now."
 faq:
   - q: What does a flat-roof house cost as a prefab home?

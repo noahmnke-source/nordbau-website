@@ -17,7 +17,7 @@ facts:
   dachform: Flat or hip roof
   bauweise: timber-frame construction, factory-prefabricated
   energiestandard: Efficiency House 40
-seoTitle: "Build a bungalow as a prefab home – single-level & low-barrier | Nordbau"
+seoTitle: "Build a bungalow as a prefab home – single-level & low-barrier | Eco Bau"
 seoDescription: "Bungalow as a prefab home: single-level from 95 m², low-barrier, Efficiency House 40. Everything on one level, without stairs. Arrange your consultation now."
 faq:
   - q: What does a bungalow cost as a prefab home?
