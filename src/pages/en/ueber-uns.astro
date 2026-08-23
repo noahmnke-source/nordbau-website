@@ -6,12 +6,12 @@ import Figure from '@/components/Figure.astro';
 import SectionIntro from '@/components/SectionIntro.astro';
 import MaterialSlider from '@/components/MaterialSlider.astro';
 import { IMG } from '@/data/assets';
-import { SITE } from '@/config/site';
+import { SITE, YEARS_EXPERIENCE } from '@/config/site';
 
 const zahlen = [
   {
     wert: `since ${SITE.foundingYear}`,
-    label: 'More than a decade of experience in timber construction – from the individually planned single-family home to the public building in timber-frame construction.',
+    label: `${YEARS_EXPERIENCE} years of experience in timber construction – from the individually planned single-family home to the public building in timber-frame construction.`,
   },
   {
     wert: '30 years',
@@ -48,7 +48,7 @@ const grundsaetze = [
 
 <BaseLayout
   title={`About us – Prefab home manufacturer since ${SITE.foundingYear}`}
-  description={`Prefab home manufacturer with its own factory: timber-frame construction and cross-laminated timber (CLT), Efficiency House 40, a 30-year guarantee on the building structure. More than a decade of experience. Get to know ${SITE.name}.`}
+  description={`Prefab home manufacturer with its own factory: timber-frame construction and cross-laminated timber (CLT), Efficiency House 40, a 30-year guarantee on the building structure. ${YEARS_EXPERIENCE} years of experience. Get to know ${SITE.name}.`}
   breadcrumbs={[{ name: 'About us', href: '/en/ueber-uns/' }]}
   hideFooterCta
 >
@@ -102,7 +102,7 @@ const grundsaetze = [
           the design is individual. What is serial is the precision with which it is built.
         </p>
         <p class="reveal prose-measure mt-5 text-body text-muted">
-          We have worked to this principle for more than a decade – from the individually
+          We have worked to this principle since {SITE.foundingYear} – from the individually
           planned single-family home to the public building in timber-frame construction.
           Most clients decide once they have seen our factory.
         </p>

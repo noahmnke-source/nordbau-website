@@ -3,6 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import Button from '@/components/Button.astro';
 import Figure from '@/components/Figure.astro';
+import { YEARS_EXPERIENCE } from '@/config/site';
 
 /**
  * Realisierte Projekte aus dem Eco-Bau-Verbund (Holzbau-Portfolio + übernommene
@@ -79,7 +80,7 @@ const bauten = [
 
 <BaseLayout
   title="Referenzen – Projekte von Eco Bau"
-  description="Projekte von Eco Bau: realisierte Wohnhäuser, Kitas und Gewerbebauten in Holzbauweise aus über einem Jahrzehnt Erfahrung – dokumentiert auch mitten im Bau."
+  description={`Projekte von Eco Bau: realisierte Wohnhäuser, Kitas und Gewerbebauten in Holzbauweise aus ${YEARS_EXPERIENCE} Jahren Erfahrung – dokumentiert auch mitten im Bau.`}
   breadcrumbs={[{ name: 'Referenzen', href: '/referenzen/' }]}
   hideFooterCta
 >
@@ -128,7 +129,7 @@ const bauten = [
     <div class="container-site">
       <div class="grid gap-x-8 gap-y-6 lg:grid-cols-12">
         <h2 class="reveal font-display text-display font-medium lg:col-span-7">
-          Realisierte Projekte aus über einem Jahrzehnt Holzbau
+          Realisierte Projekte aus {YEARS_EXPERIENCE} Jahren Holzbau
         </h2>
         <p class="reveal prose-measure self-end text-body text-muted lg:col-span-4 lg:col-start-9">
           Vom Einfamilienhaus bis zum öffentlichen Gebäude – eine Auswahl gebauter

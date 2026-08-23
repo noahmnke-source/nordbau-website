@@ -6,12 +6,12 @@ import Figure from '@/components/Figure.astro';
 import SectionIntro from '@/components/SectionIntro.astro';
 import MaterialSlider from '@/components/MaterialSlider.astro';
 import { IMG } from '@/data/assets';
-import { SITE } from '@/config/site';
+import { SITE, YEARS_EXPERIENCE } from '@/config/site';
 
 const zahlen = [
   {
     wert: `seit ${SITE.foundingYear}`,
-    label: 'Über ein Jahrzehnt Erfahrung im Holzbau – vom individuell geplanten Einfamilienhaus bis zum öffentlichen Gebäude in Holzrahmenbauweise.',
+    label: `${YEARS_EXPERIENCE} Jahre Erfahrung im Holzbau – vom individuell geplanten Einfamilienhaus bis zum öffentlichen Gebäude in Holzrahmenbauweise.`,
   },
   {
     wert: '30 Jahre',
@@ -48,7 +48,7 @@ const grundsaetze = [
 
 <BaseLayout
   title={`Über uns – Fertighaus-Hersteller seit ${SITE.foundingYear}`}
-  description={`Fertighaus-Hersteller mit eigenem Werk: Holztafelbau und Brettsperrholz (CLT), Effizienzhaus 40, 30 Jahre Garantie auf die Baukonstruktion. Über ein Jahrzehnt Erfahrung. Lernen Sie ${SITE.name} kennen.`}
+  description={`Fertighaus-Hersteller mit eigenem Werk: Holztafelbau und Brettsperrholz (CLT), Effizienzhaus 40, 30 Jahre Garantie auf die Baukonstruktion. ${YEARS_EXPERIENCE} Jahre Erfahrung. Lernen Sie ${SITE.name} kennen.`}
   breadcrumbs={[{ name: 'Über uns', href: '/ueber-uns/' }]}
   hideFooterCta
 >
@@ -103,7 +103,7 @@ const grundsaetze = [
           Präzision, mit der er gebaut wird.
         </p>
         <p class="reveal prose-measure mt-5 text-body text-muted">
-          Seit über einem Jahrzehnt arbeiten wir nach diesem Prinzip – vom individuell
+          Seit {SITE.foundingYear} arbeiten wir nach diesem Prinzip – vom individuell
           geplanten Einfamilienhaus bis zum öffentlichen Gebäude in Holzrahmenbauweise.
           Die meisten Bauherren entscheiden sich, nachdem sie unser Werk gesehen haben.
         </p>

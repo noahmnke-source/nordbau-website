@@ -3,9 +3,7 @@
  *
  * ── VOR LAUNCH PRÜFEN ────────────────────────────────────────
  * Firmen-, Rechts- und Kontaktdaten sind gesetzt, Domain und E-Mail
- * stehen auf ecobau-hannover.com. Noch offen: die Social-Profile
- * (unten `social` — zeigen weiter auf die alten nordbau-Handles und
- * gehen als `sameAs` ins JSON-LD) und die Kennzahlen in
+ * stehen auf ecobau-hannover.com. Noch offen: die Kennzahlen in
  * PRODUCT.md-nahen Seiten (Über uns / Startseite).
  * ─────────────────────────────────────────────────────────────
  */
@@ -49,19 +47,15 @@ export const SITE = {
    */
   formRecipient: 'info@ecobau-hannover.com',
 
-  social: {
-    instagram: 'https://www.instagram.com/nordbau',
-    youtube: 'https://www.youtube.com/@nordbau',
-    pinterest: 'https://www.pinterest.de/nordbau',
-  },
-
-  /**
-   * Gründungsjahr für "seit"-Angaben und JSON-LD.
-   * Eco Bau nennt in den Unterlagen kein exaktes Jahr, sondern „über ein
-   * Jahrzehnt Erfahrung“ – daher 2013 als belegbare Untergrenze gesetzt.
-   * Falls das genaue Jahr bekannt ist, hier eintragen.
-   */
-  foundingYear: 2013,
+  /** Gründungsjahr für "seit"-Angaben und JSON-LD. */
+  foundingYear: 1992,
 } as const;
+
+/**
+ * Jahre Erfahrung, zur Build-Zeit aus `foundingYear` berechnet. Bewusst nicht
+ * fest verdrahtet: So stimmt die Zahl nach jedem Deploy weiter, statt zum
+ * Jahreswechsel still zu veralten.
+ */
+export const YEARS_EXPERIENCE = new Date().getFullYear() - SITE.foundingYear;
 
 export type Site = typeof SITE;
