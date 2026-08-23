@@ -8,3 +8,21 @@
 
 # Astro erzeugt bereits sauberе Trailing-Slash-URLs (trailingSlash: 'always').
 # 404-Seite wird von Netlify automatisch aus dist/404.html bedient.
+
+# ── Umfirmierung: alte Domain dauerhaft auf die neue ──────────
+# Die Host-Angabe in `from` wertet Netlify mit aus, die Regeln greifen also
+# nur fuer nordbau-haeuser.de und nicht fuer ecobau-hannover.com selbst.
+# `force = true` ist noetig, weil sonst der vorhandene statische Treffer
+# gewinnt und die Weiterleitung nie ausgeloest wird.
+# `:splat` uebernimmt den Pfad, sodass Unterseiten ihr Ziel behalten.
+[[redirects]]
+  from = "https://nordbau-haeuser.de/*"
+  to = "https://ecobau-hannover.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.nordbau-haeuser.de/*"
+  to = "https://ecobau-hannover.com/:splat"
+  status = 301
+  force = true
