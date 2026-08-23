@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nordbau-haeuser.de/sitemap-index.xml
+Sitemap: https://ecobau-hannover.com/sitemap-index.xml

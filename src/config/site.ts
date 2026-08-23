@@ -2,15 +2,11 @@
  * Zentrale Firmen- und Site-Konfiguration.
  *
  * ── VOR LAUNCH PRÜFEN ────────────────────────────────────────
- * Firmen- und Rechtsdaten sind gesetzt. Noch zu prüfen: die Domain
- * (Platzhalter, unten `url` + astro.config.mjs + robots.txt), der
- * Formular-Endpoint, die Social-Profile und die Kennzahlen in
+ * Firmen-, Rechts- und Kontaktdaten sind gesetzt, Domain und E-Mail
+ * stehen auf ecobau-hannover.com. Noch offen: die Social-Profile
+ * (unten `social` — zeigen weiter auf die alten nordbau-Handles und
+ * gehen als `sameAs` ins JSON-LD) und die Kennzahlen in
  * PRODUCT.md-nahen Seiten (Über uns / Startseite).
- *
- * ACHTUNG nach der Umfirmierung auf Eco Bau GmbH: `url`, `contact.email`,
- * `formRecipient` und `social` tragen noch die alte Domain bzw. die alten
- * Handles (nordbau…). Sie werden zusammen mit der neuen Domain umgestellt —
- * dann auch astro.config.mjs `site` und public/robots.txt anpassen.
  * ─────────────────────────────────────────────────────────────
  */
 
@@ -20,7 +16,7 @@ export const SITE = {
   /** Juristischer Name für JSON-LD / Impressum */
   legalName: 'Eco Bau GmbH',
   /** Produktions-Domain (Apex ist primär; www leitet per 301 hierher um). Muss mit astro.config.mjs `site` + robots.txt übereinstimmen. */
-  url: 'https://nordbau-haeuser.de',
+  url: 'https://ecobau-hannover.com',
   /** Claim, erscheint u. a. im Footer und als OG-Fallback */
   claim: 'Architektur in Serie. Gebaut für Sie.',
   /** Meta-Title-Suffix */
@@ -29,7 +25,7 @@ export const SITE = {
   contact: {
     phone: '+49 155 63046447',
     phoneDisplay: '0155 63046447',
-    email: 'info@nordbau-haeuser.de',
+    email: 'info@ecobau-hannover.com',
     street: 'Noldestraße 40',
     zip: '30827',
     city: 'Garbsen',
@@ -51,7 +47,7 @@ export const SITE = {
    * an die Adresse unten wird EINMALIG im Netlify-Dashboard eingerichtet:
    * Site → Forms → Form notifications → „Email notification“.
    */
-  formRecipient: 'info@nordbau-haeuser.de',
+  formRecipient: 'info@ecobau-hannover.com',
 
   social: {
     instagram: 'https://www.instagram.com/nordbau',
