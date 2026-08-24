@@ -24,9 +24,9 @@ export const SITE = {
     phone: '+49 155 63046447',
     phoneDisplay: '0155 63046447',
     email: 'info@ecobau-hannover.com',
-    street: 'Noldestraße 40',
-    zip: '30827',
-    city: 'Garbsen',
+    street: 'An der Kirche 6',
+    zip: '30457',
+    city: 'Hannover',
   },
 
   /** Rechtliche Pflichtangaben (Impressum, JSON-LD) */
