@@ -10,7 +10,19 @@ import { YEARS_EXPERIENCE } from '@/config/site';
  * transferred expertise of the predecessor companies). Location-precise,
  * without street address. Photos from the project documents under public/referenzen/.
  */
-const wohnhaeuser = [
+/** A reference project. `img2` adds a second photograph (e.g. factory + installation). */
+type Referenz = {
+  ort: string;
+  typ: string;
+  img: string;
+  img2?: string;
+  imgAlt?: string;
+  img2Alt?: string;
+  fakt: string;
+  beschreibung: string;
+};
+
+const wohnhaeuser: Referenz[] = [
   {
     ort: 'Freising', typ: 'Single-family house', img: '/referenzen/freising-efh.webp',
     fakt: '180 m² · gable roof, garage, controlled residential ventilation',
@@ -46,9 +58,37 @@ const wohnhaeuser = [
     fakt: '650 m² · three levels, 16 rooms, timber and HPL façade',
     beschreibung: 'Luxury hotel across three levels with 16 rooms and 650 m² of total floor area. Generous terraces and wide views into nature; the façade of HPL (Fundermax) and timber gives the building an elegant, natural appearance and high weather resistance.',
   },
+  {
+    ort: 'Göteborg (SE)', typ: 'Modular house', img: '/referenzen/goeteborg-modulhaus-1.webp',
+    img2: '/referenzen/goeteborg-modulhaus-2.webp',
+    imgAlt: 'Completed living module inside the production hall',
+    img2Alt: 'Living module being craned into place on the plot in Gothenburg',
+    fakt: '109 m² · factory-prefabricated, craned into place',
+    beschreibung: 'Single-family house with 109 m² of usable space: an open living and dining area connected to the kitchen, plus a utility room, a technical space, one bathroom and two bedrooms. The modules are completed entirely in the factory and craned into position on the plot – the two photographs show the same unit in the hall and during installation.',
+  },
+  {
+    ort: 'Čebín (CZ)', typ: 'Modular house', img: '/referenzen/cebin-modulhaus.webp',
+    fakt: 'Modular construction · natural timber façade, front terrace',
+    beschreibung: 'Modular house in Čebín in South Moravia, fully clad in natural wood. The layout is designed around daylight: large openings draw the sun deep into the rooms and make them feel more generous than the floor area suggests. A terrace to the front extends the living space outdoors.',
+  },
+  {
+    ort: 'Batllavë (XK)', typ: 'Single-family house', img: '/referenzen/batllave-waldhaus.webp',
+    fakt: '86 m² · pronounced pitched roof, natural timber façade',
+    beschreibung: 'Single-family house of 86 m² in the middle of the forest at Batllavë. A pronounced pitched roof defines the silhouette, while the natural timber façade picks up the colours of its surroundings. Large window openings bring daylight and views of the landscape into the rooms – simple, elegant and designed entirely around its setting.',
+  },
+  {
+    ort: 'Batllavë (XK)', typ: 'Mountain house', img: '/referenzen/batllave-berghaus.webp',
+    fakt: '65 m² · single storey, timber façade, natural stone fireplace',
+    beschreibung: 'Single-storey mountain house with 65 m² of usable space: living room, kitchen, one bathroom and two bedrooms. The architecture picks up traditional elements of the mountain region – a timber façade in a warm natural tone outside, a natural stone fireplace inside that gives the house its character. Photographed during façade assembly.',
+  },
+  {
+    ort: 'France', typ: 'Tiny houses', img: '/referenzen/frankreich-tinyhouse.webp',
+    fakt: '30 m² each · series, timber façade',
+    beschreibung: 'Tiny houses of 30 m² each: living room, kitchen, bathroom and bedroom on a compact footprint, designed in a clear, modern architectural language. The timber cladding gives the units a warm feel and makes them as suitable for mountain locations as for urban settings. The photograph shows several completed units.',
+  },
 ];
 
-const bauten = [
+const bauten: Referenz[] = [
   {
     ort: 'Ronnenberg', typ: 'Day-care centre', img: '/referenzen/ronnenberg-kita.webp',
     fakt: 'timber-frame construction, five groups · 2022–2023',
@@ -73,6 +113,11 @@ const bauten = [
     ort: 'Braunschweig', typ: 'Municipal hospital', img: '/referenzen/braunschweig-klinikum.webp',
     fakt: 'Interior fit-out ground floor–5th floor, medical building construction · 2021–2023',
     beschreibung: 'Interior fit-out of a major medical project at Braunschweig Municipal Hospital – from the ground floor to the fifth upper floor including technical areas. Drywall construction, service walls, hygienic surfaces and fire protection under strict medical requirements, tightly coordinated with medical technology, HVAC/sanitary and electrical trades. 2021–2023.',
+  },
+  {
+    ort: 'Prishtina (XK)', typ: 'Administrative building', img: '/referenzen/prishtina-verwaltung.webp',
+    fakt: '105 m² · showroom, office and storage on one level',
+    beschreibung: 'Compact commercial building with 105 m² of usable space, functionally arranged: a representative showroom facing the street, plus an integrated kitchen, storage area and sanitary facilities. Customer reception and internal operations sit on one level, connected by short routes.',
   },
 ];
 
@@ -141,15 +186,36 @@ const bauten = [
       <div class="mt-10 grid gap-y-(--spacing-section-sm)">
         {wohnhaeuser.map((p) => (
           <article class="grid gap-x-8 gap-y-6 lg:grid-cols-12 lg:items-center">
-            <Figure
-              src={p.img}
-              alt={`${p.typ} in ${p.ort}`}
-              ratio="aspect-[4/3]"
-              sizes="(min-width: 1024px) 56vw, 100vw"
-              reveal
-              zoom
-              class="lg:col-span-7"
-            />
+            {p.img2 ? (
+              <div class="grid gap-4 sm:grid-cols-2 lg:col-span-7">
+                <Figure
+                  src={p.img}
+                  alt={p.imgAlt ?? `${p.typ} in ${p.ort}`}
+                  ratio="aspect-[4/3]"
+                  sizes="(min-width: 1024px) 28vw, (min-width: 640px) 46vw, 100vw"
+                  reveal
+                  zoom
+                />
+                <Figure
+                  src={p.img2}
+                  alt={p.img2Alt ?? `${p.typ} in ${p.ort}`}
+                  ratio="aspect-[4/3]"
+                  sizes="(min-width: 1024px) 28vw, (min-width: 640px) 46vw, 100vw"
+                  reveal
+                  zoom
+                />
+              </div>
+            ) : (
+              <Figure
+                src={p.img}
+                alt={p.imgAlt ?? `${p.typ} in ${p.ort}`}
+                ratio="aspect-[4/3]"
+                sizes="(min-width: 1024px) 56vw, 100vw"
+                reveal
+                zoom
+                class="lg:col-span-7"
+              />
+            )}
             <div class="reveal lg:col-span-4 lg:col-start-9">
               <p class="font-display text-title font-medium">
                 {p.ort} <span class="text-muted">· {p.typ}</span>
@@ -165,15 +231,36 @@ const bauten = [
       <div class="mt-10 grid gap-y-(--spacing-section-sm)">
         {bauten.map((p) => (
           <article class="grid gap-x-8 gap-y-6 lg:grid-cols-12 lg:items-center">
-            <Figure
-              src={p.img}
-              alt={`${p.typ} in ${p.ort}`}
-              ratio="aspect-[4/3]"
-              sizes="(min-width: 1024px) 56vw, 100vw"
-              reveal
-              zoom
-              class="lg:col-span-7"
-            />
+            {p.img2 ? (
+              <div class="grid gap-4 sm:grid-cols-2 lg:col-span-7">
+                <Figure
+                  src={p.img}
+                  alt={p.imgAlt ?? `${p.typ} in ${p.ort}`}
+                  ratio="aspect-[4/3]"
+                  sizes="(min-width: 1024px) 28vw, (min-width: 640px) 46vw, 100vw"
+                  reveal
+                  zoom
+                />
+                <Figure
+                  src={p.img2}
+                  alt={p.img2Alt ?? `${p.typ} in ${p.ort}`}
+                  ratio="aspect-[4/3]"
+                  sizes="(min-width: 1024px) 28vw, (min-width: 640px) 46vw, 100vw"
+                  reveal
+                  zoom
+                />
+              </div>
+            ) : (
+              <Figure
+                src={p.img}
+                alt={p.imgAlt ?? `${p.typ} in ${p.ort}`}
+                ratio="aspect-[4/3]"
+                sizes="(min-width: 1024px) 56vw, 100vw"
+                reveal
+                zoom
+                class="lg:col-span-7"
+              />
+            )}
             <div class="reveal lg:col-span-4 lg:col-start-9">
               <p class="font-display text-title font-medium">
                 {p.ort} <span class="text-muted">· {p.typ}</span>

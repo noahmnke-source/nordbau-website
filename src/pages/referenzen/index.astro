@@ -10,7 +10,19 @@ import { YEARS_EXPERIENCE } from '@/config/site';
  * Kompetenzen der Vorgängergesellschaften). Ort-genau, ohne
  * Straßenangabe. Fotos aus den Projektunterlagen unter public/referenzen/.
  */
-const wohnhaeuser = [
+/** Ein Referenzprojekt. `img2` ergaenzt eine zweite Aufnahme (z. B. Werk + Montage). */
+type Referenz = {
+  ort: string;
+  typ: string;
+  img: string;
+  img2?: string;
+  imgAlt?: string;
+  img2Alt?: string;
+  fakt: string;
+  beschreibung: string;
+};
+
+const wohnhaeuser: Referenz[] = [
   {
     ort: 'Freising', typ: 'Einfamilienhaus', img: '/referenzen/freising-efh.webp',
     fakt: '180 m² · Satteldach, Garage, kontrollierte Wohnraumlüftung',
@@ -46,9 +58,37 @@ const wohnhaeuser = [
     fakt: '650 m² · drei Ebenen, 16 Zimmer, Holz- und HPL-Fassade',
     beschreibung: 'Luxushotel über drei Ebenen mit 16 Zimmern und 650 m² Gesamtfläche. Großzügige Terrassen und weite Ausblicke in die Natur; die Fassade aus HPL (Fundermax) und Holz gibt dem Gebäude ein elegantes, natürliches Erscheinungsbild und hohe Witterungsbeständigkeit.',
   },
+  {
+    ort: 'Göteborg (SE)', typ: 'Modulhaus', img: '/referenzen/goeteborg-modulhaus-1.webp',
+    img2: '/referenzen/goeteborg-modulhaus-2.webp',
+    imgAlt: 'Fertiggestelltes Wohnmodul in der Werkshalle',
+    img2Alt: 'Wohnmodul wird per Kran auf dem Grundstück in Göteborg gesetzt',
+    fakt: '109 m² · werkseitig vorgefertigt, Montage per Kran',
+    beschreibung: 'Einfamilienhaus mit 109 m² Nutzfläche: offener Wohn- und Essbereich mit angebundener Küche, dazu Hauswirtschaftsraum, Technikraum, ein Bad und zwei Schlafzimmer. Die Module entstehen vollständig im Werk und werden auf dem Grundstück per Kran gesetzt – die beiden Aufnahmen zeigen dieselbe Einheit in der Halle und bei der Montage.',
+  },
+  {
+    ort: 'Čebín (CZ)', typ: 'Modulhaus', img: '/referenzen/cebin-modulhaus.webp',
+    fakt: 'Modulbauweise · Naturholzfassade, vorgelagerte Terrasse',
+    beschreibung: 'Modulhaus in Čebín in Südmähren, vollständig mit Naturholz verkleidet. Der Grundriss ist auf Tageslicht hin entworfen: Große Öffnungen holen die Sonne tief in die Räume und lassen sie großzügiger wirken, als die Fläche vermuten lässt. Eine vorgelagerte Terrasse erweitert den Wohnraum nach außen.',
+  },
+  {
+    ort: 'Batllavë (XK)', typ: 'Einfamilienhaus', img: '/referenzen/batllave-waldhaus.webp',
+    fakt: '86 m² · ausgeprägtes Satteldach, Naturholzfassade',
+    beschreibung: 'Einfamilienhaus mit 86 m² mitten im Wald von Batllavë. Ein ausgeprägtes Satteldach bestimmt die Silhouette, die Fassade aus Naturholz nimmt den Farbton der Umgebung auf. Große Fensteröffnungen holen Tageslicht und den Blick in die Landschaft in die Räume – schlicht, elegant und ganz auf die Lage hin entworfen.',
+  },
+  {
+    ort: 'Batllavë (XK)', typ: 'Berghaus', img: '/referenzen/batllave-berghaus.webp',
+    fakt: '65 m² · eingeschossig, Holzfassade, Natursteinkamin',
+    beschreibung: 'Eingeschossiges Berghaus mit 65 m² Nutzfläche: Wohnraum, Küche, ein Bad und zwei Schlafzimmer. Die Architektur greift traditionelle Elemente der Bergregion auf – außen eine Holzfassade in warmem Naturton, innen ein Kamin aus Naturstein, der dem Haus seinen Charakter gibt. Aufgenommen während der Fassadenmontage.',
+  },
+  {
+    ort: 'Frankreich', typ: 'Tiny Houses', img: '/referenzen/frankreich-tinyhouse.webp',
+    fakt: 'je 30 m² · Serie, Holzfassade',
+    beschreibung: 'Tiny Houses mit je 30 m²: Wohnraum, Küche, Bad und Schlafzimmer auf kompakter Fläche, entworfen in klarer, moderner Architektursprache. Die Holzverkleidung gibt den Einheiten eine warme Anmutung und macht sie für Berglagen ebenso passend wie für den städtischen Raum. Die Aufnahme zeigt mehrere fertiggestellte Einheiten.',
+  },
 ];
 
-const bauten = [
+const bauten: Referenz[] = [
   {
     ort: 'Ronnenberg', typ: 'Kindertagesstätte', img: '/referenzen/ronnenberg-kita.webp',
     fakt: 'Holzrahmenbau, fünf Gruppen · 2022–2023',
@@ -73,6 +113,11 @@ const bauten = [
     ort: 'Braunschweig', typ: 'Städtisches Klinikum', img: '/referenzen/braunschweig-klinikum.webp',
     fakt: 'Innenausbau EG–5. OG, medizinischer Hochbau · 2021–2023',
     beschreibung: 'Innenausbau eines medizinischen Großprojekts am Städtischen Klinikum Braunschweig – vom Erdgeschoss bis zum fünften Obergeschoss samt Technikbereichen. Trockenbau, Installationswände, hygienische Oberflächen und Brandschutz unter strengen medizinischen Auflagen, eng getaktet mit Medizintechnik, HKLS und Elektro. 2021–2023.',
+  },
+  {
+    ort: 'Prishtina (XK)', typ: 'Verwaltungsgebäude', img: '/referenzen/prishtina-verwaltung.webp',
+    fakt: '105 m² · Showroom, Büro und Lager auf einer Ebene',
+    beschreibung: 'Kompakter Gewerbebau mit 105 m² Nutzfläche, funktional gegliedert: ein repräsentativer Showroom zur Straße, dazu integrierte Küche, Lagerfläche und Sanitärbereich. Kundenempfang und interner Betrieb liegen auf einer Ebene und sind kurzwegig miteinander verbunden.',
   },
 ];
 
@@ -141,15 +186,36 @@ const bauten = [
       <div class="mt-10 grid gap-y-(--spacing-section-sm)">
         {wohnhaeuser.map((p) => (
           <article class="grid gap-x-8 gap-y-6 lg:grid-cols-12 lg:items-center">
-            <Figure
-              src={p.img}
-              alt={`${p.typ} in ${p.ort}`}
-              ratio="aspect-[4/3]"
-              sizes="(min-width: 1024px) 56vw, 100vw"
-              reveal
-              zoom
-              class="lg:col-span-7"
-            />
+            {p.img2 ? (
+              <div class="grid gap-4 sm:grid-cols-2 lg:col-span-7">
+                <Figure
+                  src={p.img}
+                  alt={p.imgAlt ?? `${p.typ} in ${p.ort}`}
+                  ratio="aspect-[4/3]"
+                  sizes="(min-width: 1024px) 28vw, (min-width: 640px) 46vw, 100vw"
+                  reveal
+                  zoom
+                />
+                <Figure
+                  src={p.img2}
+                  alt={p.img2Alt ?? `${p.typ} in ${p.ort}`}
+                  ratio="aspect-[4/3]"
+                  sizes="(min-width: 1024px) 28vw, (min-width: 640px) 46vw, 100vw"
+                  reveal
+                  zoom
+                />
+              </div>
+            ) : (
+              <Figure
+                src={p.img}
+                alt={p.imgAlt ?? `${p.typ} in ${p.ort}`}
+                ratio="aspect-[4/3]"
+                sizes="(min-width: 1024px) 56vw, 100vw"
+                reveal
+                zoom
+                class="lg:col-span-7"
+              />
+            )}
             <div class="reveal lg:col-span-4 lg:col-start-9">
               <p class="font-display text-title font-medium">
                 {p.ort} <span class="text-muted">· {p.typ}</span>
@@ -165,15 +231,36 @@ const bauten = [
       <div class="mt-10 grid gap-y-(--spacing-section-sm)">
         {bauten.map((p) => (
           <article class="grid gap-x-8 gap-y-6 lg:grid-cols-12 lg:items-center">
-            <Figure
-              src={p.img}
-              alt={`${p.typ} in ${p.ort}`}
-              ratio="aspect-[4/3]"
-              sizes="(min-width: 1024px) 56vw, 100vw"
-              reveal
-              zoom
-              class="lg:col-span-7"
-            />
+            {p.img2 ? (
+              <div class="grid gap-4 sm:grid-cols-2 lg:col-span-7">
+                <Figure
+                  src={p.img}
+                  alt={p.imgAlt ?? `${p.typ} in ${p.ort}`}
+                  ratio="aspect-[4/3]"
+                  sizes="(min-width: 1024px) 28vw, (min-width: 640px) 46vw, 100vw"
+                  reveal
+                  zoom
+                />
+                <Figure
+                  src={p.img2}
+                  alt={p.img2Alt ?? `${p.typ} in ${p.ort}`}
+                  ratio="aspect-[4/3]"
+                  sizes="(min-width: 1024px) 28vw, (min-width: 640px) 46vw, 100vw"
+                  reveal
+                  zoom
+                />
+              </div>
+            ) : (
+              <Figure
+                src={p.img}
+                alt={p.imgAlt ?? `${p.typ} in ${p.ort}`}
+                ratio="aspect-[4/3]"
+                sizes="(min-width: 1024px) 56vw, 100vw"
+                reveal
+                zoom
+                class="lg:col-span-7"
+              />
+            )}
             <div class="reveal lg:col-span-4 lg:col-start-9">
               <p class="font-display text-title font-medium">
                 {p.ort} <span class="text-muted">· {p.typ}</span>
