@@ -18,9 +18,10 @@ type Referenz = {
   img2?: string;
   imgAlt?: string;
   img2Alt?: string;
-  /** Hochformat-Foto: schmalere Bildspalte und 2:3-Rahmen, sonst schneidet
-   *  der 4:3-Standardrahmen rund die Haelfte der Bildhoehe weg. */
-  portrait?: boolean;
+  /** Abweichendes Bildformat. Ohne Angabe: Querformat 4:3 ueber 7 Spalten.
+   *  'hoch' (2:3) und 'quadrat' (1:1) bekommen eine schmalere Spalte, damit
+   *  der Standardrahmen nicht die halbe Bildhoehe wegschneidet. */
+  format?: 'hoch' | 'quadrat';
   fakt: string;
   beschreibung: string;
 };
@@ -37,7 +38,7 @@ const wohnhaeuser: Referenz[] = [
     beschreibung: 'Modern single-family house across two levels, 160 m². On the ground floor: living area, kitchen, office, bathroom and utilities; on the upper floor two terraces, a master bedroom and a further bedroom as well as a bathroom. The façade of HPL and timber creates an elegant, durable envelope.',
   },
   {
-    ort: 'Uslar', typ: 'Single-family house', img: '/referenzen/uslar-efh.webp',
+    ort: 'Uslar', typ: 'Single-family house', img: '/referenzen/uslar-efh.webp', format: 'quadrat',
     fakt: '220 m² · two storeys, three bedrooms, garage',
     beschreibung: 'Single-family house with 220 m² of usable floor space across two levels. The ground floor combines living and dining room, kitchen, utility room, office and garage; the upper floor holds three bedrooms including a master bedroom, a bathroom and a terrace. Materials and colours blend harmoniously into their surroundings.',
   },
@@ -93,7 +94,7 @@ const wohnhaeuser: Referenz[] = [
 
 const bauten: Referenz[] = [
   {
-    ort: 'Ronnenberg', typ: 'Day-care centre', img: '/referenzen/ronnenberg-kita.webp', portrait: true,
+    ort: 'Ronnenberg', typ: 'Day-care centre', img: '/referenzen/ronnenberg-kita.webp', format: 'hoch',
     fakt: 'timber-frame construction, five groups · 2022–2023',
     beschreibung: 'New day-care centre in timber-frame construction in Empelde for the town of Ronnenberg. Single-storey, with five group areas, quiet rooms, children’s bathrooms and generous play corridors; a sustainable, energy-efficient building envelope ensures a pleasant indoor climate. Structural shell and interior fit-out, 2022–2023.',
   },
@@ -108,12 +109,12 @@ const bauten: Referenz[] = [
     beschreibung: 'Second construction phase of the City Gate Nord office and administration complex in Vahrenwald – around 10.500 m² BGF across six storeys. An energy-efficient, flexibly usable administration building to DGNB standards; civil engineering works, structural shell and interior fit-out during ongoing operation of the first construction phase. 2023–2025.',
   },
   {
-    ort: 'Stuttgart', typ: 'Residential & commercial building', img: '/referenzen/stuttgart-maybach.webp', portrait: true,
+    ort: 'Stuttgart', typ: 'Residential & commercial building', img: '/referenzen/stuttgart-maybach.webp', format: 'hoch',
     fakt: '70 residential units · 7 upper floors + 3-level underground car park · 2019–2023',
     beschreibung: 'Residential and commercial building with a three-level underground car park and seven upper floors. 70 residential units including penthouses, along with commercial and office space; high demands on sound and fire protection. Structural shell and interior fit-out in an inner-city location, 2019–2023.',
   },
   {
-    ort: 'Braunschweig', typ: 'Municipal hospital', img: '/referenzen/braunschweig-klinikum.webp', portrait: true,
+    ort: 'Braunschweig', typ: 'Municipal hospital', img: '/referenzen/braunschweig-klinikum.webp', format: 'hoch',
     fakt: 'Interior fit-out ground floor–5th floor, medical building construction · 2021–2023',
     beschreibung: 'Interior fit-out of a major medical project at Braunschweig Municipal Hospital – from the ground floor to the fifth upper floor including technical areas. Drywall construction, service walls, hygienic surfaces and fire protection under strict medical requirements, tightly coordinated with medical technology, HVAC/sanitary and electrical trades. 2021–2023.',
   },
@@ -212,13 +213,21 @@ const bauten: Referenz[] = [
               <Figure
                 src={p.img}
                 alt={p.imgAlt ?? `${p.typ} in ${p.ort}`}
-                ratio={p.portrait ? 'aspect-[2/3]' : 'aspect-[4/3]'}
-                sizes={p.portrait
-                  ? '(min-width: 1024px) 32vw, 100vw'
+                ratio={p.format === 'hoch'
+                  ? 'aspect-[2/3]'
+                  : p.format === 'quadrat'
+                    ? 'aspect-square'
+                    : 'aspect-[4/3]'}
+                sizes={p.format
+                  ? '(min-width: 1024px) 36vw, 100vw'
                   : '(min-width: 1024px) 56vw, 100vw'}
                 reveal
                 zoom
-                class={p.portrait ? 'lg:col-span-4' : 'lg:col-span-7'}
+                class={p.format === 'hoch'
+                  ? 'lg:col-span-4'
+                  : p.format === 'quadrat'
+                    ? 'lg:col-span-5'
+                    : 'lg:col-span-7'}
               />
             )}
             <div class="reveal lg:col-span-4 lg:col-start-9">
@@ -259,13 +268,21 @@ const bauten: Referenz[] = [
               <Figure
                 src={p.img}
                 alt={p.imgAlt ?? `${p.typ} in ${p.ort}`}
-                ratio={p.portrait ? 'aspect-[2/3]' : 'aspect-[4/3]'}
-                sizes={p.portrait
-                  ? '(min-width: 1024px) 32vw, 100vw'
+                ratio={p.format === 'hoch'
+                  ? 'aspect-[2/3]'
+                  : p.format === 'quadrat'
+                    ? 'aspect-square'
+                    : 'aspect-[4/3]'}
+                sizes={p.format
+                  ? '(min-width: 1024px) 36vw, 100vw'
                   : '(min-width: 1024px) 56vw, 100vw'}
                 reveal
                 zoom
-                class={p.portrait ? 'lg:col-span-4' : 'lg:col-span-7'}
+                class={p.format === 'hoch'
+                  ? 'lg:col-span-4'
+                  : p.format === 'quadrat'
+                    ? 'lg:col-span-5'
+                    : 'lg:col-span-7'}
               />
             )}
             <div class="reveal lg:col-span-4 lg:col-start-9">
