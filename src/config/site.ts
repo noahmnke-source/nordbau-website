@@ -48,7 +48,7 @@ export const SITE = {
   formRecipient: 'info@ecobau-hannover.com',
 
   /** Gründungsjahr für "seit"-Angaben und JSON-LD. */
-  foundingYear: 1992,
+  foundingYear: 1994,
 } as const;
 
 /**
