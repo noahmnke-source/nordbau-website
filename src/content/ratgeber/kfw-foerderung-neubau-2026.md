@@ -6,7 +6,7 @@ hero:
   src: "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=1600&q=80"
   alt: "Kubisches Flachdachhaus mit raumhoher Glasfassade, warm beleuchtete Wohnebenen am Winterabend"
   standIn: false
-seoTitle: "KfW-Förderung Neubau 2026: 297, 298 & 300 | Eco Bau"
+seoTitle: "KfW-Förderung Neubau 2026: 297, 298 & 300 | EcoBau"
 seoDescription: "KfW-Förderung Neubau 2026: Kredit bis 150.000 € je Wohneinheit (297/298), bis 270.000 € für Familien (KfW 300), rund 0,6 % Zins. Konditionen und Antragsweg."
 ---
 
@@ -32,7 +32,7 @@ Das Programm fördert Neubauten, die mindestens den Effizienzhaus-40-Standard er
 
 Die Konditionen Anfang 2026: bis 150.000 € Kredit je Wohneinheit, rund 0,6 Prozent Zins bei zehn Jahren Zinsbindung. Frei finanzierte Baudarlehen lagen zeitgleich deutlich darüber – über die Laufzeit summiert sich der Zinsvorteil bei voller Kreditsumme auf einen fünfstelligen Betrag. Der KfW-Kredit ersetzt dabei nicht die Baufinanzierung, er ist ihr günstigster Baustein: Den Rest strukturiert Ihre Hausbank als klassisches Darlehen.
 
-Übergangsweise fördert die KfW 2026 auch Neubauten auf Effizienzhaus-55-Niveau, zu rund 1,0 Prozent Zins. Diese Stufe läuft zum 31.12.2026 aus – wer sie nutzen will, braucht die Kreditzusage vor diesem Stichtag. Für neu geplante Häuser ist das Auslaufen allerdings kaum ein Verlust: Der EH-40-Standard wird besser gefördert, senkt die Betriebskosten dauerhaft und ist bei allen [Eco-Bau-Haustypen](/haustypen/) ab Werk enthalten – ohne Aufpreis und ohne nachträgliche Umplanung.
+Übergangsweise fördert die KfW 2026 auch Neubauten auf Effizienzhaus-55-Niveau, zu rund 1,0 Prozent Zins. Diese Stufe läuft zum 31.12.2026 aus – wer sie nutzen will, braucht die Kreditzusage vor diesem Stichtag. Für neu geplante Häuser ist das Auslaufen allerdings kaum ein Verlust: Der EH-40-Standard wird besser gefördert, senkt die Betriebskosten dauerhaft und ist bei allen [EcoBau-Haustypen](/haustypen/) ab Werk enthalten – ohne Aufpreis und ohne nachträgliche Umplanung.
 
 ## Wer bekommt die Familienförderung KfW 300?
 
@@ -76,7 +76,7 @@ Der Ablauf in vier Schritten:
 3. **Antrag stellen und Zusage abwarten:** Die Bank reicht den Antrag bei der KfW ein. Erst mit der Zusage steht die Förderung fest.
 4. **Bauvertrag unterschreiben:** Jetzt – und erst jetzt – binden Sie sich an Ihren Hausanbieter.
 
-Im [Ablauf von Eco Bau](/ablauf/) liegt vor der Unterschrift ein Festpreisangebot mit vollständiger Bau- und Leistungsbeschreibung vor – exakt die Unterlagen, die Bank und Energieberater für den Antrag brauchen. Da das Angebot zwölf Monate gilt, entsteht kein Zeitdruck: Die Förderzusage kann in Ruhe eingeholt werden, ohne dass sich der Hauspreis bewegt.
+Im [Ablauf von EcoBau](/ablauf/) liegt vor der Unterschrift ein Festpreisangebot mit vollständiger Bau- und Leistungsbeschreibung vor – exakt die Unterlagen, die Bank und Energieberater für den Antrag brauchen. Da das Angebot zwölf Monate gilt, entsteht kein Zeitdruck: Die Förderzusage kann in Ruhe eingeholt werden, ohne dass sich der Hauspreis bewegt.
 
 ## Fazit: Erst Förderzusage, dann Unterschrift
 

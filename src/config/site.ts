@@ -10,15 +10,15 @@
 
 export const SITE = {
   /** Markenname, erscheint in Logo, Titeln, Copy */
-  name: 'Eco Bau',
+  name: 'EcoBau',
   /** Juristischer Name für JSON-LD / Impressum */
-  legalName: 'Eco Bau GmbH',
+  legalName: 'EcoBau GmbH',
   /** Produktions-Domain (Apex ist primär; www leitet per 301 hierher um). Muss mit astro.config.mjs `site` + robots.txt übereinstimmen. */
   url: 'https://ecobau-hannover.com',
   /** Claim, erscheint u. a. im Footer und als OG-Fallback */
   claim: 'Architektur in Serie. Gebaut für Sie.',
   /** Meta-Title-Suffix */
-  titleSuffix: 'Eco Bau GmbH – Fertighäuser schlüsselfertig & individuell',
+  titleSuffix: 'EcoBau GmbH – Fertighäuser schlüsselfertig & individuell',
 
   contact: {
     phone: '+49 155 63046447',

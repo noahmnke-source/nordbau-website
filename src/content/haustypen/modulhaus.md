@@ -17,7 +17,7 @@ facts:
   dachform: Flachdach
   bauweise: Raummodule, werkseitig komplett vorgefertigt
   energiestandard: Effizienzhaus 40
-seoTitle: "Modulhaus als Fertighaus bauen – modular & erweiterbar | Eco Bau"
+seoTitle: "Modulhaus als Fertighaus bauen – modular & erweiterbar | EcoBau"
 seoDescription: "Modulhaus in Modulbauweise: ab 75 m², erweiterbar, Effizienzhaus 40. Werkseitig komplett vorgefertigt, in Tagen aufgestellt. Jetzt Beratung vereinbaren."
 faq:
   - q: Was kostet ein Modulhaus?

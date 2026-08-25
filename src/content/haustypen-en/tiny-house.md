@@ -17,7 +17,7 @@ facts:
   dachform: Flat or gable roof
   bauweise: timber-frame construction, factory-prefabricated
   energiestandard: Efficiency House 40
-seoTitle: "Buy & build a tiny house as a prefab home | Eco Bau"
+seoTitle: "Buy & build a tiny house as a prefab home | EcoBau"
 seoDescription: "Tiny house as a prefab home: from 35 m², fully insulated, Efficiency House 40. Compact living without compromises. Arrange your consultation now."
 faq:
   - q: What does a tiny house cost?
@@ -36,7 +36,7 @@ Small houses do not forgive weak floor plans. That is why we plan every square m
 
 ## Fully-fledged, not provisional
 
-A tiny house from Eco Bau is neither a caravan nor a garden house. It is created in the same timber-frame construction, with the same insulation, building services and quality checks as our large houses – and reaches Efficiency House 40 standard. As a primary residence for minimalists, as a granny flat in the garden or as a high-quality office on the plot: it is small in area, but wholly there in quality.
+A tiny house from EcoBau is neither a caravan nor a garden house. It is created in the same timber-frame construction, with the same insulation, building services and quality checks as our large houses – and reaches Efficiency House 40 standard. As a primary residence for minimalists, as a granny flat in the garden or as a high-quality office on the plot: it is small in area, but wholly there in quality.
 
 ## Who the tiny house is built for
 

@@ -1,4 +1,4 @@
-Baue eine hochwertige, konversionsstarke Marketing-Website für die **Eco Bau GmbH**, einen deutschen Anbieter von Fertighäusern (schlüsselfertig & individuell geplant, bundesweiter Vertrieb). Zielgruppe: kaufkräftige Bauinteressenten (30–55, überdurchschnittliches Einkommen). Die Seite muss Premium wirken – editorial-architektonisch, ruhig, präzise. Kein Template-Look, keine SaaS-Landingpage-Ästhetik.
+Baue eine hochwertige, konversionsstarke Marketing-Website für die **EcoBau GmbH**, einen deutschen Anbieter von Fertighäusern (schlüsselfertig & individuell geplant, bundesweiter Vertrieb). Zielgruppe: kaufkräftige Bauinteressenten (30–55, überdurchschnittliches Einkommen). Die Seite muss Premium wirken – editorial-architektonisch, ruhig, präzise. Kein Template-Look, keine SaaS-Landingpage-Ästhetik.
 
 Sprache: durchgehend Deutsch (Sie-Form). Alle Texte, Meta-Daten und Alt-Texte auf Deutsch.
 
@@ -62,7 +62,7 @@ MOTION:
 
 KOMPONENTEN:
 - Button: primär (Oxide-Fläche, weißer Text, Pfeil-Icon), sekundär (Ink-Hairline-Border, transparent), invertiert für Graphite-Sektionen. Höhe 3rem, RADIUS 0 (gebaut, nicht gerundet – die ganze Seite meidet abgerundete Ecken).
-- Header: sticky. Auf Seiten mit dunklem Hero startet er transparent über dem Hero und wird nach ~24px Scroll weiß mit Hairline-Border. Logo (Wortmarke "Eco Bau" in Boska) links, Navigation mittig/rechts, permanenter CTA "Beratung vereinbaren" ganz rechts. Mobile: Hamburger → Vollbild-Overlay in Graphite mit großen Boska-Links.
+- Header: sticky. Auf Seiten mit dunklem Hero startet er transparent über dem Hero und wird nach ~24px Scroll weiß mit Hairline-Border. Logo (Wortmarke "EcoBau" in Boska) links, Navigation mittig/rechts, permanenter CTA "Beratung vereinbaren" ganz rechts. Mobile: Hamburger → Vollbild-Overlay in Graphite mit großen Boska-Links.
 - Footer: Graphite. Oben große Abschluss-CTA-Zeile ("Sprechen wir über Ihr Grundstück, Ihr Budget und den Weg zu Ihrem Haus." + Button). Darunter Linkspalten (Navigation, Haustypen, Regionen, Kontakt/Adresse). Unten Rechtszeile (© Jahr, Impressum, Datenschutz).
 - Figure: responsive Bild mit sizes-Attribut, lazy-load (Hero eager), object-cover, optionaler Zoom-on-Hover, optionale Caption.
 - SectionIntro: H2 + max. 2 Sätze Vorlauf, asymmetrisch gesetzt. KEIN Eyebrow-Label.
@@ -118,7 +118,7 @@ Detailseite: Breadcrumbs; H1 = Titel; Meta-Zeile; Hero breit (eager); Fakten-Reg
 H1 "Der Ablauf: vom Erstgespräch zum schlüsselfertigen Haus". Einleitung mit Risiko-Umkehr: drei konkrete Sorgen (versteckte Mehrkosten, Bauverzögerung, Vorkasse) je mit einem Vertragsfakt entkräftet. Kompaktes Dauer-Register (1–2 Tage wetterfest / 8–10 Wochen Bauzeit / 6–8 Monate gesamt). Dann 5 Schritte VERTIEFT im alternierenden Text↔Bild-Layout (Nummern 01–05, je 120–180 Wörter, konkretes "Sie erhalten:"-Artefakt, Dauer). Zwischensektion (bg-graphite) "Was wir versprechen – und woran Sie uns messen": Hairline-Register (12 Monate Festpreis, 0 € Vorkasse, 5 Jahre Gewährleistung nach BGB, Bürgschaften). 4 FAQ (Bauzeit gesamt, Vorleistung/Zahlplan, Eigenleistung, Festpreis). Abschluss-CTA.
 
 ──────────── ÜBER UNS ────────────
-H1 "Über Eco Bau: Ein Werk, ein Versprechen". Positionierung als Manufaktur mit serieller Präzision (eigene Kategorie definieren, ruhig – NICHT "Marktführer"-Geschrei). Sektionen: großes Haltungs-Statement; "Das Werk" (Text+Bild: Holztafelbauweise, technisch getrocknetes Konstruktionsvollholz, dokumentierte Prüfprotokolle, EH 40); Zahlen-Register auf bg-graphite (seit 1998, 1.250+ Häuser, ca. 120 Mitarbeitende [Platzhalter], Weiterempfehlung [Platzhalter]); "Woran wir glauben" als versetzte Fließtext-Absätze mit Boska-Erstzeilen (KEIN Karten-Raster); Musterhaus-Hinweis (ohne erfundenen Standort) + Abschluss-CTA. Keine erfundenen Team-Fotos – nur Werk-/Handwerksbilder.
+H1 "Über EcoBau: Ein Werk, ein Versprechen". Positionierung als Manufaktur mit serieller Präzision (eigene Kategorie definieren, ruhig – NICHT "Marktführer"-Geschrei). Sektionen: großes Haltungs-Statement; "Das Werk" (Text+Bild: Holztafelbauweise, technisch getrocknetes Konstruktionsvollholz, dokumentierte Prüfprotokolle, EH 40); Zahlen-Register auf bg-graphite (seit 1998, 1.250+ Häuser, ca. 120 Mitarbeitende [Platzhalter], Weiterempfehlung [Platzhalter]); "Woran wir glauben" als versetzte Fließtext-Absätze mit Boska-Erstzeilen (KEIN Karten-Raster); Musterhaus-Hinweis (ohne erfundenen Standort) + Abschluss-CTA. Keine erfundenen Team-Fotos – nur Werk-/Handwerksbilder.
 
 ──────────── GEO / STANDORTE ────────────
 Hub /fertighaus: H1 "Fertighaus in Ihrer Region" + Einleitung (bundesweiter Vertrieb, Montageteams aus dem Werk, ein Ansprechpartner je Region). Regionen als typografische Hairline-Linkliste, gruppiert nach "Bundesländer" und "Metropolregionen" (Name als Boska-Link, ein Aufhänger-Satz, 2–3 Städtenamen). KEINE Deutschlandkarte, KEIN Kartenraster. Querverweis auf /referenzen + Abschluss-CTA.
@@ -167,9 +167,9 @@ INHALTLICHE FAKTEN (für korrekte Texte – NICHT erfinden)
 ═══════════════════════════════════════════
 SEO & META
 ═══════════════════════════════════════════
-Pro Seite via react-helmet-async: <title> 50–60 Zeichen (Fokus-Keyword vorn, Marke "| Eco Bau" hinten), meta description 150–160 Zeichen mit Zahl/USP + CTA, canonical, Open Graph (og:title/description/image/url, og:locale de_DE), twitter:card. <html lang="de">. Genau EINE h1 pro Seite. Semantische Überschriftenhierarchie, H2/H3 mit Sekundär-Keywords/W-Fragen.
+Pro Seite via react-helmet-async: <title> 50–60 Zeichen (Fokus-Keyword vorn, Marke "| EcoBau" hinten), meta description 150–160 Zeichen mit Zahl/USP + CTA, canonical, Open Graph (og:title/description/image/url, og:locale de_DE), twitter:card. <html lang="de">. Genau EINE h1 pro Seite. Semantische Überschriftenhierarchie, H2/H3 mit Sekundär-Keywords/W-Fragen.
 JSON-LD (application/ld+json):
-- Sitewide: Organization als @graph, @type ["HomeAndConstructionBusiness","GeneralContractor"], mit name, legalName "Eco Bau GmbH", url, logo, address (PostalAddress DE), contactPoint (sales, de), areaServed {Country "Deutschland"}, priceRange "€€€", knowsAbout, sameAs – plus WebSite-Knoten. KEIN aggregateRating (self-serving), KEIN LocalBusiness ohne echte Standortadresse.
+- Sitewide: Organization als @graph, @type ["HomeAndConstructionBusiness","GeneralContractor"], mit name, legalName "EcoBau GmbH", url, logo, address (PostalAddress DE), contactPoint (sales, de), areaServed {Country "Deutschland"}, priceRange "€€€", knowsAbout, sameAs – plus WebSite-Knoten. KEIN aggregateRating (self-serving), KEIN LocalBusiness ohne echte Standortadresse.
 - Unterseiten: BreadcrumbList. Ratgeber: Article. FAQ-Sektionen: FAQPage (optional, kein SERP-Feature mehr – schadet nicht).
 Sitemap.xml und robots.txt generieren. Interne Verlinkung als Themencluster (Ratgeber → Haustypen/Ablauf/Regionen/Kontakt und zurück).
 
@@ -181,6 +181,6 @@ Fließtext ≥ 4,5:1, große Headlines ≥ 3:1 (durch die Tokens erfüllt). Sich
 ═══════════════════════════════════════════
 BILDER & ASSETS
 ═══════════════════════════════════════════
-Für die Erstversion hochwertige Architektur-Stockfotos verwenden (moderne Einfamilienhäuser mit Holzfassade/Satteldach/Flachdach, Innenräume mit Eiche & Tageslicht, Holzrahmenbau-Baustellen, Beratung/Familie/Schlüsselübergabe) – Motive mit Licht und Material, keine Deko-Thumbnails, wechselnde Bildformate. Hero-Video als Platzhalter-Slot (Poster-Fallback). Die 3 echten Baustellenfotos des Kunden sind für das "Bautagebuch"-Projekt vorgesehen (ein Haus, ohne Ortsangabe) – als klar markierte Platzhalter einbauen. Firmenname "Eco Bau", Kontaktdaten, Domain und Formular-Endpoint zentral in einer Config-Datei, damit sie an einer Stelle austauschbar sind.
+Für die Erstversion hochwertige Architektur-Stockfotos verwenden (moderne Einfamilienhäuser mit Holzfassade/Satteldach/Flachdach, Innenräume mit Eiche & Tageslicht, Holzrahmenbau-Baustellen, Beratung/Familie/Schlüsselübergabe) – Motive mit Licht und Material, keine Deko-Thumbnails, wechselnde Bildformate. Hero-Video als Platzhalter-Slot (Poster-Fallback). Die 3 echten Baustellenfotos des Kunden sind für das "Bautagebuch"-Projekt vorgesehen (ein Haus, ohne Ortsangabe) – als klar markierte Platzhalter einbauen. Firmenname "EcoBau", Kontaktdaten, Domain und Formular-Endpoint zentral in einer Config-Datei, damit sie an einer Stelle austauschbar sind.
 
 Ziel: Lighthouse ≥ 95 in allen vier Kategorien, schnelles LCP, kein Layout-Shift (Bilder mit width/height bzw. aspect-ratio). Baue produktionsreif, nicht als Prototyp – jede Seite beautiful, responsive, präzise, on brand.

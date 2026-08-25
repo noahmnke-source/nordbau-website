@@ -17,7 +17,7 @@ facts:
   dachform: Satteldach, 35–45°
   bauweise: Holztafelbau, werkseitig vorgefertigt
   energiestandard: Effizienzhaus 40
-seoTitle: "Satteldachhaus als Fertighaus bauen – Einfamilienhaus | Eco Bau"
+seoTitle: "Satteldachhaus als Fertighaus bauen – Einfamilienhaus | EcoBau"
 seoDescription: "Einfamilienhaus mit Satteldach als Fertighaus: ab 120 m², Effizienzhaus 40, schlüsselfertig, 30 Jahre Garantie auf die Baukonstruktion. Jetzt Beratung vereinbaren."
 faq:
   - q: Was kostet ein Satteldachhaus als Fertighaus?

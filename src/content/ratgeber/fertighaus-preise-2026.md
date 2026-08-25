@@ -6,7 +6,7 @@ hero:
   src: "https://images.unsplash.com/photo-1608303588026-884930af2559?auto=format&fit=crop&w=1600&q=80"
   alt: "Planungsgespräch über Grundrissen: Hände mit Dreikantmaßstab und Bleistift am Bauplan"
   standIn: false
-seoTitle: "Fertighaus-Preise 2026: Kosten pro m² | Eco Bau"
+seoTitle: "Fertighaus-Preise 2026: Kosten pro m² | EcoBau"
 seoDescription: "Fertighaus-Preise 2026: Median 2.800 €/m², Spanne 2.400–3.300 €/m². Mit Beispielrechnung für 150 m², Baunebenkosten und Steuertabelle. Jetzt informieren."
 ---
 
@@ -56,7 +56,7 @@ Kalkulieren Sie 15 bis 20 Prozent der Gesamtkosten zusätzlich für Baunebenkost
 - **Hausanschlüsse:** Strom, Wasser, Abwasser, Telekommunikation
 - **Versicherungen:** Bauherrenhaftpflicht und Bauleistungsversicherung
 
-Ein seriöser Anbieter weist diese Positionen transparent aus, bevor Sie unterschreiben. Bei Eco Bau gehört der Budgetcheck inklusive Nebenkosten fest zum [Ablauf von Erstgespräch bis Übergabe](/ablauf/) – vor dem Entwurf, nicht danach.
+Ein seriöser Anbieter weist diese Positionen transparent aus, bevor Sie unterschreiben. Bei EcoBau gehört der Budgetcheck inklusive Nebenkosten fest zum [Ablauf von Erstgespräch bis Übergabe](/ablauf/) – vor dem Entwurf, nicht danach.
 
 ## Wie viel Grunderwerbsteuer zahlen Sie in Ihrem Bundesland?
 

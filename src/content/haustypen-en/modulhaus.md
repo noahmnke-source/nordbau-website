@@ -17,7 +17,7 @@ facts:
   dachform: Flat roof
   bauweise: Room modules, fully factory-prefabricated
   energiestandard: Efficiency House 40
-seoTitle: "Build a modular house as a prefab home – modular & extendable | Eco Bau"
+seoTitle: "Build a modular house as a prefab home – modular & extendable | EcoBau"
 seoDescription: "Modular house in modular construction: from 75 m², extendable, Efficiency House 40. Fully factory-prefabricated, erected in days. Arrange your consultation now."
 faq:
   - q: What does a modular house cost?
