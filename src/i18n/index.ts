@@ -73,6 +73,7 @@ export const ui = {
     'footer.rights': 'Alle Rechte vorbehalten.',
     'footer.imprint': 'Impressum',
     'footer.privacy': 'Datenschutz',
+    'footer.cookies': 'Cookie-Einstellungen',
     'footer.ctaHeadline':
       'Sprechen wir über Ihr Grundstück, Ihr Budget und den Weg zu Ihrem Haus.',
   },
@@ -102,6 +103,7 @@ export const ui = {
     'footer.rights': 'All rights reserved.',
     'footer.imprint': 'Imprint',
     'footer.privacy': 'Privacy',
+    'footer.cookies': 'Cookie settings',
     'footer.ctaHeadline': "Let's talk about your plot, your budget and the path to your home.",
   },
 } as const;

@@ -96,7 +96,19 @@ const nav = navDefs.map((n) => ({ label: t(n.key), href: localize(n.path, lang) 
       <ul class="flex flex-wrap gap-6">
         <li><a href="/impressum/" class="link-line">{t('footer.imprint')}</a></li>
         <li><a href="/datenschutz/" class="link-line">{t('footer.privacy')}</a></li>
+        <li>
+          <button type="button" data-consent-open class="link-line cursor-pointer">
+            {t('footer.cookies')}
+          </button>
+        </li>
       </ul>
     </div>
   </div>
 </footer>
+
+<script is:inline>
+  // Widerruf/Nachtraegliche Zustimmung: oeffnet das Einwilligungsbanner erneut.
+  document.querySelectorAll('[data-consent-open]').forEach((el) =>
+    el.addEventListener('click', () => window.ecobauConsent?.open())
+  );
+</script>

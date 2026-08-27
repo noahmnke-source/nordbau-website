@@ -1,0 +1,156 @@
+---
+/**
+ * Einwilligungsbanner für das Google-Ads-Conversion-Tracking.
+ *
+ * Strenge Auslegung von TTDSG § 25: Vor der Zustimmung geht KEINE Anfrage an
+ * Google. Der Tag `gtag.js` wird erst nachgeladen, wenn eingewilligt wurde –
+ * nicht bloß per Consent Mode auf „denied" gestellt und trotzdem geladen.
+ *
+ * Consent Mode v2 setzen wir zusätzlich, damit der Tag beim Nachladen sofort
+ * den richtigen Zustand kennt und Google die Signale sauber verarbeitet.
+ *
+ * Die Entscheidung liegt in localStorage unter `ecobau-consent`
+ * ('granted' | 'denied'). Widerruf über den Footer-Link „Cookie-Einstellungen",
+ * der `window.ecobauConsent.open()` aufruft.
+ */
+const GOOGLE_ADS_ID = 'AW-18413757885';
+---
+
+<!-- Läuft vor allem anderen: Standard auf „abgelehnt", danach ggf. frühere Zustimmung anwenden. -->
+<script is:inline define:vars={{ GOOGLE_ADS_ID }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  window.gtag = gtag;
+
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    wait_for_update: 500,
+  });
+
+  window.ecobauConsent = {
+    KEY: 'ecobau-consent',
+    loaded: false,
+    read() {
+      try {
+        return localStorage.getItem(this.KEY);
+      } catch {
+        return null; // privater Modus o. ä. – dann gilt „keine Entscheidung"
+      }
+    },
+    save(value) {
+      try {
+        localStorage.setItem(this.KEY, value);
+      } catch {
+        /* ohne Speicher fragen wir beim nächsten Aufruf erneut */
+      }
+    },
+    /** Tag nachladen – passiert ausschließlich nach Zustimmung. */
+    load() {
+      if (this.loaded) return;
+      this.loaded = true;
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GOOGLE_ADS_ID;
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', GOOGLE_ADS_ID);
+    },
+    grant() {
+      gtag('consent', 'update', {
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted',
+        analytics_storage: 'granted',
+      });
+      this.save('granted');
+      this.load();
+      this.hide();
+    },
+    deny() {
+      gtag('consent', 'update', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+      });
+      this.save('denied');
+      this.hide();
+    },
+    hide() {
+      document.getElementById('consent-banner')?.setAttribute('hidden', '');
+    },
+    /** Widerruf bzw. nachträgliche Zustimmung über den Footer-Link. */
+    open() {
+      const el = document.getElementById('consent-banner');
+      if (el) {
+        el.removeAttribute('hidden');
+        el.querySelector('button')?.focus();
+      }
+    },
+  };
+
+  if (window.ecobauConsent.read() === 'granted') window.ecobauConsent.load();
+</script>
+
+<div
+  id="consent-banner"
+  hidden
+  role="dialog"
+  aria-modal="false"
+  aria-labelledby="consent-title"
+  aria-describedby="consent-text"
+  class="fixed inset-x-0 bottom-0 z-(--z-toast) border-t border-line bg-bg shadow-[0_-8px_32px_rgba(0,0,0,0.08)]"
+>
+  <div
+    class="container-site flex flex-col gap-5 py-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10"
+  >
+    <div>
+      <p id="consent-title" class="text-small font-medium text-ink">
+        Ihre Entscheidung über Cookies
+      </p>
+      <p id="consent-text" class="prose-measure mt-2 text-caption leading-relaxed text-muted">
+        Wir messen mit Google Ads, ob unsere Anzeigen zu Beratungsanfragen führen. Dabei werden
+        Cookies gesetzt und Daten an Google übertragen. Das geschieht nur mit Ihrer Zustimmung –
+        die Website funktioniert auch ohne vollständig. Widerruf jederzeit über
+        „Cookie-Einstellungen" im Fußbereich. Mehr in unserer{' '}
+        <a href="/datenschutz/" class="link-line text-ink">Datenschutzerklärung</a>.
+      </p>
+    </div>
+
+    <div class="flex shrink-0 flex-wrap items-center gap-3">
+      <button
+        type="button"
+        data-consent="deny"
+        class="inline-flex h-12 items-center px-6 text-small font-medium text-ink transition-colors duration-300 border border-ink/30 hover:border-ink hover:bg-ink hover:text-paper"
+      >
+        Ablehnen
+      </button>
+      <button
+        type="button"
+        data-consent="grant"
+        class="inline-flex h-12 items-center px-6 text-small font-medium text-white transition-colors duration-300 bg-oxide hover:bg-oxide-deep"
+      >
+        Akzeptieren
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    const banner = document.getElementById('consent-banner');
+    if (!banner) return;
+    banner.addEventListener('click', (e) => {
+      const action = e.target.closest('[data-consent]')?.dataset.consent;
+      if (action === 'grant') window.ecobauConsent.grant();
+      if (action === 'deny') window.ecobauConsent.deny();
+    });
+    // Nur fragen, wenn noch keine Entscheidung vorliegt.
+    if (!window.ecobauConsent.read()) banner.removeAttribute('hidden');
+  })();
+</script>
