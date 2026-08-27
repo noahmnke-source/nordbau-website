@@ -184,6 +184,19 @@ const alternates = isBilingual(Astro.url.pathname)
     <script is:inline>
       document.documentElement.classList.add('js');
     </script>
+
+    <!-- Google Ads Conversion-Tracking (AW-18413757885).
+         Das Event feuert nicht hier, sondern im Erfolgszweig des Kontaktformulars
+         (kontakt.astro), weil das Formular per fetch absendet und keine Danke-Seite hat.
+         ACHTUNG: setzt Cookies und uebertraegt Daten an Google — in Deutschland
+         einwilligungspflichtig (TTDSG § 25). Siehe Hinweis in kontakt.astro. -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-18413757885"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18413757885');
+    </script>
   </head>
   <body>
     <a

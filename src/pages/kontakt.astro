@@ -227,6 +227,11 @@ const schritte = [
           body,
         });
         if (!res.ok) throw new Error(String(res.status));
+        // Google-Ads-Conversion: erst nach bestaetigtem Eingang melden.
+        (window as any).gtag?.('event', 'conversion', {
+          send_to: 'AW-18413757885/ihfFCJyE7-gcEL3LrsxE',
+        });
+
         form.hidden = true;
         success?.classList.remove('hidden');
         success?.scrollIntoView({ behavior: 'smooth', block: 'center' });
