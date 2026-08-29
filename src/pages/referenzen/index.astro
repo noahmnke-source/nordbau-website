@@ -29,6 +29,15 @@ type Referenz = {
 
 const wohnhaeuser: Referenz[] = [
   {
+    ort: 'München', typ: 'Einfamilienhaus',
+    img: '/projekte/muenchen-einfamilienhaus-1-1600.webp',
+    img2: '/projekte/muenchen-einfamilienhaus-2-1600.webp',
+    imgAlt: 'Giebelseite des Wohnhauses mit Holzverkleidung, neue Dachkonstruktion aus Sparren und Lattung, Gerüst und Autokran an der Straße',
+    img2Alt: 'Luftaufnahme: neuer Baukörper neben dem holzverkleideten Bestand, durchgehende Dachkonstruktion über beiden Gebäudeteilen',
+    fakt: 'Anbau und neue Dachkonstruktion · Holzfassade',
+    beschreibung: 'Erweiterung eines bestehenden Wohnhauses in München. An den holzverkleideten Bestand schließt ein neuer Baukörper an; eine durchgehende Dachkonstruktion aus Holz fasst Alt- und Neubau zu einem Haus zusammen. Die gewachsene Holzfassade bleibt erhalten und prägt weiterhin die Giebelseite.',
+  },
+  {
     ort: 'Freising', typ: 'Einfamilienhaus', img: '/referenzen/freising-efh.webp',
     fakt: '180 m² · Satteldach, Garage, kontrollierte Wohnraumlüftung',
     beschreibung: 'Zweigeschossiges Einfamilienhaus mit 180 m² Wohnfläche: ein traditionelles Satteldach in moderner Ausführung, mit hellem Wohnraum, funktionaler Küche samt Essbereich, Hauswirtschaftsraum, Arbeitsplatz, drei Schlafzimmern und Garage. Eine Lüftungsanlage sorgt für frische Luft und hohe Energieeffizienz.',
@@ -140,7 +149,7 @@ const bauten: Referenz[] = [
   hideFooterCta
 >
   <!-- Seitenkopf -->
-  <section class="container-site pt-12 lg:pt-16">
+  <section class="container-site pt-12 pb-(--spacing-section) lg:pt-16">
     <Breadcrumbs items={[{ name: 'Referenzen', href: '/referenzen/' }]} class="mb-10" />
 
     <div class="grid gap-x-8 gap-y-6 lg:grid-cols-12">
@@ -148,38 +157,6 @@ const bauten: Referenz[] = [
         Unsere Projekte – vom ersten Element bis zur Übergabe
       </h1>
     </div>
-  </section>
-
-  <!-- München-Projekt: Fotos + Bezeichnung, bewusst ohne Link/Detailseite -->
-  <section class="container-site pt-16 pb-(--spacing-section) lg:pt-24">
-    <article>
-      <div class="grid gap-x-8 gap-y-8 lg:grid-cols-12">
-        <div class="lg:col-span-7">
-          <Figure
-            src="/projekte/muenchen-einfamilienhaus-1-1600.webp"
-            alt="Das Einfamilienhaus während der Bauzeit: Giebelseite mit neuer Holzfassade, offener Dachstuhl und Baugerüst, Kran an der Straßenseite"
-            ratio="aspect-[16/9]"
-            sizes="(min-width: 1024px) 56vw, 100vw"
-            eager
-            reveal={false}
-            zoom
-          />
-        </div>
-        <div class="lg:col-span-5 lg:mt-20">
-          <Figure
-            src="/projekte/muenchen-einfamilienhaus-2-1600.webp"
-            alt="Luftaufnahme während der Bauzeit: neue Dachkonstruktion mit Lattung, Holzfassade am Anbau, Gerüst rundum"
-            ratio="aspect-[4/3]"
-            sizes="(min-width: 1024px) 40vw, 100vw"
-            zoom
-          />
-        </div>
-      </div>
-      <p class="mt-7 font-display text-title font-medium">München: Einfamilienhaus, fertiggestellt</p>
-      <p class="mt-2 text-small text-muted">
-        Übergeben und bezogen – die Aufnahmen zeigen das Haus während der Bauzeit.
-      </p>
-    </article>
   </section>
 
   <!-- Realisierte Projekte: Foto + Text, aus den Projektunterlagen -->
