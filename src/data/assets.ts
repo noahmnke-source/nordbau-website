@@ -99,6 +99,11 @@ export const IMG = {
     alt: 'Handwerkliche Präzision: Stemmeisen folgt der Anrisslinie im hellen Massivholz',
   },
 
+  elementmontage: {
+    src: '/projekte/elementmontage.webp',
+    alt: 'Kranmontage: Eine vorgefertigte Wandscheibe mit Fensteröffnung wird auf die bereits stehenden Elemente gesetzt',
+  },
+
   /* Menschen & Prozess */
   planung: {
     src: 'https://images.unsplash.com/photo-1608303588026-884930af2559?auto=format&fit=crop&w=1600&q=80',
