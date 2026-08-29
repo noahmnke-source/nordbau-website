@@ -85,10 +85,9 @@ export const IMG = {
     alt: 'Richtarbeiten am Holzrahmenhaus: Dachbinder auf frisch gestellten Wandelementen',
     standIn: true,
   },
-  innenausbau: {
-    src: 'https://images.unsplash.com/photo-1700581316314-9e6a809bd656?auto=format&fit=crop&w=1600&q=80',
-    alt: 'Innenausbau im Holzrahmenbau: Ständerwerk mit ökologischer Dämmung und Beplankung',
-    standIn: true,
+  montage: {
+    src: '/projekte/montage-kranarbeiten-1600.webp',
+    alt: 'Montage auf der Baustelle: Ein Autokran setzt vorgefertigte Elemente auf die Bodenplatte, zwei Monteure arbeiten auf der Decke',
   },
   kran: {
     src: 'https://images.unsplash.com/photo-1569169513673-2cecbfc943a9?auto=format&fit=crop&w=1600&q=80',
