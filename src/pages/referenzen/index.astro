@@ -12,7 +12,8 @@ import { YEARS_EXPERIENCE } from '@/config/site';
  */
 /** Ein Referenzprojekt. `img2` ergaenzt eine zweite Aufnahme (z. B. Werk + Montage). */
 type Referenz = {
-  ort: string;
+  /** Ort des Projekts. Fehlt er, zeigt die Ueberschrift nur den Typ. */
+  ort?: string;
   typ: string;
   img: string;
   img2?: string;
@@ -89,6 +90,11 @@ const wohnhaeuser: Referenz[] = [
     ort: 'Frankreich', typ: 'Tiny Houses', img: '/referenzen/frankreich-tinyhouse.webp',
     fakt: 'je 30 m² · Serie, Holzfassade',
     beschreibung: 'Tiny Houses mit je 30 m²: Wohnraum, Küche, Bad und Schlafzimmer auf kompakter Fläche, entworfen in klarer, moderner Architektursprache. Die Holzverkleidung gibt den Einheiten eine warme Anmutung und macht sie für Berglagen ebenso passend wie für den städtischen Raum. Die Aufnahme zeigt mehrere fertiggestellte Einheiten.',
+  },
+{
+    typ: 'Bungalow', img: '/referenzen/bungalow-150.webp',
+    fakt: '150 m² · ebenerdig, Walmdach, überdachter Eingang',
+    beschreibung: 'Ebenerdiger Bungalow mit rund 150 m² Wohnfläche. Die Aufnahme entstand kurz nach dem Richten: Die Gebäudehülle steht geschlossen, Fenster und Haustür sind gesetzt, der hölzerne Dachstuhl des Walmdachs wird gerade eingedeckt. Ein überdachter Vorbereich mit Holzstütze gliedert die Front zum Garten.',
   },
 ];
 
@@ -232,7 +238,7 @@ const bauten: Referenz[] = [
             )}
             <div class="reveal lg:col-span-4 lg:col-start-9">
               <p class="font-display text-title font-medium">
-                {p.ort} <span class="text-muted">· {p.typ}</span>
+                {p.ort ? <Fragment>{p.ort} <span class="text-muted">· {p.typ}</span></Fragment> : p.typ}
               </p>
               <p class="prose-measure mt-4 text-body text-muted">{p.beschreibung}</p>
               <p class="mt-4 text-small text-muted">{p.fakt}</p>
@@ -287,7 +293,7 @@ const bauten: Referenz[] = [
             )}
             <div class="reveal lg:col-span-4 lg:col-start-9">
               <p class="font-display text-title font-medium">
-                {p.ort} <span class="text-muted">· {p.typ}</span>
+                {p.ort ? <Fragment>{p.ort} <span class="text-muted">· {p.typ}</span></Fragment> : p.typ}
               </p>
               <p class="prose-measure mt-4 text-body text-muted">{p.beschreibung}</p>
               <p class="mt-4 text-small text-muted">{p.fakt}</p>

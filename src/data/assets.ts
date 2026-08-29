@@ -104,6 +104,11 @@ export const IMG = {
     alt: 'Kranmontage: Eine vorgefertigte Wandscheibe mit Fensteröffnung wird auf die bereits stehenden Elemente gesetzt',
   },
 
+  bungalowRohbau: {
+    src: '/projekte/bungalow-rohbau.webp',
+    alt: 'Bungalow kurz nach dem Richten: geschlossene Gebäudehülle mit gesetzten Fenstern, Zimmerer deckt den hölzernen Dachstuhl des Walmdachs',
+  },
+
   /* Menschen & Prozess */
   planung: {
     src: 'https://images.unsplash.com/photo-1608303588026-884930af2559?auto=format&fit=crop&w=1600&q=80',

@@ -12,7 +12,8 @@ import { YEARS_EXPERIENCE } from '@/config/site';
  */
 /** A reference project. `img2` adds a second photograph (e.g. factory + installation). */
 type Referenz = {
-  ort: string;
+  /** Ort des Projekts. Fehlt er, zeigt die Ueberschrift nur den Typ. */
+  ort?: string;
   typ: string;
   img: string;
   img2?: string;
@@ -89,6 +90,11 @@ const wohnhaeuser: Referenz[] = [
     ort: 'France', typ: 'Tiny houses', img: '/referenzen/frankreich-tinyhouse.webp',
     fakt: '30 m² each · series, timber façade',
     beschreibung: 'Tiny houses of 30 m² each: living room, kitchen, bathroom and bedroom on a compact footprint, designed in a clear, modern architectural language. The timber cladding gives the units a warm feel and makes them as suitable for mountain locations as for urban settings. The photograph shows several completed units.',
+  },
+{
+    typ: 'Bungalow', img: '/referenzen/bungalow-150.webp',
+    fakt: '150 m² · single storey, hipped roof, covered entrance',
+    beschreibung: 'Single-storey bungalow with around 150 m² of living space. The photograph was taken shortly after the topping-out: the building envelope is closed, windows and front door are in place, and the timber structure of the hipped roof is being covered. A covered entrance area with a timber post articulates the garden front.',
   },
 ];
 
@@ -232,7 +238,7 @@ const bauten: Referenz[] = [
             )}
             <div class="reveal lg:col-span-4 lg:col-start-9">
               <p class="font-display text-title font-medium">
-                {p.ort} <span class="text-muted">· {p.typ}</span>
+                {p.ort ? <Fragment>{p.ort} <span class="text-muted">· {p.typ}</span></Fragment> : p.typ}
               </p>
               <p class="prose-measure mt-4 text-body text-muted">{p.beschreibung}</p>
               <p class="mt-4 text-small text-muted">{p.fakt}</p>
@@ -287,7 +293,7 @@ const bauten: Referenz[] = [
             )}
             <div class="reveal lg:col-span-4 lg:col-start-9">
               <p class="font-display text-title font-medium">
-                {p.ort} <span class="text-muted">· {p.typ}</span>
+                {p.ort ? <Fragment>{p.ort} <span class="text-muted">· {p.typ}</span></Fragment> : p.typ}
               </p>
               <p class="prose-measure mt-4 text-body text-muted">{p.beschreibung}</p>
               <p class="mt-4 text-small text-muted">{p.fakt}</p>
