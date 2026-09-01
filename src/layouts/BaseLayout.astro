@@ -97,6 +97,21 @@ const organizationLd = {
         name: 'Deutschland',
         sameAs: 'https://www.wikidata.org/wiki/Q183',
       },
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: lang === 'en' ? 'Services' : 'Leistungen',
+        itemListElement: [
+          ['Schlüsselfertiges Fertighaus', 'Planung und Bau schlüsselfertiger Fertighäuser in Holztafelbauweise, bundesweit, mit Festpreisgarantie.'],
+          ['Individuell geplantes Architektenhaus', 'Frei entworfene Ein- und Zweifamilienhäuser in Holztafelbauweise nach individueller Planung.'],
+          ['Bungalow', 'Ebenerdige, barrierearme Häuser als Fertighaus.'],
+          ['Mehrfamilienhaus', 'Mehrfamilienhäuser in Holztafelbauweise als Fertighaus.'],
+          ['Tiny House', 'Kompakte Häuser im Effizienzhaus-40-Standard.'],
+          ['Modulhaus', 'Werkseitig vorgefertigte, erweiterbare Modulhäuser.'],
+        ].map(([name, beschreibung]) => ({
+          '@type': 'Offer',
+          itemOffered: { '@type': 'Service', name, description: beschreibung },
+        })),
+      },
       knowsAbout: [
         'Fertighaus',
         'Schlüsselfertiges Bauen',

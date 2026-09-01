@@ -1,4 +1,22 @@
 User-agent: *
 Allow: /
 
+# KI-Antwortsysteme ausdruecklich zugelassen. Ohne diese Zeilen gilt zwar
+# ohnehin die Regel darueber, die ausdrueckliche Nennung macht die Absicht
+# aber eindeutig — einige Betreiber werten nur den eigenen Namen aus.
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
 Sitemap: https://ecobau-hannover.com/sitemap-index.xml
