@@ -9,10 +9,11 @@ import { SITE } from '@/config/site';
 import { buildFaqJsonLd } from '@/lib/seo';
 
 /**
- * Zweites Standbein: Rohbau, Innenausbau und Tiefbau als Nachunternehmer.
- * Zielgruppe ist nicht der private Bauherr, sondern der Kalkulator oder
- * Bauleiter eines Generalunternehmers. Der sucht andere Dinge als eine
- * Familie: Referenzobjekte mit Größenordnung, Gewerkeumfang, Termintreue.
+ * Zweites Standbein: Hochbau, Schlüsselfertigbau und Tiefbau. Auftraggeber
+ * sind gewerbliche und private Bauherren, die öffentliche Hand — und daneben
+ * Bauunternehmen, für die wir als Nachunternehmer arbeiten. Diese Seite
+ * richtet sich an alle drei: Sie sucht nach Referenzobjekten mit
+ * Größenordnung, Gewerkeumfang und Termintreue, nicht nach Wohngefühl.
  * Alle Angaben stammen aus den Projektunterlagen, nichts ist geschätzt.
  */
 
@@ -94,8 +95,8 @@ const argumente = [
 
 const faq = [
   {
-    q: 'Arbeiten Sie auch als Nachunternehmer für Generalunternehmer?',
-    a: 'Ja. Neben dem eigenen Fertighausgeschäft übernehmen wir Hochbau, Schlüsselfertigbau und Tiefbau als Nachunternehmer für Bauunternehmen und Generalunternehmer. Referenzen sind unter anderem der zweite Bauabschnitt des Büro- und Verwaltungskomplexes City Gate Nord in Hannover mit rund 10.500 m² Bruttogrundfläche, ein Wohn- und Geschäftshaus mit 70 Wohneinheiten in Stuttgart und der Innenausbau am Städtischen Klinikum Braunschweig.',
+    q: 'Für wen bauen Sie im Hoch- und Tiefbau?',
+    a: 'Für gewerbliche und private Bauherren, für Kommunen und öffentliche Auftraggeber — und als Nachunternehmer für Bauunternehmen und Generalunternehmer. Beides gehört bei uns zum Alltag. Referenzen sind unter anderem der zweite Bauabschnitt des Büro- und Verwaltungskomplexes City Gate Nord in Hannover mit rund 10.500 m² Bruttogrundfläche, ein Wohn- und Geschäftshaus mit 70 Wohneinheiten in Stuttgart, der Innenausbau am Städtischen Klinikum Braunschweig und eine Kindertagesstätte für die Stadt Ronnenberg.',
   },
   {
     q: 'In welcher Bauweise arbeiten Sie?',
@@ -111,9 +112,9 @@ const faq = [
   },
 ];
 
-const titel = 'Hoch- und Tiefbau – Rohbau und Schlüsselfertigbau als Nachunternehmer';
+const titel = 'Hoch- und Tiefbau – Rohbau, Schlüsselfertigbau und Tiefbau';
 const beschreibung =
-  'EcoBau GmbH als Nachunternehmer für Bauunternehmen: Hochbau und Rohbau in Stahlbetonbauweise, Schlüsselfertigbau und Tiefbau für Wohn-, Büro-, Gewerbe- und öffentliche Bauten. Referenzen bis 10.500 m² BGF.';
+  'EcoBau GmbH: Hochbau und Rohbau in Stahlbetonbauweise, Schlüsselfertigbau und Tiefbau für Wohn-, Büro-, Gewerbe- und öffentliche Bauten — als Generalunternehmer und als Nachunternehmer. Referenzen bis 10.500 m² BGF.';
 ---
 
 <BaseLayout
@@ -130,8 +131,8 @@ const beschreibung =
         Wir bauen nicht nur Fertighäuser.
       </h1>
       <p class="prose-measure self-end text-body text-muted lg:col-span-4 lg:col-start-9">
-        Hochbau, Schlüsselfertigbau und Tiefbau — als Nachunternehmer für Bauunternehmen
-        und Generalunternehmer. Wohnungsbau, Verwaltungsbau, Gewerbe und öffentliche Hand.
+        Hochbau, Schlüsselfertigbau und Tiefbau — für gewerbliche und private Bauherren,
+        die öffentliche Hand und als Nachunternehmer für Bauunternehmen.
       </p>
     </div>
   </section>
@@ -211,7 +212,7 @@ const beschreibung =
     <div class="container-site">
       <SectionIntro
         title="Warum mit uns"
-        lead="Was für einen Generalunternehmer zählt, ist selten dasselbe wie für einen privaten Bauherrn."
+        lead="Was am Bau zählt, ist selten dasselbe wie beim Hausbau für eine Familie."
       />
       <div class="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2">
         {argumente.map((a) => (
