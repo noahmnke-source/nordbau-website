@@ -1,0 +1,257 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import Button from '@/components/Button.astro';
+import Figure from '@/components/Figure.astro';
+import SectionIntro from '@/components/SectionIntro.astro';
+import FaqAccordion from '@/components/FaqAccordion.astro';
+import { SITE } from '@/config/site';
+import { buildFaqJsonLd } from '@/lib/seo';
+
+/**
+ * Zweites Standbein: Rohbau, Innenausbau und Tiefbau als Nachunternehmer.
+ * Zielgruppe ist nicht der private Bauherr, sondern der Kalkulator oder
+ * Bauleiter eines Generalunternehmers. Der sucht andere Dinge als eine
+ * Familie: Referenzobjekte mit Größenordnung, Gewerkeumfang, Termintreue.
+ * Alle Angaben stammen aus den Projektunterlagen, nichts ist geschätzt.
+ */
+
+const gewerke = [
+  {
+    titel: 'Rohbau',
+    text: 'Stahlbetonbau für Wohn-, Büro- und Gewerbeobjekte: Fundamente, Stützen, Decken und Wände. Auch in wasserundurchlässiger Bauweise für Untergeschosse und Tiefgaragen.',
+    punkte: ['Stahlbetonbauweise', 'WU-Bauweise für Untergeschosse', 'Stützenraster für flexible Grundrisse', 'Holzrahmenbau, wo er gefordert ist'],
+  },
+  {
+    titel: 'Innenausbau',
+    text: 'Trockenbau, Installationswände und Oberflächen — auch unter Auflagen, die über den Wohnungsbau hinausgehen. Im Klinikbau etwa hygienische Oberflächen und Brandschutz nach medizinischen Vorgaben.',
+    punkte: ['Trocken- und Innenausbau', 'Installationswände', 'Hygienische Oberflächen', 'Brandschutz nach Auflage'],
+  },
+  {
+    titel: 'Tiefbau',
+    text: 'Erd- und Gründungsarbeiten als Vorleistung zum eigenen Rohbau oder als eigenes Los. Bei laufendem Betrieb auf dem Grundstück abschnittsweise geplant.',
+    punkte: ['Erdarbeiten und Aushub', 'Gründung', 'Entwässerung', 'Bauen im Bestand'],
+  },
+];
+
+const objekte = [
+  {
+    ort: 'Hannover',
+    typ: 'Büro- und Verwaltungsgebäude',
+    kennzahl: '10.500 m² BGF · sechs Geschosse',
+    text: 'Zweiter Bauabschnitt des Komplexes City Gate Nord in Vahrenwald. Stahlbetonbauweise mit modernem Stützenraster, ausgelegt auf flexible Nutzung nach DGNB-Standards. Tiefbau, Rohbau und Innenausbau bei laufendem Betrieb des ersten Bauabschnitts, 2023–2025.',
+    bild: '/referenzen/hannover-citygate.webp',
+    alt: 'Fertiggestelltes Büro- und Verwaltungsgebäude mit Klinkerfassade und vertikaler Fensterordnung',
+    format: 'aspect-[4/3]',
+  },
+  {
+    ort: 'Stuttgart',
+    typ: 'Wohn- und Geschäftshaus',
+    kennzahl: '70 Wohneinheiten · 7 Obergeschosse, 3 Untergeschosse',
+    text: 'Innerstädtisches Objekt mit dreigeschossiger Tiefgarage. Stahlbetonbauweise über alle Geschosse, Untergeschosse in WU-Bauweise. Hohe Anforderungen an Schall- und Brandschutz, Rohbau und Innenausbau, 2019–2023.',
+    bild: '/referenzen/stuttgart-maybach.webp',
+    alt: 'Innerstädtisches Wohn- und Geschäftshaus über sieben Obergeschosse',
+    format: 'aspect-[2/3]',
+  },
+  {
+    ort: 'Braunschweig',
+    typ: 'Städtisches Klinikum',
+    kennzahl: 'Innenausbau Erdgeschoss bis 5. Obergeschoss',
+    text: 'Medizinisches Großprojekt samt Technikbereichen. Trockenbau, Installationswände, hygienische Oberflächen und Brandschutz unter strengen medizinischen Auflagen — eng getaktet mit Medizintechnik, HKLS und Elektro, 2021–2023.',
+    bild: '/referenzen/braunschweig-klinikum.webp',
+    alt: 'Innenausbau im Städtischen Klinikum Braunschweig',
+    format: 'aspect-[2/3]',
+  },
+  {
+    ort: 'Ronnenberg',
+    typ: 'Kindertagesstätte',
+    kennzahl: 'Holzrahmenbau auf WU-Betonbodenplatte · fünf Gruppen',
+    text: 'Neubau für die Stadt Ronnenberg. Eingeschossig, fünf Gruppenbereiche, Ruheräume und Spielflure. Rohbau und Innenausbau, 2022–2023 — ein Beispiel dafür, dass wir die Bauweise nach Ausschreibung wählen, nicht nach Vorliebe.',
+    bild: '/referenzen/ronnenberg-kita.webp',
+    alt: 'Neubau einer Kindertagesstätte mit farbiger Fassade',
+    format: 'aspect-[2/3]',
+  },
+];
+
+const argumente = [
+  {
+    titel: 'Mehrere Gewerke aus einer Hand',
+    text: 'Tiefbau, Rohbau und Innenausbau kommen bei uns aus demselben Betrieb. Das nimmt Schnittstellen aus Ihrem Bauzeitenplan — und damit die Nachträge, die an Schnittstellen entstehen.',
+  },
+  {
+    titel: 'Erfahrung mit Auflagen',
+    text: 'Klinikbau, öffentliche Auftraggeber, DGNB: Wir haben unter Auflagen gearbeitet, die über den Wohnungsbau hinausgehen, und kennen die Dokumentation, die dazugehört.',
+  },
+  {
+    titel: 'Bauen bei laufendem Betrieb',
+    text: 'Beim City Gate Nord lief der erste Bauabschnitt weiter, während der zweite entstand. Abschnittsweise Ausführung und Rücksicht auf Nutzer sind für uns Normalfall, nicht Ausnahme.',
+  },
+  {
+    titel: 'Feste Ansprechperson',
+    text: 'Sie haben eine Nummer für Angebot, Ausführung und Abrechnung. Keine Weiterleitung durch drei Abteilungen, wenn auf der Baustelle etwas kurzfristig geklärt werden muss.',
+  },
+];
+
+const faq = [
+  {
+    q: 'Arbeiten Sie auch als Nachunternehmer für Generalunternehmer?',
+    a: 'Ja. Neben dem eigenen Fertighausgeschäft übernehmen wir Rohbau, Innenausbau und Tiefbau als Nachunternehmer für Bauunternehmen und Generalunternehmer. Referenzen sind unter anderem der zweite Bauabschnitt des Büro- und Verwaltungskomplexes City Gate Nord in Hannover mit rund 10.500 m² Bruttogrundfläche, ein Wohn- und Geschäftshaus mit 70 Wohneinheiten in Stuttgart und der Innenausbau am Städtischen Klinikum Braunschweig.',
+  },
+  {
+    q: 'In welcher Bauweise arbeiten Sie?',
+    a: 'Im gewerblichen und öffentlichen Hochbau überwiegend in Stahlbetonbauweise, Untergeschosse und Tiefgaragen in WU-Bauweise. Wo die Ausschreibung Holzbau vorsieht, führen wir in Holzrahmenbauweise aus — etwa bei der Kindertagesstätte in Ronnenberg. Die Bauweise richtet sich nach dem Projekt, nicht nach unserer Vorliebe.',
+  },
+  {
+    q: 'Welche Objektgrößen übernehmen Sie?',
+    a: 'Die bisherigen Objekte reichen von einer eingeschossigen Kindertagesstätte bis zu einem Verwaltungsbau mit rund 10.500 m² Bruttogrundfläche über sechs Geschosse und einem Wohn- und Geschäftshaus mit sieben Ober- und drei Untergeschossen. Ob ein konkretes Vorhaben passt, klären wir am schnellsten anhand der Leistungsbeschreibung.',
+  },
+  {
+    q: 'Wie kommen wir an ein Angebot?',
+    a: 'Senden Sie uns die Leistungsbeschreibung oder das Leistungsverzeichnis samt Terminrahmen. Wir melden uns mit Rückfragen und einem Preis zu den ausgeschriebenen Positionen. Für kurzfristige Anfragen erreichen Sie uns direkt telefonisch.',
+  },
+];
+
+const titel = 'Rohbau, Innenausbau und Tiefbau als Nachunternehmer';
+const beschreibung =
+  'EcoBau GmbH als Nachunternehmer für Bauunternehmen: Rohbau in Stahlbeton, Innenausbau und Tiefbau für Wohn-, Büro-, Gewerbe- und öffentliche Bauten. Referenzen bis 10.500 m² BGF.';
+---
+
+<BaseLayout
+  title={titel}
+  description={beschreibung}
+  breadcrumbs={[{ name: 'Bauleistungen', href: '/bauleistungen/' }]}
+  jsonLd={[buildFaqJsonLd(faq.map((f) => ({ q: f.q, a: f.a })))]}
+>
+  <section class="container-site pt-12 pb-(--spacing-section-sm) lg:pt-16">
+    <Breadcrumbs items={[{ name: 'Bauleistungen', href: '/bauleistungen/' }]} class="mb-10" />
+
+    <div class="grid gap-x-8 gap-y-8 lg:grid-cols-12">
+      <h1 class="font-display text-hero font-medium lg:col-span-7">
+        Wir bauen nicht nur Fertighäuser.
+      </h1>
+      <p class="prose-measure self-end text-body text-muted lg:col-span-4 lg:col-start-9">
+        Rohbau, Innenausbau und Tiefbau — als Nachunternehmer für Bauunternehmen und
+        Generalunternehmer. Wohnungsbau, Verwaltungsbau, Gewerbe und öffentliche Hand.
+      </p>
+    </div>
+  </section>
+
+  <!-- Aufmacher: das größte eigene Objekt -->
+  <section class="container-site pb-(--spacing-section)">
+    <Figure
+      src="/referenzen/hannover-citygate.webp"
+      alt="Büro- und Verwaltungskomplex City Gate Nord in Hannover, sechs Geschosse mit Klinkerfassade"
+      ratio="aspect-[16/9]"
+      sizes="100vw"
+      eager
+      reveal={false}
+    />
+    <p class="mt-4 text-small text-muted">
+      City Gate Nord, Hannover · rund 10.500 m² Bruttogrundfläche über sechs Geschosse ·
+      Tiefbau, Rohbau und Innenausbau
+    </p>
+  </section>
+
+  <!-- Gewerke -->
+  <section class="bg-stone py-(--spacing-section)">
+    <div class="container-site">
+      <SectionIntro
+        title="Was wir übernehmen"
+        lead="Drei Gewerke, die sich ergänzen. Wo mehrere davon zusammen vergeben werden, entfallen die Schnittstellen, an denen sonst Termine und Nachträge entstehen."
+      />
+      <div class="mt-12 grid gap-x-8 gap-y-12 lg:grid-cols-3">
+        {gewerke.map((g) => (
+          <div class="reveal">
+            <h3 class="font-display text-title font-medium">{g.titel}</h3>
+            <p class="prose-measure mt-4 text-body text-muted">{g.text}</p>
+            <ul class="mt-6 space-y-2 border-t border-line pt-5 text-small text-muted">
+              {g.punkte.map((p) => <li>{p}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Objekte -->
+  <section class="container-site py-(--spacing-section)">
+    <SectionIntro
+      title="Ausgeführte Objekte"
+      lead="Auszug aus den zuletzt fertiggestellten Bauvorhaben, mit Größenordnung und Leistungsumfang."
+    />
+    <div class="mt-12 grid gap-y-(--spacing-section-sm)">
+      {objekte.map((o, i) => (
+        <article class="grid gap-x-8 gap-y-6 lg:grid-cols-12 lg:items-center">
+          <Figure
+            src={o.bild}
+            alt={o.alt}
+            ratio={o.format}
+            sizes={o.format === 'aspect-[4/3]' ? '(min-width: 1024px) 56vw, 100vw' : '(min-width: 1024px) 32vw, 100vw'}
+            reveal
+            zoom
+            class={[
+              o.format === 'aspect-[4/3]' ? 'lg:col-span-7' : 'lg:col-span-4',
+              i % 2 === 1 && 'lg:order-2 lg:col-start-8',
+            ].filter(Boolean).join(' ')}
+          />
+          <div class:list={['reveal', i % 2 === 1 ? 'lg:col-span-5 lg:col-start-1 lg:row-start-1' : 'lg:col-span-4 lg:col-start-9']}>
+            <p class="font-display text-title font-medium">
+              {o.ort} <span class="text-muted">· {o.typ}</span>
+            </p>
+            <p class="mt-2 text-small text-oxide">{o.kennzahl}</p>
+            <p class="prose-measure mt-4 text-body text-muted">{o.text}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- Argumente -->
+  <section class="bg-stone py-(--spacing-section)">
+    <div class="container-site">
+      <SectionIntro
+        title="Warum mit uns"
+        lead="Was für einen Generalunternehmer zählt, ist selten dasselbe wie für einen privaten Bauherrn."
+      />
+      <div class="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2">
+        {argumente.map((a) => (
+          <div class="reveal border-t border-line pt-6">
+            <h3 class="font-display text-title font-medium">{a.titel}</h3>
+            <p class="prose-measure mt-3 text-body text-muted">{a.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Fragen -->
+  <section class="container-site py-(--spacing-section)">
+    <SectionIntro title="Häufige Fragen" />
+    <div class="mt-10">
+      <FaqAccordion items={faq} />
+    </div>
+  </section>
+
+  <!-- Abschluss -->
+  <section class="bg-graphite py-(--spacing-section) text-paper">
+    <div class="container-site">
+      <div class="grid gap-x-8 gap-y-8 lg:grid-cols-12">
+        <h2 class="font-display text-display font-medium lg:col-span-7">
+          Schicken Sie uns die Leistungsbeschreibung.
+        </h2>
+        <div class="lg:col-span-4 lg:col-start-9">
+          <p class="prose-measure text-body text-paper-muted">
+            Wir melden uns mit Rückfragen und einem Preis zu den ausgeschriebenen
+            Positionen. Für kurzfristige Anfragen erreichen Sie uns direkt telefonisch.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <Button href="/kontakt/" variant="primary">Anfrage senden</Button>
+            <Button href={`tel:${SITE.contact.phone}`} variant="inverted" arrow={false}>
+              {SITE.contact.phoneDisplay}
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

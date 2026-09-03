@@ -107,6 +107,9 @@ const organizationLd = {
           ['Mehrfamilienhaus', 'Mehrfamilienhäuser in Holztafelbauweise als Fertighaus.'],
           ['Tiny House', 'Kompakte Häuser im Effizienzhaus-40-Standard.'],
           ['Modulhaus', 'Werkseitig vorgefertigte, erweiterbare Modulhäuser.'],
+          ['Rohbau', 'Rohbauarbeiten in Stahlbetonbauweise für Wohn-, Büro-, Gewerbe- und öffentliche Bauten, als Nachunternehmer für Bauunternehmen.'],
+          ['Innenausbau', 'Trockenbau, Installationswände und Oberflächen, auch unter medizinischen und brandschutztechnischen Auflagen.'],
+          ['Tiefbau', 'Erd-, Gründungs- und Entwässerungsarbeiten, auch bei laufendem Betrieb.'],
         ].map(([name, beschreibung]) => ({
           '@type': 'Offer',
           itemOffered: { '@type': 'Service', name, description: beschreibung },
@@ -119,6 +122,11 @@ const organizationLd = {
         'Effizienzhaus 40',
         'Individuelle Architektenhäuser',
         'KfW-Förderung',
+        'Rohbau',
+        'Stahlbetonbau',
+        'Innenausbau',
+        'Tiefbau',
+        'Nachunternehmerleistungen',
       ],
     },
     {

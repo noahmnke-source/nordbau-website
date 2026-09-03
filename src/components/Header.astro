@@ -19,6 +19,7 @@ const home = localize('/', lang);
 const navDefs: { key: Parameters<typeof t>[0]; path: string }[] = [
   { key: 'nav.home', path: '/' },
   { key: 'nav.haustypen', path: '/haustypen/' },
+  ...(lang === 'de' ? [{ key: 'nav.bauleistungen' as const, path: '/bauleistungen/' }] : []),
   { key: 'nav.referenzen', path: '/referenzen/' },
   { key: 'nav.ablauf', path: '/ablauf/' },
   { key: 'nav.ueberuns', path: '/ueber-uns/' },

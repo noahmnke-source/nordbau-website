@@ -73,7 +73,7 @@ const faq = [
        davor. Genau solche in sich geschlossenen Absaetze zitieren
        KI-Antwortsysteme und Googles Uebersicht mit KI. */
     q: 'Was macht die EcoBau GmbH?',
-    a: 'Die EcoBau GmbH ist ein Fertighaus-Hersteller aus Hannover. Wir planen und bauen schlüsselfertige und individuell geplante Einfamilienhäuser, Bungalows, Mehrfamilienhäuser und Tiny Houses in Holztafelbauweise – bundesweit. Die Wand-, Decken- und Dachelemente entstehen witterungsunabhängig im Werk und werden auf dem Grundstück montiert. Jedes Haus erfüllt ab Werk den Effizienzhaus-40-Standard und ist damit KfW-förderfähig. Zum Angebot gehören eine Festpreisgarantie über zwölf Monate ab Vertragsabschluss und 30 Jahre Garantie auf die Baukonstruktion. Der Betrieb ist seit 1994 am Bau tätig.',
+    a: 'Die EcoBau GmbH ist ein Fertighaus-Hersteller aus Hannover. Wir planen und bauen schlüsselfertige und individuell geplante Einfamilienhäuser, Bungalows, Mehrfamilienhäuser und Tiny Houses in Holztafelbauweise – bundesweit. Die Wand-, Decken- und Dachelemente entstehen witterungsunabhängig im Werk und werden auf dem Grundstück montiert. Jedes Haus erfüllt ab Werk den Effizienzhaus-40-Standard und ist damit KfW-förderfähig. Zum Angebot gehören eine Festpreisgarantie über zwölf Monate ab Vertragsabschluss und 30 Jahre Garantie auf die Baukonstruktion. Der Betrieb ist seit 1994 am Bau tätig. Neben dem Hausbau übernimmt EcoBau Rohbau, Innenausbau und Tiefbau als Nachunternehmer für Bauunternehmen — darunter Verwaltungs-, Wohn- und Klinikbauten in Stahlbetonbauweise.',
   },
   {
     q: 'Was kostet ein Fertighaus von EcoBau?',
@@ -101,7 +101,7 @@ const faq = [
 <BaseLayout
   title={`Fertighaus schlüsselfertig bauen – individuell geplant | ${SITE.name}`}
   fullTitle
-  description="Individuell geplante Fertighäuser in Holztafelbauweise: schlüsselfertig, Effizienzhaus 40, 12 Monate Festpreisgarantie. Bundesweit. Jetzt Beratung vereinbaren."
+  description="Individuell geplante Fertighäuser in Holztafelbauweise: schlüsselfertig, Effizienzhaus 40, 12 Monate Festpreisgarantie. Dazu Rohbau, Innenausbau und Tiefbau als Nachunternehmer für Bauunternehmen."
   heroOverlay
   jsonLd={[buildFaqJsonLd(faq)]}
 >
@@ -285,6 +285,44 @@ const faq = [
         Offene Wohnküche, Projekt „Haus am Hang“ – 178 m², bezogen nach sieben Monaten.
       </p>
       <a href="/referenzen/" class="link-line text-small font-medium">Alle Referenzen ansehen</a>
+    </div>
+  </section>
+
+  <!-- Zweites Standbein: Bauleistungen als Nachunternehmer -->
+  <section class="bg-stone py-(--spacing-section)">
+    <div class="container-site">
+      <div class="grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-center">
+        <Figure
+          src="/referenzen/hannover-citygate.webp"
+          alt="Büro- und Verwaltungskomplex City Gate Nord in Hannover, sechs Geschosse in Stahlbetonbauweise"
+          ratio="aspect-[4/3]"
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          reveal
+          zoom
+          class="lg:col-span-6"
+        />
+        <div class="reveal lg:col-span-5 lg:col-start-8">
+          <h2 class="font-display text-display font-medium">
+            Und wir bauen nicht nur Fertighäuser.
+          </h2>
+          <div class="prose-measure mt-6 space-y-5 text-body text-muted">
+            <p>
+              Neben dem Hausbau übernehmen wir Rohbau, Innenausbau und Tiefbau als
+              Nachunternehmer für Bauunternehmen und Generalunternehmer — in
+              Stahlbetonbauweise ebenso wie in Holzrahmenbau.
+            </p>
+            <p>
+              Zuletzt entstanden so ein Verwaltungsbau mit rund 10.500 m²
+              Bruttogrundfläche in Hannover, ein Wohn- und Geschäftshaus mit 70
+              Wohneinheiten in Stuttgart und der Innenausbau am Städtischen Klinikum
+              Braunschweig.
+            </p>
+          </div>
+          <div class="mt-8">
+            <Button href="/bauleistungen/" variant="secondary">Zu den Bauleistungen</Button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
