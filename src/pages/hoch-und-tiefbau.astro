@@ -18,18 +18,18 @@ import { buildFaqJsonLd } from '@/lib/seo';
 
 const gewerke = [
   {
-    titel: 'Hochbau und Rohbau',
-    text: 'Schlüsselfertiger Hochbau ebenso wie der reine Rohbau: Fundamente, Stützen, Decken und Wände in Stahlbetonbauweise, für Wohn-, Büro- und Gewerbeobjekte. Untergeschosse und Tiefgaragen in wasserundurchlässiger Bauweise.',
-    punkte: ['Hochbau schlüsselfertig oder als Los', 'Stahlbetonbauweise', 'WU-Bauweise für Untergeschosse', 'Holzrahmenbau, wo er gefordert ist'],
+    titel: 'Hochbau',
+    text: 'Der Rohbau in Stahlbetonbauweise: Fundamente, Stützen, Decken und Wände für Wohn-, Büro- und Gewerbeobjekte. Untergeschosse und Tiefgaragen in wasserundurchlässiger Bauweise.',
+    punkte: ['Rohbau in Stahlbeton', 'WU-Bauweise für Untergeschosse', 'Stützenraster für flexible Grundrisse', 'Holzrahmenbau, wo er gefordert ist'],
   },
   {
-    titel: 'Innenausbau',
-    text: 'Trockenbau, Installationswände und Oberflächen — auch unter Auflagen, die über den Wohnungsbau hinausgehen. Im Klinikbau etwa hygienische Oberflächen und Brandschutz nach medizinischen Vorgaben.',
+    titel: 'Schlüsselfertigbau',
+    text: 'Rohbau und sämtliche Ausbaugewerke aus einer Hand, koordiniert bis zur Übergabe. Auch unter Auflagen, die über den Wohnungsbau hinausgehen — im Klinikbau etwa hygienische Oberflächen und Brandschutz nach medizinischen Vorgaben.',
     punkte: ['Trocken- und Innenausbau', 'Installationswände', 'Hygienische Oberflächen', 'Brandschutz nach Auflage'],
   },
   {
     titel: 'Tiefbau',
-    text: 'Erd- und Gründungsarbeiten als Vorleistung zum eigenen Rohbau oder als eigenes Los. Bei laufendem Betrieb auf dem Grundstück abschnittsweise geplant.',
+    text: 'Erd- und Gründungsarbeiten als Vorleistung zum eigenen Hochbau oder als eigenes Los. Bei laufendem Betrieb auf dem Grundstück abschnittsweise geplant.',
     punkte: ['Erdarbeiten und Aushub', 'Gründung', 'Entwässerung', 'Bauen im Bestand'],
   },
 ];
@@ -76,7 +76,7 @@ const objekte = [
 const argumente = [
   {
     titel: 'Mehrere Gewerke aus einer Hand',
-    text: 'Tiefbau, Hochbau und Innenausbau kommen bei uns aus demselben Betrieb. Das nimmt Schnittstellen aus Ihrem Bauzeitenplan — und damit die Nachträge, die an Schnittstellen entstehen.',
+    text: 'Tiefbau, Hochbau und Ausbau kommen bei uns aus demselben Betrieb. Das nimmt Schnittstellen aus Ihrem Bauzeitenplan — und damit die Nachträge, die an Schnittstellen entstehen.',
   },
   {
     titel: 'Erfahrung mit Auflagen',
@@ -95,7 +95,7 @@ const argumente = [
 const faq = [
   {
     q: 'Arbeiten Sie auch als Nachunternehmer für Generalunternehmer?',
-    a: 'Ja. Neben dem eigenen Fertighausgeschäft übernehmen wir Hochbau, Rohbau, Innenausbau und Tiefbau als Nachunternehmer für Bauunternehmen und Generalunternehmer. Referenzen sind unter anderem der zweite Bauabschnitt des Büro- und Verwaltungskomplexes City Gate Nord in Hannover mit rund 10.500 m² Bruttogrundfläche, ein Wohn- und Geschäftshaus mit 70 Wohneinheiten in Stuttgart und der Innenausbau am Städtischen Klinikum Braunschweig.',
+    a: 'Ja. Neben dem eigenen Fertighausgeschäft übernehmen wir Hochbau, Schlüsselfertigbau und Tiefbau als Nachunternehmer für Bauunternehmen und Generalunternehmer. Referenzen sind unter anderem der zweite Bauabschnitt des Büro- und Verwaltungskomplexes City Gate Nord in Hannover mit rund 10.500 m² Bruttogrundfläche, ein Wohn- und Geschäftshaus mit 70 Wohneinheiten in Stuttgart und der Innenausbau am Städtischen Klinikum Braunschweig.',
   },
   {
     q: 'In welcher Bauweise arbeiten Sie?',
@@ -111,26 +111,26 @@ const faq = [
   },
 ];
 
-const titel = 'Hochbau, Rohbau und Innenausbau als Nachunternehmer';
+const titel = 'Hoch- und Tiefbau – Rohbau und Schlüsselfertigbau als Nachunternehmer';
 const beschreibung =
-  'EcoBau GmbH als Nachunternehmer für Bauunternehmen: Hochbau und Rohbau in Stahlbeton, Innenausbau und Tiefbau für Wohn-, Büro-, Gewerbe- und öffentliche Bauten. Referenzen bis 10.500 m² BGF.';
+  'EcoBau GmbH als Nachunternehmer für Bauunternehmen: Hochbau und Rohbau in Stahlbetonbauweise, Schlüsselfertigbau und Tiefbau für Wohn-, Büro-, Gewerbe- und öffentliche Bauten. Referenzen bis 10.500 m² BGF.';
 ---
 
 <BaseLayout
   title={titel}
   description={beschreibung}
-  breadcrumbs={[{ name: 'Bauleistungen', href: '/bauleistungen/' }]}
+  breadcrumbs={[{ name: 'Hoch- & Tiefbau', href: '/hoch-und-tiefbau/' }]}
   jsonLd={[buildFaqJsonLd(faq.map((f) => ({ q: f.q, a: f.a })))]}
 >
   <section class="container-site pt-12 pb-(--spacing-section-sm) lg:pt-16">
-    <Breadcrumbs items={[{ name: 'Bauleistungen', href: '/bauleistungen/' }]} class="mb-10" />
+    <Breadcrumbs items={[{ name: 'Hoch- & Tiefbau', href: '/hoch-und-tiefbau/' }]} class="mb-10" />
 
     <div class="grid gap-x-8 gap-y-8 lg:grid-cols-12">
       <h1 class="font-display text-hero font-medium lg:col-span-7">
         Wir bauen nicht nur Fertighäuser.
       </h1>
       <p class="prose-measure self-end text-body text-muted lg:col-span-4 lg:col-start-9">
-        Hochbau, Rohbau, Innenausbau und Tiefbau — als Nachunternehmer für Bauunternehmen
+        Hochbau, Schlüsselfertigbau und Tiefbau — als Nachunternehmer für Bauunternehmen
         und Generalunternehmer. Wohnungsbau, Verwaltungsbau, Gewerbe und öffentliche Hand.
       </p>
     </div>

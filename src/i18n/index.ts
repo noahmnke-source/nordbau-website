@@ -50,7 +50,7 @@ export const ui = {
   de: {
     'nav.home': 'Startseite',
     'nav.haustypen': 'Haustypen',
-    'nav.bauleistungen': 'Bauleistungen',
+    'nav.bauleistungen': 'Hoch- & Tiefbau',
     'nav.referenzen': 'Referenzen',
     'nav.ablauf': 'Ablauf',
     'nav.ueberuns': 'Über uns',

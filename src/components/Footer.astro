@@ -21,7 +21,7 @@ const year = new Date().getFullYear();
 
 const navDefs: { key: Parameters<typeof t>[0]; path: string }[] = [
   { key: 'nav.haustypen', path: '/haustypen/' },
-  ...(lang === 'de' ? [{ key: 'nav.bauleistungen' as const, path: '/bauleistungen/' }] : []),
+  ...(lang === 'de' ? [{ key: 'nav.bauleistungen' as const, path: '/hoch-und-tiefbau/' }] : []),
   { key: 'nav.referenzen', path: '/referenzen/' },
   { key: 'nav.ablauf', path: '/ablauf/' },
   { key: 'nav.ueberuns', path: '/ueber-uns/' },
