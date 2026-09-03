@@ -18,9 +18,9 @@ import { buildFaqJsonLd } from '@/lib/seo';
 
 const gewerke = [
   {
-    titel: 'Rohbau',
-    text: 'Stahlbetonbau für Wohn-, Büro- und Gewerbeobjekte: Fundamente, Stützen, Decken und Wände. Auch in wasserundurchlässiger Bauweise für Untergeschosse und Tiefgaragen.',
-    punkte: ['Stahlbetonbauweise', 'WU-Bauweise für Untergeschosse', 'Stützenraster für flexible Grundrisse', 'Holzrahmenbau, wo er gefordert ist'],
+    titel: 'Hochbau und Rohbau',
+    text: 'Schlüsselfertiger Hochbau ebenso wie der reine Rohbau: Fundamente, Stützen, Decken und Wände in Stahlbetonbauweise, für Wohn-, Büro- und Gewerbeobjekte. Untergeschosse und Tiefgaragen in wasserundurchlässiger Bauweise.',
+    punkte: ['Hochbau schlüsselfertig oder als Los', 'Stahlbetonbauweise', 'WU-Bauweise für Untergeschosse', 'Holzrahmenbau, wo er gefordert ist'],
   },
   {
     titel: 'Innenausbau',
@@ -76,7 +76,7 @@ const objekte = [
 const argumente = [
   {
     titel: 'Mehrere Gewerke aus einer Hand',
-    text: 'Tiefbau, Rohbau und Innenausbau kommen bei uns aus demselben Betrieb. Das nimmt Schnittstellen aus Ihrem Bauzeitenplan — und damit die Nachträge, die an Schnittstellen entstehen.',
+    text: 'Tiefbau, Hochbau und Innenausbau kommen bei uns aus demselben Betrieb. Das nimmt Schnittstellen aus Ihrem Bauzeitenplan — und damit die Nachträge, die an Schnittstellen entstehen.',
   },
   {
     titel: 'Erfahrung mit Auflagen',
@@ -95,7 +95,7 @@ const argumente = [
 const faq = [
   {
     q: 'Arbeiten Sie auch als Nachunternehmer für Generalunternehmer?',
-    a: 'Ja. Neben dem eigenen Fertighausgeschäft übernehmen wir Rohbau, Innenausbau und Tiefbau als Nachunternehmer für Bauunternehmen und Generalunternehmer. Referenzen sind unter anderem der zweite Bauabschnitt des Büro- und Verwaltungskomplexes City Gate Nord in Hannover mit rund 10.500 m² Bruttogrundfläche, ein Wohn- und Geschäftshaus mit 70 Wohneinheiten in Stuttgart und der Innenausbau am Städtischen Klinikum Braunschweig.',
+    a: 'Ja. Neben dem eigenen Fertighausgeschäft übernehmen wir Hochbau, Rohbau, Innenausbau und Tiefbau als Nachunternehmer für Bauunternehmen und Generalunternehmer. Referenzen sind unter anderem der zweite Bauabschnitt des Büro- und Verwaltungskomplexes City Gate Nord in Hannover mit rund 10.500 m² Bruttogrundfläche, ein Wohn- und Geschäftshaus mit 70 Wohneinheiten in Stuttgart und der Innenausbau am Städtischen Klinikum Braunschweig.',
   },
   {
     q: 'In welcher Bauweise arbeiten Sie?',
@@ -111,9 +111,9 @@ const faq = [
   },
 ];
 
-const titel = 'Rohbau, Innenausbau und Tiefbau als Nachunternehmer';
+const titel = 'Hochbau, Rohbau und Innenausbau als Nachunternehmer';
 const beschreibung =
-  'EcoBau GmbH als Nachunternehmer für Bauunternehmen: Rohbau in Stahlbeton, Innenausbau und Tiefbau für Wohn-, Büro-, Gewerbe- und öffentliche Bauten. Referenzen bis 10.500 m² BGF.';
+  'EcoBau GmbH als Nachunternehmer für Bauunternehmen: Hochbau und Rohbau in Stahlbeton, Innenausbau und Tiefbau für Wohn-, Büro-, Gewerbe- und öffentliche Bauten. Referenzen bis 10.500 m² BGF.';
 ---
 
 <BaseLayout
@@ -130,8 +130,8 @@ const beschreibung =
         Wir bauen nicht nur Fertighäuser.
       </h1>
       <p class="prose-measure self-end text-body text-muted lg:col-span-4 lg:col-start-9">
-        Rohbau, Innenausbau und Tiefbau — als Nachunternehmer für Bauunternehmen und
-        Generalunternehmer. Wohnungsbau, Verwaltungsbau, Gewerbe und öffentliche Hand.
+        Hochbau, Rohbau, Innenausbau und Tiefbau — als Nachunternehmer für Bauunternehmen
+        und Generalunternehmer. Wohnungsbau, Verwaltungsbau, Gewerbe und öffentliche Hand.
       </p>
     </div>
   </section>
@@ -232,26 +232,4 @@ const beschreibung =
     </div>
   </section>
 
-  <!-- Abschluss -->
-  <section class="bg-graphite py-(--spacing-section) text-paper">
-    <div class="container-site">
-      <div class="grid gap-x-8 gap-y-8 lg:grid-cols-12">
-        <h2 class="font-display text-display font-medium lg:col-span-7">
-          Schicken Sie uns die Leistungsbeschreibung.
-        </h2>
-        <div class="lg:col-span-4 lg:col-start-9">
-          <p class="prose-measure text-body text-paper-muted">
-            Wir melden uns mit Rückfragen und einem Preis zu den ausgeschriebenen
-            Positionen. Für kurzfristige Anfragen erreichen Sie uns direkt telefonisch.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-4">
-            <Button href="/kontakt/" variant="primary">Anfrage senden</Button>
-            <Button href={`tel:${SITE.contact.phone}`} variant="inverted" arrow={false}>
-              {SITE.contact.phoneDisplay}
-            </Button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 </BaseLayout>
