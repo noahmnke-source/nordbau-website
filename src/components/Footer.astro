@@ -93,7 +93,18 @@ const nav = navDefs.map((n) => ({ label: t(n.key), href: localize(n.path, lang) 
   <!-- Rechtliches (Impressum/Datenschutz bleiben rechtlich auf Deutsch) -->
   <div class="border-t border-paper/10">
     <div class="container-site flex flex-wrap items-center justify-between gap-4 py-6 text-caption text-paper-muted">
-      <p>© {year} {SITE.legalName}. {t('footer.rights')}</p>
+      <p>
+        © {year} {SITE.legalName}. {t('footer.rights')}
+        <span class="ml-1 inline-block whitespace-nowrap">
+          {t('footer.madeBy')}{' '}
+          <a
+            href="https://manke-websolutions.de"
+            class="link-line text-paper"
+            rel="noopener"
+            target="_blank"
+          >Manke Websolutions</a>
+        </span>
+      </p>
       <ul class="flex flex-wrap gap-6">
         <li><a href="/impressum/" class="link-line">{t('footer.imprint')}</a></li>
         <li><a href="/datenschutz/" class="link-line">{t('footer.privacy')}</a></li>
