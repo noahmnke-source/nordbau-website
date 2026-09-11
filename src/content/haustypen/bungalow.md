@@ -40,4 +40,4 @@ Ein Bungalow hat viel Dachfläche und viel Außenwand im Verhältnis zur Wohnfl�
 
 ## Für wen der Bungalow gebaut ist
 
-Der Bungalow passt zu Paaren, die vorausschauend bauen, zu Familien, die das Leben auf einer Ebene schätzen, und zu allen, die eine Immobilie planen, die in dreißig Jahren noch trägt. Wer besonders kompakt und flächeneffizient denkt, findet im [Tiny House](/haustypen/tiny-house/) die kleinere Schwester; den Weg vom Entwurf zum verbindlichen Festpreisangebot beschreibt unser [Ablauf in fünf Schritten](/ablauf/).
+Der Bungalow passt zu Paaren, die vorausschauend bauen, zu Familien, die das Leben auf einer Ebene schätzen, und zu allen, die eine Immobilie planen, die in dreißig Jahren noch trägt. Wer besonders kompakt und flächeneffizient denkt, findet im [Tiny House](/haustypen/tiny-house/) die kleinere Schwester; den Weg vom Entwurf zum verbindlichen Festpreisangebot klären wir im [Beratungsgespräch](/kontakt/).

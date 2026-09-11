@@ -33,3 +33,16 @@
   to = "/hoch-und-tiefbau/:splat"
   status = 301
   force = true
+
+# /ablauf/ entfaellt; der naechste sinnvolle Schritt ist das Erstgespraech.
+[[redirects]]
+  from = "/ablauf/*"
+  to = "/kontakt/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/ablauf/*"
+  to = "/en/kontakt/"
+  status = 301
+  force = true

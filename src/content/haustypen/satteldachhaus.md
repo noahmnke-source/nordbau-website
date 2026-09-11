@@ -40,4 +40,4 @@ Im Erdgeschoss liegt das gemeinsame Leben – eine offene Wohnküche zum Garten,
 
 ## Für wen das Satteldachhaus gebaut ist
 
-Das Satteldachhaus passt zu Familien, die ihr Budget in Fläche und Ausstattung investieren wollen statt in aufwendige Geometrie. Wie jedes unserer Häuser wird es individuell geplant – vom Grundriss über die Fassade bis zur Bemusterung, beschrieben in unserem [Ablauf](/ablauf/). Für den Vergleich: Das [Flachdachhaus](/haustypen/flachdachhaus/) bietet zwei Vollgeschosse ganz ohne Schrägen, der [Bungalow](/haustypen/bungalow/) bringt alles auf eine Ebene.
+Das Satteldachhaus passt zu Familien, die ihr Budget in Fläche und Ausstattung investieren wollen statt in aufwendige Geometrie. Wie jedes unserer Häuser wird es individuell geplant – vom Grundriss über die Fassade bis zur Bemusterung. Für den Vergleich: Das [Flachdachhaus](/haustypen/flachdachhaus/) bietet zwei Vollgeschosse ganz ohne Schrägen, der [Bungalow](/haustypen/bungalow/) bringt alles auf eine Ebene.

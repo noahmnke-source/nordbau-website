@@ -76,7 +76,7 @@ Der Ablauf in vier Schritten:
 3. **Antrag stellen und Zusage abwarten:** Die Bank reicht den Antrag bei der KfW ein. Erst mit der Zusage steht die Förderung fest.
 4. **Bauvertrag unterschreiben:** Jetzt – und erst jetzt – binden Sie sich an Ihren Hausanbieter.
 
-Im [Ablauf von EcoBau](/ablauf/) liegt vor der Unterschrift ein Festpreisangebot mit vollständiger Bau- und Leistungsbeschreibung vor – exakt die Unterlagen, die Bank und Energieberater für den Antrag brauchen. Da das Angebot zwölf Monate gilt, entsteht kein Zeitdruck: Die Förderzusage kann in Ruhe eingeholt werden, ohne dass sich der Hauspreis bewegt.
+Bei uns liegt vor der Unterschrift ein Festpreisangebot mit vollständiger Bau- und Leistungsbeschreibung vor – exakt die Unterlagen, die Bank und Energieberater für den Antrag brauchen. Da das Angebot zwölf Monate gilt, entsteht kein Zeitdruck: Die Förderzusage kann in Ruhe eingeholt werden, ohne dass sich der Hauspreis bewegt.
 
 ## Fazit: Erst Förderzusage, dann Unterschrift
 

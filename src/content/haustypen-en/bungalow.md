@@ -40,4 +40,4 @@ A bungalow has a lot of roof area and a lot of exterior wall relative to its liv
 
 ## Who the bungalow is built for
 
-The bungalow suits couples building with foresight, families who value life on one level, and everyone planning a property that will still serve in thirty years. Anyone thinking especially compact and space-efficient will find the smaller sibling in the [Tiny House](/en/haustypen/tiny-house/); the path from design to a binding fixed-price offer is described in our [five-step process](/en/ablauf/).
+The bungalow suits couples building with foresight, families who value life on one level, and everyone planning a property that will still serve in thirty years. Anyone thinking especially compact and space-efficient will find the smaller sibling in the [Tiny House](/en/haustypen/tiny-house/); the path from design to a binding fixed-price offer is set out in a [consultation](/en/kontakt/).

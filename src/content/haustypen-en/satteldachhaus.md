@@ -40,4 +40,4 @@ The ground floor is where shared life happens – an open-plan kitchen facing th
 
 ## Who the gable-roof house is built for
 
-The gable-roof house suits families who want to invest their budget in area and specification rather than in elaborate geometry. Like every one of our homes, it is planned individually – from floor plan through facade to the fixture and finish selection, described in our [process](/en/ablauf/). For comparison: the [Flat-Roof House](/en/haustypen/flachdachhaus/) offers two full storeys entirely without slopes, and the [Bungalow](/en/haustypen/bungalow/) brings everything onto one level.
+The gable-roof house suits families who want to invest their budget in area and specification rather than in elaborate geometry. Like every one of our homes, it is planned individually – from floor plan through facade to the fixture and finish selection. For comparison: the [Flat-Roof House](/en/haustypen/flachdachhaus/) offers two full storeys entirely without slopes, and the [Bungalow](/en/haustypen/bungalow/) brings everything onto one level.

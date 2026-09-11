@@ -56,7 +56,7 @@ Kalkulieren Sie 15 bis 20 Prozent der Gesamtkosten zusätzlich für Baunebenkost
 - **Hausanschlüsse:** Strom, Wasser, Abwasser, Telekommunikation
 - **Versicherungen:** Bauherrenhaftpflicht und Bauleistungsversicherung
 
-Ein seriöser Anbieter weist diese Positionen transparent aus, bevor Sie unterschreiben. Bei EcoBau gehört der Budgetcheck inklusive Nebenkosten fest zum [Ablauf von Erstgespräch bis Übergabe](/ablauf/) – vor dem Entwurf, nicht danach.
+Ein seriöser Anbieter weist diese Positionen transparent aus, bevor Sie unterschreiben. Bei EcoBau gehört der Budgetcheck inklusive Nebenkosten fest dazu – vor dem Entwurf, nicht danach.
 
 ## Wie viel Grunderwerbsteuer zahlen Sie in Ihrem Bundesland?
 

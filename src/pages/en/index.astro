@@ -31,33 +31,6 @@ const haustypTeaser = [
   },
 ];
 
-const ablauf = [
-  {
-    nr: '01',
-    titel: 'Initial consultation',
-    text: 'Plot, budget, timeline – we listen and tell you honestly what is possible.',
-  },
-  {
-    nr: '02',
-    titel: 'Design & fixed price',
-    text: 'Your architect-designed plan with a binding fixed-price offer, guaranteed for 12 months.',
-  },
-  {
-    nr: '03',
-    titel: 'Fixture & finish selection',
-    text: 'One day at the selection centre: facade, floors, bathrooms – you decide at the material.',
-  },
-  {
-    nr: '04',
-    titel: 'Manufacturing in the factory',
-    text: 'Wall and ceiling elements are made weather-protected, to the millimetre, and inspected.',
-  },
-  {
-    nr: '05',
-    titel: 'On-site assembly & handover',
-    text: 'In around three days your house is up – the structural shell is built weather-protected in the factory beforehand.',
-  },
-];
 
 const zahlen = [
   { wert: `since ${SITE.foundingYear}`, label: `${YEARS_EXPERIENCE} years of experience in construction – from the timber-frame prefab home to the public building` },
@@ -280,37 +253,6 @@ const faq = [
     </div>
   </section>
 
-  <!-- Ablauf -->
-  <section class="container-site py-(--spacing-section) pt-0">
-    <div class="grid gap-x-8 gap-y-12 lg:grid-cols-12">
-      <div class="lg:col-span-4">
-        <h2 class="reveal font-display text-display font-medium">Into your own home in five steps</h2>
-        <p class="reveal prose-measure mt-6 text-body text-muted">
-          Building a house is a matter of trust. That is why our process is not fine print
-          but part of the offer – each step with a clear outcome.
-        </p>
-        <div class="reveal mt-8">
-          <Button href="/en/ablauf/" variant="secondary">The process in detail</Button>
-        </div>
-      </div>
-      <ol class="lg:col-span-7 lg:col-start-6">
-        {ablauf.map((schritt, i) => (
-          <li
-            class:list={[
-              'reveal grid grid-cols-[4rem_1fr] gap-x-6 border-line py-7',
-              i > 0 && 'border-t',
-            ]}
-          >
-            <span class="tnum font-display text-title text-oxide" aria-hidden="true">{schritt.nr}</span>
-            <div>
-              <h3 class="text-title font-medium">{schritt.titel}</h3>
-              <p class="prose-measure mt-2 text-small text-muted">{schritt.text}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
-    </div>
-  </section>
 
   <!-- Zahlen / Trust: Anthrazit-Drench, Register statt Stat-Karten -->
   <section class="bg-graphite py-(--spacing-section) text-paper">

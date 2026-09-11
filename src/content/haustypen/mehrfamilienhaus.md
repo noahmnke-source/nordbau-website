@@ -40,4 +40,4 @@ Was ein Mehrfamilienhaus vom Einfamilienhaus unterscheidet, sind die Anforderung
 
 ## Für wen das Mehrfamilienhaus gebaut ist
 
-Das Mehrfamilienhaus passt zu Bauherren mit Renditeabsicht, zu Familien, die mehrere Generationen unter einem Dach organisieren, und zu allen, die knappes Bauland maximal nutzen wollen. Den Weg von der Machbarkeit zum verbindlichen Festpreisangebot beschreibt unser [Ablauf in fünf Schritten](/ablauf/); für die individuelle Kalkulation vereinbaren Sie am besten ein [Beratungsgespräch](/kontakt/).
+Das Mehrfamilienhaus passt zu Bauherren mit Renditeabsicht, zu Familien, die mehrere Generationen unter einem Dach organisieren, und zu allen, die knappes Bauland maximal nutzen wollen. Den Weg von der Machbarkeit zum verbindlichen Festpreisangebot klären wir im Erstgespräch; für die individuelle Kalkulation vereinbaren Sie am besten ein [Beratungsgespräch](/kontakt/).

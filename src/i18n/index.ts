@@ -40,7 +40,7 @@ export function altPath(pathname: string, target: Lang): string {
 export function isBilingual(pathname: string): boolean {
   const de = toDePath(pathname);
   if (de === '/' || de === '/404/') return true;
-  return ['/haustypen/', '/ablauf/', '/ueber-uns/', '/referenzen/', '/kontakt/'].some((p) =>
+  return ['/haustypen/', '/ueber-uns/', '/referenzen/', '/kontakt/'].some((p) =>
     de.startsWith(p)
   );
 }
@@ -52,7 +52,6 @@ export const ui = {
     'nav.haustypen': 'Haustypen',
     'nav.bauleistungen': 'Hoch- & Tiefbau',
     'nav.referenzen': 'Referenzen',
-    'nav.ablauf': 'Ablauf',
     'nav.ueberuns': 'Über uns',
     'nav.ratgeber': 'Ratgeber',
     'nav.kontakt': 'Kontakt',
@@ -84,7 +83,6 @@ export const ui = {
     'nav.haustypen': 'House types',
     'nav.bauleistungen': 'Construction services',
     'nav.referenzen': 'Projects',
-    'nav.ablauf': 'Process',
     'nav.ueberuns': 'About us',
     'nav.ratgeber': 'Guide',
     'nav.kontakt': 'Contact',

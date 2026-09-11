@@ -31,33 +31,6 @@ const haustypTeaser = [
   },
 ];
 
-const ablauf = [
-  {
-    nr: '01',
-    titel: 'Erstgespräch',
-    text: 'Grundstück, Budget, Zeitplan – wir hören zu und sagen ehrlich, was geht.',
-  },
-  {
-    nr: '02',
-    titel: 'Entwurf & Festpreis',
-    text: 'Ihr Architektenentwurf mit verbindlichem Festpreisangebot, 12 Monate garantiert.',
-  },
-  {
-    nr: '03',
-    titel: 'Bemusterung',
-    text: 'Ein Tag im Bemusterungszentrum: Fassade, Böden, Bäder – Sie entscheiden am Material.',
-  },
-  {
-    nr: '04',
-    titel: 'Fertigung im Werk',
-    text: 'Wand- und Deckenelemente entstehen witterungsgeschützt, millimetergenau, geprüft.',
-  },
-  {
-    nr: '05',
-    titel: 'Montage & Übergabe',
-    text: 'In rund drei Tagen steht Ihr Haus – der Rohbau entsteht davor witterungsgeschützt im Werk.',
-  },
-];
 
 const zahlen = [
   { wert: `seit ${SITE.foundingYear}`, label: `${YEARS_EXPERIENCE} Jahre Erfahrung am Bau – vom Fertighaus in Holztafelbauweise bis zum öffentlichen Gebäude` },
@@ -366,38 +339,7 @@ const faq = [
   </section>
 
 
-  <!-- Ablauf -->
-  <section class="container-site py-(--spacing-section) pt-0">
-    <div class="grid gap-x-8 gap-y-12 lg:grid-cols-12">
-      <div class="lg:col-span-4">
-        <h2 class="reveal font-display text-display font-medium">In fünf Schritten ins eigene Haus</h2>
-        <p class="reveal prose-measure mt-6 text-body text-muted">
-          Hausbau ist Vertrauenssache. Deshalb ist unser Ablauf kein Kleingedrucktes,
-          sondern Teil des Angebots – jeder Schritt mit klarem Ergebnis.
-        </p>
-        <div class="reveal mt-8">
-          <Button href="/ablauf/" variant="secondary">Den Ablauf im Detail</Button>
-        </div>
-      </div>
-      <ol class="lg:col-span-7 lg:col-start-6">
-        {ablauf.map((schritt, i) => (
-          <li
-            class:list={[
-              'reveal grid grid-cols-[4rem_1fr] gap-x-6 border-line py-7',
-              i > 0 && 'border-t',
-            ]}
-          >
-            <span class="tnum font-display text-title text-oxide" aria-hidden="true">{schritt.nr}</span>
-            <div>
-              <h3 class="text-title font-medium">{schritt.titel}</h3>
-              <p class="prose-measure mt-2 text-small text-muted">{schritt.text}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
-    </div>
-  </section>
-
+  
   <!-- Zahlen / Trust: Anthrazit-Drench, Register statt Stat-Karten -->
   <section class="bg-graphite py-(--spacing-section) text-paper">
     <div class="container-site">

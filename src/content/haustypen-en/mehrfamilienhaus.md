@@ -40,4 +40,4 @@ What distinguishes a multi-family house from a single-family home are the requir
 
 ## Who the multi-family house is built for
 
-The multi-family house suits owner-builders with an eye on returns, families organising several generations under one roof, and everyone who wants to make the most of scarce building land. The path from feasibility to a binding fixed-price offer is described in our [five-step process](/en/ablauf/); for an individual calculation, it is best to arrange a [consultation](/en/kontakt/).
+The multi-family house suits owner-builders with an eye on returns, families organising several generations under one roof, and everyone who wants to make the most of scarce building land. The path from feasibility to a binding fixed-price offer is set out in the first consultation; for an individual calculation, it is best to arrange a [consultation](/en/kontakt/).

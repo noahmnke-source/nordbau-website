@@ -37,7 +37,7 @@ Beim Massivhaus wird jede Wand vor Ort gemauert oder betoniert. Vom Baubeginn bi
 | Haus steht wetterfest | nach rund 3 Tagen Montage | nach mehreren Monaten Rohbauzeit |
 | Witterungsrisiko | minimal (Fertigung im Werk) | erheblich (Bau vor Ort) |
 
-Diese Differenz ist bares Geld: Wer während des Baus zur Miete wohnt und parallel die Finanzierung bedient, zahlt beim Massivhaus viele Monate länger doppelt. Und weil die Fertigung im Werk planbar ist, steht der Montagetermin beim Fertighaus verbindlich fest – wie das konkret organisiert ist, zeigt der [Ablauf vom Erstgespräch bis zur Übergabe](/ablauf/).
+Diese Differenz ist bares Geld: Wer während des Baus zur Miete wohnt und parallel die Finanzierung bedient, zahlt beim Massivhaus viele Monate länger doppelt. Und weil die Fertigung im Werk planbar ist, steht der Montagetermin beim Fertighaus verbindlich fest, sobald die Fertigung beginnt.
 
 ## Welche Bauweise hat die bessere CO₂-Bilanz?
 
