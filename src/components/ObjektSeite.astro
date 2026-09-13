@@ -7,6 +7,7 @@
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import Button from '@/components/Button.astro';
 import Figure from '@/components/Figure.astro';
+import { isProjektBild, projektSrcset } from '@/lib/img';
 import Prose from '@/components/Prose.astro';
 import SectionIntro from '@/components/SectionIntro.astro';
 import FaqAccordion from '@/components/FaqAccordion.astro';
@@ -98,6 +99,8 @@ for (const b of katalog) {
 }
 const zeigeFilter = gruppen.length > 1;
 
+const heroSrcset = isProjektBild(hero.src) ? projektSrcset(hero.src) : undefined;
+
 const kontakt = localize('/kontakt/', lang);
 const wegPfad = localize('/weg-zum-traumhaus/', lang);
 
@@ -107,30 +110,42 @@ const wegPfad = localize('/weg-zum-traumhaus/', lang);
 const breadcrumbs = [{ name, href: eigenerPfad }];
 ---
 
-<!-- Seitenkopf -->
-<section class="container-site pt-12 lg:pt-16">
-  <Breadcrumbs items={breadcrumbs} class="mb-10" />
-  <div class="grid gap-x-8 lg:grid-cols-12">
-    <div class="lg:col-span-8">
-      <h1 class="font-display text-hero font-medium">{name}</h1>
-      <p class="mt-5 font-display text-title font-medium text-muted">{tagline}</p>
+<!-- Hero: Bild vollflaechig, Text darauf – wie auf der Startseite -->
+<section class="relative flex min-h-[62svh] flex-col justify-end bg-graphite text-paper lg:min-h-[72svh]">
+  <div class="absolute inset-0 overflow-hidden">
+    <img
+      src={hero.src}
+      srcset={heroSrcset}
+      sizes="100vw"
+      alt={hero.alt}
+      class="h-full w-full object-cover"
+      loading="eager"
+      decoding="sync"
+      fetchpriority="high"
+    />
+    <!-- Scrim: unten dichter, damit Ueberschrift und Vorlauf sicher lesbar bleiben -->
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-graphite/85 via-graphite/35 to-graphite/25"
+      aria-hidden="true"
+    >
+    </div>
+  </div>
+
+  <div class="container-site relative pt-36 pb-14 lg:pb-20">
+    <Breadcrumbs items={breadcrumbs} onDark class="hero-line mb-7" />
+    <div class="grid gap-x-8 lg:grid-cols-12">
+      <div class="lg:col-span-9">
+        <h1 class="hero-line font-display text-hero font-medium">{name}</h1>
+        <p
+          class="hero-line prose-measure mt-5 font-display text-title font-medium text-paper/85"
+          style="--line-delay: 140ms"
+        >
+          {tagline}
+        </p>
+      </div>
     </div>
   </div>
 </section>
-
-<!-- Hero-Bild -->
-<div class="mt-10 lg:mt-14">
-  <Figure
-    src={hero.src}
-    alt={hero.alt}
-    ratio="aspect-[3/2] sm:aspect-[21/9]"
-    sizes="100vw"
-    eager
-    reveal={false}
-    parallax={0.05}
-    class="w-full"
-  />
-</div>
 
 <!-- Fließtext + Kennwerte -->
 <section class="container-site pt-14 pb-(--spacing-section) lg:pt-20">
@@ -345,3 +360,29 @@ const breadcrumbs = [{ name, href: eigenerPfad }];
     });
   });
 </script>
+
+<style>
+  /* Hero-Zeilen laufen beim Laden von unten ein – gleiche Bewegung wie auf der
+     Startseite, dort ist die Regel im Seiten-Stylesheet definiert. */
+  .hero-line {
+    animation: hero-rise 0.8s var(--ease-out-expo) both;
+    animation-delay: var(--line-delay, 0ms);
+  }
+
+  @keyframes hero-rise {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-line {
+      animation: none;
+    }
+  }
+</style>

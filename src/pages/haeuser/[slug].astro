@@ -37,6 +37,7 @@ const geschwister = alle
   fullTitle
   description={d.seoDescription}
   ogImage={new URL(d.hero.src, SITE.url).href}
+  heroOverlay
   breadcrumbs={[{ name: d.name, href: pfad }]}
   jsonLd={d.faq.length > 0 ? [buildFaqJsonLd(d.faq)] : []}
   hideFooterCta
