@@ -18,7 +18,7 @@ katalog:
   - src: "/bau/mehrfamilienhaeuser/mfh-staffelgeschoss-1600.webp"
     alt: "Three-storey apartment building with dark façade, timber elements and a set-back top floor"
     caption: "Set-back top floor with roof terraces across the full width."
-  - src: "/referenzen/stuttgart-maybach.webp"
+  - src: "/projekte/referenzen/stuttgart-maybach.webp"
     alt: "Residential and commercial building in Stuttgart with seven upper floors in an inner-city location"
     caption: "Stuttgart: residential and commercial building, 70 dwellings across seven upper floors, three-level underground car park, commercial units at the base. Shell and fit-out."
 daten:

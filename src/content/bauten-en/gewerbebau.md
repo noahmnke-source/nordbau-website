@@ -3,16 +3,16 @@ name: Commercial buildings
 tagline: Offices, administration, hospitality. Buildings that have to work.
 order: 2
 hero:
-  src: "/referenzen/hannover-citygate.webp"
+  src: "/projekte/referenzen/hannover-citygate.webp"
   alt: "City Gate Nord office and administration complex in Hanover-Vahrenwald across six storeys"
 katalog:
-  - src: "/referenzen/hannover-citygate.webp"
+  - src: "/projekte/referenzen/hannover-citygate.webp"
     alt: "City Gate Nord office and administration complex in Hanover across six storeys"
     caption: "Hanover: second phase of the City Gate Nord administration complex, around 10,500 m² gross floor area across six storeys. Groundworks, shell and fit-out while phase one stayed in use."
-  - src: "/referenzen/zuerich-hotel.webp"
+  - src: "/projekte/referenzen/zuerich-hotel.webp"
     alt: "Three-storey hotel building with an HPL and timber façade surrounded by nature"
     caption: "Zurich: hotel across three levels with 16 rooms and 650 m² total area, façade in HPL and timber."
-  - src: "/referenzen/prishtina-verwaltung.webp"
+  - src: "/projekte/referenzen/prishtina-verwaltung.webp"
     alt: "Single-storey commercial building with a showroom to the street and large display windows"
     caption: "Pristina: commercial building with 105 m² usable area – showroom to the street, kitchen, storage and sanitary areas behind."
   - src: "/bau/gewerbebau/gewerbe-modulbuero-1600.webp"

@@ -27,6 +27,10 @@
   force = true
 
 # ── Neustrukturierung 2026 ───────────────────────────────────
+# Bewusst OHNE `force`: Die alten Seiten liegen nicht mehr im Build, die
+# Weiterleitung greift also ohnehin. Mit `force` wuerden diese Regeln auch
+# echte Dateien in denselben Pfaden schlucken – so sind unter /referenzen/
+# liegende Bilder als HTML-Seite ausgeliefert worden statt als Bild.
 # "Haustypen" heisst jetzt "Haeuser", Satteldach- und Flachdachhaus sind im
 # Einfamilienhaus aufgegangen, das Mehrfamilienhaus ist in den Wohn- und
 # Gewerbebau gewandert. Die alten Adressen sind teils indexiert, deshalb
@@ -35,43 +39,36 @@
   from = "/haustypen/satteldachhaus/*"
   to = "/haeuser/einfamilienhaus/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/haustypen/flachdachhaus/*"
   to = "/haeuser/einfamilienhaus/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/haustypen/tiny-house/*"
   to = "/haeuser/tiny-haus/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/haustypen/mehrfamilienhaus/*"
   to = "/wohn-und-gewerbebau/mehrfamilienhaeuser/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/haustypen/bungalow/*"
   to = "/haeuser/bungalow/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/haustypen/modulhaus/*"
   to = "/haeuser/modulhaus/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/haustypen/*"
   to = "/haeuser/einfamilienhaus/"
   status = 301
-  force = true
 
 # Die Referenzseite ist entfallen; die Projekte stehen jetzt im Katalog der
 # jeweiligen Haus- und Bauart.
@@ -79,79 +76,66 @@
   from = "/referenzen/*"
   to = "/haeuser/einfamilienhaus/"
   status = 301
-  force = true
 
 # Hoch- und Tiefbau ist im Wohn- und Gewerbebau aufgegangen.
 [[redirects]]
   from = "/hoch-und-tiefbau/*"
   to = "/wohn-und-gewerbebau/gewerbebau/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/bauleistungen/*"
   to = "/wohn-und-gewerbebau/gewerbebau/"
   status = 301
-  force = true
 
 # /ablauf/ ist durch die ausfuehrliche Ablaufseite ersetzt worden.
 [[redirects]]
   from = "/ablauf/*"
   to = "/weg-zum-traumhaus/"
   status = 301
-  force = true
 
 # ── Englische Entsprechungen ─────────────────────────────────
 [[redirects]]
   from = "/en/haustypen/satteldachhaus/*"
   to = "/en/haeuser/einfamilienhaus/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/en/haustypen/flachdachhaus/*"
   to = "/en/haeuser/einfamilienhaus/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/en/haustypen/tiny-house/*"
   to = "/en/haeuser/tiny-haus/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/en/haustypen/mehrfamilienhaus/*"
   to = "/en/wohn-und-gewerbebau/mehrfamilienhaeuser/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/en/haustypen/bungalow/*"
   to = "/en/haeuser/bungalow/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/en/haustypen/modulhaus/*"
   to = "/en/haeuser/modulhaus/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/en/haustypen/*"
   to = "/en/haeuser/einfamilienhaus/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/en/referenzen/*"
   to = "/en/haeuser/einfamilienhaus/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/en/ablauf/*"
   to = "/en/weg-zum-traumhaus/"
   status = 301
-  force = true

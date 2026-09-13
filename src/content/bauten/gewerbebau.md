@@ -3,16 +3,16 @@ name: Gewerbebau
 tagline: Büro, Verwaltung, Beherbergung. Gebäude, die arbeiten müssen.
 order: 2
 hero:
-  src: "/referenzen/hannover-citygate.webp"
+  src: "/projekte/referenzen/hannover-citygate.webp"
   alt: "Büro- und Verwaltungskomplex City Gate Nord in Hannover-Vahrenwald über sechs Geschosse"
 katalog:
-  - src: "/referenzen/hannover-citygate.webp"
+  - src: "/projekte/referenzen/hannover-citygate.webp"
     alt: "Büro- und Verwaltungskomplex City Gate Nord in Hannover über sechs Geschosse"
     caption: "Hannover: zweiter Bauabschnitt des Verwaltungskomplexes City Gate Nord, rund 10.500 m² BGF über sechs Geschosse. Tiefbau, Rohbau und Innenausbau bei laufendem Betrieb des ersten Abschnitts."
-  - src: "/referenzen/zuerich-hotel.webp"
+  - src: "/projekte/referenzen/zuerich-hotel.webp"
     alt: "Dreigeschossiges Hotelgebäude mit Fassade aus HPL und Holz, umgeben von Natur"
     caption: "Zürich: Hotel über drei Ebenen mit 16 Zimmern und 650 m² Gesamtfläche, Fassade aus HPL und Holz."
-  - src: "/referenzen/prishtina-verwaltung.webp"
+  - src: "/projekte/referenzen/prishtina-verwaltung.webp"
     alt: "Eingeschossiger Gewerbebau mit Showroom zur Straße und großen Schaufenstern"
     caption: "Prishtina: Gewerbebau mit 105 m² Nutzfläche – Showroom zur Straße, dahinter Küche, Lager und Sanitärbereich."
   - src: "/bau/gewerbebau/gewerbe-modulbuero-1600.webp"

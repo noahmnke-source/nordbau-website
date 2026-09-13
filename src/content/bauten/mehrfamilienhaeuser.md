@@ -18,7 +18,7 @@ katalog:
   - src: "/bau/mehrfamilienhaeuser/mfh-staffelgeschoss-1600.webp"
     alt: "Dreigeschossiges Mehrfamilienhaus mit dunkler Fassade, Holzelementen und zurückgesetztem Obergeschoss"
     caption: "Zurückgesetztes Obergeschoss mit Dachterrassen über die volle Breite."
-  - src: "/referenzen/stuttgart-maybach.webp"
+  - src: "/projekte/referenzen/stuttgart-maybach.webp"
     alt: "Wohn- und Geschäftshaus in Stuttgart mit sieben Obergeschossen in innerstädtischer Lage"
     caption: "Stuttgart: Wohn- und Geschäftshaus, 70 Wohneinheiten über sieben Obergeschossen, dreigeschossige Tiefgarage, Gewerbe im Sockel. Rohbau und Innenausbau."
 daten:
