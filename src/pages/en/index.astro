@@ -73,15 +73,18 @@ const faq = [
   <!-- Hero -->
   <VideoHero poster={IMG.heroHome}>
     <div class="max-w-3xl">
-      <h1 class="hero-line font-display text-hero font-medium">
-        We build houses. And buildings.
+      <!-- Two lines as separate blocks so each sentence wraps on its own
+           and both rise in slightly offset. -->
+      <h1 class="font-display text-hero font-medium">
+        <span class="hero-line block">Your home. Individually designed.</span>
+        <span class="hero-line block" style="--line-delay: 120ms">Your project. Whatever the scale.</span>
       </h1>
-      <p class="hero-line prose-measure mt-6 text-body text-paper/85" style="--line-delay: 180ms">
+      <p class="hero-line prose-measure mt-6 text-body text-paper/85" style="--line-delay: 280ms">
         {SITE.legalName} from {SITE.contact.city} — turnkey prefab homes in timber-frame
         construction, plus apartment buildings, commercial buildings and facilities for
         education and care. A family business since {SITE.foundingYear}.
       </p>
-      <div class="hero-line mt-10 flex flex-wrap items-center gap-6" style="--line-delay: 320ms">
+      <div class="hero-line mt-10 flex flex-wrap items-center gap-6" style="--line-delay: 420ms">
         <Button href="/en/kontakt/" variant="primary">Book a consultation</Button>
         <a href="/en/haeuser/einfamilienhaus/" class="link-line text-small font-medium text-paper">
           See the designs

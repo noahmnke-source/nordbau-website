@@ -81,15 +81,18 @@ const faq = [
   <!-- Hero -->
   <VideoHero poster={IMG.heroHome}>
     <div class="max-w-3xl">
-      <h1 class="hero-line font-display text-hero font-medium">
-        Wir bauen Häuser. Und Gebäude.
+      <!-- Zwei Zeilen als eigene Bloecke: so bricht jeder Satz fuer sich um
+           und beide laufen leicht versetzt ein. -->
+      <h1 class="font-display text-hero font-medium">
+        <span class="hero-line block">Ihr Haus. Individuell geplant.</span>
+        <span class="hero-line block" style="--line-delay: 120ms">Ihr Projekt. Egal wie groß.</span>
       </h1>
-      <p class="hero-line prose-measure mt-6 text-body text-paper/85" style="--line-delay: 180ms">
+      <p class="hero-line prose-measure mt-6 text-body text-paper/85" style="--line-delay: 280ms">
         {SITE.legalName} aus {SITE.contact.city} — schlüsselfertige Fertighäuser in
         Holztafelbauweise, dazu Mehrfamilienhäuser, Gewerbebauten und Gebäude für
         Bildung und Soziales. Familienbetrieb seit {SITE.foundingYear}.
       </p>
-      <div class="hero-line mt-10 flex flex-wrap items-center gap-6" style="--line-delay: 320ms">
+      <div class="hero-line mt-10 flex flex-wrap items-center gap-6" style="--line-delay: 420ms">
         <Button href="/kontakt/" variant="primary">Beratung vereinbaren</Button>
         <a href="/haeuser/einfamilienhaus/" class="link-line text-small font-medium text-paper">
           Entwürfe ansehen
