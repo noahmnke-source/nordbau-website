@@ -60,10 +60,13 @@ const {
 
 const de = lang === 'de';
 const T = {
-  katalogTitel: de ? 'Entwürfe aus unserer Fertigung' : 'Designs from our production',
+  // Der Katalog zeigt je nach Seite Visualisierungen, gebaute Projekte oder
+  // beides – die Ueberschrift muss deshalb fuer Haeuser wie fuer Kitas und
+  // Gewerbebauten stimmen.
+  katalogTitel: de ? 'Was wir planen und bauen' : 'What we design and build',
   katalogLead: de
-    ? 'Gebaute und geplante Entwürfe als Anschauung – kein Bestellkatalog. Jedes Haus wird für sein Grundstück neu gezeichnet.'
-    : 'Built and planned designs shown as inspiration – not an order catalogue. Every building is drawn anew for its site.',
+    ? 'Gebaute und geplante Projekte als Anschauung – kein Bestellkatalog. Jedes Projekt wird für sein Grundstück neu gezeichnet.'
+    : 'Built and planned projects shown as inspiration – not an order catalogue. Every project is drawn anew for its site.',
   innenTitel: de ? 'Innen' : 'Inside',
   innenLead: de
     ? 'Oberflächen, Einbauten und Raumzuschnitt planen wir gemeinsam mit Ihnen.'
@@ -231,7 +234,7 @@ const breadcrumbs = [{ name, href: eigenerPfad }];
 
 <!-- Innenaufnahmen -->
 {innen.length > 0 && (
-  <section class="container-site py-(--spacing-section)">
+  <section class="container-site pt-(--spacing-section)">
     <SectionIntro title={T.innenTitel} lead={T.innenLead} />
     <div class="mt-14 grid gap-x-8 gap-y-12 lg:grid-cols-12">
       {innen.map((bild, i) => (
@@ -255,7 +258,7 @@ const breadcrumbs = [{ name, href: eigenerPfad }];
 
 <!-- FAQ -->
 {faq.length > 0 && (
-  <section class="container-site pb-(--spacing-section)">
+  <section class="container-site py-(--spacing-section)">
     <SectionIntro title={T.faqTitel} />
     <div class="mt-14 grid gap-12 lg:grid-cols-12">
       <div class="lg:col-span-8">
