@@ -68,6 +68,10 @@ export const IMG = {
     src: '/werk/werk-abbund-1600.webp',
     alt: 'Mitarbeiter beim Abbinden eines Deckenelements in der Fertigungshalle',
   },
+  werkFenster: {
+    src: '/werk/werk-fensterband-1600.webp',
+    alt: 'Fertiges Wandelement mit eingebautem Fensterband in der Produktionshalle',
+  },
   werkFassade: {
     src: '/werk/werk-fassadenrost-1600.webp',
     alt: 'Fassadenunterkonstruktion aus Holz an einem Wandelement in der Halle',
@@ -77,10 +81,6 @@ export const IMG = {
   montage: {
     src: '/projekte/montage-kranarbeiten-1600.webp',
     alt: 'Montage auf der Baustelle: Ein Autokran setzt vorgefertigte Elemente auf die Bodenplatte, zwei Monteure arbeiten auf der Decke',
-  },
-  richtarbeiten: {
-    src: '/werk/montage-wandelement-1600.webp',
-    alt: 'Monteure richten ein vorgefertigtes Wandelement auf der Bodenplatte aus',
   },
   kranModul: {
     src: '/werk/montage-kran-modul-1600.webp',
