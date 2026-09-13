@@ -4,7 +4,6 @@
  * Herzstück ist das Katalograster: eine Karte je Entwurf, aufgebaut wie ein
  * Musterbuch – Bild, kurze Beschreibung dessen, was zu sehen ist, sonst nichts.
  */
-import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import Button from '@/components/Button.astro';
 import Figure from '@/components/Figure.astro';
 import { isProjektBild, projektSrcset } from '@/lib/img';
@@ -40,7 +39,6 @@ interface Props {
   merkmale: { titel: string; text: string }[];
   faq: { q: string; a: string }[];
   gruppeLabel: string;
-  eigenerPfad: string;
   geschwister: Geschwister[];
 }
 
@@ -55,7 +53,6 @@ const {
   merkmale,
   faq,
   gruppeLabel,
-  eigenerPfad,
   geschwister,
 } = Astro.props;
 
@@ -104,10 +101,9 @@ const heroSrcset = isProjektBild(hero.src) ? projektSrcset(hero.src) : undefined
 const kontakt = localize('/kontakt/', lang);
 const wegPfad = localize('/weg-zum-traumhaus/', lang);
 
-// Die Menuegruppen ("Haeuser", "Wohn- und Gewerbebau") sind reine Klappmenues
-// ohne eigene Seite. Eine Brotkrume darauf waere ein toter Link, deshalb
-// steht hier nur die Seite selbst.
-const breadcrumbs = [{ name, href: eigenerPfad }];
+// Sichtbar erscheinen keine Brotkrumen mehr; die Liste wird nur noch fuer die
+// BreadcrumbList im Seitenkopf gebraucht, die BaseLayout aus derselben Angabe
+// erzeugt. Deshalb bleibt sie hier bestehen.
 ---
 
 <!-- Hero: Bild vollflaechig, Text darauf – wie auf der Startseite -->
@@ -132,7 +128,6 @@ const breadcrumbs = [{ name, href: eigenerPfad }];
   </div>
 
   <div class="container-site relative pt-36 pb-14 lg:pb-20">
-    <Breadcrumbs items={breadcrumbs} onDark class="hero-line mb-7" />
     <div class="grid gap-x-8 lg:grid-cols-12">
       <div class="lg:col-span-9">
         <h1 class="hero-line font-display text-hero font-medium">{name}</h1>
