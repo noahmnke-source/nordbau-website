@@ -3,8 +3,8 @@ title: "Fertighaus oder Massivhaus: Der ehrliche Vergleich 2026"
 description: "Preis pro m², Bauzeit, CO₂-Bilanz, Lebensdauer und Wiederverkauf im direkten Vergleich – und eine sachliche Einordnung der oft zitierten Fertighaus-Nachteile."
 pubDate: 2026-06-09
 hero:
-  src: "https://images.unsplash.com/photo-1676802037786-3697d60497ae?auto=format&fit=crop&w=1600&q=80"
-  alt: "Dachstuhl im Holzrahmenbau: präzise gefügte Sparren und Binder vor blauem Himmel"
+  src: "/werk/werk-deckenelement-1600.webp"
+  alt: "Deckenelement in Holzbauweise auf dem Montagetisch der Fertigungshalle"
   standIn: true
 seoTitle: "Fertighaus oder Massivhaus? Der Vergleich 2026 | EcoBau"
 seoDescription: "Fertighaus oder Massivhaus 2026: Rohbau in rund 20 Tagen im Werk statt Monaten auf der Baustelle, bessere CO₂-Bilanz, gleiche Lebensdauer. Der ehrliche Vergleich."
@@ -70,7 +70,7 @@ Wer „Fertighaus Nachteile“ sucht, findet viel Pauschales. Drei Punkte verdie
 
 **Schallschutz braucht Planung.** Eine Holztafelwand ist leichter als eine Ziegelwand – gegen Luft- und Trittschall arbeitet beim Massivhaus schlicht die Masse. Im modernen Holztafelbau übernehmen das mehrschalige Wandaufbauten, entkoppelte Deckenkonstruktionen und beschwerte Bodenaufbauten. Das funktioniert nachweislich gut, ist aber eine Frage der Ausführungsqualität: Fragen Sie beim Anbietervergleich gezielt nach den Schallschutzwerten der Trenndecken und -wände.
 
-**Sie binden sich an einen Anbieter.** Planung, Fertigung und Montage liegen beim Fertighaus in einer Hand – das ist die Grundlage für Festpreis und kurze Bauzeit, bedeutet aber auch: Die Anbieterwahl ist die wichtigste Entscheidung des Projekts. Prüfen Sie vor der Unterschrift Bau- und Leistungsbeschreibung, Bauvertrag nach BGB, Bürgschaften – und gebaute Projekte. Unsere [Referenzen mit dokumentierter Bauzeit](/referenzen/) zeigen, woran Sie uns messen können.
+**Sie binden sich an einen Anbieter.** Planung, Fertigung und Montage liegen beim Fertighaus in einer Hand – das ist die Grundlage für Festpreis und kurze Bauzeit, bedeutet aber auch: Die Anbieterwahl ist die wichtigste Entscheidung des Projekts. Prüfen Sie vor der Unterschrift Bau- und Leistungsbeschreibung, Bauvertrag nach BGB, Bürgschaften – und gebaute Projekte. Wie ein Vorhaben bei uns abläuft und wer wofür zuständig ist, steht Schritt für Schritt unter [Der Weg zu Ihrem Traumhaus](/weg-zum-traumhaus/).
 
 **Der Ruf älterer Baujahre.** Fertighäuser der 1960er- und 1970er-Jahre hatten teils reale Probleme mit Feuchte und Schadstoffen – daher stammt das hartnäckige Image. Mit heutiger Fertigung hat das nichts mehr zu tun: technisch getrocknetes Konstruktionsvollholz, diffusionsoffene Wandaufbauten, dokumentierte Qualitätsprüfung jedes Elements im Werk. Wer beides besichtigt, erkennt den Unterschied sofort.
 
@@ -84,4 +84,4 @@ Ehrlich ist aber auch die Kehrseite: Beim Fertighaus fallen Entscheidungen früh
 
 Beim Preis entscheidet 2026 nicht mehr die Bauweise, sondern Ausstattung und Planung – die Spannen überlappen sich fast vollständig. Das Fertighaus gewinnt bei der Bauzeit deutlich – der Rohbau entsteht in rund 20 Tagen im Werk und wird in etwa drei Tagen montiert, statt monatelang auf der Baustelle zu wachsen –, dazu bei Termin- und Preissicherheit sowie CO₂-Bilanz; das Massivhaus punktet beim konstruktiv einfacheren Schallschutz und bei maximaler Flexibilität für spätere Umbauten. Lebensdauer und Wiederverkaufswert sind bei beiden eine Frage von Qualität, Lage und Energieeffizienz – nicht des Wandaufbaus. Alle Zahlen in diesem Artikel: Stand 07/2026.
 
-Ob unsere Bauweise zu Ihrem Projekt passt, klären Sie am besten am konkreten Entwurf: Die [Haustypen von EcoBau](/haustypen/) zeigen, was im Holztafelbau architektonisch möglich ist. Und in einem unverbindlichen [Beratungsgespräch](/kontakt/) vergleichen wir beide Bauweisen offen anhand Ihrer Anforderungen – mit Zahlen, nicht mit Meinungen.
+Ob unsere Bauweise zu Ihrem Projekt passt, klären Sie am besten am konkreten Entwurf: Die [Entwürfe für Einfamilienhäuser](/haeuser/einfamilienhaus/) zeigen, was im Holztafelbau architektonisch möglich ist. Und in einem unverbindlichen [Beratungsgespräch](/kontakt/) vergleichen wir beide Bauweisen offen anhand Ihrer Anforderungen – mit Zahlen, nicht mit Meinungen.

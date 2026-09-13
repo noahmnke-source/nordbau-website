@@ -1,12 +1,15 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
-/** Bildreferenz: Unsplash-Stand-in oder lokales Projektfoto (siehe ASSETS.md) */
+/** Bildreferenz. Alle Fotos und Visualisierungen stammen aus dem eigenen Werk. */
 const imageRef = z.object({
   src: z.string(),
   alt: z.string(),
-  /** true = Stand-in, das später durch ein echtes Projektfoto ersetzt wird */
-  standIn: z.boolean().default(false),
+  /** Bildunterschrift im Katalograster – beschreibt, was zu sehen ist. */
+  caption: z.string().optional(),
+  /** Filtergruppe im Katalog, z. B. "Satteldach". Erst ab zwei verschiedenen
+   *  Gruppen erscheint die Filterleiste. */
+  gruppe: z.string().optional(),
 });
 
 const faqItem = z.object({
@@ -14,38 +17,50 @@ const faqItem = z.object({
   a: z.string(),
 });
 
-const haustypenSchema = z.object({
+/**
+ * Gemeinsames Schema für Häuser (privat) und Wohn-/Gewerbebau. Beide Gruppen
+ * unterscheiden sich nur in den Kennwerten, deshalb ist `daten` eine freie
+ * Liste aus Bezeichnung und Wert statt eines festen Objekts.
+ */
+const objektSchema = z.object({
   name: z.string(),
-  /** Kurzer Untertitel, z. B. "Zwei Vollgeschosse. Klare Kante." */
+  /** Kurzer Untertitel unter der Überschrift */
   tagline: z.string(),
-  /** Filtergruppe für den Katalog-Filter der Übersicht */
-  kategorie: z.enum(['Eine Ebene', 'Mit Dach', 'Modern & Modular', 'Mehrfamilien']),
+  /** Reihenfolge im Menü und in den Querverweisen */
   order: z.number(),
   hero: imageRef,
-  gallery: z.array(imageRef).default([]),
-  facts: z.object({
-    wohnflaeche: z.string(),
-    geschosse: z.string(),
-    dachform: z.string(),
-    bauweise: z.string().default('Holztafelbau, werkseitig vorgefertigt'),
-    energiestandard: z.string(),
-    /** Preise werden auf der Website bewusst nicht ausgewiesen (auf Anfrage) */
-    preisAb: z.string().optional(),
-  }),
+  /** Katalograster: eine Karte je Entwurf */
+  katalog: z.array(imageRef).default([]),
+  /** Optionale Innenaufnahmen als eigener Abschnitt */
+  innen: z.array(imageRef).default([]),
+  daten: z.array(z.object({ label: z.string(), wert: z.string() })).default([]),
+  /** Drei bis vier Merkmale, die den Typ ausmachen */
+  merkmale: z
+    .array(z.object({ titel: z.string(), text: z.string() }))
+    .default([]),
   seoTitle: z.string(),
   seoDescription: z.string(),
   faq: z.array(faqItem).default([]),
 });
 
-const haustypen = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/haustypen' }),
-  schema: haustypenSchema,
+const haeuser = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/haeuser' }),
+  schema: objektSchema,
 });
 
-/** Englische Haustypen (gleiche Slugs wie DE) – speist /en/haustypen. */
-const haustypenEn = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/haustypen-en' }),
-  schema: haustypenSchema,
+const haeuserEn = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/haeuser-en' }),
+  schema: objektSchema,
+});
+
+const bauten = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/bauten' }),
+  schema: objektSchema,
+});
+
+const bautenEn = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/bauten-en' }),
+  schema: objektSchema,
 });
 
 const ratgeber = defineCollection({
@@ -60,4 +75,4 @@ const ratgeber = defineCollection({
   }),
 });
 
-export const collections = { haustypen, haustypenEn, ratgeber };
+export const collections = { haeuser, haeuserEn, bauten, bautenEn, ratgeber };

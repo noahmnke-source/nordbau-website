@@ -1,6 +1,7 @@
 ---
 import Button from '@/components/Button.astro';
 import { SITE } from '@/config/site';
+import { getCollection } from 'astro:content';
 import { getLang, localize, altPath, isBilingual, useT } from '@/i18n';
 
 interface Props {
@@ -15,21 +16,52 @@ const t = useT(lang);
 
 const home = localize('/', lang);
 
-// Navigation je Sprache (EN ohne Ratgeber – der bleibt deutsch).
-const navDefs: { key: Parameters<typeof t>[0]; path: string }[] = [
-  { key: 'nav.home', path: '/' },
-  { key: 'nav.haustypen', path: '/haustypen/' },
-  ...(lang === 'de' ? [{ key: 'nav.bauleistungen' as const, path: '/hoch-und-tiefbau/' }] : []),
-  { key: 'nav.referenzen', path: '/referenzen/' },
-  { key: 'nav.ueberuns', path: '/ueber-uns/' },
-  ...(lang === 'de' ? [{ key: 'nav.ratgeber' as const, path: '/ratgeber/' }] : []),
+// Die beiden Klappmenüs speisen sich direkt aus den Inhaltsordnern – neue
+// Häuser oder Bauaufgaben erscheinen ohne Änderung an dieser Datei.
+const haeuser = (
+  lang === 'en' ? await getCollection('haeuserEn') : await getCollection('haeuser')
+).sort((a, b) => a.data.order - b.data.order);
+const bauten = (
+  lang === 'en' ? await getCollection('bautenEn') : await getCollection('bauten')
+).sort((a, b) => a.data.order - b.data.order);
+
+type NavEintrag =
+  | { art: 'link'; label: string; href: string }
+  | { art: 'gruppe'; id: string; label: string; basis: string; punkte: { label: string; href: string; hinweis: string }[] };
+
+const nav: NavEintrag[] = [
+  {
+    art: 'gruppe',
+    id: 'haeuser',
+    label: t('nav.haeuser'),
+    basis: localize('/haeuser/', lang),
+    punkte: haeuser.map((e) => ({
+      label: e.data.name,
+      href: localize(`/haeuser/${e.id}/`, lang),
+      hinweis: e.data.tagline,
+    })),
+  },
+  {
+    art: 'gruppe',
+    id: 'bauten',
+    label: t('nav.wohnGewerbe'),
+    basis: localize('/wohn-und-gewerbebau/', lang),
+    punkte: bauten.map((e) => ({
+      label: e.data.name,
+      href: localize(`/wohn-und-gewerbebau/${e.id}/`, lang),
+      hinweis: e.data.tagline,
+    })),
+  },
+  { art: 'link', label: t('nav.weg'), href: localize('/weg-zum-traumhaus/', lang) },
+  { art: 'link', label: t('nav.ueberuns'), href: localize('/ueber-uns/', lang) },
+  ...(lang === 'de'
+    ? [{ art: 'link' as const, label: t('nav.ratgeber'), href: '/ratgeber/' }]
+    : []),
 ];
-const nav = navDefs.map((n) => ({ label: t(n.key), href: localize(n.path, lang) }));
 
-// "/" (bzw. "/en/") darf nur exakt matchen, sonst wäre die Startseite überall aktiv.
 const isActive = (href: string) => path === href || (href !== home && path.startsWith(href));
+const gruppeAktiv = (basis: string) => path.startsWith(basis);
 
-// Sprachumschalter nur auf zweisprachigen Seiten.
 const showLangSwitch = isBilingual(path);
 const otherLang = lang === 'de' ? 'en' : 'de';
 const switchHref = altPath(path, otherLang);
@@ -44,7 +76,7 @@ const kontaktHref = localize('/kontakt/', lang);
     overlay ? 'fixed text-paper' : 'sticky border-b border-line bg-bg text-ink',
   ]}
 >
-  <div class="container-site flex h-20 items-center justify-between gap-8">
+  <div class="container-site flex h-20 items-center justify-between gap-6">
     <a href={home} class="site-logo block shrink-0" aria-label={`${SITE.legalName} – ${t('logo.aria')}`}>
       <img
         src="/logo-on-light.png"
@@ -64,25 +96,71 @@ const kontaktHref = localize('/kontakt/', lang);
     </a>
 
     <nav aria-label={t('nav.main')} class="hidden lg:block">
-      <ul class="flex items-center gap-6 xl:gap-8">
-        {nav.map((item) => (
-          <li>
-            <a
-              href={item.href}
-              aria-current={isActive(item.href) ? 'page' : undefined}
-              class:list={[
-                'link-line text-small font-medium',
-                isActive(item.href) && 'bg-[length:100%_1px]',
-              ]}
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
+      <ul class="flex items-center gap-5 xl:gap-7">
+        {nav.map((item) =>
+          item.art === 'link' ? (
+            <li>
+              <a
+                href={item.href}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+                class:list={[
+                  'link-line text-small font-medium whitespace-nowrap',
+                  isActive(item.href) && 'bg-[length:100%_1px]',
+                ]}
+              >
+                {item.label}
+              </a>
+            </li>
+          ) : (
+            <li class="menu-gruppe relative" data-menu={item.id}>
+              <button
+                type="button"
+                class:list={[
+                  'menu-knopf flex items-center gap-1.5 text-small font-medium whitespace-nowrap',
+                  gruppeAktiv(item.basis) && 'is-current',
+                ]}
+                aria-expanded="false"
+                aria-controls={`menu-${item.id}`}
+              >
+                <span class="menu-knopf-text">{item.label}</span>
+                <svg class="menu-pfeil h-2.5 w-2.5" viewBox="0 0 10 6" aria-hidden="true">
+                  <path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4" />
+                </svg>
+              </button>
+
+              <div
+                id={`menu-${item.id}`}
+                class="menu-panel absolute top-full left-1/2 z-10 w-[22rem] -translate-x-1/2 pt-4"
+                hidden
+              >
+                <ul class="border border-line bg-bg p-2 text-ink shadow-[0_18px_48px_-24px_rgb(0_0_0/0.35)]">
+                  {item.punkte.map((p, i) => (
+                    <li>
+                      <a
+                        href={p.href}
+                        class:list={[
+                          'menu-eintrag block px-4 py-3 transition-colors duration-200',
+                          isActive(p.href) && 'is-current',
+                        ]}
+                        style={`--eintrag-delay:${i * 35}ms`}
+                        aria-current={isActive(p.href) ? 'page' : undefined}
+                      >
+                        <span class="block font-display text-body font-medium">{p.label}</span>
+                        <span class="mt-0.5 block text-caption leading-snug text-muted">
+                          {p.hinweis}
+                        </span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          )
+        )}
       </ul>
     </nav>
 
-    <div class="hidden items-center gap-6 lg:flex">
+    <div class="hidden items-center gap-5 lg:flex">
       {showLangSwitch && (
         <a
           href={switchHref}
@@ -92,8 +170,6 @@ const kontaktHref = localize('/kontakt/', lang);
           {otherLang}
         </a>
       )}
-      <!-- Immer der gefüllte Akzent-Button: bleibt sichtbar, egal ob der
-           Header transparent über dem Hero oder weiß nach dem Scrollen ist. -->
       <Button href={kontaktHref} variant="primary" arrow={false} class="header-cta h-11 px-5">
         {t('cta')}
       </Button>
@@ -117,34 +193,82 @@ const kontaktHref = localize('/kontakt/', lang);
   </div>
 </header>
 
-<!-- Mobile-Menü: Vollbild in Graphite -->
+<!-- Mobile-Menü: Vollbild in Graphite, Gruppen als Ziehharmonika -->
 <div
   id="mobile-menu"
   class="pointer-events-none fixed inset-0 z-[var(--z-overlay)] bg-graphite text-paper opacity-0 transition-opacity duration-300 lg:hidden"
   tabindex="-1"
   hidden
 >
-  <!-- h-full + overflow-y-auto: passt der Inhalt nicht (kleine Displays),
-       wird gescrollt statt gestaucht. shrink-0 verhindert, dass Flexbox das
-       Nav zusammendrückt und der CTA-Block sich über die Links legt. -->
   <div class="container-site flex h-full flex-col overflow-y-auto overscroll-contain pt-28 pb-10">
     <nav aria-label={t('nav.mobile')} class="shrink-0">
-      <ul class="space-y-2">
+      <ul class="space-y-1">
+        <li
+          class="mobile-nav-item translate-y-4 opacity-0 transition-all duration-500 ease-[var(--ease-out-expo)]"
+          style="transition-delay: 80ms"
+        >
+          <a
+            href={home}
+            class:list={[
+              'mobile-nav-link font-display text-[2rem] leading-tight font-medium',
+              path === home && 'is-current',
+            ]}
+          >
+            {t('nav.home')}
+          </a>
+        </li>
         {nav.map((item, i) => (
           <li
             class="mobile-nav-item translate-y-4 opacity-0 transition-all duration-500 ease-[var(--ease-out-expo)]"
-            style={`transition-delay: ${80 + i * 50}ms`}
+            style={`transition-delay: ${130 + i * 50}ms`}
           >
-            <a
-              href={item.href}
-              class:list={[
-                'mobile-nav-link font-display text-[2.25rem] leading-tight font-medium',
-                isActive(item.href) && 'is-current',
-              ]}
-              aria-current={isActive(item.href) ? 'page' : undefined}
-            >
-              {item.label}
-            </a>
+            {item.art === 'link' ? (
+              <a
+                href={item.href}
+                class:list={[
+                  'mobile-nav-link font-display text-[2rem] leading-tight font-medium',
+                  isActive(item.href) && 'is-current',
+                ]}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            ) : (
+              <div class="mobil-gruppe" data-mobil-gruppe>
+                <button
+                  type="button"
+                  class="mobil-knopf flex w-full items-center justify-between gap-4 py-1 text-left"
+                  aria-expanded="false"
+                  aria-controls={`mobil-${item.id}`}
+                >
+                  <span class="font-display text-[2rem] leading-tight font-medium">
+                    {item.label}
+                  </span>
+                  <span class="mobil-plus relative block h-4 w-4 shrink-0" aria-hidden="true">
+                    <span class="absolute top-1/2 left-0 h-px w-full -translate-y-1/2 bg-current"></span>
+                    <span
+                      class="mobil-plus-strich absolute top-0 left-1/2 h-full w-px -translate-x-1/2 bg-current transition-transform duration-300"
+                    ></span>
+                  </span>
+                </button>
+                <ul id={`mobil-${item.id}`} class="mobil-liste space-y-3 overflow-hidden pl-1" hidden>
+                  {item.punkte.map((p) => (
+                    <li>
+                      <a
+                        href={p.href}
+                        class:list={[
+                          'mobil-eintrag link-line text-body text-paper-muted',
+                          isActive(p.href) && 'text-paper',
+                        ]}
+                        aria-current={isActive(p.href) ? 'page' : undefined}
+                      >
+                        {p.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </li>
         ))}
       </ul>
@@ -175,24 +299,81 @@ const kontaktHref = localize('/kontakt/', lang);
     border-bottom: 1px solid var(--color-line);
   }
 
-  /* Logo-Umschaltung: dunkles Logo auf hellem Grund, helles Logo auf dunklem.
-     Standard (weißer Header) zeigt die dunkle Variante. */
   .site-logo .logo-dark {
     display: none;
   }
-  /* Über dem Hero (transparent, noch nicht gescrollt): helle Variante */
   #site-header[data-overlay]:not(.is-scrolled) .site-logo .logo-light {
     display: none;
   }
   #site-header[data-overlay]:not(.is-scrolled) .site-logo .logo-dark {
     display: block;
   }
-  /* Bei geöffnetem Mobile-Menü ist der Grund dunkel: helle Variante */
   :global(html.menu-open) #site-header .site-logo .logo-light {
     display: none;
   }
   :global(html.menu-open) #site-header .site-logo .logo-dark {
     display: block;
+  }
+
+  /* ── Klappmenü (Desktop) ─────────────────────────────────────
+     Der Knopf trägt dieselbe wachsende Unterstreichung wie die
+     übrigen Navigationslinks – nur auf den Text, nicht auf den Pfeil. */
+  .menu-knopf-text {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% 1px;
+    transition: background-size 0.4s var(--ease-out-expo);
+    padding-bottom: 2px;
+  }
+  .menu-gruppe:hover .menu-knopf-text,
+  .menu-knopf:focus-visible .menu-knopf-text,
+  .menu-knopf[aria-expanded='true'] .menu-knopf-text,
+  .menu-knopf.is-current .menu-knopf-text {
+    background-size: 100% 1px;
+  }
+
+  .menu-pfeil {
+    transition: transform 0.3s var(--ease-out-expo);
+  }
+  .menu-knopf[aria-expanded='true'] .menu-pfeil {
+    transform: rotate(180deg);
+  }
+
+  /* Auf-/Zublenden: leicht angehoben und weich eingeblendet. */
+  .menu-panel {
+    opacity: 0;
+    transform: translate(-50%, -6px);
+    transition:
+      opacity 0.28s var(--ease-out-expo),
+      transform 0.28s var(--ease-out-expo);
+  }
+  .menu-panel.is-open {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  /* Die Einträge laufen gestaffelt nach – der Effekt, der ein Menü
+     wertig wirken lässt, ohne den Nutzer aufzuhalten. */
+  .menu-eintrag {
+    opacity: 0;
+    transform: translateY(4px);
+    transition:
+      opacity 0.3s var(--ease-out-expo),
+      transform 0.3s var(--ease-out-expo),
+      background-color 0.2s ease;
+    transition-delay: var(--eintrag-delay, 0ms);
+  }
+  .menu-panel.is-open .menu-eintrag {
+    opacity: 1;
+    transform: none;
+  }
+  .menu-eintrag:hover,
+  .menu-eintrag:focus-visible {
+    background: var(--color-stone);
+  }
+  .menu-eintrag.is-current {
+    background: var(--color-stone);
   }
 
   /* Menü offen: Icon wird zum X */
@@ -203,9 +384,6 @@ const kontaktHref = localize('/kontakt/', lang);
     transform: translateY(-5.5px) rotate(-45deg);
   }
 
-  /* Aktuelle Seite im Mobile-Menü: Unterstreichung im roten Akzent.
-     Sie wächst beim Aufklappen ein (mit der Staffelung der Links) und
-     ist ohne Motion einfach sofort da. */
   .mobile-nav-link.is-current {
     background-image: linear-gradient(var(--color-oxide), var(--color-oxide));
     background-repeat: no-repeat;
@@ -219,9 +397,22 @@ const kontaktHref = localize('/kontakt/', lang);
     background-size: 100% 3px;
   }
 
+  /* Ziehharmonika im Mobile-Menü */
+  .mobil-knopf[aria-expanded='true'] .mobil-plus-strich {
+    transform: translateX(-50%) scaleY(0);
+  }
+  .mobil-liste {
+    padding-top: 0.75rem;
+    padding-bottom: 0.25rem;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .mobile-nav-link.is-current {
       background-size: 100% 3px;
+      transition: none;
+    }
+    .menu-panel,
+    .menu-eintrag {
       transition: none;
     }
   }
@@ -235,9 +426,6 @@ const kontaktHref = localize('/kontakt/', lang);
     opacity: 1;
   }
 
-  /* Das Menü selbst bekommt beim Öffnen den Fokus (für Screenreader/Tastatur).
-     Es ist per tabindex="-1" nicht antippbar, daher hier bewusst kein
-     Fokusring – sonst läge ein roter Rahmen um den Container. */
   #mobile-menu:focus,
   #mobile-menu:focus-visible {
     outline: none;
@@ -246,11 +434,6 @@ const kontaktHref = localize('/kontakt/', lang);
   :global(html.menu-open) {
     overflow: hidden;
   }
-  /* Menü offen: Header wird transparent, damit der dunkle Menü-Grund
-     durchscheint und das helle Logo sichtbar bleibt. Der zweite Selektor
-     hat höhere Spezifität als `#site-header[data-overlay].is-scrolled` und
-     überschreibt so den weißen Scroll-Hintergrund (sonst weißes Logo auf
-     Weiß). Der Menü-Button bleibt über dem Overlay bedienbar. */
   :global(html.menu-open) #site-header,
   :global(html.menu-open) #site-header[data-overlay].is-scrolled {
     z-index: var(--z-modal);
@@ -272,7 +455,87 @@ const kontaktHref = localize('/kontakt/', lang);
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  // Mobile-Menü
+  // ── Klappmenüs im Desktop-Header ───────────────────────────────
+  // Zeigegeräte öffnen beim Überfahren, Tastatur und Touch per Klick.
+  // Ein kurzer Verzögerer beim Verlassen verhindert, dass das Menü
+  // zuklappt, während die Maus die Lücke zum Panel überquert.
+  const gruppen = Array.from(document.querySelectorAll<HTMLElement>('.menu-gruppe'));
+  const feinzeiger = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+  gruppen.forEach((gruppe) => {
+    const knopf = gruppe.querySelector<HTMLButtonElement>('.menu-knopf');
+    const panel = gruppe.querySelector<HTMLElement>('.menu-panel');
+    if (!knopf || !panel) return;
+    let schliessTimer = 0;
+
+    const setzen = (offen: boolean) => {
+      window.clearTimeout(schliessTimer);
+      knopf.setAttribute('aria-expanded', String(offen));
+      if (offen) {
+        gruppen.forEach((a) => {
+          if (a !== gruppe) a.dispatchEvent(new CustomEvent('menu:zu'));
+        });
+        panel.hidden = false;
+        requestAnimationFrame(() => panel.classList.add('is-open'));
+      } else {
+        panel.classList.remove('is-open');
+        schliessTimer = window.setTimeout(() => {
+          panel.hidden = true;
+        }, 280);
+      }
+    };
+
+    gruppe.addEventListener('menu:zu', () => setzen(false));
+
+    knopf.addEventListener('click', () => {
+      setzen(knopf.getAttribute('aria-expanded') !== 'true');
+    });
+
+    gruppe.addEventListener('mouseenter', () => {
+      if (feinzeiger.matches) setzen(true);
+    });
+    gruppe.addEventListener('mouseleave', () => {
+      if (!feinzeiger.matches) return;
+      window.clearTimeout(schliessTimer);
+      schliessTimer = window.setTimeout(() => setzen(false), 140);
+    });
+
+    // Tastatur: verlässt der Fokus die Gruppe, schließt das Menü.
+    gruppe.addEventListener('focusout', (e) => {
+      const ziel = e.relatedTarget as Node | null;
+      if (!ziel || !gruppe.contains(ziel)) setzen(false);
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    const offen = document.querySelector<HTMLElement>('.menu-gruppe .menu-knopf[aria-expanded="true"]');
+    if (offen) {
+      offen.closest('.menu-gruppe')?.dispatchEvent(new CustomEvent('menu:zu'));
+      offen.focus();
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    const ziel = e.target as Node;
+    gruppen.forEach((gruppe) => {
+      if (!gruppe.contains(ziel)) gruppe.dispatchEvent(new CustomEvent('menu:zu'));
+    });
+  });
+
+  // ── Ziehharmonika im Mobile-Menü ───────────────────────────────
+  document.querySelectorAll<HTMLElement>('[data-mobil-gruppe]').forEach((gruppe) => {
+    const knopf = gruppe.querySelector<HTMLButtonElement>('.mobil-knopf');
+    const liste = gruppe.querySelector<HTMLElement>('.mobil-liste');
+    if (!knopf || !liste) return;
+    knopf.addEventListener('click', () => {
+      const offen = knopf.getAttribute('aria-expanded') === 'true';
+      knopf.setAttribute('aria-expanded', String(!offen));
+      liste.hidden = offen;
+    });
+  });
+
+  // ── Mobile-Menü ────────────────────────────────────────────────
   if (toggle && menu) {
     const labelOpen = toggle.dataset.labelOpen || 'Menü öffnen';
     const labelClose = toggle.dataset.labelClose || 'Menü schließen';
@@ -283,9 +546,6 @@ const kontaktHref = localize('/kontakt/', lang);
       if (open) {
         menu.hidden = false;
         requestAnimationFrame(() => menu.classList.add('is-open'));
-        // Fokus auf den Menü-Container statt auf den ersten Link: Screenreader
-        // und Tastatur landen weiterhin im Menü, aber kein Link bekommt einen
-        // sichtbaren Fokusring (der sonst als rotes Rechteck erschien).
         menu.focus({ preventScroll: true });
       } else {
         menu.classList.remove('is-open');

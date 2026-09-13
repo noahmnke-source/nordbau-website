@@ -1,0 +1,345 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import Button from '@/components/Button.astro';
+import Figure from '@/components/Figure.astro';
+import SectionIntro from '@/components/SectionIntro.astro';
+import FaqAccordion from '@/components/FaqAccordion.astro';
+import { buildFaqJsonLd } from '@/lib/seo';
+import { SITE } from '@/config/site';
+
+const breadcrumbs = [{ name: 'Der Weg zu Ihrem Traumhaus', href: '/weg-zum-traumhaus/' }];
+
+/**
+ * Bewusst ohne Zeitangaben: Wie lange ein Abschnitt dauert, hängt an Behörde,
+ * Grundstück und Finanzierung – eine Wochenzahl auf einer Website wäre eine
+ * Zusage, die niemand halten kann.
+ */
+const phasen = [
+  {
+    kapitel: 'Klären',
+    titel: 'Was wir zuerst wissen müssen',
+    schritte: [
+      {
+        titel: 'Erstgespräch',
+        text: 'Wir hören zu, bevor wir zeichnen: Wie viele Menschen sollen im Haus leben, wie sieht Ihr Alltag aus, welches Budget steht dahinter, welcher Zeitrahmen ist Ihnen wichtig. Am Ende steht eine ehrliche Einschätzung, ob und wie Ihr Vorhaben umsetzbar ist – auch dann, wenn die Antwort einmal „so nicht" lautet.',
+      },
+      {
+        titel: 'Grundstück prüfen',
+        text: 'Wir sehen uns den Bebauungsplan an: zulässige Dachform und -neigung, Firstrichtung, Trauf- und Firsthöhe, Grundflächen- und Geschossflächenzahl, Abstandsflächen, Baugrenzen. Dazu kommen Zufahrt, Hanglage, Leitungen und die Frage, ob ein Kran überhaupt aufgestellt werden kann. Diese Prüfung entscheidet, was auf Ihrem Grundstück gebaut werden darf – alles Weitere baut darauf auf.',
+      },
+      {
+        titel: 'Baugrund und Erschließung',
+        text: 'Ein Bodengutachten klärt Tragfähigkeit, Grundwasserstand und Versickerungsfähigkeit. Es entscheidet über Gründung, Keller und Entwässerung und ist damit einer der größten Kostenhebel des gesamten Projekts. Parallel klären wir mit den Versorgern, wie Wasser, Abwasser, Strom und Telekommunikation ans Haus kommen.',
+      },
+    ],
+  },
+  {
+    kapitel: 'Planen',
+    titel: 'Der Entwurf entsteht',
+    schritte: [
+      {
+        titel: 'Entwurf durch den Architekten',
+        text: 'Jetzt wird gezeichnet – von einem Architekten, nicht aus einem Katalog. Aus Ihren Anforderungen und den Vorgaben des Grundstücks entsteht ein Vorentwurf mit Grundrissen, Ansichten und Schnitten. Wir gehen ihn mit Ihnen durch, ändern, verwerfen und zeichnen neu, bis der Grundriss zu Ihrem Alltag passt. Sie können auch mit einem eigenen Architekten kommen: Dann übernehmen wir ab der Werkplanung.',
+      },
+      {
+        titel: 'Festpreisangebot und Leistungsbeschreibung',
+        text: 'Auf Basis des abgestimmten Entwurfs erhalten Sie ein verbindliches Angebot – gemeinsam mit einer Bau- und Leistungsbeschreibung, die Position für Position benennt, was enthalten ist und was nicht. Was dort nicht steht, ist nicht beauftragt. Diese Klarheit vor der Unterschrift ist uns wichtiger als eine niedrige Einstiegszahl.',
+      },
+      {
+        titel: 'Bauvertrag',
+        text: 'Der Vertrag nach Verbraucherbauvertragsrecht bündelt Entwurf, Leistungsbeschreibung, Preis und Zahlungsplan. Sie haben das gesetzliche Widerrufsrecht, und die Zahlungen sind an den Baufortschritt gekoppelt, nicht an ein Datum. Nehmen Sie sich Zeit, ihn zu prüfen – gern mit Ihrem Anwalt oder einem Bauherrenberater.',
+      },
+      {
+        titel: 'Bauantrag',
+        text: 'Wir erstellen die Genehmigungsplanung mit allen erforderlichen Nachweisen – Statik, Wärmeschutz, Schallschutz, Entwässerung – und reichen den Antrag bei der Bauaufsicht ein. Wie lange die Behörde braucht, liegt außerhalb unseres Einflusses; wir halten Sie über jeden Zwischenstand auf dem Laufenden und arbeiten währenddessen an der Werkplanung weiter.',
+      },
+      {
+        titel: 'Bemusterung',
+        text: 'Böden, Türen, Fenster, Sanitärobjekte, Fliesen, Treppe, Elektroausstattung und Heizungstechnik werden ausgewählt und verbindlich festgeschrieben. Was hier entschieden ist, geht so in die Fertigung – und genau deshalb bleibt der Festpreis ein Festpreis.',
+      },
+    ],
+  },
+  {
+    kapitel: 'Bauen',
+    titel: 'Vom Werk auf Ihr Grundstück',
+    schritte: [
+      {
+        titel: 'Werkplanung',
+        text: 'Aus dem genehmigten Entwurf wird eine Fertigungsplanung im Millimetermaß: jedes Wand-, Decken- und Dachelement mit Ständerabständen, Öffnungen, Leerrohren, Dosen und Anschlusspunkten. Was hier sauber durchgeplant ist, muss auf der Baustelle nicht improvisiert werden.',
+      },
+      {
+        titel: 'Vorfertigung im eigenen Werk',
+        text: 'In unserer Halle entstehen die Bauteile witterungsunabhängig: Ständerwerk abbinden, Beplankung setzen, dämmen, Fenster einbauen, Installationsebene vorbereiten. Jedes Element wird vor dem Verlassen des Werks geprüft. Weil hier trocken gearbeitet wird, kommt keine Baufeuchte in die Konstruktion.',
+      },
+      {
+        titel: 'Gründung',
+        text: 'Parallel zur Fertigung entstehen auf dem Grundstück Bodenplatte oder Keller, samt Erdarbeiten, Entwässerung und Hausanschlüssen. Die Gründung wird eingemessen – die Toleranzen der Vorfertigung verlangen einen exakten Untergrund.',
+      },
+      {
+        titel: 'Montage',
+        text: 'Die Elemente kommen per Tieflader und werden mit dem Autokran gesetzt. Aus einer leeren Bodenplatte wird eine geschlossene, regendichte Gebäudehülle – der Tag, an dem das Haus zum ersten Mal als Haus dasteht. Sie sind dabei, wenn Sie möchten.',
+      },
+      {
+        titel: 'Ausbau und Haustechnik',
+        text: 'Unter Dach folgen Elektro, Sanitär, Heizung und Lüftung, danach Estrich, Innenausbau, Oberflächen und die Bauteile, die erst vor Ort montiert werden können. Ein Ansprechpartner koordiniert die Gewerke; Sie müssen keine Handwerker suchen und keine Termine sortieren.',
+      },
+    ],
+  },
+  {
+    kapitel: 'Übergeben',
+    titel: 'Und danach',
+    schritte: [
+      {
+        titel: 'Blower-Door-Test und Messungen',
+        text: 'Die Luftdichtheit der Gebäudehülle wird gemessen, nicht behauptet – Voraussetzung für den Effizienzhaus-Standard und für die Förderzusage. Ebenso werden Heizung und Lüftung eingeregelt und die Werte dokumentiert.',
+      },
+      {
+        titel: 'Abnahme',
+        text: 'Wir gehen das Haus gemeinsam durch, Raum für Raum. Was nicht stimmt, kommt ins Protokoll und wird abgearbeitet, bevor abgerechnet wird. Nehmen Sie zur Abnahme gern einen unabhängigen Sachverständigen mit – wir haben nichts zu verbergen.',
+      },
+      {
+        titel: 'Übergabe und Dokumentation',
+        text: 'Sie erhalten die Schlüssel, dazu die vollständige Dokumentation: Bestandspläne, Nachweise, Bedienungsanleitungen der Anlagen, Wartungsintervalle und die Unterlagen, die Sie für Förderung und Versicherung brauchen.',
+      },
+      {
+        titel: 'Gewährleistung',
+        text: 'Nach der Übergabe endet unsere Zuständigkeit nicht. Es gilt die gesetzliche Gewährleistung; wir bleiben Ihr Ansprechpartner für Rückfragen, Nachjustierungen und alles, was sich im ersten Jahr im Betrieb zeigt.',
+      },
+    ],
+  },
+];
+
+const bilder = [
+  {
+    nach: 1,
+    src: '/werk/werk-abbund-1600.webp',
+    alt: 'Mitarbeiter beim Abbinden eines Deckenelements in der Fertigungshalle',
+    caption: 'Werkplanung wird Fertigung: Abbund eines Deckenelements in unserer Halle.',
+  },
+  {
+    nach: 2,
+    src: '/werk/montage-kran-modul-1600.webp',
+    alt: 'Ein Autokran setzt ein vorgefertigtes Wandelement über der Baustelle ab',
+    caption: 'Montagetag: Der Kran setzt die vorgefertigten Elemente auf die Gründung.',
+  },
+];
+
+const faq = [
+  {
+    q: 'Kann ich mein Haus von einem eigenen Architekten planen lassen?',
+    a: 'Ja. Viele Bauherren kommen mit einer fertigen Entwurfsplanung oder mit ihrem Architekten zu uns – wir übernehmen dann ab der Werkplanung und führen Vorfertigung und Bau aus. Ebenso können Sie die gesamte Planung bei uns lassen; dann zeichnet unser Architekt den Entwurf. Beide Wege sind uns vertraut, und beide sind gleich gut.',
+  },
+  {
+    q: 'Warum nennen Sie keine Bauzeiten?',
+    a: 'Weil der größte Teil der Dauer nicht in unserer Hand liegt. Die Bearbeitungszeit der Bauaufsicht, die Zusage Ihrer Bank, die Verfügbarkeit von Anschlüssen und die Witterung bei den Erdarbeiten bestimmen den Verlauf mit. Wir nennen Ihnen für Ihr konkretes Projekt einen belastbaren Terminplan, sobald Grundstück und Genehmigungslage geklärt sind – aber keine Wochenzahl auf einer Website, die niemand halten kann.',
+  },
+  {
+    q: 'Wann muss ich was bezahlen?',
+    a: 'Der Zahlungsplan ist Teil des Bauvertrags und an den Baufortschritt gekoppelt, nicht an Kalenderdaten. Jede Rate wird erst fällig, wenn die zugehörige Leistung erbracht ist. Die gesetzlich vorgeschriebene Absicherung für Verbraucherbauverträge ist enthalten.',
+  },
+  {
+    q: 'Was passiert, wenn ich mitten in der Planung etwas ändern will?',
+    a: 'Änderungen sind bis zur Bemusterung unproblematisch und danach zunehmend teuer – weil dann die Werkplanung läuft und Material bestellt ist. Deshalb nehmen wir uns in der Entwurfsphase bewusst Zeit. Wird nach Vertragsabschluss geändert, bekommen Sie vorab ein Nachtragsangebot mit Preis und Auswirkung auf den Ablauf; nichts wird stillschweigend berechnet.',
+  },
+  {
+    q: 'Muss ich mich um Handwerker und Gewerke kümmern?',
+    a: 'Nein. Beim schlüsselfertigen Bauen koordinieren wir sämtliche Gewerke und haben einen Ansprechpartner für Sie. Wenn Sie Eigenleistungen übernehmen möchten – etwa Malerarbeiten oder Außenanlagen –, legen wir das vor Vertragsabschluss fest, damit die Schnittstellen und der Festpreis eindeutig bleiben.',
+  },
+  {
+    q: 'Begleiten Sie mich auch bei Förderung und Finanzierung?',
+    a: 'Wir erstellen die Nachweise, die für die KfW-Förderung erforderlich sind, und arbeiten mit Energieeffizienz-Experten zusammen. Die Finanzierung selbst schließen Sie mit Ihrer Bank – wir liefern die Unterlagen, die diese dafür braucht, und stimmen den Zahlungsplan darauf ab.',
+  },
+];
+---
+
+<BaseLayout
+  title="Der Weg zu Ihrem Traumhaus – von der ersten Frage bis zur Übergabe | EcoBau"
+  fullTitle
+  description="Wie ein Haus mit EcoBau entsteht: Grundstücksprüfung, Entwurf durch den Architekten, Festpreisangebot, Bauantrag, Bemusterung, Vorfertigung im eigenen Werk, Montage, Abnahme und Übergabe."
+  ogImage={new URL('/werk/montage-kran-modul-1600.webp', SITE.url).href}
+  breadcrumbs={breadcrumbs}
+  jsonLd={[buildFaqJsonLd(faq)]}
+  hideFooterCta
+>
+  <!-- Kopf -->
+  <section class="container-site pt-12 lg:pt-16">
+    <Breadcrumbs items={breadcrumbs} class="mb-10" />
+    <div class="grid gap-x-8 lg:grid-cols-12">
+      <div class="lg:col-span-9">
+        <h1 class="font-display text-hero font-medium">Der Weg zu Ihrem Traumhaus</h1>
+        <p class="prose-measure mt-6 text-body leading-relaxed text-muted">
+          Ein Haus zu bauen ist kein Kauf, sondern ein Verfahren – mit Behörden, Nachweisen
+          und Entscheidungen, die aufeinander aufbauen. Hier steht, was in welcher Reihenfolge
+          passiert, wer was tut und an welcher Stelle Sie gefragt sind.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero -->
+  <div class="mt-10 lg:mt-14">
+    <Figure
+      src="/werk/montage-baustelle-1600.webp"
+      alt="Vorgefertigte Wandelemente werden auf der Baustelle zu einer Gebäudehülle zusammengesetzt"
+      ratio="aspect-[3/2] sm:aspect-[21/9]"
+      sizes="100vw"
+      eager
+      reveal={false}
+      parallax={0.05}
+      class="w-full"
+    />
+  </div>
+
+  <!-- Warum keine Zeitangaben -->
+  <section class="container-site py-(--spacing-section)">
+    <div class="grid gap-x-8 gap-y-10 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <h2 class="reveal font-display text-display font-medium">
+          Vier Abschnitte. Keine Versprechen, die wir nicht halten können.
+        </h2>
+      </div>
+      <div class="reveal prose-measure space-y-5 text-body leading-relaxed text-muted lg:col-span-6 lg:col-start-7">
+        <p>
+          Sie finden auf dieser Seite bewusst keine Wochenangaben. Wie lange ein Bauvorhaben
+          dauert, entscheiden zu großen Teilen Stellen, auf die wir keinen Einfluss haben:
+          die Bauaufsicht, Ihre Bank, die Versorger, der Baugrund.
+        </p>
+        <p>
+          Was wir stattdessen liefern, ist Reihenfolge und Zuständigkeit – und für Ihr
+          konkretes Projekt einen belastbaren Terminplan, sobald Grundstück und
+          Genehmigungslage geklärt sind.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Die Phasen -->
+  {phasen.map((phase, pi) => {
+    const bild = bilder.find((b) => b.nach === pi);
+    return (
+      <>
+        <section
+          class:list={[
+            'py-(--spacing-section)',
+            pi % 2 === 1 ? 'bg-stone' : 'border-t border-line',
+          ]}
+        >
+          <div class="container-site">
+            <div class="grid gap-x-8 gap-y-4 lg:grid-cols-12">
+              <p class="tnum reveal text-caption text-muted lg:col-span-2">
+                {String(pi + 1).padStart(2, '0')} · {phase.kapitel}
+              </p>
+              <h2 class="reveal font-display text-display font-medium lg:col-span-8">
+                {phase.titel}
+              </h2>
+            </div>
+
+            <ol class="mt-14 grid gap-x-8 gap-y-12 lg:grid-cols-12">
+              {phase.schritte.map((s, si) => (
+                <li
+                  class="reveal border-t border-line pt-6 lg:col-span-6"
+                  style={`--reveal-delay:${(si % 2) * 90}ms`}
+                >
+                  <div class="grid gap-x-6 gap-y-3 sm:grid-cols-[3.5rem_1fr]">
+                    <p class="tnum font-display text-title font-medium text-muted">
+                      {pi + 1}.{si + 1}
+                    </p>
+                    <div>
+                      <h3 class="font-display text-title font-medium">{s.titel}</h3>
+                      <p class="prose-measure mt-3 text-small leading-relaxed text-muted">
+                        {s.text}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        {bild && (
+          <div class="container-site py-(--spacing-section-sm)">
+            <Figure
+              src={bild.src}
+              alt={bild.alt}
+              ratio="aspect-[3/2] sm:aspect-[2/1]"
+              sizes="100vw"
+              caption={bild.caption}
+              parallax={0.04}
+            />
+          </div>
+        )}
+      </>
+    );
+  })}
+
+  <!-- Was Sie mitbringen -->
+  <section class="border-t border-line py-(--spacing-section)">
+    <div class="container-site">
+      <SectionIntro
+        title="Was Sie beisteuern – und was wir übernehmen"
+        lead="Damit von Anfang an klar ist, wo Ihre Entscheidung gefragt ist und wo Sie sich auf uns verlassen können."
+      />
+      <div class="mt-14 grid gap-x-8 gap-y-12 lg:grid-cols-2">
+        <div class="reveal">
+          <h3 class="font-display text-title font-medium">Bei Ihnen liegt</h3>
+          <ul class="mt-6 divide-y divide-line border-y border-line">
+            {[
+              'Das Grundstück – gekauft oder in konkreter Aussicht.',
+              'Die Finanzierung mit Ihrer Bank; wir liefern die Unterlagen dafür.',
+              'Die Entscheidungen zum Grundriss, zur Ausstattung und zur Bemusterung.',
+              'Ihre Zeit für die Abstimmungen im Entwurf und für die Abnahme.',
+            ].map((z) => (
+              <li class="py-4 text-small leading-relaxed text-muted">{z}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="reveal" style="--reveal-delay:120ms">
+          <h3 class="font-display text-title font-medium">Bei uns liegt</h3>
+          <ul class="mt-6 divide-y divide-line border-y border-line">
+            {[
+              'Die Prüfung von Bebauungsplan, Baugrund und Erschließung.',
+              'Entwurf, Genehmigungsplanung, Statik und sämtliche Nachweise.',
+              'Vorfertigung im eigenen Werk und die Montage auf dem Grundstück.',
+              'Die Koordination aller Gewerke bis zur Übergabe – ein Ansprechpartner.',
+            ].map((z) => (
+              <li class="py-4 text-small leading-relaxed text-muted">{z}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="container-site py-(--spacing-section)">
+    <SectionIntro title="Häufige Fragen zum Ablauf" />
+    <div class="mt-14 grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-8">
+        <FaqAccordion items={faq} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Abschluss -->
+  <section class="bg-graphite py-(--spacing-section) text-paper">
+    <div class="container-site grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-end">
+      <div class="lg:col-span-7">
+        <h2 class="reveal font-display text-display font-medium">
+          Der erste Schritt ist ein Gespräch, kein Vertrag.
+        </h2>
+        <p class="reveal prose-measure mt-6 text-body leading-relaxed text-paper-muted">
+          Bringen Sie mit, was Sie haben – ein Grundstück, eine Skizze, eine Idee oder
+          nur eine Frage. Wir sagen Ihnen ehrlich, was daraus werden kann.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-6 lg:col-span-4 lg:col-start-9 lg:justify-end">
+        <Button href="/kontakt/" variant="primary">Beratung vereinbaren</Button>
+        <a href={`tel:${SITE.contact.phone}`} class="link-line text-small font-medium text-paper">
+          {SITE.contact.phoneDisplay}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

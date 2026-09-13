@@ -13,16 +13,17 @@ const { showCta = true } = Astro.props;
 const lang = getLang(Astro.url.pathname);
 const t = useT(lang);
 
-const haustypen = (
-  lang === 'en' ? await getCollection('haustypenEn') : await getCollection('haustypen')
+const haeuser = (
+  lang === 'en' ? await getCollection('haeuserEn') : await getCollection('haeuser')
+).sort((a, b) => a.data.order - b.data.order);
+const bauten = (
+  lang === 'en' ? await getCollection('bautenEn') : await getCollection('bauten')
 ).sort((a, b) => a.data.order - b.data.order);
 
 const year = new Date().getFullYear();
 
 const navDefs: { key: Parameters<typeof t>[0]; path: string }[] = [
-  { key: 'nav.haustypen', path: '/haustypen/' },
-  ...(lang === 'de' ? [{ key: 'nav.bauleistungen' as const, path: '/hoch-und-tiefbau/' }] : []),
-  { key: 'nav.referenzen', path: '/referenzen/' },
+  { key: 'nav.weg', path: '/weg-zum-traumhaus/' },
   { key: 'nav.ueberuns', path: '/ueber-uns/' },
   ...(lang === 'de' ? [{ key: 'nav.ratgeber' as const, path: '/ratgeber/' }] : []),
   { key: 'nav.kontakt', path: '/kontakt/' },
@@ -70,16 +71,29 @@ const nav = navDefs.map((n) => ({ label: t(n.key), href: localize(n.path, lang) 
       </ul>
     </nav>
 
-    <nav aria-label={t('nav.haustypen')} class="lg:col-span-3">
-      <h2 class="mb-4 text-caption font-medium text-paper-muted">{t('nav.haustypen')}</h2>
+    <nav aria-label={t('nav.haeuser')} class="lg:col-span-2">
+      <h2 class="mb-4 text-caption font-medium text-paper-muted">{t('nav.haeuser')}</h2>
       <ul class="space-y-2.5">
-        {haustypen.map((h) => (
-          <li><a href={localize(`/haustypen/${h.id}/`, lang)} class="link-line text-small">{h.data.name}</a></li>
+        {haeuser.map((h) => (
+          <li><a href={localize(`/haeuser/${h.id}/`, lang)} class="link-line text-small">{h.data.name}</a></li>
         ))}
       </ul>
     </nav>
 
-    <div class="lg:col-span-3">
+    <nav aria-label={t('nav.wohnGewerbe')} class="lg:col-span-2">
+      <h2 class="mb-4 text-caption font-medium text-paper-muted">{t('nav.wohnGewerbe')}</h2>
+      <ul class="space-y-2.5">
+        {bauten.map((b) => (
+          <li>
+            <a href={localize(`/wohn-und-gewerbebau/${b.id}/`, lang)} class="link-line text-small">
+              {b.data.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="lg:col-span-2">
       <h2 class="mb-4 text-caption font-medium text-paper-muted">{t('footer.contact')}</h2>
       <address class="space-y-2.5 text-small not-italic">
         <p>{SITE.legalName}<br />{SITE.contact.street}<br />{SITE.contact.zip} {SITE.contact.city}</p>

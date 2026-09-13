@@ -1,0 +1,60 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ObjektSeite from '@/components/ObjektSeite.astro';
+import { buildFaqJsonLd } from '@/lib/seo';
+import { SITE } from '@/config/site';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('haeuser');
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+interface Props {
+  entry: CollectionEntry<'haeuser'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+const pfad = `/haeuser/${entry.id}/`;
+
+// Querverweise: alle übrigen Häuser in redaktioneller Reihenfolge.
+const alle = (await getCollection('haeuser')).sort((a, b) => a.data.order - b.data.order);
+const geschwister = alle
+  .filter((e) => e.id !== entry.id)
+  .map((e) => ({
+    name: e.data.name,
+    href: `/haeuser/${e.id}/`,
+    bild: e.data.hero,
+    hinweis: e.data.tagline,
+  }));
+---
+
+<BaseLayout
+  title={d.seoTitle}
+  fullTitle
+  description={d.seoDescription}
+  ogImage={new URL(d.hero.src, SITE.url).href}
+  breadcrumbs={[{ name: d.name, href: pfad }]}
+  jsonLd={d.faq.length > 0 ? [buildFaqJsonLd(d.faq)] : []}
+  hideFooterCta
+>
+  <ObjektSeite
+    lang="de"
+    name={d.name}
+    tagline={d.tagline}
+    hero={d.hero}
+    katalog={d.katalog}
+    innen={d.innen}
+    daten={d.daten}
+    merkmale={d.merkmale}
+    faq={d.faq}
+    gruppeLabel="Häuser"
+    eigenerPfad={pfad}
+    geschwister={geschwister}
+  >
+    <Content />
+  </ObjektSeite>
+</BaseLayout>

@@ -8,7 +8,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://ecobau-hannover.com',
   trailingSlash: 'always',
-  integrations: [sitemap()],
+  integrations: [sitemap({ filter: (seite) => !/\/404\/?$/.test(seite) })],
   image: {
     domains: ['images.unsplash.com'],
   },

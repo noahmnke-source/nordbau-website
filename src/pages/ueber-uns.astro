@@ -14,6 +14,10 @@ const zahlen = [
     label: `${YEARS_EXPERIENCE} Jahre Erfahrung am Bau – vom individuell geplanten Fertighaus in Holztafelbauweise bis zum öffentlichen Gebäude.`,
   },
   {
+    wert: 'Familienbetrieb',
+    label: 'Inhabergeführt in zweiter Generation. Entscheidungen fallen im Haus, nicht in einer Konzernzentrale – und wer den Vertrag unterschreibt, ist auch nach der Übergabe noch erreichbar.',
+  },
+  {
     wert: '30 Jahre',
     label: 'Garantie auf die Baukonstruktion, dazu 5 Jahre Gewährleistung nach BGB auf alle übrigen Leistungen – und alle wesentlichen Materialien mit Qualitätszertifikat.',
   },
@@ -59,13 +63,13 @@ const grundsaetze = [
     <div class="grid gap-x-8 gap-y-10 lg:grid-cols-12">
       <div class="lg:col-span-8">
         <h1 class="font-display text-hero font-medium">
-          Über {SITE.name}: Ein Werk, ein Versprechen
+          Ein Familienbetrieb mit eigenem Werk
         </h1>
       </div>
       <p class="prose-measure self-end text-body text-muted lg:col-span-4 lg:col-start-9">
-        Wir nennen uns weder Baufirma noch Manufaktur, obwohl beides stimmt:
-        {SITE.name} ist ein Werk, in dem Architektenhäuser in Serie entstehen –
-        jedes nach einem eigenen Plan, alle mit derselben Präzision.
+        {SITE.legalName} ist seit {SITE.foundingYear} am Bau – {YEARS_EXPERIENCE} Jahre,
+        inhabergeführt und in zweiter Generation. Wir planen, fertigen und bauen selbst:
+        Häuser nach eigenem Entwurf, Gebäude für Wohnen, Gewerbe und die öffentliche Hand.
       </p>
     </div>
   </section>
@@ -103,9 +107,10 @@ const grundsaetze = [
           Präzision, mit der er gebaut wird.
         </p>
         <p class="reveal prose-measure mt-5 text-body text-muted">
-          Seit {SITE.foundingYear} arbeiten wir nach diesem Prinzip – vom individuell
-          geplanten Fertighaus in Holztafelbauweise bis zum öffentlichen Gebäude.
-          Die meisten Bauherren entscheiden sich, nachdem sie unser Werk gesehen haben.
+          Seit {SITE.foundingYear} arbeiten wir nach diesem Prinzip – begonnen hat der
+          Betrieb mit traditionell errichteten Häusern, heute liegt der Schwerpunkt auf
+          vorgefertigten Holzbauten und modularen Systemen. Was gleich geblieben ist: Es
+          ist ein Familienbetrieb, in dem die Verantwortlichen mit Namen bekannt sind.
         </p>
       </div>
       <div class="lg:col-span-4 lg:col-start-9">
@@ -169,6 +174,52 @@ const grundsaetze = [
           die Verantwortung dort, wo sie hingehört: bei uns, vom ersten Strich bis zur
           Schlüsselübergabe.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Standort des Werks -->
+  <section class="container-site py-(--spacing-section)">
+    <SectionIntro
+      title="Wo unser Werk steht"
+      lead="Verwaltung und Bauleitung sitzen in Hannover. Gefertigt wird in unserer eigenen Halle – von dort kommen die Elemente auf die Baustelle."
+    />
+
+    <div class="mt-16 grid gap-x-8 gap-y-12 lg:grid-cols-12">
+      <div class="reveal lg:col-span-5">
+        <dl class="divide-y divide-line border-y border-line">
+          {[
+            { k: 'Sitz', v: `${SITE.contact.street}, ${SITE.contact.zip} ${SITE.contact.city}` },
+            { k: 'Fertigung', v: 'Eigene Produktionshalle in Lipjan, Kosovo' },
+            { k: 'Bauweise', v: 'Holztafelbau und Brettsperrholz (CLT), dazu Modulbauweise' },
+            { k: 'Gebaut wird in', v: 'Deutschland, Österreich, Schweiz, Schweden, Norwegen, Frankreich, Tschechien, Kosovo und Albanien' },
+            { k: 'Wandaufbau', v: 'Zertifiziert im Effizienzhaus-40-Standard, hochgedämmt und luftdicht ab Werk' },
+          ].map((z) => (
+            <div class="grid gap-1 py-4 sm:grid-cols-[9rem_1fr] sm:gap-6">
+              <dt class="text-caption text-muted">{z.k}</dt>
+              <dd class="text-small leading-relaxed">{z.v}</dd>
+            </div>
+          ))}
+        </dl>
+        <p class="prose-measure mt-6 text-small leading-relaxed text-muted">
+          Die Trennung von Fertigung und Baustelle ist kein Zufall, sondern das Prinzip:
+          Was in der Halle entsteht, entsteht unter kontrollierten Bedingungen. Der
+          Transport per Tieflader und die Montage per Autokran sind Teil der Planung –
+          Zufahrt, Kranstellfläche und Anlieferzeiten klären wir, bevor gefertigt wird.
+        </p>
+      </div>
+
+      <div class="grid content-start gap-6 sm:grid-cols-2 lg:col-span-6 lg:col-start-7">
+        {[IMG.werkHalle, IMG.werkAbbund, IMG.werkFassade, IMG.werkTeam].map((bild, i) => (
+          <Figure
+            src={bild.src}
+            alt={bild.alt}
+            ratio={i % 3 === 0 ? 'aspect-[4/3]' : 'aspect-square'}
+            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 45vw, 100vw"
+            class={i % 3 === 0 ? 'sm:col-span-2' : ''}
+            zoom
+          />
+        ))}
       </div>
     </div>
   </section>

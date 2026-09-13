@@ -3,8 +3,8 @@ title: "Fertighaus-Preise 2026: Kosten pro m², Beispiele, Nebenkosten"
 description: "Medianpreise pro Quadratmeter, eine Beispielrechnung für 150 m² und die Grunderwerbsteuer aller 16 Bundesländer – das kostet ein Fertighaus 2026 wirklich."
 pubDate: 2026-07-06
 hero:
-  src: "https://images.unsplash.com/photo-1608303588026-884930af2559?auto=format&fit=crop&w=1600&q=80"
-  alt: "Planungsgespräch über Grundrissen: Hände mit Dreikantmaßstab und Bleistift am Bauplan"
+  src: "/haeuser/einfamilienhaus/flachdach-terrasse-1600.webp"
+  alt: "Zweigeschossiges Flachdachhaus mit heller Fassade, Holzfeld und großer Terrasse"
   standIn: false
 seoTitle: "Fertighaus-Preise 2026: Kosten pro m² | EcoBau"
 seoDescription: "Fertighaus-Preise 2026: Median 2.800 €/m², Spanne 2.400–3.300 €/m². Mit Beispielrechnung für 150 m², Baunebenkosten und Steuertabelle. Jetzt informieren."
@@ -24,7 +24,7 @@ Im Median zahlen Bauherren 2026 rund 2.800 € pro Quadratmeter Wohnfläche für
 | Gehobenes Segment | 3.000–4.000 € | individuelle Planung, erweiterte Haustechnik, hochwertige Bemusterung |
 | Premiumsegment | bis ca. 4.500 € | frei geplantes Architektenhaus, Sonderkonstruktionen, Premium-Ausstattung |
 
-Drei Faktoren entscheiden, wo Ihr Haus in dieser Spanne landet: die Ausstattung (Böden, Bäder, Haustechnik – verbindlich festgelegt in der Bemusterung), die Kubatur (ein kompakter Baukörper mit Satteldach ist günstiger als ein verschachtelter Grundriss mit Auskragungen) und die Frage Keller oder Bodenplatte. Einen realistischen Einstieg in einzelne Hausformen geben unsere [Haustypen mit Ab-Preisen](/haustypen/).
+Drei Faktoren entscheiden, wo Ihr Haus in dieser Spanne landet: die Ausstattung (Böden, Bäder, Haustechnik – verbindlich festgelegt in der Bemusterung), die Kubatur (ein kompakter Baukörper mit Satteldach ist günstiger als ein verschachtelter Grundriss mit Auskragungen) und die Frage Keller oder Bodenplatte. Welche Hausform welche Kubatur mit sich bringt, zeigen die Entwürfe beim [Einfamilienhaus](/haeuser/einfamilienhaus/) und beim [Bungalow](/haeuser/bungalow/).
 
 Vorsicht bei „ab“-Preisen aus der Werbung: Sie beziehen sich häufig auf die kleinste Hausvariante in der einfachsten Ausbaustufe – oft ohne Bodenplatte und ohne Haustechnik-Optionen. Aussagekräftig wird ein Preis erst zusammen mit der Bau- und Leistungsbeschreibung.
 
@@ -43,7 +43,7 @@ Die folgende Beispielrechnung zeigt, wie sich ein realistisches Gesamtbudget zus
 
 Wichtig für den Angebotsvergleich: Prüfen Sie immer, welche Ausbaustufe gemeint ist. „Schlüsselfertig“ ist kein gesetzlich definierter Begriff – was enthalten ist, regelt allein die Bau- und Leistungsbeschreibung des Anbieters. Vergleichen Sie deshalb nur Angebote mit identischem Leistungsumfang.
 
-Zwischen einer Gemeinde im Umland und einer Großstadtlage kann sich der Grundstückspreis vervielfachen – das Haus selbst kostet dagegen bundesweit ähnlich viel. Welcher Haustyp zu Ihrem Budget passt, zeigt die Übersicht unserer [Haustypen](/haustypen/).
+Zwischen einer Gemeinde im Umland und einer Großstadtlage kann sich der Grundstückspreis vervielfachen – das Haus selbst kostet dagegen bundesweit ähnlich viel. Welche Hausform zu Ihrem Budget passt, klären wir am konkreten Entwurf – ein Überblick über die Bauformen steht beim [Einfamilienhaus](/haeuser/einfamilienhaus/).
 
 ## Wie hoch sind die Baunebenkosten beim Hausbau?
 

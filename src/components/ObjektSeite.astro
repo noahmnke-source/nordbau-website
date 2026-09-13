@@ -1,0 +1,344 @@
+---
+/**
+ * Gemeinsame Vorlage für Häuser und Wohn-/Gewerbebau, deutsch wie englisch.
+ * Herzstück ist das Katalograster: eine Karte je Entwurf, aufgebaut wie ein
+ * Musterbuch – Bild, kurze Beschreibung dessen, was zu sehen ist, sonst nichts.
+ */
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import Button from '@/components/Button.astro';
+import Figure from '@/components/Figure.astro';
+import Prose from '@/components/Prose.astro';
+import SectionIntro from '@/components/SectionIntro.astro';
+import FaqAccordion from '@/components/FaqAccordion.astro';
+import type { Lang } from '@/i18n';
+import { localize } from '@/i18n';
+
+interface Bild {
+  src: string;
+  alt: string;
+  caption?: string;
+  /** Filtergruppe im Katalograster, z. B. "Satteldach" */
+  gruppe?: string;
+}
+
+interface Geschwister {
+  name: string;
+  href: string;
+  bild: Bild;
+  hinweis: string;
+}
+
+interface Props {
+  lang: Lang;
+  name: string;
+  tagline: string;
+  hero: Bild;
+  katalog: Bild[];
+  innen: Bild[];
+  daten: { label: string; wert: string }[];
+  merkmale: { titel: string; text: string }[];
+  faq: { q: string; a: string }[];
+  gruppeLabel: string;
+  eigenerPfad: string;
+  geschwister: Geschwister[];
+}
+
+const {
+  lang,
+  name,
+  tagline,
+  hero,
+  katalog,
+  innen,
+  daten,
+  merkmale,
+  faq,
+  gruppeLabel,
+  eigenerPfad,
+  geschwister,
+} = Astro.props;
+
+const de = lang === 'de';
+const T = {
+  katalogTitel: de ? 'Entwürfe aus unserer Fertigung' : 'Designs from our production',
+  katalogLead: de
+    ? 'Gebaute und geplante Entwürfe als Anschauung – kein Bestellkatalog. Jedes Haus wird für sein Grundstück neu gezeichnet.'
+    : 'Built and planned designs shown as inspiration – not an order catalogue. Every building is drawn anew for its site.',
+  innenTitel: de ? 'Innen' : 'Inside',
+  innenLead: de
+    ? 'Oberflächen, Einbauten und Raumzuschnitt planen wir gemeinsam mit Ihnen.'
+    : 'Surfaces, joinery and room proportions are planned together with you.',
+  datenTitel: de ? 'Kennwerte' : 'Key figures',
+  datenHinweis: de
+    ? 'Ausgangswerte unserer Planung. Größe, Grundriss und Ausstattung entstehen individuell für Ihr Vorhaben.'
+    : 'Starting values for our design work. Size, layout and specification are developed individually for your project.',
+  merkmaleTitel: de ? 'Worauf es bei diesem Typ ankommt' : 'What matters with this type',
+  faqTitel: de ? 'Häufige Fragen' : 'Frequently asked questions',
+  weitere: de ? `Weitere aus ${gruppeLabel}` : `More from ${gruppeLabel}`,
+  ctaTitel: de
+    ? 'Vom Entwurf zu Ihrem Gebäude ist es ein Gespräch.'
+    : 'From a design to your building is one conversation.',
+  ctaText: de
+    ? 'Wir prüfen Grundstück, Bebauungsplan und Budget und sagen Ihnen ehrlich, was geht. Unverbindlich und ohne Verkaufsdruck.'
+    : 'We check the site, the development plan and the budget and tell you honestly what is feasible. Without obligation and without sales pressure.',
+  ctaButton: de ? 'Beratung vereinbaren' : 'Arrange a consultation',
+  ctaWeg: de ? 'Der Weg zu Ihrem Traumhaus' : 'The road to your dream home',
+  alle: de ? 'Alle' : 'All',
+  filterAria: de ? 'Katalog nach Dachform filtern' : 'Filter the catalogue',
+};
+
+// Filterleiste erscheint nur, wenn der Katalog tatsaechlich mehrere Gruppen
+// enthaelt – bei einer einzigen Dachform waere ein Filter reine Dekoration.
+const gruppen: string[] = [];
+for (const b of katalog) {
+  if (b.gruppe && !gruppen.includes(b.gruppe)) gruppen.push(b.gruppe);
+}
+const zeigeFilter = gruppen.length > 1;
+
+const kontakt = localize('/kontakt/', lang);
+const wegPfad = localize('/weg-zum-traumhaus/', lang);
+
+// Die Menuegruppen ("Haeuser", "Wohn- und Gewerbebau") sind reine Klappmenues
+// ohne eigene Seite. Eine Brotkrume darauf waere ein toter Link, deshalb
+// steht hier nur die Seite selbst.
+const breadcrumbs = [{ name, href: eigenerPfad }];
+---
+
+<!-- Seitenkopf -->
+<section class="container-site pt-12 lg:pt-16">
+  <Breadcrumbs items={breadcrumbs} class="mb-10" />
+  <div class="grid gap-x-8 lg:grid-cols-12">
+    <div class="lg:col-span-8">
+      <h1 class="font-display text-hero font-medium">{name}</h1>
+      <p class="mt-5 font-display text-title font-medium text-muted">{tagline}</p>
+    </div>
+  </div>
+</section>
+
+<!-- Hero-Bild -->
+<div class="mt-10 lg:mt-14">
+  <Figure
+    src={hero.src}
+    alt={hero.alt}
+    ratio="aspect-[3/2] sm:aspect-[21/9]"
+    sizes="100vw"
+    eager
+    reveal={false}
+    parallax={0.05}
+    class="w-full"
+  />
+</div>
+
+<!-- Fließtext + Kennwerte -->
+<section class="container-site pt-14 pb-(--spacing-section) lg:pt-20">
+  <div class="grid gap-x-8 gap-y-14 lg:grid-cols-12">
+    <div class="lg:col-span-7">
+      <Prose>
+        <slot />
+      </Prose>
+    </div>
+
+    {daten.length > 0 && (
+      <aside class="lg:col-span-4 lg:col-start-9">
+        <h2 class="text-caption font-medium text-muted">{T.datenTitel}</h2>
+        <dl class="mt-4 divide-y divide-line border-y border-line">
+          {daten.map((row) => (
+            <div class="grid gap-1 py-4 sm:flex sm:items-baseline sm:justify-between sm:gap-6">
+              <dt class="text-caption text-muted">{row.label}</dt>
+              <dd class="tnum font-display text-body font-medium sm:max-w-[62%] sm:text-right">
+                {row.wert}
+              </dd>
+            </div>
+          ))}
+        </dl>
+        <p class="mt-5 text-caption text-muted">{T.datenHinweis}</p>
+      </aside>
+    )}
+  </div>
+</section>
+
+<!-- Merkmale -->
+{merkmale.length > 0 && (
+  <section class="border-t border-line py-(--spacing-section)">
+    <div class="container-site">
+      <SectionIntro title={T.merkmaleTitel} />
+      <ul class="mt-14 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        {merkmale.map((m, i) => (
+          <li class="reveal border-t border-line pt-5" style={`--reveal-delay:${i * 70}ms`}>
+            <p class="tnum text-caption text-muted">{String(i + 1).padStart(2, '0')}</p>
+            <h3 class="mt-3 font-display text-title font-medium">{m.titel}</h3>
+            <p class="mt-3 text-small leading-relaxed text-muted">{m.text}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+<!-- Katalograster -->
+{katalog.length > 0 && (
+  <section class="bg-stone py-(--spacing-section)">
+    <div class="container-site">
+      <SectionIntro title={T.katalogTitel} lead={T.katalogLead} />
+
+      {zeigeFilter && (
+        <div
+          class="mt-10 flex flex-wrap items-center gap-x-7 gap-y-2 border-b border-line pb-1"
+          data-katalog-filter
+          role="group"
+          aria-label={T.filterAria}
+        >
+          <button type="button" class="filter-chip" data-filter="*" aria-pressed="true">
+            {T.alle} <span class="tnum text-caption text-muted">{katalog.length}</span>
+          </button>
+          {gruppen.map((g) => (
+            <button type="button" class="filter-chip" data-filter={g} aria-pressed="false">
+              {g}{' '}
+              <span class="tnum text-caption text-muted">
+                {katalog.filter((b) => b.gruppe === g).length}
+              </span>
+            </button>
+          ))}
+        </div>
+      )}
+
+      <ul class="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3" data-katalog>
+        {katalog.map((bild, i) => (
+          <li
+            class="group reveal catalog-item"
+            data-gruppe={bild.gruppe}
+            style={`--reveal-delay:${(i % 3) * 90}ms`}
+          >
+            <div class="card-lift">
+              <Figure
+                src={bild.src}
+                alt={bild.alt}
+                ratio="aspect-[4/3]"
+                sizes="(min-width: 1024px) 31vw, (min-width: 640px) 47vw, 100vw"
+                zoom
+                reveal={false}
+              />
+              {bild.caption && (
+                <p class="mt-4 text-small leading-relaxed text-muted">{bild.caption}</p>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+<!-- Innenaufnahmen -->
+{innen.length > 0 && (
+  <section class="container-site py-(--spacing-section)">
+    <SectionIntro title={T.innenTitel} lead={T.innenLead} />
+    <div class="mt-14 grid gap-x-8 gap-y-12 lg:grid-cols-12">
+      {innen.map((bild, i) => (
+        <figure class:list={[i % 2 === 0 ? 'lg:col-span-7' : 'lg:col-span-5 lg:mt-20']}>
+          <Figure
+            src={bild.src}
+            alt={bild.alt}
+            ratio={i % 2 === 0 ? 'aspect-[4/3]' : 'aspect-[4/5]'}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+          />
+          {bild.caption && (
+            <figcaption class="mt-4 text-small leading-relaxed text-muted">
+              {bild.caption}
+            </figcaption>
+          )}
+        </figure>
+      ))}
+    </div>
+  </section>
+)}
+
+<!-- FAQ -->
+{faq.length > 0 && (
+  <section class="container-site pb-(--spacing-section)">
+    <SectionIntro title={T.faqTitel} />
+    <div class="mt-14 grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-8">
+        <FaqAccordion items={faq} />
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- Geschwister -->
+{geschwister.length > 0 && (
+  <section class="container-site pb-(--spacing-section)">
+    <div class="border-t border-line pt-10">
+      <p class="text-caption text-muted">{T.weitere}</p>
+      <div class="mt-8 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+        {geschwister.map((g) => (
+          <a href={g.href} class="group grid grid-cols-[6rem_1fr] items-center gap-5">
+            <Figure
+              src={g.bild.src}
+              alt={g.bild.alt}
+              ratio="aspect-square"
+              sizes="6rem"
+              zoom
+              reveal={false}
+            />
+            <div>
+              <p class="font-display text-title font-medium">
+                <span class="link-line">{g.name}</span>
+              </p>
+              <p class="mt-1 text-small text-muted">{g.hinweis}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- Abschluss -->
+<section class="bg-graphite py-(--spacing-section) text-paper">
+  <div class="container-site grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-end">
+    <div class="lg:col-span-7">
+      <h2 class="reveal font-display text-display font-medium">{T.ctaTitel}</h2>
+      <p class="reveal prose-measure mt-6 text-body leading-relaxed text-paper-muted">
+        {T.ctaText}
+      </p>
+    </div>
+    <div class="flex flex-wrap items-center gap-6 lg:col-span-4 lg:col-start-9 lg:justify-end">
+      <Button href={kontakt} variant="primary">{T.ctaButton}</Button>
+      <a href={wegPfad} class="link-line text-small font-medium text-paper">{T.ctaWeg}</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Katalogfilter: blendet Kacheln aus, statt sie neu zu laden. Ohne JavaScript
+  // bleiben alle Entwuerfe sichtbar – die Leiste erscheint dann schlicht ohne Funktion.
+  document.querySelectorAll<HTMLElement>('[data-katalog-filter]').forEach((leiste) => {
+    const raster = leiste.parentElement?.querySelector<HTMLElement>('[data-katalog]');
+    if (!raster) return;
+    const kacheln = Array.from(raster.querySelectorAll<HTMLElement>('.catalog-item'));
+    const knoepfe = Array.from(leiste.querySelectorAll<HTMLButtonElement>('.filter-chip'));
+
+    knoepfe.forEach((knopf) => {
+      knopf.addEventListener('click', () => {
+        const wahl = knopf.dataset.filter || '*';
+        knoepfe.forEach((k) => k.setAttribute('aria-pressed', String(k === knopf)));
+
+        // Erst ausblenden, dann nach der Uebergangszeit aus dem Fluss nehmen –
+        // sonst springt das Raster hart um.
+        kacheln.forEach((kachel) => {
+          const passt = wahl === '*' || kachel.dataset.gruppe === wahl;
+          if (passt) {
+            kachel.hidden = false;
+            requestAnimationFrame(() => kachel.classList.remove('is-filtering'));
+          } else {
+            kachel.classList.add('is-filtering');
+            window.setTimeout(() => {
+              if (kachel.classList.contains('is-filtering')) kachel.hidden = true;
+            }, 400);
+          }
+        });
+      });
+    });
+  });
+</script>

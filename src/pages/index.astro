@@ -10,22 +10,22 @@ import { IMG } from '@/data/assets';
 import { SITE, YEARS_EXPERIENCE } from '@/config/site';
 import { buildFaqJsonLd } from '@/lib/seo';
 
-const haustypTeaser = [
+const hausTeaser = [
   {
     name: 'Bungalow',
-    href: '/haustypen/bungalow/',
+    href: '/haeuser/bungalow/',
     fakt: 'ab 95 m² · eine Ebene',
     img: IMG.bungalowGold,
   },
   {
-    name: 'Flachdachhaus',
-    href: '/haustypen/flachdachhaus/',
-    fakt: 'ab 130 m² · Flachdach',
-    img: IMG.bauhausWinter,
+    name: 'Modulhaus',
+    href: '/haeuser/modulhaus/',
+    fakt: 'ab 75 m² · erweiterbar',
+    img: IMG.modulhaus,
   },
   {
-    name: 'Tiny House',
-    href: '/haustypen/tiny-house/',
+    name: 'Tiny Haus',
+    href: '/haeuser/tiny-haus/',
     fakt: 'ab 35 m² · kompakt',
     img: IMG.fassadeRot,
   },
@@ -46,7 +46,7 @@ const faq = [
        davor. Genau solche in sich geschlossenen Absaetze zitieren
        KI-Antwortsysteme und Googles Uebersicht mit KI. */
     q: 'Was macht die EcoBau GmbH?',
-    a: 'Die EcoBau GmbH ist ein Fertighaus-Hersteller aus Hannover. Wir planen und bauen schlüsselfertige und individuell geplante Einfamilienhäuser, Bungalows, Mehrfamilienhäuser und Tiny Houses in Holztafelbauweise – bundesweit. Die Wand-, Decken- und Dachelemente entstehen witterungsunabhängig im Werk und werden auf dem Grundstück montiert. Jedes Haus erfüllt ab Werk den Effizienzhaus-40-Standard und ist damit KfW-förderfähig. Zum Angebot gehören eine Festpreisgarantie über zwölf Monate ab Vertragsabschluss und 30 Jahre Garantie auf die Baukonstruktion. Der Betrieb ist seit 1994 am Bau tätig. EcoBau ist zugleich ein ausführendes Bauunternehmen: Hochbau, Schlüsselfertigbau und Tiefbau für gewerbliche und private Bauherren, für die öffentliche Hand und als Nachunternehmer für andere Bauunternehmen — darunter Verwaltungs-, Wohn- und Klinikbauten in Stahlbetonbauweise.',
+    a: 'Die EcoBau GmbH ist ein familiengeführtes Bauunternehmen und Fertighaus-Hersteller aus Hannover, seit 1994 am Bau. Wir planen und bauen schlüsselfertige, individuell entworfene Häuser in Holztafelbauweise: Einfamilienhäuser mit Satteldach oder Flachdach, Bungalows, Modulhäuser und Tiny Häuser. Die Wand-, Decken- und Dachelemente entstehen witterungsunabhängig in unserem eigenen Werk und werden auf dem Grundstück montiert. Jedes Haus erfüllt ab Werk den Effizienzhaus-40-Standard und ist damit KfW-förderfähig; dazu kommen eine Festpreisgarantie über zwölf Monate ab Vertragsabschluss und 30 Jahre Garantie auf die Baukonstruktion. Neben Wohnhäusern errichten wir größere Gebäude: Mehrfamilienhäuser, Büro- und Verwaltungsgebäude, Hotels sowie Kindertagesstätten, Schulen und Kliniken – schlüsselfertig für eigene Auftraggeber oder als abgegrenztes Leistungspaket für Generalunternehmer.',
   },
   {
     q: 'Was kostet ein Fertighaus von EcoBau?',
@@ -54,7 +54,7 @@ const faq = [
   },
   {
     q: 'Wie lange dauert der Bau eines Fertighauses?',
-    a: 'Der Rohbau eines Einfamilienhauses entsteht in rund 20 Tagen witterungsunabhängig im Werk; die Montage vor Ort dauert anschließend etwa drei Tage – dann steht Ihr Haus. Die Gesamtdauer bis bezugsfertig hängt von Größe, Ausbaustufe und Grundstück ab. Möglich macht das Tempo die Vorfertigung im Werk: Auf der Baustelle wird montiert, nicht gebaut.',
+    a: 'Eine allgemeine Wochenzahl wäre unseriös: Die Dauer hängt an der Bearbeitungszeit der Bauaufsicht, an Ihrer Finanzierung, am Baugrund und am Witterungsverlauf – Faktoren, die nicht in unserer Hand liegen. Was die Vorfertigung leistet, ist die Verlagerung des Rohbaus in die Halle: Auf der Baustelle wird montiert, nicht gebaut. Einen belastbaren Terminplan für Ihr Vorhaben bekommen Sie, sobald Grundstück und Genehmigungslage geklärt sind.',
   },
   {
     q: 'Was bedeutet „schlüsselfertig“ genau?',
@@ -62,7 +62,7 @@ const faq = [
   },
   {
     q: 'Kann ich ein Fertighaus komplett individuell planen?',
-    a: 'Ja. Neben unseren Haustypen planen wir frei entworfene Architektenhäuser in Holztafelbauweise – Grundriss, Fassade, Dachform und Ausstattung entstehen individuell. Die Vorfertigung im Werk schränkt die Gestaltung kaum ein.',
+    a: 'Ja – das ist bei uns der Normalfall. Die Entwürfe auf dieser Website sind Anschauung, kein Bestellkatalog: Jedes Haus wird von einem Architekten für sein Grundstück neu gezeichnet, mit eigenem Grundriss, eigener Fassade und eigener Dachform. Die Vorfertigung im Werk schränkt die Gestaltung kaum ein. Sie können auch mit einem eigenen Architekten kommen – dann übernehmen wir ab der Werkplanung.',
   },
   {
     q: 'Welche KfW-Förderung gibt es 2026 für den Hausbau?',
@@ -72,9 +72,9 @@ const faq = [
 ---
 
 <BaseLayout
-  title={`Fertighaus schlüsselfertig bauen – individuell geplant | ${SITE.name}`}
+  title={`Fertighäuser und Gebäude aus Hannover – schlüsselfertig gebaut | ${SITE.name}`}
   fullTitle
-  description="Bauunternehmen aus Hannover: individuell geplante Fertighäuser in Holztafelbauweise, schlüsselfertig und im Effizienzhaus-40-Standard. Dazu Hochbau, Schlüsselfertigbau und Tiefbau für Gewerbe, Kommunen und Bauunternehmen."
+  description="Familiengeführtes Bauunternehmen aus Hannover: individuell geplante Fertighäuser in Holztafelbauweise aus eigener Fertigung, dazu Mehrfamilienhäuser, Gewerbebauten sowie Gebäude für Bildung und Soziales. Effizienzhaus 40 ab Werk."
   heroOverlay
   jsonLd={[buildFaqJsonLd(faq)]}
 >
@@ -82,17 +82,17 @@ const faq = [
   <VideoHero poster={IMG.heroHome}>
     <div class="max-w-3xl">
       <h1 class="hero-line font-display text-hero font-medium">
-        Wir bauen. Vom Fertighaus bis zum Verwaltungsbau.
+        Wir bauen Häuser. Und Gebäude.
       </h1>
       <p class="hero-line prose-measure mt-6 text-body text-paper/85" style="--line-delay: 180ms">
         {SITE.legalName} aus {SITE.contact.city} — schlüsselfertige Fertighäuser in
-        Holztafelbauweise und Hochbau für Gewerbe, Kommunen und Bauunternehmen.
-        Seit {SITE.foundingYear}.
+        Holztafelbauweise, dazu Mehrfamilienhäuser, Gewerbebauten und Gebäude für
+        Bildung und Soziales. Familienbetrieb seit {SITE.foundingYear}.
       </p>
       <div class="hero-line mt-10 flex flex-wrap items-center gap-6" style="--line-delay: 320ms">
         <Button href="/kontakt/" variant="primary">Beratung vereinbaren</Button>
-        <a href="/referenzen/" class="link-line text-small font-medium text-paper">
-          Gebaute Häuser ansehen
+        <a href="/haeuser/einfamilienhaus/" class="link-line text-small font-medium text-paper">
+          Entwürfe ansehen
         </a>
       </div>
     </div>
@@ -104,32 +104,32 @@ const faq = [
        ueber Grundrisse durchscrollen muessen. -->
   <section class="container-site py-(--spacing-section-sm)">
     <div class="grid divide-y divide-line border-y border-line lg:grid-cols-2 lg:divide-x lg:divide-y-0">
-      <a href="/haustypen/" class="group/weg block py-8 lg:pr-10">
+      <a href="/haeuser/einfamilienhaus/" class="group/weg block py-8 lg:pr-10">
         <p class="text-caption tracking-wide text-muted uppercase">Für private Bauherren</p>
         <p class="mt-3 font-display text-title font-medium">
-          Ihr Fertighaus, individuell geplant und schlüsselfertig
+          Ihr Haus, individuell geplant und schlüsselfertig
         </p>
         <p class="prose-measure mt-3 text-small text-muted">
-          Sechs Haustypen als Grundgerüst, Grundriss und Ausstattung entstehen mit Ihnen.
-          Effizienzhaus 40, Festpreis über zwölf Monate.
+          Einfamilienhaus, Bungalow, Modulhaus oder Tiny Haus – gezeichnet für Ihr
+          Grundstück, gefertigt im eigenen Werk. Effizienzhaus 40, Festpreis über zwölf Monate.
         </p>
         <span class="mt-5 inline-flex items-center gap-2 text-small font-medium text-oxide">
-          Zu den Haustypen
+          Zu den Häusern
           <svg class="h-4 w-4 transition-transform duration-300 ease-[var(--ease-out-quart)] group-hover/weg:translate-x-1" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" /></svg>
         </span>
       </a>
 
-      <a href="/hoch-und-tiefbau/" class="group/weg block py-8 lg:pl-10">
-        <p class="text-caption tracking-wide text-muted uppercase">Für Gewerbe, Kommunen und Bauunternehmen</p>
+      <a href="/wohn-und-gewerbebau/mehrfamilienhaeuser/" class="group/weg block py-8 lg:pl-10">
+        <p class="text-caption tracking-wide text-muted uppercase">Für Bauherren, Gewerbe und Kommunen</p>
         <p class="mt-3 font-display text-title font-medium">
-          Hochbau, Schlüsselfertigbau und Tiefbau
+          Wohn- und Gewerbebau
         </p>
         <p class="prose-measure mt-3 text-small text-muted">
-          Rohbau in Stahlbetonbauweise, Ausbau unter Auflagen, Erd- und Gründungsarbeiten —
-          als Generalunternehmer wie als Nachunternehmer. Referenzen bis rund 10.500 m² BGF.
+          Mehrfamilienhäuser, Büro- und Verwaltungsgebäude, Kitas und Kliniken —
+          schlüsselfertig oder in einzelnen Leistungsphasen. Gebaut bis rund 10.500 m² BGF.
         </p>
         <span class="mt-5 inline-flex items-center gap-2 text-small font-medium text-oxide">
-          Zum Hoch- und Tiefbau
+          Zum Wohn- und Gewerbebau
           <svg class="h-4 w-4 transition-transform duration-300 ease-[var(--ease-out-quart)] group-hover/weg:translate-x-1" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" /></svg>
         </span>
       </a>
@@ -144,10 +144,10 @@ const faq = [
           Ein Haus ist kein Produkt von der Stange. Unsere Bauweise schon&nbsp;– im besten Sinn.
         </h2>
         <p class="reveal prose-measure mt-8 text-body text-muted">
-          Jedes Haus von {SITE.name} entsteht zweimal: zuerst millimetergenau im Werk, dann in
-          wenigen Tagen auf Ihrem Grundstück. Die Präzision der seriellen Fertigung
-          trifft auf einen Grundriss, den es genau einmal gibt – Ihren. Das Ergebnis
-          ist planbar in Preis und Termin, ohne dass Architektur zur Verhandlungsmasse wird.
+          Jedes Haus von {SITE.name} entsteht zweimal: zuerst millimetergenau im Werk, dann
+          auf Ihrem Grundstück. Die Präzision der seriellen Fertigung trifft auf einen
+          Grundriss, den es genau einmal gibt – Ihren. Das Ergebnis ist planbar in Preis
+          und Termin, ohne dass Architektur zur Verhandlungsmasse wird.
         </p>
         <dl class="reveal mt-12 divide-y divide-line border-y border-line">
           <div class="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
@@ -163,8 +163,8 @@ const faq = [
             <dd class="self-center text-small text-muted">Effizienzhaus 40 ab Werk: Wärmepumpe, Lüftungsanlage, PV-Vorbereitung inklusive.</dd>
           </div>
           <div class="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
-            <dt class="tnum font-display text-title font-medium text-oxide">3 Tage</dt>
-            <dd class="self-center text-small text-muted">Montage vor Ort – der Rohbau entsteht davor in rund 20 Tagen witterungsgeschützt im Werk.</dd>
+            <dt class="tnum font-display text-title font-medium text-oxide">Eigenes Werk</dt>
+            <dd class="self-center text-small text-muted">Wand-, Decken- und Dachelemente entstehen witterungsgeschützt in unserer eigenen Fertigung.</dd>
           </div>
         </dl>
       </div>
@@ -230,13 +230,13 @@ const faq = [
         />
         <div class="reveal lg:col-span-5 lg:col-start-8">
           <h2 class="font-display text-display font-medium">
-            Und wir bauen nicht nur Fertighäuser.
+            Und wir bauen nicht nur Einfamilienhäuser.
           </h2>
           <div class="prose-measure mt-6 space-y-5 text-body text-muted">
             <p>
-              Neben dem Hausbau übernehmen wir Hochbau, Schlüsselfertigbau und Tiefbau
-              für gewerbliche und private Bauherren, für Kommunen und als Nachunternehmer
-              für andere Bauunternehmen — in Stahlbetonbauweise ebenso wie in Holzrahmenbau.
+              Mehrfamilienhäuser, Büro- und Verwaltungsgebäude, Kindertagesstätten und
+              Kliniken gehören ebenso zu unserer Arbeit — schlüsselfertig für eigene
+              Auftraggeber oder als abgegrenztes Leistungspaket für Generalunternehmer.
             </p>
             <p>
               Zuletzt entstanden so ein Verwaltungsbau mit rund 10.500 m²
@@ -245,8 +245,9 @@ const faq = [
               Braunschweig.
             </p>
           </div>
-          <div class="mt-8">
-            <Button href="/hoch-und-tiefbau/" variant="secondary">Zum Hoch- und Tiefbau</Button>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <Button href="/wohn-und-gewerbebau/gewerbebau/" variant="secondary">Zum Gewerbebau</Button>
+            <Button href="/wohn-und-gewerbebau/mehrfamilienhaeuser/" variant="secondary">Mehrfamilienhäuser</Button>
           </div>
         </div>
       </div>
@@ -257,13 +258,13 @@ const faq = [
   <section class="bg-stone py-(--spacing-section)">
     <div class="container-site">
       <SectionIntro
-        title="Sechs Haustypen. Unendlich viele Grundrisse."
-        lead="Vom Tiny House bis zum Mehrfamilienhaus: Jeder Typ ist ein erprobtes Grundgerüst – Räume, Fassade und Details planen wir mit Ihnen neu."
+        title="Vier Hausarten. Unendlich viele Grundrisse."
+        lead="Vom Tiny Haus bis zum Einfamilienhaus mit zwei Vollgeschossen: Jede Bauform ist ein erprobtes Grundgerüst – Räume, Fassade und Details zeichnen wir mit Ihnen neu."
       />
 
       <div class="mt-16 grid gap-8 lg:grid-cols-12">
         <!-- Featured: Satteldachhaus -->
-        <a href="/haustypen/satteldachhaus/" class="group block lg:col-span-7">
+        <a href="/haeuser/einfamilienhaus/" class="group block lg:col-span-7">
           <Figure
             src={IMG.satteldach.src}
             alt={IMG.satteldach.alt}
@@ -273,15 +274,15 @@ const faq = [
           />
           <div class="mt-5 flex items-baseline justify-between gap-4">
             <h3 class="font-display text-title font-medium">
-              <span class="link-line">Satteldachhaus</span>
+              <span class="link-line">Einfamilienhaus</span>
             </h3>
-            <p class="tnum text-small text-muted">ab 120 m² · klassische Proportion</p>
+            <p class="tnum text-small text-muted">ab 120 m² · Satteldach oder Flachdach</p>
           </div>
         </a>
 
         <!-- Drei kompakte Typen -->
         <div class="grid content-start gap-10 sm:grid-cols-3 lg:col-span-5 lg:grid-cols-1 lg:gap-8 lg:pl-8">
-          {haustypTeaser.map((typ) => (
+          {hausTeaser.map((typ) => (
             <a href={typ.href} class="group grid grid-cols-[7rem_1fr] items-center gap-5">
               <Figure
                 src={typ.img.src}
@@ -303,7 +304,7 @@ const faq = [
       </div>
 
       <div class="mt-14">
-        <Button href="/haustypen/" variant="secondary">Alle Haustypen entdecken</Button>
+        <Button href="/weg-zum-traumhaus/" variant="secondary">So entsteht Ihr Haus</Button>
       </div>
     </div>
   </section>
@@ -311,30 +312,38 @@ const faq = [
   <!-- Aufbau & Materialien: Wandschnitt-Slider -->
   <MaterialSlider />
 
-  <!-- Referenz-Preview: ein entschiedenes Bild -->
+  <!-- Eigenes Werk: der Beleg dafuer, dass Fertigung und Bau in einer Hand liegen -->
   <section class="py-(--spacing-section)">
     <div class="container-site">
       <SectionIntro
-        title="Gebaut, bezogen, bewohnt."
-        lead="Keine Renderings: Diese Häuser stehen. Mit Ort, Wohnfläche und dokumentierter Bauzeit."
+        title="Wir fertigen selbst."
+        lead="Wand-, Decken- und Dachelemente entstehen in unserer eigenen Halle – geprüft, bevor sie das Werk verlassen. Auf der Baustelle wird montiert, nicht gebaut."
       />
     </div>
-    <a href="/referenzen/" class="group mt-16 block">
+    <div class="mt-16">
       <Figure
-        src={IMG.kuecheEiche.src}
-        alt={IMG.kuecheEiche.alt}
+        src={IMG.werkHalle.src}
+        alt={IMG.werkHalle.alt}
         ratio="aspect-[3/2] sm:aspect-[21/9]"
         sizes="100vw"
         class="w-full"
         parallax={0.05}
-        zoom
       />
-    </a>
-    <div class="container-site mt-6 flex flex-wrap items-baseline justify-between gap-4">
-      <p class="text-small text-muted">
-        Offene Wohnküche, Projekt „Haus am Hang“ – 178 m², bezogen nach sieben Monaten.
-      </p>
-      <a href="/referenzen/" class="link-line text-small font-medium">Alle Referenzen ansehen</a>
+    </div>
+    <div class="container-site mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+      {[IMG.holzMaterial, IMG.werkTeam, IMG.kranModul].map((bild, i) => (
+        <Figure
+          src={bild.src}
+          alt={bild.alt}
+          ratio="aspect-[4/3]"
+          sizes="(min-width: 1024px) 31vw, (min-width: 640px) 47vw, 100vw"
+          class={i === 2 ? 'sm:col-span-2 lg:col-span-1' : ''}
+          zoom
+        />
+      ))}
+    </div>
+    <div class="container-site mt-10">
+      <a href="/ueber-uns/" class="link-line text-small font-medium">Das Werk und der Betrieb</a>
     </div>
   </section>
 

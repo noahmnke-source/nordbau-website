@@ -10,22 +10,22 @@ import { IMG } from '@/data/assets';
 import { SITE, YEARS_EXPERIENCE } from '@/config/site';
 import { buildFaqJsonLd } from '@/lib/seo';
 
-const haustypTeaser = [
+const hausTeaser = [
   {
     name: 'Bungalow',
-    href: '/en/haustypen/bungalow/',
+    href: '/en/haeuser/bungalow/',
     fakt: 'from 95 m² · single storey',
     img: IMG.bungalowGold,
   },
   {
-    name: 'Flat-roof house',
-    href: '/en/haustypen/flachdachhaus/',
-    fakt: 'from 130 m² · flat roof',
-    img: IMG.bauhausWinter,
+    name: 'Modular house',
+    href: '/en/haeuser/modulhaus/',
+    fakt: 'from 75 m² · extendable',
+    img: IMG.modulhaus,
   },
   {
-    name: 'Tiny House',
-    href: '/en/haustypen/tiny-house/',
+    name: 'Tiny house',
+    href: '/en/haeuser/tiny-haus/',
     fakt: 'from 35 m² · compact',
     img: IMG.fassadeRot,
   },
@@ -46,7 +46,7 @@ const faq = [
   },
   {
     q: 'How long does it take to build a prefab home?',
-    a: 'The structural shell of a single-family home is built in around 20 days, weather-independent, in the factory; the on-site assembly then takes about three days – and your house is up. The total time until move-in ready depends on size, finishing level and plot. The pace is made possible by prefabrication in the factory: on the building site, elements are assembled, not built.',
+    a: 'A general figure in weeks would be misleading: the duration depends on the building authority, your financing, the ground conditions and the weather – factors outside our control. What prefabrication does deliver is moving the shell into the hall: on site, elements are assembled, not built. You receive a reliable programme for your own project once the site and the consent position are settled.',
   },
   {
     q: 'What exactly does “turnkey” mean?',
@@ -64,9 +64,9 @@ const faq = [
 ---
 
 <BaseLayout
-  title={`Build a turnkey prefab home – individually planned | ${SITE.name}`}
+  title={`Prefab homes and buildings from Hanover – built turnkey | ${SITE.name}`}
   fullTitle
-  description="Individually planned prefab homes in timber-frame construction: turnkey, Efficiency House 40, 12-month fixed-price guarantee. Nationwide. Book a consultation now."
+  description="Family-run construction company from Hanover: individually planned prefab homes in timber-frame construction from our own plant, plus apartment buildings, commercial buildings and facilities for education and care. Efficiency House 40 ex works."
   heroOverlay
   jsonLd={[buildFaqJsonLd(faq)]}
 >
@@ -74,20 +74,56 @@ const faq = [
   <VideoHero poster={IMG.heroHome}>
     <div class="max-w-3xl">
       <h1 class="hero-line font-display text-hero font-medium">
-        Your prefab home. Individually planned, turnkey at a fixed price.
+        We build houses. And buildings.
       </h1>
       <p class="hero-line prose-measure mt-6 text-body text-paper/85" style="--line-delay: 180ms">
-        {SITE.name} plans and builds architect homes in timber-frame construction –
-        nationwide, to Efficiency House 40 standard, with a 30-year guarantee on the building structure.
+        {SITE.legalName} from {SITE.contact.city} — turnkey prefab homes in timber-frame
+        construction, plus apartment buildings, commercial buildings and facilities for
+        education and care. A family business since {SITE.foundingYear}.
       </p>
       <div class="hero-line mt-10 flex flex-wrap items-center gap-6" style="--line-delay: 320ms">
         <Button href="/en/kontakt/" variant="primary">Book a consultation</Button>
-        <a href="/en/referenzen/" class="link-line text-small font-medium text-paper">
-          See houses we have built
+        <a href="/en/haeuser/einfamilienhaus/" class="link-line text-small font-medium text-paper">
+          See the designs
         </a>
       </div>
     </div>
   </VideoHero>
+
+  <!-- Two entry points: the site serves two audiences with very different questions. -->
+  <section class="container-site py-(--spacing-section-sm)">
+    <div class="grid divide-y divide-line border-y border-line lg:grid-cols-2 lg:divide-x lg:divide-y-0">
+      <a href="/en/haeuser/einfamilienhaus/" class="group/weg block py-8 lg:pr-10">
+        <p class="text-caption tracking-wide text-muted uppercase">For private clients</p>
+        <p class="mt-3 font-display text-title font-medium">
+          Your home, individually designed and turnkey
+        </p>
+        <p class="prose-measure mt-3 text-small text-muted">
+          Detached house, bungalow, modular house or tiny house – drawn for your site,
+          made in our own plant. Efficiency House 40, fixed price for twelve months.
+        </p>
+        <span class="mt-5 inline-flex items-center gap-2 text-small font-medium text-oxide">
+          To the houses
+          <svg class="h-4 w-4 transition-transform duration-300 ease-[var(--ease-out-quart)] group-hover/weg:translate-x-1" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" /></svg>
+        </span>
+      </a>
+
+      <a href="/en/wohn-und-gewerbebau/mehrfamilienhaeuser/" class="group/weg block py-8 lg:pl-10">
+        <p class="text-caption tracking-wide text-muted uppercase">For developers, business and public clients</p>
+        <p class="mt-3 font-display text-title font-medium">
+          Residential and commercial buildings
+        </p>
+        <p class="prose-measure mt-3 text-small text-muted">
+          Apartment buildings, offices and administration, nurseries and clinics —
+          turnkey or as individual work packages. Built up to around 10,500 m² gross floor area.
+        </p>
+        <span class="mt-5 inline-flex items-center gap-2 text-small font-medium text-oxide">
+          To residential and commercial
+          <svg class="h-4 w-4 transition-transform duration-300 ease-[var(--ease-out-quart)] group-hover/weg:translate-x-1" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" /></svg>
+        </span>
+      </a>
+    </div>
+  </section>
 
   <!-- USP: Statement + Belege -->
   <section class="container-site py-(--spacing-section)">
@@ -116,8 +152,8 @@ const faq = [
             <dd class="self-center text-small text-muted">Efficiency House 40 ex works: heat pump, ventilation system, PV preparation included.</dd>
           </div>
           <div class="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
-            <dt class="tnum font-display text-title font-medium text-oxide">3 days</dt>
-            <dd class="self-center text-small text-muted">On-site assembly – the structural shell is built beforehand in around 20 days, weather-protected in the factory.</dd>
+            <dt class="tnum font-display text-title font-medium text-oxide">Own plant</dt>
+            <dd class="self-center text-small text-muted">Wall, floor and roof elements are produced weather-protected in our own manufacturing hall.</dd>
           </div>
         </dl>
       </div>
@@ -172,13 +208,13 @@ const faq = [
   <section class="bg-stone py-(--spacing-section)">
     <div class="container-site">
       <SectionIntro
-        title="Six house types. Countless floor plans."
+        title="Four house forms. Countless floor plans."
         lead="From the tiny house to the multi-family house: each type is a proven basic framework – rooms, facade and details we plan anew with you."
       />
 
       <div class="mt-16 grid gap-8 lg:grid-cols-12">
-        <!-- Featured: Satteldachhaus -->
-        <a href="/en/haustypen/satteldachhaus/" class="group block lg:col-span-7">
+        <!-- Featured: Einfamilienhaus -->
+        <a href="/en/haeuser/einfamilienhaus/" class="group block lg:col-span-7">
           <Figure
             src={IMG.satteldach.src}
             alt={IMG.satteldach.alt}
@@ -188,15 +224,15 @@ const faq = [
           />
           <div class="mt-5 flex items-baseline justify-between gap-4">
             <h3 class="font-display text-title font-medium">
-              <span class="link-line">Gable-roof house</span>
+              <span class="link-line">Detached house</span>
             </h3>
-            <p class="tnum text-small text-muted">from 120 m² · classic proportions</p>
+            <p class="tnum text-small text-muted">from 120 m² · pitched or flat roof</p>
           </div>
         </a>
 
         <!-- Drei kompakte Typen -->
         <div class="grid content-start gap-10 sm:grid-cols-3 lg:col-span-5 lg:grid-cols-1 lg:gap-8 lg:pl-8">
-          {haustypTeaser.map((typ) => (
+          {hausTeaser.map((typ) => (
             <a href={typ.href} class="group grid grid-cols-[7rem_1fr] items-center gap-5">
               <Figure
                 src={typ.img.src}
@@ -218,7 +254,7 @@ const faq = [
       </div>
 
       <div class="mt-14">
-        <Button href="/en/haustypen/" variant="secondary">Discover all house types</Button>
+        <Button href="/en/weg-zum-traumhaus/" variant="secondary">How your house is built</Button>
       </div>
     </div>
   </section>
@@ -227,29 +263,38 @@ const faq = [
   <MaterialSlider />
 
   <!-- Referenz-Preview: ein entschiedenes Bild -->
+  <!-- Our own plant -->
   <section class="py-(--spacing-section)">
     <div class="container-site">
       <SectionIntro
-        title="Built, moved into, lived in."
-        lead="No renderings: these houses stand. With location, living space and documented build time."
+        title="We manufacture ourselves."
+        lead="Wall, floor and roof elements are made in our own hall – checked before they leave the plant. On site, elements are assembled, not built."
       />
     </div>
-    <a href="/en/referenzen/" class="group mt-16 block">
+    <div class="mt-16">
       <Figure
-        src={IMG.kuecheEiche.src}
-        alt={IMG.kuecheEiche.alt}
+        src={IMG.werkHalle.src}
+        alt={IMG.werkHalle.alt}
         ratio="aspect-[3/2] sm:aspect-[21/9]"
         sizes="100vw"
         class="w-full"
         parallax={0.05}
-        zoom
       />
-    </a>
-    <div class="container-site mt-6 flex flex-wrap items-baseline justify-between gap-4">
-      <p class="text-small text-muted">
-        Open-plan kitchen, “Haus am Hang” project – 178 m², moved into after seven months.
-      </p>
-      <a href="/en/referenzen/" class="link-line text-small font-medium">See all references</a>
+    </div>
+    <div class="container-site mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+      {[IMG.holzMaterial, IMG.werkTeam, IMG.kranModul].map((bild, i) => (
+        <Figure
+          src={bild.src}
+          alt={bild.alt}
+          ratio="aspect-[4/3]"
+          sizes="(min-width: 1024px) 31vw, (min-width: 640px) 47vw, 100vw"
+          class={i === 2 ? 'sm:col-span-2 lg:col-span-1' : ''}
+          zoom
+        />
+      ))}
+    </div>
+    <div class="container-site mt-10">
+      <a href="/en/ueber-uns/" class="link-line text-small font-medium">The plant and the company</a>
     </div>
   </section>
 

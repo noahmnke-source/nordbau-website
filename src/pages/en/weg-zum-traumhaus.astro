@@ -1,0 +1,338 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import Button from '@/components/Button.astro';
+import Figure from '@/components/Figure.astro';
+import SectionIntro from '@/components/SectionIntro.astro';
+import FaqAccordion from '@/components/FaqAccordion.astro';
+import { buildFaqJsonLd } from '@/lib/seo';
+import { SITE } from '@/config/site';
+
+const breadcrumbs = [{ name: 'The road to your dream home', href: '/en/weg-zum-traumhaus/' }];
+
+/**
+ * Deliberately without durations: how long a stage takes depends on the
+ * authority, the site and the financing – a number of weeks on a website
+ * would be a promise nobody can keep.
+ */
+const phasen = [
+  {
+    kapitel: 'Clarify',
+    titel: 'What we need to know first',
+    schritte: [
+      {
+        titel: 'First conversation',
+        text: 'We listen before we draw: how many people will live in the house, what your daily life looks like, what budget stands behind it, what timeframe matters to you. At the end you get an honest assessment of whether and how your project can be realised – including when the answer is "not like this".',
+      },
+      {
+        titel: 'Checking the site',
+        text: 'We study the development plan: permitted roof form and pitch, ridge direction, eaves and ridge height, site coverage and floor area ratios, separation distances, building lines. Added to that are access, slope, services and whether a crane can be set up at all. This check determines what may be built on your plot – everything else follows from it.',
+      },
+      {
+        titel: 'Ground and services',
+        text: 'A soil survey establishes bearing capacity, groundwater level and drainage. It determines the foundations, the basement and the drainage strategy, and is therefore one of the biggest cost levers of the whole project. In parallel we clarify with the utilities how water, drainage, electricity and telecoms reach the house.',
+      },
+    ],
+  },
+  {
+    kapitel: 'Design',
+    titel: 'The design takes shape',
+    schritte: [
+      {
+        titel: 'Design by the architect',
+        text: 'Now it gets drawn – by an architect, not out of a catalogue. From your requirements and the constraints of the site comes a preliminary design with floor plans, elevations and sections. We go through it with you, change it, discard it and draw again until the plan fits how you actually live. You can also come with your own architect: we then take over from the detailed design onwards.',
+      },
+      {
+        titel: 'Fixed-price offer and specification',
+        text: 'On the basis of the agreed design you receive a binding offer – together with a specification that names item by item what is included and what is not. What is not written there is not commissioned. This clarity before signing matters more to us than a low entry figure.',
+      },
+      {
+        titel: 'Building contract',
+        text: 'The contract under German consumer building law brings together the design, the specification, the price and the payment schedule. You have the statutory right of withdrawal, and payments are tied to construction progress rather than to dates. Take your time to review it – ideally with your solicitor or an independent building adviser.',
+      },
+      {
+        titel: 'Planning application',
+        text: 'We prepare the consent drawings with all required evidence – structural, thermal, acoustic and drainage – and submit the application to the building authority. How long the authority takes is outside our control; we keep you informed of every update and continue with the detailed design in the meantime.',
+      },
+      {
+        titel: 'Specification meeting',
+        text: 'Floors, doors, windows, sanitaryware, tiles, staircase, electrical fittings and heating technology are selected and fixed in writing. What is decided here goes into production exactly as agreed – which is precisely why the fixed price stays fixed.',
+      },
+    ],
+  },
+  {
+    kapitel: 'Build',
+    titel: 'From the plant to your site',
+    schritte: [
+      {
+        titel: 'Detailed design',
+        text: 'The approved design becomes a manufacturing drawing to the millimetre: every wall, floor and roof element with stud spacing, openings, conduits, boxes and connection points. What is properly resolved here does not have to be improvised on site.',
+      },
+      {
+        titel: 'Prefabrication in our own plant',
+        text: 'In our hall the components are made independently of the weather: framing cut and assembled, sheathing fixed, insulation placed, windows fitted, service zone prepared. Every element is checked before it leaves the plant. Because the work is dry, no construction moisture enters the structure.',
+      },
+      {
+        titel: 'Foundations',
+        text: 'In parallel with production, the slab or basement is built on the plot, together with earthworks, drainage and service connections. The foundation is surveyed – the tolerances of prefabrication demand an exact base.',
+      },
+      {
+        titel: 'Erection',
+        text: 'The elements arrive by low-loader and are set with a mobile crane. An empty slab becomes a closed, weathertight building envelope – the day the house stands as a house for the first time. You are welcome to be there.',
+      },
+      {
+        titel: 'Fit-out and building services',
+        text: 'Under a roof, the electrical, plumbing, heating and ventilation works follow, then screed, internal fit-out, finishes and the components that can only be installed on site. One contact person coordinates the trades; you do not have to find tradespeople or juggle appointments.',
+      },
+    ],
+  },
+  {
+    kapitel: 'Hand over',
+    titel: 'And afterwards',
+    schritte: [
+      {
+        titel: 'Blower door test and measurements',
+        text: 'The airtightness of the envelope is measured, not asserted – a prerequisite for the efficiency standard and for the funding commitment. Heating and ventilation are commissioned and the values documented.',
+      },
+      {
+        titel: 'Handover inspection',
+        text: 'We walk through the house together, room by room. Anything not right goes into the record and is put right before the final account. You are welcome to bring an independent surveyor – we have nothing to hide.',
+      },
+      {
+        titel: 'Handover and documentation',
+        text: 'You receive the keys, together with the complete documentation: as-built drawings, certificates, operating instructions for the systems, maintenance intervals and the papers you need for funding and insurance.',
+      },
+      {
+        titel: 'Warranty',
+        text: 'Our responsibility does not end at handover. The statutory warranty applies, and we remain your contact for questions, adjustments and anything that shows up during the first year in use.',
+      },
+    ],
+  },
+];
+
+const bilder = [
+  {
+    nach: 1,
+    src: '/werk/werk-abbund-1600.webp',
+    alt: 'Worker assembling a floor element in the manufacturing hall',
+    caption: 'Detailed design becomes production: assembling a floor element in our hall.',
+  },
+  {
+    nach: 2,
+    src: '/werk/montage-kran-modul-1600.webp',
+    alt: 'A mobile crane lowers a prefabricated wall element over the building site',
+    caption: 'Erection day: the crane sets the prefabricated elements onto the foundations.',
+  },
+];
+
+const faq = [
+  {
+    q: 'Can my own architect design the house?',
+    a: 'Yes. Many clients come to us with a finished design or with their architect – we then take over from the detailed design onwards and carry out prefabrication and construction. Equally, the whole design can stay with us and our architect draws it. Both routes are familiar to us, and both are equally good.',
+  },
+  {
+    q: 'Why do you not state build times?',
+    a: 'Because most of the duration is not in our hands. The processing time of the building authority, your bank’s commitment, the availability of connections and the weather during earthworks all shape the programme. We give you a reliable schedule for your specific project once the site and the consent position are settled – but not a number of weeks on a website that nobody can keep.',
+  },
+  {
+    q: 'When do I have to pay what?',
+    a: 'The payment schedule is part of the building contract and is tied to construction progress, not to calendar dates. Each instalment only falls due once the corresponding work has been carried out. The security required by German consumer building law is included.',
+  },
+  {
+    q: 'What if I want to change something during design?',
+    a: 'Changes are unproblematic up to the specification meeting and increasingly expensive after it – because the detailed design is then running and material has been ordered. That is why we deliberately take time during the design stage. If something changes after signing, you receive a variation quotation in advance with the price and the effect on the programme; nothing is charged silently.',
+  },
+  {
+    q: 'Do I have to organise tradespeople myself?',
+    a: 'No. With turnkey construction we coordinate all trades and give you one contact person. If you want to take on work yourself – decorating or landscaping, for instance – we define that before signing so the interfaces and the fixed price stay unambiguous.',
+  },
+  {
+    q: 'Do you help with funding and financing?',
+    a: 'We prepare the evidence required for KfW funding and work with certified energy efficiency experts. You arrange the financing itself with your bank – we supply the documents it needs and align the payment schedule with it.',
+  },
+];
+---
+
+<BaseLayout
+  title="The road to your dream home – from the first question to handover | EcoBau"
+  fullTitle
+  description="How a house is built with EcoBau: site check, design by the architect, fixed-price offer, planning application, specification, prefabrication in our own plant, erection, inspection and handover."
+  ogImage={new URL('/werk/montage-kran-modul-1600.webp', SITE.url).href}
+  breadcrumbs={breadcrumbs}
+  jsonLd={[buildFaqJsonLd(faq)]}
+  hideFooterCta
+>
+  <section class="container-site pt-12 lg:pt-16">
+    <Breadcrumbs items={breadcrumbs} class="mb-10" />
+    <div class="grid gap-x-8 lg:grid-cols-12">
+      <div class="lg:col-span-9">
+        <h1 class="font-display text-hero font-medium">The road to your dream home</h1>
+        <p class="prose-measure mt-6 text-body leading-relaxed text-muted">
+          Building a house is not a purchase but a process – with authorities, evidence and
+          decisions that build on one another. Here is what happens in which order, who does
+          what, and at which point you are asked.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="mt-10 lg:mt-14">
+    <Figure
+      src="/werk/montage-baustelle-1600.webp"
+      alt="Prefabricated wall elements being assembled into a building envelope on site"
+      ratio="aspect-[3/2] sm:aspect-[21/9]"
+      sizes="100vw"
+      eager
+      reveal={false}
+      parallax={0.05}
+      class="w-full"
+    />
+  </div>
+
+  <section class="container-site py-(--spacing-section)">
+    <div class="grid gap-x-8 gap-y-10 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <h2 class="reveal font-display text-display font-medium">
+          Four stages. No promises we cannot keep.
+        </h2>
+      </div>
+      <div class="reveal prose-measure space-y-5 text-body leading-relaxed text-muted lg:col-span-6 lg:col-start-7">
+        <p>
+          You will deliberately find no timings on this page. How long a building project
+          takes is largely decided by bodies we have no influence over: the building
+          authority, your bank, the utilities, the ground.
+        </p>
+        <p>
+          What we provide instead is sequence and responsibility – and, for your specific
+          project, a reliable programme as soon as the site and the consent position are
+          settled.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {phasen.map((phase, pi) => {
+    const bild = bilder.find((b) => b.nach === pi);
+    return (
+      <>
+        <section
+          class:list={[
+            'py-(--spacing-section)',
+            pi % 2 === 1 ? 'bg-stone' : 'border-t border-line',
+          ]}
+        >
+          <div class="container-site">
+            <div class="grid gap-x-8 gap-y-4 lg:grid-cols-12">
+              <p class="tnum reveal text-caption text-muted lg:col-span-2">
+                {String(pi + 1).padStart(2, '0')} · {phase.kapitel}
+              </p>
+              <h2 class="reveal font-display text-display font-medium lg:col-span-8">
+                {phase.titel}
+              </h2>
+            </div>
+
+            <ol class="mt-14 grid gap-x-8 gap-y-12 lg:grid-cols-12">
+              {phase.schritte.map((s, si) => (
+                <li
+                  class="reveal border-t border-line pt-6 lg:col-span-6"
+                  style={`--reveal-delay:${(si % 2) * 90}ms`}
+                >
+                  <div class="grid gap-x-6 gap-y-3 sm:grid-cols-[3.5rem_1fr]">
+                    <p class="tnum font-display text-title font-medium text-muted">
+                      {pi + 1}.{si + 1}
+                    </p>
+                    <div>
+                      <h3 class="font-display text-title font-medium">{s.titel}</h3>
+                      <p class="prose-measure mt-3 text-small leading-relaxed text-muted">
+                        {s.text}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        {bild && (
+          <div class="container-site py-(--spacing-section-sm)">
+            <Figure
+              src={bild.src}
+              alt={bild.alt}
+              ratio="aspect-[3/2] sm:aspect-[2/1]"
+              sizes="100vw"
+              caption={bild.caption}
+              parallax={0.04}
+            />
+          </div>
+        )}
+      </>
+    );
+  })}
+
+  <section class="border-t border-line py-(--spacing-section)">
+    <div class="container-site">
+      <SectionIntro
+        title="What you contribute – and what we take on"
+        lead="So it is clear from the start where your decision is needed and where you can rely on us."
+      />
+      <div class="mt-14 grid gap-x-8 gap-y-12 lg:grid-cols-2">
+        <div class="reveal">
+          <h3 class="font-display text-title font-medium">Yours</h3>
+          <ul class="mt-6 divide-y divide-line border-y border-line">
+            {[
+              'The plot – bought or concretely in prospect.',
+              'The financing with your bank; we supply the documents for it.',
+              'The decisions on layout, specification and materials.',
+              'Your time for the design discussions and for the handover inspection.',
+            ].map((z) => (
+              <li class="py-4 text-small leading-relaxed text-muted">{z}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="reveal" style="--reveal-delay:120ms">
+          <h3 class="font-display text-title font-medium">Ours</h3>
+          <ul class="mt-6 divide-y divide-line border-y border-line">
+            {[
+              'Checking the development plan, the ground and the services.',
+              'Design, consent drawings, structural design and all certificates.',
+              'Prefabrication in our own plant and erection on your site.',
+              'Coordination of all trades through to handover – one contact person.',
+            ].map((z) => (
+              <li class="py-4 text-small leading-relaxed text-muted">{z}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-site py-(--spacing-section)">
+    <SectionIntro title="Frequently asked questions about the process" />
+    <div class="mt-14 grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-8">
+        <FaqAccordion items={faq} />
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-graphite py-(--spacing-section) text-paper">
+    <div class="container-site grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-end">
+      <div class="lg:col-span-7">
+        <h2 class="reveal font-display text-display font-medium">
+          The first step is a conversation, not a contract.
+        </h2>
+        <p class="reveal prose-measure mt-6 text-body leading-relaxed text-paper-muted">
+          Bring whatever you have – a plot, a sketch, an idea or just a question. We will
+          tell you honestly what can come of it.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-6 lg:col-span-4 lg:col-start-9 lg:justify-end">
+        <Button href="/en/kontakt/" variant="primary">Arrange a consultation</Button>
+        <a href={`tel:${SITE.contact.phone}`} class="link-line text-small font-medium text-paper">
+          {SITE.contact.phoneDisplay}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

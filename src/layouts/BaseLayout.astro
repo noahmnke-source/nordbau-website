@@ -32,7 +32,7 @@ const {
   title,
   description,
   fullTitle = false,
-  ogImage = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+  ogImage = `${SITE.url}/haeuser/einfamilienhaus/satteldach-seehaus-1600.webp`,
   heroOverlay = false,
   breadcrumbs,
   jsonLd = [],
@@ -107,10 +107,9 @@ const organizationLd = {
           ['Mehrfamilienhaus', 'Mehrfamilienhäuser in Holztafelbauweise als Fertighaus.'],
           ['Tiny House', 'Kompakte Häuser im Effizienzhaus-40-Standard.'],
           ['Modulhaus', 'Werkseitig vorgefertigte, erweiterbare Modulhäuser.'],
-          ['Hochbau', 'Hochbau für Wohn-, Büro-, Gewerbe- und öffentliche Bauten, als Generalunternehmer wie als Nachunternehmer.'],
-          ['Rohbau', 'Rohbauarbeiten in Stahlbetonbauweise für Wohn-, Büro-, Gewerbe- und öffentliche Bauten.'],
+          ['Gewerbebau', 'Büro- und Verwaltungsgebäude, Showrooms und Beherbergungsbetriebe, schlüsselfertig oder in einzelnen Leistungsphasen.'],
+          ['Bildungs- und Sozialbauten', 'Kindertagesstätten, Kindergärten, Schulen und medizinische Einrichtungen für Kommunen und freie Träger.'],
           ['Schlüsselfertigbau', 'Rohbau und sämtliche Ausbaugewerke aus einer Hand, auch unter medizinischen und brandschutztechnischen Auflagen.'],
-          ['Tiefbau', 'Erd-, Gründungs- und Entwässerungsarbeiten, auch bei laufendem Betrieb.'],
         ].map(([name, beschreibung]) => ({
           '@type': 'Offer',
           itemOffered: { '@type': 'Service', name, description: beschreibung },
@@ -123,12 +122,13 @@ const organizationLd = {
         'Effizienzhaus 40',
         'Individuelle Architektenhäuser',
         'KfW-Förderung',
-        'Hochbau',
-        'Rohbau',
-        'Stahlbetonbau',
+        'Modulbauweise',
+        'Brettsperrholz',
+        'Mehrfamilienhaus',
+        'Gewerbebau',
+        'Kindertagesstätte',
         'Schlüsselfertigbau',
         'Innenausbau',
-        'Tiefbau',
         'Nachunternehmerleistungen',
       ],
     },
@@ -191,8 +191,6 @@ const alternates = isBilingual(Astro.url.pathname)
     <link rel="preload" href="/fonts/Switzer-Variable.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- Remote-Bilder (Unsplash-Stand-ins) früh verbinden – beschleunigt LCP -->
-    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
-    <link rel="dns-prefetch" href="https://images.unsplash.com" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE.name} />

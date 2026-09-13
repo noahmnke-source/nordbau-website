@@ -8,7 +8,7 @@
  * Mit Video bleibt das Poster als poster-Attribut und First Paint erhalten.
  */
 import fs from 'node:fs';
-import { unsplashWidth, unsplashSrcset } from '@/lib/img';
+import { isProjektBild, projektSrcset } from '@/lib/img';
 
 interface Props {
   poster: { src: string; alt: string };
@@ -16,7 +16,7 @@ interface Props {
 
 const { poster } = Astro.props;
 const hasVideo = fs.existsSync(new URL('../../public/videos/hero.mp4', import.meta.url));
-const isUnsplash = poster.src.startsWith('https://images.unsplash.com/');
+const posterSrcset = isProjektBild(poster.src) ? projektSrcset(poster.src) : undefined;
 ---
 
 <section class="relative flex min-h-svh flex-col justify-end bg-graphite text-paper">
@@ -29,7 +29,7 @@ const isUnsplash = poster.src.startsWith('https://images.unsplash.com/');
         loop
         playsinline
         preload="metadata"
-        poster={isUnsplash ? unsplashWidth(poster.src, 1920) : poster.src}
+        poster={poster.src}
         aria-hidden="true"
         tabindex="-1"
       >
@@ -37,8 +37,8 @@ const isUnsplash = poster.src.startsWith('https://images.unsplash.com/');
       </video>
     ) : (
       <img
-        src={isUnsplash ? unsplashWidth(poster.src, 1920) : poster.src}
-        srcset={isUnsplash ? unsplashSrcset(poster.src, [768, 1080, 1600, 1920, 2400]) : undefined}
+        src={poster.src}
+        srcset={posterSrcset}
         sizes="100vw"
         alt={poster.alt}
         class="h-full w-full object-cover"

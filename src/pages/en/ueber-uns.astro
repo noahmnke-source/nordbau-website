@@ -18,6 +18,10 @@ const zahlen = [
     label: 'Guarantee on the building structure, plus a 5-year statutory warranty under German law (BGB) on all other work – and every essential material comes with a quality certificate.',
   },
   {
+    wert: 'Family business',
+    label: 'Owner-managed, second generation. Decisions are made in house, not at a corporate headquarters – and whoever signs the contract is still reachable after handover.',
+  },
+  {
     wert: 'KfW 40',
     label: 'Wall assemblies to the Efficiency House 40 (EH 40) standard, certified for ecology and thermal protection – highly insulated and airtight from the factory.',
   },
@@ -59,13 +63,13 @@ const grundsaetze = [
     <div class="grid gap-x-8 gap-y-10 lg:grid-cols-12">
       <div class="lg:col-span-8">
         <h1 class="font-display text-hero font-medium">
-          About {SITE.name}: One factory, one promise
+          A family business with its own plant
         </h1>
       </div>
       <p class="prose-measure self-end text-body text-muted lg:col-span-4 lg:col-start-9">
-        We call ourselves neither a construction company nor a workshop, although both are true:
-        {SITE.name} is a factory where architect-designed homes are made in series –
-        each to its own plan, all with the same precision.
+        {SITE.legalName} has been building since {SITE.foundingYear} – {YEARS_EXPERIENCE} years,
+        owner-managed and in its second generation. We design, manufacture and build ourselves:
+        houses to our own designs, and buildings for living, business and the public sector.
       </p>
     </div>
   </section>
@@ -102,9 +106,10 @@ const grundsaetze = [
           the design is individual. What is serial is the precision with which it is built.
         </p>
         <p class="reveal prose-measure mt-5 text-body text-muted">
-          We have worked to this principle since {SITE.foundingYear} – from the individually
-          planned prefab home in timber-frame construction to the public building.
-          Most clients decide once they have seen our factory.
+          We have worked to this principle since {SITE.foundingYear} – the company started
+          with traditionally built houses; today the focus is on prefabricated timber
+          buildings and modular systems. What has not changed: it is a family business in
+          which the people responsible are known by name.
         </p>
       </div>
       <div class="lg:col-span-4 lg:col-start-9">
@@ -168,6 +173,52 @@ const grundsaetze = [
           responsibility where it belongs: with us, from the first line to the handover of the
           keys.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Where the plant is -->
+  <section class="container-site py-(--spacing-section)">
+    <SectionIntro
+      title="Where our plant is"
+      lead="Administration and site management are based in Hanover. Manufacturing happens in our own hall – the elements travel from there to the site."
+    />
+
+    <div class="mt-16 grid gap-x-8 gap-y-12 lg:grid-cols-12">
+      <div class="reveal lg:col-span-5">
+        <dl class="divide-y divide-line border-y border-line">
+          {[
+            { k: 'Registered office', v: `${SITE.contact.street}, ${SITE.contact.zip} ${SITE.contact.city}, Germany` },
+            { k: 'Manufacturing', v: 'Our own production hall in Lipjan, Kosovo' },
+            { k: 'Construction', v: 'Timber frame and cross-laminated timber (CLT), plus modular construction' },
+            { k: 'We build in', v: 'Germany, Austria, Switzerland, Sweden, Norway, France, the Czech Republic, Kosovo and Albania' },
+            { k: 'Wall build-up', v: 'Certified to Efficiency House 40 standard, highly insulated and airtight ex works' },
+          ].map((z) => (
+            <div class="grid gap-1 py-4 sm:grid-cols-[9rem_1fr] sm:gap-6">
+              <dt class="text-caption text-muted">{z.k}</dt>
+              <dd class="text-small leading-relaxed">{z.v}</dd>
+            </div>
+          ))}
+        </dl>
+        <p class="prose-measure mt-6 text-small leading-relaxed text-muted">
+          Separating manufacturing from the site is not incidental but the whole principle:
+          what is made in the hall is made under controlled conditions. Transport by
+          low-loader and erection by mobile crane are part of the design – access, crane
+          standing area and delivery windows are settled before production begins.
+        </p>
+      </div>
+
+      <div class="grid content-start gap-6 sm:grid-cols-2 lg:col-span-6 lg:col-start-7">
+        {[IMG.werkHalle, IMG.werkAbbund, IMG.werkFassade, IMG.werkTeam].map((bild, i) => (
+          <Figure
+            src={bild.src}
+            alt={bild.alt}
+            ratio={i % 3 === 0 ? 'aspect-[4/3]' : 'aspect-square'}
+            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 45vw, 100vw"
+            class={i % 3 === 0 ? 'sm:col-span-2' : ''}
+            zoom
+          />
+        ))}
       </div>
     </div>
   </section>

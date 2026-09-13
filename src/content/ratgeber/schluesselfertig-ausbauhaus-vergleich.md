@@ -3,8 +3,8 @@ title: "Schlüsselfertig oder Ausbauhaus? Leistungsumfang, Kosten, Eigenleistung
 description: "Was „schlüsselfertig“ wirklich umfasst, welche Ausbaustufen es gibt und was die Muskelhypothek realistisch spart – mit Checkliste für die Leistungsbeschreibung."
 pubDate: 2026-06-16
 hero:
-  src: "https://images.unsplash.com/photo-1700581316314-9e6a809bd656?auto=format&fit=crop&w=1600&q=80"
-  alt: "Innenausbau im Holzrahmenbau: Ständerwerk mit ökologischer Dämmung und Beplankung"
+  src: "/werk/montage-rohbau-1600.webp"
+  alt: "Rohbau eines Wohnhauses mit geschlossener Gebäudehülle und gesetzten Fenstern"
   standIn: true
 seoTitle: "Schlüsselfertig oder Ausbauhaus? Kosten 2026 | EcoBau"
 seoDescription: "Schlüsselfertig oder Ausbauhaus: alle Ausbaustufen im Vergleich, 10.000–25.000 € realistisches Sparpotenzial, Banken-Anerkennung bis 15 %. Mit Checkliste."
@@ -82,4 +82,4 @@ Ein seriöser Anbieter beantwortet jeden dieser Punkte, bevor Sie unterschreiben
 
 Das Ausbauhaus lohnt sich für Bauherren mit handwerklicher Erfahrung, viel verfügbarer Zeit und Geduld für rund 10.000 bis 25.000 € realistischer Ersparnis. Für alle anderen ist die schlüsselfertige Übergabe die ehrlichere Rechnung: ein verbindlicher Festpreis für einen vollständig definierten Leistungsumfang, ein Einzugstermin, der hält, 30 Jahre Garantie auf die Baukonstruktion und fünf Jahre Gewährleistung nach BGB auf alle übrigen Leistungen. Entscheidend ist in beiden Fällen dasselbe Dokument – die Bau- und Leistungsbeschreibung. Alle Angaben in diesem Artikel: Stand 07/2026.
 
-Übrigens schließen sich beide Wege nicht aus: Einzelne Eigenleistungen wie Malern oder Außenanlagen lassen sich auch beim schlüsselfertigen Bauen vereinbaren – festgelegt vor Vertragsabschluss, damit der Festpreis eindeutig bleibt. Welche Kombination für Ihr Projekt sinnvoll ist, klären wir in einem unverbindlichen [Beratungsgespräch](/kontakt/) – gern zusammen mit einem Blick auf unsere [Haustypen](/haustypen/).
+Übrigens schließen sich beide Wege nicht aus: Einzelne Eigenleistungen wie Malern oder Außenanlagen lassen sich auch beim schlüsselfertigen Bauen vereinbaren – festgelegt vor Vertragsabschluss, damit der Festpreis eindeutig bleibt. Welche Kombination für Ihr Projekt sinnvoll ist, klären wir in einem unverbindlichen [Beratungsgespräch](/kontakt/) – gern zusammen mit einem Blick auf [den Ablauf eines Bauvorhabens](/weg-zum-traumhaus/).

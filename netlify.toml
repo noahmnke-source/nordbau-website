@@ -14,7 +14,6 @@
 # nur fuer nordbau-haeuser.de und nicht fuer ecobau-hannover.com selbst.
 # `force = true` ist noetig, weil sonst der vorhandene statische Treffer
 # gewinnt und die Weiterleitung nie ausgeloest wird.
-# `:splat` uebernimmt den Pfad, sodass Unterseiten ihr Ziel behalten.
 [[redirects]]
   from = "https://nordbau-haeuser.de/*"
   to = "https://ecobau-hannover.com/:splat"
@@ -27,22 +26,132 @@
   status = 301
   force = true
 
-# /bauleistungen/ wurde zu /hoch-und-tiefbau/ (branchenuebliche Benennung).
+# ── Neustrukturierung 2026 ───────────────────────────────────
+# "Haustypen" heisst jetzt "Haeuser", Satteldach- und Flachdachhaus sind im
+# Einfamilienhaus aufgegangen, das Mehrfamilienhaus ist in den Wohn- und
+# Gewerbebau gewandert. Die alten Adressen sind teils indexiert, deshalb
+# einzeln und dauerhaft weiterleiten statt pauschal auf die Startseite.
 [[redirects]]
-  from = "/bauleistungen/*"
-  to = "/hoch-und-tiefbau/:splat"
+  from = "/haustypen/satteldachhaus/*"
+  to = "/haeuser/einfamilienhaus/"
   status = 301
   force = true
 
-# /ablauf/ entfaellt; der naechste sinnvolle Schritt ist das Erstgespraech.
+[[redirects]]
+  from = "/haustypen/flachdachhaus/*"
+  to = "/haeuser/einfamilienhaus/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/haustypen/tiny-house/*"
+  to = "/haeuser/tiny-haus/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/haustypen/mehrfamilienhaus/*"
+  to = "/wohn-und-gewerbebau/mehrfamilienhaeuser/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/haustypen/bungalow/*"
+  to = "/haeuser/bungalow/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/haustypen/modulhaus/*"
+  to = "/haeuser/modulhaus/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/haustypen/*"
+  to = "/haeuser/einfamilienhaus/"
+  status = 301
+  force = true
+
+# Die Referenzseite ist entfallen; die Projekte stehen jetzt im Katalog der
+# jeweiligen Haus- und Bauart.
+[[redirects]]
+  from = "/referenzen/*"
+  to = "/haeuser/einfamilienhaus/"
+  status = 301
+  force = true
+
+# Hoch- und Tiefbau ist im Wohn- und Gewerbebau aufgegangen.
+[[redirects]]
+  from = "/hoch-und-tiefbau/*"
+  to = "/wohn-und-gewerbebau/gewerbebau/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bauleistungen/*"
+  to = "/wohn-und-gewerbebau/gewerbebau/"
+  status = 301
+  force = true
+
+# /ablauf/ ist durch die ausfuehrliche Ablaufseite ersetzt worden.
 [[redirects]]
   from = "/ablauf/*"
-  to = "/kontakt/"
+  to = "/weg-zum-traumhaus/"
+  status = 301
+  force = true
+
+# ── Englische Entsprechungen ─────────────────────────────────
+[[redirects]]
+  from = "/en/haustypen/satteldachhaus/*"
+  to = "/en/haeuser/einfamilienhaus/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/haustypen/flachdachhaus/*"
+  to = "/en/haeuser/einfamilienhaus/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/haustypen/tiny-house/*"
+  to = "/en/haeuser/tiny-haus/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/haustypen/mehrfamilienhaus/*"
+  to = "/en/wohn-und-gewerbebau/mehrfamilienhaeuser/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/haustypen/bungalow/*"
+  to = "/en/haeuser/bungalow/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/haustypen/modulhaus/*"
+  to = "/en/haeuser/modulhaus/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/haustypen/*"
+  to = "/en/haeuser/einfamilienhaus/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/referenzen/*"
+  to = "/en/haeuser/einfamilienhaus/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/en/ablauf/*"
-  to = "/en/kontakt/"
+  to = "/en/weg-zum-traumhaus/"
   status = 301
   force = true

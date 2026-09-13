@@ -3,8 +3,8 @@ title: "KfW-Förderung für den Neubau 2026: Programme 297/298 und 300 erklärt"
 description: "Kredite bis 150.000 € je Wohneinheit, rund 0,6 % Zins für das Effizienzhaus 40 und bis zu 270.000 € für Familien – so nutzen Sie die KfW-Neubauförderung 2026 richtig."
 pubDate: 2026-06-24
 hero:
-  src: "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=1600&q=80"
-  alt: "Kubisches Flachdachhaus mit raumhoher Glasfassade, warm beleuchtete Wohnebenen am Winterabend"
+  src: "/haeuser/einfamilienhaus/flachdach-anthrazit-1600.webp"
+  alt: "Anthrazitfarbenes Flachdachhaus mit holzverkleideter Loggia und Wasserbecken davor"
   standIn: false
 seoTitle: "KfW-Förderung Neubau 2026: 297, 298 & 300 | EcoBau"
 seoDescription: "KfW-Förderung Neubau 2026: Kredit bis 150.000 € je Wohneinheit (297/298), bis 270.000 € für Familien (KfW 300), rund 0,6 % Zins. Konditionen und Antragsweg."
@@ -24,7 +24,7 @@ Für private Bauherren sind 2026 zwei Programme relevant: „Klimafreundlicher N
 | KfW 298 „Klimafreundlicher Neubau“ | Vermieter, Investoren, Unternehmen | 150.000 € je Wohneinheit | mindestens Effizienzhaus 40 |
 | KfW 300 „Wohneigentum für Familien“ | Familien mit Kind unter 18, Einkommensgrenze | bis 270.000 € (mit QNG-Siegel und mehreren Kindern) | Effizienzhaus 40, Selbstnutzung |
 
-Ein Detail mit großer Hebelwirkung steckt in der Formulierung „je Wohneinheit“: Ein Haus mit Einliegerwohnung zählt als zwei Wohneinheiten – der maximale Kreditrahmen bei KfW 297 verdoppelt sich damit auf 300.000 €. Wer ohnehin über eine vermietbare Einheit oder das Wohnen mit den Eltern nachdenkt, findet die passende Hausform beim [Mehrfamilienhaus](/haustypen/mehrfamilienhaus/).
+Ein Detail mit großer Hebelwirkung steckt in der Formulierung „je Wohneinheit“: Ein Haus mit Einliegerwohnung zählt als zwei Wohneinheiten – der maximale Kreditrahmen bei KfW 297 verdoppelt sich damit auf 300.000 €. Wer ohnehin über eine vermietbare Einheit oder das Wohnen mit den Eltern nachdenkt, findet die passende Bauform bei den [Mehrfamilienhäusern](/wohn-und-gewerbebau/mehrfamilienhaeuser/).
 
 ## Wie funktioniert „Klimafreundlicher Neubau“ (KfW 297/298)?
 
@@ -32,7 +32,7 @@ Das Programm fördert Neubauten, die mindestens den Effizienzhaus-40-Standard er
 
 Die Konditionen Anfang 2026: bis 150.000 € Kredit je Wohneinheit, rund 0,6 Prozent Zins bei zehn Jahren Zinsbindung. Frei finanzierte Baudarlehen lagen zeitgleich deutlich darüber – über die Laufzeit summiert sich der Zinsvorteil bei voller Kreditsumme auf einen fünfstelligen Betrag. Der KfW-Kredit ersetzt dabei nicht die Baufinanzierung, er ist ihr günstigster Baustein: Den Rest strukturiert Ihre Hausbank als klassisches Darlehen.
 
-Übergangsweise fördert die KfW 2026 auch Neubauten auf Effizienzhaus-55-Niveau, zu rund 1,0 Prozent Zins. Diese Stufe läuft zum 31.12.2026 aus – wer sie nutzen will, braucht die Kreditzusage vor diesem Stichtag. Für neu geplante Häuser ist das Auslaufen allerdings kaum ein Verlust: Der EH-40-Standard wird besser gefördert, senkt die Betriebskosten dauerhaft und ist bei allen [EcoBau-Haustypen](/haustypen/) ab Werk enthalten – ohne Aufpreis und ohne nachträgliche Umplanung.
+Übergangsweise fördert die KfW 2026 auch Neubauten auf Effizienzhaus-55-Niveau, zu rund 1,0 Prozent Zins. Diese Stufe läuft zum 31.12.2026 aus – wer sie nutzen will, braucht die Kreditzusage vor diesem Stichtag. Für neu geplante Häuser ist das Auslaufen allerdings kaum ein Verlust: Der EH-40-Standard wird besser gefördert, senkt die Betriebskosten dauerhaft und ist bei allen [Häusern von EcoBau](/haeuser/einfamilienhaus/) ab Werk enthalten – ohne Aufpreis und ohne nachträgliche Umplanung.
 
 ## Wer bekommt die Familienförderung KfW 300?
 

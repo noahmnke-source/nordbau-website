@@ -39,19 +39,25 @@ export function altPath(pathname: string, target: Lang): string {
  */
 export function isBilingual(pathname: string): boolean {
   const de = toDePath(pathname);
-  if (de === '/' || de === '/404/') return true;
-  return ['/haustypen/', '/ueber-uns/', '/referenzen/', '/kontakt/'].some((p) =>
-    de.startsWith(p)
-  );
+  // Die 404-Seite bleibt ohne Sprachumschalter: Astro legt sie als 404.html ab,
+  // ein Link auf /404/ ginge daher ins Leere.
+  if (de === '/') return true;
+  return [
+    '/haeuser/',
+    '/wohn-und-gewerbebau/',
+    '/weg-zum-traumhaus/',
+    '/ueber-uns/',
+    '/kontakt/',
+  ].some((p) => de.startsWith(p));
 }
 
 /** UI-Strings für die gemeinsam genutzten Bausteine (Header, Footer, Layout). */
 export const ui = {
   de: {
     'nav.home': 'Startseite',
-    'nav.haustypen': 'Haustypen',
-    'nav.bauleistungen': 'Hoch- & Tiefbau',
-    'nav.referenzen': 'Referenzen',
+    'nav.haeuser': 'Häuser',
+    'nav.wohnGewerbe': 'Wohn- und Gewerbebau',
+    'nav.weg': 'Weg zum Traumhaus',
     'nav.ueberuns': 'Über uns',
     'nav.ratgeber': 'Ratgeber',
     'nav.kontakt': 'Kontakt',
@@ -80,9 +86,9 @@ export const ui = {
   },
   en: {
     'nav.home': 'Home',
-    'nav.haustypen': 'House types',
-    'nav.bauleistungen': 'Construction services',
-    'nav.referenzen': 'Projects',
+    'nav.haeuser': 'Houses',
+    'nav.wohnGewerbe': 'Residential & commercial',
+    'nav.weg': 'Your route to a home',
     'nav.ueberuns': 'About us',
     'nav.ratgeber': 'Guide',
     'nav.kontakt': 'Contact',
