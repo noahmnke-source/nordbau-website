@@ -3,8 +3,8 @@ name: Tiny house
 tagline: Little floor area, no compromises.
 order: 4
 hero:
-  src: "/haeuser/tiny-haus/tiny-panoramafront-1600.webp"
-  alt: "Tiny house with full-height panoramic glazing, a dark shell and a coloured entrance element in a meadow"
+  src: "/haeuser/tiny-haus/tiny-ecobau-1600.webp"
+  alt: "Tiny house with a red end wall carrying the EcoBau logo, full-height glazing, a planted pergola and a terrace in a meadow"
 katalog:
   - src: "/haeuser/tiny-haus/tiny-panoramafront-1600.webp"
     alt: "Tiny house with full-height panoramic glazing, dark shell and coloured entrance element"

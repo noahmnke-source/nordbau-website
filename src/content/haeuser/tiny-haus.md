@@ -3,8 +3,8 @@ name: Tiny Haus
 tagline: Wenig Fläche, keine Kompromisse.
 order: 4
 hero:
-  src: "/haeuser/tiny-haus/tiny-panoramafront-1600.webp"
-  alt: "Tiny Haus mit raumhoher Panoramaverglasung, dunkler Hülle und farbigem Eingangselement auf einer Wiese"
+  src: "/haeuser/tiny-haus/tiny-ecobau-1600.webp"
+  alt: "Tiny Haus mit roter Stirnwand und EcoBau-Logo, raumhoher Verglasung, begrünter Pergola und vorgelagerter Terrasse auf einer Wiese"
 katalog:
   - src: "/haeuser/tiny-haus/tiny-panoramafront-1600.webp"
     alt: "Tiny Haus mit raumhoher Panoramaverglasung, dunkler Hülle und farbigem Eingangselement"
