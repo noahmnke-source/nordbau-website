@@ -32,9 +32,9 @@ export const IMG = {
     src: '/haeuser/bungalow/bungalow-holzgiebel-1600.webp',
     alt: 'Eingeschossiger Bungalow mit steilem Giebeldach, dunkler Holzschalung und Pool, abends beleuchtet',
   },
-  tinyHaus: {
-    src: '/haeuser/tiny-haus/tiny-ecobau-1600.webp',
-    alt: 'Tiny Haus mit roter Stirnwand und EcoBau-Logo, raumhoher Verglasung und begrünter Pergola',
+  tinyHouse: {
+    src: '/haeuser/tiny-house/tiny-ecobau-1600.webp',
+    alt: 'Tiny House mit roter Stirnwand und EcoBau-Logo, raumhoher Verglasung und begrünter Pergola',
   },
   modulhaus: {
     src: '/haeuser/modulhaus/modul-zweigeschossig-1600.webp',

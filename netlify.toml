@@ -47,7 +47,7 @@
 
 [[redirects]]
   from = "/haustypen/tiny-house/*"
-  to = "/haeuser/tiny-haus/"
+  to = "/haeuser/tiny-house/"
   status = 301
 
 [[redirects]]
@@ -68,6 +68,17 @@
 [[redirects]]
   from = "/haustypen/*"
   to = "/haeuser/einfamilienhaus/"
+  status = 301
+
+# "Tiny Haus" heisst jetzt durchgehend "Tiny House" - auch in der Adresse.
+[[redirects]]
+  from = "/haeuser/tiny-haus/*"
+  to = "/haeuser/tiny-house/"
+  status = 301
+
+[[redirects]]
+  from = "/en/haeuser/tiny-haus/*"
+  to = "/en/haeuser/tiny-house/"
   status = 301
 
 # Die Referenzseite ist entfallen; die Projekte stehen jetzt im Katalog der
@@ -107,7 +118,7 @@
 
 [[redirects]]
   from = "/en/haustypen/tiny-house/*"
-  to = "/en/haeuser/tiny-haus/"
+  to = "/en/haeuser/tiny-house/"
   status = 301
 
 [[redirects]]

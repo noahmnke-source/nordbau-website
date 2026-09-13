@@ -1,21 +1,21 @@
 ---
-name: Tiny house
+name: Tiny House
 tagline: Little floor area, no compromises.
 order: 4
 hero:
-  src: "/haeuser/tiny-haus/tiny-ecobau-1600.webp"
+  src: "/haeuser/tiny-house/tiny-ecobau-1600.webp"
   alt: "Tiny house with a red end wall carrying the EcoBau logo, full-height glazing, a planted pergola and a terrace in a meadow"
 katalog:
-  - src: "/haeuser/tiny-haus/tiny-panoramafront-1600.webp"
+  - src: "/haeuser/tiny-house/tiny-panoramafront-1600.webp"
     alt: "Tiny house with full-height panoramic glazing, dark shell and coloured entrance element"
     caption: "A fully glazed long side makes the plan feel considerably larger."
-  - src: "/haeuser/tiny-haus/tiny-satteldach-1600.webp"
+  - src: "/haeuser/tiny-house/tiny-satteldach-1600.webp"
     alt: "Several tiny houses with pitched roofs and timber façades at dusk"
     caption: "Pitched-roof variant – the ridge height makes room for a sleeping gallery."
-  - src: "/haeuser/tiny-haus/tiny-siedlung-1600.webp"
+  - src: "/haeuser/tiny-house/tiny-siedlung-1600.webp"
     alt: "Group of tiny houses on a slope, lit in the evening, with paths between them"
     caption: "Several units as a group, each with its own access and outdoor space."
-  - src: "/haeuser/tiny-haus/tiny-resort-1600.webp"
+  - src: "/haeuser/tiny-house/tiny-resort-1600.webp"
     alt: "Aerial view of a scheme of tiny houses with a pool and landscaped paths"
     caption: "Planned as a scheme: identical units, shared access."
 daten:
