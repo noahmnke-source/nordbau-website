@@ -3,8 +3,8 @@ name: Gewerbebau
 tagline: Büro, Verwaltung, Beherbergung. Gebäude, die arbeiten müssen.
 order: 2
 hero:
-  src: "/projekte/referenzen/hannover-citygate.webp"
-  alt: "Büro- und Verwaltungskomplex City Gate Nord in Hannover-Vahrenwald über sechs Geschosse"
+  src: "/bau/gewerbebau/gewerbe-modulbuero-1600.webp"
+  alt: "Zweigeschossiges Bürogebäude in Modulbauweise mit umlaufender Verglasung, Dachterrasse und Vordach"
 katalog:
   - src: "/projekte/referenzen/hannover-citygate.webp"
     alt: "Büro- und Verwaltungskomplex City Gate Nord in Hannover über sechs Geschosse"

@@ -3,8 +3,8 @@ name: Einfamilienhaus
 tagline: Satteldach oder Flachdach. Ein Haus, zwei Handschriften.
 order: 1
 hero:
-  src: "/haeuser/einfamilienhaus/satteldach-seehaus-1600.webp"
-  alt: "Einfamilienhaus mit weit auskragendem Satteldach und dunkler Holzfassade am Waldsee, abends beleuchtet"
+  src: "/haeuser/einfamilienhaus/flachdach-holzloggia-1600.webp"
+  alt: "Zweigeschossiges Einfamilienhaus mit hellem Putz, holzverkleideter Loggia im Obergeschoss und überdachter Terrasse"
 katalog:
   - src: "/haeuser/einfamilienhaus/satteldach-seehaus-1600.webp"
     alt: "Einfamilienhaus mit weit auskragendem Satteldach und dunkler Holzfassade am Waldsee"

@@ -3,8 +3,8 @@ name: Modulhaus
 tagline: Vorgefertigte Raummodule. Frei kombiniert, später erweitert.
 order: 3
 hero:
-  src: "/haeuser/modulhaus/modul-zweigeschossig-1600.webp"
-  alt: "Zweigeschossiges Modulhaus aus versetzt gestapelten Raummodulen mit Pool und Holzterrasse"
+  src: "/haeuser/modulhaus/modul-terrasse-1600.webp"
+  alt: "Eingeschossiges Modulhaus mit vorgelagerter Holzterrasse und raumhoher Fensterfront auf einer besonnten Wiese"
 katalog:
   - src: "/haeuser/modulhaus/modul-zweigeschossig-1600.webp"
     alt: "Zweigeschossiges Modulhaus aus versetzt gestapelten Raummodulen mit umlaufender Verglasung"

@@ -3,8 +3,8 @@ name: Modular house
 tagline: Prefabricated room modules. Freely combined, later extended.
 order: 3
 hero:
-  src: "/haeuser/modulhaus/modul-zweigeschossig-1600.webp"
-  alt: "Two-storey modular house of offset stacked room modules with pool and timber deck"
+  src: "/haeuser/modulhaus/modul-terrasse-1600.webp"
+  alt: "Single-storey modular house with a timber deck in front and full-height glazing in a sunlit meadow"
 katalog:
   - src: "/haeuser/modulhaus/modul-zweigeschossig-1600.webp"
     alt: "Two-storey modular house of offset stacked room modules with wrap-around glazing"

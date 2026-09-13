@@ -17,8 +17,8 @@ export interface Asset {
 export const IMG = {
   /* ── Entwürfe ────────────────────────────────────────────── */
   heroHome: {
-    src: '/haeuser/einfamilienhaus/satteldach-seehaus-1600.webp',
-    alt: 'Einfamilienhaus mit weit auskragendem Satteldach und dunkler Holzfassade am Waldsee, abends beleuchtet',
+    src: '/haeuser/einfamilienhaus/flachdach-abendlicht-1600.webp',
+    alt: 'Zweigeschossiges Wohnhaus mit dunkler Holzfassade, auskragendem Obergeschoss, Pool und Rasenfläche im Abendlicht',
   },
   satteldach: {
     src: '/haeuser/einfamilienhaus/satteldach-photovoltaik-1600.webp',
@@ -53,12 +53,12 @@ export const IMG = {
 
   /* ── Werk: Vorfertigung ──────────────────────────────────── */
   holzMaterial: {
-    src: '/werk/werk-wandelemente-1600.webp',
-    alt: 'Aufgestellte Wandelemente in der Fertigungshalle: Ständerwerk mit eingelegter Dämmung',
+    src: '/werk/werk-halle-wandelement-1600.webp',
+    alt: 'Fertiges Wandelement mit gesetztem Fensterband in der Produktionshalle, Holzwerkstoffplatten sichtbar',
   },
   werkHalle: {
-    src: '/werk/werk-fertigungshalle-1600.webp',
-    alt: 'Fertigungshalle mit Deckenelementen auf den Montagetischen und Kranbahn darüber',
+    src: '/werk/werk-fensterelement-1600.webp',
+    alt: 'Vorgefertigtes Wandelement mit eingebauter Fenster- und Türfront, aufgestellt in der Fertigungshalle',
   },
   werkTeam: {
     src: '/werk/werk-team-1600.webp',

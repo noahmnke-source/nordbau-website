@@ -3,8 +3,8 @@ name: Detached house
 tagline: Pitched roof or flat roof. One house, two handwritings.
 order: 1
 hero:
-  src: "/haeuser/einfamilienhaus/satteldach-seehaus-1600.webp"
-  alt: "Detached house with a wide overhanging pitched roof and dark timber cladding by a forest lake, lit at dusk"
+  src: "/haeuser/einfamilienhaus/flachdach-holzloggia-1600.webp"
+  alt: "Two-storey detached house with light render, a timber-clad loggia on the upper floor and a covered terrace"
 katalog:
   - src: "/haeuser/einfamilienhaus/satteldach-seehaus-1600.webp"
     alt: "Detached house with a wide overhanging pitched roof and dark timber cladding by a forest lake"

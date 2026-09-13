@@ -3,8 +3,8 @@ name: Commercial buildings
 tagline: Offices, administration, hospitality. Buildings that have to work.
 order: 2
 hero:
-  src: "/projekte/referenzen/hannover-citygate.webp"
-  alt: "City Gate Nord office and administration complex in Hanover-Vahrenwald across six storeys"
+  src: "/bau/gewerbebau/gewerbe-modulbuero-1600.webp"
+  alt: "Two-storey office building in modular construction with wrap-around glazing, roof terrace and canopy"
 katalog:
   - src: "/projekte/referenzen/hannover-citygate.webp"
     alt: "City Gate Nord office and administration complex in Hanover across six storeys"
