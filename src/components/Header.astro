@@ -280,7 +280,7 @@ const kontaktHref = localize('/kontakt/', lang);
       </Button>
       <div class="flex flex-col gap-1 text-small text-paper-muted">
         <a href={`tel:${SITE.contact.phone}`} class="link-line self-start">{SITE.contact.phoneDisplay}</a>
-        <a href={`mailto:${SITE.contact.email}`} class="link-line self-start">{SITE.contact.email}</a>
+        <a href={`mailto:${SITE.contact.email}`} class="link-line self-start whitespace-nowrap">{SITE.contact.email}</a>
         {showLangSwitch && (
           <a href={switchHref} class="link-line mt-3 self-start uppercase" aria-label={t('lang.switchAria')}>
             {otherLang === 'en' ? 'English' : 'Deutsch'}
