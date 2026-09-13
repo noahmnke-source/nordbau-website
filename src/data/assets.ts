@@ -57,8 +57,8 @@ export const IMG = {
     alt: 'Fertiges Wandelement mit gesetztem Fensterband in der Produktionshalle, Holzwerkstoffplatten sichtbar',
   },
   werkHalle: {
-    src: '/werk/werk-fensterelement-1600.webp',
-    alt: 'Vorgefertigtes Wandelement mit eingebauter Fenster- und Türfront, aufgestellt in der Fertigungshalle',
+    src: '/werk/werk-halle-modul-1600.webp',
+    alt: 'Blick in die Fertigungshalle: fertiges Raummodul und aufgestellter Dachbinder unter der Kranbahn',
   },
   werkTeam: {
     src: '/werk/werk-team-1600.webp',
