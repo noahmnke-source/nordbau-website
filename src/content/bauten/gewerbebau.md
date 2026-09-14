@@ -34,7 +34,7 @@ daten:
   - label: Bauweise
     wert: Holzbau, Modulbauweise oder konventionell – je nach Anforderung
   - label: Leistungsumfang
-    wert: Schlüsselfertig oder einzelne Leistungsphasen
+    wert: Rohbau, Rohbau mit Gebäudehülle oder schlüsselfertig
 merkmale:
   - titel: Nutzung bestimmt Konstruktion
     text: Ein Showroom braucht andere Spannweiten als ein Zellenbüro und andere Haustechnik als ein Hotel. Wir entwerfen vom Betrieb her, nicht von der Fassade.
@@ -42,15 +42,15 @@ merkmale:
     text: Erweiterungen und zweite Bauabschnitte neben einem genutzten Gebäude sind Routine – mit abgestimmter Baustellenlogistik, Staub- und Lärmschutz.
   - titel: Modular erweiterbar
     text: "Wo Flächenbedarf schwankt, ist Modulbauweise die flexible Antwort: aufstocken, anbauen oder an anderer Stelle wieder aufstellen."
-  - titel: Als General- oder Nachunternehmer
-    text: Wir übernehmen das Gebäude komplett oder einzelne Leistungspakete im Auftrag eines Generalunternehmers – beides gehört zu unserem Alltag.
+  - titel: Rohbau oder schlüsselfertig
+    text: "Sie entscheiden die Leistungstiefe: nur der Rohbau, der Rohbau mit geschlossener Gebäudehülle oder das fertige Gebäude mit allen Ausbaugewerken."
 seoTitle: "Gewerbebau – Büro, Verwaltung und Beherbergung | EcoBau Hannover"
 seoDescription: "Gewerbliche Gebäude von EcoBau: Büro- und Verwaltungsbauten, Showrooms, Hotels und modulare Bürogebäude. Schlüsselfertig oder in einzelnen Leistungsphasen."
 faq:
   - q: Bauen Sie auch außerhalb des Holzbaus?
     a: Ja. Holzbau ist unsere Stärke, aber nicht unser einziges Verfahren. Bei gewerblichen Gebäuden entscheiden Spannweiten, Brandschutzanforderungen und Nutzung darüber, was sinnvoll ist – häufig ist es eine Mischbauweise. Beim City Gate Nord in Hannover haben wir Tiefbau, Rohbau und Innenausbau konventionell ausgeführt.
-  - q: Arbeiten Sie als Nachunternehmer für andere Bauunternehmen?
-    a: Ja, das ist ein fester Teil unseres Geschäfts. Wir übernehmen abgegrenzte Leistungspakete – Rohbau, Gebäudehülle, Innenausbau – im Auftrag von Generalunternehmern und Bauträgern. Ebenso führen wir eigene Projekte als Generalunternehmer aus.
+  - q: Können wir auch nur den Rohbau beauftragen?
+    a: Ja. Sie können den Rohbau einzeln beauftragen, den Rohbau mit geschlossener Gebäudehülle oder das Gebäude schlüsselfertig bis zur Übergabe. Wo die Grenze liegt, halten wir vor Vertragsschluss in der Leistungsbeschreibung fest, damit die Schnittstelle zu Ihren übrigen Gewerken eindeutig ist.
   - q: Können Sie neben einem laufenden Betrieb bauen?
     a: Ja. Bei mehreren unserer Projekte lief der Betrieb im Bestand weiter – etwa beim zweiten Bauabschnitt des City Gate Nord und beim Innenausbau des Klinikums Braunschweig. Das verlangt abgestimmte Anlieferzeiten, saubere Abschottung, Staub- und Lärmschutz sowie eine enge Taktung mit den übrigen Gewerken.
   - q: Wie schnell steht ein modulares Bürogebäude?
@@ -71,6 +71,6 @@ Wir sind kein Anbieter, der jedes Projekt in dasselbe Verfahren zwingt. Wo Vorfe
 
 Erweiterungen, zweite Bauabschnitte und Innenausbauten im genutzten Bestand gehören zu unserem Alltag. Das verlangt mehr als Handwerk: abgestimmte Anlieferung, saubere Abschottung, Staub- und Lärmschutz und eine Taktung, die sich an den Betrieb anpasst und nicht umgekehrt.
 
-## Als Generalunternehmer und als Nachunternehmer
+## Sie bestimmen die Leistungstiefe
 
-Ein Teil unserer Projekte sind eigene Aufträge, die wir von der Planung bis zur Übergabe verantworten. Ein anderer Teil sind Leistungspakete, die wir im Auftrag von Generalunternehmern und Bauträgern ausführen. Beides sind wir gewohnt – und in beiden Rollen liefern wir dieselbe Qualität ab.
+Nicht jeder Bauherr braucht dasselbe. Wir errichten den Rohbau einzeln, den Rohbau mit geschlossener, regendichter Gebäudehülle oder das vollständige Gebäude mit allen Ausbaugewerken bis zur Übergabe. Beim City Gate Nord in Hannover ging der Auftrag über alle drei Stufen – Tiefbau, Rohbau und Innenausbau aus einer Hand.

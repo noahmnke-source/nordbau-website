@@ -34,7 +34,7 @@ daten:
   - label: Bauweise
     wert: Holzrahmenbau oder konventionell, je nach Auslobung
   - label: Auftraggeber
-    wert: Kommunen, freie Träger, Kliniken, Generalunternehmer
+    wert: Kommunen, freie Träger, Kliniken und private Bauherren
 merkmale:
   - titel: Holz tut Kindern gut
     text: Sichtbare Holzoberflächen, diffusionsoffene Bauteile und eine dichte Hülle sorgen für ein stabiles Raumklima – ein messbarer Vorteil in Räumen mit hoher Belegungsdichte.
@@ -45,7 +45,7 @@ merkmale:
   - titel: Auflagen als Planungsgrundlage
     text: Brandschutz, Hygiene, Fluchtwege, Barrierefreiheit – bei Gebäuden für viele Menschen stehen diese Anforderungen am Anfang des Entwurfs, nicht am Ende.
 seoTitle: "Kita, Schule und Klinik bauen – Holzbau für Kommunen | EcoBau"
-seoDescription: "Kindertagesstätten, Kindergärten, Schulen und Kliniken in Holzrahmenbau oder konventionell. Für Kommunen, freie Träger und Generalunternehmer. Vergabefest kalkuliert."
+seoDescription: "Kindertagesstätten, Kindergärten, Schulen und Kliniken in Holzrahmenbau oder konventionell. Für Kommunen, freie Träger und private Bauherren. Vergabefest kalkuliert."
 faq:
   - q: Bauen Sie für Kommunen und öffentliche Auftraggeber?
     a: Ja. Die Kindertagesstätte in Empelde haben wir für die Stadt Ronnenberg errichtet. Öffentliche Vergaben nach VOB sind uns vertraut – einschließlich positionsweiser Kalkulation, Nachweisführung und der Dokumentation, die eine Abnahme durch die öffentliche Hand verlangt.
@@ -57,7 +57,7 @@ faq:
     a: Beides. Bei der Kita in Empelde haben wir Rohbau und Innenausbau ausgeführt, beim Klinikum Braunschweig ausschließlich den Innenausbau. Welcher Zuschnitt sinnvoll ist, hängt an der Ausschreibung und an den übrigen beteiligten Gewerken.
 ---
 
-Gebäude, in denen viele Menschen zusammenkommen, stellen andere Anforderungen als ein Wohnhaus. Brandschutz, Fluchtwege, Hygiene, Barrierefreiheit und Akustik sind keine Nebenbedingungen, sondern bestimmen den Entwurf von der ersten Skizze an. Wir bauen Kindertagesstätten, Kindergärten, Schulen und medizinische Einrichtungen – für Kommunen, freie Träger und Generalunternehmer.
+Gebäude, in denen viele Menschen zusammenkommen, stellen andere Anforderungen als ein Wohnhaus. Brandschutz, Fluchtwege, Hygiene, Barrierefreiheit und Akustik sind keine Nebenbedingungen, sondern bestimmen den Entwurf von der ersten Skizze an. Wir bauen Kindertagesstätten, Kindergärten, Schulen und medizinische Einrichtungen – für Kommunen, freie Träger und private Bauherren.
 
 ## Warum Holz in Kita und Schule
 

@@ -34,7 +34,7 @@ daten:
   - label: Construction
     wert: Timber, modular or conventional – as the brief requires
   - label: Scope
-    wert: Turnkey or individual work packages
+    wert: Shell, shell with envelope, or turnkey
 merkmale:
   - titel: Use drives the structure
     text: A showroom needs different spans from a cellular office and different services from a hotel. We design from the operation outwards, not from the façade inwards.
@@ -42,15 +42,15 @@ merkmale:
     text: Extensions and second phases next to an occupied building are routine – with coordinated site logistics, dust and noise protection.
   - titel: Modular and extendable
     text: "Where space requirements fluctuate, modular construction is the flexible answer: add a storey, extend, or re-erect elsewhere."
-  - titel: As main or subcontractor
-    text: We take on the whole building or individual work packages for a main contractor – both are part of our everyday work.
+  - titel: Shell or turnkey
+    text: "You decide the scope: the structural shell alone, the shell with a weathertight envelope, or the finished building with every trade completed."
 seoTitle: "Commercial construction – offices, administration, hospitality | EcoBau"
 seoDescription: "Commercial buildings by EcoBau: offices and administration, showrooms, hotels and modular office buildings. Turnkey or as individual work packages."
 faq:
   - q: Do you also build outside timber construction?
     a: Yes. Timber is our strength but not our only method. For commercial buildings, spans, fire requirements and use determine what makes sense – often a hybrid. At City Gate Nord in Hanover we carried out groundworks, shell and fit-out conventionally.
-  - q: Do you work as a subcontractor for other construction firms?
-    a: Yes, that is a fixed part of our business. We take on defined work packages – shell, envelope, fit-out – for main contractors and developers. Equally we deliver our own projects as main contractor.
+  - q: Can we commission the structural shell only?
+    a: Yes. You can commission the shell on its own, the shell with a weathertight envelope, or the building turnkey through to handover. Where the boundary lies is set out in the specification before contract, so the interface with your other trades is unambiguous.
   - q: Can you build next to an operation that keeps running?
     a: Yes. On several of our projects the existing building stayed in use – for instance the second phase of City Gate Nord and the fit-out at Braunschweig Municipal Hospital. That requires coordinated delivery windows, clean separation, dust and noise protection and close sequencing with the other trades.
   - q: How quickly does a modular office building go up?
@@ -71,6 +71,6 @@ We are not a supplier who forces every project into the same method. Where prefa
 
 Extensions, second phases and fit-outs in occupied buildings are part of our everyday work. That takes more than craft: coordinated delivery, clean separation, dust and noise protection and a sequence that adapts to the operation rather than the other way round.
 
-## As main contractor and as subcontractor
+## You set the scope
 
-Some of our projects are our own commissions, which we take responsibility for from design to handover. Others are work packages we carry out for main contractors and developers. We are used to both – and deliver the same quality in either role.
+Not every client needs the same thing. We build the structural shell on its own, the shell with a closed, weathertight envelope, or the complete building with every trade through to handover. At City Gate Nord in Hanover the commission covered all three stages – groundworks, shell and fit-out from one hand.

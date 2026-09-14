@@ -34,7 +34,7 @@ daten:
   - label: Construction
     wert: Timber frame or conventional, as the brief requires
   - label: Clients
-    wert: Municipalities, charitable providers, hospitals, main contractors
+    wert: Municipalities, charitable providers, hospitals and private clients
 merkmale:
   - titel: Timber suits children
     text: Exposed timber surfaces, vapour-open components and an airtight envelope give a stable indoor climate – a measurable advantage in densely occupied rooms.
@@ -45,7 +45,7 @@ merkmale:
   - titel: Requirements as the design basis
     text: Fire protection, hygiene, escape routes, accessibility – in buildings for many people these come at the start of the design, not the end.
 seoTitle: "Nurseries, schools and clinics – timber construction | EcoBau"
-seoDescription: "Day nurseries, kindergartens, schools and clinics in timber frame or conventional construction. For municipalities, charitable providers and main contractors."
+seoDescription: "Day nurseries, kindergartens, schools and clinics in timber frame or conventional construction. For municipalities, charitable providers and private clients."
 faq:
   - q: Do you build for municipalities and public clients?
     a: Yes. We built the day nursery in Empelde for the town of Ronnenberg. Public procurement under German public works rules is familiar to us – including item-by-item pricing, evidence and the documentation a public handover requires.
@@ -57,7 +57,7 @@ faq:
     a: Both. At the nursery in Empelde we carried out shell and fit-out; at Braunschweig Hospital only the fit-out. Which scope makes sense depends on the tender and on the other trades involved.
 ---
 
-Buildings where many people come together place different demands on design than a home. Fire protection, escape routes, hygiene, accessibility and acoustics are not side conditions – they shape the design from the first sketch. We build day nurseries, kindergartens, schools and medical facilities for municipalities, charitable providers and main contractors.
+Buildings where many people come together place different demands on design than a home. Fire protection, escape routes, hygiene, accessibility and acoustics are not side conditions – they shape the design from the first sketch. We build day nurseries, kindergartens, schools and medical facilities for municipalities, charitable providers and private clients.
 
 ## Why timber in nurseries and schools
 
