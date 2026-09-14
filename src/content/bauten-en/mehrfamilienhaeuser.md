@@ -1,7 +1,7 @@
 ---
 name: Apartment buildings
 tagline: Several dwellings. One well-considered building.
-order: 1
+order: 2
 hero:
   src: "/bau/mehrfamilienhaeuser/mfh-uferlage-1600.webp"
   alt: "Four-storey apartment building with balconies and a light façade beside water"
@@ -20,6 +20,7 @@ katalog:
     caption: "Set-back top floor with roof terraces across the full width."
   - src: "/projekte/referenzen/stuttgart-maybach.webp"
     alt: "Residential and commercial building in Stuttgart with seven upper floors in an inner-city location"
+    stufe: Shell and fit-out
     caption: "Stuttgart: residential and commercial building, 70 dwellings across seven upper floors, three-level underground car park, commercial units at the base. Shell and fit-out."
 daten:
   - label: Living space

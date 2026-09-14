@@ -1,13 +1,14 @@
 ---
 name: Gewerbebau
 tagline: Büro, Verwaltung, Beherbergung. Gebäude, die arbeiten müssen.
-order: 2
+order: 3
 hero:
   src: "/bau/gewerbebau/gewerbe-modulbuero-1600.webp"
   alt: "Zweigeschossiges Bürogebäude in Modulbauweise mit umlaufender Verglasung, Dachterrasse und Vordach"
 katalog:
   - src: "/projekte/referenzen/hannover-citygate.webp"
     alt: "Büro- und Verwaltungskomplex City Gate Nord in Hannover über sechs Geschosse"
+    stufe: Tiefbau, Rohbau und Innenausbau
     caption: "Hannover: zweiter Bauabschnitt des Verwaltungskomplexes City Gate Nord, rund 10.500 m² BGF über sechs Geschosse. Tiefbau, Rohbau und Innenausbau bei laufendem Betrieb des ersten Abschnitts."
   - src: "/projekte/referenzen/zuerich-hotel.webp"
     alt: "Dreigeschossiges Hotelgebäude mit Fassade aus HPL und Holz, umgeben von Natur"
@@ -44,6 +45,17 @@ merkmale:
     text: "Wo Flächenbedarf schwankt, ist Modulbauweise die flexible Antwort: aufstocken, anbauen oder an anderer Stelle wieder aufstellen."
   - titel: Rohbau oder schlüsselfertig
     text: "Sie entscheiden die Leistungstiefe: nur der Rohbau, der Rohbau mit geschlossener Gebäudehülle oder das fertige Gebäude mit allen Ausbaugewerken."
+projekte:
+  - name: Büro- und Verwaltungskomplex City Gate Nord
+    ort: Hannover-Vahrenwald
+    zeitraum: Juli 2023 – August 2025
+    leistung: Tiefbau, Rohbau und Innenausbau
+    kennzahl: 10.500 m² BGF · 7.500 m² NGF · 6 Geschosse
+  - name: Lagerhalle und Verwaltungsgebäude PVU-Group
+    ort: Isernhagen
+    zeitraum: Sommer 2019 – Frühjahr 2020
+    leistung: Tiefbau, Rohbau und Innenausbau
+    kennzahl: Warmhalle 3.124 m² · Kalthalle 779 m² · Verwaltung 2.200 m²
 seoTitle: "Gewerbebau – Büro, Verwaltung und Beherbergung | EcoBau Hannover"
 seoDescription: "Gewerbliche Gebäude von EcoBau: Büro- und Verwaltungsbauten, Showrooms, Hotels und modulare Bürogebäude. Schlüsselfertig oder in einzelnen Leistungsphasen."
 faq:

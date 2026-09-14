@@ -19,6 +19,16 @@ interface Bild {
   caption?: string;
   /** Filtergruppe im Katalograster, z. B. "Satteldach" */
   gruppe?: string;
+  /** Leistungstiefe, erscheint als Marke ueber der Bildunterschrift */
+  stufe?: string;
+}
+
+interface Projekt {
+  name: string;
+  ort: string;
+  zeitraum: string;
+  leistung: string;
+  kennzahl: string;
 }
 
 interface Geschwister {
@@ -38,6 +48,9 @@ interface Props {
   daten: { label: string; wert: string }[];
   merkmale: { titel: string; text: string }[];
   faq: { q: string; a: string }[];
+  projekte: Projekt[];
+  /** Leistungstiefe-Band einblenden (Wohn- und Gewerbebau) */
+  zeigeStufen?: boolean;
   gruppeLabel: string;
   geschwister: Geschwister[];
 }
@@ -52,6 +65,8 @@ const {
   daten,
   merkmale,
   faq,
+  projekte,
+  zeigeStufen = false,
   gruppeLabel,
   geschwister,
 } = Astro.props;
@@ -85,6 +100,17 @@ const T = {
   ctaButton: de ? 'Beratung vereinbaren' : 'Arrange a consultation',
   ctaWeg: de ? 'Der Weg zu Ihrem Traumhaus' : 'The road to your dream home',
   alle: de ? 'Alle' : 'All',
+  stufenTitel: de ? 'Wie weit wir bauen, entscheiden Sie' : 'You decide how far we build',
+  stufenLead: de
+    ? 'Rohbau, Rohbau mit geschlossener Gebäudehülle oder das fertige Gebäude – die Leistungstiefe legen wir vor Vertragsschluss fest, damit die Schnittstelle zu Ihren übrigen Gewerken eindeutig ist.'
+    : 'Structural shell, shell with a weathertight envelope, or the finished building – the scope is fixed before contract so the interface with your other trades is unambiguous.',
+  projekteTitel: de ? 'Ausgeführte Projekte' : 'Completed projects',
+  projekteLead: de
+    ? 'Auszug aus den Bauvorhaben, die wir in dieser Leistungsart umgesetzt haben.'
+    : 'A selection of the projects we have delivered in this type of work.',
+  spalteProjekt: de ? 'Projekt' : 'Project',
+  spalteLeistung: de ? 'Leistung' : 'Scope',
+  spalteUmfang: de ? 'Umfang' : 'Size',
   filterAria: de ? 'Katalog nach Dachform filtern' : 'Filter the catalogue',
 };
 
@@ -97,6 +123,37 @@ for (const b of katalog) {
 const zeigeFilter = gruppen.length > 1;
 
 const heroSrcset = isProjektBild(hero.src) ? projektSrcset(hero.src) : undefined;
+
+/** Die drei Leistungstiefen – auf allen Bauseiten gleich, deshalb hier fest. */
+const stufen = de
+  ? [
+      {
+        titel: 'Rohbau',
+        text: 'Gründung, tragende Wände, Stützen, Decken und Treppenhäuser. Das Bauwerk steht, gemessen und statisch nachgewiesen – der Ausbau liegt bei Ihnen oder bei Ihren Gewerken.',
+      },
+      {
+        titel: 'Rohbau mit Gebäudehülle',
+        text: 'Zusätzlich Dach, Fassade, Fenster und Türen. Das Gebäude ist geschlossen und regendicht, der Innenausbau kann witterungsunabhängig beginnen.',
+      },
+      {
+        titel: 'Schlüsselfertig',
+        text: 'Zusätzlich sämtliche Ausbaugewerke bis zur Übergabe – Trockenbau, Estrich, Haustechnik, Oberflächen. Ein Ansprechpartner, ein Vertrag, ein Termin.',
+      },
+    ]
+  : [
+      {
+        titel: 'Structural shell',
+        text: 'Foundations, loadbearing walls, columns, floors and stair cores. The structure stands, surveyed and structurally certified – the fit-out stays with you or your trades.',
+      },
+      {
+        titel: 'Shell with envelope',
+        text: 'Plus roof, façade, windows and doors. The building is closed and weathertight, so the fit-out can start independently of the weather.',
+      },
+      {
+        titel: 'Turnkey',
+        text: 'Plus every finishing trade through to handover – drylining, screed, building services, surfaces. One contact, one contract, one date.',
+      },
+    ];
 
 const kontakt = localize('/kontakt/', lang);
 const wegPfad = localize('/weg-zum-traumhaus/', lang);
@@ -188,6 +245,39 @@ const wegPfad = localize('/weg-zum-traumhaus/', lang);
   </section>
 )}
 
+<!-- Leistungstiefe: die drei Stufen, in denen wir beauftragt werden koennen -->
+{zeigeStufen && (
+  <section class="bg-graphite py-(--spacing-section) text-paper">
+    <div class="container-site">
+      <div class="grid gap-x-8 gap-y-6 lg:grid-cols-12">
+        <h2 class="reveal font-display text-display font-medium lg:col-span-6">
+          {T.stufenTitel}
+        </h2>
+        <p class="reveal prose-measure self-end text-body leading-relaxed text-paper-muted lg:col-span-5 lg:col-start-8">
+          {T.stufenLead}
+        </p>
+      </div>
+
+      <ol class="mt-14 grid gap-x-8 gap-y-10 lg:grid-cols-3">
+        {stufen.map((st, i) => (
+          <li
+            class="reveal border-t border-paper/20 pt-6"
+            style={`--reveal-delay:${i * 110}ms`}
+          >
+            <p class="tnum font-display text-title font-medium text-oxide">
+              {String(i + 1).padStart(2, '0')}
+            </p>
+            <h3 class="mt-3 font-display text-title font-medium">{st.titel}</h3>
+            <p class="prose-measure mt-3 text-small leading-relaxed text-paper-muted">
+              {st.text}
+            </p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+)}
+
 <!-- Katalograster -->
 {katalog.length > 0 && (
   <section class="bg-stone py-(--spacing-section)">
@@ -231,13 +321,48 @@ const wegPfad = localize('/weg-zum-traumhaus/', lang);
                 zoom
                 reveal={false}
               />
+              {bild.stufe && (
+                <p class="mt-4 text-caption tracking-wide text-oxide uppercase">{bild.stufe}</p>
+              )}
               {bild.caption && (
-                <p class="mt-4 text-small leading-relaxed text-muted">{bild.caption}</p>
+                <p class:list={['text-small leading-relaxed text-muted', bild.stufe ? 'mt-1.5' : 'mt-4']}>
+                  {bild.caption}
+                </p>
               )}
             </div>
           </li>
         ))}
       </ul>
+    </div>
+  </section>
+)}
+
+<!-- Ausgefuehrte Projekte: Referenzen, zu denen es kein eigenes Foto gibt -->
+{projekte.length > 0 && (
+  <section class="container-site py-(--spacing-section)">
+    <SectionIntro title={T.projekteTitel} lead={T.projekteLead} />
+    <div class="mt-14 overflow-x-auto">
+      <table class="w-full min-w-[46rem] border-collapse text-left">
+        <thead>
+          <tr class="border-b border-line text-caption text-muted">
+            <th scope="col" class="py-3 pr-6 font-medium">{T.spalteProjekt}</th>
+            <th scope="col" class="py-3 pr-6 font-medium">{T.spalteLeistung}</th>
+            <th scope="col" class="py-3 font-medium">{T.spalteUmfang}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {projekte.map((pr) => (
+            <tr class="border-b border-line align-top">
+              <th scope="row" class="py-5 pr-6 font-normal">
+                <span class="block font-display text-body font-medium">{pr.name}</span>
+                <span class="mt-1 block text-caption text-muted">{pr.ort} · {pr.zeitraum}</span>
+              </th>
+              <td class="py-5 pr-6 text-small text-muted">{pr.leistung}</td>
+              <td class="tnum py-5 text-small text-muted">{pr.kennzahl}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   </section>
 )}

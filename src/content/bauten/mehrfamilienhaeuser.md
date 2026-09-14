@@ -1,7 +1,7 @@
 ---
 name: Mehrfamilienhäuser
 tagline: Mehrere Wohneinheiten. Ein durchdachtes Gebäude.
-order: 1
+order: 2
 hero:
   src: "/bau/mehrfamilienhaeuser/mfh-uferlage-1600.webp"
   alt: "Viergeschossiges Mehrfamilienhaus mit Balkonen und heller Fassade an einem Gewässer"
@@ -20,6 +20,7 @@ katalog:
     caption: "Zurückgesetztes Obergeschoss mit Dachterrassen über die volle Breite."
   - src: "/projekte/referenzen/stuttgart-maybach.webp"
     alt: "Wohn- und Geschäftshaus in Stuttgart mit sieben Obergeschossen in innerstädtischer Lage"
+    stufe: Rohbau und Innenausbau
     caption: "Stuttgart: Wohn- und Geschäftshaus, 70 Wohneinheiten über sieben Obergeschossen, dreigeschossige Tiefgarage, Gewerbe im Sockel. Rohbau und Innenausbau."
 daten:
   - label: Wohnfläche

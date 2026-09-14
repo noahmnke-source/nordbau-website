@@ -1,7 +1,7 @@
 ---
 name: Sozial & Bildung
 tagline: Kitas, Schulen, Kliniken. Gebäude für viele Menschen.
-order: 3
+order: 4
 hero:
   src: "/bau/sozial-und-bildung/kita-eingang-1600.webp"
   alt: "Eingeschossige Kindertagesstätte mit farbig gegliederter Fassade, Vordach und Vorplatz"
@@ -17,12 +17,14 @@ katalog:
     caption: "Gesamtanlage mit getrennter Anlieferung, Bring- und Holzone und Außengelände."
   - src: "/projekte/referenzen/ronnenberg-kita.webp"
     alt: "Neubau einer Kindertagesstätte in Holzrahmenbauweise in Empelde für die Stadt Ronnenberg"
+    stufe: Rohbau und Innenausbau
     caption: "Ronnenberg: Neubau einer Kita in Holzrahmenbauweise – eingeschossig, fünf Gruppenbereiche, Ruheräume, Kinderbäder und breite Spielflure. Rohbau und Innenausbau."
   - src: "/projekte/referenzen/sulzbach-kindergarten.webp"
     alt: "Moderner Kindergarten mit rund 1.200 Quadratmetern Fläche und großzügigen Fensterflächen"
     caption: "Sulzbach-Rosenberg: Kindergarten mit rund 1.200 m² Fläche, offene Bereiche für Lernen und Spiel."
   - src: "/projekte/referenzen/braunschweig-klinikum.webp"
     alt: "Innenausbau am Städtischen Klinikum Braunschweig über sechs Geschosse"
+    stufe: Innenausbau
     caption: "Braunschweig: Innenausbau am Städtischen Klinikum vom Erdgeschoss bis zum fünften Obergeschoss – Trockenbau, Installationswände, hygienische Oberflächen und Brandschutz unter medizinischen Auflagen."
 daten:
   - label: Nutzfläche

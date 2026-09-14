@@ -1,13 +1,14 @@
 ---
 name: Commercial buildings
 tagline: Offices, administration, hospitality. Buildings that have to work.
-order: 2
+order: 3
 hero:
   src: "/bau/gewerbebau/gewerbe-modulbuero-1600.webp"
   alt: "Two-storey office building in modular construction with wrap-around glazing, roof terrace and canopy"
 katalog:
   - src: "/projekte/referenzen/hannover-citygate.webp"
     alt: "City Gate Nord office and administration complex in Hanover across six storeys"
+    stufe: Groundworks, shell and fit-out
     caption: "Hanover: second phase of the City Gate Nord administration complex, around 10,500 m² gross floor area across six storeys. Groundworks, shell and fit-out while phase one stayed in use."
   - src: "/projekte/referenzen/zuerich-hotel.webp"
     alt: "Three-storey hotel building with an HPL and timber façade surrounded by nature"
@@ -44,6 +45,17 @@ merkmale:
     text: "Where space requirements fluctuate, modular construction is the flexible answer: add a storey, extend, or re-erect elsewhere."
   - titel: Shell or turnkey
     text: "You decide the scope: the structural shell alone, the shell with a weathertight envelope, or the finished building with every trade completed."
+projekte:
+  - name: City Gate Nord office and administration complex
+    ort: Hanover-Vahrenwald
+    zeitraum: July 2023 – August 2025
+    leistung: Groundworks, shell and fit-out
+    kennzahl: 10,500 m² GFA · 7,500 m² NFA · 6 storeys
+  - name: Warehouse and administration building PVU-Group
+    ort: Isernhagen
+    zeitraum: Summer 2019 – spring 2020
+    leistung: Groundworks, shell and fit-out
+    kennzahl: heated hall 3,124 m² · unheated 779 m² · offices 2,200 m²
 seoTitle: "Commercial construction – offices, administration, hospitality | EcoBau"
 seoDescription: "Commercial buildings by EcoBau: offices and administration, showrooms, hotels and modular office buildings. Turnkey or as individual work packages."
 faq:

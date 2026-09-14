@@ -1,7 +1,7 @@
 ---
 name: Social & education
 tagline: Nurseries, schools, clinics. Buildings for many people.
-order: 3
+order: 4
 hero:
   src: "/bau/sozial-und-bildung/kita-eingang-1600.webp"
   alt: "Single-storey day nursery with a colourfully articulated façade, canopy and forecourt"
@@ -17,12 +17,14 @@ katalog:
     caption: "The whole site with separate delivery access, drop-off zone and grounds."
   - src: "/projekte/referenzen/ronnenberg-kita.webp"
     alt: "New day nursery in timber frame construction in Empelde for the town of Ronnenberg"
+    stufe: Shell and fit-out
     caption: "Ronnenberg: new nursery in timber frame construction – single storey, five group areas, quiet rooms, children's bathrooms and wide play corridors. Shell and fit-out."
   - src: "/projekte/referenzen/sulzbach-kindergarten.webp"
     alt: "Modern kindergarten of around 1,200 square metres with generous glazing"
     caption: "Sulzbach-Rosenberg: kindergarten of around 1,200 m², open areas for learning and play."
   - src: "/projekte/referenzen/braunschweig-klinikum.webp"
     alt: "Interior fit-out at Braunschweig Municipal Hospital across six storeys"
+    stufe: Fit-out only
     caption: "Braunschweig: interior fit-out at the Municipal Hospital from ground to fifth floor – drylining, service walls, hygienic surfaces and fire protection under medical requirements."
 daten:
   - label: Usable area
