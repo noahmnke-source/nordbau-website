@@ -6,7 +6,7 @@ hero:
   src: "/bau/gewerbebau/gewerbe-modulbuero-1600.webp"
   alt: "Zweigeschossiges Bürogebäude in Modulbauweise mit umlaufender Verglasung, Dachterrasse und Vordach"
 katalog:
-  - src: "/projekte/referenzen/hannover-citygate.webp"
+  - src: "/projekte/referenzen/hannover-citygate-1200.webp"
     alt: "Büro- und Verwaltungskomplex City Gate Nord in Hannover über sechs Geschosse"
     stufe: Tiefbau, Rohbau und Innenausbau
     caption: "Hannover: zweiter Bauabschnitt des Verwaltungskomplexes City Gate Nord, rund 10.500 m² BGF über sechs Geschosse. Tiefbau, Rohbau und Innenausbau bei laufendem Betrieb des ersten Abschnitts."

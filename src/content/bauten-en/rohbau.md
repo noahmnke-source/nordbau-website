@@ -3,14 +3,14 @@ name: Structural shell
 tagline: Foundations, structure, envelope. The part nobody sees afterwards.
 order: 1
 hero:
-  src: "/werk/montage-baustelle-1600.webp"
-  alt: "A mobile crane sets a large wall element onto the structural shell while two fitters work on the floor slab"
+  src: "/projekte/referenzen/hannover-citygate-1200.webp"
+  alt: "City Gate Nord office and administration building in Hanover-Vahrenwald, six storeys in reinforced concrete with a brick façade"
 katalog:
   - src: "/projekte/referenzen/stuttgart-maybach.webp"
     alt: "Scaffolded reinforced concrete shell of a residential and commercial building in Stuttgart"
     stufe: Shell and fit-out
     caption: "Stuttgart, Maybachstraße 20: reinforced concrete shell across three basement levels and seven upper floors, basements in watertight construction."
-  - src: "/projekte/referenzen/hannover-citygate.webp"
+  - src: "/projekte/referenzen/hannover-citygate-1200.webp"
     alt: "Completed City Gate Nord office and administration complex in Hanover across six storeys"
     stufe: Groundworks, shell and fit-out
     caption: "Hanover, City Gate Nord: reinforced concrete with a modern column grid, around 10,500 m² gross floor area – from excavation to handover from one hand."

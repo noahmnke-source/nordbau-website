@@ -3,14 +3,14 @@ name: Rohbau
 tagline: Gründung, Tragwerk, Hülle. Der Teil, den später niemand mehr sieht.
 order: 1
 hero:
-  src: "/werk/montage-baustelle-1600.webp"
-  alt: "Ein Autokran setzt ein großformatiges Wandelement auf den Rohbau, zwei Monteure arbeiten auf der Geschossdecke"
+  src: "/projekte/referenzen/hannover-citygate-1200.webp"
+  alt: "Büro- und Verwaltungsgebäude City Gate Nord in Hannover-Vahrenwald, sechs Geschosse in Stahlbetonbauweise mit Klinkerfassade"
 katalog:
   - src: "/projekte/referenzen/stuttgart-maybach.webp"
     alt: "Eingerüsteter Stahlbetonrohbau eines Wohn- und Geschäftshauses in Stuttgart"
     stufe: Rohbau und Innenausbau
     caption: "Stuttgart, Maybachstraße 20: Stahlbetonrohbau über drei Tiefgeschosse und sieben Obergeschosse, Untergeschosse in wasserundurchlässiger Bauweise."
-  - src: "/projekte/referenzen/hannover-citygate.webp"
+  - src: "/projekte/referenzen/hannover-citygate-1200.webp"
     alt: "Fertiggestellter Büro- und Verwaltungskomplex City Gate Nord in Hannover über sechs Geschosse"
     stufe: Tiefbau, Rohbau und Innenausbau
     caption: "Hannover, City Gate Nord: Stahlbetonbauweise mit modernem Stützenraster, rund 10.500 m² BGF – vom Erdaushub bis zur Übergabe aus einer Hand."

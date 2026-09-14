@@ -6,7 +6,7 @@ hero:
   src: "/bau/gewerbebau/gewerbe-modulbuero-1600.webp"
   alt: "Two-storey office building in modular construction with wrap-around glazing, roof terrace and canopy"
 katalog:
-  - src: "/projekte/referenzen/hannover-citygate.webp"
+  - src: "/projekte/referenzen/hannover-citygate-1200.webp"
     alt: "City Gate Nord office and administration complex in Hanover across six storeys"
     stufe: Groundworks, shell and fit-out
     caption: "Hanover: second phase of the City Gate Nord administration complex, around 10,500 m² gross floor area across six storeys. Groundworks, shell and fit-out while phase one stayed in use."
