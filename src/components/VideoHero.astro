@@ -107,19 +107,35 @@ const wechselt = aufbereitet.length > 1;
 <style>
   /* ── Bildwechsel ─────────────────────────────────────────────
      Ohne JavaScript bleibt das erste Bild sichtbar; die uebrigen
-     liegen darunter und werden nie geladen. */
+     liegen darunter und werden nie geladen.
+
+     Echte Ueberblendung statt Aus- und Einblenden: Das neue Bild legt
+     sich deckend ueber das alte und wird eingeblendet, das alte bleibt
+     darunter voll sichtbar, bis der Wechsel durch ist. Wuerden beide
+     gleichzeitig halbtransparent sein, schiene der dunkle Grund durch
+     und die Mitte des Uebergangs wuerde sichtbar abdunkeln. */
   .hero-bild {
     opacity: 0;
-    transition: opacity 1.4s var(--ease-out-quart);
+    z-index: 0;
+    transition: opacity 1.8s cubic-bezier(0.45, 0, 0.55, 1);
   }
   .hero-bild.is-aktiv {
     opacity: 1;
+    z-index: 2;
+  }
+  /* Das abgehende Bild bleibt deckend und liegt eine Ebene tiefer. */
+  .hero-bild.is-abgehend {
+    opacity: 1;
+    z-index: 1;
+    transition: none;
   }
 
-  /* Sehr langsames Heranfahren gibt dem Standbild Leben, ohne
-     aufdringlich zu werden. Laeuft nur im sichtbaren Bild. */
-  .hero-wechsler.laeuft .hero-bild.is-aktiv {
-    animation: hero-zoom 9s linear both;
+  /* Sehr langsames Heranfahren gibt dem Standbild Leben. Der Zoom laeuft
+     auch im abgehenden Bild weiter – sonst springt es beim Wechsel
+     schlagartig auf die Ausgangsgroesse zurueck. */
+  .hero-wechsler.laeuft .hero-bild.is-aktiv,
+  .hero-wechsler.laeuft .hero-bild.is-abgehend {
+    animation: hero-zoom 11s linear both;
   }
 
   @keyframes hero-zoom {
@@ -173,6 +189,7 @@ const wechselt = aufbereitet.length > 1;
       transition: none;
     }
     .hero-wechsler.laeuft .hero-bild.is-aktiv,
+    .hero-wechsler.laeuft .hero-bild.is-abgehend,
     .hero-punkt.is-aktiv.laeuft::after {
       animation: none;
     }
@@ -203,8 +220,10 @@ const wechselt = aufbereitet.length > 1;
     const STANDZEIT = 7000;
 
     if (bilder.length > 1 && !wenigerBewegung.matches) {
+      const UEBERBLENDUNG = 1800;
       let aktuell = 0;
       let timer = 0;
+      let aufraeumer = 0;
 
       // Die uebrigen Bilder erst nach dem Laden der Seite holen – sonst
       // konkurrieren sie mit dem LCP-Bild um Bandbreite.
@@ -219,23 +238,43 @@ const wechselt = aufbereitet.length > 1;
       };
 
       const zeigen = (n: number) => {
-        bilder[aktuell]?.classList.remove('is-aktiv');
-        punkte[aktuell]?.classList.remove('is-aktiv', 'laeuft');
-        aktuell = (n + bilder.length) % bilder.length;
-        const bild = bilder[aktuell];
-        const punkt = punkte[aktuell];
-        if (bild) {
-          // Animation neu anstossen, damit der Zoom bei jedem Bild von vorn laeuft
-          bild.style.animation = 'none';
-          void bild.offsetWidth;
-          bild.style.animation = '';
-          bild.classList.add('is-aktiv');
+        const ziel = (n + bilder.length) % bilder.length;
+        if (ziel === aktuell) return;
+
+        const altes = bilder[aktuell];
+        const neues = bilder[ziel];
+        window.clearTimeout(aufraeumer);
+
+        // Das bisherige Bild bleibt deckend liegen, bis die Ueberblendung
+        // durch ist – erst danach wird es ausgeblendet.
+        if (altes) {
+          altes.classList.remove('is-aktiv');
+          altes.classList.add('is-abgehend');
         }
+
+        punkte[aktuell]?.classList.remove('is-aktiv', 'laeuft');
+        aktuell = ziel;
+
+        if (neues) {
+          // Zoom neu anstossen, damit er bei jedem Bild von vorn laeuft.
+          neues.style.animation = 'none';
+          void neues.offsetWidth;
+          neues.style.animation = '';
+          neues.classList.add('is-aktiv');
+        }
+
+        const punkt = punkte[aktuell];
         if (punkt) {
           punkt.classList.add('is-aktiv');
           void punkt.offsetWidth;
           punkt.classList.add('laeuft');
         }
+
+        aufraeumer = window.setTimeout(() => {
+          for (const b of bilder) {
+            if (!b.classList.contains('is-aktiv')) b.classList.remove('is-abgehend');
+          }
+        }, UEBERBLENDUNG);
       };
 
       const starten = () => {
