@@ -15,9 +15,9 @@ katalog:
   - src: "/bau/mehrfamilienhaeuser/mfh-stadtkante-1600.webp"
     alt: "Mehrgeschossiges Wohngebäude mit hellem Putz und Balkonen in der Abenddämmerung"
     caption: "Kompakter Baukörper an der Straßenkante, Freibereiche zum Hof."
-  - src: "/bau/mehrfamilienhaeuser/mfh-staffelgeschoss-1600.webp"
-    alt: "Dreigeschossiges Mehrfamilienhaus mit dunkler Fassade, Holzelementen und zurückgesetztem Obergeschoss"
-    caption: "Zurückgesetztes Obergeschoss mit Dachterrassen über die volle Breite."
+  - src: "/bau/mehrfamilienhaeuser/mfh-solardach-1600.webp"
+    alt: "Langgestreckte Wohnanlage über vier Geschosse am Wasser, mit Balkonen und vollflächiger Photovoltaik auf dem Dach"
+    caption: "Langgestreckte Anlage mit vollflächiger Photovoltaik – Erträge für die Allgemeinstrom- und Wärmeversorgung."
   - src: "/projekte/referenzen/stuttgart-maybach.webp"
     alt: "Wohn- und Geschäftshaus in Stuttgart mit sieben Obergeschossen in innerstädtischer Lage"
     stufe: Rohbau und Innenausbau

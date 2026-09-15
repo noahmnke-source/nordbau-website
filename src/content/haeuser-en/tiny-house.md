@@ -6,8 +6,8 @@ hero:
   src: "/haeuser/tiny-house/tiny-ecobau-1600.webp"
   alt: "Tiny house with a red end wall carrying the EcoBau logo, full-height glazing, a planted pergola and a terrace in a meadow"
 katalog:
-  - src: "/haeuser/tiny-house/tiny-panoramafront-1600.webp"
-    alt: "Tiny house with full-height panoramic glazing, dark shell and coloured entrance element"
+  - src: "/haeuser/tiny-house/tiny-ecobau-1672.webp"
+    alt: "Tiny house with a red end wall carrying the EcoBau logo, full-height glazing and a planted pergola"
     caption: "A fully glazed long side makes the plan feel considerably larger."
   - src: "/haeuser/tiny-house/tiny-satteldach-1600.webp"
     alt: "Several tiny houses with pitched roofs and timber façades at dusk"

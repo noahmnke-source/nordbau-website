@@ -15,9 +15,9 @@ katalog:
   - src: "/bau/mehrfamilienhaeuser/mfh-stadtkante-1600.webp"
     alt: "Multi-storey residential building with light render and balconies at dusk"
     caption: "A compact volume on the street edge, outdoor space towards the courtyard."
-  - src: "/bau/mehrfamilienhaeuser/mfh-staffelgeschoss-1600.webp"
-    alt: "Three-storey apartment building with dark façade, timber elements and a set-back top floor"
-    caption: "Set-back top floor with roof terraces across the full width."
+  - src: "/bau/mehrfamilienhaeuser/mfh-solardach-1600.webp"
+    alt: "Long four-storey residential scheme beside water, with balconies and full-surface photovoltaics on the roof"
+    caption: "A long scheme with full-surface photovoltaics – yield for communal power and heating."
   - src: "/projekte/referenzen/stuttgart-maybach.webp"
     alt: "Residential and commercial building in Stuttgart with seven upper floors in an inner-city location"
     stufe: Shell and fit-out

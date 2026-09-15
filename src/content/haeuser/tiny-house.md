@@ -6,8 +6,8 @@ hero:
   src: "/haeuser/tiny-house/tiny-ecobau-1600.webp"
   alt: "Tiny House mit roter Stirnwand und EcoBau-Logo, raumhoher Verglasung, begrünter Pergola und vorgelagerter Terrasse auf einer Wiese"
 katalog:
-  - src: "/haeuser/tiny-house/tiny-panoramafront-1600.webp"
-    alt: "Tiny House mit raumhoher Panoramaverglasung, dunkler Hülle und farbigem Eingangselement"
+  - src: "/haeuser/tiny-house/tiny-ecobau-1672.webp"
+    alt: "Tiny House mit roter Stirnwand und EcoBau-Logo, raumhoher Verglasung und begrünter Pergola"
     caption: "Eine vollständig verglaste Längsseite lässt den Grundriss größer wirken."
   - src: "/haeuser/tiny-house/tiny-satteldach-1600.webp"
     alt: "Mehrere Tiny Houses mit Satteldach und Holzfassade in der Abenddämmerung"

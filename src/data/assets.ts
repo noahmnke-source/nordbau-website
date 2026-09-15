@@ -77,8 +77,8 @@ export const IMG = {
     alt: 'Mitarbeiter beim Abbinden eines Deckenelements in der Fertigungshalle',
   },
   werkFenster: {
-    src: '/werk/werk-fensterband-1600.webp',
-    alt: 'Fertiges Wandelement mit eingebautem Fensterband in der Produktionshalle',
+    src: '/werk/werk-wandelemente-1600.webp',
+    alt: 'Aufgestellte Wandelemente in der Fertigungshalle: Ständerwerk mit eingelegter Dämmung',
   },
   werkFassade: {
     src: '/werk/werk-fassadenrost-1600.webp',
