@@ -38,7 +38,7 @@ const wechselt = aufbereitet.length > 1;
 ---
 
 <section class="relative flex min-h-svh flex-col justify-end bg-graphite text-paper">
-  <div class="absolute inset-0 overflow-hidden">
+  <div class="absolute inset-0 isolate overflow-hidden">
     {hasVideo ? (
       <video
         class="h-full w-full object-cover"
@@ -74,19 +74,19 @@ const wechselt = aufbereitet.length > 1;
     )}
     <!-- Scrim: Lesbarkeit der Headline, unten dichter -->
     <div
-      class="absolute inset-0 bg-gradient-to-t from-graphite/85 via-graphite/25 to-graphite/20"
+      class="absolute inset-0 z-[3] bg-gradient-to-t from-graphite/85 via-graphite/25 to-graphite/20"
       aria-hidden="true"
     >
     </div>
   </div>
 
-  <div class="container-site relative pt-40 pb-16 lg:pb-24">
+  <div class="container-site relative z-10 pt-40 pb-16 lg:pb-24">
     <slot />
   </div>
 
   {wechselt && !hasVideo && (
     <div
-      class="container-site relative pb-10 lg:pb-14"
+      class="container-site relative z-10 pb-10 lg:pb-14"
       role="group"
       aria-label={wechslerAria}
     >
