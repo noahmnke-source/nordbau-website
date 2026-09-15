@@ -325,8 +325,8 @@ const faq = [
       </h2>
       <dl class="mt-14 divide-y divide-paper/10 border-y border-paper/10">
         {zahlen.map((z) => (
-          <div class="reveal grid gap-2 py-7 sm:grid-cols-[minmax(10rem,14rem)_1fr] sm:gap-8">
-            <dt class="tnum font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-tight font-medium">{z.wert}</dt>
+          <div class="reveal grid gap-2 py-7 sm:grid-cols-[minmax(10rem,17rem)_1fr] sm:gap-8">
+            <dt class="tnum font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-tight font-medium hyphens-auto break-words">{z.wert}</dt>
             <dd class="prose-measure self-center text-body leading-relaxed text-paper-muted">{z.label}</dd>
           </div>
         ))}
