@@ -1,22 +1,40 @@
 ---
 /**
- * Vollbild-Hero mit Video-Slot.
+ * Vollbild-Hero mit Bildwechsler und Video-Slot.
+ *
+ * Werden mehrere Bilder uebergeben, blenden sie langsam ineinander ueber.
+ * Nur das erste Bild wird sofort geladen – es ist das LCP-Element. Die
+ * uebrigen holt das Skript erst nach `load` nach, damit der Wechsler die
+ * Ladezeit der Startseite nicht verlaengert.
  *
  * Das Video liegt unter public/videos/hero.mp4 (liefert der Kunde nach,
  * siehe ASSETS.md: H.264, 1920×1080, ≤ 8 MB, ohne Ton). Solange die Datei
- * fehlt, rendert die Komponente das Poster als LCP-optimiertes <img>.
- * Mit Video bleibt das Poster als poster-Attribut und First Paint erhalten.
+ * fehlt, rendert die Komponente die Bilder.
  */
 import fs from 'node:fs';
 import { isProjektBild, projektSrcset } from '@/lib/img';
 
-interface Props {
-  poster: { src: string; alt: string };
+interface Bild {
+  src: string;
+  alt: string;
 }
 
-const { poster } = Astro.props;
+interface Props {
+  /** Ein Bild oder mehrere; ab zwei Bildern wechselt der Hero. */
+  bilder: Bild[];
+  /** Beschriftung des Wechslers fuer Screenreader */
+  wechslerAria?: string;
+}
+
+const { bilder, wechslerAria = 'Bildwechsel im Seitenkopf' } = Astro.props;
 const hasVideo = fs.existsSync(new URL('../../public/videos/hero.mp4', import.meta.url));
-const posterSrcset = isProjektBild(poster.src) ? projektSrcset(poster.src) : undefined;
+
+const aufbereitet = bilder.map((b) => ({
+  ...b,
+  srcset: isProjektBild(b.src) ? projektSrcset(b.src) : undefined,
+}));
+const erstes = aufbereitet[0]!;
+const wechselt = aufbereitet.length > 1;
 ---
 
 <section class="relative flex min-h-svh flex-col justify-end bg-graphite text-paper">
@@ -29,23 +47,30 @@ const posterSrcset = isProjektBild(poster.src) ? projektSrcset(poster.src) : und
         loop
         playsinline
         preload="metadata"
-        poster={poster.src}
+        poster={erstes.src}
         aria-hidden="true"
         tabindex="-1"
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
     ) : (
-      <img
-        src={poster.src}
-        srcset={posterSrcset}
-        sizes="100vw"
-        alt={poster.alt}
-        class="h-full w-full object-cover"
-        loading="eager"
-        decoding="sync"
-        fetchpriority="high"
-      />
+      <div class="hero-wechsler absolute inset-0" data-hero-wechsler>
+        {aufbereitet.map((b, i) => (
+          <img
+            src={i === 0 ? b.src : undefined}
+            data-src={i === 0 ? undefined : b.src}
+            srcset={i === 0 ? b.srcset : undefined}
+            data-srcset={i === 0 ? undefined : b.srcset}
+            sizes="100vw"
+            alt={i === 0 ? b.alt : ''}
+            aria-hidden={i === 0 ? undefined : 'true'}
+            class:list={['hero-bild absolute inset-0 h-full w-full object-cover', i === 0 && 'is-aktiv']}
+            loading="eager"
+            decoding={i === 0 ? 'sync' : 'async'}
+            fetchpriority={i === 0 ? 'high' : 'low'}
+          />
+        ))}
+      </div>
     )}
     <!-- Scrim: Lesbarkeit der Headline, unten dichter -->
     <div
@@ -58,14 +83,181 @@ const posterSrcset = isProjektBild(poster.src) ? projektSrcset(poster.src) : und
   <div class="container-site relative pt-40 pb-16 lg:pb-24">
     <slot />
   </div>
+
+  {wechselt && !hasVideo && (
+    <div
+      class="container-site relative pb-10 lg:pb-14"
+      role="group"
+      aria-label={wechslerAria}
+    >
+      <div class="flex gap-2.5" data-hero-punkte>
+        {aufbereitet.map((_, i) => (
+          <button
+            type="button"
+            class:list={['hero-punkt', i === 0 && 'is-aktiv']}
+            aria-label={`${wechslerAria} – ${i + 1}`}
+            aria-current={i === 0 ? 'true' : undefined}
+          ></button>
+        ))}
+      </div>
+    </div>
+  )}
 </section>
+
+<style>
+  /* ── Bildwechsel ─────────────────────────────────────────────
+     Ohne JavaScript bleibt das erste Bild sichtbar; die uebrigen
+     liegen darunter und werden nie geladen. */
+  .hero-bild {
+    opacity: 0;
+    transition: opacity 1.4s var(--ease-out-quart);
+  }
+  .hero-bild.is-aktiv {
+    opacity: 1;
+  }
+
+  /* Sehr langsames Heranfahren gibt dem Standbild Leben, ohne
+     aufdringlich zu werden. Laeuft nur im sichtbaren Bild. */
+  .hero-wechsler.laeuft .hero-bild.is-aktiv {
+    animation: hero-zoom 9s linear both;
+  }
+
+  @keyframes hero-zoom {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.055);
+    }
+  }
+
+  /* ── Fortschrittsbalken ──────────────────────────────────── */
+  .hero-punkt {
+    position: relative;
+    width: 2.75rem;
+    height: 2px;
+    background: color-mix(in oklab, var(--color-paper) 32%, transparent);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .hero-punkt:hover {
+    background: color-mix(in oklab, var(--color-paper) 55%, transparent);
+  }
+  .hero-punkt::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform-origin: left;
+    transform: scaleX(0);
+    background: var(--color-paper);
+  }
+  .hero-punkt.is-aktiv::after {
+    transform: scaleX(1);
+  }
+  /* Der aktive Balken laeuft ueber die Standzeit mit. */
+  .hero-punkt.is-aktiv.laeuft::after {
+    animation: hero-fortschritt 7s linear both;
+  }
+
+  @keyframes hero-fortschritt {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-bild {
+      transition: none;
+    }
+    .hero-wechsler.laeuft .hero-bild.is-aktiv,
+    .hero-punkt.is-aktiv.laeuft::after {
+      animation: none;
+    }
+    .hero-punkt.is-aktiv::after {
+      transform: scaleX(1);
+    }
+  }
+</style>
 
 <script>
   // Autoplay respektiert reduzierte Bewegung
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const wenigerBewegung = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (wenigerBewegung.matches) {
     document.querySelectorAll<HTMLVideoElement>('section video[autoplay]').forEach((v) => {
       v.removeAttribute('autoplay');
       v.pause();
     });
+  }
+
+  // ── Bildwechsel im Hero ───────────────────────────────────────
+  const wechsler = document.querySelector<HTMLElement>('[data-hero-wechsler]');
+  const punkte = Array.from(
+    document.querySelectorAll<HTMLButtonElement>('[data-hero-punkte] .hero-punkt')
+  );
+
+  if (wechsler) {
+    const bilder = Array.from(wechsler.querySelectorAll<HTMLImageElement>('.hero-bild'));
+    const STANDZEIT = 7000;
+
+    if (bilder.length > 1 && !wenigerBewegung.matches) {
+      let aktuell = 0;
+      let timer = 0;
+
+      // Die uebrigen Bilder erst nach dem Laden der Seite holen – sonst
+      // konkurrieren sie mit dem LCP-Bild um Bandbreite.
+      const nachladen = () => {
+        for (const bild of bilder.slice(1)) {
+          if (bild.dataset.srcset) bild.srcset = bild.dataset.srcset;
+          if (bild.dataset.src) bild.src = bild.dataset.src;
+        }
+        wechsler.classList.add('laeuft');
+        punkte[0]?.classList.add('laeuft');
+        starten();
+      };
+
+      const zeigen = (n: number) => {
+        bilder[aktuell]?.classList.remove('is-aktiv');
+        punkte[aktuell]?.classList.remove('is-aktiv', 'laeuft');
+        aktuell = (n + bilder.length) % bilder.length;
+        const bild = bilder[aktuell];
+        const punkt = punkte[aktuell];
+        if (bild) {
+          // Animation neu anstossen, damit der Zoom bei jedem Bild von vorn laeuft
+          bild.style.animation = 'none';
+          void bild.offsetWidth;
+          bild.style.animation = '';
+          bild.classList.add('is-aktiv');
+        }
+        if (punkt) {
+          punkt.classList.add('is-aktiv');
+          void punkt.offsetWidth;
+          punkt.classList.add('laeuft');
+        }
+      };
+
+      const starten = () => {
+        window.clearInterval(timer);
+        timer = window.setInterval(() => zeigen(aktuell + 1), STANDZEIT);
+      };
+
+      punkte.forEach((p, i) =>
+        p.addEventListener('click', () => {
+          zeigen(i);
+          starten();
+        })
+      );
+
+      // Im Hintergrundtab nicht weiterlaufen lassen.
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) window.clearInterval(timer);
+        else starten();
+      });
+
+      if (document.readyState === 'complete') nachladen();
+      else window.addEventListener('load', nachladen, { once: true });
+    }
   }
 </script>

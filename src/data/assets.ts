@@ -20,6 +20,14 @@ export const IMG = {
     src: '/haeuser/einfamilienhaus/flachdach-abendlicht-1600.webp',
     alt: 'Zweigeschossiges Wohnhaus mit dunkler Holzfassade, auskragendem Obergeschoss, Pool und Rasenfläche im Abendlicht',
   },
+  heroGewerbe: {
+    src: '/projekte/referenzen/hannover-citygate-1200.webp',
+    alt: 'Büro- und Verwaltungsgebäude City Gate Nord in Hannover-Vahrenwald, sechs Geschosse mit Klinkerfassade',
+  },
+  heroFertighaus: {
+    src: '/haeuser/einfamilienhaus/satteldach-scheune-1600.webp',
+    alt: 'Einfamilienhaus in Scheunenform mit steilem Satteldach, dunkler Holzschalung und warm beleuchteten Fenstern am nebligen Waldrand',
+  },
   satteldach: {
     src: '/haeuser/einfamilienhaus/satteldach-photovoltaik-1600.webp',
     alt: 'Einfamilienhaus mit Satteldach, vollflächiger Photovoltaikanlage und bodentiefen Fenstern',

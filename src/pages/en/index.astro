@@ -32,6 +32,10 @@ const hausTeaser = [
 ];
 
 
+/* The hero cycles through three motifs: home, commercial building, timber
+   house – the three fields we work in, in three images. */
+const heroBilder = [IMG.heroHome, IMG.heroGewerbe, IMG.heroFertighaus];
+
 const zahlen = [
   { wert: `since ${SITE.foundingYear}`, label: `${YEARS_EXPERIENCE} years of experience in construction – from the timber-frame prefab home to the public building` },
   { wert: '30 years', label: 'Guarantee on the building structure, plus 5 years of statutory warranty under German law (BGB) on all other work' },
@@ -71,7 +75,7 @@ const faq = [
   jsonLd={[buildFaqJsonLd(faq)]}
 >
   <!-- Hero -->
-  <VideoHero poster={IMG.heroHome}>
+  <VideoHero bilder={heroBilder} wechslerAria="Image slideshow in the page header">
     <div class="max-w-3xl">
       <!-- Two lines as separate blocks so each sentence wraps on its own
            and both rise in slightly offset. -->

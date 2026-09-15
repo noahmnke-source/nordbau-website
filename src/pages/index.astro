@@ -32,6 +32,10 @@ const hausTeaser = [
 ];
 
 
+/* Der Hero wechselt zwischen drei Motiven: Wohnhaus, Gewerbebau, Holzbau –
+   die drei Felder, in denen wir arbeiten, in drei Bildern. */
+const heroBilder = [IMG.heroHome, IMG.heroGewerbe, IMG.heroFertighaus];
+
 const zahlen = [
   { wert: `seit ${SITE.foundingYear}`, label: `${YEARS_EXPERIENCE} Jahre Erfahrung am Bau – vom Fertighaus in Holztafelbauweise bis zum öffentlichen Gebäude` },
   { wert: '30 Jahre', label: 'Garantie auf die Baukonstruktion, dazu 5 Jahre Gewährleistung nach BGB auf alle übrigen Leistungen' },
@@ -79,7 +83,7 @@ const faq = [
   jsonLd={[buildFaqJsonLd(faq)]}
 >
   <!-- Hero -->
-  <VideoHero poster={IMG.heroHome}>
+  <VideoHero bilder={heroBilder}>
     <div class="max-w-3xl">
       <!-- Zwei Zeilen als eigene Bloecke: so bricht jeder Satz fuer sich um
            und beide laufen leicht versetzt ein. -->
