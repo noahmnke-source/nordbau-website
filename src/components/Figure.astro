@@ -37,8 +37,12 @@ const {
 const srcset = isProjektBild(src) ? projektSrcset(src) : undefined;
 ---
 
+<!-- overflow-x-clip: Das Einblenden startet mit scale(1.02). Bei Bildern
+     ueber die volle Fensterbreite ragt das seitlich hinaus und macht die
+     Seite horizontal scrollbar. `clip` schneidet nur waagerecht ab und
+     laesst die senkrechte Parallaxe unberuehrt. -->
 <figure
-  class:list={[className, parallax !== false && 'parallax']}
+  class:list={['overflow-x-clip', className, parallax !== false && 'parallax']}
   data-parallax={parallax !== false ? String(parallax) : undefined}
 >
   <div class:list={['overflow-hidden bg-stone', ratio, reveal && 'reveal-media']}>
