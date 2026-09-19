@@ -130,7 +130,7 @@ const kontaktHref = localize('/kontakt/', lang);
 
               <div
                 id={`menu-${item.id}`}
-                class="menu-panel absolute top-full left-1/2 z-10 w-[22rem] -translate-x-1/2 pt-4"
+                class="menu-panel absolute top-full left-0 z-10 w-[21rem] max-w-[calc(100vw-3rem)] pt-3"
                 hidden
               >
                 <ul class="border border-line bg-bg p-2 text-ink shadow-[0_18px_48px_-24px_rgb(0_0_0/0.35)]">
@@ -142,7 +142,7 @@ const kontaktHref = localize('/kontakt/', lang);
                           'menu-eintrag block px-4 py-3 transition-colors duration-200',
                           isActive(p.href) && 'is-current',
                         ]}
-                        style={`--eintrag-delay:${i * 35}ms`}
+                        style={`--eintrag-delay:${60 + i * 45}ms`}
                         aria-current={isActive(p.href) ? 'page' : undefined}
                       >
                         <span class="block font-display text-body font-medium">{p.label}</span>
@@ -340,27 +340,30 @@ const kontaktHref = localize('/kontakt/', lang);
     transform: rotate(180deg);
   }
 
-  /* Auf-/Zublenden: leicht angehoben und weich eingeblendet. */
+  /* Oeffnen: Die Karte entfaltet sich aus der Oberkante nach unten, statt
+     fertig zu erscheinen. Der Ursprung liegt oben links, also am Menuepunkt
+     selbst – dadurch wirkt die Bewegung, als komme sie aus dem Wort heraus. */
   .menu-panel {
     opacity: 0;
-    transform: translate(-50%, -6px);
+    transform: translateY(-8px) scaleY(0.96);
+    transform-origin: top left;
     transition:
-      opacity 0.28s var(--ease-out-expo),
-      transform 0.28s var(--ease-out-expo);
+      opacity 0.24s var(--ease-out-quart),
+      transform 0.36s var(--ease-out-expo);
   }
   .menu-panel.is-open {
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: translateY(0) scaleY(1);
   }
 
   /* Die Einträge laufen gestaffelt nach – der Effekt, der ein Menü
      wertig wirken lässt, ohne den Nutzer aufzuhalten. */
   .menu-eintrag {
     opacity: 0;
-    transform: translateY(4px);
+    transform: translateY(6px);
     transition:
-      opacity 0.3s var(--ease-out-expo),
-      transform 0.3s var(--ease-out-expo),
+      opacity 0.34s var(--ease-out-expo),
+      transform 0.34s var(--ease-out-expo),
       background-color 0.2s ease;
     transition-delay: var(--eintrag-delay, 0ms);
   }
