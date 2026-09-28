@@ -72,7 +72,7 @@ export const ui = {
     'lang.switchAria': 'Switch to English',
     skip: 'Zum Inhalt springen',
     'footer.claim':
-      'Schlüsselfertige und individuell geplante Fertighäuser – werkseitig präzise vorgefertigt, bundesweit gebaut.',
+      'Individuell geplant, im eigenen Werk gefertigt – vom Fertighaus bis zum Gewerbebau, als Rohbau oder schlüsselfertig.',
     'footer.nav': 'Navigation',
     'footer.contact': 'Kontakt',
     'footer.callDirect': 'oder direkt anrufen:',
@@ -103,7 +103,7 @@ export const ui = {
     'lang.switchAria': 'Zu Deutsch wechseln',
     skip: 'Skip to content',
     'footer.claim':
-      'Turnkey, individually planned prefab homes – precision-built in the factory, assembled nationwide.',
+      'Individually planned, made in our own plant – from prefab homes to commercial buildings, as a structural shell or turnkey.',
     'footer.nav': 'Navigation',
     'footer.contact': 'Contact',
     'footer.callDirect': 'or call us directly:',

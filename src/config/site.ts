@@ -15,8 +15,10 @@ export const SITE = {
   legalName: 'EcoBau GmbH',
   /** Produktions-Domain (Apex ist primär; www leitet per 301 hierher um). Muss mit astro.config.mjs `site` + robots.txt übereinstimmen. */
   url: 'https://ecobau-hannover.com',
-  /** Claim, erscheint u. a. im Footer und als OG-Fallback */
-  claim: 'Architektur in Serie. Gebaut für Sie.',
+  /** Slogan fuer das Schema im Seitenkopf. Im Fussbereich steht der
+   *  uebersetzbare Text aus der i18n-Schicht, damit er auch auf den
+   *  englischen Seiten in der richtigen Sprache erscheint. */
+  claim: 'Individuell geplant. Im eigenen Werk gebaut.',
   /** Meta-Title-Suffix */
   titleSuffix: 'EcoBau GmbH – Fertighäuser schlüsselfertig & individuell',
 
