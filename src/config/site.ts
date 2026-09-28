@@ -21,8 +21,10 @@ export const SITE = {
   titleSuffix: 'EcoBau GmbH – Fertighäuser schlüsselfertig & individuell',
 
   contact: {
-    phone: '+49 155 63046447',
-    phoneDisplay: '0155 63046447',
+    /** Waehlbare Form fuer tel:-Verweise und das Schema im Seitenkopf */
+    phone: '+4951159293900',
+    /** Schreibweise fuer die Anzeige */
+    phoneDisplay: '0511 59293900',
     email: 'info@ecobau-hannover.com',
     street: 'An der Kirche 6',
     zip: '30457',
