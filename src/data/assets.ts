@@ -23,6 +23,26 @@ export const IMG = {
     src: '/rohbau/skelett-kran-1600.webp',
     alt: 'Stahlbetonskelett eines mehrgeschossigen Gebäudes mit Turmdrehkran vor bewölktem Himmel',
   },
+  rohbauBewehrung: {
+    src: '/rohbau/bewehrungsmatten-1600.webp',
+    alt: 'Gestapelte Bewehrungsmatten aus Betonstahl auf der Baustelle',
+  },
+  rohbauSchalung: {
+    src: '/rohbau/innen-schalung-1600.webp',
+    alt: 'Wandschalung und Deckenstützen im Rohbau vor dem Betonieren',
+  },
+  rohbauMauerwerk: {
+    src: '/rohbau/mauerwerk-1600.webp',
+    alt: 'Aufgehendes Mauerwerk aus großformatigen Planelementen auf der Bodenplatte',
+  },
+  rohbauDecke: {
+    src: '/rohbau/deckenschalung-1600.webp',
+    alt: 'Deckenschalung aus Holzträgern und Stützen von unten gesehen',
+  },
+  kitaEingang: {
+    src: '/bau/sozial-und-bildung/kita-eingang-1600.webp',
+    alt: 'Eingangsbereich einer eingeschossigen Kindertagesstätte mit farbigen Stützen und Vordach',
+  },
   rohbauKranwald: {
     src: '/rohbau/kranwald-1600.webp',
     alt: 'Mehrere Turmdrehkrane über einer Großbaustelle als Silhouette vor dem Abendhimmel',

@@ -5,30 +5,35 @@ import Button from '@/components/Button.astro';
 import Figure from '@/components/Figure.astro';
 import SectionIntro from '@/components/SectionIntro.astro';
 import FaqAccordion from '@/components/FaqAccordion.astro';
-import MaterialSlider from '@/components/MaterialSlider.astro';
 import { IMG } from '@/data/assets';
 import { SITE, YEARS_EXPERIENCE } from '@/config/site';
 import { buildFaqJsonLd } from '@/lib/seo';
 
-const hausTeaser = [
-  {
-    name: 'Bungalow',
-    href: '/en/haeuser/bungalow/',
-    fakt: 'from 95 m² · single storey',
-    img: IMG.bungalowGold,
-  },
-  {
-    name: 'Modular house',
-    href: '/en/haeuser/modulhaus/',
-    fakt: 'from 75 m² · extendable',
-    img: IMG.modulhaus,
-  },
-  {
-    name: 'Tiny House',
-    href: '/en/haeuser/tiny-house/',
-    fakt: 'from 35 m² · compact',
-    img: IMG.tinyHouse,
-  },
+const ablauf = [
+  { titel: 'Foundations', text: 'Earthworks, slab and reinforcement to the structural design. What goes wrong below stays wrong above.', img: IMG.rohbauBewehrung },
+  { titel: 'Formwork', text: 'Form lining, tie pattern and joint layout are agreed in advance – fair-faced concrete forgives nothing.', img: IMG.rohbauSchalung },
+  { titel: 'Rising walls', text: 'Large-format precision blocks or reinforced concrete, depending on spans, fire requirements and programme.', img: IMG.rohbauMauerwerk },
+  { titel: 'Floors and envelope', text: 'Floor slabs, stair cores and, if wanted, the closed, weathertight building envelope.', img: IMG.rohbauDecke },
+];
+
+const stufen = [
+  { titel: 'Structural shell', text: 'Foundations, loadbearing walls, columns, floors and stair cores – surveyed and handed over with structural certification.' },
+  { titel: 'Shell with envelope', text: 'Plus roof, façade, windows and doors. The building is closed and weathertight.' },
+  { titel: 'Turnkey', text: 'Plus every finishing trade through to handover. One contract, one contact, one date.' },
+];
+
+const projekte = [
+  { name: 'City Gate Nord office and administration complex', ort: 'Hanover-Vahrenwald', zeitraum: 'July 2023 – August 2025', leistung: 'Groundworks, shell and fit-out', kennzahl: '10,500 m² GFA · 6 storeys' },
+  { name: 'Residential and commercial building Maybachstraße 20', ort: 'Stuttgart', zeitraum: 'June 2019 – October 2023', leistung: 'Shell and fit-out', kennzahl: '15,000 m² GFA · 70 dwellings' },
+  { name: 'Warehouse and administration building PVU-Group', ort: 'Isernhagen', zeitraum: 'Summer 2019 – spring 2020', leistung: 'Groundworks, shell and fit-out', kennzahl: 'around 6,000 m² GFA' },
+  { name: 'Municipal hospital, fit-out ground to fifth floor', ort: 'Braunschweig', zeitraum: 'March 2021 – December 2023', leistung: 'Fit-out under medical constraints', kennzahl: '6 storeys · adjacent wards in use' },
+  { name: 'Day nursery Seegrasweg', ort: 'Ronnenberg-Empelde', zeitraum: 'May 2022 – September 2023', leistung: 'Shell and fit-out', kennzahl: '1,300 m² GFA · timber frame' },
+];
+
+const gebaeude = [
+  { name: 'Apartment buildings', href: '/en/gebaeude/mehrfamilienhaeuser/', text: 'Acoustic and fire separation between units drive the construction – designed in, not retrofitted.', img: IMG.rohbauWohnanlage },
+  { name: 'Commercial buildings', href: '/en/gebaeude/gewerbebau/', text: 'Offices and administration, halls and showrooms. Spans and imposed loads decide the structure.', img: IMG.heroGewerbe },
+  { name: 'Education & care', href: '/en/gebaeude/sozial-und-bildung/', text: 'Nurseries, schools and medical facilities – hygiene, escape routes and acoustics as the design basis.', img: IMG.kitaEingang },
 ];
 
 
@@ -62,10 +67,10 @@ const leistungen = [
 ];
 
 const zahlen = [
-  { wert: `since ${SITE.foundingYear}`, label: `${YEARS_EXPERIENCE} years of experience in construction – from the timber-frame prefab home to the public building` },
+  { wert: `since ${SITE.foundingYear}`, label: `${YEARS_EXPERIENCE} years in construction – shell, turnkey building and houses from our own plant` },
+  { wert: '7 + 3', label: 'Upper floors and basement levels: the greatest number of storeys delivered so far, basements watertight' },
+  { wert: '15,000 m²', label: 'Gross floor area of the largest project delivered – shell and fit-out' },
   { wert: '5 years', label: 'Guarantee on the building structure and statutory warranty under German law (BGB) on all other work' },
-  { wert: '12 months', label: 'Fixed-price guarantee from contract signing, independent of material prices' },
-  { wert: 'EH 40', label: 'Efficiency House standard ex works – a requirement for KfW funding 297/298' },
 ];
 
 const faq = [
@@ -93,9 +98,9 @@ const faq = [
 ---
 
 <BaseLayout
-  title={`Prefab homes and buildings from Hanover – built turnkey | ${SITE.name}`}
+  title={`Structural shell contractor in Hanover – concrete, masonry, timber | ${SITE.name}`}
   fullTitle
-  description="Family-run construction company from Hanover: individually planned prefab homes in timber-frame construction from our own plant, plus apartment buildings, commercial buildings and facilities for education and care. Efficiency House 40 ex works."
+  description="Shell construction from Hanover: foundations, structure and floors in reinforced concrete, masonry and timber – optionally with a weathertight envelope or turnkey. Apartment, commercial and education buildings up to 15,000 m² GFA. Family-run since 1994."
   heroOverlay
   jsonLd={[buildFaqJsonLd(faq)]}
 >
@@ -182,179 +187,132 @@ const faq = [
     </div>
   </section>
 
-  <!-- USP: Statement + Belege -->
+  <!-- How the shell is built: explanatory licence images, no project names -->
   <section class="container-site py-(--spacing-section)">
-    <div class="grid gap-x-8 gap-y-12 lg:grid-cols-12">
-      <div class="lg:col-span-7">
-        <h2 class="reveal font-display text-display font-medium">
-          A house is not an off-the-shelf product. Our construction method is&nbsp;– in the best sense.
-        </h2>
-        <p class="reveal prose-measure mt-8 text-body text-muted">
-          Every {SITE.name} house is built twice: first to the millimetre in the factory, then in
-          a few days on your plot. The precision of serial manufacturing
-          meets a floor plan that exists exactly once – yours. The result
-          is predictable in price and schedule, without architecture becoming a bargaining chip.
-        </p>
-        <dl class="reveal mt-12 divide-y divide-line border-y border-line">
-          <div class="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
-            <dt class="tnum font-display text-title font-medium text-oxide">12 months</dt>
-            <dd class="self-center text-small text-muted">Fixed-price guarantee from contract signing – your budget stays your budget.</dd>
-          </div>
-          <div class="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
-            <dt class="tnum font-display text-title font-medium text-oxide">5 years</dt>
-            <dd class="self-center text-small text-muted">Guarantee on the building structure and statutory warranty under German law (BGB) on all other work.</dd>
-          </div>
-          <div class="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
-            <dt class="tnum font-display text-title font-medium text-oxide">EH 40</dt>
-            <dd class="self-center text-small text-muted">Efficiency House 40 ex works: heat pump, ventilation system, PV preparation included.</dd>
-          </div>
-          <div class="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
-            <dt class="tnum font-display text-title font-medium text-oxide">Own plant</dt>
-            <dd class="self-center text-small text-muted">Wall, floor and roof elements are produced weather-protected in our own manufacturing hall.</dd>
-          </div>
-        </dl>
-      </div>
-      <div class="lg:col-span-4 lg:col-start-9">
-        <Figure
-          src={IMG.elementmontage.src}
-          alt={IMG.elementmontage.alt}
-          ratio="aspect-[4/5]"
-          sizes="(min-width: 1024px) 30vw, 100vw"
-          parallax={0.06}
-        />
-      </div>
+    <SectionIntro
+      title="How the shell is built"
+      lead="Accuracy missing here is never recovered by a finishing trade – and what is done well here, nobody ever sees."
+    />
+    <div class="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+      {ablauf.map((a, i) => (
+        <div class="reveal" style={`--reveal-delay:${(i % 4) * 80}ms`}>
+          <Figure src={a.img.src} alt={a.img.alt} ratio="aspect-[4/3]"
+            sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, 100vw" />
+          <p class="tnum mt-5 font-display text-title font-medium text-oxide">
+            {String(i + 1).padStart(2, '0')}
+          </p>
+          <h3 class="mt-1 font-display text-body font-medium">{a.titel}</h3>
+          <p class="mt-2 text-small leading-relaxed text-muted">{a.text}</p>
+        </div>
+      ))}
     </div>
   </section>
 
-  <!-- Warum Holz: Materialvorteile (Fakten des Baustoffs, kein Icon-Raster) -->
-  <section class="py-(--spacing-section) pt-0">
+  <!-- Scope: the client decides where we stop -->
+  <section class="bg-graphite py-(--spacing-section) text-paper">
     <div class="container-site">
-      <SectionIntro
-        title="Why we build with timber"
-        lead="Timber-frame construction is not only fast and precise. The material itself brings qualities that no other has."
-      />
-      <dl class="mt-16 grid gap-x-16 gap-y-12 sm:grid-cols-2">
-        {[
-          {
-            t: 'A healthy indoor climate',
-            d: 'Timber is a natural, hypoallergenic material: electrostatically neutral, it does not attract dust. The result is noticeably pure indoor air.',
-          },
-          {
-            t: 'Moisture, naturally regulated',
-            d: 'Timber walls absorb moisture when the air is humid and release it when it is dry – a balanced indoor climate entirely without additional technology.',
-          },
-          {
-            t: 'Light and dimensionally stable',
-            d: 'At around 500 kg/m³, timber is significantly lighter than concrete and at the same time elastic: the structure stays stable even under vibrations.',
-          },
-          {
-            t: 'Renewable and low in CO₂',
-            d: 'Every cubic metre of installed timber stores around one tonne of CO₂ – a material that regrows instead of consuming resources.',
-          },
-        ].map((b) => (
-          <div class="reveal border-t border-line pt-6">
-            <dt class="font-display text-title font-medium">{b.t}</dt>
-            <dd class="prose-measure mt-3 text-body text-muted">{b.d}</dd>
-          </div>
+      <div class="grid gap-x-8 gap-y-6 lg:grid-cols-12">
+        <h2 class="reveal font-display text-display font-medium lg:col-span-6">
+          You decide how far we build
+        </h2>
+        <p class="reveal prose-measure self-end text-body leading-relaxed text-paper-muted lg:col-span-5 lg:col-start-8">
+          The boundary is written into the specification before contract – so the interface
+          with your other trades is unambiguous and is not up for debate when things get tight.
+        </p>
+      </div>
+      <ol class="mt-14 grid gap-x-8 gap-y-10 lg:grid-cols-3">
+        {stufen.map((st, i) => (
+          <li class="reveal border-t border-paper/20 pt-6" style={`--reveal-delay:${i * 110}ms`}>
+            <p class="tnum font-display text-title font-medium text-oxide">
+              {String(i + 1).padStart(2, '0')}
+            </p>
+            <h3 class="mt-3 font-display text-title font-medium">{st.titel}</h3>
+            <p class="prose-measure mt-3 text-small leading-relaxed text-paper-muted">{st.text}</p>
+          </li>
         ))}
-      </dl>
+      </ol>
+      <div class="mt-12">
+        <Button href="/en/leistungen/rohbau/" variant="secondary">To the structural shell</Button>
+      </div>
     </div>
   </section>
 
-  <!-- Haustypen-Teaser -->
+  <!-- Completed projects -->
+  <section class="container-site py-(--spacing-section)">
+    <SectionIntro
+      title="Completed projects"
+      lead="A selection from recent years – with scope of work and size."
+    />
+    <div class="mt-14 overflow-x-auto">
+      <table class="w-full min-w-[46rem] border-collapse text-left">
+        <thead>
+          <tr class="border-b border-line text-caption text-muted">
+            <th scope="col" class="py-3 pr-6 font-medium">Project</th>
+            <th scope="col" class="py-3 pr-6 font-medium">Scope</th>
+            <th scope="col" class="py-3 font-medium">Size</th>
+          </tr>
+        </thead>
+        <tbody>
+          {projekte.map((pr) => (
+            <tr class="border-b border-line align-top">
+              <th scope="row" class="py-5 pr-6 font-normal">
+                <span class="block font-display text-body font-medium">{pr.name}</span>
+                <span class="mt-1 block text-caption text-muted">{pr.ort} · {pr.zeitraum}</span>
+              </th>
+              <td class="py-5 pr-6 text-small text-muted">{pr.leistung}</td>
+              <td class="tnum py-5 text-small text-muted">{pr.kennzahl}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Building types -->
   <section class="bg-stone py-(--spacing-section)">
     <div class="container-site">
       <SectionIntro
-        title="Four house forms. Countless floor plans."
-        lead="From the tiny house to the multi-family house: each type is a proven basic framework – rooms, facade and details we plan anew with you."
+        title="The buildings we build"
+        lead="The same work, different demands: acoustics in housing, spans in commercial, statutory constraints in education."
       />
+      <div class="mt-14 grid gap-x-8 gap-y-12 md:grid-cols-3">
+        {gebaeude.map((g, i) => (
+          <a href={g.href} class="group reveal block" style={`--reveal-delay:${i * 90}ms`}>
+            <Figure src={g.img.src} alt={g.img.alt} ratio="aspect-[4/3]"
+              sizes="(min-width: 768px) 31vw, 100vw" zoom />
+            <h3 class="mt-5 font-display text-title font-medium">{g.name}</h3>
+            <p class="prose-measure mt-3 text-small leading-relaxed text-muted">{g.text}</p>
+            <span class="mt-4 inline-flex items-center gap-2 text-small font-medium text-oxide">
+              Find out more
+              <svg class="h-4 w-4 transition-transform duration-300 ease-[var(--ease-out-quart)] group-hover:translate-x-1" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" /></svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
 
-      <div class="mt-16 grid gap-8 lg:grid-cols-12">
-        <!-- Featured: Einfamilienhaus -->
-        <a href="/en/haeuser/einfamilienhaus/" class="group block lg:col-span-7">
-          <Figure
-            src={IMG.satteldach.src}
-            alt={IMG.satteldach.alt}
-            ratio="aspect-[4/3]"
-            sizes="(min-width: 1024px) 58vw, 100vw"
-            zoom
-          />
-          <div class="mt-5 flex items-baseline justify-between gap-4">
-            <h3 class="font-display text-title font-medium">
-              <span class="link-line">Detached house</span>
-            </h3>
-            <p class="tnum text-small text-muted">from 120 m² · pitched or flat roof</p>
-          </div>
-        </a>
-
-        <!-- Drei kompakte Typen -->
-        <div class="grid content-start gap-10 sm:grid-cols-3 lg:col-span-5 lg:grid-cols-1 lg:gap-8 lg:pl-8">
-          {hausTeaser.map((typ) => (
-            <a href={typ.href} class="group grid grid-cols-[7rem_1fr] items-center gap-5">
-              <Figure
-                src={typ.img.src}
-                alt={typ.img.alt}
-                ratio="aspect-square"
-                sizes="7rem"
-                zoom
-                reveal={false}
-              />
-              <div>
-                <h3 class="font-display text-title font-medium">
-                  <span class="link-line">{typ.name}</span>
-                </h3>
-                <p class="tnum mt-1 text-small text-muted">{typ.fakt}</p>
-              </div>
-            </a>
-          ))}
+  <!-- Second strand, deliberately brief -->
+  <section class="container-site py-(--spacing-section)">
+    <div class="grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-center">
+      <div class="reveal lg:col-span-5">
+        <p class="text-caption tracking-wide text-muted uppercase">Second strand</p>
+        <h2 class="mt-3 font-display text-display font-medium">
+          And we build houses in our own plant.
+        </h2>
+        <p class="prose-measure mt-6 text-body leading-relaxed text-muted">
+          Alongside the structural shell we build turnkey homes in timber frame –
+          detached houses, bungalows, modular houses and tiny houses, drawn for your site
+          and prefabricated in our own hall.
+        </p>
+        <div class="mt-8">
+          <Button href="/en/haeuser/einfamilienhaus/" variant="primary">To the houses</Button>
         </div>
       </div>
-
-      <div class="mt-14">
-        <Button href="/en/weg-zum-traumhaus/" variant="secondary">How your house is built</Button>
-      </div>
+      <Figure src={IMG.heroHome.src} alt={IMG.heroHome.alt} ratio="aspect-[3/2]"
+        sizes="(min-width: 1024px) 54vw, 100vw" class="lg:col-span-6 lg:col-start-7" zoom />
     </div>
   </section>
-
-  <!-- Aufbau & Materialien: Wandschnitt-Slider -->
-  <MaterialSlider />
-
-  <!-- Referenz-Preview: ein entschiedenes Bild -->
-  <!-- Our own plant -->
-  <section class="py-(--spacing-section)">
-    <div class="container-site">
-      <SectionIntro
-        title="We manufacture ourselves."
-        lead="Wall, floor and roof elements are made in our own hall – checked before they leave the plant. On site, elements are assembled, not built."
-      />
-    </div>
-    <div class="mt-16">
-      <Figure
-        src={IMG.werkHalle.src}
-        alt={IMG.werkHalle.alt}
-        ratio="aspect-[3/2] sm:aspect-[21/9]"
-        sizes="100vw"
-        class="w-full"
-        parallax={0.05}
-      />
-    </div>
-    <div class="container-site mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-      {[IMG.holzMaterial, IMG.werkTeam, IMG.kranModul].map((bild, i) => (
-        <Figure
-          src={bild.src}
-          alt={bild.alt}
-          ratio="aspect-[4/3]"
-          sizes="(min-width: 1024px) 31vw, (min-width: 640px) 47vw, 100vw"
-          class={i === 2 ? 'sm:col-span-2 lg:col-span-1' : ''}
-          zoom
-        />
-      ))}
-    </div>
-    <div class="container-site mt-10">
-      <a href="/en/ueber-uns/" class="link-line text-small font-medium">The plant and the company</a>
-    </div>
-  </section>
-
 
   <!-- Zahlen / Trust: Anthrazit-Drench, Register statt Stat-Karten -->
   <section class="bg-graphite py-(--spacing-section) text-paper">
