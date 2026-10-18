@@ -23,6 +23,10 @@ export const IMG = {
     src: '/rohbau/skelett-kran-1600.webp',
     alt: 'Stahlbetonskelett eines mehrgeschossigen Gebäudes mit Turmdrehkran vor bewölktem Himmel',
   },
+  rohbauKranwald: {
+    src: '/rohbau/kranwald-1600.webp',
+    alt: 'Mehrere Turmdrehkrane über einer Großbaustelle als Silhouette vor dem Abendhimmel',
+  },
   rohbauZeile: {
     src: '/rohbau/zeile-geruest-1600.webp',
     alt: 'Langgestreckter Rohbau im Gerüst, Geschossdecken und Fassade im Entstehen',
@@ -52,10 +56,6 @@ export const IMG = {
   heroGewerbe: {
     src: '/projekte/referenzen/hannover-citygate-1200.webp',
     alt: 'Büro- und Verwaltungsgebäude City Gate Nord in Hannover-Vahrenwald, sechs Geschosse mit Klinkerfassade',
-  },
-  heroFertighaus: {
-    src: '/haeuser/einfamilienhaus/satteldach-scheune-1600.webp',
-    alt: 'Einfamilienhaus in Scheunenform mit steilem Satteldach, dunkler Holzschalung und warm beleuchteten Fenstern am nebligen Waldrand',
   },
   satteldach: {
     src: '/haeuser/einfamilienhaus/satteldach-photovoltaik-1600.webp',
