@@ -65,7 +65,7 @@ faq:
   - q: Dürfen tragende Wände entfernt werden?
     a: Oft ja, aber nie ohne Nachweis. Durchbrüche und Abfangungen werden von einem Tragwerksplaner gerechnet und die Lastabtragung über die darüberliegenden Geschosse geprüft. Erst danach wird gearbeitet.
   - q: Übernehmen Sie auch Aufstockungen?
-    a: "Ja. Für Aufstockungen ist der Holzbau häufig die beste Lösung, weil er leicht ist und die vorhandene Gründung schont. Hier greifen unsere beiden Standbeine ineinander: Tragwerksprüfung und Massivbau im Bestand, Aufstockung in Holztafelbauweise aus dem eigenen Werk."
+    a: "Ja. Für Aufstockungen ist der Holzbau häufig die beste Lösung, weil er leicht ist und die vorhandene Gründung schont. Hier greifen beide Bauweisen ineinander: Tragwerksprüfung und Massivbau im Bestand, Aufstockung in Holztafelbauweise aus dem eigenen Werk."
 ---
 
 Im Bestand ist nicht die Bauleistung das Schwierige, sondern alles drumherum: ein Gebäude, das genutzt wird, Unterlagen, die nicht stimmen, und Auflagen, die bei einem Neubau nicht gelten. Wir bauen um, erweitern und bauen aus – in Wohngebäuden, Verwaltungen, Schulen und Kliniken.
@@ -80,4 +80,4 @@ Staubschutzwände, getaktete Anlieferung, Arbeiten außerhalb der Betriebszeiten
 
 ## Eingriffe ins Tragwerk
 
-Durchbrüche, neue Öffnungen und Abfangungen sind kein Abrissthema, sondern ein Rechenthema. Jeder Eingriff bekommt seinen statischen Nachweis, bevor der erste Schnitt gesetzt wird. Für Aufstockungen bringen wir unser zweites Standbein ein: Holztafelbau aus dem eigenen Werk ist leicht genug, um vorhandene Gründungen zu schonen.
+Durchbrüche, neue Öffnungen und Abfangungen sind kein Abrissthema, sondern ein Rechenthema. Jeder Eingriff bekommt seinen statischen Nachweis, bevor der erste Schnitt gesetzt wird. Für Aufstockungen bringen wir den Holzbau ein: Holztafelbau aus dem eigenen Werk ist leicht genug, um vorhandene Gründungen zu schonen.
