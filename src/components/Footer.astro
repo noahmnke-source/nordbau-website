@@ -17,7 +17,7 @@ const haeuser = (
   lang === 'en' ? await getCollection('haeuserEn') : await getCollection('haeuser')
 ).sort((a, b) => a.data.order - b.data.order);
 const bauten = (
-  lang === 'en' ? await getCollection('bautenEn') : await getCollection('bauten')
+  lang === 'en' ? await getCollection('leistungenEn') : await getCollection('leistungen')
 ).sort((a, b) => a.data.order - b.data.order);
 
 const year = new Date().getFullYear();
@@ -80,12 +80,12 @@ const nav = navDefs.map((n) => ({ label: t(n.key), href: localize(n.path, lang) 
       </ul>
     </nav>
 
-    <nav aria-label={t('nav.wohnGewerbe')} class="lg:col-span-2">
-      <h2 class="mb-4 text-caption font-medium text-paper-muted">{t('nav.wohnGewerbe')}</h2>
+    <nav aria-label={t('nav.leistungen')} class="lg:col-span-2">
+      <h2 class="mb-4 text-caption font-medium text-paper-muted">{t('nav.leistungen')}</h2>
       <ul class="space-y-2.5">
         {bauten.map((b) => (
           <li>
-            <a href={localize(`/wohn-und-gewerbebau/${b.id}/`, lang)} class="link-line text-small">
+            <a href={localize(`/leistungen/${b.id}/`, lang)} class="link-line text-small">
               {b.data.name}
             </a>
           </li>

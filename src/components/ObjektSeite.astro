@@ -45,6 +45,7 @@ interface Props {
   hero: Bild;
   katalog: Bild[];
   innen: Bild[];
+  bauweisen: Bild[];
   daten: { label: string; wert: string }[];
   merkmale: { titel: string; text: string }[];
   faq: { q: string; a: string }[];
@@ -62,6 +63,7 @@ const {
   hero,
   katalog,
   innen,
+  bauweisen,
   daten,
   merkmale,
   faq,
@@ -105,6 +107,10 @@ const T = {
     ? 'Rohbau, Rohbau mit geschlossener Gebäudehülle oder das fertige Gebäude – die Leistungstiefe legen wir vor Vertragsschluss fest, damit die Schnittstelle zu Ihren übrigen Gewerken eindeutig ist.'
     : 'Structural shell, shell with a weathertight envelope, or the finished building – the scope is fixed before contract so the interface with your other trades is unambiguous.',
   projekteTitel: de ? 'Ausgeführte Projekte' : 'Completed projects',
+  bauweisenTitel: de ? 'So entsteht der Rohbau' : 'How the shell is built',
+  bauweisenLead: de
+    ? 'Die Schritte, die vor dem ersten Innenputz liegen – und über die Qualität des ganzen Gebäudes entscheiden.'
+    : 'The steps that come before the first coat of plaster – and decide the quality of the whole building.',
   projekteLead: de
     ? 'Auszug aus den Bauvorhaben, die wir in dieser Leistungsart umgesetzt haben.'
     : 'A selection of the projects we have delivered in this type of work.',
@@ -333,6 +339,24 @@ const wegPfad = localize('/weg-zum-traumhaus/', lang);
           </li>
         ))}
       </ul>
+    </div>
+  </section>
+)}
+
+<!-- Bauweise: erklaerende Aufnahmen, bewusst ohne Projektbezug -->
+{bauweisen.length > 0 && (
+  <section class="container-site py-(--spacing-section)">
+    <SectionIntro title={T.bauweisenTitel} lead={T.bauweisenLead} />
+    <div class="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      {bauweisen.map((bild, i) => (
+        <div class="reveal" style={`--reveal-delay:${(i % 3) * 90}ms`}>
+          <Figure src={bild.src} alt={bild.alt} ratio="aspect-[4/3]"
+            sizes="(min-width: 1024px) 30vw, (min-width: 640px) 46vw, 100vw" zoom />
+          {bild.caption && (
+            <p class="mt-4 text-small leading-relaxed text-muted">{bild.caption}</p>
+          )}
+        </div>
+      ))}
     </div>
   </section>
 )}

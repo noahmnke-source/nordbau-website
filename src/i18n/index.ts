@@ -44,7 +44,8 @@ export function isBilingual(pathname: string): boolean {
   if (de === '/') return true;
   return [
     '/haeuser/',
-    '/wohn-und-gewerbebau/',
+    '/leistungen/',
+    '/gebaeude/',
     '/weg-zum-traumhaus/',
     '/ueber-uns/',
     '/kontakt/',
@@ -56,8 +57,10 @@ export const ui = {
   de: {
     'nav.home': 'Startseite',
     'nav.haeuser': 'Häuser',
-    'nav.wohnGewerbe': 'Wohn- und Gewerbebau',
+    'nav.leistungen': 'Leistungen',
+    'nav.gebaeude': 'Gebäude',
     'nav.weg': 'Weg zum Traumhaus',
+    'nav.wegHinweis': 'Von der ersten Skizze bis zur Übergabe.',
     'nav.ueberuns': 'Über uns',
     'nav.ratgeber': 'Ratgeber',
     'nav.kontakt': 'Kontakt',
@@ -87,8 +90,10 @@ export const ui = {
   en: {
     'nav.home': 'Home',
     'nav.haeuser': 'Houses',
-    'nav.wohnGewerbe': 'Residential & commercial',
+    'nav.leistungen': 'Services',
+    'nav.gebaeude': 'Buildings',
     'nav.weg': 'Your route to a home',
+    'nav.wegHinweis': 'From the first sketch to handover.',
     'nav.ueberuns': 'About us',
     'nav.ratgeber': 'Guide',
     'nav.kontakt': 'Contact',

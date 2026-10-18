@@ -20,7 +20,7 @@ export const SITE = {
    *  englischen Seiten in der richtigen Sprache erscheint. */
   claim: 'Individuell geplant. Im eigenen Werk gebaut.',
   /** Meta-Title-Suffix */
-  titleSuffix: 'EcoBau GmbH – Fertighäuser schlüsselfertig & individuell',
+  titleSuffix: 'EcoBau GmbH – Rohbau, Schlüsselfertigbau und Fertighäuser',
 
   contact: {
     /** Waehlbare Form fuer tel:-Verweise und das Schema im Seitenkopf */

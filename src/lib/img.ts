@@ -15,7 +15,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 /** Ordner, deren Bilder in mehreren Breiten vorliegen. */
-const BREITEN_ORDNER = ['/projekte/', '/haeuser/', '/bau/', '/werk/'];
+const BREITEN_ORDNER = ['/projekte/', '/haeuser/', '/bau/', '/werk/', '/rohbau/'];
 
 const PUBLIC_DIR = fileURLToPath(new URL('../../public/', import.meta.url));
 

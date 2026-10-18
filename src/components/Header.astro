@@ -16,43 +16,60 @@ const t = useT(lang);
 
 const home = localize('/', lang);
 
-// Die beiden Klappmenüs speisen sich direkt aus den Inhaltsordnern – neue
-// Häuser oder Bauaufgaben erscheinen ohne Änderung an dieser Datei.
-const haeuser = (
+// Die drei Klappmenüs speisen sich direkt aus den Inhaltsordnern – neue
+// Leistungen, Gebäudearten oder Haustypen erscheinen ohne Änderung hier.
+// Leistung und Gebäudeart liegen bewusst in getrennten Menüs: Ein
+// Mehrfamilienhaus lässt sich im Rohbau wie schlüsselfertig bauen, die
+// beiden Achsen gehören nicht in eine gemeinsame Liste.
+const sortiert = (c: { data: { order: number } }[]) =>
+  [...c].sort((a, b) => a.data.order - b.data.order);
+
+const leistungen = sortiert(
+  lang === 'en' ? await getCollection('leistungenEn') : await getCollection('leistungen')
+);
+const gebaeude = sortiert(
+  lang === 'en' ? await getCollection('gebaeudeEn') : await getCollection('gebaeude')
+);
+const haeuser = sortiert(
   lang === 'en' ? await getCollection('haeuserEn') : await getCollection('haeuser')
-).sort((a, b) => a.data.order - b.data.order);
-const bauten = (
-  lang === 'en' ? await getCollection('bautenEn') : await getCollection('bauten')
-).sort((a, b) => a.data.order - b.data.order);
+);
 
 type NavEintrag =
   | { art: 'link'; label: string; href: string }
   | { art: 'gruppe'; id: string; label: string; basis: string; punkte: { label: string; href: string; hinweis: string }[] };
 
+const gruppe = (
+  id: string,
+  label: string,
+  basis: string,
+  eintraege: { id: string; data: { name: string; tagline: string } }[]
+): NavEintrag => ({
+  art: 'gruppe',
+  id,
+  label,
+  basis: localize(basis, lang),
+  punkte: eintraege.map((e) => ({
+    label: e.data.name,
+    href: localize(`${basis}${e.id}/`, lang),
+    hinweis: e.data.tagline,
+  })),
+});
+
+const haeuserPunkte = gruppe('haeuser', t('nav.haeuser'), '/haeuser/', haeuser);
+// Der Weg zum Traumhaus richtet sich an private Bauherren und gehört
+// deshalb unter die Häuser statt in die oberste Ebene.
+if (haeuserPunkte.art === 'gruppe') {
+  haeuserPunkte.punkte.push({
+    label: t('nav.weg'),
+    href: localize('/weg-zum-traumhaus/', lang),
+    hinweis: t('nav.wegHinweis'),
+  });
+}
+
 const nav: NavEintrag[] = [
-  {
-    art: 'gruppe',
-    id: 'haeuser',
-    label: t('nav.haeuser'),
-    basis: localize('/haeuser/', lang),
-    punkte: haeuser.map((e) => ({
-      label: e.data.name,
-      href: localize(`/haeuser/${e.id}/`, lang),
-      hinweis: e.data.tagline,
-    })),
-  },
-  {
-    art: 'gruppe',
-    id: 'bauten',
-    label: t('nav.wohnGewerbe'),
-    basis: localize('/wohn-und-gewerbebau/', lang),
-    punkte: bauten.map((e) => ({
-      label: e.data.name,
-      href: localize(`/wohn-und-gewerbebau/${e.id}/`, lang),
-      hinweis: e.data.tagline,
-    })),
-  },
-  { art: 'link', label: t('nav.weg'), href: localize('/weg-zum-traumhaus/', lang) },
+  gruppe('leistungen', t('nav.leistungen'), '/leistungen/', leistungen),
+  gruppe('gebaeude', t('nav.gebaeude'), '/gebaeude/', gebaeude),
+  haeuserPunkte,
   { art: 'link', label: t('nav.ueberuns'), href: localize('/ueber-uns/', lang) },
   ...(lang === 'de'
     ? [{ art: 'link' as const, label: t('nav.ratgeber'), href: '/ratgeber/' }]

@@ -36,6 +36,10 @@ const objektSchema = z.object({
   katalog: z.array(imageRef).default([]),
   /** Optionale Innenaufnahmen als eigener Abschnitt */
   innen: z.array(imageRef).default([]),
+  /** Erklaerende Aufnahmen zur Bauweise. Bewusst getrennt vom Katalog:
+   *  hier stehen Lizenzbilder, die den Vorgang zeigen, keine eigenen
+   *  Projekte – deshalb tragen sie nie einen Projektnamen. */
+  bauweisen: z.array(imageRef).default([]),
   daten: z.array(z.object({ label: z.string(), wert: z.string() })).default([]),
   /** Drei bis vier Merkmale, die den Typ ausmachen */
   merkmale: z
@@ -68,13 +72,25 @@ const haeuserEn = defineCollection({
   schema: objektSchema,
 });
 
-const bauten = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/bauten' }),
+/* Leistungen (was wir tun) und Gebaeude (was wir bauen) liegen bewusst in
+   getrennten Sammlungen – die beiden Achsen gehoeren nicht in eine Liste. */
+const leistungen = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/leistungen' }),
   schema: objektSchema,
 });
 
-const bautenEn = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/bauten-en' }),
+const leistungenEn = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/leistungen-en' }),
+  schema: objektSchema,
+});
+
+const gebaeude = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/gebaeude' }),
+  schema: objektSchema,
+});
+
+const gebaeudeEn = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/gebaeude-en' }),
   schema: objektSchema,
 });
 
@@ -90,4 +106,12 @@ const ratgeber = defineCollection({
   }),
 });
 
-export const collections = { haeuser, haeuserEn, bauten, bautenEn, ratgeber };
+export const collections = {
+  haeuser,
+  haeuserEn,
+  leistungen,
+  leistungenEn,
+  gebaeude,
+  gebaeudeEn,
+  ratgeber,
+};

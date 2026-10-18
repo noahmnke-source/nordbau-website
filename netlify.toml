@@ -52,7 +52,7 @@
 
 [[redirects]]
   from = "/haustypen/mehrfamilienhaus/*"
-  to = "/wohn-und-gewerbebau/mehrfamilienhaeuser/"
+  to = "/gebaeude/mehrfamilienhaeuser/"
   status = 301
 
 [[redirects]]
@@ -91,12 +91,12 @@
 # Hoch- und Tiefbau ist im Wohn- und Gewerbebau aufgegangen.
 [[redirects]]
   from = "/hoch-und-tiefbau/*"
-  to = "/wohn-und-gewerbebau/gewerbebau/"
+  to = "/gebaeude/gewerbebau/"
   status = 301
 
 [[redirects]]
   from = "/bauleistungen/*"
-  to = "/wohn-und-gewerbebau/gewerbebau/"
+  to = "/gebaeude/gewerbebau/"
   status = 301
 
 # /ablauf/ ist durch die ausfuehrliche Ablaufseite ersetzt worden.
@@ -123,7 +123,7 @@
 
 [[redirects]]
   from = "/en/haustypen/mehrfamilienhaus/*"
-  to = "/en/wohn-und-gewerbebau/mehrfamilienhaeuser/"
+  to = "/en/gebaeude/mehrfamilienhaeuser/"
   status = 301
 
 [[redirects]]
@@ -149,4 +149,58 @@
 [[redirects]]
   from = "/en/ablauf/*"
   to = "/en/weg-zum-traumhaus/"
+  status = 301
+
+# ── Umbau 2026: Leistung und Gebaeudeart getrennt ─────────────
+# /wohn-und-gewerbebau/ mischte beides. Rohbau ist eine Leistung und liegt
+# jetzt unter /leistungen/, die Gebaeudearten unter /gebaeude/.
+
+[[redirects]]
+  from = "/wohn-und-gewerbebau/rohbau/*"
+  to = "/leistungen/rohbau/"
+  status = 301
+
+[[redirects]]
+  from = "/wohn-und-gewerbebau/mehrfamilienhaeuser/*"
+  to = "/gebaeude/mehrfamilienhaeuser/"
+  status = 301
+
+[[redirects]]
+  from = "/wohn-und-gewerbebau/gewerbebau/*"
+  to = "/gebaeude/gewerbebau/"
+  status = 301
+
+[[redirects]]
+  from = "/wohn-und-gewerbebau/sozial-und-bildung/*"
+  to = "/gebaeude/sozial-und-bildung/"
+  status = 301
+
+[[redirects]]
+  from = "/wohn-und-gewerbebau/*"
+  to = "/leistungen/rohbau/"
+  status = 301
+
+[[redirects]]
+  from = "/en/wohn-und-gewerbebau/rohbau/*"
+  to = "/en/leistungen/rohbau/"
+  status = 301
+
+[[redirects]]
+  from = "/en/wohn-und-gewerbebau/mehrfamilienhaeuser/*"
+  to = "/en/gebaeude/mehrfamilienhaeuser/"
+  status = 301
+
+[[redirects]]
+  from = "/en/wohn-und-gewerbebau/gewerbebau/*"
+  to = "/en/gebaeude/gewerbebau/"
+  status = 301
+
+[[redirects]]
+  from = "/en/wohn-und-gewerbebau/sozial-und-bildung/*"
+  to = "/en/gebaeude/sozial-und-bildung/"
+  status = 301
+
+[[redirects]]
+  from = "/en/wohn-und-gewerbebau/*"
+  to = "/en/leistungen/rohbau/"
   status = 301

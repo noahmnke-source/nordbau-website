@@ -15,6 +15,35 @@ export interface Asset {
 }
 
 export const IMG = {
+  /* ── Rohbau ──────────────────────────────────────────────────
+     Lizenzbilder (Pexels/Pixabay, kommerziell nutzbar ohne Namens-
+     nennung). Sie zeigen die Bauweise, nie ein eigenes Projekt –
+     eigene Projektfotos stehen ausschliesslich in den Referenzen. */
+  rohbauSkelett: {
+    src: '/rohbau/skelett-kran-1600.webp',
+    alt: 'Stahlbetonskelett eines mehrgeschossigen Gebäudes mit Turmdrehkran vor bewölktem Himmel',
+  },
+  rohbauZeile: {
+    src: '/rohbau/zeile-geruest-1600.webp',
+    alt: 'Langgestreckter Rohbau im Gerüst, Geschossdecken und Fassade im Entstehen',
+  },
+  rohbauWohnanlage: {
+    src: '/rohbau/wohnanlage-1600.webp',
+    alt: 'Mehrere Wohngebäude im Rohbau mit geschlossenen Geschossdecken',
+  },
+  rohbauKraene: {
+    src: '/rohbau/kraene-1600.webp',
+    alt: 'Zwei Turmdrehkrane über einem mehrgeschossigen Neubau vor blauem Himmel',
+  },
+  rohbauInnen: {
+    src: '/rohbau/innen-stuetzen-1600.webp',
+    alt: 'Rohbau-Innenraum mit Betonstützen, Wandschalung und Deckenstützen',
+  },
+  bestandGeruest: {
+    src: '/rohbau/bestand-geruest-1600.webp',
+    alt: 'Eingerüstetes Bestandsgebäude während Umbau und Sanierung',
+  },
+
   /* ── Entwürfe ────────────────────────────────────────────── */
   heroHome: {
     src: '/haeuser/einfamilienhaus/flachdach-abendlicht-1600.webp',
