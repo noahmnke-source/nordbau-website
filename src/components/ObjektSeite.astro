@@ -162,6 +162,28 @@ const stufen = de
 
 const kontakt = localize('/kontakt/', lang);
 
+// Angebrochene Katalogzeilen werden mittig gesetzt, ein einzelnes Bild
+// zusaetzlich breiter. Das Raster hat dafuer 6 bzw. 12 Spalten, eine Karte
+// belegt davon 3 bzw. 4 – so laesst sich um eine halbe Karte einruecken.
+// Bei aktivem Filter bleibt es beim normalen Fluss, weil sich die Anzahl
+// sichtbarer Karten dann im Browser aendert.
+const restSm = zeigeFilter ? 0 : katalog.length % 2;
+const restLg = zeigeFilter ? 0 : katalog.length % 3;
+const letzteSm = katalog.length - restSm;
+const letzteLg = katalog.length - restLg;
+const einzelnLg = (i: number) => restLg === 1 && i === letzteLg;
+
+function spalten(i: number): string {
+  const c: string[] = [];
+  if (restSm === 1 && i === letzteSm) c.push('sm:col-span-4', 'sm:col-start-2');
+  else c.push('sm:col-span-3', 'sm:col-start-auto');
+
+  if (einzelnLg(i)) c.push('lg:col-span-6', 'lg:col-start-4');
+  else if (restLg === 2 && i === letzteLg) c.push('lg:col-span-4', 'lg:col-start-3');
+  else c.push('lg:col-span-4', 'lg:col-start-auto');
+  return c.join(' ');
+}
+
 // Sichtbar erscheinen keine Brotkrumen mehr; die Liste wird nur noch fuer die
 // BreadcrumbList im Seitenkopf gebraucht, die BaseLayout aus derselben Angabe
 // erzeugt. Deshalb bleibt sie hier bestehen.
@@ -309,10 +331,10 @@ const kontakt = localize('/kontakt/', lang);
         </div>
       )}
 
-      <ul class="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3" data-katalog>
+      <ul class="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-6 lg:grid-cols-12" data-katalog>
         {katalog.map((bild, i) => (
           <li
-            class="group reveal catalog-item"
+            class:list={['group reveal catalog-item', spalten(i)]}
             data-gruppe={bild.gruppe}
             style={`--reveal-delay:${(i % 3) * 90}ms`}
           >
@@ -321,7 +343,9 @@ const kontakt = localize('/kontakt/', lang);
                 src={bild.src}
                 alt={bild.alt}
                 ratio="aspect-[4/3]"
-                sizes="(min-width: 1024px) 31vw, (min-width: 640px) 47vw, 100vw"
+                sizes={einzelnLg(i)
+                  ? '(min-width: 1024px) 47vw, (min-width: 640px) 63vw, 100vw'
+                  : '(min-width: 1024px) 31vw, (min-width: 640px) 47vw, 100vw'}
                 zoom
                 reveal={false}
               />
