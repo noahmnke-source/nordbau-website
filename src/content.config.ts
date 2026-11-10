@@ -62,16 +62,6 @@ const objektSchema = z.object({
   faq: z.array(faqItem).default([]),
 });
 
-const haeuser = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/haeuser' }),
-  schema: objektSchema,
-});
-
-const haeuserEn = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/haeuser-en' }),
-  schema: objektSchema,
-});
-
 /* Leistungen (was wir tun) und Gebaeude (was wir bauen) liegen bewusst in
    getrennten Sammlungen – die beiden Achsen gehoeren nicht in eine Liste. */
 const leistungen = defineCollection({
@@ -107,8 +97,6 @@ const ratgeber = defineCollection({
 });
 
 export const collections = {
-  haeuser,
-  haeuserEn,
   leistungen,
   leistungenEn,
   gebaeude,

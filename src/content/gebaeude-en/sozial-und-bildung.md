@@ -9,12 +9,6 @@ katalog:
   - src: "/bau/sozial-und-bildung/kita-eingang-1600.webp"
     alt: "Single-storey day nursery with a colourfully articulated façade and deep entrance canopy"
     caption: "A long single-storey volume, the covered entrance as a meeting point."
-  - src: "/bau/sozial-und-bildung/kita-aussenbereich-1600.webp"
-    alt: "Day nursery with coloured façade panels, play equipment and landscaped outdoor area"
-    caption: "Each group with its own way out, outdoor areas directly connected."
-  - src: "/bau/sozial-und-bildung/kita-gesamtanlage-1600.webp"
-    alt: "Aerial view of a day nursery with perimeter access road and parking"
-    caption: "The whole site with separate delivery access, drop-off zone and grounds."
   - src: "/projekte/referenzen/ronnenberg-kita.webp"
     alt: "New day nursery in timber frame construction in Empelde for the town of Ronnenberg"
     stufe: Shell and fit-out
@@ -34,25 +28,25 @@ daten:
   - label: Uses
     wert: Day nursery, kindergarten, school, clinic, care home
   - label: Construction
-    wert: Timber frame or conventional, as the brief requires
+    wert: Reinforced concrete, masonry or timber frame, as the brief requires
   - label: Clients
     wert: Municipalities, charitable providers, hospitals and private clients
 merkmale:
-  - titel: Timber suits children
-    text: Exposed timber surfaces, vapour-open components and an airtight envelope give a stable indoor climate – a measurable advantage in densely occupied rooms.
-  - titel: Short build in the holidays
-    text: Prefabrication allows tight windows. Where we build at an occupied facility, we set the erection sequence by the operating calendar.
-  - titel: Priced for public tender
-    text: Public clients need robust offers under German public works rules. We price item by item and document transparently.
   - titel: Requirements as the design basis
     text: Fire protection, hygiene, escape routes, accessibility – in buildings for many people these come at the start of the design, not the end.
-seoTitle: "Nurseries, schools and clinics – timber construction | EcoBau"
-seoDescription: "Day nurseries, kindergartens, schools and clinics in timber frame or conventional construction. For municipalities, charitable providers and private clients."
+  - titel: Priced for public tender
+    text: Public clients need robust offers under German public works rules. We price item by item and document transparently.
+  - titel: While the facility stays in use
+    text: Extensions, refurbishment and fit-out at an occupied facility follow the operating calendar – with clean separation, dust and noise protection and work during closure periods.
+  - titel: Method set by the brief
+    text: Reinforced concrete and masonry for multi-storey buildings and demanding fire requirements, timber frame for single-storey volumes such as the nursery in Empelde. We build both.
+seoTitle: "Nurseries, schools and clinics – for municipalities | EcoBau"
+seoDescription: "Day nurseries, schools and clinics in reinforced concrete, masonry or timber frame. For municipalities, charitable providers and hospitals – priced for public tender, built in occupied facilities."
 faq:
   - q: Do you build for municipalities and public clients?
     a: Yes. We built the day nursery in Empelde for the town of Ronnenberg. Public procurement under German public works rules is familiar to us – including item-by-item pricing, evidence and the documentation a public handover requires.
-  - q: Why timber for nurseries and schools?
-    a: "First for the indoor climate: exposed timber surfaces and vapour-open components buffer humidity, which is noticeable at high occupancy. Second for the programme – prefabricated elements can be erected in tight windows, for instance during holidays. And third for the carbon footprint, which municipal tenders increasingly weight."
+  - q: What methods do you use for nurseries and schools?
+    a: "The brief decides. Multi-storey school buildings and buildings with demanding fire requirements are built in reinforced concrete and masonry. For single-storey volumes, timber frame is often ahead: lighter foundations, short erection windows during closure periods, and a carbon footprint that municipal tenders increasingly weight. The nursery in Empelde was built as a timber frame on a watertight concrete slab."
   - q: Can you work in a facility that stays in use?
     a: Yes. During the interior fit-out at Braunschweig Municipal Hospital operations continued – across six storeys, under strict hygiene requirements and closely sequenced with medical technology, heating, ventilation, plumbing and electrical works. We apply the same approach in schools and nurseries.
   - q: Do you take on the shell only or the whole building?
@@ -61,13 +55,13 @@ faq:
 
 Buildings where many people come together place different demands on design than a home. Fire protection, escape routes, hygiene, accessibility and acoustics are not side conditions – they shape the design from the first sketch. We build day nurseries, kindergartens, schools and medical facilities for municipalities, charitable providers and private clients.
 
-## Why timber in nurseries and schools
-
-Exposed timber surfaces buffer humidity and damp down sound – two properties that are immediately noticeable in densely occupied rooms. Then there is the programme: prefabricated elements can be erected in tight windows, for instance during closures. And finally the carbon footprint, which municipal tenders increasingly take into account.
-
 ## Requirements first
 
 In a building for children or patients, the requirements come first. How wide must corridors be if they are also to serve as play space? Where do escape routes run when a group room is occupied? Which surfaces are permitted in a clinical area? We settle these questions with authorities and providers before the design is fixed – later changes are particularly expensive here.
+
+## The brief decides the method
+
+Multi-storey school and clinic buildings are built in reinforced concrete and masonry – because of the spans, the fire resistance periods and the basements. For single-storey volumes, timber frame is often ahead: lighter foundations, short erection windows, and exposed timber surfaces that buffer humidity and damp down sound. That is how we built the day nursery in Empelde, on a watertight concrete slab. Which method applies to your project is usually already set out in the tender – where it is not, we price both.
 
 ## Experience in occupied buildings
 

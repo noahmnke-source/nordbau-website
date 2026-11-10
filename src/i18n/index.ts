@@ -43,10 +43,8 @@ export function isBilingual(pathname: string): boolean {
   // ein Link auf /404/ ginge daher ins Leere.
   if (de === '/') return true;
   return [
-    '/haeuser/',
     '/leistungen/',
     '/gebaeude/',
-    '/weg-zum-traumhaus/',
     '/ueber-uns/',
     '/kontakt/',
   ].some((p) => de.startsWith(p));
@@ -56,11 +54,8 @@ export function isBilingual(pathname: string): boolean {
 export const ui = {
   de: {
     'nav.home': 'Startseite',
-    'nav.haeuser': 'Häuser',
     'nav.leistungen': 'Leistungen',
     'nav.gebaeude': 'Gebäude',
-    'nav.weg': 'Weg zum Traumhaus',
-    'nav.wegHinweis': 'Von der ersten Skizze bis zur Übergabe.',
     'nav.ueberuns': 'Über uns',
     'nav.ratgeber': 'Ratgeber',
     'nav.kontakt': 'Kontakt',
@@ -75,7 +70,7 @@ export const ui = {
     'lang.switchAria': 'Switch to English',
     skip: 'Zum Inhalt springen',
     'footer.claim':
-      'Individuell geplant, im eigenen Werk gefertigt – vom Fertighaus bis zum Gewerbebau, als Rohbau oder schlüsselfertig.',
+      'Bauunternehmen aus Hannover: Rohbau, Schlüsselfertigbau und Sanierung – massiv oder in Holz, je nachdem, was das Projekt verlangt.',
     'footer.nav': 'Navigation',
     'footer.contact': 'Kontakt',
     'footer.callDirect': 'oder direkt anrufen:',
@@ -89,11 +84,8 @@ export const ui = {
   },
   en: {
     'nav.home': 'Home',
-    'nav.haeuser': 'Houses',
     'nav.leistungen': 'Services',
     'nav.gebaeude': 'Buildings',
-    'nav.weg': 'Your route to a home',
-    'nav.wegHinweis': 'From the first sketch to handover.',
     'nav.ueberuns': 'About us',
     'nav.ratgeber': 'Guide',
     'nav.kontakt': 'Contact',
@@ -108,7 +100,7 @@ export const ui = {
     'lang.switchAria': 'Zu Deutsch wechseln',
     skip: 'Skip to content',
     'footer.claim':
-      'Individually planned, made in our own plant – from prefab homes to commercial buildings, as a structural shell or turnkey.',
+      'Construction company from Hanover: structural shell, turnkey building and refurbishment – solid or timber, whichever the project calls for.',
     'footer.nav': 'Navigation',
     'footer.contact': 'Contact',
     'footer.callDirect': 'or call us directly:',

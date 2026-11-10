@@ -4,14 +4,13 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import Button from '@/components/Button.astro';
 import Figure from '@/components/Figure.astro';
 import SectionIntro from '@/components/SectionIntro.astro';
-import MaterialSlider from '@/components/MaterialSlider.astro';
 import { IMG } from '@/data/assets';
 import { SITE, YEARS_EXPERIENCE } from '@/config/site';
 
 const zahlen = [
   {
     wert: `seit ${SITE.foundingYear}`,
-    label: `${YEARS_EXPERIENCE} Jahre Erfahrung am Bau – vom individuell geplanten Fertighaus in Holztafelbauweise bis zum öffentlichen Gebäude.`,
+    label: `${YEARS_EXPERIENCE} Jahre am Bau – vom Rohbau über die Sanierung bis zum schlüsselfertigen Verwaltungsgebäude.`,
   },
   {
     wert: 'Familienbetrieb',
@@ -22,12 +21,12 @@ const zahlen = [
     label: 'Garantie auf die Baukonstruktion und Gewährleistung nach BGB auf alle übrigen Leistungen – alle wesentlichen Materialien mit Qualitätszertifikat.',
   },
   {
-    wert: 'KfW 40',
-    label: 'Wandaufbauten im Effizienzhaus-40-Standard, zertifiziert für Ökologie und Wärmeschutz – hochgedämmt und luftdicht ab Werk.',
+    wert: '7 + 3',
+    label: 'Bis sieben Obergeschosse und drei Untergeschosse ausgeführt – Untergeschosse in wasserundurchlässiger Bauweise, oben Stahlbeton, Mauerwerk oder Holz.',
   },
   {
-    wert: 'Holz + CLT',
-    label: 'Holzrahmen und Brettsperrholz (Cross-Laminated Timber): Die tragende Struktur kommt millimetergenau und maßhaltig aus dem Werk.',
+    wert: 'Massiv + Holz',
+    label: 'Stahlbeton und Mauerwerk auf der Baustelle, Holzrahmen und Brettsperrholz (CLT) aus eigener Fertigung – die Bauweise entscheidet das Projekt.',
   },
 ];
 
@@ -51,8 +50,8 @@ const grundsaetze = [
 ---
 
 <BaseLayout
-  title={`Über uns – Fertighaus-Hersteller seit ${SITE.foundingYear}`}
-  description={`Fertighaus-Hersteller mit eigenem Werk: Holztafelbau und Brettsperrholz (CLT), Effizienzhaus 40, 5 Jahre Garantie auf die Baukonstruktion. ${YEARS_EXPERIENCE} Jahre Erfahrung. Lernen Sie ${SITE.name} kennen.`}
+  title={`Über uns – Bauunternehmen aus Hannover seit ${SITE.foundingYear}`}
+  description={`Familiengeführtes Bauunternehmen aus Hannover: Rohbau in Stahlbeton, Mauerwerk und Holz, dazu eigene Fertigung für Holzbauteile. ${YEARS_EXPERIENCE} Jahre am Bau. Lernen Sie ${SITE.name} kennen.`}
   breadcrumbs={[{ name: 'Über uns', href: '/ueber-uns/' }]}
   hideFooterCta
 >
@@ -63,13 +62,13 @@ const grundsaetze = [
     <div class="grid gap-x-8 gap-y-10 lg:grid-cols-12">
       <div class="lg:col-span-8">
         <h1 class="font-display text-hero font-medium">
-          Ein Familienbetrieb mit eigenem Werk
+          Ein Bauunternehmen in zweiter Generation
         </h1>
       </div>
       <p class="prose-measure self-end text-body text-muted lg:col-span-4 lg:col-start-9">
         {SITE.legalName} ist seit {SITE.foundingYear} am Bau – {YEARS_EXPERIENCE} Jahre,
-        inhabergeführt und in zweiter Generation. Wir planen, fertigen und bauen selbst:
-        Häuser nach eigenem Entwurf, Gebäude für Wohnen, Gewerbe und die öffentliche Hand.
+        inhabergeführt und in zweiter Generation. Unsere Leitleistung ist der Rohbau;
+        gebaut haben wir für Bauträger, Gewerbe und die öffentliche Hand.
       </p>
     </div>
   </section>
@@ -87,7 +86,7 @@ const grundsaetze = [
     />
     <div class="container-site mt-4">
       <p class="text-caption text-muted">
-        Holz ist unser Werkstoff – innen als Konstruktion, außen als Fassade.
+        Holz und Beton – wir führen beides aus und entscheiden nach dem Projekt.
       </p>
     </div>
   </div>
@@ -97,20 +96,21 @@ const grundsaetze = [
     <div class="grid gap-x-8 gap-y-12 lg:grid-cols-12">
       <div class="lg:col-span-7">
         <h2 class="reveal font-display text-display font-medium">
-          Serie heißt bei uns nicht: tausendmal dasselbe Haus. Sondern: tausendmal dieselbe Sorgfalt.
+          Wir wählen die Bauweise nach dem Projekt – nicht nach dem Maschinenpark, den wir zufällig besitzen.
         </h2>
         <p class="reveal prose-measure mt-8 text-body text-muted">
-          Manufaktur und Serie gelten als Gegensätze. Wir halten das für einen Irrtum.
-          Handwerkliche Sorgfalt wird besser, nicht schlechter, wenn man sie wiederholbar
-          macht: gleiche Handgriffe, gleiche Prüfungen, gleiche Toleranzen – bei jedem
-          Haus, auch bei Ihrem. Individuell ist bei uns der Entwurf. Seriell ist die
-          Präzision, mit der er gebaut wird.
+          Die meisten Bauunternehmen können eines von beiden: Stahlbeton oder Holz. Wer nur
+          eines kann, empfiehlt am Ende immer dasselbe. Wir führen beides aus und entscheiden
+          nach Spannweite, Brandschutz, Untergeschossen und Terminplan. Was das in der Praxis
+          heißt: gleiche Handgriffe, gleiche Prüfungen, gleiche Toleranzen – bei einem
+          Siebengeschosser in der Innenstadt wie bei einer eingeschossigen Kita. Individuell
+          ist jedes Projekt. Gleich bleibt die Genauigkeit, mit der es gebaut wird.
         </p>
         <p class="reveal prose-measure mt-5 text-body text-muted">
-          Seit {SITE.foundingYear} arbeiten wir nach diesem Prinzip – begonnen hat der
-          Betrieb mit traditionell errichteten Häusern, heute liegt der Schwerpunkt auf
-          vorgefertigten Holzbauten und modularen Systemen. Was gleich geblieben ist: Es
-          ist ein Familienbetrieb, in dem die Verantwortlichen mit Namen bekannt sind.
+          Seit {SITE.foundingYear} arbeiten wir nach diesem Prinzip. Den Schwerpunkt bildet
+          seit jeher der Rohbau – Gründung, Tragwerk, Decken – dazu kam über die Jahre die
+          eigene Fertigung für Holz- und Hybridtragwerke. Was gleich geblieben ist: Es ist
+          ein Familienbetrieb, in dem die Verantwortlichen mit Namen bekannt sind.
         </p>
       </div>
       <div class="lg:col-span-4 lg:col-start-9">
@@ -128,8 +128,8 @@ const grundsaetze = [
   <section class="bg-stone py-(--spacing-section)">
     <div class="container-site">
       <SectionIntro
-        title="Das Werk: wo Ihr Haus zum ersten Mal gebaut wird"
-        lead="Bevor auf Ihrem Grundstück etwas passiert, entsteht Ihr Haus in unserer Fertigungshalle – Element für Element."
+        title="Das Werk: wo die Holzbauteile entstehen"
+        lead="Wand-, Decken- und Dachelemente für Holz- und Hybridtragwerke fertigen wir selbst – witterungsunabhängig und geprüft, bevor sie die Halle verlassen."
       />
 
       <div class="mt-16 grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-center">
@@ -141,14 +141,15 @@ const grundsaetze = [
             technisch getrocknetem Konstruktionsvollholz und Brettsperrholz (Cross-Laminated
             Timber, CLT) mit definierter Holzfeuchte, das nicht arbeitet, nicht schwindet
             und nicht überrascht. Alle wesentlichen Materialien kommen mit Qualitätszertifikat.
+            Für Aufstockungen und Hybridtragwerke ist das der entscheidende Vorteil: leicht
+            genug für vorhandene Gründungen, maßhaltig genug für kurze Montagezeiten.
           </p>
           <p class="prose-measure mt-5 text-body text-muted">
             Jedes Element wird vor dem Verladen geprüft und dokumentiert: Maßhaltigkeit,
-            Anschlüsse, Dämmung, Luftdichtheit. Die Prüfprotokolle gehören zur Hausakte,
-            die Sie bei der Übergabe erhalten. Was auf der Baustelle in Tagen montiert
-            wird, ist im Werk über Wochen entstanden – kontrolliert, wiederholbar,
-            nachweisbar. Und ausgelegt auf den Effizienzhaus-40-Standard, den jedes
-            unserer Häuser ab Werk erfüllt.
+            Anschlüsse, Dämmung, Luftdichtheit. Diese Protokolle gehören zur Dokumentation,
+            die Sie bei der Abnahme erhalten. Was auf der Baustelle in Tagen montiert wird,
+            ist in der Halle über Wochen entstanden – kontrolliert, wiederholbar,
+            nachweisbar.
           </p>
         </div>
         <Figure
@@ -170,9 +171,9 @@ const grundsaetze = [
         />
         <p class="reveal prose-measure text-body text-muted lg:col-span-5 lg:col-start-8">
           Auf der Baustelle setzen unsere eigenen Montageteams die Arbeit fort – dieselben
-          Kolonnen, eingespielt über Jahre, vom Richttag bis zur letzten Innentür. So bleibt
-          die Verantwortung dort, wo sie hingehört: bei uns, vom ersten Strich bis zur
-          Schlüsselübergabe.
+          Kolonnen, eingespielt über Jahre – von der Gründung bis zu der Stufe, die Sie
+          beauftragt haben. So bleibt die Verantwortung dort, wo sie hingehört: bei uns,
+          vom Erdaushub bis zur Abnahme.
         </p>
       </div>
     </div>
@@ -190,9 +191,9 @@ const grundsaetze = [
         <dl class="divide-y divide-line border-y border-line">
           {[
             { k: 'Fertigung', v: 'Eigene Produktionshalle in Lipjan, Kosovo' },
-            { k: 'Bauweise', v: 'Holztafelbau und Brettsperrholz (CLT), dazu Modulbauweise' },
+            { k: 'Bauweisen', v: 'Stahlbeton und Mauerwerk auf der Baustelle, Holztafelbau und Brettsperrholz (CLT) aus eigener Fertigung' },
             { k: 'Gebaut wird in', v: 'Ganz Europa' },
-            { k: 'Wandaufbau', v: 'Zertifiziert im Effizienzhaus-40-Standard, hochgedämmt und luftdicht ab Werk' },
+            { k: 'Leistungstiefe', v: 'Rohbau, Rohbau mit geschlossener Gebäudehülle oder schlüsselfertig' },
           ].map((z) => (
             <div class="grid gap-1 py-4 sm:grid-cols-[9rem_1fr] sm:gap-6">
               <dt class="text-caption text-muted">{z.k}</dt>
@@ -222,9 +223,6 @@ const grundsaetze = [
       </div>
     </div>
   </section>
-
-  <!-- Aufbau & Materialien: Wandschnitt-Slider -->
-  <MaterialSlider />
 
   <!-- Zahlen: Anthrazit-Drench, Register statt Stat-Karten -->
   <section class="bg-graphite py-(--spacing-section) text-paper">

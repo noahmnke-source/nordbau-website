@@ -1,12 +1,17 @@
 /**
  * Zentrales Bildregister.
  *
- * Alle Aufnahmen stammen aus der eigenen Fertigung und von eigenen Baustellen –
- * Architekturvisualisierungen der Entwürfe sowie Fotos aus Werk und Montage.
- * Stockfotos werden auf dieser Website nicht verwendet.
+ * Zwei Quellen, strikt getrennt:
+ * - /projekte/referenzen/ zeigt ausschliesslich eigene, ausgefuehrte Projekte.
+ * - /rohbau/ sind Lizenzbilder (Pexels/Pixabay, kommerziell nutzbar ohne
+ *   Namensnennung). Sie illustrieren die Bauweise und werden nie als eigenes
+ *   Projekt ausgegeben.
+ * - /werk/ und /bau/ stammen aus der eigenen Fertigung bzw. sind
+ *   Visualisierungen eigener Entwuerfe.
  *
- * Bilder unter /haeuser/, /bau/ und /werk/ liegen in den Breiten 640, 1024 und
- * 1600 vor; referenziert wird immer die 1600er-Datei (siehe src/lib/img.ts).
+ * Bilder unter /rohbau/, /bau/ und /werk/ liegen mindestens in den Breiten 640,
+ * 1024 und 1600 vor; referenziert wird immer die 1600er-Datei, die Breiten
+ * darueber liest src/lib/img.ts zur Bauzeit vom Dateisystem.
  */
 
 export interface Asset {
@@ -69,44 +74,11 @@ export const IMG = {
   },
 
   /* ── Entwürfe ────────────────────────────────────────────── */
-  heroHome: {
-    src: '/haeuser/einfamilienhaus/flachdach-abendlicht-1600.webp',
-    alt: 'Zweigeschossiges Wohnhaus mit dunkler Holzfassade, auskragendem Obergeschoss, Pool und Rasenfläche im Abendlicht',
-  },
   heroGewerbe: {
     src: '/projekte/referenzen/hannover-citygate-1200.webp',
     alt: 'Büro- und Verwaltungsgebäude City Gate Nord in Hannover-Vahrenwald, sechs Geschosse mit Klinkerfassade',
   },
-  satteldach: {
-    src: '/haeuser/einfamilienhaus/satteldach-photovoltaik-1600.webp',
-    alt: 'Einfamilienhaus mit Satteldach, vollflächiger Photovoltaikanlage und bodentiefen Fenstern',
-  },
-  bauhausWinter: {
-    src: '/haeuser/einfamilienhaus/flachdach-anthrazit-1600.webp',
-    alt: 'Anthrazitfarbenes Flachdachhaus mit holzverkleideter Loggia und Wasserbecken davor',
-  },
-  bungalowGold: {
-    src: '/haeuser/bungalow/bungalow-holzgiebel-1600.webp',
-    alt: 'Eingeschossiger Bungalow mit steilem Giebeldach, dunkler Holzschalung und Pool, abends beleuchtet',
-  },
-  tinyHouse: {
-    src: '/haeuser/tiny-house/tiny-ecobau-1600.webp',
-    alt: 'Tiny House mit roter Stirnwand und EcoBau-Logo, raumhoher Verglasung und begrünter Pergola',
-  },
-  modulhaus: {
-    src: '/haeuser/modulhaus/modul-zweigeschossig-1600.webp',
-    alt: 'Zweigeschossiges Modulhaus aus versetzt gestapelten Raummodulen mit Pool und Holzterrasse',
-  },
 
-  /* ── Innenräume ──────────────────────────────────────────── */
-  kuecheEiche: {
-    src: '/haeuser/einfamilienhaus/innen-wohnen-1600.webp',
-    alt: 'Offener Wohn- und Essbereich mit Holzeinbauten, Kochinsel und raumhoher Verglasung zum Garten',
-  },
-  schlafen: {
-    src: '/haeuser/einfamilienhaus/innen-schlafzimmer-1600.webp',
-    alt: 'Schlafzimmer mit Doppelbett, hölzerner Wandverkleidung und raumhohem Einbauschrank',
-  },
 
   /* ── Werk: Vorfertigung ──────────────────────────────────── */
   holzMaterial: {

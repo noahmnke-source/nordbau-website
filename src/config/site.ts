@@ -18,9 +18,9 @@ export const SITE = {
   /** Slogan fuer das Schema im Seitenkopf. Im Fussbereich steht der
    *  uebersetzbare Text aus der i18n-Schicht, damit er auch auf den
    *  englischen Seiten in der richtigen Sprache erscheint. */
-  claim: 'Individuell geplant. Im eigenen Werk gebaut.',
+  claim: 'Massiv oder in Holz. Nach dem Projekt entschieden.',
   /** Meta-Title-Suffix */
-  titleSuffix: 'EcoBau GmbH – Rohbau, Schlüsselfertigbau und Fertighäuser',
+  titleSuffix: 'EcoBau GmbH – Rohbau, Schlüsselfertigbau und Sanierung',
 
   contact: {
     /** Waehlbare Form fuer tel:-Verweise und das Schema im Seitenkopf */

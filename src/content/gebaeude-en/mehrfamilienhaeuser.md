@@ -16,8 +16,8 @@ katalog:
     alt: "Multi-storey residential building with light render and balconies at dusk"
     caption: "A compact volume on the street edge, outdoor space towards the courtyard."
   - src: "/bau/mehrfamilienhaeuser/mfh-solardach-1600.webp"
-    alt: "Long four-storey residential scheme beside water, with balconies and full-surface photovoltaics on the roof"
-    caption: "A long scheme with full-surface photovoltaics – yield for communal power and heating."
+    alt: "Long four-storey residential scheme beside water, with balconies and photovoltaics on the flat roof"
+    caption: "A long scheme with photovoltaics on the flat roof – yield for communal power and heating."
   - src: "/projekte/referenzen/stuttgart-maybach.webp"
     alt: "Residential and commercial building in Stuttgart with seven upper floors in an inner-city location"
     stufe: Shell and fit-out
@@ -30,40 +30,40 @@ daten:
   - label: Roof
     wert: Flat roof, set-back top floor or pitched roof
   - label: Construction
-    wert: Timber frame or cross-laminated timber, prefabricated in our own plant
-  - label: Energy standard
-    wert: Efficiency House 40 per dwelling
+    wert: Reinforced concrete and masonry, timber hybrid on request
+  - label: Scope
+    wert: Shell, shell with weathertight envelope, or turnkey
 merkmale:
-  - titel: Prefabrication scales
-    text: The larger the building, the stronger the advantage. Wall and floor elements for all units are produced in parallel and erected storey by storey.
-  - titel: Acoustic and fire protection designed in
-    text: Twin-leaf party walls with separated stud layers, decoupled floor build-ups and tested junction details – demonstrated, not estimated.
+  - titel: Acoustics decide the method
+    text: Against airborne sound between dwellings, mass is what helps. Party walls and floor slabs in an apartment building are therefore usually solid – even where the external walls and roof are built in timber.
+  - titel: Basements and parking
+    text: Where parking moves under the building, watertight concrete construction decides whether it stays dry. In Stuttgart that meant three basement levels under seven upper floors.
   - titel: For owner-builders and investors
     text: Whether your own flat plus rented units, an investment property or multi-generational living – the mix of uses drives the layout.
-  - titel: Shorter build, earlier income
-    text: Erecting prefabricated elements markedly shortens time on site compared with conventional masonry construction.
-seoTitle: "Build an apartment building – timber construction, turnkey | EcoBau"
-seoDescription: "Apartment buildings in timber frame and cross-laminated timber: several dwellings, Efficiency House 40, short build time through prefabrication. For owner-builders and investors."
+  - titel: Shell or turnkey
+    text: "You decide the scope: the structure alone, the shell with a weathertight envelope, or the finished building. In Stuttgart it was shell and fit-out across 15,000 m² gross floor area."
+seoTitle: "Build an apartment building – shell and turnkey | EcoBau"
+seoDescription: "Apartment buildings in reinforced concrete, masonry and timber hybrid: underground parking, acoustic separation between dwellings, up to seven upper floors. Shell or turnkey."
 faq:
-  - q: Is an apartment building in timber even permitted?
-    a: Yes. German state building codes now allow timber construction up to building class 5, in some cases beyond. What matters are the required fire resistance periods of the loadbearing elements and the evidence for the junctions. We clarify what applies in your state and for your number of storeys before design.
+  - q: Which method is economical for an apartment building?
+    a: "In most cases reinforced concrete and masonry – for the mass that carries the acoustic separation between dwellings, for the fire resistance periods required from building class 4 upwards, and because the parts below ground leave no alternative. Timber is added where it brings an advantage: external walls, the roof, and added storeys where weight decides what the existing foundations can take. Which mix carries your project is something we calculate before design."
   - q: How is sound insulation between the flats achieved?
-    a: Through twin-leaf party walls with fully separated stud layers, decoupled floor build-ups with a floating screed and carefully designed junction details. We demonstrate the values by calculation and, on request, measure after completion.
-  - q: Does timber construction pay off for an investment property?
-    a: "The cost per square metre usually falls below that of a comparable detached house through scale. Added to that is time: every week saved means rental income starting earlier. The slimmer external walls also yield additional lettable area for the same external footprint."
+    a: Through party walls heavy enough for the job, floor slabs with a floating screed on impact sound insulation, and junction details without flanking paths – stair flights and balcony slabs are decoupled from the structure for that reason. We demonstrate the values by calculation and, on request, measure after completion.
+  - q: Do you build the underground car park as well?
+    a: "Yes, including excavation and foundations. Basements below the groundwater table are built in watertight concrete: dense concrete, a planned joint layout, controlled crack widths. At the residential and commercial building on Maybachstraße in Stuttgart that meant three basement levels. Where we carry out groundworks and shell together, the interface where programmes most often slip disappears."
   - q: Do you also build the shell only?
     a: Yes. We work turnkey as well as on defined work packages – for example shell and envelope while the fit-out stays with you or with other trades. What makes sense depends on the project and on your own capacity.
 ---
 
-The apartment building is the answer to rising land prices and scarce housing: several full dwellings in one efficiently planned building. Whether for your own family plus rented units, as an investment or as multi-generational living – we plan it with the same precision as a detached house, only at a larger scale.
+Several full dwellings in one building – the answer to rising land prices and scarce housing, and at the same time the building type where most depends on the quality of the shell. Acoustic separation, fire protection and watertight basements are decided in the structure, not in the fit-out.
 
-## Viability through prefabrication
+## The method follows the building
 
-The larger the building, the stronger the advantage of prefabrication. Wall and floor elements for all dwellings are produced in parallel in the plant, checked and dimensionally accurate, and erected storey by storey on site. That shortens the build considerably compared with conventional masonry – and for an investment property every week saved means rental income starting earlier.
+In an apartment building, reinforced concrete and masonry usually carry the loads: mass helps against airborne sound, fire resistance periods rise from building class 4 upwards, and below ground there is no alternative anyway. We use timber where it brings an advantage – external walls, the roof, and added storeys where the lower weight decides what the existing foundations can take. At the residential and commercial building on Maybachstraße in Stuttgart it was three basement levels and seven upper floors in reinforced concrete.
 
 ## Acoustic and fire protection between the units
 
-What distinguishes an apartment building from a detached house are the requirements for protection between the dwellings. We build party walls as twin leaves with separated stud layers, decouple the floor build-ups and design every junction so that sound finds no flanking path. The fire resistance periods of loadbearing elements follow the building class and are demonstrated.
+What distinguishes an apartment building from a detached house are the requirements for protection between the dwellings. Party walls are built heavy enough for the job, floor slabs receive a floating screed on impact sound insulation, and stair flights and balcony slabs are decoupled from the structure so that sound finds no flanking path. The fire resistance periods of loadbearing elements follow the building class and are demonstrated – calculated, not estimated.
 
 ## From site to mix of uses
 

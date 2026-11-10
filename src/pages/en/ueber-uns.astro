@@ -4,14 +4,13 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import Button from '@/components/Button.astro';
 import Figure from '@/components/Figure.astro';
 import SectionIntro from '@/components/SectionIntro.astro';
-import MaterialSlider from '@/components/MaterialSlider.astro';
 import { IMG } from '@/data/assets';
 import { SITE, YEARS_EXPERIENCE } from '@/config/site';
 
 const zahlen = [
   {
     wert: `since ${SITE.foundingYear}`,
-    label: `${YEARS_EXPERIENCE} years of experience in construction – from the individually planned prefab home in timber-frame construction to the public building.`,
+    label: `${YEARS_EXPERIENCE} years in construction – from the structural shell through refurbishment to the turnkey administration building.`,
   },
   {
     wert: '5 years',
@@ -22,12 +21,12 @@ const zahlen = [
     label: 'Owner-managed, second generation. Decisions are made in house, not at a corporate headquarters – and whoever signs the contract is still reachable after handover.',
   },
   {
-    wert: 'KfW 40',
-    label: 'Wall assemblies to the Efficiency House 40 (EH 40) standard, certified for ecology and thermal protection – highly insulated and airtight from the factory.',
+    wert: '7 + 3',
+    label: 'Delivered up to seven upper floors and three basement levels – basements in watertight concrete, above them reinforced concrete, masonry or timber.',
   },
   {
-    wert: 'Timber + CLT',
-    label: 'Timber frame and cross-laminated timber (CLT): the load-bearing structure comes from the factory precise to the millimetre and dimensionally accurate.',
+    wert: 'Solid + timber',
+    label: 'Reinforced concrete and masonry on site, timber frame and cross-laminated timber (CLT) from our own production – the project decides the method.',
   },
 ];
 
@@ -51,8 +50,8 @@ const grundsaetze = [
 ---
 
 <BaseLayout
-  title={`About us – Prefab home manufacturer since ${SITE.foundingYear}`}
-  description={`Prefab home manufacturer with its own factory: timber-frame construction and cross-laminated timber (CLT), Efficiency House 40, a five-year guarantee on the building structure. ${YEARS_EXPERIENCE} years of experience. Get to know ${SITE.name}.`}
+  title={`About us – construction company in Hanover since ${SITE.foundingYear}`}
+  description={`Family-run construction company from Hanover: structural shell in reinforced concrete, masonry and timber, with our own production for timber components. ${YEARS_EXPERIENCE} years in construction. Get to know ${SITE.name}.`}
   breadcrumbs={[{ name: 'About us', href: '/en/ueber-uns/' }]}
   hideFooterCta
 >
@@ -63,13 +62,13 @@ const grundsaetze = [
     <div class="grid gap-x-8 gap-y-10 lg:grid-cols-12">
       <div class="lg:col-span-8">
         <h1 class="font-display text-hero font-medium">
-          A family business with its own plant
+          A construction company in its second generation
         </h1>
       </div>
       <p class="prose-measure self-end text-body text-muted lg:col-span-4 lg:col-start-9">
         {SITE.legalName} has been building since {SITE.foundingYear} – {YEARS_EXPERIENCE} years,
-        owner-managed and in its second generation. We design, manufacture and build ourselves:
-        houses to our own designs, and buildings for living, business and the public sector.
+        owner-managed and in its second generation. Our lead service is the structural shell;
+        we have built for developers, business and the public sector.
       </p>
     </div>
   </section>
@@ -87,7 +86,7 @@ const grundsaetze = [
     />
     <div class="container-site mt-4">
       <p class="text-caption text-muted">
-        Timber is our material – inside as structure, outside as façade.
+        Timber and concrete – we build in both and decide by the project.
       </p>
     </div>
   </div>
@@ -97,19 +96,21 @@ const grundsaetze = [
     <div class="grid gap-x-8 gap-y-12 lg:grid-cols-12">
       <div class="lg:col-span-7">
         <h2 class="reveal font-display text-display font-medium">
-          For us, series does not mean the same house a thousand times over. It means the same care a thousand times over.
+          We choose the method to suit the project – not the plant we happen to own.
         </h2>
         <p class="reveal prose-measure mt-8 text-body text-muted">
-          Workshop craft and series production are seen as opposites. We consider that a mistake.
-          Craftsmanship becomes better, not worse, when you make it repeatable: the same steps,
-          the same inspections, the same tolerances – on every house, yours included. With us,
-          the design is individual. What is serial is the precision with which it is built.
+          Most contractors can do one of the two: reinforced concrete or timber. A firm that can
+          only do one ends up recommending the same thing every time. We build in both and decide
+          by span, fire requirements, basements and programme. What that means in practice: the
+          same steps, the same inspections, the same tolerances – on a seven-storey building in
+          the city centre as on a single-storey nursery. Every project is individual. What stays
+          the same is the accuracy with which it is built.
         </p>
         <p class="reveal prose-measure mt-5 text-body text-muted">
-          We have worked to this principle since {SITE.foundingYear} – the company started
-          with traditionally built houses; today the focus is on prefabricated timber
-          buildings and modular systems. What has not changed: it is a family business in
-          which the people responsible are known by name.
+          We have worked to this principle since {SITE.foundingYear}. The structural shell has
+          always been our core – foundations, structure, floor slabs – and over the years our own
+          production for timber and hybrid structures was added. What has not changed: it is a
+          family business in which the people responsible are known by name.
         </p>
       </div>
       <div class="lg:col-span-4 lg:col-start-9">
@@ -127,8 +128,8 @@ const grundsaetze = [
   <section class="bg-stone py-(--spacing-section)">
     <div class="container-site">
       <SectionIntro
-        title="The factory: where your house is built for the first time"
-        lead="Before anything happens on your plot, your house takes shape in our production hall – element by element."
+        title="The plant: where the timber components are made"
+        lead="We manufacture the wall, floor and roof elements for timber and hybrid structures ourselves – weather-independent and inspected before they leave the hall."
       />
 
       <div class="mt-16 grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-center">
@@ -143,11 +144,9 @@ const grundsaetze = [
           </p>
           <p class="prose-measure mt-5 text-body text-muted">
             Every element is inspected and documented before loading: dimensional accuracy,
-            connections, insulation, airtightness. The inspection records belong to the building
-            documentation file you receive at handover. What is assembled on site in days took
-            shape in the factory over weeks – controlled, repeatable, verifiable. And designed to
-            the Efficiency House 40 (EH 40) standard that every one of our houses meets from the
-            factory.
+            connections, insulation, airtightness. Those records are part of the documentation you
+            receive at handover. What is assembled on site in days took shape in the hall over
+            weeks – controlled, repeatable, verifiable.
           </p>
         </div>
         <Figure
@@ -168,10 +167,9 @@ const grundsaetze = [
           class="lg:col-span-6"
         />
         <p class="reveal prose-measure text-body text-muted lg:col-span-5 lg:col-start-8">
-          On site, our own assembly teams carry the work forward – the same crews, working
-          together over years, from the raising day to the last interior door. That keeps
-          responsibility where it belongs: with us, from the first line to the handover of the
-          keys.
+          On site, our own crews carry the work forward – the same teams, working together over
+          years, from the foundations to whichever stage you commissioned. That keeps
+          responsibility where it belongs: with us, from excavation to handover.
         </p>
       </div>
     </div>
@@ -189,9 +187,9 @@ const grundsaetze = [
         <dl class="divide-y divide-line border-y border-line">
           {[
             { k: 'Manufacturing', v: 'Our own production hall in Lipjan, Kosovo' },
-            { k: 'Construction', v: 'Timber frame and cross-laminated timber (CLT), plus modular construction' },
+            { k: 'Methods', v: 'Reinforced concrete and masonry on site, timber frame and cross-laminated timber (CLT) from our own production' },
             { k: 'We build in', v: 'Across Europe' },
-            { k: 'Wall build-up', v: 'Certified to Efficiency House 40 standard, highly insulated and airtight ex works' },
+            { k: 'Scope', v: 'Shell, shell with weathertight envelope, or turnkey' },
           ].map((z) => (
             <div class="grid gap-1 py-4 sm:grid-cols-[9rem_1fr] sm:gap-6">
               <dt class="text-caption text-muted">{z.k}</dt>
@@ -221,9 +219,6 @@ const grundsaetze = [
       </div>
     </div>
   </section>
-
-  <!-- Aufbau & Materialien: Wandschnitt-Slider -->
-  <MaterialSlider />
 
   <!-- Zahlen: Anthrazit-Drench, Register statt Stat-Karten -->
   <section class="bg-graphite py-(--spacing-section) text-paper">

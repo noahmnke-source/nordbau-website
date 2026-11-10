@@ -13,3 +13,6 @@ node_modules/
 # os / editor
 .DS_Store
 Thumbs.db
+
+# python tooling (Bildaufbereitung)
+venv/

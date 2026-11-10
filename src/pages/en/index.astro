@@ -58,10 +58,10 @@ const leistungen = [
     img: IMG.rohbauInnen,
   },
   {
-    name: 'Existing buildings',
-    href: '/en/leistungen/bauen-im-bestand/',
+    name: 'Refurbishment',
+    href: '/en/leistungen/sanierung/',
     fakt: 'Also while in use',
-    text: 'Conversion, extension and fit-out – with structural certification for every intervention in the frame.',
+    text: 'Energy retrofit, conversion and extension – with structural certification for every intervention in the frame.',
     img: IMG.bestandGeruest,
   },
 ];
@@ -75,24 +75,28 @@ const zahlen = [
 
 const faq = [
   {
-    q: 'What does a prefab home from EcoBau cost?',
-    a: 'That depends on the house type, living space, specification and plot. Instead of a catalogue figure, you receive an individual fixed-price offer from us after a no-obligation initial consultation – transparently calculated, with a 12-month price guarantee from contract signing. The plot and ancillary building costs are added to the house price.',
+    q: 'What does EcoBau GmbH do?',
+    a: 'EcoBau GmbH is a family-run construction company from Hanover, building since 1994. Our lead service is the structural shell: foundations, structure, floors and stair cores in reinforced concrete, masonry and timber – delivered up to seven upper floors and three basement levels. On request we carry on to a weathertight envelope or turnkey through to handover, and we refurbish, convert and extend existing buildings. What sets us apart: we build both solid and in timber – timber frame and cross-laminated timber from our own production – and choose the method by span, fire requirements and programme rather than by the plant we happen to own.',
   },
   {
-    q: 'How long does it take to build a prefab home?',
-    a: 'A general figure in weeks would be misleading: the duration depends on the building authority, your financing, the ground conditions and the weather – factors outside our control. What prefabrication does deliver is moving the shell into the hall: on site, elements are assembled, not built. You receive a reliable programme for your own project once the site and the consent position are settled.',
+    q: 'Can we commission the structural shell only?',
+    a: 'Yes. With us the shell is a service in its own right, not an add-on. You receive foundations, structure, floors and stair cores as a closed package with measured records and structural certification. Where our work ends and your trades begin is set out in the specification before contract. Equally possible: the shell with a closed, weathertight envelope, or the building turnkey through to handover.',
+  },
+  {
+    q: 'Do you only build shells in timber?',
+    a: 'No. Timber frame and cross-laminated timber are our strength in housing, but the larger part of our shell work is in reinforced concrete and masonry. At the residential and commercial building on Maybachstraße in Stuttgart it was three basement levels in watertight construction under seven upper floors in reinforced concrete; at the warehouse in Isernhagen, prestressed beams for column-free hall areas. What carries the load is decided by spans, fire requirements and basements – not by habit.',
   },
   {
     q: 'What exactly does “turnkey” mean?',
-    a: '“Turnkey” is not a legally defined term – the scope of work is set out in the construction & specification document. For us it means: move-in ready including bathrooms, floors and interior doors. As a rule, only compare offers with an identical scope of work.',
+    a: 'That the building is handed over ready for use: shell, envelope and every finishing trade, under one contract with one handover date. We build the loadbearing part ourselves and award only the specialist trades we do not carry out in-house. What is included is set out in the specification before contract.',
   },
   {
-    q: 'Can I plan a prefab home entirely individually?',
-    a: 'Yes. Alongside our house types, we plan freely designed architect homes in timber-frame construction – floor plan, facade, roof shape and specification are created individually. Prefabrication in the factory hardly limits the design.',
+    q: 'Do you refurbish while the building stays in use?',
+    a: 'Yes, it is one of our specialities. At Braunschweig municipal hospital we fitted out six storeys while the adjoining areas remained in use. What matters is dust protection, scheduled deliveries, agreed working hours and a fire safety concept for the construction phase – settled before the first working day, not during delivery.',
   },
   {
-    q: 'What KfW funding is available in 2026 for building a house?',
-    a: 'Through “Climate-Friendly New Construction” (KfW 297/298) there are interest-reduced loans of up to 150,000 euros per residential unit from Efficiency House 40 standard. Families with a child and a maximum taxable income of 90,000 euros can alternatively use KfW 300 with up to 270,000 euros.',
+    q: 'How is payment handled?',
+    a: 'Under a construction contract in accordance with German law (BGB), with instalments for work performed rather than by calendar. The fixed price applies to the agreed scope; variations arise only from changes you commission, and are priced in advance. Bonds are included.',
   },
 ];
 ---
@@ -114,14 +118,14 @@ const faq = [
         <span class="hero-line block" style="--line-delay: 120ms">From foundations to a weathertight envelope.</span>
       </h1>
       <p class="hero-line prose-measure mt-6 text-body text-paper/85" style="--line-delay: 280ms">
-        {SITE.legalName} from {SITE.contact.city} — turnkey prefab homes in timber-frame
-        construction, plus apartment buildings, commercial buildings and facilities for
-        education and care. A family business since {SITE.foundingYear}.
+        {SITE.legalName} — structural shell in reinforced concrete, masonry and timber,
+        turnkey through to handover on request. Plus refurbishment and conversion of
+        existing buildings. A family business since {SITE.foundingYear}.
       </p>
       <div class="hero-line mt-10 flex flex-wrap items-center gap-6" style="--line-delay: 420ms">
         <Button href="/en/kontakt/" variant="primary">Book a consultation</Button>
-        <a href="/en/haeuser/einfamilienhaus/" class="link-line text-small font-medium text-paper">
-          See the designs
+        <a href="/en/leistungen/rohbau/" class="link-line text-small font-medium text-paper">
+          See our shell construction
         </a>
       </div>
     </div>
@@ -145,17 +149,17 @@ const faq = [
         </span>
       </a>
 
-      <a href="/en/haeuser/einfamilienhaus/" class="group/weg block py-8 lg:pl-10">
-        <p class="text-caption tracking-wide text-muted uppercase">For private clients</p>
+      <a href="/en/leistungen/sanierung/" class="group/weg block py-8 lg:pl-10">
+        <p class="text-caption tracking-wide text-muted uppercase">For owners, managers and municipalities</p>
         <p class="mt-3 font-display text-title font-medium">
-          Your home from our own plant
+          Refurbishment and conversion
         </p>
         <p class="prose-measure mt-3 text-small text-muted">
-          Detached house, bungalow, modular house or tiny house – drawn for your site,
-          made in our own plant. Efficiency House 40, fixed price for twelve months.
+          Energy retrofits, work on the load-bearing structure, added storeys – costed
+          after a full survey of the existing building, delivered in occupied buildings too.
         </p>
         <span class="mt-5 inline-flex items-center gap-2 text-small font-medium text-oxide">
-          To the houses
+          To refurbishment
           <svg class="h-4 w-4 transition-transform duration-300 ease-[var(--ease-out-quart)] group-hover/weg:translate-x-1" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" /></svg>
         </span>
       </a>
@@ -289,27 +293,6 @@ const faq = [
           </a>
         ))}
       </div>
-    </div>
-  </section>
-
-  <!-- House building, deliberately brief -->
-  <section class="container-site py-(--spacing-section)">
-    <div class="grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-center">
-      <div class="reveal lg:col-span-5">
-        <h2 class="font-display text-display font-medium">
-          And we build houses in our own plant.
-        </h2>
-        <p class="prose-measure mt-6 text-body leading-relaxed text-muted">
-          Alongside the structural shell we build turnkey homes in timber frame –
-          detached houses, bungalows, modular houses and tiny houses, drawn for your site
-          and prefabricated in our own hall.
-        </p>
-        <div class="mt-8">
-          <Button href="/en/haeuser/einfamilienhaus/" variant="primary">To the houses</Button>
-        </div>
-      </div>
-      <Figure src={IMG.heroHome.src} alt={IMG.heroHome.alt} ratio="aspect-[3/2]"
-        sizes="(min-width: 1024px) 54vw, 100vw" class="lg:col-span-6 lg:col-start-7" zoom />
     </div>
   </section>
 

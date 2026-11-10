@@ -204,3 +204,58 @@
   from = "/en/wohn-und-gewerbebau/*"
   to = "/en/leistungen/rohbau/"
   status = 301
+
+# ── Umbau 2026/2: Fertighaus-Bereich entfallen ────────────────
+# Das Unternehmen tritt jetzt als klassisches Bauunternehmen auf. Die
+# Haustypen und der Weg zum Traumhaus richteten sich an private Bauherren
+# und sind ersatzlos entfallen.
+
+[[redirects]]
+  from = "/haeuser/*"
+  to = "/leistungen/rohbau/"
+  status = 301
+
+[[redirects]]
+  from = "/weg-zum-traumhaus/*"
+  to = "/leistungen/schluesselfertigbau/"
+  status = 301
+
+[[redirects]]
+  from = "/leistungen/bauen-im-bestand/*"
+  to = "/leistungen/sanierung/"
+  status = 301
+
+[[redirects]]
+  from = "/en/haeuser/*"
+  to = "/en/leistungen/rohbau/"
+  status = 301
+
+[[redirects]]
+  from = "/en/weg-zum-traumhaus/*"
+  to = "/en/leistungen/schluesselfertigbau/"
+  status = 301
+
+[[redirects]]
+  from = "/en/leistungen/bauen-im-bestand/*"
+  to = "/en/leistungen/sanierung/"
+  status = 301
+
+[[redirects]]
+  from = "/ratgeber/fertighaus-oder-massivhaus/*"
+  to = "/ratgeber/massivbau-oder-holzhybridbau/"
+  status = 301
+
+[[redirects]]
+  from = "/ratgeber/fertighaus-preise-2026/*"
+  to = "/ratgeber/was-kostet-ein-rohbau/"
+  status = 301
+
+[[redirects]]
+  from = "/ratgeber/kfw-foerderung-neubau-2026/*"
+  to = "/ratgeber/sanierung-im-bestand-kalkulieren/"
+  status = 301
+
+[[redirects]]
+  from = "/ratgeber/schluesselfertig-ausbauhaus-vergleich/*"
+  to = "/ratgeber/rohbau-oder-schluesselfertig/"
+  status = 301

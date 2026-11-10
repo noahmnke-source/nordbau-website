@@ -3,8 +3,8 @@ name: Gewerbebau
 tagline: Büro, Verwaltung, Beherbergung. Gebäude, die arbeiten müssen.
 order: 2
 hero:
-  src: "/bau/gewerbebau/gewerbe-modulbuero-1600.webp"
-  alt: "Zweigeschossiges Bürogebäude in Modulbauweise mit umlaufender Verglasung, Dachterrasse und Vordach"
+  src: "/rohbau/kran-glasbau-1600.webp"
+  alt: "Bürogebäude im Rohbau mit Gerüst, Stahlkonstruktion des Dachabschlusses und Turmdrehkran"
 katalog:
   - src: "/projekte/referenzen/hannover-citygate-1200.webp"
     alt: "Büro- und Verwaltungskomplex City Gate Nord in Hannover über sechs Geschosse"
@@ -16,15 +16,6 @@ katalog:
   - src: "/projekte/referenzen/prishtina-verwaltung.webp"
     alt: "Eingeschossiger Gewerbebau mit Showroom zur Straße und großen Schaufenstern"
     caption: "Prishtina: Gewerbebau mit 105 m² Nutzfläche – Showroom zur Straße, dahinter Küche, Lager und Sanitärbereich."
-  - src: "/bau/gewerbebau/gewerbe-modulbuero-1600.webp"
-    alt: "Zweigeschossiges Bürogebäude in Modulbauweise mit umlaufender Verglasung und Vordach"
-    caption: "Bürogebäude in Modulbauweise: zwei Ebenen, umlaufende Verglasung, Erweiterung um weitere Module möglich."
-  - src: "/bau/gewerbebau/gewerbe-buero-terrasse-1600.webp"
-    alt: "Modulares Bürogebäude mit überdachter Dachterrasse und Aussentreppe"
-    caption: "Nutzbare Dachfläche über dem Erdgeschoss, außenliegende Erschließung."
-  - src: "/bau/gewerbebau/gewerbe-buero-innen-1600.webp"
-    alt: "Großraumbüro mit Arbeitsplätzen, Glasfassade und offener Deckenkonstruktion"
-    caption: "Innen: stützenfreier Großraum über die volle Modulbreite."
 daten:
   - label: Nutzfläche
     wert: ab 100 m², nach oben offen
@@ -33,7 +24,7 @@ daten:
   - label: Nutzungen
     wert: Büro, Verwaltung, Showroom, Beherbergung, Praxis
   - label: Bauweise
-    wert: Holzbau, Modulbauweise oder konventionell – je nach Anforderung
+    wert: Stahlbeton, Mauerwerk und Holz – nach Spannweite und Brandschutz
   - label: Leistungsumfang
     wert: Rohbau, Rohbau mit Gebäudehülle oder schlüsselfertig
 merkmale:
@@ -41,8 +32,8 @@ merkmale:
     text: Ein Showroom braucht andere Spannweiten als ein Zellenbüro und andere Haustechnik als ein Hotel. Wir entwerfen vom Betrieb her, nicht von der Fassade.
   - titel: Auch im laufenden Betrieb
     text: Erweiterungen und zweite Bauabschnitte neben einem genutzten Gebäude sind Routine – mit abgestimmter Baustellenlogistik, Staub- und Lärmschutz.
-  - titel: Modular erweiterbar
-    text: "Wo Flächenbedarf schwankt, ist Modulbauweise die flexible Antwort: aufstocken, anbauen oder an anderer Stelle wieder aufstellen."
+  - titel: Hallen und Bürogeschosse
+    text: Stützenfreie Hallenflächen über Spannbetonbinder, darüber oder daneben Bürogeschosse in Stahlbeton – bei der PVU-Group in Isernhagen in einem Auftrag ausgeführt.
   - titel: Rohbau oder schlüsselfertig
     text: "Sie entscheiden die Leistungstiefe: nur der Rohbau, der Rohbau mit geschlossener Gebäudehülle oder das fertige Gebäude mit allen Ausbaugewerken."
 projekte:
@@ -57,16 +48,16 @@ projekte:
     leistung: Tiefbau, Rohbau und Innenausbau
     kennzahl: Warmhalle 3.124 m² · Kalthalle 779 m² · Verwaltung 2.200 m²
 seoTitle: "Gewerbebau – Büro, Verwaltung und Beherbergung | EcoBau Hannover"
-seoDescription: "Gewerbliche Gebäude von EcoBau: Büro- und Verwaltungsbauten, Showrooms, Hotels und modulare Bürogebäude. Schlüsselfertig oder in einzelnen Leistungsphasen."
+seoDescription: "Gewerbliche Gebäude von EcoBau: Büro- und Verwaltungsbauten, Hallen, Showrooms und Beherbergung. Rohbau, Rohbau mit Gebäudehülle oder schlüsselfertig – bis 10.500 m² BGF."
 faq:
-  - q: Bauen Sie auch außerhalb des Holzbaus?
-    a: Ja. Holzbau ist unsere Stärke, aber nicht unser einziges Verfahren. Bei gewerblichen Gebäuden entscheiden Spannweiten, Brandschutzanforderungen und Nutzung darüber, was sinnvoll ist – häufig ist es eine Mischbauweise. Beim City Gate Nord in Hannover haben wir Tiefbau, Rohbau und Innenausbau konventionell ausgeführt.
+  - q: In welcher Bauweise errichten Sie gewerbliche Gebäude?
+    a: Der größere Teil entsteht in Stahlbeton und Mauerwerk – beim City Gate Nord in Hannover haben wir Tiefbau, Rohbau und Innenausbau so ausgeführt, bei der Lagerhalle in Isernhagen mit Stahlbetonstützen und Spannbetondachbindern. Holzbau setzen wir dort ein, wo er trägt und Vorteile bringt, etwa bei Aufstockungen oder eingeschossigen Baukörpern. Was sinnvoll ist, entscheiden Spannweite, Brandschutz und Nutzung.
   - q: Können wir auch nur den Rohbau beauftragen?
     a: Ja. Sie können den Rohbau einzeln beauftragen, den Rohbau mit geschlossener Gebäudehülle oder das Gebäude schlüsselfertig bis zur Übergabe. Wo die Grenze liegt, halten wir vor Vertragsschluss in der Leistungsbeschreibung fest, damit die Schnittstelle zu Ihren übrigen Gewerken eindeutig ist.
   - q: Können Sie neben einem laufenden Betrieb bauen?
     a: Ja. Bei mehreren unserer Projekte lief der Betrieb im Bestand weiter – etwa beim zweiten Bauabschnitt des City Gate Nord und beim Innenausbau des Klinikums Braunschweig. Das verlangt abgestimmte Anlieferzeiten, saubere Abschottung, Staub- und Lärmschutz sowie eine enge Taktung mit den übrigen Gewerken.
-  - q: Wie schnell steht ein modulares Bürogebäude?
-    a: Weil Fertigung und Erschließung parallel laufen, verkürzt sich die Zeit auf der Baustelle deutlich gegenüber konventioneller Bauweise. Eine belastbare Aussage zum Termin machen wir erst, wenn Grundstück, Genehmigungslage und Anschlusssituation geklärt sind – alles andere wäre eine Zahl ohne Grundlage.
+  - q: Bauen Sie auch Hallen?
+    a: Ja. Für die PVU-Group in Isernhagen haben wir eine Warmhalle mit 3.124 m², eine Kalthalle mit 779 m² und ein Verwaltungsgebäude mit 2.200 m² errichtet – Tiefbau, Rohbau und Innenausbau im selben Auftrag. Stützenfreie Hallenbereiche führen wir mit Stahlbetonstützen und Spannbetonbindern aus; Hallenböden, Entwässerung und Toranlagen gehören zur Planung dazu.
 ---
 
 Ein gewerbliches Gebäude wird nicht nach Wohngefühl beurteilt, sondern nach Nutzung, Termin und Betriebskosten. Wir planen und bauen Büro- und Verwaltungsgebäude, Showrooms, Praxen und Beherbergungsbetriebe – schlüsselfertig oder in klar abgegrenzten Leistungspaketen.
@@ -75,9 +66,9 @@ Ein gewerbliches Gebäude wird nicht nach Wohngefühl beurteilt, sondern nach Nu
 
 Was in einem Gebäude täglich passiert, entscheidet über seine Konstruktion. Ein Showroom braucht große, stützenfreie Spannweiten und Tageslicht bis in die Tiefe. Ein Verwaltungsbau braucht flexible Grundrisse, die sich ohne Eingriff in die Statik neu aufteilen lassen. Ein Hotel braucht Schallschutz zwischen den Zimmern und eine Haustechnik, die im Vollbetrieb wartbar bleibt. Diese Fragen klären wir vor der Fassade.
 
-## Holzbau, Modulbauweise oder konventionell
+## Stahlbeton, Mauerwerk oder Holz
 
-Wir sind kein Anbieter, der jedes Projekt in dasselbe Verfahren zwingt. Wo Vorfertigung Zeit und Qualität bringt, bauen wir in Holz oder in Modulen. Wo Spannweiten, Brandschutz oder Untergeschosse dagegen sprechen, bauen wir konventionell – oder kombinieren beides. Entscheidend ist, was das Gebäude leisten muss.
+Wir sind kein Anbieter, der jedes Projekt in dasselbe Verfahren zwingt. Große Spannweiten, Untergeschosse und hohe Brandschutzanforderungen führen zu Stahlbeton – beim City Gate Nord über sechs Geschosse, bei der Lagerhalle in Isernhagen mit Spannbetonbindern über stützenfreien Flächen. Wo Holz trägt und Vorteile bringt, setzen wir es ein, häufig als Hybrid mit Stahlbetonkernen. Entscheidend ist, was das Gebäude leisten muss, nicht welches Verfahren uns besser liegt.
 
 ## Auch neben dem laufenden Betrieb
 

@@ -113,8 +113,7 @@ const gebaeude = [
 ];
 
 
-/* Der Hero wechselt zwischen drei Motiven. Zwei zeigen den Rohbau, eines das
-   Fertighaus – in dieser Gewichtung liegt auch das Geschaeft. */
+/* Drei Motive vom Bau: Tragwerk, Gebaeude im Geruest, Kransilhouette. */
 const heroBilder = [IMG.rohbauSkelett, IMG.rohbauZeile, IMG.rohbauKranwald];
 
 /* Die drei Leistungen, in der Reihenfolge, in der sie aufeinander aufbauen. */
@@ -134,10 +133,10 @@ const leistungen = [
     img: IMG.rohbauInnen,
   },
   {
-    name: 'Bauen im Bestand',
-    href: '/leistungen/bauen-im-bestand/',
+    name: 'Sanierung',
+    href: '/leistungen/sanierung/',
     fakt: 'Auch bei laufendem Betrieb',
-    text: 'Umbau, Erweiterung und Innenausbau – mit statischem Nachweis für jeden Eingriff ins Tragwerk.',
+    text: 'Energetische Sanierung, Umbau und Erweiterung – mit statischem Nachweis für jeden Eingriff ins Tragwerk.',
     img: IMG.bestandGeruest,
   },
 ];
@@ -156,7 +155,7 @@ const faq = [
        davor. Genau solche in sich geschlossenen Absaetze zitieren
        KI-Antwortsysteme und Googles Uebersicht mit KI. */
     q: 'Was macht die EcoBau GmbH?',
-    a: 'Die EcoBau GmbH ist ein familiengeführtes Bauunternehmen aus Hannover, seit 1994 am Bau. Unsere Leitleistung ist der Rohbau: Gründung, Tragwerk, Decken und Treppenhäuser in Stahlbeton, Mauerwerk und Holz – ausgeführt bis sieben Obergeschosse und drei Untergeschosse. Auf Wunsch bauen wir weiter bis zur geschlossenen Gebäudehülle oder schlüsselfertig bis zur Übergabe, und wir bauen im Bestand um, erweitern und bauen aus. Daneben fertigen wir Häuser im eigenen Werk: Einfamilienhäuser mit Satteldach oder Flachdach, Bungalows, Modulhäuser und Tiny Houses. Die Wand-, Decken- und Dachelemente entstehen witterungsunabhängig in unserem eigenen Werk und werden auf dem Grundstück montiert. Jedes Haus erfüllt ab Werk den Effizienzhaus-40-Standard und ist damit KfW-förderfähig; dazu kommen eine Festpreisgarantie über zwölf Monate ab Vertragsabschluss und 5 Jahre Garantie auf die Baukonstruktion. Neben Wohnhäusern errichten wir größere Gebäude: Mehrfamilienhäuser, Büro- und Verwaltungsgebäude, Hotels sowie Kindertagesstätten, Schulen und Kliniken – vom Rohbau bis zur schlüsselfertigen Übergabe.',
+    a: 'Die EcoBau GmbH ist ein familiengeführtes Bauunternehmen aus Hannover, seit 1994 am Bau. Unsere Leitleistung ist der Rohbau: Gründung, Tragwerk, Decken und Treppenhäuser in Stahlbeton, Mauerwerk und Holz – ausgeführt bis sieben Obergeschosse und drei Untergeschosse. Auf Wunsch bauen wir weiter bis zur geschlossenen Gebäudehülle oder schlüsselfertig bis zur Übergabe, und wir bauen im Bestand um, erweitern und bauen aus. Besonderheit: Wir bauen sowohl massiv als auch in Holz – Holztafelbau und Brettsperrholz aus eigener Fertigung – und wählen die Bauweise nach Spannweite, Brandschutz und Terminplan statt nach dem eigenen Maschinenpark. Holz- und Hybridbauteile fertigen wir dafür selbst: Wand-, Decken- und Dachelemente entstehen witterungsunabhängig in unserer eigenen Halle und werden auf der Baustelle montiert. Abgerechnet wird nach Bauvertrag gemäß BGB mit Abschlagszahlungen nach erbrachter Leistung; auf die Baukonstruktion geben wir 5 Jahre Gewährleistung. Gebaut haben wir Mehrfamilienhäuser, Büro- und Verwaltungsgebäude, Hallen und Hotels sowie Kindertagesstätten, Schulen und Kliniken – vom Tiefbau über den Rohbau bis zum Innenausbau.',
   },
   {
     q: 'Können wir bei Ihnen nur den Rohbau beauftragen?',
@@ -171,12 +170,12 @@ const faq = [
     a: '„Schlüsselfertig“ ist kein gesetzlich definierter Begriff – den Leistungsumfang legt die Bau- und Leistungsbeschreibung fest. Bei uns heißt es: bezugsfertig inklusive Bädern, Böden und Innentüren. Vergleichen Sie Angebote grundsätzlich nur bei identischem Leistungsumfang.',
   },
   {
-    q: 'Kann ich ein Fertighaus komplett individuell planen?',
-    a: 'Ja – das ist bei uns der Normalfall. Die Entwürfe auf dieser Website sind Anschauung, kein Bestellkatalog: Jedes Haus wird von einem Architekten für sein Grundstück neu gezeichnet, mit eigenem Grundriss, eigener Fassade und eigener Dachform. Die Vorfertigung im Werk schränkt die Gestaltung kaum ein. Sie können auch mit einem eigenen Architekten kommen – dann übernehmen wir ab der Werkplanung.',
+    q: 'Sanieren Sie auch, während das Gebäude genutzt wird?',
+    a: 'Ja, das ist einer unserer Schwerpunkte. Am Städtischen Klinikum Braunschweig haben wir sechs Geschosse ausgebaut, während die angrenzenden Bereiche in Betrieb waren. Entscheidend sind Staubschutz, getaktete Anlieferung, abgestimmte Arbeitszeiten und ein Brandschutzkonzept für die Bauphase – das klären wir vor dem ersten Arbeitstag, nicht während der Ausführung.',
   },
   {
-    q: 'Welche KfW-Förderung gibt es 2026 für den Hausbau?',
-    a: 'Über „Klimafreundlicher Neubau“ (KfW 297/298) gibt es zinsverbilligte Kredite bis 150.000 Euro pro Wohneinheit ab Effizienzhaus-40-Standard. Familien mit Kind und maximal 90.000 Euro zu versteuerndem Einkommen können alternativ KfW 300 mit bis zu 270.000 Euro nutzen.',
+    q: 'Wie wird bei Ihnen abgerechnet?',
+    a: 'Nach Bauvertrag gemäß BGB mit Abschlagszahlungen nach erbrachter Leistung, nicht nach Kalender. Für den vereinbarten Leistungsumfang gilt der Festpreis; Nachträge entstehen nur durch Änderungen, die Sie beauftragen, und werden vorher beziffert. Bürgschaften sind inklusive.',
   },
 ];
 ---
@@ -199,7 +198,7 @@ const faq = [
       </h1>
       <p class="hero-line prose-measure mt-6 text-body text-paper/85" style="--line-delay: 280ms">
         {SITE.legalName} — Rohbau in Stahlbeton, Mauerwerk und Holz, auf Wunsch
-        schlüsselfertig bis zur Übergabe. Dazu Fertighäuser aus eigener Fertigung.
+        schlüsselfertig bis zur Übergabe. Dazu Sanierung und Umbau im Bestand.
         Familienbetrieb seit {SITE.foundingYear}.
       </p>
       <div class="hero-line mt-10 flex flex-wrap items-center gap-6" style="--line-delay: 420ms">
@@ -232,17 +231,17 @@ const faq = [
         </span>
       </a>
 
-      <a href="/haeuser/einfamilienhaus/" class="group/weg block py-8 lg:pl-10">
-        <p class="text-caption tracking-wide text-muted uppercase">Für private Bauherren</p>
+      <a href="/leistungen/sanierung/" class="group/weg block py-8 lg:pl-10">
+        <p class="text-caption tracking-wide text-muted uppercase">Für Eigentümer, Verwalter und Kommunen</p>
         <p class="mt-3 font-display text-title font-medium">
-          Ihr Haus aus eigener Fertigung
+          Sanierung und Umbau im Bestand
         </p>
         <p class="prose-measure mt-3 text-small text-muted">
-          Einfamilienhaus, Bungalow, Modulhaus oder Tiny House – gezeichnet für Ihr
-          Grundstück, gefertigt im eigenen Werk. Effizienzhaus 40, Festpreis über zwölf Monate.
+          Energetische Sanierung, Eingriffe ins Tragwerk, Aufstockung – kalkuliert nach
+          der Bestandsaufnahme, ausgeführt auch im bewohnten Gebäude.
         </p>
         <span class="mt-5 inline-flex items-center gap-2 text-small font-medium text-oxide">
-          Zu den Häusern
+          Zur Sanierung
           <svg class="h-4 w-4 transition-transform duration-300 ease-[var(--ease-out-quart)] group-hover/weg:translate-x-1" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" /></svg>
         </span>
       </a>
@@ -393,34 +392,6 @@ const faq = [
           </a>
         ))}
       </div>
-    </div>
-  </section>
-
-  <!-- Hausbau, bewusst knapp gehalten: ein Absatz, ein Bild, ein Knopf
-       auf die Haeuser-Seite. -->
-  <section class="container-site py-(--spacing-section)">
-    <div class="grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-center">
-      <div class="reveal lg:col-span-5">
-        <h2 class="font-display text-display font-medium">
-          Und wir fertigen Häuser im eigenen Werk.
-        </h2>
-        <p class="prose-measure mt-6 text-body leading-relaxed text-muted">
-          Neben dem Rohbau bauen wir schlüsselfertige Häuser in Holztafelbauweise –
-          Einfamilienhäuser, Bungalows, Modulhäuser und Tiny Houses, gezeichnet für Ihr
-          Grundstück und vorgefertigt in der eigenen Halle.
-        </p>
-        <div class="mt-8">
-          <Button href="/haeuser/einfamilienhaus/" variant="primary">Zu den Häusern</Button>
-        </div>
-      </div>
-      <Figure
-        src={IMG.heroHome.src}
-        alt={IMG.heroHome.alt}
-        ratio="aspect-[3/2]"
-        sizes="(min-width: 1024px) 54vw, 100vw"
-        class="lg:col-span-6 lg:col-start-7"
-        zoom
-      />
     </div>
   </section>
 

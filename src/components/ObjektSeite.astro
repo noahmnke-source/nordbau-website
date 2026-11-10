@@ -100,8 +100,6 @@ const T = {
     ? 'Wir prüfen Grundstück, Bebauungsplan und Budget und sagen Ihnen ehrlich, was geht. Unverbindlich und ohne Verkaufsdruck.'
     : 'We check the site, the development plan and the budget and tell you honestly what is feasible. Without obligation and without sales pressure.',
   ctaButton: de ? 'Beratung vereinbaren' : 'Arrange a consultation',
-  ctaWeg: de ? 'Der Weg zu Ihrem Traumhaus' : 'The road to your dream home',
-  alle: de ? 'Alle' : 'All',
   stufenTitel: de ? 'Wie weit wir bauen, entscheiden Sie' : 'You decide how far we build',
   stufenLead: de
     ? 'Rohbau, Rohbau mit geschlossener Gebäudehülle oder das fertige Gebäude – die Leistungstiefe legen wir vor Vertragsschluss fest, damit die Schnittstelle zu Ihren übrigen Gewerken eindeutig ist.'
@@ -117,7 +115,8 @@ const T = {
   spalteProjekt: de ? 'Projekt' : 'Project',
   spalteLeistung: de ? 'Leistung' : 'Scope',
   spalteUmfang: de ? 'Umfang' : 'Size',
-  filterAria: de ? 'Katalog nach Dachform filtern' : 'Filter the catalogue',
+  alle: de ? 'Alle' : 'All',
+  filterAria: de ? 'Katalog filtern' : 'Filter the catalogue',
 };
 
 // Filterleiste erscheint nur, wenn der Katalog tatsaechlich mehrere Gruppen
@@ -162,7 +161,6 @@ const stufen = de
     ];
 
 const kontakt = localize('/kontakt/', lang);
-const wegPfad = localize('/weg-zum-traumhaus/', lang);
 
 // Sichtbar erscheinen keine Brotkrumen mehr; die Liste wird nur noch fuer die
 // BreadcrumbList im Seitenkopf gebraucht, die BaseLayout aus derselben Angabe
@@ -467,7 +465,6 @@ const wegPfad = localize('/weg-zum-traumhaus/', lang);
     </div>
     <div class="flex flex-wrap items-center gap-6 lg:col-span-4 lg:col-start-9 lg:justify-end">
       <Button href={kontakt} variant="primary">{T.ctaButton}</Button>
-      <a href={wegPfad} class="link-line text-small font-medium text-paper">{T.ctaWeg}</a>
     </div>
   </div>
 </section>

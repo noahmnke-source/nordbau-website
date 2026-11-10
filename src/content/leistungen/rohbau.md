@@ -3,8 +3,8 @@ name: Rohbau
 tagline: Gründung, Tragwerk, Hülle. Der Teil, den später niemand mehr sieht.
 order: 1
 hero:
-  src: "/rohbau/geruest-fassade-1600.webp"
-  alt: "Eingerüsteter Rohbau eines mehrgeschossigen Wohngebäudes, Geschossdecken und Stützen sichtbar"
+  src: "/rohbau/wohnanlage-1600.webp"
+  alt: "Mehrgeschossiger Stahlbetonrohbau einer Wohnanlage mit geschlossenen Geschossdecken neben einem Bestandsgebäude"
 katalog:
   - src: "/projekte/referenzen/stuttgart-maybach.webp"
     alt: "Eingerüsteter Stahlbetonrohbau eines Wohn- und Geschäftshauses in Stuttgart"

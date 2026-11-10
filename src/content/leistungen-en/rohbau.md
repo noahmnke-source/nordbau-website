@@ -3,8 +3,8 @@ name: Structural shell
 tagline: Foundations, structure, envelope. The part nobody sees afterwards.
 order: 1
 hero:
-  src: "/rohbau/geruest-fassade-1600.webp"
-  alt: "Scaffolded structural shell of a multi-storey residential building, floor slabs and columns visible"
+  src: "/rohbau/wohnanlage-1600.webp"
+  alt: "Multi-storey reinforced concrete shell of a housing development with completed floor slabs beside an existing building"
 katalog:
   - src: "/projekte/referenzen/stuttgart-maybach.webp"
     alt: "Scaffolded reinforced concrete shell of a residential and commercial building in Stuttgart"

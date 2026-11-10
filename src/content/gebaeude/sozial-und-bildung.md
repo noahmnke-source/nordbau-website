@@ -9,12 +9,6 @@ katalog:
   - src: "/bau/sozial-und-bildung/kita-eingang-1600.webp"
     alt: "Eingeschossige Kindertagesstätte mit farbig gegliederter Fassade und weit auskragendem Vordach"
     caption: "Langgestreckter eingeschossiger Baukörper, überdachter Eingangsbereich als Treffpunkt."
-  - src: "/bau/sozial-und-bildung/kita-aussenbereich-1600.webp"
-    alt: "Kindertagesstätte mit farbigen Fassadenfeldern, Spielgeräten und angelegtem Außenbereich"
-    caption: "Jede Gruppe mit eigenem Zugang ins Freie, Außenanlagen direkt angebunden."
-  - src: "/bau/sozial-und-bildung/kita-gesamtanlage-1600.webp"
-    alt: "Luftaufnahme einer Kindertagesstätte mit umlaufender Erschließung und Stellplätzen"
-    caption: "Gesamtanlage mit getrennter Anlieferung, Bring- und Holzone und Außengelände."
   - src: "/projekte/referenzen/ronnenberg-kita.webp"
     alt: "Neubau einer Kindertagesstätte in Holzrahmenbauweise in Empelde für die Stadt Ronnenberg"
     stufe: Rohbau und Innenausbau
@@ -34,25 +28,25 @@ daten:
   - label: Nutzungen
     wert: Kindertagesstätte, Kindergarten, Schule, Klinik, Pflege
   - label: Bauweise
-    wert: Holzrahmenbau oder konventionell, je nach Auslobung
+    wert: Stahlbeton, Mauerwerk oder Holzrahmenbau, je nach Auslobung
   - label: Auftraggeber
     wert: Kommunen, freie Träger, Kliniken und private Bauherren
 merkmale:
-  - titel: Holz tut Kindern gut
-    text: Sichtbare Holzoberflächen, diffusionsoffene Bauteile und eine dichte Hülle sorgen für ein stabiles Raumklima – ein messbarer Vorteil in Räumen mit hoher Belegungsdichte.
-  - titel: Kurze Bauzeit in den Ferien
-    text: Vorfertigung erlaubt enge Zeitfenster. Wo an einer genutzten Einrichtung gebaut wird, richten wir die Montage nach dem Betriebskalender aus.
-  - titel: Vergabefest kalkuliert
-    text: Öffentliche Auftraggeber brauchen belastbare Angebote nach VOB. Wir kalkulieren positionsweise und dokumentieren nachvollziehbar.
   - titel: Auflagen als Planungsgrundlage
     text: Brandschutz, Hygiene, Fluchtwege, Barrierefreiheit – bei Gebäuden für viele Menschen stehen diese Anforderungen am Anfang des Entwurfs, nicht am Ende.
-seoTitle: "Kita, Schule und Klinik bauen – Holzbau für Kommunen | EcoBau"
-seoDescription: "Kindertagesstätten, Kindergärten, Schulen und Kliniken in Holzrahmenbau oder konventionell. Für Kommunen, freie Träger und private Bauherren. Vergabefest kalkuliert."
+  - titel: Vergabefest kalkuliert
+    text: Öffentliche Auftraggeber brauchen belastbare Angebote nach VOB. Wir kalkulieren positionsweise und dokumentieren nachvollziehbar.
+  - titel: Im laufenden Betrieb
+    text: Anbau, Sanierung und Innenausbau an einer genutzten Einrichtung richten sich nach dem Betriebskalender – mit Abschottung, Staub- und Lärmschutz und Arbeiten in den Schließzeiten.
+  - titel: Bauweise nach Auslobung
+    text: Stahlbeton und Mauerwerk bei mehrgeschossigen Gebäuden und hohen Brandschutzanforderungen, Holzrahmenbau bei eingeschossigen Baukörpern wie der Kita in Empelde. Beides führen wir aus.
+seoTitle: "Kita, Schule und Klinik bauen – für Kommunen und Träger | EcoBau"
+seoDescription: "Kindertagesstätten, Schulen und Kliniken in Stahlbeton, Mauerwerk oder Holzrahmenbau. Für Kommunen, freie Träger und Kliniken – vergabefest kalkuliert, auch im laufenden Betrieb."
 faq:
   - q: Bauen Sie für Kommunen und öffentliche Auftraggeber?
     a: Ja. Die Kindertagesstätte in Empelde haben wir für die Stadt Ronnenberg errichtet. Öffentliche Vergaben nach VOB sind uns vertraut – einschließlich positionsweiser Kalkulation, Nachweisführung und der Dokumentation, die eine Abnahme durch die öffentliche Hand verlangt.
-  - q: Warum Holzbau bei Kitas und Schulen?
-    a: "Zum einen wegen des Raumklimas: Sichtbare Holzoberflächen und diffusionsoffene Bauteile puffern Feuchtigkeit, was bei hoher Belegungsdichte spürbar ist. Zum anderen wegen der Bauzeit – vorgefertigte Elemente lassen sich in engen Zeitfenstern montieren, etwa in den Ferien. Und drittens wegen der CO₂-Bilanz, die bei kommunalen Ausschreibungen zunehmend gewichtet wird."
+  - q: In welcher Bauweise errichten Sie Kitas und Schulen?
+    a: "Das entscheidet die Auslobung. Mehrgeschossige Schulbauten und Gebäude mit hohen Brandschutzanforderungen entstehen in Stahlbeton und Mauerwerk. Bei eingeschossigen Baukörpern ist Holzrahmenbau häufig im Vorteil: leichtere Gründung, kurze Montagezeiten in den Schließzeiten und eine CO₂-Bilanz, die kommunale Ausschreibungen zunehmend gewichten. Die Kita in Empelde haben wir als Holzrahmenbau auf wasserundurchlässiger Betonbodenplatte ausgeführt."
   - q: Können Sie in einer genutzten Einrichtung arbeiten?
     a: Ja. Beim Innenausbau des Städtischen Klinikums Braunschweig lief der Betrieb weiter – über sechs Geschosse, unter strengen Hygieneauflagen und eng getaktet mit Medizintechnik, Heizung, Lüftung, Sanitär und Elektro. Vergleichbares setzen wir auch in Schulen und Kitas um.
   - q: Übernehmen Sie nur den Rohbau oder das gesamte Gebäude?
@@ -61,13 +55,13 @@ faq:
 
 Gebäude, in denen viele Menschen zusammenkommen, stellen andere Anforderungen als ein Wohnhaus. Brandschutz, Fluchtwege, Hygiene, Barrierefreiheit und Akustik sind keine Nebenbedingungen, sondern bestimmen den Entwurf von der ersten Skizze an. Wir bauen Kindertagesstätten, Kindergärten, Schulen und medizinische Einrichtungen – für Kommunen, freie Träger und private Bauherren.
 
-## Warum Holz in Kita und Schule
-
-Sichtbare Holzoberflächen puffern Feuchtigkeit und dämpfen Schall – zwei Eigenschaften, die in Räumen mit hoher Belegungsdichte unmittelbar spürbar sind. Dazu kommt der Zeitfaktor: Vorgefertigte Elemente lassen sich in engen Fenstern montieren, etwa während der Schließzeiten. Und schließlich zählt die CO₂-Bilanz, die bei kommunalen Ausschreibungen zunehmend mitgewertet wird.
-
 ## Auflagen zuerst
 
 Bei einem Gebäude für Kinder oder Patienten stehen die Auflagen am Anfang. Wie breit müssen Flure sein, damit sie zugleich Spielfläche sein dürfen? Wo verlaufen die Fluchtwege, wenn ein Gruppenraum belegt ist? Welche Oberflächen sind im Klinikbereich zulässig? Wir klären diese Fragen mit Behörden und Trägern, bevor der Entwurf steht – nachträgliche Anpassungen sind hier besonders teuer.
+
+## Welche Bauweise, entscheidet die Auslobung
+
+Mehrgeschossige Schul- und Klinikbauten entstehen in Stahlbeton und Mauerwerk – wegen der Spannweiten, der Feuerwiderstandsdauern und der Untergeschosse. Bei eingeschossigen Baukörpern hat der Holzrahmenbau oft die Nase vorn: leichtere Gründung, kurze Montagezeiten, und sichtbare Holzoberflächen, die Feuchtigkeit puffern und Schall dämpfen. Die Kindertagesstätte in Empelde haben wir so ausgeführt, auf einer wasserundurchlässigen Betonbodenplatte. Welche Bauweise für Ihr Vorhaben in Frage kommt, steht meist schon in der Ausschreibung – wo nicht, rechnen wir beide Varianten.
 
 ## Erfahrung im laufenden Betrieb
 

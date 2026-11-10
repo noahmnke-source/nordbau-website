@@ -16,8 +16,8 @@ katalog:
     alt: "Mehrgeschossiges Wohngebäude mit hellem Putz und Balkonen in der Abenddämmerung"
     caption: "Kompakter Baukörper an der Straßenkante, Freibereiche zum Hof."
   - src: "/bau/mehrfamilienhaeuser/mfh-solardach-1600.webp"
-    alt: "Langgestreckte Wohnanlage über vier Geschosse am Wasser, mit Balkonen und vollflächiger Photovoltaik auf dem Dach"
-    caption: "Langgestreckte Anlage mit vollflächiger Photovoltaik – Erträge für die Allgemeinstrom- und Wärmeversorgung."
+    alt: "Langgestreckte Wohnanlage über vier Geschosse am Wasser, mit Balkonen und Photovoltaik auf dem Flachdach"
+    caption: "Langgestreckte Anlage mit Photovoltaik auf dem Flachdach – Erträge für Allgemeinstrom und Wärmeversorgung."
   - src: "/projekte/referenzen/stuttgart-maybach.webp"
     alt: "Wohn- und Geschäftshaus in Stuttgart mit sieben Obergeschossen in innerstädtischer Lage"
     stufe: Rohbau und Innenausbau
@@ -30,40 +30,40 @@ daten:
   - label: Dachform
     wert: Flachdach, Staffelgeschoss oder Satteldach
   - label: Bauweise
-    wert: Holztafelbau oder Brettsperrholz, im eigenen Werk vorgefertigt
-  - label: Energiestandard
-    wert: Effizienzhaus 40 je Wohneinheit
+    wert: Stahlbeton und Mauerwerk, auf Wunsch als Holzhybridbau
+  - label: Leistungstiefe
+    wert: Rohbau, Rohbau mit geschlossener Gebäudehülle oder schlüsselfertig
 merkmale:
-  - titel: Vorfertigung skaliert
-    text: Je größer das Gebäude, desto stärker wirkt der Vorteil. Wand- und Deckenelemente für alle Einheiten entstehen parallel im Werk und werden geschossweise montiert.
-  - titel: Schall- und Brandschutz geplant
-    text: Zweischalige Wohnungstrennwände mit getrennten Ständerlagen, entkoppelte Deckenaufbauten und geprüfte Bauteilanschlüsse – nachgewiesen, nicht geschätzt.
+  - titel: Schallschutz entscheidet die Bauweise
+    text: Zwischen Wohnungen hilft gegen Luftschall vor allem Masse. Deshalb entstehen Wohnungstrennwände und Geschossdecken im Mehrfamilienhaus in der Regel massiv – auch dann, wenn Außenwände und Dach in Holz ausgeführt werden.
+  - titel: Untergeschoss und Tiefgarage
+    text: Wo Stellplätze unter das Gebäude wandern, entscheidet die wasserundurchlässige Bauweise über die Dichtheit. In Stuttgart waren es drei Tiefgeschosse unter sieben Obergeschossen.
   - titel: Für Bauherren und Kapitalanleger
     text: Ob eigene Wohnung plus vermietete Einheiten, Renditeobjekt oder generationenübergreifendes Wohnen – der Nutzungsmix bestimmt den Grundriss.
-  - titel: Kürzere Bauzeit, früher Mieteinnahmen
-    text: Die Montage der vorgefertigten Elemente verkürzt die Zeit auf der Baustelle gegenüber konventioneller Massivbauweise erheblich.
-seoTitle: "Mehrfamilienhaus bauen – Holzbau, schlüsselfertig | EcoBau"
-seoDescription: "Mehrfamilienhäuser in Holztafelbau und Brettsperrholz: mehrere Wohneinheiten, Effizienzhaus 40, kurze Bauzeit durch Vorfertigung. Für Bauherren und Kapitalanleger."
+  - titel: Rohbau oder schlüsselfertig
+    text: "Sie entscheiden die Leistungstiefe: nur das Tragwerk, der Rohbau mit dichter Hülle oder das fertige Gebäude. In Stuttgart waren es Rohbau und Innenausbau über 15.000 m² BGF."
+seoTitle: "Mehrfamilienhaus bauen – Rohbau und schlüsselfertig | EcoBau"
+seoDescription: "Mehrfamilienhäuser in Stahlbeton, Mauerwerk und Holzhybridbau: Tiefgarage, Schallschutz zwischen den Wohnungen, bis sieben Obergeschosse. Rohbau oder schlüsselfertig."
 faq:
-  - q: Ist ein Mehrfamilienhaus in Holzbauweise überhaupt zulässig?
-    a: Ja. Die Landesbauordnungen erlauben Holzbau heute bis in die Gebäudeklasse 5, teils darüber hinaus. Entscheidend sind die geforderten Feuerwiderstandsdauern der tragenden Bauteile und der Nachweis der Anschlüsse. Was in Ihrem Bundesland und für Ihre Geschosszahl gilt, klären wir vor dem Entwurf.
+  - q: Welche Bauweise ist beim Mehrfamilienhaus wirtschaftlich?
+    a: "In den meisten Fällen Stahlbeton und Mauerwerk – wegen der Masse für den Schallschutz zwischen den Wohnungen, wegen der Feuerwiderstandsdauern ab Gebäudeklasse 4 und wegen der erdberührten Bauteile unter dem Gebäude. Holz kommt dort dazu, wo es Vorteile bringt: bei Außenwänden, beim Dach und bei Aufstockungen, bei denen das Gewicht über die Gründung entscheidet. Welche Mischung bei Ihrem Vorhaben trägt, rechnen wir vor dem Entwurf durch."
   - q: Wie wird der Schallschutz zwischen den Wohnungen sichergestellt?
-    a: Über zweischalige Wohnungstrennwände mit vollständig getrennten Ständerlagen, entkoppelte Deckenaufbauten mit schwimmendem Estrich und sorgfältig geplante Anschlussdetails. Die erreichten Werte weisen wir rechnerisch nach; auf Wunsch messen wir nach Fertigstellung.
-  - q: Rechnet sich Holzbau bei einem Renditeobjekt?
-    a: "Der Quadratmeterpreis sinkt durch die Skalierung meist unter den eines vergleichbaren Einfamilienhauses. Hinzu kommt der Zeitfaktor: Jede eingesparte Woche bedeutet früher einsetzende Mieteinnahmen. Die schlankeren Außenwände bringen bei gleicher Außenkante zusätzlich vermietbare Fläche."
+    a: Über ausreichend schwere Wohnungstrennwände, Geschossdecken mit schwimmendem Estrich auf Trittschalldämmung und Anschlussdetails ohne Nebenwege – Treppenläufe und Balkonplatten werden dafür vom Baukörper entkoppelt. Die erreichten Werte weisen wir rechnerisch nach; auf Wunsch messen wir nach Fertigstellung.
+  - q: Bauen Sie auch die Tiefgarage?
+    a: "Ja, einschließlich Baugrube und Gründung. Untergeschosse unter dem Grundwasserstand führen wir in wasserundurchlässiger Bauweise aus: dichter Beton, geplantes Fugenbild, kontrollierte Rissbreiten. Beim Wohn- und Geschäftshaus in der Stuttgarter Maybachstraße waren es drei Tiefgeschosse. Wo wir Tiefbau und Rohbau zusammen ausführen, entfällt die Schnittstelle, an der sonst am häufigsten Termine kippen."
   - q: Übernehmen Sie auch nur den Rohbau?
     a: Ja. Wir arbeiten sowohl schlüsselfertig als auch auf einzelne Leistungsphasen begrenzt – etwa Rohbau und Gebäudehülle, während der Ausbau bei Ihnen oder anderen Gewerken liegt. Was sinnvoll ist, hängt am Projekt und an Ihrer eigenen Kapazität.
 ---
 
-Das Mehrfamilienhaus ist die Antwort auf steigende Grundstückspreise und knappen Wohnraum: mehrere vollwertige Wohnungen in einem effizient geplanten Gebäude. Ob für die eigene Familie plus vermietete Einheiten, als Kapitalanlage oder als generationenübergreifendes Wohnen – wir planen es mit derselben Präzision wie ein Einfamilienhaus, nur in größerem Maßstab.
+Mehrere vollwertige Wohnungen in einem Gebäude – das ist die Antwort auf steigende Grundstückspreise und knappen Wohnraum, und zugleich die Gebäudeart, bei der am meisten von der Qualität des Rohbaus abhängt. Schallschutz, Brandschutz und die Dichtheit der Untergeschosse werden im Tragwerk entschieden, nicht im Ausbau.
 
-## Wirtschaftlichkeit durch Vorfertigung
+## Die Bauweise folgt dem Gebäude
 
-Je größer das Gebäude, desto stärker wirkt der Vorteil der Vorfertigung. Wand- und Deckenelemente für alle Wohneinheiten entstehen parallel im Werk, geprüft und maßhaltig, und werden auf der Baustelle geschossweise montiert. Das verkürzt die Bauzeit gegenüber der konventionellen Massivbauweise erheblich – bei einem Renditeobjekt bedeutet jede eingesparte Woche früher einsetzende Mieteinnahmen.
+Im Mehrfamilienhaus tragen in der Regel Stahlbeton und Mauerwerk: Masse hilft gegen Luftschall, ab Gebäudeklasse 4 steigen die Feuerwiderstandsdauern, und unter dem Gebäude sind erdberührte Bauteile ohnehin alternativlos. Holz setzen wir dort ein, wo es Vorteile bringt – bei Außenwänden, beim Dach und bei Aufstockungen, bei denen das geringere Gewicht über die Gründung entscheidet. Beim Wohn- und Geschäftshaus in der Stuttgarter Maybachstraße waren es drei Tiefgeschosse und sieben Obergeschosse in Stahlbeton.
 
 ## Schall- und Brandschutz zwischen den Einheiten
 
-Was ein Mehrfamilienhaus vom Einfamilienhaus unterscheidet, sind die Anforderungen an den Schutz zwischen den Wohnungen. Wir führen Wohnungstrennwände zweischalig mit getrennten Ständerlagen aus, entkoppeln die Deckenaufbauten und planen jeden Bauteilanschluss so, dass Schall keinen Nebenweg findet. Die Feuerwiderstandsdauern der tragenden Bauteile richten sich nach der Gebäudeklasse und werden nachgewiesen.
+Was ein Mehrfamilienhaus von einem Einfamilienhaus unterscheidet, sind die Anforderungen an den Schutz zwischen den Wohnungen. Wohnungstrennwände werden ausreichend schwer ausgeführt, Geschossdecken erhalten schwimmenden Estrich auf Trittschalldämmung, Treppenläufe und Balkonplatten werden vom Baukörper entkoppelt, damit Schall keinen Nebenweg findet. Die Feuerwiderstandsdauern der tragenden Bauteile richten sich nach der Gebäudeklasse und werden nachgewiesen – gerechnet, nicht geschätzt.
 
 ## Vom Grundstück zur Nutzungsmischung
 
