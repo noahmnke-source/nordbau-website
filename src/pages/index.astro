@@ -260,7 +260,6 @@ const faq = [
     <div class="container-site">
       <SectionIntro
         title="Was wir bauen – und wie weit"
-        lead="Der Rohbau ist unsere Leitleistung. Davor der Tiefbau, danach so weit, wie Sie es wollen."
       />
       <div class="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
         {leistungen.map((l, i) => (
@@ -291,7 +290,6 @@ const faq = [
   <section class="container-site py-(--spacing-section)">
     <SectionIntro
       title="So entsteht der Rohbau"
-      lead="Was hier an Genauigkeit fehlt, holt kein Ausbaugewerk mehr auf – und was hier gut gemacht ist, sieht später niemand."
     />
     <div class="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
       {ablauf.map((a, i) => (
@@ -315,16 +313,9 @@ const faq = [
   <!-- Leistungstiefe: Der Bauherr entscheidet, wo wir aufhoeren -->
   <section class="bg-graphite py-(--spacing-section) text-paper">
     <div class="container-site">
-      <div class="grid gap-x-8 gap-y-6 lg:grid-cols-12">
-        <h2 class="reveal font-display text-display font-medium lg:col-span-6">
+      <h2 class="reveal font-display text-display font-medium">
           Wie weit wir bauen, entscheiden Sie
-        </h2>
-        <p class="reveal prose-measure self-end text-body leading-relaxed text-paper-muted lg:col-span-5 lg:col-start-8">
-          Die Grenze steht vor Vertragsschluss in der Leistungsbeschreibung – damit die
-          Schnittstelle zu Ihren übrigen Gewerken eindeutig ist und nicht zur Diskussion
-          steht, wenn es eng wird.
-        </p>
-      </div>
+      </h2>
       <ol class="mt-14 grid gap-x-8 gap-y-10 lg:grid-cols-3">
         {stufen.map((st, i) => (
           <li class="reveal border-t border-paper/20 pt-6" style={`--reveal-delay:${i * 110}ms`}>
@@ -346,7 +337,6 @@ const faq = [
   <section class="container-site py-(--spacing-section)">
     <SectionIntro
       title="Ausgeführte Projekte"
-      lead="Auszug aus den Bauvorhaben der letzten Jahre – mit Leistungsumfang und Größenordnung."
     />
     <div class="mt-14 overflow-x-auto">
       <table class="w-full min-w-[46rem] border-collapse text-left">
@@ -378,7 +368,6 @@ const faq = [
     <div class="container-site">
       <SectionIntro
         title="Gebäude, die wir bauen"
-        lead="Dieselbe Leistung, andere Anforderungen: Schallschutz im Wohnungsbau, Spannweiten im Gewerbe, Auflagen im Bildungsbau."
       />
       <div class="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
         {gebaeude.map((g, i) => (
@@ -428,7 +417,6 @@ const faq = [
   <section class="container-site py-(--spacing-section)">
     <SectionIntro
       title="Die Fragen, die jetzt anstehen"
-      lead="Ehrliche Antworten mit Zahlen von 2026 – ausführlicher im Ratgeber."
     />
     <div class="mt-14 grid gap-12 lg:grid-cols-12">
       <div class="lg:col-span-8">

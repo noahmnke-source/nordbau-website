@@ -79,13 +79,7 @@ const T = {
   // beides – die Ueberschrift muss deshalb fuer Haeuser wie fuer Kitas und
   // Gewerbebauten stimmen.
   katalogTitel: de ? 'Was wir planen und bauen' : 'What we design and build',
-  katalogLead: de
-    ? 'Gebaute und geplante Projekte als Anschauung – kein Bestellkatalog. Jedes Projekt wird für sein Grundstück neu gezeichnet.'
-    : 'Built and planned projects shown as inspiration – not an order catalogue. Every project is drawn anew for its site.',
   innenTitel: de ? 'Innen' : 'Inside',
-  innenLead: de
-    ? 'Oberflächen, Einbauten und Raumzuschnitt planen wir gemeinsam mit Ihnen.'
-    : 'Surfaces, joinery and room proportions are planned together with you.',
   datenTitel: de ? 'Kennwerte' : 'Key figures',
   datenHinweis: de
     ? 'Ausgangswerte unserer Planung. Größe, Grundriss und Ausstattung entstehen individuell für Ihr Vorhaben.'
@@ -101,17 +95,8 @@ const T = {
     : 'We check the site, the development plan and the budget and tell you honestly what is feasible. Without obligation and without sales pressure.',
   ctaButton: de ? 'Beratung vereinbaren' : 'Arrange a consultation',
   stufenTitel: de ? 'Wie weit wir bauen, entscheiden Sie' : 'You decide how far we build',
-  stufenLead: de
-    ? 'Rohbau, Rohbau mit geschlossener Gebäudehülle oder das fertige Gebäude – die Leistungstiefe legen wir vor Vertragsschluss fest, damit die Schnittstelle zu Ihren übrigen Gewerken eindeutig ist.'
-    : 'Structural shell, shell with a weathertight envelope, or the finished building – the scope is fixed before contract so the interface with your other trades is unambiguous.',
   projekteTitel: de ? 'Ausgeführte Projekte' : 'Completed projects',
   bauweisenTitel: de ? 'So entsteht der Rohbau' : 'How the shell is built',
-  bauweisenLead: de
-    ? 'Die Schritte, die vor dem ersten Innenputz liegen – und über die Qualität des ganzen Gebäudes entscheiden.'
-    : 'The steps that come before the first coat of plaster – and decide the quality of the whole building.',
-  projekteLead: de
-    ? 'Auszug aus den Bauvorhaben, die wir in dieser Leistungsart umgesetzt haben.'
-    : 'A selection of the projects we have delivered in this type of work.',
   spalteProjekt: de ? 'Projekt' : 'Project',
   spalteLeistung: de ? 'Leistung' : 'Scope',
   spalteUmfang: de ? 'Umfang' : 'Size',
@@ -275,14 +260,9 @@ function spalten(i: number): string {
 {zeigeStufen && (
   <section class="bg-graphite py-(--spacing-section) text-paper">
     <div class="container-site">
-      <div class="grid gap-x-8 gap-y-6 lg:grid-cols-12">
-        <h2 class="reveal font-display text-display font-medium lg:col-span-6">
+      <h2 class="reveal font-display text-display font-medium">
           {T.stufenTitel}
-        </h2>
-        <p class="reveal prose-measure self-end text-body leading-relaxed text-paper-muted lg:col-span-5 lg:col-start-8">
-          {T.stufenLead}
-        </p>
-      </div>
+      </h2>
 
       <ol class="mt-14 grid gap-x-8 gap-y-10 lg:grid-cols-3">
         {stufen.map((st, i) => (
@@ -308,7 +288,7 @@ function spalten(i: number): string {
 {katalog.length > 0 && (
   <section class="bg-stone py-(--spacing-section)">
     <div class="container-site">
-      <SectionIntro title={T.katalogTitel} lead={T.katalogLead} />
+      <SectionIntro title={T.katalogTitel} />
 
       {zeigeFilter && (
         <div
@@ -368,7 +348,7 @@ function spalten(i: number): string {
 <!-- Bauweise: erklaerende Aufnahmen, bewusst ohne Projektbezug -->
 {bauweisen.length > 0 && (
   <section class="container-site py-(--spacing-section)">
-    <SectionIntro title={T.bauweisenTitel} lead={T.bauweisenLead} />
+    <SectionIntro title={T.bauweisenTitel} />
     <div class="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
       {bauweisen.map((bild, i) => (
         <div class="reveal" style={`--reveal-delay:${(i % 3) * 90}ms`}>
@@ -386,7 +366,7 @@ function spalten(i: number): string {
 <!-- Ausgefuehrte Projekte: Referenzen, zu denen es kein eigenes Foto gibt -->
 {projekte.length > 0 && (
   <section class="container-site py-(--spacing-section)">
-    <SectionIntro title={T.projekteTitel} lead={T.projekteLead} />
+    <SectionIntro title={T.projekteTitel} />
     <div class="mt-14 overflow-x-auto">
       <table class="w-full min-w-[46rem] border-collapse text-left">
         <thead>
@@ -416,7 +396,7 @@ function spalten(i: number): string {
 <!-- Innenaufnahmen -->
 {innen.length > 0 && (
   <section class="container-site pt-(--spacing-section)">
-    <SectionIntro title={T.innenTitel} lead={T.innenLead} />
+    <SectionIntro title={T.innenTitel} />
     <div class="mt-14 grid gap-x-8 gap-y-12 lg:grid-cols-12">
       {innen.map((bild, i) => (
         <figure class:list={[i % 2 === 0 ? 'lg:col-span-7' : 'lg:col-span-5 lg:mt-20']}>

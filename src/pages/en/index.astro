@@ -178,7 +178,6 @@ const faq = [
     <div class="container-site">
       <SectionIntro
         title="What we build – and how far"
-        lead="The structural shell is our lead service. Groundworks come before it, and we carry on as far as you want."
       />
       <div class="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
         {leistungen.map((l, i) => (
@@ -202,7 +201,6 @@ const faq = [
   <section class="container-site py-(--spacing-section)">
     <SectionIntro
       title="How the shell is built"
-      lead="Accuracy missing here is never recovered by a finishing trade – and what is done well here, nobody ever sees."
     />
     <div class="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
       {ablauf.map((a, i) => (
@@ -222,15 +220,9 @@ const faq = [
   <!-- Scope: the client decides where we stop -->
   <section class="bg-graphite py-(--spacing-section) text-paper">
     <div class="container-site">
-      <div class="grid gap-x-8 gap-y-6 lg:grid-cols-12">
-        <h2 class="reveal font-display text-display font-medium lg:col-span-6">
+      <h2 class="reveal font-display text-display font-medium">
           You decide how far we build
-        </h2>
-        <p class="reveal prose-measure self-end text-body leading-relaxed text-paper-muted lg:col-span-5 lg:col-start-8">
-          The boundary is written into the specification before contract – so the interface
-          with your other trades is unambiguous and is not up for debate when things get tight.
-        </p>
-      </div>
+      </h2>
       <ol class="mt-14 grid gap-x-8 gap-y-10 lg:grid-cols-3">
         {stufen.map((st, i) => (
           <li class="reveal border-t border-paper/20 pt-6" style={`--reveal-delay:${i * 110}ms`}>
@@ -252,7 +244,6 @@ const faq = [
   <section class="container-site py-(--spacing-section)">
     <SectionIntro
       title="Completed projects"
-      lead="A selection from recent years – with scope of work and size."
     />
     <div class="mt-14 overflow-x-auto">
       <table class="w-full min-w-[46rem] border-collapse text-left">
@@ -284,7 +275,6 @@ const faq = [
     <div class="container-site">
       <SectionIntro
         title="The buildings we build"
-        lead="The same work, different demands: acoustics in housing, spans in commercial, statutory constraints in education."
       />
       <div class="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
         {gebaeude.map((g, i) => (
@@ -329,7 +319,6 @@ const faq = [
   <section class="container-site py-(--spacing-section)">
     <SectionIntro
       title="The questions that come up now"
-      lead="Honest answers with 2026 figures – in more detail in the guide."
     />
     <div class="mt-14 grid gap-12 lg:grid-cols-12">
       <div class="lg:col-span-8">
