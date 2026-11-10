@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import Button from '@/components/Button.astro';
 import Figure from '@/components/Figure.astro';
 import SectionIntro from '@/components/SectionIntro.astro';
@@ -53,43 +52,54 @@ const grundsaetze = [
   title={`Über uns – Bauunternehmen aus Hannover seit ${SITE.foundingYear}`}
   description={`Familiengeführtes Bauunternehmen aus Hannover: Rohbau in Stahlbeton, Mauerwerk und Holz, dazu eigene Fertigung für Holzbauteile. ${YEARS_EXPERIENCE} Jahre am Bau. Lernen Sie ${SITE.name} kennen.`}
   breadcrumbs={[{ name: 'Über uns', href: '/ueber-uns/' }]}
+  heroOverlay
   hideFooterCta
 >
-  <!-- Kopf: Positionierung -->
-  <section class="container-site pt-12 lg:pt-16">
-    <Breadcrumbs items={[{ name: 'Über uns', href: '/ueber-uns/' }]} class="mb-10" />
-
-    <div class="grid gap-x-8 gap-y-10 lg:grid-cols-12">
-      <div class="lg:col-span-8">
-        <h1 class="font-display text-hero font-medium">
-          Ein Bauunternehmen in zweiter Generation
-        </h1>
+  <!-- Hero: Bild vollflaechig, Text darauf – wie auf den Leistungsseiten -->
+  <section class="relative flex min-h-[62svh] flex-col justify-end bg-graphite text-paper lg:min-h-[72svh]">
+    <div class="absolute inset-0 overflow-hidden">
+      <img
+        src={IMG.rohbauKranwald.src}
+        alt={IMG.rohbauKranwald.alt}
+        sizes="100vw"
+        class="h-full w-full object-cover"
+        loading="eager"
+        decoding="sync"
+        fetchpriority="high"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-graphite/90 via-graphite/50 to-graphite/38"
+        aria-hidden="true"
+      >
       </div>
-      <p class="prose-measure self-end text-body text-muted lg:col-span-4 lg:col-start-9">
-        {SITE.legalName} ist seit {SITE.foundingYear} am Bau – {YEARS_EXPERIENCE} Jahre,
-        inhabergeführt und in zweiter Generation. Unsere Leitleistung ist der Rohbau;
-        gebaut haben wir für Bauträger, Gewerbe und die öffentliche Hand.
-      </p>
+    </div>
+
+    <div class="container-site relative pt-36 pb-14 lg:pb-20">
+      <div class="grid gap-x-8 lg:grid-cols-12">
+        <div class="lg:col-span-9">
+          <h1 class="hero-line font-display text-hero font-medium">
+            Ein Bauunternehmen in zweiter Generation
+          </h1>
+          <p
+            class="hero-line prose-measure mt-5 font-display text-title font-medium text-paper/85"
+            style="--line-delay: 140ms"
+          >
+            Seit {SITE.foundingYear} am Bau. Massiv und in Holz – die Bauweise entscheidet
+            das Projekt.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Auftaktbild: Material statt Stockfoto-Team -->
-  <div class="mt-14 lg:mt-20">
-    <Figure
-      src={IMG.rohbauKranwald.src}
-      alt={IMG.rohbauKranwald.alt}
-      ratio="aspect-[3/2] sm:aspect-[21/9]"
-      sizes="100vw"
-      eager
-      reveal={false}
-      class="w-full"
-    />
-    <div class="container-site mt-4">
-      <p class="text-caption text-muted">
-        Holz und Beton – wir führen beides aus und entscheiden nach dem Projekt.
-      </p>
-    </div>
-  </div>
+  <!-- Einordnung unter dem Hero -->
+  <section class="container-site pt-16 lg:pt-24">
+    <p class="prose-measure text-body text-muted">
+      {SITE.legalName} ist seit {SITE.foundingYear} am Bau – {YEARS_EXPERIENCE} Jahre,
+      inhabergeführt und in zweiter Generation. Unsere Leitleistung ist der Rohbau;
+      gebaut haben wir für Bauträger, Gewerbe und die öffentliche Hand.
+    </p>
+  </section>
 
   <!-- Haltung: großes Statement -->
   <section class="container-site py-(--spacing-section)">
@@ -275,3 +285,29 @@ const grundsaetze = [
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  /* Hero-Zeilen laufen beim Laden von unten ein – gleiche Bewegung wie auf den
+     Leistungsseiten. */
+  .hero-line {
+    animation: hero-rise 0.8s var(--ease-out-expo) both;
+    animation-delay: var(--line-delay, 0ms);
+  }
+
+  @keyframes hero-rise {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-line {
+      animation: none;
+    }
+  }
+</style>

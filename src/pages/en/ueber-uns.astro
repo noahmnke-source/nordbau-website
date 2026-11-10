@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import Button from '@/components/Button.astro';
 import Figure from '@/components/Figure.astro';
 import SectionIntro from '@/components/SectionIntro.astro';
@@ -53,43 +52,54 @@ const grundsaetze = [
   title={`About us – construction company in Hanover since ${SITE.foundingYear}`}
   description={`Family-run construction company from Hanover: structural shell in reinforced concrete, masonry and timber, with our own production for timber components. ${YEARS_EXPERIENCE} years in construction. Get to know ${SITE.name}.`}
   breadcrumbs={[{ name: 'About us', href: '/en/ueber-uns/' }]}
+  heroOverlay
   hideFooterCta
 >
-  <!-- Kopf: Positionierung -->
-  <section class="container-site pt-12 lg:pt-16">
-    <Breadcrumbs items={[{ name: 'About us', href: '/en/ueber-uns/' }]} class="mb-10" />
-
-    <div class="grid gap-x-8 gap-y-10 lg:grid-cols-12">
-      <div class="lg:col-span-8">
-        <h1 class="font-display text-hero font-medium">
-          A construction company in its second generation
-        </h1>
+  <!-- Hero: Bild vollflaechig, Text darauf – wie auf den Leistungsseiten -->
+  <section class="relative flex min-h-[62svh] flex-col justify-end bg-graphite text-paper lg:min-h-[72svh]">
+    <div class="absolute inset-0 overflow-hidden">
+      <img
+        src={IMG.rohbauKranwald.src}
+        alt={IMG.rohbauKranwald.alt}
+        sizes="100vw"
+        class="h-full w-full object-cover"
+        loading="eager"
+        decoding="sync"
+        fetchpriority="high"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-graphite/90 via-graphite/50 to-graphite/38"
+        aria-hidden="true"
+      >
       </div>
-      <p class="prose-measure self-end text-body text-muted lg:col-span-4 lg:col-start-9">
-        {SITE.legalName} has been building since {SITE.foundingYear} – {YEARS_EXPERIENCE} years,
-        owner-managed and in its second generation. Our lead service is the structural shell;
-        we have built for developers, business and the public sector.
-      </p>
+    </div>
+
+    <div class="container-site relative pt-36 pb-14 lg:pb-20">
+      <div class="grid gap-x-8 lg:grid-cols-12">
+        <div class="lg:col-span-9">
+          <h1 class="hero-line font-display text-hero font-medium">
+            A construction company in its second generation
+          </h1>
+          <p
+            class="hero-line prose-measure mt-5 font-display text-title font-medium text-paper/85"
+            style="--line-delay: 140ms"
+          >
+            Building since {SITE.foundingYear}. Solid and in timber – the project decides
+            the method.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Auftaktbild: Material statt Stockfoto-Team -->
-  <div class="mt-14 lg:mt-20">
-    <Figure
-      src={IMG.rohbauKranwald.src}
-      alt={IMG.rohbauKranwald.alt}
-      ratio="aspect-[3/2] sm:aspect-[21/9]"
-      sizes="100vw"
-      eager
-      reveal={false}
-      class="w-full"
-    />
-    <div class="container-site mt-4">
-      <p class="text-caption text-muted">
-        Timber and concrete – we build in both and decide by the project.
-      </p>
-    </div>
-  </div>
+  <!-- Einordnung unter dem Hero -->
+  <section class="container-site pt-16 lg:pt-24">
+    <p class="prose-measure text-body text-muted">
+      {SITE.legalName} has been building since {SITE.foundingYear} – {YEARS_EXPERIENCE} years,
+      owner-managed and in its second generation. Our lead service is the structural shell;
+      we have built for developers, business and the public sector.
+    </p>
+  </section>
 
   <!-- Haltung: großes Statement -->
   <section class="container-site py-(--spacing-section)">
@@ -274,3 +284,29 @@ const grundsaetze = [
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  /* Hero-Zeilen laufen beim Laden von unten ein – gleiche Bewegung wie auf den
+     Leistungsseiten. */
+  .hero-line {
+    animation: hero-rise 0.8s var(--ease-out-expo) both;
+    animation-delay: var(--line-delay, 0ms);
+  }
+
+  @keyframes hero-rise {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-line {
+      animation: none;
+    }
+  }
+</style>
