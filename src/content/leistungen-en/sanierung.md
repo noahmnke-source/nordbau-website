@@ -1,7 +1,7 @@
 ---
 name: Refurbishment
 tagline: Refurbish, convert, extend. While work continues next door.
-order: 3
+order: 4
 hero:
   src: "/rohbau/bestand-geruest-1600.webp"
   alt: "Existing building in scaffolding during refurbishment, scaffold lifts across the full façade height"

@@ -116,13 +116,20 @@ const gebaeude = [
 /* Drei Motive vom Bau: Tragwerk, Gebaeude im Geruest, Kransilhouette. */
 const heroBilder = [IMG.rohbauSkelett, IMG.rohbauZeile, IMG.rohbauKranwald];
 
-/* Die drei Leistungen, in der Reihenfolge, in der sie aufeinander aufbauen. */
+/* Die vier Leistungen, in der Reihenfolge, in der sie aufeinander aufbauen. */
 const leistungen = [
   {
     name: 'Rohbau',
     href: '/leistungen/rohbau/',
     fakt: 'Stahlbeton · Mauerwerk · Holz',
     text: 'Gründung, Tragwerk, Decken und Treppenhäuser – eingemessen, protokolliert und mit statischem Nachweis übergeben.',
+    img: IMG.rohbauSkelett,
+  },
+  {
+    name: 'Tiefbau',
+    href: '/leistungen/tiefbau/',
+    fakt: 'Baugrube · Gründung · Entwässerung',
+    text: 'Erdarbeiten, Baugrube und Gründung – zusammen mit dem Rohbau entfällt die teuerste Schnittstelle am Bau.',
     img: IMG.rohbauWohnanlage,
   },
   {
@@ -142,7 +149,7 @@ const leistungen = [
 ];
 
 const zahlen = [
-  { wert: `seit ${SITE.foundingYear}`, label: `${YEARS_EXPERIENCE} Jahre am Bau – Rohbau, Schlüsselfertigbau und Häuser aus eigener Fertigung` },
+  { wert: `seit ${SITE.foundingYear}`, label: `${YEARS_EXPERIENCE} Jahre am Bau – vom Tiefbau über den Rohbau bis zur schlüsselfertigen Übergabe` },
   { wert: '7 + 3', label: 'Obergeschosse und Untergeschosse: die größte bisher ausgeführte Geschossigkeit, Untergeschosse wasserundurchlässig' },
   { wert: '15.000 m²', label: 'Bruttogrundfläche des größten ausgeführten Bauvorhabens – Rohbau und Innenausbau' },
   { wert: '5 Jahre', label: 'Garantie auf die Baukonstruktion und Gewährleistung nach BGB auf alle übrigen Leistungen' },
@@ -253,16 +260,16 @@ const faq = [
     <div class="container-site">
       <SectionIntro
         title="Was wir bauen – und wie weit"
-        lead="Der Rohbau ist unsere Leitleistung. Ob wir danach weiterbauen, entscheiden Sie."
+        lead="Der Rohbau ist unsere Leitleistung. Davor der Tiefbau, danach so weit, wie Sie es wollen."
       />
-      <div class="mt-14 grid gap-x-8 gap-y-12 md:grid-cols-3">
+      <div class="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
         {leistungen.map((l, i) => (
           <a href={l.href} class="group reveal block" style={`--reveal-delay:${i * 90}ms`}>
             <Figure
               src={l.img.src}
               alt={l.img.alt}
               ratio="aspect-[4/3]"
-              sizes="(min-width: 768px) 31vw, 100vw"
+              sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, 100vw"
               zoom
             />
             <p class="mt-5 text-caption tracking-wide text-muted uppercase">{l.fakt}</p>
@@ -373,14 +380,14 @@ const faq = [
         title="Gebäude, die wir bauen"
         lead="Dieselbe Leistung, andere Anforderungen: Schallschutz im Wohnungsbau, Spannweiten im Gewerbe, Auflagen im Bildungsbau."
       />
-      <div class="mt-14 grid gap-x-8 gap-y-12 md:grid-cols-3">
+      <div class="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
         {gebaeude.map((g, i) => (
           <a href={g.href} class="group reveal block" style={`--reveal-delay:${i * 90}ms`}>
             <Figure
               src={g.img.src}
               alt={g.img.alt}
               ratio="aspect-[4/3]"
-              sizes="(min-width: 768px) 31vw, 100vw"
+              sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, 100vw"
               zoom
             />
             <h3 class="mt-5 font-display text-title font-medium">{g.name}</h3>

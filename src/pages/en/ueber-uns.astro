@@ -76,8 +76,8 @@ const grundsaetze = [
   <!-- Auftaktbild: Material statt Stockfoto-Team -->
   <div class="mt-14 lg:mt-20">
     <Figure
-      src={IMG.holzMaterial.src}
-      alt={IMG.holzMaterial.alt}
+      src={IMG.rohbauKranwald.src}
+      alt={IMG.rohbauKranwald.alt}
       ratio="aspect-[3/2] sm:aspect-[21/9]"
       sizes="100vw"
       eager
@@ -115,8 +115,8 @@ const grundsaetze = [
       </div>
       <div class="lg:col-span-4 lg:col-start-9">
         <Figure
-          src={IMG.elementmontage.src}
-          alt={IMG.elementmontage.alt}
+          src={IMG.rohbauSkelett.src}
+          alt={IMG.rohbauSkelett.alt}
           ratio="aspect-[4/5]"
           sizes="(min-width: 1024px) 30vw, 100vw"
         />
@@ -124,34 +124,34 @@ const grundsaetze = [
     </div>
   </section>
 
-  <!-- Das Werk -->
+  <!-- Wie wir arbeiten: Baustelle statt Werkhalle -->
   <section class="bg-stone py-(--spacing-section)">
     <div class="container-site">
       <SectionIntro
-        title="The plant: where the timber components are made"
-        lead="We manufacture the wall, floor and roof elements for timber and hybrid structures ourselves – weather-independent and inspected before they leave the hall."
+        title="What carries a building is settled before the first cubic metre of concrete"
+        lead="Foundations, setting-out and cast-in parts decide every trade that follows. That is why our care goes in early – in work preparation, survey and documentation."
       />
 
       <div class="mt-16 grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-center">
         <div class="reveal lg:col-span-5">
           <p class="prose-measure text-body text-muted">
-            The hall offers conditions no building site can: constant temperature, dry air,
-            exact supports. Here we manufacture wall, floor and roof elements in timber-frame
-            construction – load-bearing components made of technically dried structural solid
-            timber and cross-laminated timber (CLT) with a defined timber moisture that does not
-            move, does not shrink and does not surprise. Every essential material comes with a
-            quality certificate.
+            Work preparation comes before the first day on site: formwork and reinforcement
+            drawings checked against the structural design, concrete grades and exposure
+            classes fixed, cast-in parts and penetrations agreed with the specialist
+            designers. What is settled here nobody has to chase out of the concrete later.
+            What is missing here turns up as a variation.
           </p>
           <p class="prose-measure mt-5 text-body text-muted">
-            Every element is inspected and documented before loading: dimensional accuracy,
-            connections, insulation, airtightness. Those records are part of the documentation you
-            receive at handover. What is assembled on site in days took shape in the hall over
-            weeks – controlled, repeatable, verifiable.
+            On site everything is surveyed and recorded: foundation levels, setting-out,
+            openings, concrete cover before the pour. Those records are part of the
+            documentation you receive at handover. That is not an end in itself – any
+            deviation that goes unnoticed in the shell costs a multiple of that in the
+            fit-out.
           </p>
         </div>
         <Figure
-          src={IMG.werkAbbund.src}
-          alt={IMG.werkAbbund.alt}
+          src={IMG.rohbauSchalung.src}
+          alt={IMG.rohbauSchalung.alt}
           ratio="aspect-[4/3]"
           sizes="(min-width: 1024px) 50vw, 100vw"
           class="lg:col-span-6 lg:col-start-7"
@@ -160,36 +160,36 @@ const grundsaetze = [
 
       <div class="mt-16 grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-center">
         <Figure
-          src={IMG.montage.src}
-          alt={IMG.montage.alt}
+          src={IMG.rohbauBewehrung.src}
+          alt={IMG.rohbauBewehrung.alt}
           ratio="aspect-[4/3]"
           sizes="(min-width: 1024px) 50vw, 100vw"
           class="lg:col-span-6"
         />
         <p class="reveal prose-measure text-body text-muted lg:col-span-5 lg:col-start-8">
-          On site, our own crews carry the work forward – the same teams, working together over
-          years, from the foundations to whichever stage you commissioned. That keeps
-          responsibility where it belongs: with us, from excavation to handover.
+          The work is done by our own crews – the same people, working together over years,
+          from excavation to whichever stage you commissioned. One site manager, one survey,
+          one responsibility. That keeps responsibility where it belongs: with us.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Where the plant is -->
+  <!-- Wo wir bauen -->
   <section class="container-site py-(--spacing-section)">
     <SectionIntro
-      title="Where our plant is"
-      lead="Administration and site management are based in Hanover. Manufacturing happens in our own hall – the elements travel from there to the site."
+      title="Where we build"
+      lead="Administration and site management are based in Hanover. We have built from Lower Saxony to Baden-Württemberg – and beyond."
     />
 
     <div class="mt-16 grid gap-x-8 gap-y-12 lg:grid-cols-12">
       <div class="reveal lg:col-span-5">
         <dl class="divide-y divide-line border-y border-line">
           {[
-            { k: 'Manufacturing', v: 'Our own production hall in Lipjan, Kosovo' },
-            { k: 'Methods', v: 'Reinforced concrete and masonry on site, timber frame and cross-laminated timber (CLT) from our own production' },
+            { k: 'Base', v: 'Administration and site management in Hanover' },
+            { k: 'Methods', v: 'Reinforced concrete, masonry, timber frame and cross-laminated timber (CLT)' },
             { k: 'We build in', v: 'Across Europe' },
-            { k: 'Scope', v: 'Shell, shell with weathertight envelope, or turnkey' },
+            { k: 'Scope', v: 'Groundworks, shell, shell with weathertight envelope, or turnkey' },
           ].map((z) => (
             <div class="grid gap-1 py-4 sm:grid-cols-[9rem_1fr] sm:gap-6">
               <dt class="text-caption text-muted">{z.k}</dt>
@@ -198,15 +198,15 @@ const grundsaetze = [
           ))}
         </dl>
         <p class="prose-measure mt-6 text-small leading-relaxed text-muted">
-          Separating manufacturing from the site is not incidental but the whole principle:
-          what is made in the hall is made under controlled conditions. Transport by
-          low-loader and erection by mobile crane are part of the design – access, crane
-          standing area and delivery windows are settled before production begins.
+          Site logistics are part of the design for us, not a by-product of it: access,
+          crane standing area, storage and delivery windows are settled before the first
+          vehicle arrives. On an inner-city site that is exactly what decides whether the
+          programme holds.
         </p>
       </div>
 
       <div class="grid content-start gap-6 sm:grid-cols-2 lg:col-span-6 lg:col-start-7">
-        {[IMG.werkHalle, IMG.werkFenster, IMG.werkFassade, IMG.werkTeam].map((bild, i) => (
+        {[IMG.rohbauKraene, IMG.rohbauMauerwerk, IMG.rohbauDecke, IMG.rohbauNacht].map((bild, i) => (
           <Figure
             src={bild.src}
             alt={bild.alt}
@@ -235,8 +235,8 @@ const grundsaetze = [
         ))}
       </dl>
       <p class="mt-10 max-w-2xl text-small text-paper-muted">
-        Run as a mid-sized business, one location, short distances: anyone who builds with us
-        knows the people who plan, manufacture and assemble.
+        Run as a mid-sized business, short distances: anyone who builds with us knows the
+        people who price the job, plan it and stand on the site.
       </p>
     </div>
   </section>

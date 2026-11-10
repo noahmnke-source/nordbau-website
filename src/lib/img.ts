@@ -1,7 +1,7 @@
 /**
  * Responsive Bildquellen fuer die eigenen Aufnahmen.
  *
- * Alle Bilder liegen lokal unter /projekte/, /rohbau/, /bau/ und /werk/.
+ * Alle Bilder liegen lokal unter /projekte/, /rohbau/ und /bau/.
  * Konvention: `<name>-<breite>.webp`, referenziert wird immer die 1600er-Datei.
  *
  * Welche Breiten es tatsaechlich gibt, haengt an der Quelle: Ein Rendering mit
@@ -15,7 +15,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 /** Ordner, deren Bilder in mehreren Breiten vorliegen. */
-const BREITEN_ORDNER = ['/projekte/', '/bau/', '/werk/', '/rohbau/'];
+const BREITEN_ORDNER = ['/projekte/', '/bau/', '/rohbau/'];
 
 const PUBLIC_DIR = fileURLToPath(new URL('../../public/', import.meta.url));
 

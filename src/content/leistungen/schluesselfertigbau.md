@@ -1,7 +1,7 @@
 ---
 name: Schlüsselfertigbau
 tagline: Den Rohbau machen wir selbst. Den Rest steuern wir.
-order: 2
+order: 3
 hero:
   src: "/rohbau/zeile-geruest-1600.webp"
   alt: "Langgestreckter Wohnungsbau im Gerüst, Fassade im Entstehen, Geschosse bereits geschlossen"

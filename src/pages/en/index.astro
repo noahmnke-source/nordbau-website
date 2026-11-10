@@ -48,6 +48,13 @@ const leistungen = [
     href: '/en/leistungen/rohbau/',
     fakt: 'Concrete · masonry · timber',
     text: 'Foundations, structure, floors and stair cores – surveyed, recorded and handed over with structural certification.',
+    img: IMG.rohbauSkelett,
+  },
+  {
+    name: 'Groundworks',
+    href: '/en/leistungen/tiefbau/',
+    fakt: 'Excavation · foundations · drainage',
+    text: 'Earthworks, excavation and foundations – together with the shell, the most expensive interface on site disappears.',
     img: IMG.rohbauWohnanlage,
   },
   {
@@ -67,7 +74,7 @@ const leistungen = [
 ];
 
 const zahlen = [
-  { wert: `since ${SITE.foundingYear}`, label: `${YEARS_EXPERIENCE} years in construction – shell, turnkey building and houses from our own plant` },
+  { wert: `since ${SITE.foundingYear}`, label: `${YEARS_EXPERIENCE} years in construction – from groundworks and shell through to turnkey handover` },
   { wert: '7 + 3', label: 'Upper floors and basement levels: the greatest number of storeys delivered so far, basements watertight' },
   { wert: '15,000 m²', label: 'Gross floor area of the largest project delivered – shell and fit-out' },
   { wert: '5 years', label: 'Guarantee on the building structure and statutory warranty under German law (BGB) on all other work' },
@@ -171,13 +178,13 @@ const faq = [
     <div class="container-site">
       <SectionIntro
         title="What we build – and how far"
-        lead="The structural shell is our lead service. Whether we carry on from there is your decision."
+        lead="The structural shell is our lead service. Groundworks come before it, and we carry on as far as you want."
       />
-      <div class="mt-14 grid gap-x-8 gap-y-12 md:grid-cols-3">
+      <div class="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
         {leistungen.map((l, i) => (
           <a href={l.href} class="group reveal block" style={`--reveal-delay:${i * 90}ms`}>
             <Figure src={l.img.src} alt={l.img.alt} ratio="aspect-[4/3]"
-              sizes="(min-width: 768px) 31vw, 100vw" zoom />
+              sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, 100vw" zoom />
             <p class="mt-5 text-caption tracking-wide text-muted uppercase">{l.fakt}</p>
             <h3 class="mt-2 font-display text-title font-medium">{l.name}</h3>
             <p class="prose-measure mt-3 text-small leading-relaxed text-muted">{l.text}</p>
@@ -279,11 +286,11 @@ const faq = [
         title="The buildings we build"
         lead="The same work, different demands: acoustics in housing, spans in commercial, statutory constraints in education."
       />
-      <div class="mt-14 grid gap-x-8 gap-y-12 md:grid-cols-3">
+      <div class="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
         {gebaeude.map((g, i) => (
           <a href={g.href} class="group reveal block" style={`--reveal-delay:${i * 90}ms`}>
             <Figure src={g.img.src} alt={g.img.alt} ratio="aspect-[4/3]"
-              sizes="(min-width: 768px) 31vw, 100vw" zoom />
+              sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, 100vw" zoom />
             <h3 class="mt-5 font-display text-title font-medium">{g.name}</h3>
             <p class="prose-measure mt-3 text-small leading-relaxed text-muted">{g.text}</p>
             <span class="mt-4 inline-flex items-center gap-2 text-small font-medium text-oxide">

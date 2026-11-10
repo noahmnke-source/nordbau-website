@@ -6,10 +6,9 @@
  * - /rohbau/ sind Lizenzbilder (Pexels/Pixabay, kommerziell nutzbar ohne
  *   Namensnennung). Sie illustrieren die Bauweise und werden nie als eigenes
  *   Projekt ausgegeben.
- * - /werk/ und /bau/ stammen aus der eigenen Fertigung bzw. sind
- *   Visualisierungen eigener Entwuerfe.
+ * - /bau/ sind Visualisierungen eigener Entwuerfe.
  *
- * Bilder unter /rohbau/, /bau/ und /werk/ liegen mindestens in den Breiten 640,
+ * Bilder unter /rohbau/ und /bau/ liegen mindestens in den Breiten 640,
  * 1024 und 1600 vor; referenziert wird immer die 1600er-Datei, die Breiten
  * darueber liest src/lib/img.ts zur Bauzeit vom Dateisystem.
  */
@@ -73,59 +72,26 @@ export const IMG = {
     alt: 'Eingerüstetes Bestandsgebäude während Umbau und Sanierung',
   },
 
-  /* ── Entwürfe ────────────────────────────────────────────── */
+  /* ── Weitere Motive ─────────────────────────────────────── */
+  rohbauNacht: {
+    src: '/rohbau/nacht-1600.webp',
+    alt: 'Eingerüstetes Hochhaus im Rohbau bei Nacht, beleuchtete Gerüstlagen vor dunklem Himmel',
+  },
+  rohbauGlasbau: {
+    src: '/rohbau/kran-glasbau-1600.webp',
+    alt: 'Bürogebäude im Rohbau mit Gerüst, Stahlkonstruktion des Dachabschlusses und Turmdrehkran',
+  },
+  rohbauBewehrungStapel: {
+    src: '/rohbau/bewehrung-stapel-1600.webp',
+    alt: 'Gestapelte Bewehrungsmatten aus Betonstahl, Nahaufnahme des Rastergeflechts',
+  },
+  bestandEntkernt: {
+    src: '/rohbau/bestand-entkernt-1600.webp',
+    alt: 'Entkernter Innenraum eines Bestandsgebäudes vor dem Wiederaufbau',
+  },
   heroGewerbe: {
     src: '/projekte/referenzen/hannover-citygate-1200.webp',
     alt: 'Büro- und Verwaltungsgebäude City Gate Nord in Hannover-Vahrenwald, sechs Geschosse mit Klinkerfassade',
-  },
-
-
-  /* ── Werk: Vorfertigung ──────────────────────────────────── */
-  holzMaterial: {
-    src: '/werk/werk-halle-wandelement-1600.webp',
-    alt: 'Fertiges Wandelement mit gesetztem Fensterband in der Produktionshalle, Holzwerkstoffplatten sichtbar',
-  },
-  werkHalle: {
-    src: '/werk/werk-halle-modul-1600.webp',
-    alt: 'Blick in die Fertigungshalle: fertiges Raummodul und aufgestellter Dachbinder unter der Kranbahn',
-  },
-  werkTeam: {
-    src: '/werk/werk-team-1600.webp',
-    alt: 'Mitarbeiter des Werks vor einem fertig ausgebauten Raummodul mit gesetzter Fensterfront',
-  },
-  werkAbbund: {
-    src: '/werk/werk-abbund-1600.webp',
-    alt: 'Mitarbeiter beim Abbinden eines Deckenelements in der Fertigungshalle',
-  },
-  werkFenster: {
-    src: '/werk/werk-wandelemente-1600.webp',
-    alt: 'Aufgestellte Wandelemente in der Fertigungshalle: Ständerwerk mit eingelegter Dämmung',
-  },
-  werkFassade: {
-    src: '/werk/werk-fassadenrost-1600.webp',
-    alt: 'Fassadenunterkonstruktion aus Holz an einem Wandelement in der Halle',
-  },
-
-  /* ── Baustelle: Montage ──────────────────────────────────── */
-  montage: {
-    src: '/projekte/montage-kranarbeiten-1600.webp',
-    alt: 'Montage auf der Baustelle: Ein Autokran setzt vorgefertigte Elemente auf die Bodenplatte, zwei Monteure arbeiten auf der Decke',
-  },
-  kranModul: {
-    src: '/werk/montage-kran-modul-1600.webp',
-    alt: 'Ein Autokran setzt ein vorgefertigtes Wandelement über der Baustelle ab',
-  },
-  montageFertig: {
-    src: '/werk/montage-fertig-1600.webp',
-    alt: 'Fertiggestelltes Wohnhaus kurz vor der Übergabe, Fassade geschlossen und Fenster gesetzt',
-  },
-  elementmontage: {
-    src: '/projekte/elementmontage.webp',
-    alt: 'Kranmontage: Eine vorgefertigte Wandscheibe mit Fensteröffnung wird auf die bereits stehenden Elemente gesetzt',
-  },
-  bungalowRohbau: {
-    src: '/projekte/bungalow-rohbau.webp',
-    alt: 'Bungalow kurz nach dem Richten: geschlossene Gebäudehülle mit gesetzten Fenstern, Zimmerer deckt den hölzernen Dachstuhl des Walmdachs',
   },
 } as const satisfies Record<string, Asset>;
 

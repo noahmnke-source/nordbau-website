@@ -1,7 +1,7 @@
 ---
 name: Sanierung
 tagline: Sanieren, umbauen, erweitern. Während nebenan weitergearbeitet wird.
-order: 3
+order: 4
 hero:
   src: "/rohbau/bestand-geruest-1600.webp"
   alt: "Eingerüstetes Bestandsgebäude während der Sanierung, Gerüstlagen über die volle Fassadenhöhe"

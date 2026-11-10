@@ -1,7 +1,7 @@
 ---
 name: Turnkey construction
 tagline: We build the shell ourselves. The rest we steer.
-order: 2
+order: 3
 hero:
   src: "/rohbau/zeile-geruest-1600.webp"
   alt: "Long residential building in scaffolding, façade under way, floors already closed"

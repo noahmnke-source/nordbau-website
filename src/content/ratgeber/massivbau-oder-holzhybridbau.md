@@ -3,8 +3,8 @@ title: "Massivbau oder Holzhybridbau? Was wann trägt"
 description: "Stahlbeton, Mauerwerk, Holztafelbau und Brettsperrholz im Vergleich – nach Spannweite, Brandschutz, Schallschutz, Gründung und Terminplan statt nach Weltanschauung."
 pubDate: 2026-10-28
 hero:
-  src: "/werk/werk-halle-wandelement-1600.webp"
-  alt: "Vorgefertigtes Wandelement mit eingebautem Fensterband in der Produktionshalle"
+  src: "/rohbau/deckenschalung-1600.webp"
+  alt: "Deckenschalung aus Holzträgern und Stahlstützen von unten gesehen"
 seoTitle: "Massivbau oder Holzhybridbau? Der Vergleich | EcoBau Hannover"
 seoDescription: "Stahlbeton, Mauerwerk oder Holzbau: Welche Bauweise bei welcher Spannweite, welchem Brandschutz und welcher Gründung trägt – und wann die Kombination beider die beste Lösung ist."
 ---
