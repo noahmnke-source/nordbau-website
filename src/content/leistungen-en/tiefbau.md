@@ -5,21 +5,25 @@ order: 2
 hero:
   src: "/rohbau/wohnanlage-1600.webp"
   alt: "Construction site with a shored excavation in the foreground and a multi-storey concrete shell behind"
+bauweisenTitel: How the foundations are built
 katalog:
+  - src: "/projekte/baustelle/vorplatz-rinne-960.webp"
+    alt: "Finished forecourt in large-format concrete slabs with a drainage channel in front of a building entrance"
+    caption: "Paving and drainage are part of the groundworks: large-format slabs laid to falls towards the channel, connected to the below-ground run."
   - src: "/projekte/referenzen/hannover-citygate-1200.webp"
     alt: "City Gate Nord office and administration complex in Hanover across six storeys"
     stufe: Groundworks, shell and fit-out
     caption: "Hanover, City Gate Nord: earthworks, foundations and drainage for around 10,500 m² gross floor area – followed by shell and fit-out from the same hand."
 bauweisen:
-  - src: "/rohbau/bewehrung-stapel-1600.webp"
-    alt: "Stacked reinforcement mesh on site"
-    caption: "Slab reinforcement follows the foundation report – bar diameters, position and concrete cover are signed off before the pour."
-  - src: "/rohbau/betonwand-1600.webp"
-    alt: "Concrete wall with formwork joints and tie holes"
-    caption: "Basements below the water table are built in watertight concrete: dense mix, a planned joint layout, controlled crack widths."
-  - src: "/rohbau/innen-schalung-1600.webp"
-    alt: "Wall formwork and props in the basement before the pour"
-    caption: "Basement walls are formed, reinforced and poured before the excavation is backfilled – after that no correction is possible."
+  - src: "/projekte/baustelle/streifenfundament-960.webp"
+    alt: "Excavated foundation trenches with reinforcement cages in place and orange drainage pipes"
+    caption: "Strip foundations with the reinforcement cage in place. The below-ground drainage runs are laid before the pour – afterwards nobody can reach them."
+  - src: "/projekte/baustelle/fundament-schalsteine-960.webp"
+    alt: "Hollow formwork blocks in the foundation trench, braced with timber against the excavation face"
+    caption: "Formwork blocks set out and braced before the core concrete goes in. Any inaccuracy here shows up later in the walls above."
+  - src: "/projekte/baustelle/kellerabdichtung-720.webp"
+    alt: "Exposed basement wall with perimeter insulation, dimpled membrane and land drain in the working trench"
+    caption: "Waterproofing, perimeter insulation and land drainage on the exposed basement wall – surveyed and recorded before backfilling."
 daten:
   - label: Services
     wert: Earthworks, excavation and shoring, dewatering, foundations, drainage, access and parking areas

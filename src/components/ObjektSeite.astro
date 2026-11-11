@@ -46,6 +46,8 @@ interface Props {
   katalog: Bild[];
   innen: Bild[];
   bauweisen: Bild[];
+  /** Ueberschrift des Bauweisen-Abschnitts, falls die Vorgabe nicht passt */
+  bauweisenTitel?: string;
   daten: { label: string; wert: string }[];
   merkmale: { titel: string; text: string }[];
   faq: { q: string; a: string }[];
@@ -64,6 +66,7 @@ const {
   katalog,
   innen,
   bauweisen,
+  bauweisenTitel,
   daten,
   merkmale,
   faq,
@@ -348,7 +351,7 @@ function spalten(i: number): string {
 <!-- Bauweise: erklaerende Aufnahmen, bewusst ohne Projektbezug -->
 {bauweisen.length > 0 && (
   <section class="container-site py-(--spacing-section)">
-    <SectionIntro title={T.bauweisenTitel} />
+    <SectionIntro title={bauweisenTitel ?? T.bauweisenTitel} />
     <div class="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
       {bauweisen.map((bild, i) => (
         <div class="reveal" style={`--reveal-delay:${(i % 3) * 90}ms`}>

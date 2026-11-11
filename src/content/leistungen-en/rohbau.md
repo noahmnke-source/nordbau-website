@@ -34,9 +34,9 @@ bauweisen:
   - src: "/rohbau/kran-schalung-1600.webp"
     alt: "Mobile crane above a floor slab with red edge formwork against a blue sky"
     caption: "The crane sets the rhythm: formwork, reinforcement and concrete follow a fixed cycle."
-  - src: "/rohbau/betonwand-1600.webp"
-    alt: "Fair-faced concrete wall with formwork marks and tie holes"
-    caption: "Fair-faced concrete forgives nothing: form lining, tie pattern and joint layout are agreed in advance."
+  - src: "/projekte/baustelle/bungalow-dachstuhl-720.webp"
+    alt: "Single-storey new build with the roof structure erected and counter battens fixed, the wall plane already closed"
+    caption: "A shell in timber: once the wall plane stands, the roof structure goes up – from then on the building is closed at the top."
 daten:
   - label: Methods
     wert: Reinforced concrete, masonry, timber frame and cross-laminated timber

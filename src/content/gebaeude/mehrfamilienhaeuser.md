@@ -18,6 +18,9 @@ katalog:
   - src: "/bau/mehrfamilienhaeuser/mfh-solardach-1600.webp"
     alt: "Langgestreckte Wohnanlage über vier Geschosse am Wasser, mit Balkonen und Photovoltaik auf dem Flachdach"
     caption: "Langgestreckte Anlage mit Photovoltaik auf dem Flachdach – Erträge für Allgemeinstrom und Wärmeversorgung."
+  - src: "/projekte/baustelle/mfh-klinker-1280.webp"
+    alt: "Dreigeschossiges Mehrfamilienhaus mit hellem Klinker, bodentiefen Fenstern und Stahlbalkonen, kurz nach Fertigstellung"
+    caption: "Dreigeschossiger Wohnungsbau mit Klinkerfassade – Außenanlagen in Arbeit, Gebäude bezugsfertig."
   - src: "/projekte/referenzen/stuttgart-maybach.webp"
     alt: "Wohn- und Geschäftshaus in Stuttgart mit sieben Obergeschossen in innerstädtischer Lage"
     stufe: Rohbau und Innenausbau

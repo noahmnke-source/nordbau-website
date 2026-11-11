@@ -25,9 +25,9 @@ bauweisen:
   - src: "/rohbau/kraene-1600.webp"
     alt: "Zwei Turmdrehkrane über einem mehrgeschossigen Neubau vor blauem Himmel"
     caption: "Ein Terminplan für alle Gewerke statt vieler Einzelverträge, die aufeinander warten."
-  - src: "/rohbau/kran-glasbau-1600.webp"
-    alt: "Neubau mit Glasfassade im Bau, Kran und Gerüst davor"
-    caption: "Fassade, Haustechnik und Ausbau greifen ineinander – die Reihenfolge entscheidet über die Bauzeit."
+  - src: "/projekte/baustelle/innenausbau-trockenbau-720.webp"
+    alt: "Verputzter Innenraum kurz vor dem Malerauftrag, Türöffnung und Elektrodosen gesetzt"
+    caption: "Ausbau bis zur Nutzungsfertigkeit: Wände gespachtelt, Elektro gesetzt, Türöffnungen vorbereitet – alles im selben Terminplan."
 daten:
   - label: Leistungsumfang
     wert: Rohbau, Gebäudehülle und sämtliche Ausbaugewerke bis zur Übergabe

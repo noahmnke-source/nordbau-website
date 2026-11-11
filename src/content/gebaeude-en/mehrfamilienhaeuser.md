@@ -18,6 +18,9 @@ katalog:
   - src: "/bau/mehrfamilienhaeuser/mfh-solardach-1600.webp"
     alt: "Long four-storey residential scheme beside water, with balconies and photovoltaics on the flat roof"
     caption: "A long scheme with photovoltaics on the flat roof – yield for communal power and heating."
+  - src: "/projekte/baustelle/mfh-klinker-1280.webp"
+    alt: "Three-storey apartment building in light brick with full-height windows and steel balconies, shortly after completion"
+    caption: "Three-storey housing with a brick facade – external works still under way, the building ready for occupation."
   - src: "/projekte/referenzen/stuttgart-maybach.webp"
     alt: "Residential and commercial building in Stuttgart with seven upper floors in an inner-city location"
     stufe: Shell and fit-out

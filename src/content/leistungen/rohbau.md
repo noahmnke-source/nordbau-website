@@ -34,9 +34,9 @@ bauweisen:
   - src: "/rohbau/kran-schalung-1600.webp"
     alt: "Autokran über einer Geschossdecke mit roter Randschalung vor blauem Himmel"
     caption: "Der Kran taktet den Rohbau: Schalung, Bewehrung und Beton folgen einem festen Rhythmus."
-  - src: "/rohbau/betonwand-1600.webp"
-    alt: "Sichtbetonwand mit Schalungsabdrücken und Ankerlöchern"
-    caption: "Sichtbeton verzeiht nichts: Schalhaut, Ankerraster und Fugenbild werden vorher festgelegt."
+  - src: "/projekte/baustelle/bungalow-dachstuhl-720.webp"
+    alt: "Eingeschossiger Neubau mit aufgeschlagenem Dachstuhl und Konterlattung, Wandebene bereits geschlossen"
+    caption: "Rohbau in Holz: Sobald die Wandebene steht, wird der Dachstuhl aufgeschlagen – ab da ist das Gebäude nach oben geschlossen."
 daten:
   - label: Bauweisen
     wert: Stahlbeton, Mauerwerk, Holzrahmenbau und Brettsperrholz

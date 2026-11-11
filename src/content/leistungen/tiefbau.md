@@ -5,21 +5,25 @@ order: 2
 hero:
   src: "/rohbau/wohnanlage-1600.webp"
   alt: "Baustelle mit verbauter Baugrube im Vordergrund und mehrgeschossigem Rohbau dahinter"
+bauweisenTitel: So entsteht die Gründung
 katalog:
+  - src: "/projekte/baustelle/vorplatz-rinne-960.webp"
+    alt: "Fertiger Vorplatz aus großformatigen Betonplatten mit Entwässerungsrinne vor einem Gebäudeeingang"
+    caption: "Verkehrsflächen und Entwässerung gehören zum Tiefbau: großformatiger Plattenbelag mit Gefälle zur Rinne, angeschlossen an die Grundleitung."
   - src: "/projekte/referenzen/hannover-citygate-1200.webp"
     alt: "Büro- und Verwaltungskomplex City Gate Nord in Hannover über sechs Geschosse"
     stufe: Tiefbau, Rohbau und Innenausbau
     caption: "Hannover, City Gate Nord: Erdarbeiten, Gründung und Entwässerung für rund 10.500 m² BGF – anschließend Rohbau und Innenausbau aus derselben Hand."
 bauweisen:
-  - src: "/rohbau/bewehrung-stapel-1600.webp"
-    alt: "Gestapelte Bewehrungsmatten aus Betonstahl auf der Baustelle"
-    caption: "Die Bewehrung der Bodenplatte folgt dem Gründungsgutachten – Stabdurchmesser, Lage und Betondeckung werden vor dem Betonieren abgenommen."
-  - src: "/rohbau/betonwand-1600.webp"
-    alt: "Betonwand mit Schalungsfugen und Ankerlöchern"
-    caption: "Untergeschosse im Grundwasser entstehen in wasserundurchlässiger Bauweise: dichter Beton, geplantes Fugenbild, kontrollierte Rissbreiten."
-  - src: "/rohbau/innen-schalung-1600.webp"
-    alt: "Wandschalung und Stützen im Untergeschoss vor dem Betonieren"
-    caption: "Kellerwände werden geschalt, bewehrt und betoniert, bevor die Baugrube verfüllt wird – danach ist keine Korrektur mehr möglich."
+  - src: "/projekte/baustelle/streifenfundament-960.webp"
+    alt: "Ausgehobene Fundamentgräben mit eingelegten Bewehrungskörben und orangefarbenen Entwässerungsrohren"
+    caption: "Streifenfundamente mit eingelegtem Bewehrungskorb. Die Grundleitungen liegen, bevor betoniert wird – später kommt niemand mehr heran."
+  - src: "/projekte/baustelle/fundament-schalsteine-960.webp"
+    alt: "Schalsteine im Fundamentgraben, mit Holzstreben gegen die Baugrubenwand abgesteift"
+    caption: "Schalsteine, ausgerichtet und abgesteift, bevor der Kernbeton eingebracht wird. Jede Ungenauigkeit hier steht später im aufgehenden Mauerwerk."
+  - src: "/projekte/baustelle/kellerabdichtung-720.webp"
+    alt: "Freigelegte Kelleraußenwand mit Perimeterdämmung, Noppenbahn und Dränage im Arbeitsgraben"
+    caption: "Abdichtung, Perimeterdämmung und Dränage an der freigelegten Kelleraußenwand – aufgenommen und dokumentiert, bevor verfüllt wird."
 daten:
   - label: Leistungen
     wert: Erdarbeiten, Baugrube und Verbau, Wasserhaltung, Gründung, Entwässerung, Verkehrsflächen

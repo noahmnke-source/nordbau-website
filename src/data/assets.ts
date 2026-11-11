@@ -72,6 +72,12 @@ export const IMG = {
     alt: 'Eingerüstetes Bestandsgebäude während Umbau und Sanierung',
   },
 
+  /* ── Eigene Baustellenfotos ─────────────────────────────── */
+  tiefbauFundament: {
+    src: '/projekte/baustelle/streifenfundament-960.webp',
+    alt: 'Ausgehobene Fundamentgräben mit eingelegten Bewehrungskörben und verlegten Entwässerungsrohren',
+  },
+
   /* ── Weitere Motive ─────────────────────────────────────── */
   rohbauNacht: {
     src: '/rohbau/nacht-1600.webp',

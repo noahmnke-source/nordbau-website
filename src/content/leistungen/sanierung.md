@@ -14,16 +14,17 @@ katalog:
     alt: "Büro- und Verwaltungskomplex City Gate Nord, zweiter Bauabschnitt neben dem genutzten ersten"
     stufe: Tiefbau, Rohbau und Innenausbau
     caption: "Hannover, City Gate Nord: zweiter Bauabschnitt direkt neben dem ersten, der während der gesamten Bauzeit in Betrieb blieb."
+bauweisenTitel: So läuft eine Sanierung ab
 bauweisen:
-  - src: "/rohbau/bestand-entkernt-1600.webp"
-    alt: "Entkerntes Bestandsgebäude mit freigelegtem Mauerwerk und Baumaschine davor"
-    caption: "Entkernen legt offen, was keine Bestandsunterlage zeigt. Erst danach steht der Umfang wirklich fest."
-  - src: "/rohbau/innen-stuetzen-1600.webp"
-    alt: "Innenraum mit Betonstützen und Wandscheiben vor dem Ausbau"
-    caption: "Eingriffe ins Tragwerk brauchen einen statischen Nachweis – Durchbrüche und Abfangungen werden vorab gerechnet."
-  - src: "/rohbau/nacht-1600.webp"
-    alt: "Beleuchtete Baustelle eines mehrgeschossigen Gebäudes bei Nacht"
-    caption: "Arbeiten außerhalb der Betriebszeiten: In Kliniken, Schulen und Verwaltungen oft der einzige Weg."
+  - src: "/projekte/baustelle/durchbrueche-flur-720.webp"
+    alt: "Flur im Umbau mit neu gestemmten Wandöffnungen, freiliegendes Ziegelmauerwerk in den Laibungen"
+    caption: "Neue Öffnungen im Bestand sind kein Abrissthema, sondern ein Rechenthema. Jeder Durchbruch bekommt vorher seinen statischen Nachweis."
+  - src: "/projekte/baustelle/sanierung-geruest-960.webp"
+    alt: "Eingerüstete Fassade eines Mehrgeschossers mit Lüftungsschläuchen der Bautrocknung in den Fensteröffnungen"
+    caption: "Gerüst, Fensterausbau und Bautrocknung greifen ineinander. Die Reihenfolge entscheidet, wie lange das Gebäude offen steht."
+  - src: "/projekte/baustelle/flachdach-abdichtung-588.webp"
+    alt: "Flachdach mit neuer Bitumenabdichtung, verlegten Aluminiumprofilen und Dachdurchführungen"
+    caption: "Dachabdichtung mit Anschlüssen an Attika und Durchdringungen – die Stellen, an denen Flachdächer in der Regel undicht werden."
 daten:
   - label: Leistungen
     wert: Energetische Sanierung, Entkernung, Umbau, Erweiterung, Innenausbau

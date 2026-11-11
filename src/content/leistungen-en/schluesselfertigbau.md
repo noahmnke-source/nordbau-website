@@ -25,9 +25,9 @@ bauweisen:
   - src: "/rohbau/kraene-1600.webp"
     alt: "Two tower cranes above a multi-storey new build against a blue sky"
     caption: "One programme for every trade instead of many separate contracts waiting on each other."
-  - src: "/rohbau/kran-glasbau-1600.webp"
-    alt: "New building with a glass façade under construction, crane and scaffolding in front"
-    caption: "Façade, building services and fit-out interlock – the sequence decides the build time."
+  - src: "/projekte/baustelle/innenausbau-trockenbau-720.webp"
+    alt: "Plastered interior shortly before painting, door opening formed and electrical boxes set"
+    caption: "Fit-out through to occupation: walls filled, electrics set, door openings prepared – all within the same programme."
 daten:
   - label: Scope
     wert: Shell, envelope and every finishing trade through to handover

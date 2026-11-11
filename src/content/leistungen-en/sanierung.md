@@ -14,16 +14,17 @@ katalog:
     alt: "City Gate Nord office complex, second phase next to the occupied first phase"
     stufe: Groundworks, shell and fit-out
     caption: "Hanover, City Gate Nord: a second phase directly beside the first, which stayed in operation throughout the build."
+bauweisenTitel: How a refurbishment runs
 bauweisen:
-  - src: "/rohbau/bestand-entkernt-1600.webp"
-    alt: "Stripped-out existing building with exposed masonry and an excavator in front"
-    caption: "Stripping out reveals what no record drawing shows. Only then is the scope genuinely fixed."
-  - src: "/rohbau/innen-stuetzen-1600.webp"
-    alt: "Interior with concrete columns and wall panels before fit-out"
-    caption: "Work on the structure needs calculation – openings and transfer beams are designed before anything is cut."
-  - src: "/rohbau/nacht-1600.webp"
-    alt: "Illuminated construction site of a multi-storey building at night"
-    caption: "Working outside operating hours: in hospitals, schools and offices often the only way."
+  - src: "/projekte/baustelle/durchbrueche-flur-720.webp"
+    alt: "Corridor under conversion with newly cut wall openings, brickwork exposed in the reveals"
+    caption: "New openings in an existing building are not a demolition question but a calculation question. Every one gets its structural certificate first."
+  - src: "/projekte/baustelle/sanierung-geruest-960.webp"
+    alt: "Scaffolded facade of a multi-storey building with drying-equipment ducts in the window openings"
+    caption: "Scaffolding, window removal and drying interlock. The sequence decides how long the building stands open."
+  - src: "/projekte/baustelle/flachdach-abdichtung-588.webp"
+    alt: "Flat roof with new bituminous waterproofing, aluminium profiles laid out and roof penetrations"
+    caption: "Roof waterproofing with upstands and penetrations – the places where flat roofs usually start to leak."
 daten:
   - label: Services
     wert: Energy retrofit, strip-out, conversion, extension, fit-out

@@ -36,10 +36,14 @@ const objektSchema = z.object({
   katalog: z.array(imageRef).default([]),
   /** Optionale Innenaufnahmen als eigener Abschnitt */
   innen: z.array(imageRef).default([]),
-  /** Erklaerende Aufnahmen zur Bauweise. Bewusst getrennt vom Katalog:
-   *  hier stehen Lizenzbilder, die den Vorgang zeigen, keine eigenen
-   *  Projekte – deshalb tragen sie nie einen Projektnamen. */
+  /** Erklaerende Aufnahmen zum Bauablauf. Bewusst getrennt vom Katalog:
+   *  hier steht der Vorgang im Vordergrund, nicht das einzelne Projekt –
+   *  deshalb tragen diese Bilder nie einen Projektnamen, auch wenn es
+   *  eigene Baustellenfotos sind. */
   bauweisen: z.array(imageRef).default([]),
+  /** Ueberschrift ueber den Bauweisen-Abschnitt, falls "So entsteht der
+   *  Rohbau" nicht passt – etwa bei Tiefbau oder Sanierung. */
+  bauweisenTitel: z.string().optional(),
   daten: z.array(z.object({ label: z.string(), wert: z.string() })).default([]),
   /** Drei bis vier Merkmale, die den Typ ausmachen */
   merkmale: z
