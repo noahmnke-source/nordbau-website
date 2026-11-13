@@ -84,15 +84,19 @@ const T = de
         </h2>
         <p class="ga-unterzeile">{T.unterzeile}</p>
 
-        <ol class="ga-koten" aria-label={T.kotenAria}>
-          {EBENEN.map((e) => (
-            <li data-ebene={e} data-ga-gebaut="nein" data-ga-aktiv="nein" class={e === 0 ? 'ga-null' : undefined}>
-              <span class="ga-koten-name">{name(e)}</span>
-              <span class="ga-koten-wert tnum">{kote(e)}</span>
-            </li>
-          ))}
-        </ol>
-      </div>
+        <div class="ga-koten-raum">
+          <div class="ga-koten-huelle">
+            <ol class="ga-koten" aria-label={T.kotenAria}>
+              {EBENEN.map((e) => (
+                <li data-ebene={e} data-ga-gebaut="nein" data-ga-aktiv="nein" class={e === 0 ? 'ga-null' : undefined}>
+                  <span class="ga-koten-name">{name(e)}</span>
+                  <span class="ga-koten-wert tnum">{kote(e)}</span>
+                </li>
+              ))}
+              </ol>
+            </div>
+          </div>
+        </div>
 
       <div class="ga-grenze" data-ga-grenze data-ga-sichtbar="nein">
         <p class="ga-grenze-dach">{T.grenzeDach}</p>
@@ -230,8 +234,9 @@ const T = de
   }
 
   .ga-koten {
-    margin: clamp(1.5rem, 4vh, 2.75rem) 0 0;
-    padding: 0;
+    margin: 0;
+    /* Abstand als Innenabstand, damit er beim Zusammenfahren mit wegklappt */
+    padding: clamp(1.5rem, 4vh, 2.75rem) 0 0;
     list-style: none;
     display: grid;
     gap: 0.1rem;
@@ -251,14 +256,20 @@ const T = de
       opacity 0.35s ease;
   }
 
-  /* Strich vor dem Geschoss – waechst mit, sobald die Ebene steht */
+  /* Strich vor dem Geschoss – waechst mit, sobald die Ebene steht.
+     Gestaucht statt in der Breite animiert: waehrend daneben der Canvas
+     jeden Frame zeichnet, soll kein Layout neu gerechnet werden. */
   .ga-koten li::before {
     content: '';
     display: block;
+    width: 1.1rem;
     height: 1px;
-    width: 0.55rem;
     background: currentColor;
-    transition: width 0.35s ease;
+    transform: scaleX(0.5);
+    transform-origin: left center;
+    transition:
+      transform 0.35s ease,
+      background-color 0.35s ease;
   }
 
   .ga-koten li[data-ga-gebaut='ja'] {
@@ -270,7 +281,7 @@ const T = de
   }
 
   .ga-koten li[data-ga-aktiv='ja']::before {
-    width: 1.1rem;
+    transform: scaleX(1);
     background: var(--color-oxide);
   }
 
@@ -285,21 +296,32 @@ const T = de
 
   /* Sobald die Stufen uebernehmen, macht die Kotenleiste Platz */
   /* Die Leiste faellt zusammen, statt nur unsichtbar Platz zu halten –
-     sonst schiebt sie die Fussnote aus der Buehne. */
+     sonst schiebt sie die Fussnote aus der Buehne. Zusammengefahren wird
+     ueber die Rasterzeile, nicht ueber Hoehe oder Abstand. */
+  .ga-koten-raum {
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: grid-template-rows 0.55s var(--ease-out-quart, cubic-bezier(0.165, 0.84, 0.44, 1));
+  }
+
+  .ga[data-ga-phase='grenze'] .ga-koten-raum {
+    grid-template-rows: 0fr;
+  }
+
   .ga[data-ga-phase='grenze'] .ga-koten {
     opacity: 0;
-    max-height: 0;
-    margin-top: 0;
     pointer-events: none;
   }
 
-  .ga-koten {
-    max-height: 26rem;
+  /* Die Huelle ist das Rasterkind: ohne eigenen Innenabstand faellt die
+     Zeile wirklich auf null, der Abstand steckt in der Liste darin. */
+  .ga-koten-huelle {
+    min-height: 0;
     overflow: hidden;
-    transition:
-      opacity 0.45s var(--ease-out-quart, cubic-bezier(0.165, 0.84, 0.44, 1)),
-      max-height 0.55s var(--ease-out-quart, cubic-bezier(0.165, 0.84, 0.44, 1)),
-      margin-top 0.55s var(--ease-out-quart, cubic-bezier(0.165, 0.84, 0.44, 1));
+  }
+
+  .ga-koten {
+    transition: opacity 0.4s var(--ease-out-quart, cubic-bezier(0.165, 0.84, 0.44, 1));
   }
 
   /* Leistungsgrenze: blendet ein, sobald das Gebaeude steht */
