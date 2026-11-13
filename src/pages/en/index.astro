@@ -4,6 +4,7 @@ import VideoHero from '@/components/VideoHero.astro';
 import Button from '@/components/Button.astro';
 import Figure from '@/components/Figure.astro';
 import SectionIntro from '@/components/SectionIntro.astro';
+import Geschossaufbau from '@/components/Geschossaufbau.astro';
 import FaqAccordion from '@/components/FaqAccordion.astro';
 import { IMG } from '@/data/assets';
 import { SITE, YEARS_EXPERIENCE } from '@/config/site';
@@ -16,11 +17,6 @@ const ablauf = [
   { titel: 'Floors and envelope', text: 'Floor slabs, stair cores and, if wanted, the closed, weathertight building envelope.', img: IMG.rohbauDecke },
 ];
 
-const stufen = [
-  { titel: 'Structural shell', text: 'Foundations, loadbearing walls, columns, floors and stair cores – surveyed and handed over with structural certification.' },
-  { titel: 'Shell with envelope', text: 'Plus roof, façade, windows and doors. The building is closed and weathertight.' },
-  { titel: 'Turnkey', text: 'Plus every finishing trade through to handover. One contract, one contact, one date.' },
-];
 
 const projekte = [
   { name: 'City Gate Nord office and administration complex', ort: 'Hanover-Vahrenwald', zeitraum: 'July 2023 – August 2025', leistung: 'Groundworks, shell and fit-out', kennzahl: '10,500 m² GFA · 6 storeys' },
@@ -217,26 +213,12 @@ const faq = [
     </div>
   </section>
 
-  <!-- Scope: the client decides where we stop -->
-  <section class="bg-graphite py-(--spacing-section) text-paper">
+  <!-- 7 + 3: the shell grows as you scroll, then the visitor sets the scope. -->
+  <Geschossaufbau lang="en" />
+
+  <section class="bg-graphite pb-(--spacing-section) text-paper">
     <div class="container-site">
-      <h2 class="reveal font-display text-display font-medium">
-          You decide how far we build
-      </h2>
-      <ol class="mt-14 grid gap-x-8 gap-y-10 lg:grid-cols-3">
-        {stufen.map((st, i) => (
-          <li class="reveal border-t border-paper/20 pt-6" style={`--reveal-delay:${i * 110}ms`}>
-            <p class="tnum font-display text-title font-medium text-oxide">
-              {String(i + 1).padStart(2, '0')}
-            </p>
-            <h3 class="mt-3 font-display text-title font-medium">{st.titel}</h3>
-            <p class="prose-measure mt-3 text-small leading-relaxed text-paper-muted">{st.text}</p>
-          </li>
-        ))}
-      </ol>
-      <div class="mt-12">
-        <Button href="/en/leistungen/rohbau/" variant="secondary">To the structural shell</Button>
-      </div>
+      <Button href="/en/leistungen/rohbau/" variant="secondary">To the structural shell</Button>
     </div>
   </section>
 

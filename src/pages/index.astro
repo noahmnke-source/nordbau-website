@@ -4,6 +4,7 @@ import VideoHero from '@/components/VideoHero.astro';
 import Button from '@/components/Button.astro';
 import Figure from '@/components/Figure.astro';
 import SectionIntro from '@/components/SectionIntro.astro';
+import Geschossaufbau from '@/components/Geschossaufbau.astro';
 import FaqAccordion from '@/components/FaqAccordion.astro';
 import { IMG } from '@/data/assets';
 import { SITE, YEARS_EXPERIENCE } from '@/config/site';
@@ -36,20 +37,6 @@ const ablauf = [
 ];
 
 /* Die drei Leistungstiefen – gleicher Wortlaut wie auf den Leistungsseiten. */
-const stufen = [
-  {
-    titel: 'Rohbau',
-    text: 'Gründung, tragende Wände, Stützen, Decken und Treppenhäuser – eingemessen und mit statischem Nachweis übergeben.',
-  },
-  {
-    titel: 'Rohbau mit Gebäudehülle',
-    text: 'Zusätzlich Dach, Fassade, Fenster und Türen. Das Gebäude ist geschlossen und regendicht.',
-  },
-  {
-    titel: 'Schlüsselfertig',
-    text: 'Zusätzlich sämtliche Ausbaugewerke bis zur Übergabe. Ein Vertrag, ein Ansprechpartner, ein Termin.',
-  },
-];
 
 /* Auszug aus dem Referenzbuch – nur eigene, belegbare Projekte. */
 const projekte = [
@@ -310,26 +297,14 @@ const faq = [
     </div>
   </section>
 
-  <!-- Leistungstiefe: Der Bauherr entscheidet, wo wir aufhoeren -->
-  <section class="bg-graphite py-(--spacing-section) text-paper">
+  <!-- 7 + 3: Der Rohbau waechst beim Scrollen, danach waehlt der Besucher
+       die Leistungsgrenze. Ersetzt das fruehere Textband mit denselben
+       drei Stufen – die Inhalte stecken jetzt im Modul. -->
+  <Geschossaufbau lang="de" />
+
+  <section class="bg-graphite pb-(--spacing-section) text-paper">
     <div class="container-site">
-      <h2 class="reveal font-display text-display font-medium">
-          Wie weit wir bauen, entscheiden Sie
-      </h2>
-      <ol class="mt-14 grid gap-x-8 gap-y-10 lg:grid-cols-3">
-        {stufen.map((st, i) => (
-          <li class="reveal border-t border-paper/20 pt-6" style={`--reveal-delay:${i * 110}ms`}>
-            <p class="tnum font-display text-title font-medium text-oxide">
-              {String(i + 1).padStart(2, '0')}
-            </p>
-            <h3 class="mt-3 font-display text-title font-medium">{st.titel}</h3>
-            <p class="prose-measure mt-3 text-small leading-relaxed text-paper-muted">{st.text}</p>
-          </li>
-        ))}
-      </ol>
-      <div class="mt-12">
-        <Button href="/leistungen/rohbau/" variant="secondary">Zum Rohbau</Button>
-      </div>
+      <Button href="/leistungen/rohbau/" variant="secondary">Zum Rohbau</Button>
     </div>
   </section>
 

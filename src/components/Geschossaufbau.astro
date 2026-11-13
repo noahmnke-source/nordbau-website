@@ -1,0 +1,587 @@
+---
+/**
+ * „7 + 3“ – der Rohbau waechst beim Scrollen aus der Baugrube bis ins
+ * siebte Obergeschoss, danach waehlt der Besucher die Leistungsgrenze.
+ *
+ * Das Modell entsteht im Browser aus Code (three.js) und wird erst geladen,
+ * wenn der Abschnitt in die Naehe des Sichtfensters kommt. Ohne WebGL oder
+ * bei abgeschalteter Bewegung bleibt der Abschnitt vollstaendig lesbar: die
+ * Koten, die Stufen und die Texte stehen im HTML, nicht in der Grafik.
+ */
+interface Props {
+  lang?: 'de' | 'en';
+}
+const { lang = 'de' } = Astro.props;
+const de = lang === 'de';
+
+const GH = 3.1;
+const EBENEN = [7, 6, 5, 4, 3, 2, 1, 0, -1, -2, -3];
+
+const kote = (e: number) => {
+  const w = e * GH;
+  if (w === 0) return '±0,00';
+  return `${w > 0 ? '+' : '−'}${Math.abs(w).toFixed(2).replace('.', ',')}`;
+};
+const name = (e: number) => {
+  if (e === 0) return de ? 'EG' : 'Ground';
+  if (e > 0) return de ? `${e}. OG` : `Level ${e}`;
+  return de ? `${-e}. UG` : `Basement ${-e}`;
+};
+
+const T = de
+  ? {
+      aria: 'Sieben Obergeschosse, drei Untergeschosse: wie ein Rohbau entsteht',
+      unterzeile:
+        'Sieben Obergeschosse, drei Untergeschosse – die größte Geschossigkeit, die wir bisher ausgeführt haben.',
+      kotenAria: 'Geschosse von oben nach unten',
+      gelaende: '±0,00 Gelände',
+      grenzeDach: 'Wie weit wir bauen, entscheiden Sie',
+      grenzeTitel: 'Sie ziehen die Grenze. Wir bauen bis dahin.',
+      schalterAria: 'Leistungsstufe wählen',
+      reglerName: 'Leistungsgrenze ziehen',
+      fuss: 'Schematisches Modell aus Code. Geschosshöhen und Koten zeichnerisch angenommen.',
+      stufen: [
+        { kurz: 'Rohbau', text: '<strong>Rohbau.</strong> Gründung, tragende Wände, Stützen, Decken und Treppenhäuser – eingemessen und mit statischem Nachweis übergeben.' },
+        { kurz: '+ Hülle', text: '<strong>Rohbau mit Gebäudehülle.</strong> Zusätzlich Dach, Fassade, Fenster und Außentüren. Das Gebäude ist geschlossen und regendicht.' },
+        { kurz: 'Schlüsselfertig', text: '<strong>Schlüsselfertig.</strong> Zusätzlich sämtliche Ausbaugewerke bis zur Übergabe. Ein Vertrag, ein Ansprechpartner, ein Termin.' },
+      ],
+    }
+  : {
+      aria: 'Seven upper floors, three basement levels: how a structural shell goes up',
+      unterzeile:
+        'Seven upper floors, three basement levels – the greatest number of storeys we have built so far.',
+      kotenAria: 'Floors from top to bottom',
+      gelaende: '±0.00 ground level',
+      grenzeDach: 'You decide how far we build',
+      grenzeTitel: 'You draw the line. We build up to it.',
+      schalterAria: 'Choose the scope',
+      reglerName: 'Drag the scope',
+      fuss: 'Schematic model generated in code. Storey heights and levels are indicative.',
+      stufen: [
+        { kurz: 'Shell', text: '<strong>Structural shell.</strong> Foundations, loadbearing walls, columns, floor slabs and stair cores – surveyed and handed over with structural certification.' },
+        { kurz: '+ Envelope', text: '<strong>Shell with envelope.</strong> Plus roof, façade, windows and external doors. The building is closed and weathertight.' },
+        { kurz: 'Turnkey', text: '<strong>Turnkey.</strong> Plus every finishing trade through to handover. One contract, one contact, one date.' },
+      ],
+    };
+---
+
+<section
+  class="ga"
+  data-geschossaufbau
+  data-sprache={lang}
+  aria-label={T.aria}
+>
+  <div class="ga-klebe" data-ga-buehne>
+    <canvas class="ga-canvas" data-ga-canvas aria-hidden="true"></canvas>
+    <div class="ga-schleier" aria-hidden="true"></div>
+
+    <div class="ga-inhalt container-site">
+      <div class="ga-kopf">
+        <h2 class="ga-titel" aria-label={de ? 'Sieben plus drei' : 'Seven plus three'}>
+          <span class="ga-ziffer">7</span><span class="ga-plus" aria-hidden="true">+</span><span
+            class="ga-ziffer">3</span
+          >
+        </h2>
+        <p class="ga-unterzeile">{T.unterzeile}</p>
+
+        <ol class="ga-koten" aria-label={T.kotenAria}>
+          {EBENEN.map((e) => (
+            <li data-ebene={e} data-ga-gebaut="nein" data-ga-aktiv="nein" class={e === 0 ? 'ga-null' : undefined}>
+              <span class="ga-koten-name">{name(e)}</span>
+              <span class="ga-koten-wert tnum">{kote(e)}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div class="ga-grenze" data-ga-grenze data-ga-sichtbar="nein">
+        <p class="ga-grenze-dach">{T.grenzeDach}</p>
+        <p class="ga-grenze-titel">{T.grenzeTitel}</p>
+
+        <div class="ga-schalter" role="group" aria-label={T.schalterAria}>
+          {T.stufen.map((s, i) => (
+            <button type="button" data-stufe={i} aria-pressed={i === 0 ? 'true' : 'false'}>
+              {s.kurz}
+            </button>
+          ))}
+        </div>
+
+        <label class="ga-regler-zeile">
+          <span class="ga-regler-name">{T.reglerName}</span>
+          <input
+            class="ga-regler"
+            data-ga-regler
+            type="range"
+            min="0"
+            max="2"
+            step="0.01"
+            value="0"
+            aria-label={T.reglerName}
+          />
+        </label>
+
+        <div class="ga-stufentexte">
+          {T.stufen.map((s, i) => (
+            <p class="ga-stufentext" data-stufentext={i} hidden={i !== 0} set:html={s.text} />
+          ))}
+        </div>
+      </div>
+
+      <div class="ga-anzeige" aria-hidden="true">
+        <span class="ga-anzeige-name" data-ga-name>3. UG</span>
+        <span class="ga-anzeige-kote tnum" data-ga-kote>−9,30</span>
+      </div>
+
+      <p class="ga-fuss">{T.fuss}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ga {
+    /* Scrollstrecke: so viel Weg braucht das Gebaeude, um zu wachsen */
+    height: 340svh;
+    position: relative;
+    background: var(--color-graphite);
+    color: var(--color-paper);
+    /* enthaelt die eigenen Ebenen, damit nichts in die Nachbarabschnitte faellt */
+    isolation: isolate;
+  }
+
+  .ga-klebe {
+    position: sticky;
+    top: 0;
+    height: 100svh;
+    overflow: hidden;
+  }
+
+  .ga-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 0;
+  }
+
+  /* Legt sich zwischen Modell und Schrift, damit der Text lesbar bleibt.
+     Auf breiten Schirmen nur von links, auf schmalen von oben und unten. */
+  .ga-schleier {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+      to right,
+      var(--color-graphite) 0%,
+      color-mix(in oklab, var(--color-graphite) 82%, transparent) 22%,
+      transparent 46%
+    );
+  }
+
+  .ga-inhalt {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: grid;
+    /* Kopf oben, Leistungsgrenze unten darueber, Fussnote zuletzt */
+    grid-template-rows: auto 1fr auto;
+    padding-block: clamp(5rem, 11vh, 8rem) clamp(1rem, 3vh, 2rem);
+    pointer-events: none;
+  }
+
+  .ga-grenze {
+    align-self: end;
+  }
+
+  /* Alles Bedienbare bekommt die Zeiger zurueck */
+  .ga-schalter,
+  .ga-regler-zeile {
+    pointer-events: auto;
+  }
+
+  .ga-kopf {
+    max-width: 30rem;
+  }
+
+  .ga-titel {
+    display: flex;
+    align-items: baseline;
+    gap: 0.04em;
+    font-family: var(--font-display, inherit);
+    font-weight: 500;
+    line-height: 0.86;
+    font-size: clamp(5rem, 14vw, 11rem);
+    margin: 0;
+  }
+
+  .ga-plus {
+    color: var(--color-oxide);
+    font-size: 0.46em;
+    padding-inline: 0.06em;
+  }
+
+  .ga-unterzeile {
+    margin-top: 1.25rem;
+    max-width: 24rem;
+    font-size: var(--text-small, 0.9375rem);
+    line-height: 1.65;
+    color: var(--color-paper-muted);
+  }
+
+  .ga-koten {
+    margin: clamp(1.5rem, 4vh, 2.75rem) 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.1rem;
+    max-width: 17rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+  }
+
+  .ga-koten li {
+    display: grid;
+    grid-template-columns: 1.1rem 4rem 1fr;
+    align-items: center;
+    gap: 0.5rem;
+    color: color-mix(in oklab, var(--color-paper) 32%, transparent);
+    transition:
+      color 0.35s ease,
+      opacity 0.35s ease;
+  }
+
+  /* Strich vor dem Geschoss – waechst mit, sobald die Ebene steht */
+  .ga-koten li::before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 0.55rem;
+    background: currentColor;
+    transition: width 0.35s ease;
+  }
+
+  .ga-koten li[data-ga-gebaut='ja'] {
+    color: color-mix(in oklab, var(--color-paper) 62%, transparent);
+  }
+
+  .ga-koten li[data-ga-aktiv='ja'] {
+    color: var(--color-paper);
+  }
+
+  .ga-koten li[data-ga-aktiv='ja']::before {
+    width: 1.1rem;
+    background: var(--color-oxide);
+  }
+
+  .ga-koten .ga-koten-wert {
+    justify-self: start;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .ga-null .ga-koten-name {
+    color: inherit;
+  }
+
+  /* Sobald die Stufen uebernehmen, macht die Kotenleiste Platz */
+  /* Die Leiste faellt zusammen, statt nur unsichtbar Platz zu halten –
+     sonst schiebt sie die Fussnote aus der Buehne. */
+  .ga[data-ga-phase='grenze'] .ga-koten {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    pointer-events: none;
+  }
+
+  .ga-koten {
+    max-height: 26rem;
+    overflow: hidden;
+    transition:
+      opacity 0.45s var(--ease-out-quart, cubic-bezier(0.165, 0.84, 0.44, 1)),
+      max-height 0.55s var(--ease-out-quart, cubic-bezier(0.165, 0.84, 0.44, 1)),
+      margin-top 0.55s var(--ease-out-quart, cubic-bezier(0.165, 0.84, 0.44, 1));
+  }
+
+  /* Leistungsgrenze: blendet ein, sobald das Gebaeude steht */
+  .ga-grenze {
+    max-width: 32rem;
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 0.6s var(--ease-out-quart, cubic-bezier(0.165, 0.84, 0.44, 1)),
+      transform 0.6s var(--ease-out-quart, cubic-bezier(0.165, 0.84, 0.44, 1));
+  }
+
+  .ga-grenze[data-ga-sichtbar='ja'] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .ga-grenze-dach {
+    margin: 0;
+    font-size: 0.6875rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--color-paper-muted);
+  }
+
+  .ga-grenze-titel {
+    margin: 0.65rem 0 1.4rem;
+    font-family: var(--font-display, inherit);
+    font-weight: 500;
+    font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+    line-height: 1.15;
+  }
+
+  .ga-schalter {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid color-mix(in oklab, var(--color-paper) 22%, transparent);
+  }
+
+  .ga-schalter button {
+    flex: 1 1 auto;
+    padding: 0.7rem 1.1rem;
+    background: none;
+    border: 0;
+    border-right: 1px solid color-mix(in oklab, var(--color-paper) 16%, transparent);
+    color: var(--color-paper-muted);
+    font: inherit;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition:
+      color 0.25s ease,
+      background-color 0.25s ease;
+  }
+
+  .ga-schalter button:last-child {
+    border-right: 0;
+  }
+
+  .ga-schalter button:hover {
+    color: var(--color-paper);
+    background: color-mix(in oklab, var(--color-paper) 7%, transparent);
+  }
+
+  .ga-schalter button[aria-pressed='true'] {
+    color: var(--color-paper);
+    background: color-mix(in oklab, var(--color-oxide) 85%, transparent);
+  }
+
+  .ga-regler-zeile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .ga-regler-name {
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-paper-muted);
+    white-space: nowrap;
+  }
+
+  .ga-regler {
+    flex: 1;
+    appearance: none;
+    height: 1px;
+    background: color-mix(in oklab, var(--color-paper) 30%, transparent);
+    cursor: pointer;
+  }
+
+  .ga-regler::-webkit-slider-thumb {
+    appearance: none;
+    width: 0.85rem;
+    height: 0.85rem;
+    background: var(--color-oxide);
+    border: 0;
+  }
+
+  .ga-regler::-moz-range-thumb {
+    width: 0.85rem;
+    height: 0.85rem;
+    background: var(--color-oxide);
+    border: 0;
+    border-radius: 0;
+  }
+
+  .ga-stufentexte {
+    margin-top: 1.2rem;
+    min-height: 4.5rem;
+  }
+
+  .ga-stufentext {
+    margin: 0;
+    font-size: var(--text-small, 0.9375rem);
+    line-height: 1.65;
+    color: var(--color-paper-muted);
+    max-width: 30rem;
+  }
+
+  .ga-stufentext :global(strong) {
+    color: var(--color-paper);
+    font-weight: 500;
+  }
+
+  /* Geschossanzeige am rechten Rand */
+  .ga-anzeige {
+    position: absolute;
+    right: clamp(1.5rem, 4vw, 3rem);
+    top: 50%;
+    transform: translateY(-50%);
+    display: grid;
+    justify-items: end;
+    gap: 0.15rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: color-mix(in oklab, var(--color-paper) 55%, transparent);
+    text-align: right;
+  }
+
+  .ga-anzeige-kote {
+    font-size: 1.5rem;
+    color: var(--color-paper);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .ga-fuss {
+    margin: 0;
+    font-size: 0.6875rem;
+    line-height: 1.5;
+    color: color-mix(in oklab, var(--color-paper) 42%, transparent);
+    max-width: 24rem;
+  }
+
+  /* Ohne WebGL bleibt der Abschnitt ein ruhiger Textblock */
+  .ga[data-ga-zustand='ohne-webgl'] {
+    height: auto;
+  }
+
+  .ga[data-ga-zustand='ohne-webgl'] .ga-klebe {
+    position: static;
+    height: auto;
+    padding-block: var(--spacing-section, 6rem);
+  }
+
+  .ga[data-ga-zustand='ohne-webgl'] .ga-canvas {
+    display: none;
+  }
+
+  .ga[data-ga-zustand='ohne-webgl'] .ga-grenze {
+    opacity: 1;
+    transform: none;
+    margin-top: clamp(2.5rem, 6vh, 4rem);
+  }
+
+  .ga[data-ga-zustand='ohne-webgl'] .ga-anzeige {
+    display: none;
+  }
+
+  .ga[data-ga-zustand='ohne-webgl'] .ga-fuss {
+    margin-top: 2.5rem;
+  }
+
+  @media (max-width: 1023px) {
+    .ga {
+      height: 300svh;
+    }
+
+    .ga-inhalt {
+      padding-block: clamp(4.5rem, 10vh, 6rem) 1.25rem;
+    }
+
+    .ga-koten {
+      /* auf schmalen Geraeten nur jede zweite Marke, sonst wird es unruhig */
+      max-width: 13rem;
+      font-size: 0.6875rem;
+    }
+
+    .ga-schleier {
+      background: linear-gradient(
+        to bottom,
+        var(--color-graphite) 0%,
+        color-mix(in oklab, var(--color-graphite) 72%, transparent) 20%,
+        color-mix(in oklab, var(--color-graphite) 46%, transparent) 40%,
+        color-mix(in oklab, var(--color-graphite) 72%, transparent) 62%,
+        var(--color-graphite) 84%
+      );
+    }
+
+    .ga-anzeige {
+      top: clamp(4.5rem, 10vh, 6rem);
+      bottom: auto;
+      transform: none;
+    }
+
+    .ga-anzeige-kote {
+      font-size: 1.125rem;
+    }
+
+    .ga-grenze {
+      max-width: none;
+    }
+  }
+
+  @media (max-width: 639px) {
+    .ga-koten li:nth-child(even):not(.ga-null) {
+      display: none;
+    }
+
+    .ga-stufentexte {
+      min-height: 6rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ga {
+      height: auto;
+    }
+
+    .ga-klebe {
+      position: static;
+      height: min(100svh, 46rem);
+    }
+
+    .ga-grenze {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  import type { Steuerung } from '@/scripts/geschossaufbau';
+
+  const abschnitte = document.querySelectorAll<HTMLElement>('[data-geschossaufbau]');
+  if (abschnitte.length > 0) {
+    const gestartet = new WeakSet<HTMLElement>();
+    const steuerungen: Steuerung[] = [];
+
+    const beobachter = new IntersectionObserver(
+      (eintraege) => {
+        for (const e of eintraege) {
+          const ziel = e.target as HTMLElement;
+          if (!e.isIntersecting || gestartet.has(ziel)) continue;
+          gestartet.add(ziel);
+          beobachter.unobserve(ziel);
+          import('@/scripts/geschossaufbau')
+            .then(({ starte }) => {
+              const s = starte(ziel);
+              if (s) steuerungen.push(s);
+            })
+            .catch((fehler) => {
+              console.error('Geschossaufbau konnte nicht geladen werden.', fehler);
+              ziel.dataset.gaZustand = 'ohne-webgl';
+            });
+        }
+      },
+      // frueh genug laden, damit das Modell steht, bevor der Abschnitt kommt
+      { rootMargin: '600px 0px' }
+    );
+
+    for (const a of abschnitte) beobachter.observe(a);
+  }
+</script>
