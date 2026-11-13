@@ -39,7 +39,6 @@ const T = de
       grenzeTitel: 'Sie ziehen die Grenze. Wir bauen bis dahin.',
       schalterAria: 'Leistungsstufe wählen',
       reglerName: 'Leistungsgrenze ziehen',
-      fuss: 'Schematisches Modell aus Code. Geschosshöhen und Koten zeichnerisch angenommen.',
       stufen: [
         { kurz: 'Rohbau', text: '<strong>Rohbau.</strong> Gründung, tragende Wände, Stützen, Decken und Treppenhäuser – eingemessen und mit statischem Nachweis übergeben.' },
         { kurz: '+ Hülle', text: '<strong>Rohbau mit Gebäudehülle.</strong> Zusätzlich Dach, Fassade, Fenster und Außentüren. Das Gebäude ist geschlossen und regendicht.' },
@@ -56,7 +55,6 @@ const T = de
       grenzeTitel: 'You draw the line. We build up to it.',
       schalterAria: 'Choose the scope',
       reglerName: 'Drag the scope',
-      fuss: 'Schematic model generated in code. Storey heights and levels are indicative.',
       stufen: [
         { kurz: 'Shell', text: '<strong>Structural shell.</strong> Foundations, loadbearing walls, columns, floor slabs and stair cores – surveyed and handed over with structural certification.' },
         { kurz: '+ Envelope', text: '<strong>Shell with envelope.</strong> Plus roof, façade, windows and external doors. The building is closed and weathertight.' },
@@ -135,8 +133,6 @@ const T = de
         <span class="ga-anzeige-name" data-ga-name>3. UG</span>
         <span class="ga-anzeige-kote tnum" data-ga-kote>−9,30</span>
       </div>
-
-      <p class="ga-fuss">{T.fuss}</p>
     </div>
   </div>
 </section>
@@ -188,8 +184,8 @@ const T = de
     z-index: 2;
     height: 100%;
     display: grid;
-    /* Kopf oben, Leistungsgrenze unten darueber, Fussnote zuletzt */
-    grid-template-rows: auto 1fr auto;
+    /* Kopf oben, Leistungsgrenze darunter am unteren Rand */
+    grid-template-rows: auto 1fr;
     padding-block: clamp(5rem, 11vh, 8rem) clamp(1rem, 3vh, 2rem);
     pointer-events: none;
   }
@@ -468,14 +464,6 @@ const T = de
     font-variant-numeric: tabular-nums;
   }
 
-  .ga-fuss {
-    margin: 0;
-    font-size: 0.6875rem;
-    line-height: 1.5;
-    color: color-mix(in oklab, var(--color-paper) 42%, transparent);
-    max-width: 24rem;
-  }
-
   /* Ohne WebGL bleibt der Abschnitt ein ruhiger Textblock */
   .ga[data-ga-zustand='ohne-webgl'] {
     height: auto;
@@ -499,10 +487,6 @@ const T = de
 
   .ga[data-ga-zustand='ohne-webgl'] .ga-anzeige {
     display: none;
-  }
-
-  .ga[data-ga-zustand='ohne-webgl'] .ga-fuss {
-    margin-top: 2.5rem;
   }
 
   @media (max-width: 1023px) {
