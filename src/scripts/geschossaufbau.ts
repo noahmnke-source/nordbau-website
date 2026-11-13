@@ -83,10 +83,12 @@ function deckenGeometrie(ebene: number) {
   platte.translate(0, unten + DECKE / 2, 0);
   teile.push(platte);
 
-  // Randbalken: aussen bündig, nach unten vorstehend
+  // Randbalken: aussen bündig, nach unten vorstehend. Die Oberkante sitzt
+  // exakt an der Plattenunterkante – ragte sie in die Platte hinein, laegen
+  // dort zwei Aussenflaechen in derselben Ebene und wuerden flimmern.
   const h = 0.55;
   const b = 0.45;
-  const y = unten - h / 2 + 0.02;
+  const y = unten - h / 2;
   const raender: [number, number, number, number][] = [
     [BREITE, b, 0, TIEFE / 2 - b / 2],
     [BREITE, b, 0, -TIEFE / 2 + b / 2],
@@ -110,11 +112,17 @@ function tragwerkGeometrien(ebene: number) {
   if (ebene < 0) {
     // Untergeschoss: umlaufende Aussenwand in wasserundurchlaessiger Bauweise
     const d = 0.4;
+    // Um dieses Mass hinter der Deckenkante: so trifft die Wandaussenseite
+    // nie auf die Ebene des Randbalkens darueber. Deckungsgleiche Flaechen
+    // aus zwei Koerpern streiten sonst um dieselbe Tiefe und flackern.
+    const rueck = 0.07;
+    const aussenX = BREITE / 2 - rueck;
+    const aussenZ = TIEFE / 2 - rueck;
     const seiten: [number, number, number, number][] = [
-      [BREITE, d, 0, TIEFE / 2 - d / 2],
-      [BREITE, d, 0, -TIEFE / 2 + d / 2],
-      [d, TIEFE - 2 * d, BREITE / 2 - d / 2, 0],
-      [d, TIEFE - 2 * d, -BREITE / 2 + d / 2, 0],
+      [aussenX * 2, d, 0, aussenZ - d / 2],
+      [aussenX * 2, d, 0, -aussenZ + d / 2],
+      [d, aussenZ * 2 - 2 * d, aussenX - d / 2, 0],
+      [d, aussenZ * 2 - 2 * d, -aussenX + d / 2, 0],
     ];
     for (const [bx, bz, x, z] of seiten) {
       const w = new THREE.BoxGeometry(bx, hoehe, bz);
@@ -448,7 +456,18 @@ export function starte(sektion: HTMLElement): Steuerung | null {
 
   /* Bauteile je Ebene: Decke schwebt ein, Tragwerk waechst aus der Decke. */
   const betonMat = (farbe: number) =>
-    new THREE.MeshStandardMaterial({ color: farbe, roughness: 0.92, metalness: 0, transparent: true, opacity: 0 });
+    new THREE.MeshStandardMaterial({
+      color: farbe,
+      roughness: 0.92,
+      metalness: 0,
+      transparent: true,
+      opacity: 0,
+      // Flaechen minimal nach hinten: die Kantenlinien liegen sonst exakt
+      // auf der Oberflaeche und fransen beim Bewegen aus.
+      polygonOffset: true,
+      polygonOffsetFactor: 1,
+      polygonOffsetUnits: 1,
+    });
 
   type Teil = { gruppe: THREE.Group; mat: THREE.MeshStandardMaterial; linien: THREE.LineSegments };
   const teilAus = (geos: THREE.BufferGeometry[], farbe: number, pivot: number | null): Teil => {
