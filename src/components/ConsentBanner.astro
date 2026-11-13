@@ -1,10 +1,12 @@
 ---
 /**
- * Einwilligungsbanner für das Google-Ads-Conversion-Tracking.
+ * Einwilligungsbanner für Google Ads und den Meta Pixel.
  *
  * Strenge Auslegung von TTDSG § 25: Vor der Zustimmung geht KEINE Anfrage an
- * Google. Der Tag `gtag.js` wird erst nachgeladen, wenn eingewilligt wurde –
- * nicht bloß per Consent Mode auf „denied" gestellt und trotzdem geladen.
+ * Google oder Meta. `gtag.js` und `fbevents.js` werden erst nachgeladen, wenn
+ * eingewilligt wurde – nicht bloß per Consent Mode auf „denied" gestellt und
+ * trotzdem geladen. Aus demselben Grund gibt es für den Pixel bewusst KEIN
+ * <noscript>-Zählbild: das würde ohne Zustimmung feuern.
  *
  * Consent Mode v2 setzen wir zusätzlich, damit der Tag beim Nachladen sofort
  * den richtigen Zustand kennt und Google die Signale sauber verarbeitet.
@@ -14,10 +16,11 @@
  * der `window.ecobauConsent.open()` aufruft.
  */
 const GOOGLE_ADS_ID = 'AW-18413757885';
+const META_PIXEL_ID = '2396917127761259';
 ---
 
 <!-- Läuft vor allem anderen: Standard auf „abgelehnt", danach ggf. frühere Zustimmung anwenden. -->
-<script is:inline define:vars={{ GOOGLE_ADS_ID }}>
+<script is:inline define:vars={{ GOOGLE_ADS_ID, META_PIXEL_ID }}>
   window.dataLayer = window.dataLayer || [];
   function gtag() {
     dataLayer.push(arguments);
@@ -49,16 +52,39 @@ const GOOGLE_ADS_ID = 'AW-18413757885';
         /* ohne Speicher fragen wir beim nächsten Aufruf erneut */
       }
     },
-    /** Tag nachladen – passiert ausschließlich nach Zustimmung. */
+    /** Tags nachladen – passiert ausschließlich nach Zustimmung. */
     load() {
       if (this.loaded) return;
       this.loaded = true;
+
       const s = document.createElement('script');
       s.async = true;
       s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GOOGLE_ADS_ID;
       document.head.appendChild(s);
       gtag('js', new Date());
       gtag('config', GOOGLE_ADS_ID);
+
+      // Meta Pixel. Der Loader legt die Warteschlange an und holt fbevents.js
+      // nach; `window.fbq` dient zugleich als zweite Sperre gegen doppeltes
+      // Laden, falls load() über einen anderen Weg erneut aufgerufen wird.
+      if (!window.fbq) {
+        const f = function () {
+          f.callMethod ? f.callMethod.apply(f, arguments) : f.queue.push(arguments);
+        };
+        f.push = f;
+        f.loaded = true;
+        f.version = '2.0';
+        f.queue = [];
+        window.fbq = f;
+        window._fbq = window._fbq || f;
+
+        const p = document.createElement('script');
+        p.async = true;
+        p.src = 'https://connect.facebook.net/en_US/fbevents.js';
+        document.head.appendChild(p);
+      }
+      window.fbq('init', META_PIXEL_ID);
+      window.fbq('track', 'PageView');
     },
     grant() {
       gtag('consent', 'update', {
@@ -67,6 +93,9 @@ const GOOGLE_ADS_ID = 'AW-18413757885';
         ad_personalization: 'granted',
         analytics_storage: 'granted',
       });
+      // Fall „erst abgelehnt, später zugestimmt": der Pixel läuft bereits
+      // mit widerrufener Einwilligung und muss sie zurückbekommen.
+      window.fbq?.('consent', 'grant');
       this.save('granted');
       this.load();
       this.hide();
@@ -78,6 +107,7 @@ const GOOGLE_ADS_ID = 'AW-18413757885';
         ad_personalization: 'denied',
         analytics_storage: 'denied',
       });
+      window.fbq?.('consent', 'revoke');
       this.save('denied');
       this.hide();
     },
@@ -95,6 +125,12 @@ const GOOGLE_ADS_ID = 'AW-18413757885';
   };
 
   if (window.ecobauConsent.read() === 'granted') window.ecobauConsent.load();
+
+  // Anruf aus der Website heraus. Ohne Zustimmung gibt es kein fbq, dann
+  // passiert hier nichts.
+  document.addEventListener('click', (e) => {
+    if (e.target.closest?.('a[href^="tel:"]')) window.fbq?.('track', 'Contact');
+  });
 </script>
 
 <div
@@ -114,10 +150,11 @@ const GOOGLE_ADS_ID = 'AW-18413757885';
         Ihre Entscheidung über Cookies
       </p>
       <p id="consent-text" class="prose-measure mt-2 text-caption leading-relaxed text-muted">
-        Wir messen mit Google Ads, ob unsere Anzeigen zu Beratungsanfragen führen. Dabei werden
-        Cookies gesetzt und Daten an Google übertragen. Das geschieht nur mit Ihrer Zustimmung –
-        die Website funktioniert auch ohne vollständig. Widerruf jederzeit über
-        „Cookie-Einstellungen" im Fußbereich. Mehr in unserer{' '}
+        Wir nutzen Google Ads und Meta (Facebook/Instagram), um zu messen, ob unsere Anzeigen zu
+        Beratungsanfragen führen. Dabei werden Cookies gesetzt und Daten an Google und Meta
+        übertragen. Diese Dienste werden nur mit Ihrer Zustimmung geladen – die Website
+        funktioniert auch ohne vollständig. Widerruf jederzeit über „Cookie-Einstellungen" im
+        Fußbereich. Mehr in unserer{' '}
         <a href="/datenschutz/" class="link-line text-ink">Datenschutzerklärung</a>.
       </p>
     </div>

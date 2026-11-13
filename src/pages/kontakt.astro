@@ -231,6 +231,8 @@ const schritte = [
         (window as any).gtag?.('event', 'conversion', {
           send_to: 'AW-18413757885/ihfFCJyE7-gcEL3LrsxE',
         });
+        // Meta-Lead im selben Zweig: nur bei bestaetigtem Eingang und leerem Honeypot.
+        (window as any).fbq?.('track', 'Lead', { content_name: 'Kontaktformular' });
 
         form.hidden = true;
         success?.classList.remove('hidden');
